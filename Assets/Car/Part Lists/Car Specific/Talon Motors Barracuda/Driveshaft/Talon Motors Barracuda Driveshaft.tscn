@@ -1,0 +1,18 @@
+[gd_scene load_steps=2 format=3 uid="uid://bjcqv4jn54fux"]
+
+[ext_resource type="Script" path="res://Assets/Car/Code/Part_scripts/Driveshaft.gd" id="1_cepmx"]
+
+[node name="Talon Motors Barracuda RWD Driveshaft" type="Node2D"]
+script = ExtResource("1_cepmx")
+rarity = "rare"
+Car_ID = 1
+Part_Number = 1
+description = "The factory rear wheel drive driveshaft that comes in the Talon Motors Barracuda"
+weight = 15
+max_torque = 600
+drivetrain_loss = 0.13
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+
+[node name="Gearbox" type="Marker2D" parent="."]
+position = Vector2(24, 0)

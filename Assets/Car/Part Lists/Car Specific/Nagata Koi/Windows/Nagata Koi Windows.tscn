@@ -1,0 +1,15 @@
+[gd_scene load_steps=5 format=3 uid="uid://bdgi70ouxoi6w"]
+
+[ext_resource type="Texture2D" uid="uid://b8v8xqcchxcva" path="res://Textures/Cars/Nagata Koi/Windows/Nagata Koi Windows.png" id="2_6byki"]
+[ext_resource type="Texture2D" uid="uid://mxs34vy3hph2" path="res://Textures/Cars/Nagata Koi/Windows/Nagata Koi Windows NM.png" id="2_sp66k"]
+[ext_resource type="Texture2D" uid="uid://b4h3i051ffhnu" path="res://Textures/Cars/Nagata Koi/Windows/Nagata Koi Windows Spec.png" id="4_x6ssm"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_duf3e"]
+diffuse_texture = ExtResource("2_6byki")
+normal_texture = ExtResource("2_sp66k")
+specular_texture = ExtResource("4_x6ssm")
+
+[node name="Nagata Koi Windows" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = SubResource("CanvasTexture_duf3e")

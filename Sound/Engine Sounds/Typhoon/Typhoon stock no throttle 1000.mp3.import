@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://rp42sde2bh3h"
+path="res://.godot/imported/Typhoon stock no throttle 1000.mp3-32aaa9b79d001a2423a0891d2b19e4e8.mp3str"
+
+[deps]
+
+source_file="res://Sound/Engine Sounds/Typhoon/Typhoon stock no throttle 1000.mp3"
+dest_files=["res://.godot/imported/Typhoon stock no throttle 1000.mp3-32aaa9b79d001a2423a0891d2b19e4e8.mp3str"]
+
+[params]
+
+loop=true
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

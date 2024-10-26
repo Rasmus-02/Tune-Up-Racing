@@ -1,0 +1,95 @@
+[gd_scene load_steps=11 format=3 uid="uid://bnuwduemvo1ps"]
+
+[ext_resource type="Script" path="res://Assets/Car/Code/Car.gd" id="1_lh3tc"]
+[ext_resource type="Script" path="res://Assets/Car/Code/Car_spawner.gd" id="2_tuyxm"]
+[ext_resource type="Script" path="res://UI/FPS Counter.gd" id="4_oh734"]
+[ext_resource type="Script" path="res://Assets/Effects/Camera_Controller.gd" id="4_qghbh"]
+[ext_resource type="PackedScene" uid="uid://i30mnkgnwuom" path="res://Assets/Engine/Engine.tscn" id="5_dfga0"]
+[ext_resource type="AudioStream" uid="uid://cs421jc3v4fsk" path="res://Sound/Test  Eninge Sound Throttle.mp3" id="6_eag5b"]
+[ext_resource type="AudioStream" uid="uid://b3kh7abarjjjq" path="res://Sound/Test  Eninge Sound.mp3" id="6_hin14"]
+[ext_resource type="AudioStream" uid="uid://bumo62fftckdb" path="res://Sound/AirFlow Sound.mp3" id="8_nrgad"]
+[ext_resource type="AudioStream" uid="uid://cygtwx8ces4m7" path="res://Sound/TireScreetch.mp3" id="9_fxkhb"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_vh7d5"]
+radius = 43.5
+height = 206.0
+
+[node name="Car" type="CharacterBody2D"]
+script = ExtResource("1_lh3tc")
+selected_car = 1
+selected_color = Color(0.556863, 0.741176, 0.741176, 1)
+
+[node name="Car_spawner" type="Node2D" parent="."]
+script = ExtResource("2_tuyxm")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(0.8, 0.8)
+limit_smoothed = true
+position_smoothing_speed = 15.0
+rotation_smoothing_enabled = true
+rotation_smoothing_speed = 0.22
+script = ExtResource("4_qghbh")
+
+[node name="Label" type="Label" parent="Camera2D"]
+visible = false
+offset_left = -124.0
+offset_top = -185.0
+offset_right = 86.0
+offset_bottom = 8.0
+text = "FPS
+"
+script = ExtResource("4_oh734")
+
+[node name="Hitbox" type="CollisionShape2D" parent="."]
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_vh7d5")
+
+[node name="Engine" parent="." instance=ExtResource("5_dfga0")]
+rotation = -1.5708
+
+[node name="Area2D" type="Area2D" parent="."]
+rotation = 1.5708
+
+[node name="Area hitbox" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CapsuleShape2D_vh7d5")
+
+[node name="Label" type="Label" parent="."]
+offset_left = -142.0
+offset_top = -124.0
+offset_right = 158.0
+offset_bottom = 69.0
+scale = Vector2(0.4, 0.4)
+text = "speed"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label" type="Label" parent="Label"]
+visible = false
+layout_mode = 0
+offset_left = 427.5
+offset_top = 65.0
+offset_right = 637.5
+offset_bottom = 258.0
+text = "Grip"
+
+[node name="Throttle_sound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("6_eag5b")
+autoplay = true
+
+[node name="No_Throttle_sound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("6_hin14")
+autoplay = true
+
+[node name="Airflow_sound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("8_nrgad")
+autoplay = true
+
+[node name="Sound effects" type="Node2D" parent="."]
+
+[node name="Tire Screetch" type="AudioStreamPlayer2D" parent="Sound effects"]
+stream = ExtResource("9_fxkhb")
+autoplay = true
+
+[connection signal="export_variables" from="." to="Engine" method="_on_car_export_variables"]
+[connection signal="rpm_info" from="Engine" to="." method="_on_engine_rpm_info"]
+[connection signal="stats" from="Engine" to="." method="_on_engine_stats"]

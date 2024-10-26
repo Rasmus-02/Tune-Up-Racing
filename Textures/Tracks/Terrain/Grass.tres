@@ -1,0 +1,32 @@
+[gd_resource type="CanvasTexture" load_steps=5 format=3 uid="uid://ox4pra1y8lxf"]
+
+[sub_resource type="Gradient" id="Gradient_n234q"]
+offsets = PackedFloat32Array(0.0555556, 0.388889, 0.852995)
+colors = PackedColorArray(0.384838, 0.496938, 0.3368, 1, 0.41741, 0.511205, 0.309714, 1, 0.455903, 0.594566, 0.357664, 1)
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_bv2qw"]
+frequency = 0.3958
+metadata/_preview_in_3d_space_ = true
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_3puqu"]
+width = 800
+height = 800
+seamless = true
+seamless_blend_skirt = 0.25
+color_ramp = SubResource("Gradient_n234q")
+noise = SubResource("FastNoiseLite_bv2qw")
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_5iout"]
+width = 400
+height = 400
+seamless = true
+seamless_blend_skirt = 0.25
+as_normal_map = true
+bump_strength = 2.2
+color_ramp = SubResource("Gradient_n234q")
+noise = SubResource("FastNoiseLite_bv2qw")
+
+[resource]
+diffuse_texture = SubResource("NoiseTexture2D_3puqu")
+normal_texture = SubResource("NoiseTexture2D_5iout")
+specular_shininess = 0.0

@@ -1,0 +1,15 @@
+[gd_scene load_steps=5 format=3 uid="uid://df8db301x3awn"]
+
+[ext_resource type="Texture2D" uid="uid://cpak7ca2ew4ji" path="res://Textures/Cars/Hikari Tasai/Window/Hikari Tasai Windows.png" id="1_3n8tj"]
+[ext_resource type="Texture2D" uid="uid://bwqlbgmcs6mmt" path="res://Textures/Cars/Hikari Tasai/Window/Hikari Tasai Windows HM NM.png" id="2_1vq3b"]
+[ext_resource type="Texture2D" uid="uid://bam0siiqkuevp" path="res://Textures/Cars/Hikari Tasai/Window/Hikari Tasai Windows Spec.png" id="3_3prcx"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_duf3e"]
+diffuse_texture = ExtResource("1_3n8tj")
+normal_texture = ExtResource("2_1vq3b")
+specular_texture = ExtResource("3_3prcx")
+
+[node name="Hikari Tasai Windows" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = SubResource("CanvasTexture_duf3e")

@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://dpa4xengl6baq"]
+
+[ext_resource type="Script" path="res://Save_Game/Startup_Save.gd" id="1_plnhs"]
+
+[node name="Startup_Save" type="Node2D"]
+script = ExtResource("1_plnhs")

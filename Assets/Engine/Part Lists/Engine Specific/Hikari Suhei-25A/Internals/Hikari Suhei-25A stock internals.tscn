@@ -1,0 +1,26 @@
+[gd_scene load_steps=6 format=3 uid="uid://5kec2gq6k738"]
+
+[ext_resource type="Script" path="res://Assets/Engine/Part_scripts/Internals.gd" id="1_sdblx"]
+[ext_resource type="Texture2D" uid="uid://d3eao5yk6r4gd" path="res://Textures/Engines/Hikari Suhei-25A/Internals/Hikai Suhei-25A Stock Internals.png" id="2_ka08q"]
+[ext_resource type="Texture2D" uid="uid://doq5o8ebif6fy" path="res://Textures/Engines/Hikari Suhei-25A/Internals/Hikai Suhei-25A Stock Internals NM.png" id="3_3bqn0"]
+[ext_resource type="Texture2D" uid="uid://ce387pka8mgob" path="res://Textures/Engines/Hikari Suhei-25A/Internals/Hikai Suhei-25A Stock Internals Spec.png" id="4_pxamk"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_8qrlk"]
+diffuse_texture = ExtResource("2_ka08q")
+normal_texture = ExtResource("3_3bqn0")
+specular_texture = ExtResource("4_pxamk")
+specular_shininess = 0.5
+
+[node name="Hikari Suhei-25A Stock Internals" type="Node2D"]
+script = ExtResource("1_sdblx")
+rarity = "uncommon"
+Engine_ID = 3
+Part_Number = 1
+description = "The factory internals for the Hikari Suhei-25A Engine"
+weight = 33
+compression = 9.5
+max_rpm = 8000
+max_tq = 350
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = SubResource("CanvasTexture_8qrlk")

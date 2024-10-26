@@ -1,0 +1,23 @@
+[gd_scene load_steps=6 format=3 uid="uid://ba6iy0lq1dir2"]
+
+[ext_resource type="Script" path="res://Assets/Car/Code/Part_scripts/Subframe.gd" id="1_1mquf"]
+[ext_resource type="Texture2D" uid="uid://6jmd8qje77nq" path="res://Textures/Cars/Talon Motors Barracuda/Subframe/Talon Motors Barracuda Subframe.png" id="2_rgxuo"]
+[ext_resource type="Texture2D" uid="uid://bfq6bikrwmy5a" path="res://Textures/Cars/Talon Motors Barracuda/Subframe/Talon Motors Barracuda Subframe NM.png" id="3_v6gfh"]
+[ext_resource type="Texture2D" uid="uid://dtkoi2rjqprom" path="res://Textures/Cars/Talon Motors Barracuda/Subframe/Talon Motors Barracuda Subframe Spec.png" id="4_wme8h"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_0jkfa"]
+diffuse_texture = ExtResource("2_rgxuo")
+normal_texture = ExtResource("3_v6gfh")
+specular_texture = ExtResource("4_wme8h")
+specular_shininess = 0.5
+
+[node name="Talon Motors Barracuda Stock Subframe" type="Node2D"]
+script = ExtResource("1_1mquf")
+rarity = "rare"
+Car_ID = 1
+Part_Number = 1
+description = "The factory subframe for the Talon Motors Barracuda"
+weight = 25
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = SubResource("CanvasTexture_0jkfa")

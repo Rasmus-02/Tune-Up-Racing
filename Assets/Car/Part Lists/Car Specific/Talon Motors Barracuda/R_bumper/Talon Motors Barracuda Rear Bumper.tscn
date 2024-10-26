@@ -1,0 +1,38 @@
+[gd_scene load_steps=9 format=3 uid="uid://djc5eb2qav1pk"]
+
+[ext_resource type="Script" path="res://Assets/Car/Code/Part_scripts/R_bumper.gd" id="1_xcu5r"]
+[ext_resource type="Texture2D" uid="uid://7fdqr7o0syvg" path="res://Textures/Cars/Talon Motors Barracuda/Rear Bumper/Talon Motors Barracuda R_Bumper.png" id="2_40kfb"]
+[ext_resource type="Texture2D" uid="uid://bdg0gpufhg8sv" path="res://Textures/Cars/Talon Motors Barracuda/Rear Bumper/Talon Motors Barracuda R_Bumper NM.png" id="3_6jxu2"]
+[ext_resource type="Texture2D" uid="uid://c6brboimac071" path="res://Textures/Cars/Talon Motors Barracuda/Rear Bumper/Talon Motors Barracuda R_Bumper Spec.png" id="4_umg64"]
+[ext_resource type="Script" path="res://Textures/Cars/Color_selector.gd" id="5_wmqkd"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_r5f60"]
+diffuse_texture = ExtResource("2_40kfb")
+normal_texture = ExtResource("3_6jxu2")
+specular_texture = ExtResource("4_umg64")
+specular_shininess = 0.5
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_pappr"]
+blend_mode = 1
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_2i07l"]
+polygon = PackedVector2Array(-84.0884, 34.3015, -84.0884, -30.6985, -79.0884, -30.6985, -79.0884, 34.3015)
+
+[node name="Talon Motors Barracuda Stock Rear Bumper" type="Node2D"]
+script = ExtResource("1_xcu5r")
+rarity = "rare"
+Car_ID = 1
+Part_Number = 1
+description = "The factory rear bumper for the Talon Motors Barracuda"
+weight = 2
+downforce = 7
+drag = 0.01
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = SubResource("CanvasTexture_r5f60")
+script = ExtResource("5_wmqkd")
+
+[node name="LightOccluder2D2" type="LightOccluder2D" parent="Sprite2D"]
+material = SubResource("CanvasItemMaterial_pappr")
+position = Vector2(-29.9116, -2.30154)
+occluder = SubResource("OccluderPolygon2D_2i07l")

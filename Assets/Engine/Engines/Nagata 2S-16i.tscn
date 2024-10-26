@@ -1,0 +1,43 @@
+[gd_scene load_steps=11 format=3 uid="uid://dc08gcftuqtqr"]
+
+[ext_resource type="PackedScene" uid="uid://cctyed3jxvgm6" path="res://Assets/Engine/Part Lists/Part Selector/Part Selector engine.tscn" id="2_kijil"]
+[ext_resource type="PackedScene" uid="uid://562gipqro1ak" path="res://Assets/Engine/Part Lists/Engine Specific/Nagata 2S-16i/nagata_2s_16i part list.tscn" id="3_wwq5s"]
+[ext_resource type="PackedScene" uid="uid://0lggp6gpn8xa" path="res://Assets/Engine/Part Lists/Universal/Universal part list.tscn" id="4_t08m2"]
+[ext_resource type="Texture2D" uid="uid://b3aodvr655mjq" path="res://Textures/Engines/Nagata 2S-16I/Radiator_Piping/2S-16i Transverse Radiator Piping.png" id="4_ybcbn"]
+[ext_resource type="Texture2D" uid="uid://sfrabtq385ic" path="res://Textures/Engines/Nagata 2S-16I/Radiator_Piping/2S-16i Transverse Radiator Piping NM.png" id="5_k1gy1"]
+[ext_resource type="Texture2D" uid="uid://d0nc0jo7s4i1k" path="res://Textures/Engines/Nagata 2S-16I/Radiator_Piping/2S-16i Longitudinal Radiator Piping.png" id="6_fl1pu"]
+[ext_resource type="Texture2D" uid="uid://c8uhxix85h1gm" path="res://Textures/Engines/Nagata 2S-16I/Radiator_Piping/2S-16i Longitudinal Radiator Piping NM.png" id="7_05ubs"]
+[ext_resource type="PackedScene" uid="uid://c8il6nkvjwonk" path="res://Sound/Turbo and Supercharge Sounds/Boost_Sound_Handler.tscn" id="8_kd8y0"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_8lf8t"]
+diffuse_texture = ExtResource("4_ybcbn")
+normal_texture = ExtResource("5_k1gy1")
+specular_texture = ExtResource("4_ybcbn")
+specular_shininess = 0.5
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_71le6"]
+diffuse_texture = ExtResource("6_fl1pu")
+normal_texture = ExtResource("7_05ubs")
+specular_texture = ExtResource("6_fl1pu")
+specular_shininess = 0.5
+
+[node name="Nagata 2S-16i" type="Node2D"]
+
+[node name="Part Selector" parent="." instance=ExtResource("2_kijil")]
+
+[node name="Nagata 2S-16i Part List" parent="Part Selector" instance=ExtResource("3_wwq5s")]
+
+[node name="Universal Part List" parent="Part Selector" instance=ExtResource("4_t08m2")]
+
+[node name="Gearbox" type="Marker2D" parent="."]
+position = Vector2(-12, 0)
+
+[node name="Radiator_Piping_Transverse" type="Sprite2D" parent="."]
+visible = false
+texture = SubResource("CanvasTexture_8lf8t")
+
+[node name="Radiator_Piping_Longitudinal" type="Sprite2D" parent="."]
+visible = false
+texture = SubResource("CanvasTexture_71le6")
+
+[node name="Boost_Sound_Handler" parent="." instance=ExtResource("8_kd8y0")]

@@ -1,0 +1,26 @@
+[gd_scene load_steps=7 format=3 uid="uid://dlhjuuk3243gt"]
+
+[ext_resource type="Script" path="res://Assets/Car/Code/Part_scripts/Mirrors.gd" id="1_sqwra"]
+[ext_resource type="Texture2D" uid="uid://bdwrotuq5uw5j" path="res://Textures/Cars/Hikari Tasai/Mirrors/Hikari Tasai Stock Mirrors.png" id="2_kxiuh"]
+[ext_resource type="Texture2D" uid="uid://bendb1w4872mb" path="res://Textures/Cars/Hikari Tasai/Mirrors/Hikari Tasai Stock Mirrors HM NM.png" id="3_3ahpn"]
+[ext_resource type="Script" path="res://Textures/Cars/Color_selector.gd" id="3_3gifd"]
+[ext_resource type="Texture2D" uid="uid://duhxjnki8wi3b" path="res://Textures/Cars/Hikari Tasai/Mirrors/Hikari Tasai Stock Mirrors Spec.png" id="4_5a7ws"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_e2ut5"]
+diffuse_texture = ExtResource("2_kxiuh")
+normal_texture = ExtResource("3_3ahpn")
+specular_texture = ExtResource("4_5a7ws")
+specular_shininess = 0.5
+
+[node name="Hikari Tasai Stock Mirrors" type="Node2D"]
+script = ExtResource("1_sqwra")
+rarity = "uncommon"
+Car_ID = 2
+Part_Number = 1
+description = "The factory mirrors for the Hikari Tasai"
+weight = 2
+drag = 0.01
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = SubResource("CanvasTexture_e2ut5")
+script = ExtResource("3_3gifd")

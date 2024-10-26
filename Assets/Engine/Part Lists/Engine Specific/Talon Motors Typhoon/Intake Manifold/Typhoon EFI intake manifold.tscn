@@ -1,0 +1,28 @@
+[gd_scene load_steps=6 format=3 uid="uid://df1qlhr7pbsln"]
+
+[ext_resource type="Script" path="res://Assets/Engine/Part_scripts/Intake_Manifold.gd" id="1_4ij6f"]
+[ext_resource type="Texture2D" uid="uid://fipa6gbvi07l" path="res://Textures/Engines/Talon Motors Typhoon/Intake/Typhoon EFI Intake Manifold.png" id="2_q2n2e"]
+[ext_resource type="Texture2D" uid="uid://bdbmwtoks0o6a" path="res://Textures/Engines/Talon Motors Typhoon/Intake/Typhoon EFI Intake Manifold NM.png" id="3_d6cm5"]
+[ext_resource type="Texture2D" uid="uid://cmhlqtb50ogtp" path="res://Textures/Engines/Talon Motors Typhoon/Intake/Typhoon EFI Intake Manifold Spec.png" id="4_6docc"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_oa52d"]
+diffuse_texture = ExtResource("2_q2n2e")
+normal_texture = ExtResource("3_d6cm5")
+specular_texture = ExtResource("4_6docc")
+specular_shininess = 0.5
+
+[node name="Talon Motors Typhoon EFI  Intake Manifold" type="Node2D"]
+script = ExtResource("1_4ij6f")
+rarity = "rare"
+layout = "front"
+lenght = -1
+Engine_ID = 1
+Part_Number = 3
+description = "The factory electronic fuel injection intake manifold that was featured on later variants of the Typhoon engine"
+weight = 12
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = SubResource("CanvasTexture_oa52d")
+
+[node name="Air filter location" type="Marker2D" parent="."]
+position = Vector2(10, 6)

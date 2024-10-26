@@ -1,0 +1,42 @@
+[gd_scene load_steps=9 format=3 uid="uid://dy0rgh5e63pfj"]
+
+[ext_resource type="Script" path="res://Assets/Car/Code/Part_scripts/Tires.gd" id="1_7kdfo"]
+[ext_resource type="Texture2D" uid="uid://df5tiidwyl8ob" path="res://Textures/Cars/Universal/Tires/185R16 EcoMax.png" id="2_y0euf"]
+[ext_resource type="Texture2D" uid="uid://davw0562fdy4s" path="res://Textures/Cars/Universal/Tires/185R16 EcoMax Tires NM.png" id="3_4dfbu"]
+[ext_resource type="Texture2D" uid="uid://bbyjhje5tclic" path="res://Textures/Cars/Universal/Tires/185R16 EcoMax Tires Spec.png" id="4_qxm36"]
+[ext_resource type="Script" path="res://Assets/Car/Code/Tire_Area_Handler.gd" id="5_u8ixx"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_fmnyl"]
+diffuse_texture = ExtResource("2_y0euf")
+normal_texture = ExtResource("3_4dfbu")
+specular_texture = ExtResource("4_qxm36")
+specular_shininess = 0.5
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_26eql"]
+polygon = PackedVector2Array(-12, -4, 12, -4, 13, -3, 13, 2, 12, 3, -12, 3, -13, 2, -13, -3)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xhy3r"]
+size = Vector2(26, 7)
+
+[node name="185R16 [EcoMax] Tires" type="Node2D"]
+script = ExtResource("1_7kdfo")
+rarity = "uncommon"
+Part_Number = 1
+description = "Cheap Chinese tires, works well enough for the price and are long lasting, however they might not be something you would want to bring to a racetrack"
+weight = 8
+width = 185
+grip = 850
+treadwear = 0.02
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = SubResource("CanvasTexture_fmnyl")
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="Sprite2D"]
+occluder = SubResource("OccluderPolygon2D_26eql")
+
+[node name="Hitbox" type="Area2D" parent="."]
+script = ExtResource("5_u8ixx")
+
+[node name="Hitbox_colission" type="CollisionShape2D" parent="Hitbox"]
+position = Vector2(0, -0.5)
+shape = SubResource("RectangleShape2D_xhy3r")

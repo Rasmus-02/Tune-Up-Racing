@@ -1,0 +1,53 @@
+[gd_scene load_steps=12 format=3 uid="uid://b7t0b75bqbjrw"]
+
+[ext_resource type="Script" path="res://Assets/Engine/Part_scripts/Top.gd" id="1_wsksb"]
+[ext_resource type="Texture2D" uid="uid://js0e4jhp8nwk" path="res://Textures/Engines/Nagata 2S-16I/Top/Nagata 2S-16i Racing Top.png" id="2_lg4px"]
+[ext_resource type="Texture2D" uid="uid://c7mjty2867wtt" path="res://Textures/Engines/Nagata 2S-16I/Top/Nagata 2S-16i Racing Top NM.png" id="3_kglsa"]
+[ext_resource type="Texture2D" uid="uid://d0y7pmtqldira" path="res://Textures/Engines/Nagata 2S-16I/Top/Nagata 2S-16i Racing Top Spec.png" id="4_77y2p"]
+[ext_resource type="Script" path="res://Assets/Engine/Code/Sound_handler_engine.gd" id="5_7fofh"]
+[ext_resource type="AudioStream" uid="uid://ch3apqvse2mki" path="res://Sound/Engine Sounds/2S-16i/2S-16i race throttle 1000rpm.mp3" id="6_yljeq"]
+[ext_resource type="AudioStream" uid="uid://c3vq6s84p34n1" path="res://Sound/Engine Sounds/2S-16i/2S-16i race no throttle 1000rpm.mp3" id="7_a2oox"]
+[ext_resource type="AudioStream" uid="uid://d3ui024ujgiex" path="res://Sound/Engine Sounds/2S-16i/2S-16i race no throttle 4000rpm.mp3" id="8_7kj63"]
+[ext_resource type="AudioStream" uid="uid://s8ptqw8s80gx" path="res://Sound/Engine Sounds/2S-16i/2S-16i race throttle 4000rpm.mp3" id="9_5rr4n"]
+[ext_resource type="AudioStream" uid="uid://bumo62fftckdb" path="res://Sound/AirFlow Sound.mp3" id="10_tv6hn"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_lfkia"]
+diffuse_texture = ExtResource("2_lg4px")
+normal_texture = ExtResource("3_kglsa")
+specular_texture = ExtResource("4_77y2p")
+specular_shininess = 0.3
+
+[node name="Nagata 2S-16i Race Top" type="Node2D"]
+script = ExtResource("1_wsksb")
+rarity = "epic"
+lenght = 27
+width = 8
+Engine_ID = 2
+Part_Number = 3
+description = "A high performance top end for the 2S-16i Engine, developed by Nagata in the early 2000s for their race car engines"
+weight = 20.0
+tq_mod = 1.15
+max_hp_rpm = 6700
+max_compression = 14.5
+smoothness = 0.75
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = SubResource("CanvasTexture_lfkia")
+
+[node name="Sound_handler" type="Node2D" parent="."]
+script = ExtResource("5_7fofh")
+
+[node name="engine_sound_throttle_1000rpm" type="AudioStreamPlayer2D" parent="Sound_handler"]
+stream = ExtResource("6_yljeq")
+
+[node name="engine_sound_no_throttle_1000rpm" type="AudioStreamPlayer2D" parent="Sound_handler"]
+stream = ExtResource("7_a2oox")
+
+[node name="engine_sound_no_throttle_4000rpm" type="AudioStreamPlayer2D" parent="Sound_handler"]
+stream = ExtResource("8_7kj63")
+
+[node name="engine_sound_throttle_4000rpm" type="AudioStreamPlayer2D" parent="Sound_handler"]
+stream = ExtResource("9_5rr4n")
+
+[node name="Airflow" type="AudioStreamPlayer2D" parent="Sound_handler"]
+stream = ExtResource("10_tv6hn")

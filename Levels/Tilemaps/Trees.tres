@@ -1,0 +1,116 @@
+[gd_resource type="TileSet" load_steps=15 format=3 uid="uid://cp7mil6f4jas3"]
+
+[ext_resource type="Shader" path="res://Shaders/Wind_Shader.gdshader" id="1_uxcp5"]
+[ext_resource type="Texture2D" uid="uid://bwj7ha6xw3mve" path="res://Textures/Tracks/Props/Nature/Grasslands_Tree_Tilemap.png" id="2_akqmv"]
+[ext_resource type="Texture2D" uid="uid://df8jiuyyjooos" path="res://Textures/Tracks/Props/Nature/Grasslands_Tree_Tilemap_NM.png" id="3_svh37"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_0pg0t"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_si3go"]
+shader = ExtResource("1_uxcp5")
+shader_parameter/speed = 1.0
+shader_parameter/minStrength = 0.05
+shader_parameter/maxStrength = 0.02
+shader_parameter/strengthScale = 150.0
+shader_parameter/interval = 3.5
+shader_parameter/detail = 1.0
+shader_parameter/distortion = null
+shader_parameter/heightOffset = null
+shader_parameter/offset = 0.0
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_nt5iw"]
+polygon = PackedVector2Array(-17, -53, -48, -3, 7, -3)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_4x301"]
+shader = ExtResource("1_uxcp5")
+shader_parameter/speed = 1.0
+shader_parameter/minStrength = 0.068
+shader_parameter/maxStrength = 0.02
+shader_parameter/strengthScale = 150.0
+shader_parameter/interval = 3.5
+shader_parameter/detail = 1.0
+shader_parameter/distortion = 0.224
+shader_parameter/heightOffset = null
+shader_parameter/offset = 4.42
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_2mxrs"]
+polygon = PackedVector2Array(16, 12, -14, -13, 20, -24)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_cauw1"]
+shader = ExtResource("1_uxcp5")
+shader_parameter/speed = 0.9
+shader_parameter/minStrength = 0.05
+shader_parameter/maxStrength = 0.015
+shader_parameter/strengthScale = 150.0
+shader_parameter/interval = 3.5
+shader_parameter/detail = 1.0
+shader_parameter/distortion = null
+shader_parameter/heightOffset = null
+shader_parameter/offset = 0.075
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_4kw6r"]
+polygon = PackedVector2Array(-11, -59, -26, -4, 30, -23)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_grhco"]
+shader = ExtResource("1_uxcp5")
+shader_parameter/speed = 1.1
+shader_parameter/minStrength = 0.084
+shader_parameter/maxStrength = 0.062
+shader_parameter/strengthScale = 130.0
+shader_parameter/interval = 4.545
+shader_parameter/detail = 1.0
+shader_parameter/distortion = 0.615
+shader_parameter/heightOffset = 0.17
+shader_parameter/offset = 9.68
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_bk7g5"]
+polygon = PackedVector2Array(28, -31, 15, 8, -13, -22)
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_ycejk"]
+diffuse_texture = ExtResource("2_akqmv")
+normal_texture = ExtResource("3_svh37")
+specular_shininess = 0.14
+texture_filter = 1
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ramd2"]
+texture = SubResource("CanvasTexture_ycejk")
+texture_region_size = Vector2i(32, 32)
+0:0/size_in_atlas = Vector2i(20, 21)
+0:0/0 = 0
+0:0/0/material = SubResource("ShaderMaterial_si3go")
+0:0/0/z_index = 1002
+0:0/0/occlusion_layer_0/polygon = SubResource("OccluderPolygon2D_nt5iw")
+0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:0/0/physics_layer_0/angular_velocity = 0.0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-48, -2, 8, -2, -16, -54)
+0:21/size_in_atlas = Vector2i(20, 19)
+0:21/0 = 0
+0:21/0/material = SubResource("ShaderMaterial_4x301")
+0:21/0/z_index = 1002
+0:21/0/occlusion_layer_0/polygon = SubResource("OccluderPolygon2D_2mxrs")
+0:21/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:21/0/physics_layer_0/angular_velocity = 0.0
+0:21/0/physics_layer_0/polygon_0/points = PackedVector2Array(-14.5, -12.5, 16, 11, 20.5, -25)
+20:21/size_in_atlas = Vector2i(20, 19)
+20:21/0 = 0
+20:21/0/material = SubResource("ShaderMaterial_grhco")
+20:21/0/z_index = 1002
+20:21/0/occlusion_layer_0/polygon = SubResource("OccluderPolygon2D_bk7g5")
+20:21/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+20:21/0/physics_layer_0/angular_velocity = 0.0
+20:21/0/physics_layer_0/polygon_0/points = PackedVector2Array(27.5, -30.5, 16.5, 7, -12.5, -21)
+20:0/size_in_atlas = Vector2i(20, 21)
+20:0/0 = 0
+20:0/0/material = SubResource("ShaderMaterial_cauw1")
+20:0/0/z_index = 1002
+20:0/0/occlusion_layer_0/polygon = SubResource("OccluderPolygon2D_4kw6r")
+20:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+20:0/0/physics_layer_0/angular_velocity = 0.0
+20:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(28.5, -21, -29.5, -4, -12.5, -60)
+
+[resource]
+tile_size = Vector2i(160, 160)
+occlusion_layer_0/light_mask = 1
+physics_layer_0/collision_layer = 1
+physics_layer_0/physics_material = SubResource("PhysicsMaterial_0pg0t")
+sources/0 = SubResource("TileSetAtlasSource_ramd2")

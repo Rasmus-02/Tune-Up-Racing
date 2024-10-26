@@ -1,0 +1,28 @@
+[gd_scene load_steps=7 format=3 uid="uid://p3corxylgqtk"]
+
+[ext_resource type="Script" path="res://Assets/Engine/Part_scripts/Radiator.gd" id="1_nww7f"]
+[ext_resource type="Texture2D" uid="uid://3dhul2tmu6aq" path="res://Textures/Cars/Universal/Radiator/[Redline] Radiator.png" id="2_0vk2p"]
+[ext_resource type="Texture2D" uid="uid://vk6nrmvbvvxr" path="res://Textures/Cars/Universal/Radiator/[Redline] Radiator NM.png" id="3_8acy1"]
+[ext_resource type="Texture2D" uid="uid://bjoxuoyukdhbr" path="res://Textures/Cars/Universal/Radiator/[Redline] Radiator Spec.png" id="4_tg52c"]
+[ext_resource type="PackedScene" uid="uid://wxkv830afosy" path="res://Assets/Car/Part Lists/Universal/Radiator/Radiator Piping.tscn" id="5_ib0ui"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_xfat8"]
+diffuse_texture = ExtResource("2_0vk2p")
+normal_texture = ExtResource("3_8acy1")
+specular_texture = ExtResource("4_tg52c")
+specular_shininess = 0.5
+
+[node name="[Redline] Performance Radiator" type="Node2D"]
+script = ExtResource("1_nww7f")
+rarity = "epic"
+Part_Number = 2
+width = 4
+description = "A high performance radiator designed by Redline"
+weight = 7
+cooling = 2.0
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = SubResource("CanvasTexture_xfat8")
+
+[node name="Piping" parent="." instance=ExtResource("5_ib0ui")]
+position = Vector2(0, -4)

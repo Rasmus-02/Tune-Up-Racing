@@ -1,0 +1,24 @@
+[gd_scene load_steps=6 format=3 uid="uid://bkuqiuc8fqnm1"]
+
+[ext_resource type="Script" path="res://Assets/Car/Code/Part_scripts/Suspension.gd" id="1_8vo3r"]
+[ext_resource type="Texture2D" uid="uid://df51lch8h70l2" path="res://Textures/Cars/Universal/Suspension/Passenger car standard suspension.png" id="2_uw7by"]
+[ext_resource type="Texture2D" uid="uid://dfnt21mdvhnf1" path="res://Textures/Cars/Universal/Suspension/Passanger car standard suspension NM.png" id="3_u2jtk"]
+[ext_resource type="Texture2D" uid="uid://cormh54ruwwy6" path="res://Textures/Cars/Universal/Suspension/Passanger car standard suspension Spec.png" id="4_mxflf"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_qa72n"]
+diffuse_texture = ExtResource("2_uw7by")
+normal_texture = ExtResource("3_u2jtk")
+specular_texture = ExtResource("4_mxflf")
+specular_shininess = 0.5
+
+[node name="Soft Road Suspension" type="Node2D"]
+z_index = 101
+script = ExtResource("1_8vo3r")
+rarity = "uncommon"
+Part_Number = 1
+description = "Standard passenger car suspension, nothing special, gets you from point A to point B comfortably"
+weight = 40
+handling_bonus = 0.9
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = SubResource("CanvasTexture_qa72n")

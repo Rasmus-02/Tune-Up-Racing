@@ -1,0 +1,56 @@
+[gd_scene load_steps=9 format=3 uid="uid://beke6wo5xqhrh"]
+
+[ext_resource type="Script" path="res://Assets/Car/Code/Part_scripts/Chassi.gd" id="1_7k3hc"]
+[ext_resource type="Texture2D" uid="uid://c7ciifn2fk10b" path="res://Textures/Cars/Hikari Tasai/Chassi/Hikari Tasai Chassi.png" id="2_07d14"]
+[ext_resource type="Script" path="res://Textures/Cars/Color_selector.gd" id="3_2x4sj"]
+[ext_resource type="Texture2D" uid="uid://x5q1dljncttc" path="res://Textures/Cars/Hikari Tasai/Chassi/Hikari Tasai Chassi HM NM.png" id="3_hghf5"]
+[ext_resource type="PackedScene" uid="uid://df8db301x3awn" path="res://Assets/Car/Part Lists/Car Specific/Hikari Tasai/Windows/Hikari Tasai Windows.tscn" id="4_123jn"]
+[ext_resource type="Texture2D" uid="uid://chea4btj3tgqj" path="res://Textures/Cars/Hikari Tasai/Chassi/Hikari Tasai Chassi Spec.png" id="4_ktiim"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_uy0d4"]
+diffuse_texture = ExtResource("2_07d14")
+normal_texture = ExtResource("3_hghf5")
+specular_texture = ExtResource("4_ktiim")
+specular_shininess = 0.5
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_eq7jf"]
+polygon = PackedVector2Array(35, -41, 40, -36, 95, -36, 98, -33, 100, -24, 101, -17, 101, 16, 100, 23.1, 98, 32, 95.6, 35, 40, 35, 35, 40, -94, 41, -107, 40, -112, 32, -113, 24, -113, -25, -112, -33, -107, -41, -94, -42)
+
+[node name="Hikari Tasai Chassi" type="Node2D"]
+script = ExtResource("1_7k3hc")
+rarity = "uncommon"
+engine_bay_lenght = 38
+engine_bay_width = 45
+engine_bay_start_lenght = 55
+Car_ID = 2
+Part_Number = 1
+description = "A good entry level awd japanese family sports car"
+weight = 860
+downforce = 35
+drag = 0.25
+wheelbase = 138
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = SubResource("CanvasTexture_uy0d4")
+script = ExtResource("3_2x4sj")
+import_new_color = Color(0.61339, 0.61339, 0.61339, 1)
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="Sprite2D"]
+occluder = SubResource("OccluderPolygon2D_eq7jf")
+
+[node name="Hikari Tasai Windows" parent="Sprite2D" instance=ExtResource("4_123jn")]
+
+[node name="FL" type="Marker2D" parent="."]
+position = Vector2(65, -29)
+
+[node name="RL" type="Marker2D" parent="."]
+position = Vector2(-74, -29)
+
+[node name="RR" type="Marker2D" parent="."]
+position = Vector2(-74, 28)
+
+[node name="FR" type="Marker2D" parent="."]
+position = Vector2(65, 28)
+
+[node name="Radiator_Location" type="Marker2D" parent="."]
+position = Vector2(89, 0)

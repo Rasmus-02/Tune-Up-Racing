@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://c7snh2m73tg12"]
+
+[sub_resource type="Curve" id="Curve_dd1rc"]
+_data = [Vector2(0, 0.2), 0.0, 0.0, 0, 0, Vector2(0.0335821, 1), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[node name="Tiremarks_far" type="Line2D"]
+top_level = true
+z_index = 15
+width_curve = SubResource("Curve_dd1rc")
+default_color = Color(0.313726, 0.313726, 0.313726, 1)

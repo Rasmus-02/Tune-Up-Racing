@@ -1,0 +1,73 @@
+[gd_scene load_steps=3 format=3 uid="uid://dq2myrk0qh3p2"]
+
+[ext_resource type="Script" path="res://Assets/Engine/Code/Engine_dyno.gd" id="1_6jbxo"]
+[ext_resource type="PackedScene" uid="uid://i30mnkgnwuom" path="res://Assets/Engine/Engine.tscn" id="2_sffus"]
+
+[node name="Engine Dyno" type="Node2D"]
+script = ExtResource("1_6jbxo")
+
+[node name="Lighting" type="Node2D" parent="."]
+position = Vector2(-327, -33802)
+
+[node name="Level visibility" type="CanvasModulate" parent="Lighting"]
+position = Vector2(-135.1, 339.424)
+scale = Vector2(4.88201, 1.13008)
+skew = 1.26391
+color = Color(0.0392157, 0.113725, 0.172549, 1)
+
+[node name="ColorRect" type="ColorRect" parent="Lighting"]
+offset_left = 169.414
+offset_top = 33548.8
+offset_right = 209.414
+offset_bottom = 33597.8
+scale = Vector2(8, 6)
+color = Color(0.498039, 0.431373, 0.278431, 1)
+
+[node name="Sun" type="DirectionalLight2D" parent="Lighting"]
+position = Vector2(122, 33218)
+rotation = 1.24243
+color = Color(1, 0.945098, 0.870588, 1)
+energy = 1.13
+height = 0.69
+
+[node name="Engine" parent="." instance=ExtResource("2_sffus")]
+
+[node name="tq_line" type="Line2D" parent="."]
+position = Vector2(-75, -50)
+width = 2.0
+default_color = Color(0.203922, 0.423529, 0.733333, 1)
+
+[node name="hp_line" type="Line2D" parent="."]
+position = Vector2(-75, -50)
+width = 2.0
+default_color = Color(0.756863, 0.184314, 0.227451, 1)
+
+[node name="Label" type="Label" parent="hp_line"]
+offset_left = -35.0
+offset_top = -9.0
+offset_right = 5.0
+offset_bottom = 55.0
+scale = Vector2(0.4, 0.4)
+theme_override_colors/font_color = Color(0.756863, 0.184314, 0.227451, 1)
+theme_override_colors/font_outline_color = Color(0.494118, 0.0980392, 0.129412, 1)
+theme_override_constants/outline_size = 6
+metadata/_edit_use_anchors_ = true
+
+[node name="Label2" type="Label" parent="hp_line"]
+offset_left = -35.0
+offset_top = 12.0
+offset_right = 5.0
+offset_bottom = 76.0
+scale = Vector2(0.4, 0.4)
+theme_override_colors/font_color = Color(0.203922, 0.423529, 0.733333, 1)
+theme_override_colors/font_outline_color = Color(0.113725, 0.278431, 0.505882, 1)
+theme_override_constants/outline_size = 6
+metadata/_edit_use_anchors_ = true
+
+[node name="Camera2D" type="Camera2D" parent="."]
+offset = Vector2(0, -100)
+zoom = Vector2(3, 3)
+
+[connection signal="dyno_status" from="." to="Engine" method="_on_engine_dyno_dyno_status"]
+[connection signal="rpm_info" from="Engine" to="." method="_on_engine_rpm_info"]
+[connection signal="stats" from="Engine" to="." method="_on_engine_stats"]

@@ -1,0 +1,312 @@
+[gd_scene load_steps=6 format=3 uid="uid://bbnx8b043hjf2"]
+
+[ext_resource type="Theme" uid="uid://chjt3puiiisoj" path="res://UI/Garage.tres" id="1_4twht"]
+[ext_resource type="PackedScene" uid="uid://cc7166wai1oi2" path="res://Sound/button_click.tscn" id="2_68vpc"]
+[ext_resource type="Script" path="res://UI/Part_List_Ui_Car.gd" id="2_bxkc2"]
+[ext_resource type="PackedScene" uid="uid://bnuwduemvo1ps" path="res://Assets/Car/Car.tscn" id="3_ifcto"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_04bf7"]
+light_mode = 1
+
+[node name="Car Builder" type="Node2D"]
+scale = Vector2(0.2, 0.2)
+
+[node name="Control" type="Control" parent="."]
+light_mask = 2
+material = SubResource("CanvasItemMaterial_04bf7")
+layout_mode = 3
+anchors_preset = 0
+size_flags_vertical = 4
+theme = ExtResource("1_4twht")
+
+[node name="Suspension_Group" type="VBoxContainer" parent="Control"]
+visible = false
+light_mask = 2
+material = SubResource("CanvasItemMaterial_04bf7")
+custom_minimum_size = Vector2(20, 0)
+layout_mode = 2
+offset_left = -925.0
+offset_top = -500.0
+offset_right = -695.0
+offset_bottom = 492.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 40
+
+[node name="Suspension_button" type="Button" parent="Control/Suspension_Group"]
+light_mask = 2
+material = SubResource("CanvasItemMaterial_04bf7")
+layout_mode = 2
+text = "Suspension
+"
+
+[node name="Wheels_button" type="Button" parent="Control/Suspension_Group"]
+light_mask = 2
+material = SubResource("CanvasItemMaterial_04bf7")
+layout_mode = 2
+text = "Wheels
+"
+
+[node name="Tires_button" type="Button" parent="Control/Suspension_Group"]
+light_mask = 2
+material = SubResource("CanvasItemMaterial_04bf7")
+layout_mode = 2
+text = "Tires"
+
+[node name="Brakes_button" type="Button" parent="Control/Suspension_Group"]
+light_mask = 2
+material = SubResource("CanvasItemMaterial_04bf7")
+layout_mode = 2
+text = "Brakes"
+
+[node name="Main_Group" type="VBoxContainer" parent="Control"]
+light_mask = 2
+material = SubResource("CanvasItemMaterial_04bf7")
+custom_minimum_size = Vector2(20, 0)
+layout_mode = 1
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -920.0
+offset_top = -500.0
+offset_right = -697.0
+offset_bottom = 105.0
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_constants/separation = 40
+
+[node name="Engine_button" type="Button" parent="Control/Main_Group"]
+light_mask = 2
+material = SubResource("CanvasItemMaterial_04bf7")
+layout_mode = 2
+text = "Engine"
+
+[node name="Body_button" type="Button" parent="Control/Main_Group"]
+light_mask = 2
+material = SubResource("CanvasItemMaterial_04bf7")
+layout_mode = 2
+text = "Body"
+
+[node name="Suspension_wheel__button" type="Button" parent="Control/Main_Group"]
+light_mask = 2
+material = SubResource("CanvasItemMaterial_04bf7")
+layout_mode = 2
+text = "Suspension"
+
+[node name="Frame_button" type="Button" parent="Control/Main_Group"]
+light_mask = 2
+material = SubResource("CanvasItemMaterial_04bf7")
+layout_mode = 2
+text = "Frame + DS
+"
+
+[node name="Add_engine_button" type="Button" parent="Control/Main_Group"]
+light_mask = 2
+material = SubResource("CanvasItemMaterial_04bf7")
+layout_mode = 2
+text = "Add Engine"
+
+[node name="Body_Group" type="VBoxContainer" parent="Control"]
+visible = false
+light_mask = 2
+material = SubResource("CanvasItemMaterial_04bf7")
+custom_minimum_size = Vector2(20, 0)
+layout_mode = 2
+offset_left = -925.0
+offset_top = -500.0
+offset_right = -695.0
+offset_bottom = 492.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 40
+
+[node name="Front _bumper_button" type="Button" parent="Control/Body_Group"]
+light_mask = 2
+material = SubResource("CanvasItemMaterial_04bf7")
+layout_mode = 2
+text = "F Bumper"
+
+[node name="Rear_bumper_button" type="Button" parent="Control/Body_Group"]
+light_mask = 2
+material = SubResource("CanvasItemMaterial_04bf7")
+layout_mode = 2
+text = "R Bumper
+"
+
+[node name="Fenders_button" type="Button" parent="Control/Body_Group"]
+light_mask = 2
+material = SubResource("CanvasItemMaterial_04bf7")
+layout_mode = 2
+text = "Fenders
+"
+
+[node name="Hood_button" type="Button" parent="Control/Body_Group"]
+light_mask = 2
+material = SubResource("CanvasItemMaterial_04bf7")
+layout_mode = 2
+text = "Hood"
+
+[node name="Mirrors_button" type="Button" parent="Control/Body_Group"]
+light_mask = 2
+material = SubResource("CanvasItemMaterial_04bf7")
+layout_mode = 2
+text = "Mirrors"
+
+[node name="Headlights_button" type="Button" parent="Control/Body_Group"]
+light_mask = 2
+material = SubResource("CanvasItemMaterial_04bf7")
+layout_mode = 2
+text = "Headlights"
+
+[node name="Taillights_button" type="Button" parent="Control/Body_Group"]
+light_mask = 2
+material = SubResource("CanvasItemMaterial_04bf7")
+layout_mode = 2
+text = "Taillights"
+
+[node name="Spoiler_button" type="Button" parent="Control/Body_Group"]
+light_mask = 2
+material = SubResource("CanvasItemMaterial_04bf7")
+layout_mode = 2
+text = "Spoiler"
+
+[node name="Frame_Group" type="VBoxContainer" parent="Control"]
+visible = false
+light_mask = 2
+material = SubResource("CanvasItemMaterial_04bf7")
+custom_minimum_size = Vector2(20, 0)
+layout_mode = 0
+offset_left = -925.0
+offset_top = -500.0
+offset_right = -695.0
+offset_bottom = 492.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 40
+
+[node name="Subframe_button" type="Button" parent="Control/Frame_Group"]
+layout_mode = 2
+text = "Subframe"
+
+[node name="Driveshaft_button" type="Button" parent="Control/Frame_Group"]
+layout_mode = 2
+text = "Driveshaft"
+
+[node name="Save" type="Button" parent="Control"]
+visible = false
+light_mask = 2
+material = SubResource("CanvasItemMaterial_04bf7")
+layout_mode = 0
+offset_left = 10.0
+offset_top = 140.0
+offset_right = 143.0
+offset_bottom = 229.0
+text = " Save "
+
+[node name="Load" type="Button" parent="Control"]
+visible = false
+light_mask = 2
+material = SubResource("CanvasItemMaterial_04bf7")
+layout_mode = 0
+offset_left = 30.0
+offset_top = 190.0
+offset_right = 165.0
+offset_bottom = 279.0
+text = "Load  
+"
+
+[node name="Add" type="Button" parent="Control"]
+visible = false
+light_mask = 2
+material = SubResource("CanvasItemMaterial_04bf7")
+layout_mode = 0
+offset_left = 10.0
+offset_top = 20.0
+offset_right = 145.0
+offset_bottom = 109.0
+text = " Add "
+
+[node name="Button_Click" parent="." instance=ExtResource("2_68vpc")]
+
+[node name="ItemList" type="ItemList" parent="."]
+light_mask = 2
+material = SubResource("CanvasItemMaterial_04bf7")
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -675.0
+offset_top = -510.0
+offset_bottom = 515.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_font_sizes/font_size = 0
+script = ExtResource("2_bxkc2")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.3
+one_shot = true
+
+[node name="TextEdit" type="TextEdit" parent="."]
+light_mask = 2
+material = SubResource("CanvasItemMaterial_04bf7")
+offset_left = 20.0
+offset_top = 305.0
+offset_right = 930.0
+offset_bottom = 520.0
+placeholder_text = "Part description"
+editable = false
+shortcut_keys_enabled = false
+selecting_enabled = false
+deselect_on_focus_loss_enabled = false
+drag_and_drop_selection_enabled = false
+virtual_keyboard_enabled = false
+middle_mouse_paste_enabled = false
+wrap_mode = 1
+scroll_smooth = true
+
+[node name="Car" parent="." instance=ExtResource("3_ifcto")]
+position = Vector2(465, -105)
+rotation = -1.5708
+scale = Vector2(3, 3)
+selected_driveshaft = 1
+selected_subframe = 1
+selected_fenders = 1
+selected_f_bumper = 1
+selected_r_bumper = 1
+selected_hood = 1
+selected_headlights = 1
+selected_taillights = 1
+selected_mirrors = 1
+selected_brakes = 1
+selected_suspension = 1
+selected_wheels = 1
+selected_color = Color(0.52549, 0.627451, 0.454902, 1)
+
+[connection signal="pressed" from="Control/Suspension_Group/Suspension_button" to="ItemList" method="_on_suspension_button_pressed"]
+[connection signal="pressed" from="Control/Suspension_Group/Wheels_button" to="ItemList" method="_on_wheels_button_pressed"]
+[connection signal="pressed" from="Control/Suspension_Group/Tires_button" to="ItemList" method="_on_tires_button_pressed"]
+[connection signal="pressed" from="Control/Suspension_Group/Brakes_button" to="ItemList" method="_on_brakes_button_pressed"]
+[connection signal="pressed" from="Control/Main_Group/Engine_button" to="ItemList" method="_on_engine_button_pressed"]
+[connection signal="pressed" from="Control/Main_Group/Body_button" to="ItemList" method="_on_body_button_pressed"]
+[connection signal="pressed" from="Control/Main_Group/Suspension_wheel__button" to="ItemList" method="_on_suspension_wheel__button_pressed"]
+[connection signal="pressed" from="Control/Main_Group/Frame_button" to="ItemList" method="_on_frame_button_pressed"]
+[connection signal="pressed" from="Control/Main_Group/Add_engine_button" to="ItemList" method="_on_add_engine_button_pressed"]
+[connection signal="pressed" from="Control/Body_Group/Front _bumper_button" to="ItemList" method="_on_front__bumper_button_pressed"]
+[connection signal="pressed" from="Control/Body_Group/Rear_bumper_button" to="ItemList" method="_on_rear_bumper_button_pressed"]
+[connection signal="pressed" from="Control/Body_Group/Fenders_button" to="ItemList" method="_on_fenders_button_pressed"]
+[connection signal="pressed" from="Control/Body_Group/Hood_button" to="ItemList" method="_on_hood_button_pressed"]
+[connection signal="pressed" from="Control/Body_Group/Mirrors_button" to="ItemList" method="_on_mirrors_button_pressed"]
+[connection signal="pressed" from="Control/Body_Group/Headlights_button" to="ItemList" method="_on_headlights_button_pressed"]
+[connection signal="pressed" from="Control/Body_Group/Taillights_button" to="ItemList" method="_on_taillights_button_pressed"]
+[connection signal="pressed" from="Control/Body_Group/Spoiler_button" to="ItemList" method="_on_spoiler_button_pressed"]
+[connection signal="pressed" from="Control/Frame_Group/Subframe_button" to="ItemList" method="_on_subframe_button_pressed"]
+[connection signal="pressed" from="Control/Frame_Group/Driveshaft_button" to="ItemList" method="_on_driveshaft_button_pressed"]
+[connection signal="pressed" from="Control/Save" to="ItemList" method="_on_save_pressed"]
+[connection signal="pressed" from="Control/Load" to="ItemList" method="_on_load_pressed"]
+[connection signal="pressed" from="Control/Add" to="ItemList" method="_on_add_pressed"]
+[connection signal="item_clicked" from="ItemList" to="ItemList" method="_on_item_clicked"]
+[connection signal="item_selected" from="ItemList" to="ItemList" method="_on_item_selected"]
+[connection signal="timeout" from="Timer" to="ItemList" method="_on_timer_timeout"]

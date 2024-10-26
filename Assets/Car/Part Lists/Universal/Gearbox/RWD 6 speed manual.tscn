@@ -1,0 +1,39 @@
+[gd_scene load_steps=8 format=3 uid="uid://d2lp6nmklm5gd"]
+
+[ext_resource type="Script" path="res://Assets/Car/Code/Part_scripts/Gearbox.gd" id="1_vse3b"]
+[ext_resource type="Texture2D" uid="uid://jgxvufg2elnp" path="res://Textures/Cars/Universal/Gearbox/6 Speed RWD Gearbox.png" id="2_g5wdx"]
+[ext_resource type="Texture2D" uid="uid://cpuitmyucj05e" path="res://Textures/Cars/Universal/Gearbox/6 Speed RWD Gearbox NM.png" id="3_l3moy"]
+[ext_resource type="Texture2D" uid="uid://c6o48ufhqswnv" path="res://Textures/Cars/Universal/Gearbox/6 Speed RWD Gearbox Spec.png" id="4_kabqx"]
+[ext_resource type="AudioStream" uid="uid://cp7urvxas03y7" path="res://Sound/Engine Sounds/Gear_Shift.mp3" id="5_p5qyy"]
+[ext_resource type="Script" path="res://Sound/gearbox sound handler.gd" id="6_oqkg4"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_hwvtw"]
+diffuse_texture = ExtResource("2_g5wdx")
+normal_texture = ExtResource("3_l3moy")
+specular_texture = ExtResource("4_kabqx")
+specular_shininess = 0.5
+
+[node name="RWD 6 speed manual" type="Node2D"]
+script = ExtResource("1_vse3b")
+rarity = "rare"
+Part_Number = 2
+lenght = 21
+width = 11
+description = "A 6 speed manual gearbox designed for RWD Longitudinal layout"
+weight = 40
+shift_time = 0.45
+max_hp = 400
+max_tq = 550
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(17, 2)
+texture = SubResource("CanvasTexture_hwvtw")
+
+[node name="Driveshaft" type="Marker2D" parent="."]
+
+[node name="Engine" type="Marker2D" parent="."]
+position = Vector2(21, -1)
+
+[node name="gearbox sound handler" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_p5qyy")
+script = ExtResource("6_oqkg4")

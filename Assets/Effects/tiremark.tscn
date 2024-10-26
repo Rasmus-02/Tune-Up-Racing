@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=3 uid="uid://c88kqmb8nlq1o"]
+
+[ext_resource type="Script" path="res://Assets/Effects/Tiremarks.gd" id="1_8x2qe"]
+
+[sub_resource type="Curve" id="Curve_bvilg"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.0898437, 0.640065), 1.90283, 1.90283, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[node name="Tiremark" type="Node2D"]
+z_index = 2
+script = ExtResource("1_8x2qe")
+max_tiremarks = 1000
+detail = 10
+
+[node name="Tiremark_Far" type="Node2D" parent="."]
+top_level = true
+
+[node name="Tiremark_Close" type="Line2D" parent="."]
+top_level = true
+z_index = 15
+width_curve = SubResource("Curve_bvilg")
+default_color = Color(0.313726, 0.313726, 0.313726, 1)

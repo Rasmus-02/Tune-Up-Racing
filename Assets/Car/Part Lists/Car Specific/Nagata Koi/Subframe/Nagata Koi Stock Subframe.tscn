@@ -1,0 +1,22 @@
+[gd_scene load_steps=6 format=3 uid="uid://bmd2foldaf7g7"]
+
+[ext_resource type="Script" path="res://Assets/Car/Code/Part_scripts/Subframe.gd" id="1_so6ua"]
+[ext_resource type="Texture2D" uid="uid://biml5fj1ix2bx" path="res://Textures/Cars/Nagata Koi/Subframe/Nagata Koi Stock Subframe.png" id="2_clfqj"]
+[ext_resource type="Texture2D" uid="uid://d1akujfhp42oq" path="res://Textures/Cars/Nagata Koi/Subframe/Nagata Koi Stock Subframe NM.png" id="3_47ptk"]
+[ext_resource type="Texture2D" uid="uid://cc8a36fmtrg7h" path="res://Textures/Cars/Nagata Koi/Subframe/Nagata Koi Stock Subframe Spec.png" id="4_nahfa"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_0jkfa"]
+diffuse_texture = ExtResource("2_clfqj")
+normal_texture = ExtResource("3_47ptk")
+specular_texture = ExtResource("4_nahfa")
+specular_shininess = 0.5
+
+[node name="Nagata Koi Stock Subframe" type="Node2D"]
+script = ExtResource("1_so6ua")
+rarity = "uncommon"
+Part_Number = 1
+description = "The factory subframe for the Nagata Koi"
+weight = 15
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = SubResource("CanvasTexture_0jkfa")

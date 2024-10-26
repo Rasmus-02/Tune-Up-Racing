@@ -1,0 +1,38 @@
+[gd_scene load_steps=9 format=3 uid="uid://jb6hpfotjgo"]
+
+[ext_resource type="Script" path="res://Assets/Car/Code/Part_scripts/Hood.gd" id="1_b73a6"]
+[ext_resource type="Texture2D" uid="uid://o0cjdlsdrgkt" path="res://Textures/Cars/Nagata Koi/Hood/Nagata Koi Stock Hood.png" id="2_v0dm7"]
+[ext_resource type="Texture2D" uid="uid://cf1iawux7iwxv" path="res://Textures/Cars/Nagata Koi/Hood/Nagata Koi Stock Hood NM.png" id="3_vxisq"]
+[ext_resource type="Texture2D" uid="uid://bbnqwpq15xp52" path="res://Textures/Cars/Nagata Koi/Hood/Nagata Koi Stock Hood Spec.png" id="4_g0110"]
+[ext_resource type="Script" path="res://Textures/Cars/Color_selector.gd" id="5_4bc4p"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_hjvi5"]
+diffuse_texture = ExtResource("2_v0dm7")
+normal_texture = ExtResource("3_vxisq")
+specular_texture = ExtResource("4_g0110")
+specular_shininess = 0.5
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_yy507"]
+blend_mode = 1
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_wx45m"]
+polygon = PackedVector2Array(127.912, 10.3015, 127.912, -5.69846, 126.912, -15.6985, 123.912, -18.6985, 119.912, -26.6985, 119.912, -31.6985, 114.912, -33.6985, 69.9116, -33.6985, 69.9116, -32.6985, 72.9116, -29.6985, 74.9116, -25.6985, 77.9116, -12.6985, 78.9116, -10.6985, 78.9116, 15.3015, 77.9116, 17.3015, 74.9116, 30.3015, 72.9116, 34.3015, 69.9116, 37.3015, 69.9116, 38.3015, 114.912, 38.3015, 119.912, 36.3015, 119.912, 34.3015, 119.912, 31.3015, 123.912, 23.3015, 126.912, 20.3015)
+
+[node name="Nagata Koi Stock Hood" type="Node2D"]
+script = ExtResource("1_b73a6")
+rarity = "D"
+Part_Number = 1
+description = "The factory hood for the Nagata Koi"
+weight = 14
+downforce = 30
+drag = 0.03
+engine_cool_mod = 1.0
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = SubResource("CanvasTexture_hjvi5")
+script = ExtResource("5_4bc4p")
+
+[node name="LightOccluder2D2" type="LightOccluder2D" parent="Sprite2D"]
+material = SubResource("CanvasItemMaterial_yy507")
+position = Vector2(-29.9116, -2.30154)
+occluder = SubResource("OccluderPolygon2D_wx45m")

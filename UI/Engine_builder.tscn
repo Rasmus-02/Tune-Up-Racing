@@ -1,0 +1,254 @@
+[gd_scene load_steps=15 format=3 uid="uid://cfvt1v7055cx3"]
+
+[ext_resource type="Theme" uid="uid://chjt3puiiisoj" path="res://UI/Garage.tres" id="2_8ygsi"]
+[ext_resource type="Texture2D" uid="uid://dsn2n0qg2jv6c" path="res://Textures/UI/Engine_Builder/Block_Icon.png" id="2_dq81r"]
+[ext_resource type="Texture2D" uid="uid://86lgj1qu2lvd" path="res://Textures/UI/Engine_Builder/Internals_Icon.png" id="3_6p6e2"]
+[ext_resource type="Script" path="res://UI/Part_List_Ui_Engine.gd" id="3_pskxy"]
+[ext_resource type="Texture2D" uid="uid://bsms16m7dncxa" path="res://Textures/UI/Engine_Builder/Top_Icon.png" id="4_4v68k"]
+[ext_resource type="PackedScene" uid="uid://cc7166wai1oi2" path="res://Sound/button_click.tscn" id="4_ogyxq"]
+[ext_resource type="Texture2D" uid="uid://55khnjqd7cis" path="res://Textures/UI/Engine_Builder/Exhaust_Manifold_Icon.png" id="5_b2rte"]
+[ext_resource type="Texture2D" uid="uid://buup2gslhtcfy" path="res://Textures/UI/Engine_Builder/Intake_Manifold_Icon.png" id="6_nwh4v"]
+[ext_resource type="Texture2D" uid="uid://b12im7p6d8of1" path="res://Textures/UI/Engine_Builder/Airfilter_Icon.png" id="7_uhf0u"]
+[ext_resource type="Texture2D" uid="uid://dy5oxjdfxc56" path="res://Textures/UI/Engine_Builder/Tune Icon.png" id="8_teohb"]
+[ext_resource type="Texture2D" uid="uid://c0cququ2pfyj1" path="res://Textures/UI/Tuning/Boost Icon.png" id="10_kmf5u"]
+[ext_resource type="Texture2D" uid="uid://drlhyc44hyvne" path="res://Textures/UI/Tuning/Redline Icon.png" id="11_w8xpa"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_0t4y8"]
+light_mode = 1
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_k1tpp"]
+light_mode = 1
+
+[node name="Engine Builder" type="Node2D"]
+scale = Vector2(0.3, 0.3)
+
+[node name="Control" type="Control" parent="."]
+light_mask = 2
+material = SubResource("CanvasItemMaterial_0t4y8")
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 1017.74
+offset_top = 509.832
+offset_right = 1057.74
+offset_bottom = 549.832
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 4
+theme = ExtResource("2_8ygsi")
+
+[node name="VBoxContainer" type="HBoxContainer" parent="Control"]
+light_mask = 2
+material = SubResource("CanvasItemMaterial_0t4y8")
+custom_minimum_size = Vector2(20, 0)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -23.125
+anchor_top = -12.875
+anchor_right = -17.375
+anchor_bottom = 12.675
+offset_left = 258.0
+offset_top = -101.0
+offset_right = 712.0
+offset_bottom = -1039.0
+grow_horizontal = 2
+theme_override_constants/separation = 12
+
+[node name="Block_button" type="Button" parent="Control/VBoxContainer"]
+light_mask = 2
+material = SubResource("CanvasItemMaterial_0t4y8")
+layout_mode = 2
+theme_override_font_sizes/font_size = 56
+text = "    "
+icon = ExtResource("2_dq81r")
+icon_alignment = 1
+expand_icon = true
+
+[node name="Internals_button" type="Button" parent="Control/VBoxContainer"]
+light_mask = 2
+material = SubResource("CanvasItemMaterial_0t4y8")
+layout_mode = 2
+theme_override_font_sizes/font_size = 56
+text = "    "
+icon = ExtResource("3_6p6e2")
+icon_alignment = 1
+expand_icon = true
+
+[node name="Top_button" type="Button" parent="Control/VBoxContainer"]
+light_mask = 2
+material = SubResource("CanvasItemMaterial_0t4y8")
+layout_mode = 2
+theme_override_font_sizes/font_size = 56
+text = "    "
+icon = ExtResource("4_4v68k")
+icon_alignment = 1
+expand_icon = true
+
+[node name="Exhaust_manifold_button" type="Button" parent="Control/VBoxContainer"]
+light_mask = 2
+material = SubResource("CanvasItemMaterial_0t4y8")
+layout_mode = 2
+theme_override_font_sizes/font_size = 56
+text = "    "
+icon = ExtResource("5_b2rte")
+icon_alignment = 1
+expand_icon = true
+
+[node name="Intake_manifold_button" type="Button" parent="Control/VBoxContainer"]
+light_mask = 2
+material = SubResource("CanvasItemMaterial_0t4y8")
+layout_mode = 2
+theme_override_font_sizes/font_size = 56
+text = "    "
+icon = ExtResource("6_nwh4v")
+icon_alignment = 1
+expand_icon = true
+
+[node name="Air_filter_button" type="Button" parent="Control/VBoxContainer"]
+light_mask = 2
+material = SubResource("CanvasItemMaterial_0t4y8")
+layout_mode = 2
+theme_override_font_sizes/font_size = 56
+text = "    "
+icon = ExtResource("7_uhf0u")
+icon_alignment = 1
+expand_icon = true
+
+[node name="Tune_button" type="Button" parent="Control/VBoxContainer"]
+light_mask = 2
+material = SubResource("CanvasItemMaterial_0t4y8")
+layout_mode = 2
+theme_override_font_sizes/font_size = 56
+text = "    "
+icon = ExtResource("8_teohb")
+icon_alignment = 1
+expand_icon = true
+
+[node name="ItemList" type="ItemList" parent="Control"]
+light_mask = 2
+material = SubResource("CanvasItemMaterial_0t4y8")
+layout_mode = 0
+offset_left = -681.305
+offset_top = -509.832
+offset_right = -163.305
+offset_bottom = 1.16803
+theme_override_font_sizes/font_size = 0
+script = ExtResource("3_pskxy")
+
+[node name="TextEdit" type="TextEdit" parent="Control"]
+light_mask = 2
+material = SubResource("CanvasItemMaterial_0t4y8")
+layout_mode = 0
+offset_left = -681.763
+offset_top = 6.747
+offset_right = 26.237
+offset_bottom = 188.747
+placeholder_text = "Part description"
+editable = false
+shortcut_keys_enabled = false
+selecting_enabled = false
+deselect_on_focus_loss_enabled = false
+drag_and_drop_selection_enabled = false
+virtual_keyboard_enabled = false
+middle_mouse_paste_enabled = false
+wrap_mode = 1
+scroll_smooth = true
+
+[node name="Stats" type="TextEdit" parent="Control"]
+light_mask = 2
+material = SubResource("CanvasItemMaterial_k1tpp")
+layout_mode = 0
+offset_left = -155.305
+offset_top = -509.832
+offset_right = 27.695
+offset_bottom = 0.167969
+placeholder_text = "Stats"
+editable = false
+shortcut_keys_enabled = false
+selecting_enabled = false
+deselect_on_focus_loss_enabled = false
+drag_and_drop_selection_enabled = false
+virtual_keyboard_enabled = false
+middle_mouse_paste_enabled = false
+wrap_mode = 1
+scroll_smooth = true
+
+[node name="Button_Click" parent="Control" instance=ExtResource("4_ogyxq")]
+
+[node name="Tune" type="Control" parent="Control"]
+visible = false
+anchors_preset = 0
+offset_left = -661.073
+offset_top = -499.832
+offset_right = -621.073
+offset_bottom = -459.832
+
+[node name="Boost" type="Panel" parent="Control/Tune"]
+layout_mode = 2
+offset_left = 10.0
+offset_top = 7.0
+offset_right = 483.0
+offset_bottom = 64.0
+
+[node name="HSlider" type="HSlider" parent="Control/Tune/Boost"]
+layout_mode = 2
+offset_left = 210.0
+offset_top = 20.0
+offset_right = 460.0
+offset_bottom = 36.0
+max_value = 30.0
+
+[node name="Sprite2D" type="Sprite2D" parent="Control/Tune/Boost"]
+position = Vector2(26.6667, 29.6667)
+scale = Vector2(2.74188, 2.74188)
+texture = ExtResource("10_kmf5u")
+
+[node name="TextEdit" type="TextEdit" parent="Control/Tune/Boost"]
+layout_mode = 0
+offset_left = 60.0
+offset_top = -7.0
+offset_right = 207.0
+offset_bottom = 69.0
+text = "0.8 Bar"
+
+[node name="Redline" type="Panel" parent="Control/Tune"]
+layout_mode = 2
+offset_left = 10.0
+offset_top = 83.3333
+offset_right = 483.0
+offset_bottom = 140.333
+
+[node name="HSlider" type="HSlider" parent="Control/Tune/Redline"]
+layout_mode = 2
+offset_left = 210.0
+offset_top = 20.0
+offset_right = 460.0
+offset_bottom = 36.0
+min_value = 30.0
+max_value = 150.0
+value = 30.0
+
+[node name="Sprite2D" type="Sprite2D" parent="Control/Tune/Redline"]
+position = Vector2(26.6667, 29.6667)
+scale = Vector2(2.74188, 2.74188)
+texture = ExtResource("11_w8xpa")
+
+[node name="TextEdit2" type="TextEdit" parent="Control/Tune/Redline"]
+layout_mode = 0
+offset_left = 60.0
+offset_top = -7.0
+offset_right = 207.0
+offset_bottom = 69.0
+text = "7000 RPM"
+
+[connection signal="pressed" from="Control/VBoxContainer/Block_button" to="Control/ItemList" method="_on_block_button_pressed"]
+[connection signal="pressed" from="Control/VBoxContainer/Internals_button" to="Control/ItemList" method="_on_internals_button_pressed"]
+[connection signal="pressed" from="Control/VBoxContainer/Top_button" to="Control/ItemList" method="_on_top_button_pressed"]
+[connection signal="pressed" from="Control/VBoxContainer/Exhaust_manifold_button" to="Control/ItemList" method="_on_exhaust_manifold_button_pressed"]
+[connection signal="pressed" from="Control/VBoxContainer/Intake_manifold_button" to="Control/ItemList" method="_on_intake_manifold_button_pressed"]
+[connection signal="pressed" from="Control/VBoxContainer/Air_filter_button" to="Control/ItemList" method="_on_air_filter_button_pressed"]
+[connection signal="pressed" from="Control/VBoxContainer/Tune_button" to="Control/ItemList" method="_on_tune_button_pressed"]
+[connection signal="item_selected" from="Control/ItemList" to="Control/ItemList" method="_on_item_selected"]

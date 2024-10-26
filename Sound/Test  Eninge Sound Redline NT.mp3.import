@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://d3iey4nj0em1j"
+path="res://.godot/imported/Test  Eninge Sound Redline NT.mp3-28068608f5b1ded523618960e62650c4.mp3str"
+
+[deps]
+
+source_file="res://Sound/Test  Eninge Sound Redline NT.mp3"
+dest_files=["res://.godot/imported/Test  Eninge Sound Redline NT.mp3-28068608f5b1ded523618960e62650c4.mp3str"]
+
+[params]
+
+loop=true
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

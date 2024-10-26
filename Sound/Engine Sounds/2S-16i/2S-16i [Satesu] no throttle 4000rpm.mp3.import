@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://c15i6a8yd46bx"
+path="res://.godot/imported/2S-16i [Satesu] no throttle 4000rpm.mp3-13f63ca19dbe511fecc61657ac8b608b.mp3str"
+
+[deps]
+
+source_file="res://Sound/Engine Sounds/2S-16i/2S-16i [Satesu] no throttle 4000rpm.mp3"
+dest_files=["res://.godot/imported/2S-16i [Satesu] no throttle 4000rpm.mp3-13f63ca19dbe511fecc61657ac8b608b.mp3str"]
+
+[params]
+
+loop=true
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

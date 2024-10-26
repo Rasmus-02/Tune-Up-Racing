@@ -1,0 +1,30 @@
+[gd_scene load_steps=7 format=3 uid="uid://bbj7n0byeviw7"]
+
+[ext_resource type="Script" path="res://Assets/Car/Code/Part_scripts/Wheels.gd" id="1_ro2rv"]
+[ext_resource type="Texture2D" uid="uid://chb0a00231grq" path="res://Textures/Cars/Universal/Wheels/Cheap Wheels 180-220R16/Cheap Wheels 180-220R16.png" id="2_g3xwt"]
+[ext_resource type="Texture2D" uid="uid://bhlmlyfbwcbx6" path="res://Textures/Cars/Universal/Wheels/Cheap Wheels 180-220R16/Cheap Wheels 180-220R16 NM.png" id="3_0lm7j"]
+[ext_resource type="Texture2D" uid="uid://d2es7drd6vsah" path="res://Textures/Cars/Universal/Wheels/Cheap Wheels 180-220R16/Cheap Wheels 180-220R16 Spec.png" id="4_646tl"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_sfomr"]
+diffuse_texture = ExtResource("2_g3xwt")
+normal_texture = ExtResource("3_0lm7j")
+specular_texture = ExtResource("4_646tl")
+specular_shininess = 0.6
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_3g1rc"]
+polygon = PackedVector2Array(-11, -4, 11, -4, 11, -2, 10, -1, 10, 0, 11, 1, 11, 3, -11, 3, -11, 1, -10, 0, -10, -1, -11, -2)
+
+[node name="Cheap Alloy Wheels 200R16" type="Node2D"]
+script = ExtResource("1_ro2rv")
+rarity = "uncommon"
+Part_Number = 1
+description = "Cheap alloy wheels, nothing special about them but they get the job done"
+weight = 26
+max_tire_width = 200
+brake_cooling = 0.1
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = SubResource("CanvasTexture_sfomr")
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="Sprite2D"]
+occluder = SubResource("OccluderPolygon2D_3g1rc")

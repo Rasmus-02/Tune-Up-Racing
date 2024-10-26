@@ -1,0 +1,18 @@
+[gd_scene load_steps=5 format=3 uid="uid://dc08gcftuqtqr"]
+
+[ext_resource type="Script" path="res://Assets/Engine/Code/Engine_Part_Handler.gd" id="1_yluj7"]
+[ext_resource type="PackedScene" uid="uid://cctyed3jxvgm6" path="res://Assets/Engine/Part Lists/Part Selector/Part Selector engine.tscn" id="2_kijil"]
+[ext_resource type="PackedScene" uid="uid://562gipqro1ak" path="res://Assets/Engine/Part Lists/Engine Specific/Nagata 2S-16i/nagata_2s_16i_part_list.tscn" id="3_wwq5s"]
+[ext_resource type="PackedScene" uid="uid://0lggp6gpn8xa" path="res://Assets/Engine/Part Lists/Universal/Universal_part_list.tscn" id="4_t08m2"]
+
+[node name="Nagata 2S-16i" type="Node2D"]
+script = ExtResource("1_yluj7")
+
+[node name="Part Selector" parent="." instance=ExtResource("2_kijil")]
+
+[node name="Nagata 2S-16i Part List" parent="Part Selector" instance=ExtResource("3_wwq5s")]
+
+[node name="Universal Part List" parent="Part Selector" instance=ExtResource("4_t08m2")]
+
+[node name="Gearbox" type="Marker2D" parent="."]
+position = Vector2(-12, 0)

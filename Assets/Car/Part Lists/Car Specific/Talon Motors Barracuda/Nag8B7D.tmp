@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://dpsg4iic8nqcn"]
+
+[ext_resource type="Script" path="res://Assets/Car/Part Lists/Car Specific/Nagata Koi/Nagata Koi Part List.gd" id="1_0x2hi"]
+
+[node name="Nagata Koi Part List" type="Node2D"]
+script = ExtResource("1_0x2hi")

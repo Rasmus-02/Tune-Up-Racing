@@ -1,0 +1,25 @@
+[gd_scene load_steps=2 format=3 uid="uid://fawbg2w0nh2c"]
+
+[ext_resource type="Script" path="res://Assets/Car/Part Lists/Part Selector/Part Selector car.gd" id="1_upnqy"]
+
+[node name="Part Selector" type="Node2D"]
+script = ExtResource("1_upnqy")
+selected_car_key = null
+selected_engine = null
+selected_chassi = null
+selected_driveshaft = null
+selected_subframe = null
+selected_fenders = null
+selected_f_bumper = null
+selected_r_bumper = null
+selected_hood = null
+selected_headlights = null
+selected_taillights = null
+selected_spoiler = null
+selected_mirrors = null
+selected_brakes = null
+selected_suspension = null
+selected_tires = null
+selected_wheels = null
+selected_gearbox = null
+selected_color = null

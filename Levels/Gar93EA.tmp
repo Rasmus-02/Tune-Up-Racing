@@ -1,0 +1,72 @@
+[gd_scene load_steps=4 format=3 uid="uid://bpjbw8pi8ej12"]
+
+[ext_resource type="Script" path="res://Levels/Garage.gd" id="1_mx11h"]
+[ext_resource type="Theme" uid="uid://chjt3puiiisoj" path="res://UI/Garage.tres" id="2_kvibm"]
+[ext_resource type="PackedScene" uid="uid://i30mnkgnwuom" path="res://Assets/Engine/Engine.tscn" id="3_p7let"]
+
+[node name="Garage" type="Node2D"]
+script = ExtResource("1_mx11h")
+
+[node name="Current_Scene" type="Node2D" parent="."]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(5, 5)
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_right = 40.0
+offset_bottom = 39.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.2, 0.2)
+theme = ExtResource("2_kvibm")
+
+[node name="Exit_button" type="Button" parent="Control"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 815.0
+offset_top = -534.5
+offset_right = 918.0
+offset_bottom = -445.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "<--"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Car_Editor_button" type="Button" parent="Control/VBoxContainer"]
+layout_mode = 2
+focus_mode = 0
+toggle_mode = true
+text = "Car Editor"
+
+[node name="Add_engine_button" type="Button" parent="Control/VBoxContainer"]
+layout_mode = 2
+text = "Add Engine"
+
+[node name="Engine" parent="Control/VBoxContainer" instance=ExtResource("3_p7let")]
+
+[connection signal="pressed" from="Control/Exit_button" to="." method="_on_exit_button_pressed"]
+[connection signal="pressed" from="Control/VBoxContainer/Car_Editor_button" to="." method="_on_car_editor_button_pressed"]
+[connection signal="pressed" from="Control/VBoxContainer/Add_engine_button" to="." method="_on_add_engine_button_pressed"]

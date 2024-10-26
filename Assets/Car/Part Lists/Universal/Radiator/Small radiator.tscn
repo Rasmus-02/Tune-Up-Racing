@@ -1,0 +1,28 @@
+[gd_scene load_steps=7 format=3 uid="uid://ci3hcubb8s2v7"]
+
+[ext_resource type="Script" path="res://Assets/Engine/Part_scripts/Radiator.gd" id="1_nr88p"]
+[ext_resource type="Texture2D" uid="uid://ci8a0mmn0qm20" path="res://Textures/Cars/Universal/Radiator/Small Radiator.png" id="2_e732r"]
+[ext_resource type="Texture2D" uid="uid://b81vrxd1j1iqs" path="res://Textures/Cars/Universal/Radiator/Small Radiator NM.png" id="3_ljfps"]
+[ext_resource type="Texture2D" uid="uid://c1460742f8bpw" path="res://Textures/Cars/Universal/Radiator/Small Radiator Spec.png" id="4_kgvyc"]
+[ext_resource type="PackedScene" uid="uid://wxkv830afosy" path="res://Assets/Car/Part Lists/Universal/Radiator/Radiator Piping.tscn" id="5_0t8c5"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_xfat8"]
+diffuse_texture = ExtResource("2_e732r")
+normal_texture = ExtResource("3_ljfps")
+specular_texture = ExtResource("4_kgvyc")
+specular_shininess = 0.5
+
+[node name="Small Radiator" type="Node2D"]
+script = ExtResource("1_nr88p")
+rarity = "uncommon"
+Part_Number = 1
+width = 2
+description = "A small and cheap radiator designed for less demanding engines"
+weight = 4
+cooling = 1.0
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = SubResource("CanvasTexture_xfat8")
+
+[node name="Piping" parent="." instance=ExtResource("5_0t8c5")]
+position = Vector2(0, -4)

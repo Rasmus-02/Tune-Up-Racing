@@ -1,0 +1,28 @@
+[gd_scene load_steps=6 format=3 uid="uid://d358xyjy6dimg"]
+
+[ext_resource type="Script" path="res://Assets/Car/Code/Part_scripts/Driveshaft.gd" id="1_stjl3"]
+[ext_resource type="Texture2D" uid="uid://dwx72spkmuof0" path="res://Textures/Cars/Nagata Koi/Driveshaft/Nagata Koi Stock FWD Driveshaft.png" id="2_slibe"]
+[ext_resource type="Texture2D" uid="uid://df67hi5vvkp6e" path="res://Textures/Cars/Nagata Koi/Driveshaft/Nagata Koi Stock FWD Driveshaft NM.png" id="3_ytihh"]
+[ext_resource type="Texture2D" uid="uid://dweu5w5lwtqah" path="res://Textures/Cars/Nagata Koi/Driveshaft/Nagata Koi Stock FWD Driveshaft Spec.png" id="4_vrdgk"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_c5td7"]
+diffuse_texture = ExtResource("2_slibe")
+normal_texture = ExtResource("3_ytihh")
+specular_texture = ExtResource("4_vrdgk")
+specular_shininess = 0.5
+
+[node name="Nagata Koi Stock FWD Driveshaft" type="Node2D"]
+script = ExtResource("1_stjl3")
+rarity = "uncommon"
+Part_Number = 1
+description = "The factory front wheel drive driveshaft that comes in the Nagata Koi"
+weight = 10
+drivetrain = 1
+max_torque = 350
+drivetrain_loss = 0.15
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = SubResource("CanvasTexture_c5td7")
+
+[node name="Gearbox" type="Marker2D" parent="."]
+position = Vector2(64, 14)

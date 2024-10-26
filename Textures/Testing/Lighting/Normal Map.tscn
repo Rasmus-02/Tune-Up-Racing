@@ -1,0 +1,96 @@
+[gd_scene load_steps=9 format=3 uid="uid://bma808ls1of56"]
+
+[ext_resource type="PackedScene" uid="uid://cobxq78ld7oev" path="res://Levels/Tilemaps/Guardrails.tscn" id="1_fxij4"]
+[ext_resource type="Texture2D" uid="uid://ctid5ahguofay" path="res://Textures/Testing/efbqachv20i81.webp" id="1_ttqqy"]
+[ext_resource type="Texture2D" uid="uid://dds3p523p0ik5" path="res://Shaders/light.png" id="2_5c84x"]
+[ext_resource type="PackedScene" uid="uid://bgll7sry5s85p" path="res://Assets/Car/Part Lists/Car Specific/Nagata Koi/R_bumper/Nagata Koi Stock Rear Bumper.tscn" id="4_agx6x"]
+[ext_resource type="PackedScene" uid="uid://dkxii408jbnrp" path="res://Assets/Car/Part Lists/Car Specific/Nagata Koi/Hood/Nagata Koi Stock Hood.tscn" id="4_mrfpq"]
+[ext_resource type="PackedScene" uid="uid://cxndeyf6ulfcb" path="res://Assets/Car/Part Lists/Car Specific/Nagata Koi/Fenders/Nagata Koi Stock Fenders.tscn" id="5_u0506"]
+[ext_resource type="PackedScene" uid="uid://bm3sv27gn2hc4" path="res://Assets/Car/Part Lists/Car Specific/Nagata Koi/F_bumper/Nagata Koi Stock Front Bumper.tscn" id="6_puat7"]
+[ext_resource type="PackedScene" uid="uid://dtm32ism4pjlr" path="res://Assets/Car/Part Lists/Car Specific/Nagata Koi/Chassi/Nagata Koi Chassi.tscn" id="7_mciei"]
+
+[node name="Node2D" type="Node2D"]
+metadata/_edit_vertical_guides_ = [-105.0]
+
+[node name="Guardrails" parent="." instance=ExtResource("1_fxij4")]
+layer_0/tile_data = PackedInt32Array(7143418, 0, 0)
+
+[node name="Level" type="Sprite2D" parent="."]
+position = Vector2(-813, 416)
+texture = ExtResource("1_ttqqy")
+
+[node name="Light3" type="Node2D" parent="."]
+position = Vector2(4, -10)
+rotation = -0.205949
+scale = Vector2(11.41, 2.565)
+skew = -3.79086e-05
+
+[node name="TextureLight" type="PointLight2D" parent="Light3"]
+position = Vector2(0.719849, -0.778046)
+scale = Vector2(0.1, 0.1)
+color = Color(0.47451, 0.105882, 0.352941, 1)
+shadow_color = Color(0, 0, 0, 0.184314)
+shadow_filter = 2
+shadow_filter_smooth = 0.5
+texture = ExtResource("2_5c84x")
+height = 35.0
+
+[node name="Shadow" type="PointLight2D" parent="Light3"]
+position = Vector2(-0.247603, -0.873316)
+color = Color(0.47451, 0.105882, 0.352941, 1)
+shadow_enabled = true
+shadow_filter = 2
+texture = ExtResource("2_5c84x")
+texture_scale = 0.08
+height = 25.0
+
+[node name="Light2" type="Node2D" parent="."]
+position = Vector2(-154, -380)
+rotation = 4.49422
+scale = Vector2(3, 0.2)
+
+[node name="TextureLight" type="PointLight2D" parent="Light2"]
+position = Vector2(-1.83344, -23.0149)
+energy = 0.8
+shadow_color = Color(0, 0, 0, 0.184314)
+shadow_filter = 2
+shadow_filter_smooth = 0.5
+texture = ExtResource("2_5c84x")
+texture_scale = 2.7
+height = 35.0
+
+[node name="Shadow" type="PointLight2D" parent="Light2"]
+position = Vector2(8.63466, -191.506)
+energy = 0.4
+shadow_enabled = true
+shadow_filter = 2
+texture = ExtResource("2_5c84x")
+texture_scale = 0.8
+height = 25.0
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(-50, -13)
+rotation = 2.90424
+scale = Vector2(0.2, 0.2)
+zoom = Vector2(10, 10)
+
+[node name="Level visibility" type="CanvasModulate" parent="."]
+position = Vector2(0, 1)
+color = Color(0.0823529, 0.0980392, 0.121569, 1)
+
+[node name="Nagata Koi Chassi" parent="." instance=ExtResource("7_mciei")]
+position = Vector2(-50, -9)
+rotation = -5.24471
+scale = Vector2(0.2, 0.2)
+
+[node name="Nagata Koi Stock Rear Bumper" parent="Nagata Koi Chassi" instance=ExtResource("4_agx6x")]
+position = Vector2(7.62939e-06, 3.05176e-05)
+
+[node name="Nagata Koi Stock Hood" parent="Nagata Koi Chassi" instance=ExtResource("4_mrfpq")]
+position = Vector2(0, 1.52588e-05)
+
+[node name="Nagata Koi Stock Fenders" parent="Nagata Koi Chassi" instance=ExtResource("5_u0506")]
+position = Vector2(-1.52588e-05, 0)
+
+[node name="Nagata Koi Stock Front Buper" parent="Nagata Koi Chassi" instance=ExtResource("6_puat7")]
+position = Vector2(0, 7.62939e-06)

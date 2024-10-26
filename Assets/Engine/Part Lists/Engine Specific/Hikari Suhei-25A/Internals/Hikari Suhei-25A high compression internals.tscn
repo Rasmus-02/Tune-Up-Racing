@@ -1,0 +1,26 @@
+[gd_scene load_steps=6 format=3 uid="uid://cxp546dt1oqmw"]
+
+[ext_resource type="Script" path="res://Assets/Engine/Part_scripts/Internals.gd" id="1_qpr1b"]
+[ext_resource type="Texture2D" uid="uid://d3eao5yk6r4gd" path="res://Textures/Engines/Hikari Suhei-25A/Internals/Hikai Suhei-25A Stock Internals.png" id="2_bywla"]
+[ext_resource type="Texture2D" uid="uid://doq5o8ebif6fy" path="res://Textures/Engines/Hikari Suhei-25A/Internals/Hikai Suhei-25A Stock Internals NM.png" id="3_pbraj"]
+[ext_resource type="Texture2D" uid="uid://ce387pka8mgob" path="res://Textures/Engines/Hikari Suhei-25A/Internals/Hikai Suhei-25A Stock Internals Spec.png" id="4_oujwt"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_8qrlk"]
+diffuse_texture = ExtResource("2_bywla")
+normal_texture = ExtResource("3_pbraj")
+specular_texture = ExtResource("4_oujwt")
+specular_shininess = 0.5
+
+[node name="Hikari Suhei-25A High Compression Internals" type="Node2D"]
+script = ExtResource("1_qpr1b")
+rarity = "uncommon"
+Engine_ID = 3
+Part_Number = 2
+description = "High compression variant of the factory internals for the Hikari Suhei-25A Engine, designed for naturally aspirated and low boost engines"
+weight = 33
+compression = 11.0
+max_rpm = 8000
+max_tq = 350
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = SubResource("CanvasTexture_8qrlk")

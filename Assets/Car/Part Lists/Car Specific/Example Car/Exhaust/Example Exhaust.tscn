@@ -1,0 +1,36 @@
+[gd_scene load_steps=9 format=3 uid="uid://xgnsnrqep7v6"]
+
+[ext_resource type="Script" path="res://Assets/Car/Code/Part_scripts/Exhaust.gd" id="1_w4v4d"]
+[ext_resource type="Texture2D" uid="uid://c0jfdsyin8q3y" path="res://Textures/Cars/Nagata Koi/Exhaust/Nagata Koi Stock Exhaust.png" id="2_pgso2"]
+[ext_resource type="Texture2D" uid="uid://cwtulu6al3dqg" path="res://Textures/Cars/Nagata Koi/Exhaust/Nagata Koi Stock Exhaust_NM.png" id="3_5fd01"]
+[ext_resource type="Texture2D" uid="uid://cn2yjmfdgfa5a" path="res://Textures/Cars/Nagata Koi/Exhaust/Nagata Koi Stock Exhaust_Spec.png" id="4_uaq4o"]
+[ext_resource type="Script" path="res://Assets/Effects/Backfire.gd" id="5_spvu3"]
+[ext_resource type="AudioStream" uid="uid://cfvwt4fi2efkr" path="res://Sound/Engine Sounds/Backfire.mp3" id="6_cyftx"]
+[ext_resource type="PackedScene" uid="uid://b1agqhrv0psca" path="res://Assets/Effects/Backfire.tscn" id="7_sg130"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_lr5dr"]
+diffuse_texture = ExtResource("2_pgso2")
+normal_texture = ExtResource("3_5fd01")
+specular_texture = ExtResource("4_uaq4o")
+specular_shininess = 0.65
+
+[node name="Nagata Koi Stock Exhaust" type="Node2D"]
+script = ExtResource("1_w4v4d")
+rarity = "D"
+Part_Number = 1
+description = "The Stock Exhaust that comes with the Nagata Koi"
+weight = 25
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = SubResource("CanvasTexture_lr5dr")
+
+[node name="Backfire" type="Node2D" parent="."]
+script = ExtResource("5_spvu3")
+
+[node name="Backfire_Sound" type="AudioStreamPlayer2D" parent="Backfire"]
+stream = ExtResource("6_cyftx")
+
+[node name="Exhaust_1" type="Marker2D" parent="Backfire"]
+position = Vector2(-105, 28)
+
+[node name="Backfire" parent="Backfire/Exhaust_1" instance=ExtResource("7_sg130")]

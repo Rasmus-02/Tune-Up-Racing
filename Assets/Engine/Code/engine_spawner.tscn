@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://t73q80dtia40"]
+
+[ext_resource type="Script" path="res://Assets/Engine/Code/Engine_spawner.gd" id="1_toipv"]
+
+[node name="Engine_spawner" type="Node2D"]
+script = ExtResource("1_toipv")

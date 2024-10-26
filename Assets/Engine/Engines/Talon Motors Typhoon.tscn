@@ -1,0 +1,43 @@
+[gd_scene load_steps=11 format=3 uid="uid://cway7ixk8700p"]
+
+[ext_resource type="PackedScene" uid="uid://cctyed3jxvgm6" path="res://Assets/Engine/Part Lists/Part Selector/Part Selector engine.tscn" id="2_k7a4v"]
+[ext_resource type="PackedScene" uid="uid://8p8g1ahw0qts" path="res://Assets/Engine/Part Lists/Engine Specific/Talon Motors Typhoon/talon_motors_typhoon part list.tscn" id="3_fsnsk"]
+[ext_resource type="PackedScene" uid="uid://0lggp6gpn8xa" path="res://Assets/Engine/Part Lists/Universal/Universal part list.tscn" id="4_850ut"]
+[ext_resource type="Texture2D" uid="uid://blbc627hiqn00" path="res://Textures/Engines/Talon Motors Typhoon/Radiator/Typhoon Radiator Piping Transverse.png" id="4_v1upi"]
+[ext_resource type="Texture2D" uid="uid://dpk281jxvby1b" path="res://Textures/Engines/Talon Motors Typhoon/Radiator/Typhoon Radiator Piping Transverse NM.png" id="5_3u558"]
+[ext_resource type="Texture2D" uid="uid://dmvbxx2hwer21" path="res://Textures/Engines/Talon Motors Typhoon/Radiator/Typhoon Radiator Piping Longitudinal.png" id="6_vogme"]
+[ext_resource type="Texture2D" uid="uid://cx30wl6lgfte3" path="res://Textures/Engines/Talon Motors Typhoon/Radiator/Typhoon Radiator Piping Longitudinal NM.png" id="7_gkn4s"]
+[ext_resource type="PackedScene" uid="uid://c8il6nkvjwonk" path="res://Sound/Turbo and Supercharge Sounds/Boost_Sound_Handler.tscn" id="8_8djia"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_cp7nc"]
+diffuse_texture = ExtResource("4_v1upi")
+normal_texture = ExtResource("5_3u558")
+specular_texture = ExtResource("4_v1upi")
+specular_shininess = 0.5
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_5rrsh"]
+diffuse_texture = ExtResource("6_vogme")
+normal_texture = ExtResource("7_gkn4s")
+specular_texture = ExtResource("6_vogme")
+specular_shininess = 0.5
+
+[node name="Talon Motors Typhoon" type="Node2D"]
+
+[node name="Part Selector" parent="." instance=ExtResource("2_k7a4v")]
+
+[node name="Talon Motors Typhoon Part List" parent="Part Selector" instance=ExtResource("3_fsnsk")]
+
+[node name="Universal Part List" parent="Part Selector" instance=ExtResource("4_850ut")]
+
+[node name="Gearbox" type="Marker2D" parent="."]
+position = Vector2(-19, 0)
+
+[node name="Radiator_Piping_Transverse" type="Sprite2D" parent="."]
+visible = false
+texture = SubResource("CanvasTexture_cp7nc")
+
+[node name="Radiator_Piping_Longitudinal" type="Sprite2D" parent="."]
+visible = false
+texture = SubResource("CanvasTexture_5rrsh")
+
+[node name="Boost_Sound_Handler" parent="." instance=ExtResource("8_8djia")]

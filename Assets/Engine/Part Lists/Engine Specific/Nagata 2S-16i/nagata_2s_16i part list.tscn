@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://562gipqro1ak"]
+
+[ext_resource type="Script" path="res://Assets/Engine/Part Lists/Engine Specific/Nagata 2S-16i/Nagata 2S-16i Part List.gd" id="1_ni3qk"]
+
+[node name="Nagata 2S-16i Part List" type="Node2D"]
+script = ExtResource("1_ni3qk")

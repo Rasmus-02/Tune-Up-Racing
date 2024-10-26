@@ -1,0 +1,18 @@
+[gd_scene load_steps=5 format=3 uid="uid://c8il6nkvjwonk"]
+
+[ext_resource type="Script" path="res://Sound/Turbo and Supercharge Sounds/Turbo_Sound_Controller.gd" id="1_h0pbv"]
+[ext_resource type="AudioStream" uid="uid://d2lxrhifihxib" path="res://Sound/Engine Sounds/Turbo2.mp3" id="2_2evv7"]
+[ext_resource type="AudioStream" uid="uid://b2sdf1l8owhqn" path="res://Sound/Engine Sounds/Turbo_Surge.mp3" id="3_ky2hm"]
+[ext_resource type="AudioStream" uid="uid://cugn6qytj5x4" path="res://Sound/Engine Sounds/Supercharger.mp3" id="4_6oj16"]
+
+[node name="Boost_Sound_Handler" type="Node2D"]
+script = ExtResource("1_h0pbv")
+
+[node name="Turbo_charge" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("2_2evv7")
+
+[node name="Turbo_flutter" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_ky2hm")
+
+[node name="Supercharger" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_6oj16")

@@ -1,0 +1,134 @@
+[gd_scene load_steps=31 format=3 uid="uid://wxkv830afosy"]
+
+[ext_resource type="Texture2D" uid="uid://drvx2dkyrewf4" path="res://Textures/Cars/Universal/Radiator/Piping/Radiator Extra piping 2.png" id="1_64mep"]
+[ext_resource type="Texture2D" uid="uid://dji0mjqmcs8rt" path="res://Textures/Cars/Universal/Radiator/Piping/Radiator Extra piping 2 NM.png" id="2_vtn03"]
+[ext_resource type="Texture2D" uid="uid://b6fo7d6y7ubfp" path="res://Textures/Cars/Universal/Radiator/Piping/Radiator Extra piping 4.png" id="3_7mtms"]
+[ext_resource type="Texture2D" uid="uid://tvpnc2w6di5a" path="res://Textures/Cars/Universal/Radiator/Piping/Radiator Extra piping 4 NM.png" id="4_c655y"]
+[ext_resource type="Texture2D" uid="uid://ba1tnyavmmxv8" path="res://Textures/Cars/Universal/Radiator/Piping/Radiator Extra piping 6.png" id="5_7prja"]
+[ext_resource type="Texture2D" uid="uid://bayyyl7gdo3x2" path="res://Textures/Cars/Universal/Radiator/Piping/Radiator Extra piping 20.png" id="5_vcyk7"]
+[ext_resource type="Texture2D" uid="uid://bsca788u85nyp" path="res://Textures/Cars/Universal/Radiator/Piping/Radiator Extra piping 6 NM.png" id="6_4qvc0"]
+[ext_resource type="Texture2D" uid="uid://ulabtqyfo5fm" path="res://Textures/Cars/Universal/Radiator/Piping/Radiator Extra piping 20 NM.png" id="6_n33hy"]
+[ext_resource type="Texture2D" uid="uid://ek1lu8bg1cwr" path="res://Textures/Cars/Universal/Radiator/Piping/Radiator Extra piping 10 NM.png" id="6_v3nd8"]
+[ext_resource type="Texture2D" uid="uid://urx6clxek1vm" path="res://Textures/Cars/Universal/Radiator/Piping/Radiator Extra piping 8.png" id="7_4i3at"]
+[ext_resource type="Texture2D" uid="uid://cim4yvyxfvd4g" path="res://Textures/Cars/Universal/Radiator/Piping/Radiator Extra piping 8 NM.png" id="8_x8afs"]
+[ext_resource type="Texture2D" uid="uid://dg4rmo4spwwm0" path="res://Textures/Cars/Universal/Radiator/Piping/Radiator Extra piping 10.png" id="9_bo0bn"]
+[ext_resource type="Texture2D" uid="uid://bl1pid2png1qt" path="res://Textures/Cars/Universal/Radiator/Piping/Radiator Extra piping 12.png" id="10_bwhjd"]
+[ext_resource type="Texture2D" uid="uid://cc8pkdkp2cggu" path="res://Textures/Cars/Universal/Radiator/Piping/Radiator Extra piping 12 NM.png" id="11_l8sy6"]
+[ext_resource type="Texture2D" uid="uid://2eylcf7k6tno" path="res://Textures/Cars/Universal/Radiator/Piping/Radiator Extra piping 14.png" id="12_mrkte"]
+[ext_resource type="Texture2D" uid="uid://dcvadlf04vair" path="res://Textures/Cars/Universal/Radiator/Piping/Radiator Extra piping 14 NM.png" id="13_6dddh"]
+[ext_resource type="Texture2D" uid="uid://ba66ydeavmiao" path="res://Textures/Cars/Universal/Radiator/Piping/Radiator Extra piping 16.png" id="14_5ob8f"]
+[ext_resource type="Texture2D" uid="uid://chljdf7w46dk5" path="res://Textures/Cars/Universal/Radiator/Piping/Radiator Extra piping 16 NM.png" id="15_swf8i"]
+[ext_resource type="Texture2D" uid="uid://b75kr1fc76v7a" path="res://Textures/Cars/Universal/Radiator/Piping/Radiator Extra piping 18.png" id="16_xm0vy"]
+[ext_resource type="Texture2D" uid="uid://b4qiulwrnbv41" path="res://Textures/Cars/Universal/Radiator/Piping/Radiator Extra piping 18 NM.png" id="17_1w54v"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_03160"]
+diffuse_texture = ExtResource("1_64mep")
+normal_texture = ExtResource("2_vtn03")
+specular_texture = ExtResource("1_64mep")
+specular_shininess = 0.5
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_gq5vy"]
+diffuse_texture = ExtResource("3_7mtms")
+normal_texture = ExtResource("4_c655y")
+specular_texture = ExtResource("3_7mtms")
+specular_shininess = 0.5
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_w3c1r"]
+diffuse_texture = ExtResource("5_7prja")
+normal_texture = ExtResource("6_4qvc0")
+specular_texture = ExtResource("5_7prja")
+specular_shininess = 0.5
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_3hhod"]
+diffuse_texture = ExtResource("7_4i3at")
+normal_texture = ExtResource("8_x8afs")
+specular_texture = ExtResource("7_4i3at")
+specular_shininess = 0.5
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_qhify"]
+diffuse_texture = ExtResource("9_bo0bn")
+normal_texture = ExtResource("6_v3nd8")
+specular_texture = ExtResource("9_bo0bn")
+specular_shininess = 0.5
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_eno51"]
+diffuse_texture = ExtResource("10_bwhjd")
+normal_texture = ExtResource("11_l8sy6")
+specular_texture = ExtResource("10_bwhjd")
+specular_shininess = 0.5
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_6jt7d"]
+diffuse_texture = ExtResource("12_mrkte")
+normal_texture = ExtResource("13_6dddh")
+specular_texture = ExtResource("12_mrkte")
+specular_shininess = 0.5
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_l65q6"]
+diffuse_texture = ExtResource("14_5ob8f")
+normal_texture = ExtResource("15_swf8i")
+specular_texture = ExtResource("14_5ob8f")
+specular_shininess = 0.5
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_i6y38"]
+diffuse_texture = ExtResource("16_xm0vy")
+normal_texture = ExtResource("17_1w54v")
+specular_texture = ExtResource("16_xm0vy")
+specular_shininess = 0.5
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_no842"]
+diffuse_texture = ExtResource("5_vcyk7")
+normal_texture = ExtResource("6_n33hy")
+specular_texture = ExtResource("5_vcyk7")
+specular_shininess = 0.5
+
+[node name="Piping" type="Node2D"]
+
+[node name="2" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(0, -1)
+texture = SubResource("CanvasTexture_03160")
+
+[node name="4" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(0, -3)
+texture = SubResource("CanvasTexture_gq5vy")
+
+[node name="6" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(0, -5)
+texture = SubResource("CanvasTexture_w3c1r")
+
+[node name="8" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(0, -7)
+texture = SubResource("CanvasTexture_3hhod")
+
+[node name="10" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(0, -9)
+texture = SubResource("CanvasTexture_qhify")
+
+[node name="12" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(0, -11)
+texture = SubResource("CanvasTexture_eno51")
+
+[node name="14" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(0, -13)
+texture = SubResource("CanvasTexture_6jt7d")
+
+[node name="16" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(0, -15)
+texture = SubResource("CanvasTexture_l65q6")
+
+[node name="18" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(0, -17)
+texture = SubResource("CanvasTexture_i6y38")
+
+[node name="20" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(0, -19)
+texture = SubResource("CanvasTexture_no842")

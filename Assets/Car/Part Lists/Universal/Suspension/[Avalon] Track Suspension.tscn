@@ -1,0 +1,24 @@
+[gd_scene load_steps=6 format=3 uid="uid://ddvexs70kj3m7"]
+
+[ext_resource type="Script" path="res://Assets/Car/Code/Part_scripts/Suspension.gd" id="1_qrifr"]
+[ext_resource type="Texture2D" uid="uid://bnhsuvkyr86mb" path="res://Textures/Cars/Universal/Suspension/[Avalon] Track Suspension.png" id="2_y6dr8"]
+[ext_resource type="Texture2D" uid="uid://dfnt21mdvhnf1" path="res://Textures/Cars/Universal/Suspension/Passanger car standard suspension NM.png" id="3_vcrrc"]
+[ext_resource type="Texture2D" uid="uid://cormh54ruwwy6" path="res://Textures/Cars/Universal/Suspension/Passanger car standard suspension Spec.png" id="4_vx181"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_qa72n"]
+diffuse_texture = ExtResource("2_y6dr8")
+normal_texture = ExtResource("3_vcrrc")
+specular_texture = ExtResource("4_vx181")
+specular_shininess = 0.5
+
+[node name="[Avalon] Track Suspension" type="Node2D"]
+z_index = 101
+script = ExtResource("1_qrifr")
+rarity = "epic"
+Part_Number = 2
+description = "A coilover suspension set designed to great precision by Avalon for optimal traction around the corners on the racetrack "
+weight = 20
+handling_bonus = 1.2
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = SubResource("CanvasTexture_qa72n")

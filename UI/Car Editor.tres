@@ -1,0 +1,122 @@
+[gd_resource type="Theme" load_steps=25 format=3 uid="uid://drv1vcvrvm656"]
+
+[ext_resource type="Texture2D" uid="uid://br16xjej4h87r" path="res://Textures/UI/Car_Builder/Slider.png" id="1_850ff"]
+[ext_resource type="Texture2D" uid="uid://bfsww3mqisd2h" path="res://Textures/UI/Car_Builder/Editor UI Scroll Bar.png" id="1_a6lum"]
+[ext_resource type="Texture2D" uid="uid://bfiuqlmiwfcbr" path="res://Textures/UI/Car_Builder/Slider_Selected.png" id="2_jd044"]
+[ext_resource type="FontFile" uid="uid://di6d0fynxwcgs" path="res://UI/Fonts/m3x6.ttf" id="2_ybgyt"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_t0kyr"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_467w0"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(1, 1, 1, 1)
+border_blend = true
+corner_radius_top_left = 1
+corner_radius_top_right = 1
+corner_radius_bottom_right = 1
+corner_radius_bottom_left = 1
+anti_aliasing = false
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_aexb4"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+corner_radius_top_left = 1
+corner_radius_top_right = 1
+corner_radius_bottom_right = 1
+corner_radius_bottom_left = 1
+anti_aliasing = false
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_3mb5i"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ncyrr"]
+bg_color = Color(1, 1, 1, 0.227451)
+border_color = Color(1, 1, 1, 0.211765)
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_t1m40"]
+diffuse_texture = ExtResource("1_850ff")
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_1iuhe"]
+diffuse_texture = ExtResource("1_850ff")
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_s0xk7"]
+diffuse_texture = ExtResource("2_jd044")
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_py1tv"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_8a1sp"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2j53a"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(0.1, 0.1, 0.1, 0.6)
+corner_radius_top_left = 1
+corner_radius_top_right = 1
+corner_radius_bottom_right = 1
+corner_radius_bottom_left = 1
+corner_detail = 5
+anti_aliasing = false
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_sxb43"]
+content_margin_left = 3.0
+bg_color = Color(0.596078, 0.482353, 0.278431, 1)
+corner_detail = 1
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_x855o"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jexri"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_35qxa"]
+bg_color = Color(0.670588, 0.6, 0.333333, 1)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_6b54q"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_4gwml"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_sgqml"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_fgl5c"]
+texture = ExtResource("1_a6lum")
+expand_margin_left = 2.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5nxue"]
+bg_color = Color(0.313726, 0.313726, 0.313726, 1)
+corner_detail = 1
+expand_margin_left = 2.0
+
+[resource]
+default_font = ExtResource("2_ybgyt")
+default_font_size = 16
+Button/styles/disabled = SubResource("StyleBoxEmpty_t0kyr")
+Button/styles/focus = SubResource("StyleBoxFlat_467w0")
+Button/styles/hover = SubResource("StyleBoxFlat_aexb4")
+Button/styles/normal = SubResource("StyleBoxEmpty_3mb5i")
+Button/styles/pressed = SubResource("StyleBoxFlat_ncyrr")
+HSlider/icons/grabber = SubResource("CanvasTexture_t1m40")
+HSlider/icons/grabber_disabled = SubResource("CanvasTexture_1iuhe")
+HSlider/icons/grabber_highlight = SubResource("CanvasTexture_s0xk7")
+HSlider/styles/grabber_area = SubResource("StyleBoxEmpty_py1tv")
+HSlider/styles/grabber_area_highlight = SubResource("StyleBoxEmpty_8a1sp")
+HSlider/styles/slider = SubResource("StyleBoxFlat_2j53a")
+ItemList/constants/v_separation = 0
+ItemList/styles/panel = SubResource("StyleBoxFlat_sxb43")
+Label/styles/normal = SubResource("StyleBoxEmpty_x855o")
+RichTextLabel/styles/focus = SubResource("StyleBoxFlat_jexri")
+RichTextLabel/styles/normal = SubResource("StyleBoxFlat_35qxa")
+TextEdit/colors/font_color = Color(0.466667, 0.462745, 0.462745, 1)
+TextEdit/colors/font_readonly_color = Color(0.466667, 0.462745, 0.462745, 1)
+TextEdit/constants/line_spacing = -4
+TextEdit/font_sizes/font_size = 16
+TextEdit/styles/focus = SubResource("StyleBoxEmpty_6b54q")
+TextEdit/styles/normal = SubResource("StyleBoxEmpty_4gwml")
+TextEdit/styles/read_only = SubResource("StyleBoxEmpty_sgqml")
+VScrollBar/styles/grabber = SubResource("StyleBoxTexture_fgl5c")
+VScrollBar/styles/scroll = SubResource("StyleBoxFlat_5nxue")

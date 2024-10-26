@@ -1,0 +1,28 @@
+[gd_scene load_steps=2 format=3 uid="uid://dnu27lsv8nhs1"]
+
+[ext_resource type="Texture2D" uid="uid://dds3p523p0ik5" path="res://Shaders/light.png" id="1_4nc5t"]
+
+[node name="Lighting" type="Node2D"]
+
+[node name="Level visibility" type="CanvasModulate" parent="."]
+position = Vector2(1594, 1734)
+color = Color(0.0823529, 0.0980392, 0.121569, 1)
+
+[node name="TextureLight" type="PointLight2D" parent="."]
+position = Vector2(-1.83344, -23.0149)
+energy = 0.8
+shadow_color = Color(0, 0, 0, 0.184314)
+shadow_filter = 2
+shadow_filter_smooth = 0.5
+texture = ExtResource("1_4nc5t")
+texture_scale = 2.7
+height = 35.0
+
+[node name="Shadow" type="PointLight2D" parent="."]
+position = Vector2(8.63466, -191.506)
+energy = 0.4
+shadow_enabled = true
+shadow_filter = 2
+texture = ExtResource("1_4nc5t")
+texture_scale = 0.8
+height = 25.0

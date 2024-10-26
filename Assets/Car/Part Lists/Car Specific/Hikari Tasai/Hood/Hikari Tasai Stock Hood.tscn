@@ -1,0 +1,34 @@
+[gd_scene load_steps=8 format=3 uid="uid://cxyrlqn1q3n0y"]
+
+[ext_resource type="Script" path="res://Assets/Car/Code/Part_scripts/Hood.gd" id="1_a6vaq"]
+[ext_resource type="Texture2D" uid="uid://cgwjssuood78g" path="res://Textures/Cars/Hikari Tasai/Hood/Hikari Tasai Stock Hood.png" id="2_tpfdp"]
+[ext_resource type="Texture2D" uid="uid://btdtaa5r0s1hr" path="res://Textures/Cars/Hikari Tasai/Hood/Hikari Tasai Stock Hood HM NM.png" id="3_c4p8o"]
+[ext_resource type="Texture2D" uid="uid://bp0ecsglo46p3" path="res://Textures/Cars/Hikari Tasai/Hood/Hikari Tasai Stock Hood Spec.png" id="4_8cl4h"]
+[ext_resource type="Script" path="res://Textures/Cars/Color_selector.gd" id="5_5h6rr"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_hjvi5"]
+diffuse_texture = ExtResource("2_tpfdp")
+normal_texture = ExtResource("3_c4p8o")
+specular_texture = ExtResource("4_8cl4h")
+specular_shininess = 0.5
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_i2kuy"]
+polygon = PackedVector2Array(87, -28, 87, -22, 97, -22, 98, -17, 98, 16, 97, 21, 87, 21, 87, 27, 86, 33, 40, 33, 40, 31, 44, 12, 45, 12, 45, -13, 44, -13, 40, -32, 40, -34, 86, -34)
+
+[node name="Hikari Tasai Stock Hood" type="Node2D"]
+script = ExtResource("1_a6vaq")
+rarity = "uncommon"
+Car_ID = 2
+Part_Number = 1
+description = "The factory hood for the Hikari Tasai"
+weight = 16
+downforce = 35
+drag = 0.04
+engine_cool_mod = 0.1
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = SubResource("CanvasTexture_hjvi5")
+script = ExtResource("5_5h6rr")
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="."]
+occluder = SubResource("OccluderPolygon2D_i2kuy")

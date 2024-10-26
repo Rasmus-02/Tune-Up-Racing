@@ -1,0 +1,38 @@
+[gd_scene load_steps=9 format=3 uid="uid://bm3sv27gn2hc4"]
+
+[ext_resource type="Script" path="res://Assets/Car/Code/Part_scripts/F_Bumper.gd" id="1_j8t0d"]
+[ext_resource type="Texture2D" uid="uid://pwvrlrsxhpak" path="res://Textures/Cars/Nagata Koi/Front Bumper/Nagata Koi Stock Front Bumper.png" id="2_qu2it"]
+[ext_resource type="Texture2D" uid="uid://d14d2boxivq23" path="res://Textures/Cars/Nagata Koi/Front Bumper/Nagata Koi Stock Front Bumper NM.png" id="3_ihron"]
+[ext_resource type="Texture2D" uid="uid://bem7aax7yv3n6" path="res://Textures/Cars/Nagata Koi/Front Bumper/Nagata Koi Stock Front Bumper Spec.png" id="4_3kbna"]
+[ext_resource type="Script" path="res://Textures/Cars/Color_selector.gd" id="5_0vep8"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_0hbqo"]
+diffuse_texture = ExtResource("2_qu2it")
+normal_texture = ExtResource("3_ihron")
+specular_texture = ExtResource("4_3kbna")
+specular_shininess = 0.5
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_nxqv5"]
+blend_mode = 1
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_j57wh"]
+polygon = PackedVector2Array(132.912, 22.3015, 132.912, -18.6985, 129.912, -27.6985, 124.912, -32.6985, 118.912, -35.6985, 113.912, -35.6985, 113.912, 39.3015, 118.912, 39.3015, 124.912, 36.3015, 129.912, 31.3015)
+
+[node name="Nagata Koi Stock Front Bumper" type="Node2D"]
+script = ExtResource("1_j8t0d")
+rarity = "uncommon"
+Part_Number = 1
+description = "The factory front bumper for the Nagata Koi"
+weight = 7
+downforce = 20
+drag = 0.04
+engine_cool_mod = 0.05
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = SubResource("CanvasTexture_0hbqo")
+script = ExtResource("5_0vep8")
+
+[node name="LightOccluder2D2" type="LightOccluder2D" parent="Sprite2D"]
+material = SubResource("CanvasItemMaterial_nxqv5")
+position = Vector2(-29.9116, -2.30154)
+occluder = SubResource("OccluderPolygon2D_j57wh")

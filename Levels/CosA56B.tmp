@@ -1,0 +1,150 @@
+[gd_scene load_steps=12 format=3 uid="uid://vwfaixjbvl6j"]
+
+[ext_resource type="PackedScene" uid="uid://bxei516mvsvwr" path="res://UI/Pause/pause_menu.tscn" id="1_62obq"]
+[ext_resource type="Script" path="res://Levels/Scene_changer.gd" id="1_vtmsh"]
+[ext_resource type="PackedScene" uid="uid://ccebqq52ue0h3" path="res://Levels/Costal_Circuit.tscn" id="2_1evb1"]
+[ext_resource type="Texture2D" uid="uid://bw5ms55wbs345" path="res://Textures/UI/In Race/In race hud gauge.png" id="4_6r1gu"]
+[ext_resource type="Texture2D" uid="uid://cn45aidbynjcq" path="res://Textures/UI/In Race/In race hud gauge rpm.png" id="5_e1bau"]
+[ext_resource type="Script" path="res://Levels/Race_Hud_Gauges.gd" id="5_kevj3"]
+[ext_resource type="Texture2D" uid="uid://dvhtnwuxpq62o" path="res://Textures/UI/In Race/In race hud gauge boost.png" id="6_k5ywl"]
+[ext_resource type="Texture2D" uid="uid://dc1abys8qkai2" path="res://Textures/UI/In Race/In race hud gauge hybrid.png" id="7_tyx8g"]
+[ext_resource type="Texture2D" uid="uid://cqi2q66pj8sfu" path="res://Textures/UI/In Race/In race hud gauge temperature.png" id="8_qjjss"]
+[ext_resource type="Texture2D" uid="uid://dkb5c24vbdukd" path="res://Textures/UI/Minimaps/Costal Circuit Minimap.png" id="9_4rfxy"]
+[ext_resource type="Script" path="res://Levels/Minimap.gd" id="9_10ajj"]
+
+[node name="Track" type="Node2D"]
+script = ExtResource("1_vtmsh")
+metadata/_edit_horizontal_guides_ = []
+
+[node name="Track" type="SubViewportContainer" parent="."]
+texture_filter = 1
+offset_right = 2560.0
+offset_bottom = 1440.0
+metadata/_edit_use_anchors_ = true
+
+[node name="Track_View" type="SubViewport" parent="Track"]
+handle_input_locally = false
+mesh_lod_threshold = 0.0
+canvas_item_default_texture_filter = 0
+audio_listener_enable_2d = true
+size = Vector2i(2560, 1440)
+render_target_update_mode = 4
+
+[node name="Costal_circuit" parent="Track/Track_View" instance=ExtResource("2_1evb1")]
+
+[node name="UI" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 2277.29
+offset_top = 1238.92
+offset_right = 2317.29
+offset_bottom = 1278.92
+
+[node name="AspectRatioContainer" type="AspectRatioContainer" parent="UI"]
+layout_mode = 2
+offset_left = -2277.0
+offset_top = -1239.0
+offset_right = 282.0
+offset_bottom = 201.0
+
+[node name="Gauge" type="Sprite2D" parent="UI/AspectRatioContainer"]
+position = Vector2(2299.65, 1227.58)
+scale = Vector2(4, 4)
+texture = ExtResource("4_6r1gu")
+script = ExtResource("5_kevj3")
+
+[node name="RPM" type="Sprite2D" parent="UI/AspectRatioContainer/Gauge"]
+rotation = -2.79253
+texture = ExtResource("5_e1bau")
+
+[node name="Boost" type="Sprite2D" parent="UI/AspectRatioContainer/Gauge"]
+position = Vector2(-63.6677, 25.6482)
+rotation = -1.29937
+texture = ExtResource("6_k5ywl")
+offset = Vector2(63.6677, -25.6482)
+
+[node name="Hybrid Power" type="Sprite2D" parent="UI/AspectRatioContainer/Gauge"]
+texture = ExtResource("7_tyx8g")
+
+[node name="Temperature" type="Sprite2D" parent="UI/AspectRatioContainer/Gauge"]
+position = Vector2(-0.0855103, -21.0161)
+texture = ExtResource("8_qjjss")
+offset = Vector2(0.0855103, 21.0161)
+
+[node name="Speed" type="Label" parent="UI/AspectRatioContainer/Gauge"]
+offset_left = -6.16681
+offset_top = 18.0417
+offset_right = 41.8332
+offset_bottom = 69.0417
+scale = Vector2(0.28, 0.28)
+theme_override_colors/font_color = Color(0.266667, 0.462745, 1, 1)
+text = "250"
+horizontal_alignment = 1
+
+[node name="Gear" type="Label" parent="UI/AspectRatioContainer/Gauge"]
+offset_left = -6.16681
+offset_top = 7.57362
+offset_right = 41.8332
+offset_bottom = 58.5736
+scale = Vector2(0.28, 0.28)
+theme_override_colors/font_color = Color(0.266667, 0.462745, 1, 1)
+text = "4"
+horizontal_alignment = 1
+
+[node name="Boost_Text" type="Label" parent="UI/AspectRatioContainer/Gauge"]
+offset_left = -66.8886
+offset_top = 28.6934
+offset_right = -18.8886
+offset_bottom = 79.6934
+scale = Vector2(0.155, 0.155)
+theme_override_colors/font_color = Color(0.266667, 0.462745, 1, 1)
+text = "0.8"
+horizontal_alignment = 1
+
+[node name="Current Time" type="Label" parent="UI"]
+layout_mode = 0
+offset_left = -2239.98
+offset_top = -1237.17
+offset_right = -2003.98
+offset_bottom = -1186.17
+scale = Vector2(2, 2)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 6
+text = "Current: 0:15:00"
+
+[node name="Record Time" type="Label" parent="UI"]
+layout_mode = 0
+offset_left = -2239.98
+offset_top = -1148.33
+offset_right = -2003.98
+offset_bottom = -1097.33
+scale = Vector2(2, 2)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 6
+text = "Record: 0:15:00"
+
+[node name="Record Time Playtest 1" type="Label" parent="UI"]
+layout_mode = 0
+offset_left = -2239.98
+offset_top = -1060.14
+offset_right = -2003.98
+offset_bottom = -1009.14
+scale = Vector2(2, 2)
+theme_override_colors/font_color = Color(0.384314, 0.576471, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 6
+text = "Dev Record: 0:35:74"
+
+[node name="Minimap" type="Sprite2D" parent="UI"]
+position = Vector2(-1963.26, 0)
+texture = ExtResource("9_4rfxy")
+script = ExtResource("9_10ajj")
+
+[node name="Pause_Menu" parent="." instance=ExtResource("1_62obq")]
+visible = false
+offset_left = 1277.14
+offset_top = 702.516
+offset_right = 1277.14
+offset_bottom = 702.516
+scale = Vector2(1, 1)
+size_flags_horizontal = 4

@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bnhvjnxxyd0mh"
+path="res://.godot/imported/Suhei_25A_Race_No_Throttle_1000.mp3-049f34ddaa3e97b0f859e1af3f164d1a.mp3str"
+
+[deps]
+
+source_file="res://Sound/Engine Sounds/Suhei-25A/Suhei_25A_Race_No_Throttle_1000.mp3"
+dest_files=["res://.godot/imported/Suhei_25A_Race_No_Throttle_1000.mp3-049f34ddaa3e97b0f859e1af3f164d1a.mp3str"]
+
+[params]
+
+loop=true
+loop_offset=0.0
+bpm=0.0
+beat_count=0
+bar_beats=4

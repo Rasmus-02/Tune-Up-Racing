@@ -1,0 +1,134 @@
+[gd_scene load_steps=7 format=3 uid="uid://bpjbw8pi8ej12"]
+
+[ext_resource type="Script" path="res://Levels/Garage.gd" id="1_mx11h"]
+[ext_resource type="Theme" uid="uid://chjt3puiiisoj" path="res://UI/Garage.tres" id="2_kvibm"]
+[ext_resource type="PackedScene" uid="uid://bxei516mvsvwr" path="res://UI/Pause/pause_menu.tscn" id="3_5micc"]
+[ext_resource type="PackedScene" uid="uid://cc7166wai1oi2" path="res://Sound/button_click.tscn" id="3_qorle"]
+[ext_resource type="Script" path="res://Levels/Car_Spawner_Global.gd" id="4_5tlg7"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_lugge"]
+light_mode = 1
+
+[node name="Garage" type="Node2D"]
+script = ExtResource("1_mx11h")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Current_Scene" type="Node2D" parent="CanvasLayer"]
+
+[node name="Control" type="Control" parent="CanvasLayer"]
+light_mask = 0
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+theme = ExtResource("2_kvibm")
+
+[node name="Exit_button" type="Button" parent="CanvasLayer/Control"]
+light_mask = 0
+material = SubResource("CanvasItemMaterial_lugge")
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 815.0
+offset_top = -534.5
+offset_right = 918.0
+offset_bottom = -445.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "<--"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/Control"]
+light_mask = 0
+material = SubResource("CanvasItemMaterial_lugge")
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -129.0
+offset_top = -91.0
+offset_right = 129.0
+offset_bottom = 91.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Car_Editor_button" type="Button" parent="CanvasLayer/Control/VBoxContainer"]
+light_mask = 0
+material = SubResource("CanvasItemMaterial_lugge")
+layout_mode = 2
+focus_mode = 0
+text = "Car Editor"
+
+[node name="Race_Track_button" type="Button" parent="CanvasLayer/Control/VBoxContainer"]
+light_mask = 0
+material = SubResource("CanvasItemMaterial_lugge")
+layout_mode = 2
+text = " Race Track "
+
+[node name="Button_Click" parent="CanvasLayer/Control" instance=ExtResource("3_qorle")]
+position = Vector2(-79, -25)
+scale = Vector2(0.999999, 0.999999)
+
+[node name="Pause_Menu" parent="CanvasLayer/Control" instance=ExtResource("3_5micc")]
+visible = false
+anchors_preset = 0
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+grow_horizontal = 1
+grow_vertical = 1
+
+[node name="Car_Spawner_Global" type="Node2D" parent="CanvasLayer"]
+visible = false
+scale = Vector2(0.2, 0.2)
+script = ExtResource("4_5tlg7")
+
+[node name="Car_1" type="Button" parent="CanvasLayer/Car_Spawner_Global"]
+offset_left = -935.0
+offset_top = -525.0
+offset_right = -827.0
+offset_bottom = -436.0
+text = "Car 1"
+
+[node name="Car_2" type="Button" parent="CanvasLayer/Car_Spawner_Global"]
+offset_left = -935.0
+offset_top = -415.0
+offset_right = -827.0
+offset_bottom = -326.0
+text = "Car 2
+"
+
+[node name="Car_3" type="Button" parent="CanvasLayer/Car_Spawner_Global"]
+offset_left = -935.0
+offset_top = -305.0
+offset_right = -827.0
+offset_bottom = -216.0
+text = "Car 3"
+
+[node name="Lighting" type="Node2D" parent="."]
+position = Vector2(-5978.38, 9832.2)
+
+[node name="Sun" type="DirectionalLight2D" parent="Lighting"]
+position = Vector2(-124.586, -1028.18)
+scale = Vector2(20000, 20000)
+color = Color(1, 0.945098, 0.870588, 1)
+range_layer_max = 1
+height = 0.66
+
+[connection signal="pressed" from="CanvasLayer/Control/Exit_button" to="." method="_on_exit_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/Control/VBoxContainer/Car_Editor_button" to="." method="_on_car_editor_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/Control/VBoxContainer/Race_Track_button" to="." method="_on_race_track_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/Car_Spawner_Global/Car_1" to="CanvasLayer/Car_Spawner_Global" method="_on_car_1_pressed"]
+[connection signal="pressed" from="CanvasLayer/Car_Spawner_Global/Car_2" to="CanvasLayer/Car_Spawner_Global" method="_on_car_2_pressed"]
+[connection signal="pressed" from="CanvasLayer/Car_Spawner_Global/Car_3" to="CanvasLayer/Car_Spawner_Global" method="_on_car_3_pressed"]

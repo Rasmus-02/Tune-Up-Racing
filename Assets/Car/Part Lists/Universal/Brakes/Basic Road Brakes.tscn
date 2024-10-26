@@ -1,0 +1,24 @@
+[gd_scene load_steps=6 format=3 uid="uid://blsp5qqvrs5in"]
+
+[ext_resource type="Script" path="res://Assets/Car/Code/Part_scripts/Brakes.gd" id="1_2ea1k"]
+[ext_resource type="Texture2D" uid="uid://7h0nwohl34k3" path="res://Textures/Cars/Universal/Brakes/Passenger car standard brakes.png" id="2_xhhjx"]
+[ext_resource type="Texture2D" uid="uid://1dswommug2ux" path="res://Textures/Cars/Universal/Brakes/Passanger car standard brakes NM.png" id="3_sqqci"]
+[ext_resource type="Texture2D" uid="uid://dx1eta7xd1mgx" path="res://Textures/Cars/Universal/Brakes/Passanger car standard brakes Spec.png" id="4_58rup"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_ygqkl"]
+diffuse_texture = ExtResource("2_xhhjx")
+normal_texture = ExtResource("3_sqqci")
+specular_texture = ExtResource("4_58rup")
+
+[node name="Basic Road Brakes" type="Node2D"]
+script = ExtResource("1_2ea1k")
+rarity = "uncommon"
+Part_Number = 1
+description = "Basic small and cheap disc brakes common on passanger cars"
+weight = 40
+brake_force = 700
+brake_cooling = 1.5
+brake_fade_limit = 300
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = SubResource("CanvasTexture_ygqkl")

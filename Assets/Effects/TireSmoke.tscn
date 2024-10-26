@@ -1,0 +1,56 @@
+[gd_scene load_steps=8 format=3 uid="uid://d0twx4lvekmb0"]
+
+[ext_resource type="Texture2D" uid="uid://6s6tv7jpwhqd" path="res://Assets/Effects/Smoke.png" id="1_kahrj"]
+
+[sub_resource type="Gradient" id="Gradient_j2hsc"]
+interpolation_mode = 2
+offsets = PackedFloat32Array(0, 0.793612)
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_nnvcu"]
+gradient = SubResource("Gradient_j2hsc")
+
+[sub_resource type="Curve" id="Curve_y2l60"]
+_data = [Vector2(0, 0.442105), 0.0, 4.77519, 0, 0, Vector2(0.410959, 1), -2.63459, -2.63459, 0, 0, Vector2(0.929224, 0.0105263), 0.922105, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_hycr4"]
+curve = SubResource("Curve_y2l60")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_reubd"]
+lifetime_randomness = 0.2
+particle_flag_disable_z = true
+emission_shape = 1
+emission_sphere_radius = 11.68
+spread = 28.172
+initial_velocity_min = 39.3
+initial_velocity_max = 244.45
+angular_velocity_max = 720.0
+gravity = Vector3(0, 0, 0)
+linear_accel_min = -4.36
+radial_accel_min = 8.13
+radial_accel_max = 61.57
+damping_min = 15.0
+damping_max = 26.839
+scale_min = 1.5
+scale_max = 3.0
+scale_curve = SubResource("CurveTexture_hycr4")
+color_ramp = SubResource("GradientTexture1D_nnvcu")
+turbulence_enabled = true
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_sgbjc"]
+diffuse_texture = ExtResource("1_kahrj")
+specular_shininess = 0.0
+
+[node name="TireSmoke" type="Node2D"]
+z_index = 5
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="."]
+rotation = 3.14159
+amount = 128
+process_material = SubResource("ParticleProcessMaterial_reubd")
+texture = SubResource("CanvasTexture_sgbjc")
+lifetime = 0.6
+randomness = 0.52
+fixed_fps = 60
+trail_lifetime = 0.5

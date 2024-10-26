@@ -1,0 +1,43 @@
+[gd_scene load_steps=9 format=3 uid="uid://xces00qpdfcj"]
+
+[ext_resource type="Script" path="res://Assets/Car/Code/Part_scripts/Exhaust.gd" id="1_baigg"]
+[ext_resource type="Texture2D" uid="uid://by3y36gtvshyr" path="res://Textures/Cars/Hikari Tasai/Exhaust/Hikari Tasai Stock Exhaust.png" id="2_drk0e"]
+[ext_resource type="Texture2D" uid="uid://d3y837gt03vgy" path="res://Textures/Cars/Hikari Tasai/Exhaust/Hikari Tasai Stock Exhaust NM.png" id="3_8ush5"]
+[ext_resource type="Texture2D" uid="uid://dj5ws1b00t12g" path="res://Textures/Cars/Hikari Tasai/Exhaust/Hikari Tasai Stock Exhaust Spec.png" id="4_8h041"]
+[ext_resource type="Script" path="res://Assets/Effects/Backfire.gd" id="5_hpubw"]
+[ext_resource type="AudioStream" uid="uid://cfvwt4fi2efkr" path="res://Sound/Engine Sounds/Backfire.mp3" id="6_ksulv"]
+[ext_resource type="PackedScene" uid="uid://b1agqhrv0psca" path="res://Assets/Effects/Backfire.tscn" id="7_8psjv"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_e5v36"]
+diffuse_texture = ExtResource("2_drk0e")
+normal_texture = ExtResource("3_8ush5")
+specular_texture = ExtResource("4_8h041")
+
+[node name="Hikari Tasai Stock Exhaust" type="Node2D"]
+script = ExtResource("1_baigg")
+rarity = "uncommon"
+Car_ID = 2
+Part_Number = 1
+description = "The Stock Exhaust that comes with the Hikari Tasai"
+weight = 29
+tq_mod = 0.96
+pitch_tweak = 0.99
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = SubResource("CanvasTexture_e5v36")
+
+[node name="Backfire" type="Node2D" parent="."]
+script = ExtResource("5_hpubw")
+
+[node name="Backfire_Sound" type="AudioStreamPlayer2D" parent="Backfire"]
+stream = ExtResource("6_ksulv")
+
+[node name="Exhaust_1" type="Marker2D" parent="Backfire"]
+position = Vector2(-119, -27)
+
+[node name="Backfire" parent="Backfire/Exhaust_1" instance=ExtResource("7_8psjv")]
+
+[node name="Exhaust_2" type="Marker2D" parent="Backfire"]
+position = Vector2(-119, -23)
+
+[node name="Backfire" parent="Backfire/Exhaust_2" instance=ExtResource("7_8psjv")]

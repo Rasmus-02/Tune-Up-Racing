@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://pjjoo5are1mj"
+path="res://.godot/imported/Suhei_25A_Throttle.mp3-acc0747da5bef7a32474e44474eac9bf.mp3str"
+
+[deps]
+
+source_file="res://Sound/Engine Sounds/Suhei-25A/Suhei_25A_Throttle.mp3"
+dest_files=["res://.godot/imported/Suhei_25A_Throttle.mp3-acc0747da5bef7a32474e44474eac9bf.mp3str"]
+
+[params]
+
+loop=true
+loop_offset=0.0
+bpm=0.0
+beat_count=0
+bar_beats=4

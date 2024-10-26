@@ -1,0 +1,42 @@
+[gd_scene load_steps=8 format=3 uid="uid://mwhdql8y8rfc"]
+
+[ext_resource type="Script" path="res://Assets/Car/Code/Part_scripts/Gearbox.gd" id="1_csx2m"]
+[ext_resource type="Texture2D" uid="uid://bjae1adn4h387" path="res://Textures/Cars/Universal/Gearbox/I4 5 gear Gearbox.png" id="2_b1el6"]
+[ext_resource type="Texture2D" uid="uid://rojwcx884jby" path="res://Textures/Cars/Universal/Gearbox/5 Speed I4 Gearbox NM.png" id="3_0ldyc"]
+[ext_resource type="Texture2D" uid="uid://cqv546g2v3fdj" path="res://Textures/Cars/Universal/Gearbox/5 Speed I4 Gearbox Spec.png" id="4_foa3l"]
+[ext_resource type="AudioStream" uid="uid://cp7urvxas03y7" path="res://Sound/Engine Sounds/Gear_Shift.mp3" id="5_7wniv"]
+[ext_resource type="Script" path="res://Sound/gearbox sound handler.gd" id="5_8nt36"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_hwvtw"]
+diffuse_texture = ExtResource("2_b1el6")
+normal_texture = ExtResource("3_0ldyc")
+specular_texture = ExtResource("4_foa3l")
+specular_shininess = 0.5
+
+[node name="FWD 5 speed manual" type="Node2D"]
+script = ExtResource("1_csx2m")
+rarity = "uncommon"
+Part_Number = 1
+lenght = 15
+width = 18
+description = "A 5 speed manual gearbox designed for FWD transverse layout"
+drivetrain = 1
+weight = 42
+shift_time = 0.5
+max_hp = 350
+max_tq = 500
+gear_ratio = [4.0, 3.5, 2.1, 1.5, 1.1, 0.9]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(14, 8)
+texture = SubResource("CanvasTexture_hwvtw")
+
+[node name="Driveshaft" type="Marker2D" parent="."]
+
+[node name="Engine" type="Marker2D" parent="."]
+position = Vector2(2, 7)
+
+[node name="gearbox sound handler" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_7wniv")
+volume_db = 10.0
+script = ExtResource("5_8nt36")

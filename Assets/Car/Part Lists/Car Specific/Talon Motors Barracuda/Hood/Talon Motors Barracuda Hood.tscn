@@ -1,0 +1,27 @@
+[gd_scene load_steps=7 format=3 uid="uid://chpjf7d4ejhtj"]
+
+[ext_resource type="Script" path="res://Assets/Car/Code/Part_scripts/Hood.gd" id="1_5ori0"]
+[ext_resource type="Texture2D" uid="uid://i82hty7pmylx" path="res://Textures/Cars/Talon Motors Barracuda/Hood/Talon Motors Barracuda Hood.png" id="2_efo0h"]
+[ext_resource type="Texture2D" uid="uid://bam11xcy6518x" path="res://Textures/Cars/Talon Motors Barracuda/Hood/Talon Motors Barracuda Hood NM.png" id="3_4e1np"]
+[ext_resource type="Texture2D" uid="uid://i5y3e5mpkg07" path="res://Textures/Cars/Talon Motors Barracuda/Hood/Talon Motors Barracuda Hood Spec.png" id="4_bc17d"]
+[ext_resource type="Script" path="res://Textures/Cars/Color_selector.gd" id="5_i2pql"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_hjvi5"]
+diffuse_texture = ExtResource("2_efo0h")
+normal_texture = ExtResource("3_4e1np")
+specular_texture = ExtResource("4_bc17d")
+specular_shininess = 0.5
+
+[node name="Talon Motors Barracuda Stock Hood" type="Node2D"]
+script = ExtResource("1_5ori0")
+rarity = "rare"
+Car_ID = 1
+Part_Number = 1
+description = "The factory hood for the Talon Motors Barracuda"
+weight = 27
+downforce = 25
+drag = 0.03
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = SubResource("CanvasTexture_hjvi5")
+script = ExtResource("5_i2pql")

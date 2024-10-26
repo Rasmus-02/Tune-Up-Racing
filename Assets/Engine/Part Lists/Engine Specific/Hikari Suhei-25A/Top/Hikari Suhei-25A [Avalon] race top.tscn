@@ -1,0 +1,55 @@
+[gd_scene load_steps=12 format=3 uid="uid://dic8kbcl7058c"]
+
+[ext_resource type="Script" path="res://Assets/Engine/Part_scripts/Top.gd" id="1_4k4qo"]
+[ext_resource type="Texture2D" uid="uid://ctmhpubuoirqo" path="res://Textures/Engines/Hikari Suhei-25A/Top/Hikai Suhei-25A {Avalon] Race Top.png" id="2_1ijfh"]
+[ext_resource type="Texture2D" uid="uid://bmluokeuwk0da" path="res://Textures/Engines/Hikari Suhei-25A/Top/Hikai Suhei-25A Race Top NM.png" id="3_20p05"]
+[ext_resource type="Script" path="res://Assets/Engine/Code/Sound_handler_engine.gd" id="3_oau17"]
+[ext_resource type="Texture2D" uid="uid://cu1l5d173mdev" path="res://Textures/Engines/Hikari Suhei-25A/Top/Hikai Suhei-25A Race Top Spec.png" id="4_bi7df"]
+[ext_resource type="AudioStream" uid="uid://ba8csc2yld3gf" path="res://Sound/Engine Sounds/Suhei-25A/Suhei_25A_Avalon_Race_Throttle_1000.mp3" id="6_xilgp"]
+[ext_resource type="AudioStream" uid="uid://bymbdfdhxsobd" path="res://Sound/Engine Sounds/Suhei-25A/Suhei_25A_Avalon_Race_No_Throttle_1000.mp3" id="7_d4gb3"]
+[ext_resource type="AudioStream" uid="uid://bumo62fftckdb" path="res://Sound/AirFlow Sound.mp3" id="8_qtq7l"]
+[ext_resource type="AudioStream" uid="uid://w6ye0djj4ann" path="res://Sound/Engine Sounds/Suhei-25A/Suhei_25A_Avalon_Race_No_Throttle_4000.mp3" id="8_vj7jx"]
+[ext_resource type="AudioStream" uid="uid://bgjs2h056a77o" path="res://Sound/Engine Sounds/Suhei-25A/Suhei_25A_Avalon_Race_Throttle_4000.mp3" id="9_6432c"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_2f31e"]
+diffuse_texture = ExtResource("2_1ijfh")
+normal_texture = ExtResource("3_20p05")
+specular_texture = ExtResource("4_bi7df")
+specular_color = Color(1, 1, 0.905882, 1)
+specular_shininess = 0.5
+
+[node name="Hikari Suhei-25A [Avalon] Race Top" type="Node2D"]
+script = ExtResource("1_4k4qo")
+rarity = "epic"
+lenght = 20
+width = 36
+Engine_ID = 3
+Part_Number = 4
+description = "A high performance top end for the Hikari Suhei-25A Engine, developed for maximum high rpm performance by Avalon Racing"
+weight = 24.0
+tq_mod = 1.18
+max_hp_rpm = 7400
+max_compression = 12.0
+smoothness = 0.8
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = SubResource("CanvasTexture_2f31e")
+
+[node name="Sound_handler" type="Node2D" parent="."]
+script = ExtResource("3_oau17")
+aiflow_db = -27
+
+[node name="engine_sound_throttle_1000rpm" type="AudioStreamPlayer2D" parent="Sound_handler"]
+stream = ExtResource("6_xilgp")
+
+[node name="engine_sound_no_throttle_1000rpm" type="AudioStreamPlayer2D" parent="Sound_handler"]
+stream = ExtResource("7_d4gb3")
+
+[node name="engine_sound_no_throttle_4000rpm" type="AudioStreamPlayer2D" parent="Sound_handler"]
+stream = ExtResource("8_vj7jx")
+
+[node name="engine_sound_throttle_4000rpm" type="AudioStreamPlayer2D" parent="Sound_handler"]
+stream = ExtResource("9_6432c")
+
+[node name="Airflow" type="AudioStreamPlayer2D" parent="Sound_handler"]
+stream = ExtResource("8_qtq7l")

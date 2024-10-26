@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://s8ptqw8s80gx"
+path="res://.godot/imported/2S-16i race throttle 4000rpm.mp3-146f3d7e508580f2932c8257f01acd3c.mp3str"
+
+[deps]
+
+source_file="res://Sound/Engine Sounds/2S-16i/2S-16i race throttle 4000rpm.mp3"
+dest_files=["res://.godot/imported/2S-16i race throttle 4000rpm.mp3-146f3d7e508580f2932c8257f01acd3c.mp3str"]
+
+[params]
+
+loop=true
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

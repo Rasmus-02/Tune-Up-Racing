@@ -1,0 +1,15 @@
+[gd_scene load_steps=5 format=3 uid="uid://dbv4vycepvlj2"]
+
+[ext_resource type="Texture2D" uid="uid://bhenngeq062sw" path="res://Textures/Cars/Talon Motors Barracuda/Windows/Talon Motors Barracuda Windows.png" id="1_45xd4"]
+[ext_resource type="Texture2D" uid="uid://cqll320fe3yyo" path="res://Textures/Cars/Talon Motors Barracuda/Windows/Talon Motors Barracuda Windows NM.png" id="2_dtskg"]
+[ext_resource type="Texture2D" uid="uid://vesec5uqi2ym" path="res://Textures/Cars/Talon Motors Barracuda/Windows/Talon Motors Barracuda Windows Spec.png" id="3_xm4o6"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_duf3e"]
+diffuse_texture = ExtResource("1_45xd4")
+normal_texture = ExtResource("2_dtskg")
+specular_texture = ExtResource("3_xm4o6")
+
+[node name="Talon Motors Barracuda Windows" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = SubResource("CanvasTexture_duf3e")

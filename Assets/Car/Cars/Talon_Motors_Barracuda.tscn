@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://brgk61iey6kf8"]
+
+[ext_resource type="PackedScene" uid="uid://fawbg2w0nh2c" path="res://Assets/Car/Part Lists/Part Selector/Part Selector car.tscn" id="2_sjdrb"]
+[ext_resource type="PackedScene" uid="uid://dv828riuy4ag0" path="res://Assets/Car/Part Lists/Car Specific/Talon Motors Barracuda/Talon Motors Barracuda Part List.tscn" id="3_we5rm"]
+[ext_resource type="PackedScene" uid="uid://dmcwtlpp6q5tf" path="res://Assets/Car/Part Lists/Universal/Universal Part List.tscn" id="4_nfbiu"]
+
+[node name="Talon Motors Barracuda" type="Node2D"]
+
+[node name="Part Selector" parent="." instance=ExtResource("2_sjdrb")]
+
+[node name="Talon Motors Barracuda Part List" parent="Part Selector" instance=ExtResource("3_we5rm")]
+
+[node name="Universal Part List" parent="Part Selector" instance=ExtResource("4_nfbiu")]
+
+[node name="Gear_Change_Timer" type="Timer" parent="."]
+wait_time = 0.35
+one_shot = true

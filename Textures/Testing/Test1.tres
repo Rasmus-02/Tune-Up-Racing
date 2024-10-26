@@ -1,0 +1,60 @@
+[gd_resource type="Resource" script_class="SS2D_Material_Shape" load_steps=12 format=3 uid="uid://wtu2rys7xkt0"]
+
+[ext_resource type="Script" path="res://addons/rmsmartshape/materials/edge_material.gd" id="1_vymqs"]
+[ext_resource type="Texture2D" uid="uid://h2fd6iihs5p1" path="res://Textures/Tracks/Asphalt/Asphalt_edge.png" id="2_scj5k"]
+[ext_resource type="Texture2D" uid="uid://cpetf1m517sin" path="res://Textures/Tracks/Asphalt/Asphalt_edge_NM.png" id="3_5ogxr"]
+[ext_resource type="Script" path="res://addons/rmsmartshape/normal_range.gd" id="4_jpgvn"]
+[ext_resource type="Script" path="res://addons/rmsmartshape/materials/edge_material_metadata.gd" id="5_w0rpq"]
+[ext_resource type="Texture2D" uid="uid://b024611gnf6gp" path="res://Textures/Tracks/Asphalt/Bridge_edge.tres" id="6_sk5l3"]
+[ext_resource type="Script" path="res://addons/rmsmartshape/materials/shape_material.gd" id="7_8ly63"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_tlooo"]
+diffuse_texture = ExtResource("2_scj5k")
+normal_texture = ExtResource("3_5ogxr")
+specular_shininess = 0.14
+
+[sub_resource type="Resource" id="Resource_iwt4l"]
+script = ExtResource("1_vymqs")
+textures = Array[Texture2D]([SubResource("CanvasTexture_tlooo")])
+textures_corner_outer = Array[Texture2D]([])
+textures_corner_inner = Array[Texture2D]([])
+textures_taper_left = Array[Texture2D]([])
+textures_taper_right = Array[Texture2D]([])
+textures_taper_corner_left = Array[Texture2D]([])
+textures_taper_corner_right = Array[Texture2D]([])
+randomize_texture = false
+use_corner_texture = false
+use_taper_texture = true
+fit_mode = 0
+
+[sub_resource type="Resource" id="Resource_bdnii"]
+script = ExtResource("4_jpgvn")
+begin = 0.0
+distance = 360.0
+edgeRendering = Vector2(0, 0)
+
+[sub_resource type="Resource" id="Resource_0kldy"]
+script = ExtResource("5_w0rpq")
+edge_material = SubResource("Resource_iwt4l")
+normal_range = SubResource("Resource_bdnii")
+weld = true
+taper_sharp_corners = false
+render = true
+z_index = 0
+z_as_relative = true
+offset = 0.0
+
+[resource]
+resource_local_to_scene = true
+script = ExtResource("7_8ly63")
+_edge_meta_materials = Array[ExtResource("5_w0rpq")]([SubResource("Resource_0kldy")])
+fill_textures = Array[Texture2D]([ExtResource("6_sk5l3")])
+fill_texture_z_index = -1
+fill_texture_show_behind_parent = false
+fill_texture_scale = 1.0
+fill_texture_absolute_position = false
+fill_texture_absolute_rotation = false
+fill_texture_offset = Vector2(0, 0)
+fill_texture_angle_offset = 0.0
+fill_mesh_offset = 0.0
+render_offset = 0.0

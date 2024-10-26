@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://8p8g1ahw0qts"]
+
+[ext_resource type="Script" path="res://Assets/Engine/Part Lists/Engine Specific/Talon Motors Typhoon/Talon Motors Typhoon Part List.gd" id="1_tuh48"]
+
+[node name="Talon Motors Typhoon Part List" type="Node2D"]
+script = ExtResource("1_tuh48")

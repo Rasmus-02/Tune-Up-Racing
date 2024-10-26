@@ -1,0 +1,43 @@
+[gd_scene load_steps=6 format=3 uid="uid://b1agqhrv0psca"]
+
+[ext_resource type="Texture2D" uid="uid://b0syr2uddf5vk" path="res://Assets/Effects/Fire Effect.png" id="1_neay5"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_dgcan"]
+blend_mode = 1
+light_mode = 1
+
+[sub_resource type="Curve" id="Curve_506ko"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.337963, 1), 0.135636, 0.135636, 0, 0, Vector2(0.537037, 1), 0.0, 0.0, 0, 0, Vector2(0.99999, 0), 0.0, 0.0, 0, 0, Vector2(1, 0.604396), 0.0, 0.0, 0, 0]
+point_count = 5
+
+[sub_resource type="CurveTexture" id="CurveTexture_fltky"]
+curve = SubResource("Curve_506ko")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_yscnm"]
+particle_flag_disable_z = true
+direction = Vector3(-1, 0, 0)
+spread = 16.0
+flatness = 0.3
+initial_velocity_min = 70.0
+initial_velocity_max = 160.0
+gravity = Vector3(0, 0, 0)
+alpha_curve = SubResource("CurveTexture_fltky")
+turbulence_enabled = true
+turbulence_noise_strength = 6.97
+turbulence_noise_scale = 0.434
+
+[node name="Backfire" type="GPUParticles2D"]
+modulate = Color(0.984314, 0.898039, 0, 1)
+self_modulate = Color(0.901961, 0.423529, 0, 1)
+material = SubResource("CanvasItemMaterial_dgcan")
+emitting = false
+process_material = SubResource("ParticleProcessMaterial_yscnm")
+texture = ExtResource("1_neay5")
+lifetime = 0.25
+one_shot = true
+explosiveness = 0.5
+randomness = 1.0
+local_coords = true
+trail_enabled = true
+trail_lifetime = 0.2
+trail_sections = 12

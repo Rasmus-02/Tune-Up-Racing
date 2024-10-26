@@ -1,0 +1,54 @@
+[gd_scene load_steps=12 format=3 uid="uid://bhitodqaa7ipn"]
+
+[ext_resource type="Script" path="res://Assets/Engine/Part_scripts/Top.gd" id="1_ueq75"]
+[ext_resource type="Texture2D" uid="uid://bi5ej4jta25lx" path="res://Textures/Engines/Talon Motors Typhoon/Top/Typhoon Sport Top.png" id="2_g2wi7"]
+[ext_resource type="Texture2D" uid="uid://c64qrvrbpwi75" path="res://Textures/Engines/Talon Motors Typhoon/Top/Typhoon Stock Top NM.png" id="3_hyjno"]
+[ext_resource type="Texture2D" uid="uid://2un25s8swv1l" path="res://Textures/Engines/Talon Motors Typhoon/Top/Typhoon Stock Top Spec.png" id="4_me0bi"]
+[ext_resource type="Script" path="res://Assets/Engine/Code/Sound_handler_engine.gd" id="5_po24t"]
+[ext_resource type="AudioStream" uid="uid://bbxkb5k7n76vv" path="res://Sound/Engine Sounds/Typhoon/Typhoon sport throttle 1000.mp3" id="6_n2h58"]
+[ext_resource type="AudioStream" uid="uid://ctk1y44jue7tv" path="res://Sound/Engine Sounds/Typhoon/Typhoon sport no throttle 1000.mp3" id="7_ltbod"]
+[ext_resource type="AudioStream" uid="uid://bshqnik71ef50" path="res://Sound/Engine Sounds/Typhoon/Typhoon sport no throttle 4000.mp3" id="8_gud04"]
+[ext_resource type="AudioStream" uid="uid://bumo62fftckdb" path="res://Sound/AirFlow Sound.mp3" id="8_n87f2"]
+[ext_resource type="AudioStream" uid="uid://pa1n74fgp6eb" path="res://Sound/Engine Sounds/Typhoon/Typhoon sport throttle 4000.mp3" id="9_vyl1j"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_kt11d"]
+diffuse_texture = ExtResource("2_g2wi7")
+normal_texture = ExtResource("3_hyjno")
+specular_texture = ExtResource("4_me0bi")
+specular_shininess = 0.4
+
+[node name="Talon Motors Typhoon Sport Top" type="Node2D"]
+script = ExtResource("1_ueq75")
+rarity = "rare"
+lenght = 32
+width = 21
+Engine_ID = 1
+Part_Number = 2
+description = "A sportier top end  for the Typhoon engine, with improved airflow and reduced weight"
+weight = 30.0
+tq_mod = 0.95
+max_hp_rpm = 5500
+max_compression = 10.0
+smoothness = 0.87
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = SubResource("CanvasTexture_kt11d")
+
+[node name="Sound_handler" type="Node2D" parent="."]
+script = ExtResource("5_po24t")
+aiflow_db = -27
+
+[node name="engine_sound_throttle_1000rpm" type="AudioStreamPlayer2D" parent="Sound_handler"]
+stream = ExtResource("6_n2h58")
+
+[node name="engine_sound_no_throttle_1000rpm" type="AudioStreamPlayer2D" parent="Sound_handler"]
+stream = ExtResource("7_ltbod")
+
+[node name="engine_sound_no_throttle_4000rpm" type="AudioStreamPlayer2D" parent="Sound_handler"]
+stream = ExtResource("8_gud04")
+
+[node name="engine_sound_throttle_4000rpm" type="AudioStreamPlayer2D" parent="Sound_handler"]
+stream = ExtResource("9_vyl1j")
+
+[node name="Airflow" type="AudioStreamPlayer2D" parent="Sound_handler"]
+stream = ExtResource("8_n87f2")

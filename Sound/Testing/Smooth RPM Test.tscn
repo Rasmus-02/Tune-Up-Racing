@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://do88cvw51g8va"]
+
+[ext_resource type="Script" path="res://Sound/Testing/RPM_Sound_Handler.gd" id="1_nb0o1"]
+[ext_resource type="AudioStream" uid="uid://pjjoo5are1mj" path="res://Sound/Engine Sounds/Suhei-25A/Suhei_25A_Throttle.mp3" id="2_3ao3p"]
+[ext_resource type="AudioStream" uid="uid://fu0yd2kjon6d" path="res://Sound/Engine Sounds/Suhei-25A/Suhei_25A_Throttle_4000rpm.mp3" id="3_8u8l0"]
+
+[node name="SmoothRpmTest" type="Node2D"]
+script = ExtResource("1_nb0o1")
+
+[node name="HSlider" type="HSlider" parent="."]
+offset_right = 368.0
+offset_bottom = 47.0
+max_value = 2.0
+step = 0.01
+
+[node name="1000rpm" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("2_3ao3p")
+
+[node name="5000rpm" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_8u8l0")
+
+[node name="Camera2D" type="Camera2D" parent="."]

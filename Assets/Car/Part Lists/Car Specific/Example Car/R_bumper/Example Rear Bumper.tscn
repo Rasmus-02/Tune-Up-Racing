@@ -1,0 +1,37 @@
+[gd_scene load_steps=9 format=3 uid="uid://daj3ixa2m7me6"]
+
+[ext_resource type="Script" path="res://Assets/Car/Code/Part_scripts/R_bumper.gd" id="1_hctfp"]
+[ext_resource type="Texture2D" uid="uid://bjaeqfaxqndtc" path="res://Textures/Cars/Nagata Koi/Rear Bumper/Nagata Koi Stock Rear Bumper.png" id="2_mj56s"]
+[ext_resource type="Texture2D" uid="uid://bg1ec8sb428na" path="res://Textures/Cars/Nagata Koi/Rear Bumper/Nagata Koi Stock Rear Bumper NM.png" id="3_s2vry"]
+[ext_resource type="Texture2D" uid="uid://ct471s1xjr4as" path="res://Textures/Cars/Nagata Koi/Rear Bumper/Nagata Koi Stock Rear Bumper Spec.png" id="4_kd0tv"]
+[ext_resource type="Script" path="res://Textures/Cars/Color_selector.gd" id="5_j0cpn"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_r5f60"]
+diffuse_texture = ExtResource("2_mj56s")
+normal_texture = ExtResource("3_s2vry")
+specular_texture = ExtResource("4_kd0tv")
+specular_shininess = 0.5
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_pappr"]
+blend_mode = 1
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_gxeul"]
+polygon = PackedVector2Array(-70.0884, 2.30154, -70.0884, -18.6985, -65.0884, -31.6985, -60.0884, -36.6985, -56.0884, -38.6985, -56.0884, -39.6985, -57.0884, -39.6985, -62.0884, -38.6985, -68.0884, -35.6985, -72.0884, -31.6985, -75.0884, -24.6985, -75.0884, 2.30154, -75.0884, 29.3015, -72.0884, 36.3015, -68.0884, 40.3015, -62.0884, 43.3015, -57.0884, 44.3015, -56.0884, 44.3015, -56.0884, 43.3015, -60.0884, 41.3015, -65.0884, 36.3015, -70.0884, 23.3015)
+
+[node name="Nagata Koi Stock Rear Bumper" type="Node2D"]
+script = ExtResource("1_hctfp")
+rarity = "D"
+Part_Number = 1
+description = "The factory rear bumper for the Nagata Koi"
+weight = 5
+downforce = 5
+drag = 0.02
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = SubResource("CanvasTexture_r5f60")
+script = ExtResource("5_j0cpn")
+
+[node name="LightOccluder2D2" type="LightOccluder2D" parent="Sprite2D"]
+material = SubResource("CanvasItemMaterial_pappr")
+position = Vector2(-29.9116, -2.30154)
+occluder = SubResource("OccluderPolygon2D_gxeul")

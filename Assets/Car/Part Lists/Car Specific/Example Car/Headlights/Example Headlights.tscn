@@ -1,0 +1,75 @@
+[gd_scene load_steps=13 format=3 uid="uid://ei1a3iqoupph"]
+
+[ext_resource type="Script" path="res://Assets/Car/Code/Part_scripts/Headlights.gd" id="1_pa6cb"]
+[ext_resource type="Shader" path="res://Shaders/Glow.gdshader" id="2_qb8j7"]
+[ext_resource type="Texture2D" uid="uid://d1cumodsmrxgl" path="res://Textures/Cars/Nagata Koi/Headlights/Nagata Koi Stock Headlights.png" id="3_jekrd"]
+[ext_resource type="Texture2D" uid="uid://cikhlvpxivh1d" path="res://Textures/Cars/Nagata Koi/Headlights/Nagata Koi Stock Headlights NM.png" id="4_1y7j0"]
+[ext_resource type="Texture2D" uid="uid://ck4yt03ulukdx" path="res://Textures/Cars/Nagata Koi/Headlights/Nagata Koi Stock Headlights Spec.png" id="5_08l1s"]
+[ext_resource type="Texture2D" uid="uid://dds3p523p0ik5" path="res://Shaders/light.png" id="6_g17ih"]
+[ext_resource type="Script" path="res://Textures/Cars/Color_selector.gd" id="6_pswse"]
+[ext_resource type="PackedScene" uid="uid://brbx33n7duy1v" path="res://Shaders/headlights.tscn" id="7_umnv8"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_7ki0c"]
+shader = ExtResource("2_qb8j7")
+shader_parameter/color1 = null
+shader_parameter/color2 = null
+shader_parameter/threshold = null
+shader_parameter/intensity = null
+shader_parameter/opacity = null
+shader_parameter/glow_color = null
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_ma2ib"]
+diffuse_texture = ExtResource("3_jekrd")
+normal_texture = ExtResource("4_1y7j0")
+specular_texture = ExtResource("5_08l1s")
+specular_shininess = 0.5
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_18rcg"]
+polygon = PackedVector2Array(96, -19, 96, -25, 95, -25, 95, -26, 94, -26, 94, -29, 93, -29, 93, -31, 92, -31, 92, -32, 89, -32, 89, -29, 90, -29, 90, -27, 91, -27, 91, -25, 92, -25, 92, -23, 93, -23, 93, -21, 94, -21, 94, -20, 95, -20, 95, -19)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_jugv7"]
+polygon = PackedVector2Array(96, 19, 96, 25, 95, 25, 95, 26, 94, 26, 94, 29, 93, 29, 93, 31, 92, 31, 92, 32, 89, 32, 89, 29, 90, 29, 90, 27, 91, 27, 91, 25, 92, 25, 92, 23, 93, 23, 93, 21, 94, 21, 94, 20, 95, 20, 95, 19)
+
+[node name="Nagata Koi Stock Headlights" type="Node2D"]
+script = ExtResource("1_pa6cb")
+rarity = "D"
+Part_Number = 1
+description = "The factory headlights for the Nagata Koi"
+weight = 5
+drag = 0.01
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_7ki0c")
+texture = SubResource("CanvasTexture_ma2ib")
+script = ExtResource("6_pswse")
+
+[node name="L_Light" type="PointLight2D" parent="Sprite2D"]
+position = Vector2(92, -27)
+rotation = -2.79253
+scale = Vector2(1.15, 1.3)
+skew = -0.610865
+color = Color(1, 1, 0.945098, 1)
+energy = 3.0
+texture = ExtResource("6_g17ih")
+texture_scale = 0.02
+height = 100.0
+
+[node name="R_Light" type="PointLight2D" parent="Sprite2D"]
+position = Vector2(92, 26)
+rotation = 2.79253
+scale = Vector2(1.15, 1.2)
+skew = 0.610865
+color = Color(1, 1, 0.945098, 1)
+energy = 3.0
+texture = ExtResource("6_g17ih")
+texture_scale = 0.02
+height = 100.0
+
+[node name="L_Occluder" type="LightOccluder2D" parent="Sprite2D"]
+occluder = SubResource("OccluderPolygon2D_18rcg")
+
+[node name="R_Occluder" type="LightOccluder2D" parent="Sprite2D"]
+occluder = SubResource("OccluderPolygon2D_jugv7")
+
+[node name="Lights" parent="." instance=ExtResource("7_umnv8")]
+light_mask = 1

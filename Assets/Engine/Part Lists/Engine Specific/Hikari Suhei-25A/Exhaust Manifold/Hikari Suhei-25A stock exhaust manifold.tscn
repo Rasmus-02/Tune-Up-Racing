@@ -1,0 +1,54 @@
+[gd_scene load_steps=14 format=3 uid="uid://28ueuk0chrqr"]
+
+[ext_resource type="Script" path="res://Assets/Engine/Part_scripts/Exhaust_Manifold.gd" id="1_ny84u"]
+[ext_resource type="Texture2D" uid="uid://by007p4ii3il4" path="res://Textures/Engines/Hikari Suhei-25A/Exhaust/Stock/Hikai Suhei-25A Stock Exhaust Manifold.png" id="2_17r88"]
+[ext_resource type="Texture2D" uid="uid://2aqa2j4x4p0l" path="res://Textures/Engines/Hikari Suhei-25A/Exhaust/Stock/Hikai Suhei-25A Stock Exhaust Manifold NM.png" id="3_d684o"]
+[ext_resource type="Texture2D" uid="uid://vmes4083142h" path="res://Textures/Engines/Hikari Suhei-25A/Exhaust/Stock/Hikai Suhei-25A Stock Exhaust Manifold Spec.png" id="4_vf7tk"]
+[ext_resource type="Texture2D" uid="uid://t7e3fbsccuki" path="res://Textures/Engines/Nagata 2S-16I/Exhaust/Stock/Nagata 2S-16i Exhaust Manifold_T.png" id="5_871nk"]
+[ext_resource type="Texture2D" uid="uid://cyrgbxu7xvc8y" path="res://Textures/Engines/Nagata 2S-16I/Exhaust/Stock/Nagata 2S-16i Exhaust Manifold_T NM.png" id="6_r5cpx"]
+[ext_resource type="Texture2D" uid="uid://w0rlbkfsuc5t" path="res://Textures/Engines/Nagata 2S-16I/Exhaust/Stock/Nagata 2S-16i Exhaust Manifold_T Spec.png" id="7_5briy"]
+[ext_resource type="Texture2D" uid="uid://dm65u133nd2y0" path="res://Textures/Engines/Nagata 2S-16I/Exhaust/Stock/Nagata 2S-16i Exhaust Manifold_L.png" id="8_ujiku"]
+[ext_resource type="Texture2D" uid="uid://d1g38ro0boro5" path="res://Textures/Engines/Nagata 2S-16I/Exhaust/Stock/Nagata 2S-16i Exhaust Manifold_L NM.png" id="9_3wo3y"]
+[ext_resource type="Texture2D" uid="uid://da2jf3l6ifcdr" path="res://Textures/Engines/Nagata 2S-16I/Exhaust/Stock/Nagata 2S-16i Exhaust Manifold_L Spec.png" id="10_d2wv2"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_23fjm"]
+diffuse_texture = ExtResource("2_17r88")
+normal_texture = ExtResource("3_d684o")
+specular_texture = ExtResource("4_vf7tk")
+specular_shininess = 0.3
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_inuwe"]
+diffuse_texture = ExtResource("5_871nk")
+normal_texture = ExtResource("6_r5cpx")
+specular_texture = ExtResource("7_5briy")
+specular_shininess = 0.3
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_g6r2h"]
+diffuse_texture = ExtResource("8_ujiku")
+normal_texture = ExtResource("9_3wo3y")
+specular_texture = ExtResource("10_d2wv2")
+specular_shininess = 0.3
+
+[node name="Hikari Suhei-25A Stock Exhaust Manifold" type="Node2D"]
+script = ExtResource("1_ny84u")
+rarity = "uncommon"
+Engine_ID = 3
+Part_Number = 1
+description = "The factory exhaust manifold for the Hikari Suhei-25A Engine"
+weight = 18
+tq_mod = 0.98
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = SubResource("CanvasTexture_23fjm")
+
+[node name="Trans" type="Sprite2D" parent="."]
+visible = false
+z_index = -5
+position = Vector2(-17, -17)
+texture = SubResource("CanvasTexture_inuwe")
+
+[node name="Long" type="Sprite2D" parent="."]
+visible = false
+z_index = -5
+position = Vector2(-48, 4)
+texture = SubResource("CanvasTexture_g6r2h")

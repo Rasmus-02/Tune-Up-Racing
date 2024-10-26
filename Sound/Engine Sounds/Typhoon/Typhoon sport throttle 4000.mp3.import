@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://pa1n74fgp6eb"
+path="res://.godot/imported/Typhoon sport throttle 4000.mp3-59bafc03490dccac0d61f72d6b042d1c.mp3str"
+
+[deps]
+
+source_file="res://Sound/Engine Sounds/Typhoon/Typhoon sport throttle 4000.mp3"
+dest_files=["res://.godot/imported/Typhoon sport throttle 4000.mp3-59bafc03490dccac0d61f72d6b042d1c.mp3str"]
+
+[params]
+
+loop=true
+loop_offset=0.0
+bpm=0.0
+beat_count=0
+bar_beats=4

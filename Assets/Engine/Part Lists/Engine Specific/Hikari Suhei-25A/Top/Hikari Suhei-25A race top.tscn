@@ -1,0 +1,54 @@
+[gd_scene load_steps=12 format=3 uid="uid://kbgg5mi14wx7"]
+
+[ext_resource type="Script" path="res://Assets/Engine/Part_scripts/Top.gd" id="1_m321r"]
+[ext_resource type="Texture2D" uid="uid://bg25q53u0kxw4" path="res://Textures/Engines/Hikari Suhei-25A/Top/Hikai Suhei-25A Race Top.png" id="2_gbfl0"]
+[ext_resource type="Texture2D" uid="uid://bmluokeuwk0da" path="res://Textures/Engines/Hikari Suhei-25A/Top/Hikai Suhei-25A Race Top NM.png" id="3_obtr4"]
+[ext_resource type="Texture2D" uid="uid://cu1l5d173mdev" path="res://Textures/Engines/Hikari Suhei-25A/Top/Hikai Suhei-25A Race Top Spec.png" id="4_cia6b"]
+[ext_resource type="Script" path="res://Assets/Engine/Code/Sound_handler_engine.gd" id="5_wd7vn"]
+[ext_resource type="AudioStream" uid="uid://c5kntrol8neud" path="res://Sound/Engine Sounds/Suhei-25A/Suhei_25A_Race_Throttle_1000.mp3" id="6_1747w"]
+[ext_resource type="AudioStream" uid="uid://bnhvjnxxyd0mh" path="res://Sound/Engine Sounds/Suhei-25A/Suhei_25A_Race_No_Throttle_1000.mp3" id="7_rmkdl"]
+[ext_resource type="AudioStream" uid="uid://cl7s016nryiwf" path="res://Sound/Engine Sounds/Suhei-25A/Suhei_25A_Race_No_Throttle_4000.mp3" id="8_vbxg5"]
+[ext_resource type="AudioStream" uid="uid://bmub53ydap3yp" path="res://Sound/Engine Sounds/Suhei-25A/Suhei_25A_Race_Throttle_4000.mp3" id="9_m8v5d"]
+[ext_resource type="AudioStream" uid="uid://bumo62fftckdb" path="res://Sound/AirFlow Sound.mp3" id="10_gtmvb"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_ogrmj"]
+diffuse_texture = ExtResource("2_gbfl0")
+normal_texture = ExtResource("3_obtr4")
+specular_texture = ExtResource("4_cia6b")
+specular_shininess = 0.5
+
+[node name="Hikari Suhei-25A Race Top" type="Node2D"]
+script = ExtResource("1_m321r")
+rarity = "epic"
+lenght = 20
+width = 36
+Engine_ID = 3
+Part_Number = 3
+description = "A high performance top end for the Hikari Suhei-25A Engine, developed for race cars"
+weight = 22.0
+tq_mod = 1.15
+max_hp_rpm = 6600
+max_compression = 12.5
+smoothness = 0.78
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = SubResource("CanvasTexture_ogrmj")
+
+[node name="Sound_handler" type="Node2D" parent="."]
+script = ExtResource("5_wd7vn")
+aiflow_db = -27
+
+[node name="engine_sound_throttle_1000rpm" type="AudioStreamPlayer2D" parent="Sound_handler"]
+stream = ExtResource("6_1747w")
+
+[node name="engine_sound_no_throttle_1000rpm" type="AudioStreamPlayer2D" parent="Sound_handler"]
+stream = ExtResource("7_rmkdl")
+
+[node name="engine_sound_no_throttle_4000rpm" type="AudioStreamPlayer2D" parent="Sound_handler"]
+stream = ExtResource("8_vbxg5")
+
+[node name="engine_sound_throttle_4000rpm" type="AudioStreamPlayer2D" parent="Sound_handler"]
+stream = ExtResource("9_m8v5d")
+
+[node name="Airflow" type="AudioStreamPlayer2D" parent="Sound_handler"]
+stream = ExtResource("10_gtmvb")

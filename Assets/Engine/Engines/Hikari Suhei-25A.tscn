@@ -1,0 +1,43 @@
+[gd_scene load_steps=11 format=3 uid="uid://bgw6l5t4kqq76"]
+
+[ext_resource type="PackedScene" uid="uid://cctyed3jxvgm6" path="res://Assets/Engine/Part Lists/Part Selector/Part Selector engine.tscn" id="1_12ogh"]
+[ext_resource type="PackedScene" uid="uid://4k1ww52bhayn" path="res://Assets/Engine/Part Lists/Engine Specific/Hikari Suhei-25A/Hikari Suhei-25A  part list.tscn" id="2_eerfa"]
+[ext_resource type="PackedScene" uid="uid://0lggp6gpn8xa" path="res://Assets/Engine/Part Lists/Universal/Universal part list.tscn" id="3_aulsl"]
+[ext_resource type="Texture2D" uid="uid://bwfht3qbtlaiv" path="res://Textures/Engines/Hikari Suhei-25A/Radiator piping/Hikai Suhei-25A Transverse Radiator Piping.png" id="4_2f7po"]
+[ext_resource type="Texture2D" uid="uid://csoymb6sgq8dt" path="res://Textures/Engines/Hikari Suhei-25A/Radiator piping/Hikai Suhei-25A Transverse Radiator Piping NM.png" id="5_hl2s8"]
+[ext_resource type="Texture2D" uid="uid://dn58hvu4427p8" path="res://Textures/Engines/Hikari Suhei-25A/Radiator piping/Hikai Suhei-25A Longitudunal Radiator Piping.png" id="6_sxuy8"]
+[ext_resource type="Texture2D" uid="uid://cput16p857xwi" path="res://Textures/Engines/Hikari Suhei-25A/Radiator piping/Hikai Suhei-25A Longitudunal Radiator Piping NM.png" id="7_v3v2l"]
+[ext_resource type="PackedScene" uid="uid://c8il6nkvjwonk" path="res://Sound/Turbo and Supercharge Sounds/Boost_Sound_Handler.tscn" id="8_1mnl6"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_8lf8t"]
+diffuse_texture = ExtResource("4_2f7po")
+normal_texture = ExtResource("5_hl2s8")
+specular_texture = ExtResource("4_2f7po")
+specular_shininess = 0.5
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_71le6"]
+diffuse_texture = ExtResource("6_sxuy8")
+normal_texture = ExtResource("7_v3v2l")
+specular_texture = ExtResource("6_sxuy8")
+specular_shininess = 0.5
+
+[node name="Hikari Suhei-25A" type="Node2D"]
+
+[node name="Part Selector" parent="." instance=ExtResource("1_12ogh")]
+
+[node name="Hikari Suhei-25A Part List" parent="Part Selector" instance=ExtResource("2_eerfa")]
+
+[node name="Universal Part List" parent="Part Selector" instance=ExtResource("3_aulsl")]
+
+[node name="Gearbox" type="Marker2D" parent="."]
+position = Vector2(-12, 0)
+
+[node name="Radiator_Piping_Transverse" type="Sprite2D" parent="."]
+visible = false
+texture = SubResource("CanvasTexture_8lf8t")
+
+[node name="Radiator_Piping_Longitudinal" type="Sprite2D" parent="."]
+visible = false
+texture = SubResource("CanvasTexture_71le6")
+
+[node name="Boost_Sound_Handler" parent="." instance=ExtResource("8_1mnl6")]

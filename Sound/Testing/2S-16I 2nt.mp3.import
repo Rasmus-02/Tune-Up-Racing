@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bh2idpd5u2115"
+path="res://.godot/imported/2S-16I 2nt.mp3-497fd503003fa57da7e8a33be72961ac.mp3str"
+
+[deps]
+
+source_file="res://Sound/Testing/2S-16I 2nt.mp3"
+dest_files=["res://.godot/imported/2S-16I 2nt.mp3-497fd503003fa57da7e8a33be72961ac.mp3str"]
+
+[params]
+
+loop=true
+loop_offset=0.0
+bpm=0.0
+beat_count=0
+bar_beats=4

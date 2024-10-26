@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://dmcwtlpp6q5tf"]
+
+[ext_resource type="Script" path="res://Assets/Car/Part Lists/Universal/Universal Part List.gd" id="1_okw2e"]
+
+[node name="Universal Part List" type="Node2D"]
+script = ExtResource("1_okw2e")

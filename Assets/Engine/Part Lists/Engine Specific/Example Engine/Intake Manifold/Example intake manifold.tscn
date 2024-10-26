@@ -1,0 +1,27 @@
+[gd_scene load_steps=6 format=3 uid="uid://3ygmupktbwsn"]
+
+[ext_resource type="Script" path="res://Assets/Engine/Part_scripts/Intake_Manifold.gd" id="1_0l0lh"]
+[ext_resource type="Texture2D" uid="uid://bkjvxfvp8cx5b" path="res://Textures/Engines/Nagata 2S-16I/Intake/Nagata 2S-16i Intake Manifold.png" id="2_bcyvu"]
+[ext_resource type="Texture2D" uid="uid://b0vqs36g4e6jn" path="res://Textures/Engines/Nagata 2S-16I/Intake/Nagata 2S-16i Intake Manifold NM.png" id="3_bwcmw"]
+[ext_resource type="Texture2D" uid="uid://pnjnowfudiab" path="res://Textures/Engines/Nagata 2S-16I/Intake/Nagata 2S-16i Intake Manifold Spec.png" id="4_1ptxf"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_oa52d"]
+diffuse_texture = ExtResource("2_bcyvu")
+normal_texture = ExtResource("3_bwcmw")
+specular_texture = ExtResource("4_1ptxf")
+specular_shininess = 0.5
+
+[node name="Example intake manifold" type="Node2D"]
+script = ExtResource("1_0l0lh")
+rarity = "uncommon"
+lenght = 24
+width = 8
+Part_Number = 1
+description = "The factory intake manifold for the 2S-16i Engine"
+weight = 8
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = SubResource("CanvasTexture_oa52d")
+
+[node name="Air filter location" type="Marker2D" parent="."]
+position = Vector2(14, -9)

@@ -1,0 +1,48 @@
+[gd_scene load_steps=6 format=3 uid="uid://d15nkdipls0bn"]
+
+[ext_resource type="Texture2D" uid="uid://bl54jr65vrc2l" path="res://Assets/Effects/Butterfly.png" id="1_hglvv"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_8pn65"]
+particles_animation = true
+particles_anim_h_frames = 1
+particles_anim_v_frames = 3
+particles_anim_loop = true
+
+[sub_resource type="Curve" id="Curve_o81kx"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.0240964, 1), 0.0, 0.0, 0, 0, Vector2(0.975904, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 4
+
+[sub_resource type="Gradient" id="Gradient_n1fu2"]
+offsets = PackedFloat32Array(0.954751, 1)
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="Curve" id="Curve_hcht8"]
+min_value = -1.0
+_data = [Vector2(0, 0.379968), 0.0, 0.0, 0, 0, Vector2(0.0344828, 0.297297), 0.0, 0.0, 0, 0, Vector2(0.333333, 0.0492846), 0.0, 0.0, 0, 0, Vector2(0.727969, -0.054054), 0.0, 0.0, 0, 0, Vector2(0.954023, -0.116057), 0.0, 0.0, 0, 0, Vector2(1, -0.281399), 0.0, 0.0, 0, 0]
+point_count = 6
+
+[node name="Butterflies" type="CPUParticles2D"]
+z_index = 800
+material = SubResource("CanvasItemMaterial_8pn65")
+position = Vector2(-0.00909424, -0.00621223)
+amount = 1280
+lifetime = 60.0
+explosiveness = 0.6
+randomness = 1.0
+texture = ExtResource("1_hglvv")
+emission_shape = 3
+emission_rect_extents = Vector2(35000, 25000)
+particle_flag_align_y = true
+spread = 180.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 44.78
+initial_velocity_max = 59.7
+tangential_accel_min = -10.0
+tangential_accel_max = 10.0
+scale_amount_curve = SubResource("Curve_o81kx")
+color_ramp = SubResource("Gradient_n1fu2")
+hue_variation_min = -0.05
+hue_variation_max = 0.3
+hue_variation_curve = SubResource("Curve_hcht8")
+anim_speed_min = 80.0
+anim_speed_max = 80.0

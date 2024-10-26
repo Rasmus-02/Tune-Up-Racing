@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://daai7wavadrs6"]
+
+[ext_resource type="PackedScene" uid="uid://c2temcei51jwy" path="res://Assets/Player Character/player.tscn" id="1_3ywiq"]
+[ext_resource type="Texture2D" uid="uid://ctclaioyo4ltk" path="res://Textures/Tracks/Concepts/Costal Circuit.png" id="2_pdopk"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Player" parent="." instance=ExtResource("1_3ywiq")]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(6.29956, -1.25989)
+scale = Vector2(20, 20)
+texture = ExtResource("2_pdopk")

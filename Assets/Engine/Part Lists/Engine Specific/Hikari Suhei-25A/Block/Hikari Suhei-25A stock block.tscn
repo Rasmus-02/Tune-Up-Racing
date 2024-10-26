@@ -1,0 +1,28 @@
+[gd_scene load_steps=6 format=3 uid="uid://dfokxsu8bwe8h"]
+
+[ext_resource type="Script" path="res://Assets/Engine/Part_scripts/Block.gd" id="1_hmfbx"]
+[ext_resource type="Texture2D" uid="uid://chmedadqn0og5" path="res://Textures/Engines/Hikari Suhei-25A/Block/Hikai Suhei-25A Block.png" id="2_kqf47"]
+[ext_resource type="Texture2D" uid="uid://bq3iihhy7e46q" path="res://Textures/Engines/Hikari Suhei-25A/Block/Hikai Suhei-25A Block NM.png" id="3_tchog"]
+[ext_resource type="Texture2D" uid="uid://dul48whe55m8a" path="res://Textures/Engines/Hikari Suhei-25A/Block/Hikai Suhei-25A Block Spec.png" id="4_7mtg3"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_8byoe"]
+diffuse_texture = ExtResource("2_kqf47")
+normal_texture = ExtResource("3_tchog")
+specular_texture = ExtResource("4_7mtg3")
+specular_shininess = 0.5
+
+[node name="Hikari Suhei-25A Cast Iron Block" type="Node2D"]
+script = ExtResource("1_hmfbx")
+rarity = "uncommon"
+layout = "Boxer"
+lenght = 19
+width = 25
+Engine_ID = 3
+Part_Number = 1
+description = "The factory block for the Hikari Suhei-25A Engine"
+weight = 72
+tq = 260
+max_tq = 500
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = SubResource("CanvasTexture_8byoe")

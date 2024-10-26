@@ -1,0 +1,59 @@
+[gd_scene load_steps=10 format=3 uid="uid://dtm32ism4pjlr"]
+
+[ext_resource type="Script" path="res://Assets/Car/Code/Part_scripts/Chassi.gd" id="1_4ialf"]
+[ext_resource type="Texture2D" uid="uid://dlh5qaqombv3e" path="res://Textures/Cars/Nagata Koi/Chassi/Nagata Koi Chassi.png" id="2_4eyvq"]
+[ext_resource type="Texture2D" uid="uid://cf3y8plo5n68s" path="res://Textures/Cars/Nagata Koi/Chassi/Nagata Koi Chassi NM2.png" id="3_4b3ba"]
+[ext_resource type="Script" path="res://Textures/Cars/Color_selector.gd" id="3_knp0k"]
+[ext_resource type="Texture2D" uid="uid://peas8menq8de" path="res://Textures/Cars/Nagata Koi/Chassi/Nagata Koi Chassi Spec.png" id="4_bvvri"]
+[ext_resource type="PackedScene" uid="uid://bdgi70ouxoi6w" path="res://Assets/Car/Part Lists/Car Specific/Nagata Koi/Windows/Nagata Koi Windows.tscn" id="6_al466"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_jbiqp"]
+diffuse_texture = ExtResource("2_4eyvq")
+normal_texture = ExtResource("3_4b3ba")
+specular_texture = ExtResource("4_bvvri")
+specular_shininess = 0.5
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_taee6"]
+blend_mode = 1
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_gac0f"]
+polygon = PackedVector2Array(-53.0884, -40.6985, -25.0884, -40.6985, -24.0884, -39.6985, 66.9116, -39.6985, 70.9116, -35.6985, 111.912, -35.6985, 114.912, -34.6985, 119.912, -32.6985, 121.912, -31.6985, 124.912, -27.6985, 126.912, -24.6985, 127.912, -13.6985, 127.912, 19.3015, 126.912, 28.3015, 124.912, 31.3015, 121.912, 35.3015, 119.912, 36.3015, 114.912, 38.3015, 111.912, 39.3015, 70.9116, 39.3015, 66.9116, 43.3015, -24.0884, 43.3015, -25.0884, 44.3015, -53.0884, 44.3015, -60.0884, 41.3015, -66.0884, 35.3015, -70.0884, 25.3015, -70.0884, -21.6985, -66.0884, -31.6985, -60.0884, -37.6985)
+
+[node name="Nagata Koi Chassi" type="Node2D"]
+script = ExtResource("1_4ialf")
+rarity = "uncommon"
+engine_bay_lenght = 37
+engine_bay_width = 51
+engine_bay_start_lenght = 54
+Part_Number = 1
+description = "An affordable nimble little Japanese hatchback"
+weight = 780
+downforce = 25
+drag = 0.25
+wheelbase = 133
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = SubResource("CanvasTexture_jbiqp")
+script = ExtResource("3_knp0k")
+
+[node name="LightOccluder2D2" type="LightOccluder2D" parent="Sprite2D"]
+material = SubResource("CanvasItemMaterial_taee6")
+position = Vector2(-29.9116, -2.30154)
+occluder = SubResource("OccluderPolygon2D_gac0f")
+
+[node name="Nagata Koi Windows" parent="Sprite2D" instance=ExtResource("6_al466")]
+
+[node name="FL" type="Marker2D" parent="."]
+position = Vector2(64, -31)
+
+[node name="RL" type="Marker2D" parent="."]
+position = Vector2(-69, -31)
+
+[node name="RR" type="Marker2D" parent="."]
+position = Vector2(-69, 30)
+
+[node name="FR" type="Marker2D" parent="."]
+position = Vector2(64, 30)
+
+[node name="Radiator_Location" type="Marker2D" parent="."]
+position = Vector2(89, 0)

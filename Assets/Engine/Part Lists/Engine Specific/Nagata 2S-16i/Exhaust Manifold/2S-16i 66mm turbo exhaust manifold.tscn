@@ -1,0 +1,63 @@
+[gd_scene load_steps=14 format=3 uid="uid://df46g8456sh84"]
+
+[ext_resource type="Script" path="res://Assets/Engine/Part_scripts/Exhaust_Manifold.gd" id="1_6cb4k"]
+[ext_resource type="Texture2D" uid="uid://d04unpm73l13r" path="res://Textures/Engines/Nagata 2S-16I/Exhaust/66mm Turbo/Nagata 2S-16i 66mm turbo Exhaust Manifold.png" id="2_w2xum"]
+[ext_resource type="Texture2D" uid="uid://d1rmo6o25loi0" path="res://Textures/Engines/Nagata 2S-16I/Exhaust/66mm Turbo/Nagata 2S-16i 66mm turbo Exhaust Manifold NM.png" id="3_2v38s"]
+[ext_resource type="Texture2D" uid="uid://b5u32djy3f0x7" path="res://Textures/Engines/Nagata 2S-16I/Exhaust/66mm Turbo/Nagata 2S-16i 66mm turbo Exhaust Manifold Spec.png" id="4_ulwcf"]
+[ext_resource type="Texture2D" uid="uid://t7e3fbsccuki" path="res://Textures/Engines/Nagata 2S-16I/Exhaust/Stock/Nagata 2S-16i Exhaust Manifold_T.png" id="5_ovgmy"]
+[ext_resource type="Texture2D" uid="uid://cyrgbxu7xvc8y" path="res://Textures/Engines/Nagata 2S-16I/Exhaust/Stock/Nagata 2S-16i Exhaust Manifold_T NM.png" id="6_uthc6"]
+[ext_resource type="Texture2D" uid="uid://w0rlbkfsuc5t" path="res://Textures/Engines/Nagata 2S-16I/Exhaust/Stock/Nagata 2S-16i Exhaust Manifold_T Spec.png" id="7_o4bda"]
+[ext_resource type="Texture2D" uid="uid://dm65u133nd2y0" path="res://Textures/Engines/Nagata 2S-16I/Exhaust/Stock/Nagata 2S-16i Exhaust Manifold_L.png" id="8_8gjjj"]
+[ext_resource type="Texture2D" uid="uid://d1g38ro0boro5" path="res://Textures/Engines/Nagata 2S-16I/Exhaust/Stock/Nagata 2S-16i Exhaust Manifold_L NM.png" id="9_4ju0e"]
+[ext_resource type="Texture2D" uid="uid://da2jf3l6ifcdr" path="res://Textures/Engines/Nagata 2S-16I/Exhaust/Stock/Nagata 2S-16i Exhaust Manifold_L Spec.png" id="10_mbmao"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_23fjm"]
+diffuse_texture = ExtResource("2_w2xum")
+normal_texture = ExtResource("3_2v38s")
+specular_texture = ExtResource("4_ulwcf")
+specular_shininess = 0.4
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_inuwe"]
+diffuse_texture = ExtResource("5_ovgmy")
+normal_texture = ExtResource("6_uthc6")
+specular_texture = ExtResource("7_o4bda")
+specular_shininess = 0.3
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_g6r2h"]
+diffuse_texture = ExtResource("8_8gjjj")
+normal_texture = ExtResource("9_4ju0e")
+specular_texture = ExtResource("10_mbmao")
+specular_shininess = 0.3
+
+[node name="Nagata 2S-16i 66mm Turbo Exhaust Manifold" type="Node2D"]
+script = ExtResource("1_6cb4k")
+rarity = "rare"
+Engine_ID = 2
+Part_Number = 2
+lenght = 8
+width = 13
+description = "A factory exhaust manifold with a 66mm Turbo mounted to it"
+weight = 47
+tq_mod = 1.0
+turbo = true
+turbo_efficiency = 0.8
+turbo_type = "single"
+turbo_1_size = 66.0
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = SubResource("CanvasTexture_23fjm")
+
+[node name="Trans" type="Sprite2D" parent="."]
+visible = false
+z_index = -5
+position = Vector2(-3, -19)
+texture = SubResource("CanvasTexture_inuwe")
+
+[node name="Long" type="Sprite2D" parent="."]
+visible = false
+z_index = -5
+position = Vector2(-35, 2)
+texture = SubResource("CanvasTexture_g6r2h")
+
+[node name="Air filter location" type="Marker2D" parent="."]
+position = Vector2(7, 12)

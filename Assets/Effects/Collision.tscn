@@ -1,0 +1,43 @@
+[gd_scene load_steps=6 format=3 uid="uid://bdtwk3l2aqqg7"]
+
+[ext_resource type="Texture2D" uid="uid://dg6i866rsj8x4" path="res://Assets/Effects/Spark.png" id="1_mr4ok"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_0jicv"]
+blend_mode = 1
+light_mode = 1
+
+[sub_resource type="Curve" id="Curve_5ncxt"]
+max_value = 2.0
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.433225, 2), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_3oqrr"]
+curve = SubResource("Curve_5ncxt")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_obpkp"]
+particle_flag_disable_z = true
+angle_min = -720.0
+angle_max = 720.0
+spread = 180.0
+initial_velocity_min = 50.0
+initial_velocity_max = 120.0
+gravity = Vector3(0, 0, 0)
+damping_min = 20.958
+damping_max = 35.329
+scale_curve = SubResource("CurveTexture_3oqrr")
+turbulence_enabled = true
+turbulence_noise_strength = 9.67
+turbulence_noise_scale = 5.416
+
+[node name="Collision" type="GPUParticles2D"]
+modulate = Color(1, 0.941176, 0.764706, 1)
+self_modulate = Color(0.882353, 0.305882, 0, 1)
+material = SubResource("CanvasItemMaterial_0jicv")
+emitting = false
+amount = 32
+process_material = SubResource("ParticleProcessMaterial_obpkp")
+texture = ExtResource("1_mr4ok")
+lifetime = 0.3
+one_shot = true
+explosiveness = 0.85
+trail_lifetime = 0.13

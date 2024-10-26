@@ -1,0 +1,52 @@
+[gd_scene load_steps=10 format=3 uid="uid://bc8oi2t3mju2o"]
+
+[ext_resource type="Script" path="res://Assets/Car/Code/Part_scripts/Fenders.gd" id="1_8exqf"]
+[ext_resource type="Texture2D" uid="uid://duhnc6633eto8" path="res://Textures/Cars/Nagata Koi/Fenders/Nagata Koi [Vortex] Widebody Fenders.png" id="2_pn4p2"]
+[ext_resource type="Texture2D" uid="uid://bonvaj0uh8cmn" path="res://Textures/Cars/Nagata Koi/Fenders/Nagata Koi [Vortex] Widebody Fenders NM.png" id="3_5ojmp"]
+[ext_resource type="Texture2D" uid="uid://kndlqnhmixhn" path="res://Textures/Cars/Nagata Koi/Fenders/Nagata Koi [Vortex] Widebody Fenders Spec.png" id="4_2v6nw"]
+[ext_resource type="Script" path="res://Textures/Cars/Color_selector.gd" id="5_2lhjt"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_vufhm"]
+diffuse_texture = ExtResource("2_pn4p2")
+normal_texture = ExtResource("3_5ojmp")
+specular_texture = ExtResource("4_2v6nw")
+specular_shininess = 0.5
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_ak8kv"]
+blend_mode = 1
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_naikx"]
+polygon = PackedVector2Array(69.9116, -33.6985, 66.9116, -37.6985, 66.9116, -39.6985, 76.9116, -39.6985, 80.9116, -42.6985, 106.912, -42.6985, 110.912, -39.6985, 118.912, -36.6985, 122.912, -34.6985, 124.912, -32.6985, 124.912, -31.6985, 117.912, -31.6985, 112.912, -33.6985)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_knfek"]
+polygon = PackedVector2Array(-56.0884, 44.3015, -56.0884, -40.6985, -54.0884, -42.6985, -24.0884, -42.6985, -22.0884, -40.6985, -22.0884, 44.3015, -24.0884, 46.3015, -54.0884, 46.3015)
+
+[node name="Nagata Koi [Vortex] Widebody Fenders" type="Node2D"]
+script = ExtResource("1_8exqf")
+rarity = "rare"
+Part_Number = 2
+description = "Widebody fenders for the Nagata Koi designed by Vortex"
+weight = 16
+downforce = 20
+drag = 0.04
+max_tire_width = 240
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = SubResource("CanvasTexture_vufhm")
+script = ExtResource("5_2lhjt")
+
+[node name="LightOccluder2D2" type="LightOccluder2D" parent="Sprite2D"]
+material = SubResource("CanvasItemMaterial_ak8kv")
+position = Vector2(-29.9116, -2.30154)
+occluder = SubResource("OccluderPolygon2D_naikx")
+
+[node name="LightOccluder2D3" type="LightOccluder2D" parent="Sprite2D"]
+material = SubResource("CanvasItemMaterial_ak8kv")
+position = Vector2(-29.915, 1.3)
+scale = Vector2(1, -1)
+occluder = SubResource("OccluderPolygon2D_naikx")
+
+[node name="LightOccluder2D4" type="LightOccluder2D" parent="Sprite2D"]
+material = SubResource("CanvasItemMaterial_ak8kv")
+position = Vector2(-29.9116, -2.30154)
+occluder = SubResource("OccluderPolygon2D_knfek")

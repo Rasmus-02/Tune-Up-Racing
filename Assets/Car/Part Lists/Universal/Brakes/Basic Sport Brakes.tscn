@@ -1,0 +1,24 @@
+[gd_scene load_steps=6 format=3 uid="uid://cv7rttpdr3ijq"]
+
+[ext_resource type="Script" path="res://Assets/Car/Code/Part_scripts/Brakes.gd" id="1_jnrkq"]
+[ext_resource type="Texture2D" uid="uid://bh3foeswrvybb" path="res://Textures/Cars/Universal/Brakes/sport brakes.png" id="2_igpxv"]
+[ext_resource type="Texture2D" uid="uid://1dswommug2ux" path="res://Textures/Cars/Universal/Brakes/Passanger car standard brakes NM.png" id="3_isgc7"]
+[ext_resource type="Texture2D" uid="uid://dx1eta7xd1mgx" path="res://Textures/Cars/Universal/Brakes/Passanger car standard brakes Spec.png" id="4_5833t"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_ygqkl"]
+diffuse_texture = ExtResource("2_igpxv")
+normal_texture = ExtResource("3_isgc7")
+specular_texture = ExtResource("4_5833t")
+
+[node name="Basic Sport Brakes" type="Node2D"]
+script = ExtResource("1_jnrkq")
+rarity = "uncommon"
+Part_Number = 2
+description = "Basic small and relatively cheap disc brakes common on entry level sport cars"
+weight = 45
+brake_force = 950
+brake_cooling = 1.6
+brake_fade_limit = 350
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = SubResource("CanvasTexture_ygqkl")

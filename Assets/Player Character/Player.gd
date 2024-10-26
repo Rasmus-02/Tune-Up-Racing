@@ -1,0 +1,215 @@
+extends CharacterBody2D
+
+@export var movement_speed: int
+@onready var car_garage_ui = $"../Interact_Menu_Garage"
+var ui_visible = false
+var in_controll = false
+var selected_car = null
+var garage = null
+var car_list
+@onready var sprite = $AnimatedSprite2D
+@onready var animation = $AnimationPlayer
+
+func _ready():
+	garage = get_parent().get_parent()
+
+
+func _physics_process(_delta):
+	movement()
+	disable_enable()
+	interact()
+	animation_handler()
+
+func movement():
+	var speed = movement_speed
+	#Camera
+	var t = 0.05 #Smoothing between mouse and player
+	if selected_car != null and (SelectedScene.scene == "edit" or ui_visible == true):
+		#Smoothly pan over camera to car
+		$Camera2D.global_position.x = move_toward($Camera2D.global_position.x, selected_car.global_position.x, 0.01 * abs($Camera2D.global_position.x-selected_car.global_position.x))
+		$Camera2D.global_position.y = move_toward($Camera2D.global_position.y, selected_car.global_position.y, 0.01 * abs($Camera2D.global_position.y-selected_car.global_position.y))
+	else:
+		$Camera2D.global_position.x = move_toward($Camera2D.global_position.x, $AnimatedSprite2D.global_position.x, 0.5)
+		$Camera2D.global_position.y = move_toward($Camera2D.global_position.y, $AnimatedSprite2D.global_position.y, 0.5)
+	
+	if in_controll: #If character is controlled by player
+		#Sprint
+		if Input.is_action_pressed("Run"):
+			speed = movement_speed * 1.5
+		
+		#Movement
+		var direction = Input.get_vector("Left","Right","up","down")
+		if direction:
+			var max_velocity = direction * speed * direction.length()
+			velocity.x = move_toward(velocity.x, max_velocity.x, 13)
+			velocity.y = move_toward(velocity.y, max_velocity.y, 13)
+		else:
+			velocity.x = move_toward(velocity.x, 0, 10)
+			velocity.y = move_toward(velocity.y, 0, 10)
+		
+		move_and_slide()
+		
+		#Rotation
+		if velocity.length() > 0:
+			var current_rot = $AnimatedSprite2D.rotation
+			$AnimatedSprite2D.rotation = lerp_angle(current_rot, velocity.angle() + deg_to_rad(90), 3*t)
+			$CollisionShape2D.rotation = velocity.angle()
+	else:
+		velocity = Vector2.ZERO
+
+
+func animation_handler():
+	if velocity.length() > 0:
+		animation.play("Walk")
+		animation.speed_scale = velocity.length() / 120
+	else:
+		animation.play("Idle")
+		animation.speed_scale = .2
+
+
+func disable_enable(): #For disabling movement input
+	if SelectedScene.scene == "garage" and ui_visible == false:
+		in_controll = true
+	else:
+		in_controll = false
+
+
+func _on_selector_body_entered(body): #Select car in range
+	if body.is_in_group("Car"):
+		selected_car = body
+
+func _on_selector_body_exited(body): #Deselect car when out of range
+	if body.is_in_group("Car"):
+		selected_car = null
+
+
+#Interaction with car from player character
+func interact():
+	#Make Car Edit options appear 
+	if selected_car != null and Input.is_action_just_pressed("Interact"):
+		#If UI is already open close it
+		if ui_visible == true:
+			hide_ui()
+		else:
+			show_ui()
+	elif Input.is_action_just_pressed("ui_cancel") and ui_visible == true:
+		if ui_visible == true:
+			hide_ui()
+
+func hide_ui():
+	car_garage_ui.hide()
+	$"../Move_Menu_Garage".hide()
+	ui_visible = false
+
+func show_ui():
+	if get_parent().get_parent().get_node("Car Edit UI").get_node("Car Edit Controller").active == false and get_parent().get_parent().get_node("Car Edit UI").get_node("Engine Edit Controller").active == false:
+		#set position where the us should spawn
+		$"../Interact_Menu_Garage".global_position = selected_car.global_position +Vector2(-75,55)
+		#reset which buttons are visible
+		for n in car_garage_ui.get_child_count():
+			car_garage_ui.get_child(n).hide()
+		#select what menues should be visible
+		$"../Interact_Menu_Garage/Drive_Car_button".show()
+		$"../Interact_Menu_Garage/Move_Car_button".show()
+		$"../Interact_Menu_Garage/Info_Car_button".hide() #NOT YET IMPLEMENTED
+		if selected_car.in_garage == 1:
+			$"../Interact_Menu_Garage/Edit_Car_button".show()
+		if selected_car.in_garage == 2:
+			$"../Interact_Menu_Garage/Dyno_button".show()
+		car_garage_ui.show()
+		$"../Interact_Menu_Garage/Drive_Car_button".grab_focus()
+		ui_visible = true
+
+func _on_edit_car_button_pressed():
+	Save_Load.selected_car_key = selected_car.selected_car_key
+	Save_Load.save()
+	get_parent().get_parent().get_node("Car Edit UI").get_node("Car Edit Controller").initiated = false
+	get_parent().get_parent().get_node("Car Edit UI").get_node("Car Edit Controller").active = true
+	ui_visible = false
+	car_garage_ui.hide()
+
+func _on_dyno_button_pressed():
+	if selected_car != null:
+		Save_Load.selected_car_key = selected_car.selected_car_key
+		Save_Load.save()
+		get_parent().get_parent().get_node("Props").get_node("Dyno").update()
+		selected_car.loaded = true
+		selected_car.run_dyno()
+		ui_visible = false
+		car_garage_ui.hide()
+
+
+func _on_drive_car_button_pressed():
+	Save_Load.selected_car_key = selected_car.selected_car_key
+	Save_Load.save()
+	garage.drive()
+
+func _on_info_car_button_pressed():
+	pass # Replace with function body.
+
+func _on_move_car_button_pressed():
+	if selected_car != null:
+		selected_car.loaded = false
+		$"../Move_Menu_Garage".show()
+		$"../Move_Menu_Garage".global_position = selected_car.global_position +Vector2(-100,55)
+		ui_visible = true
+		car_garage_ui.hide()
+		$"../Move_Menu_Garage/VBoxContainer/Move_To_Lift".grab_focus()
+
+
+func check_if_movable(place):
+	car_list = Save_Load.load_file("cars")
+	var car_list_array = car_list.keys()
+	for i in car_list.size():
+		if place == car_list.get(car_list_array[i]).get("in_garage"):
+			return false
+
+func _on_move_to_lift_pressed():
+	if check_if_movable(1) != false:
+		selected_car.in_garage = 1
+		save()
+		move_car()
+
+func _on_move_to_dyno_pressed():
+	if check_if_movable(2) != false:
+		selected_car.in_garage = 2
+		save()
+		move_car()
+
+func _on_move_to_paint_pressed():
+	if check_if_movable(3) != false:
+		selected_car.in_garage = 3
+		save()
+		move_car()
+
+func _on_move_to_garage_parking_1_pressed():
+	if check_if_movable(4) != false:
+		selected_car.in_garage = 4
+		save()
+		move_car()
+
+func _on_move_to_garage_parking_2_pressed():
+	if check_if_movable(5) != false:
+		selected_car.in_garage = 5
+		save()
+		move_car()
+
+func _on_move_to_garage_parking_3_pressed():
+	if check_if_movable(6) != false:
+		selected_car.in_garage = 6
+		save()
+		move_car()
+
+
+func save():
+	var key = selected_car.selected_car_key
+	Save_Load.temp_key_car = key #car key
+	Save_Load.edit_car(selected_car)
+	Save_Load.save()
+
+func move_car():
+	get_parent().get_parent().get_node("Car_Spawner_Global").move_car(selected_car)
+	car_garage_ui.hide()
+	$"../Move_Menu_Garage".hide()
+	ui_visible = false
+	

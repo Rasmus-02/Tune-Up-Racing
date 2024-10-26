@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://g0ccxn6ul5bk"]
+
+[ext_resource type="Texture2D" uid="uid://r3sb7b2ud4cq" path="res://Textures/UI/Minimaps/Player_minimap.png" id="1_fbs27"]
+
+[node name="Minimap_Icon" type="Sprite2D"]
+texture = ExtResource("1_fbs27")

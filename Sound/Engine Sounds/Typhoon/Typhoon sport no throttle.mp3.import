@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://f7pu6sm02gq3"
+path="res://.godot/imported/Typhoon sport no throttle.mp3-a87a2ba3283d86598422e9d71e467ea9.mp3str"
+
+[deps]
+
+source_file="res://Sound/Engine Sounds/Typhoon/Typhoon sport no throttle.mp3"
+dest_files=["res://.godot/imported/Typhoon sport no throttle.mp3-a87a2ba3283d86598422e9d71e467ea9.mp3str"]
+
+[params]
+
+loop=true
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

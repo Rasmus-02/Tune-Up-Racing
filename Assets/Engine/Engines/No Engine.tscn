@@ -1,0 +1,26 @@
+[gd_scene load_steps=6 format=3 uid="uid://dexxy0nxd1ikx"]
+
+[ext_resource type="PackedScene" uid="uid://cctyed3jxvgm6" path="res://Assets/Engine/Part Lists/Part Selector/Part Selector engine.tscn" id="1_f7q7a"]
+[ext_resource type="PackedScene" uid="uid://562gipqro1ak" path="res://Assets/Engine/Part Lists/Engine Specific/Nagata 2S-16i/nagata_2s_16i part list.tscn" id="2_hu1on"]
+[ext_resource type="Script" path="res://Assets/Engine/Part Lists/Engine Specific/Nagata 2S-16i/empty_engine part list.gd" id="3_pfb07"]
+[ext_resource type="PackedScene" uid="uid://0lggp6gpn8xa" path="res://Assets/Engine/Part Lists/Universal/Universal part list.tscn" id="4_wgwu8"]
+[ext_resource type="PackedScene" uid="uid://c8il6nkvjwonk" path="res://Sound/Turbo and Supercharge Sounds/Boost_Sound_Handler.tscn" id="8_fvwxq"]
+
+[node name="No Engine" type="Node2D"]
+
+[node name="Part Selector" parent="." instance=ExtResource("1_f7q7a")]
+
+[node name="Empty Engine Part List" parent="Part Selector" instance=ExtResource("2_hu1on")]
+script = ExtResource("3_pfb07")
+
+[node name="Universal Part List" parent="Part Selector" instance=ExtResource("4_wgwu8")]
+
+[node name="Gearbox" type="Marker2D" parent="."]
+
+[node name="Radiator_Piping_Transverse" type="Sprite2D" parent="."]
+visible = false
+
+[node name="Radiator_Piping_Longitudinal" type="Sprite2D" parent="."]
+visible = false
+
+[node name="Boost_Sound_Handler" parent="." instance=ExtResource("8_fvwxq")]

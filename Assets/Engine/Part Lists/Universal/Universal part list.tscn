@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://0lggp6gpn8xa"]
+
+[ext_resource type="Script" path="res://Assets/Engine/Part Lists/Universal/Universal Part List.gd" id="1_rm615"]
+
+[node name="Universal Part List" type="Node2D"]
+script = ExtResource("1_rm615")

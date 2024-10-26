@@ -1,0 +1,56 @@
+[gd_scene load_steps=14 format=3 uid="uid://bhdpwrc52kfsc"]
+
+[ext_resource type="Script" path="res://Assets/Engine/Part_scripts/Exhaust_Manifold.gd" id="1_uaccd"]
+[ext_resource type="Texture2D" uid="uid://dngeksgfmv2bw" path="res://Textures/Engines/Nagata 2S-16I/Exhaust/[Satesu] Tubular Exhaust Manifold/Nagata 2S-16i [Satetsu] Tubular Exhaust Manifold.png" id="2_ofty3"]
+[ext_resource type="Texture2D" uid="uid://bdlncdvlleir4" path="res://Textures/Engines/Nagata 2S-16I/Exhaust/[Satesu] Tubular Exhaust Manifold/Nagata 2S-16i [Satetsu] Tubular Exhaust Manifold NM.png" id="3_bxr6p"]
+[ext_resource type="Texture2D" uid="uid://b6raltw7f74cu" path="res://Textures/Engines/Nagata 2S-16I/Exhaust/[Satesu] Tubular Exhaust Manifold/Nagata 2S-16i [Satetsu] Tubular Exhaust Manifold Spec.png" id="4_x1e7t"]
+[ext_resource type="Texture2D" uid="uid://t7e3fbsccuki" path="res://Textures/Engines/Nagata 2S-16I/Exhaust/Stock/Nagata 2S-16i Exhaust Manifold_T.png" id="5_xoevl"]
+[ext_resource type="Texture2D" uid="uid://cyrgbxu7xvc8y" path="res://Textures/Engines/Nagata 2S-16I/Exhaust/Stock/Nagata 2S-16i Exhaust Manifold_T NM.png" id="6_5cnne"]
+[ext_resource type="Texture2D" uid="uid://w0rlbkfsuc5t" path="res://Textures/Engines/Nagata 2S-16I/Exhaust/Stock/Nagata 2S-16i Exhaust Manifold_T Spec.png" id="7_hsy5t"]
+[ext_resource type="Texture2D" uid="uid://dm65u133nd2y0" path="res://Textures/Engines/Nagata 2S-16I/Exhaust/Stock/Nagata 2S-16i Exhaust Manifold_L.png" id="8_mnawo"]
+[ext_resource type="Texture2D" uid="uid://d1g38ro0boro5" path="res://Textures/Engines/Nagata 2S-16I/Exhaust/Stock/Nagata 2S-16i Exhaust Manifold_L NM.png" id="9_7hyko"]
+[ext_resource type="Texture2D" uid="uid://da2jf3l6ifcdr" path="res://Textures/Engines/Nagata 2S-16I/Exhaust/Stock/Nagata 2S-16i Exhaust Manifold_L Spec.png" id="10_fsmlv"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_23fjm"]
+diffuse_texture = ExtResource("2_ofty3")
+normal_texture = ExtResource("3_bxr6p")
+specular_texture = ExtResource("4_x1e7t")
+specular_color = Color(1, 0.909804, 0.513726, 1)
+specular_shininess = 0.3
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_inuwe"]
+diffuse_texture = ExtResource("5_xoevl")
+normal_texture = ExtResource("6_5cnne")
+specular_texture = ExtResource("7_hsy5t")
+specular_shininess = 0.3
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_g6r2h"]
+diffuse_texture = ExtResource("8_mnawo")
+normal_texture = ExtResource("9_7hyko")
+specular_texture = ExtResource("10_fsmlv")
+specular_shininess = 0.3
+
+[node name="Nagata 2S-16i [Satetsu] Tubular Exhaust Manifold" type="Node2D"]
+script = ExtResource("1_uaccd")
+rarity = "rare"
+Engine_ID = 2
+Part_Number = 4
+width = 9
+description = "A tubular exhaust manifold for the 2S-16i Engine designed by the tuning shop Satetsu for improved airflow"
+weight = 9
+tq_mod = 1.1
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = SubResource("CanvasTexture_23fjm")
+
+[node name="Trans" type="Sprite2D" parent="."]
+visible = false
+z_index = -5
+position = Vector2(-13, -23)
+texture = SubResource("CanvasTexture_inuwe")
+
+[node name="Long" type="Sprite2D" parent="."]
+visible = false
+z_index = -5
+position = Vector2(-45, -1)
+texture = SubResource("CanvasTexture_g6r2h")

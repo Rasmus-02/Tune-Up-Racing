@@ -1,0 +1,28 @@
+[gd_scene load_steps=2 format=3 uid="uid://brbx33n7duy1v"]
+
+[ext_resource type="Texture2D" uid="uid://calycmhophto" path="res://Shaders/light beam.png" id="1_yusav"]
+
+[node name="Lights" type="Node2D"]
+light_mask = 3
+
+[node name="Shadow" type="PointLight2D" parent="."]
+position = Vector2(126, 0)
+scale = Vector2(2, 1)
+color = Color(1, 0.972549, 0.72549, 1)
+energy = 0.1
+shadow_enabled = true
+shadow_filter = 1
+shadow_filter_smooth = 0.5
+texture = ExtResource("1_yusav")
+texture_scale = 2.0
+height = 30.0
+
+[node name="Light" type="PointLight2D" parent="."]
+position = Vector2(126, 0)
+scale = Vector2(2, 1)
+color = Color(1, 0.972549, 0.72549, 1)
+energy = 0.1
+shadow_filter = 2
+texture = ExtResource("1_yusav")
+texture_scale = 2.0
+height = 30.0

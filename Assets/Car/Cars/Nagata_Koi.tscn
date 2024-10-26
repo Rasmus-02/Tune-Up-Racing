@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://dm5gcyumbifpo"]
+
+[ext_resource type="PackedScene" uid="uid://fawbg2w0nh2c" path="res://Assets/Car/Part Lists/Part Selector/Part Selector car.tscn" id="1_slle1"]
+[ext_resource type="PackedScene" uid="uid://dpsg4iic8nqcn" path="res://Assets/Car/Part Lists/Car Specific/Nagata Koi/Nagata Koi Part List.tscn" id="3_0namt"]
+[ext_resource type="PackedScene" uid="uid://dmcwtlpp6q5tf" path="res://Assets/Car/Part Lists/Universal/Universal Part List.tscn" id="4_bdc26"]
+
+[node name="Nagata Koi" type="Node2D"]
+
+[node name="Part Selector" parent="." instance=ExtResource("1_slle1")]
+
+[node name="Nagata Koi Part List" parent="Part Selector" instance=ExtResource("3_0namt")]
+
+[node name="Universal Part List" parent="Part Selector" instance=ExtResource("4_bdc26")]
+
+[node name="Gear_Change_Timer" type="Timer" parent="."]
+wait_time = 0.35
+one_shot = true

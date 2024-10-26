@@ -1,0 +1,39 @@
+[gd_scene load_steps=9 format=3 uid="uid://cg805y3apwd45"]
+
+[ext_resource type="Script" path="res://Assets/Car/Code/Part_scripts/F_Bumper.gd" id="1_olcf6"]
+[ext_resource type="Texture2D" uid="uid://bn4yj4gkkwbk0" path="res://Textures/Cars/Talon Motors Barracuda/Front Bumper/Talon Motors Barracuda Vortex F_Bumper.png" id="2_kaevo"]
+[ext_resource type="Texture2D" uid="uid://6ou33ctd1vi4" path="res://Textures/Cars/Talon Motors Barracuda/Front Bumper/Talon Motors Barracuda Vortex F_Bumper NM.png" id="3_ri4d0"]
+[ext_resource type="Texture2D" uid="uid://b2yltqcmwdqnp" path="res://Textures/Cars/Talon Motors Barracuda/Front Bumper/Talon Motors Barracuda Vortex F_Bumper Spec.png" id="4_tp4mm"]
+[ext_resource type="Script" path="res://Textures/Cars/Color_selector.gd" id="5_ov725"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_0hbqo"]
+diffuse_texture = ExtResource("2_kaevo")
+normal_texture = ExtResource("3_ri4d0")
+specular_texture = ExtResource("4_tp4mm")
+specular_shininess = 0.5
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_nxqv5"]
+blend_mode = 1
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_x7pue"]
+polygon = PackedVector2Array(142.912, 17.3015, 139.912, 28.3015, 135.912, 37.3015, 130.912, 41.3015, 110.912, 41.3015, 110.912, -37.6985, 130.912, -37.6985, 135.912, -33.6985, 139.912, -24.6985, 142.912, -13.6985)
+
+[node name="Talon Motors Barracuda [Vortex] Front Bumper" type="Node2D"]
+script = ExtResource("1_olcf6")
+rarity = "rare"
+Car_ID = 1
+Part_Number = 2
+description = "A front bumper with improved cooling designed by the aftermarket parts manufacturer Vortex for the Talon Motors Barracuda"
+weight = 6
+downforce = 45
+drag = 0.05
+engine_cool_mod = 0.2
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = SubResource("CanvasTexture_0hbqo")
+script = ExtResource("5_ov725")
+
+[node name="LightOccluder2D2" type="LightOccluder2D" parent="Sprite2D"]
+material = SubResource("CanvasItemMaterial_nxqv5")
+position = Vector2(-29.9116, -2.30154)
+occluder = SubResource("OccluderPolygon2D_x7pue")
