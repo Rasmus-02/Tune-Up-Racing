@@ -23,6 +23,7 @@ rarity = "uncommon"
 Car_ID = 2
 Part_Number = 1
 description = "The factory fenders for the Hikari Tasai"
+price = 300
 weight = 14
 downforce = 15
 drag = 0.03

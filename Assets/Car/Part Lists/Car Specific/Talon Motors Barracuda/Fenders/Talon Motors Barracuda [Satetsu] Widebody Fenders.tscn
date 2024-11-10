@@ -24,6 +24,7 @@ rarity = "epic"
 Car_ID = 1
 Part_Number = 2
 description = "Widebody fenders for the Talon Motors Barracuda designed by Satetsu Racing"
+price = 1500
 weight = 18
 downforce = 30
 drag = 0.04

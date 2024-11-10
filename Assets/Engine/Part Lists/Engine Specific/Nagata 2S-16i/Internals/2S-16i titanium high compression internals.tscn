@@ -1,0 +1,30 @@
+[gd_scene load_steps=6 format=3 uid="uid://byyotuuvqynjq"]
+
+[ext_resource type="Script" path="res://Assets/Engine/Part_scripts/Internals.gd" id="1_7bf6b"]
+[ext_resource type="Texture2D" uid="uid://cqy44mq5ws8op" path="res://Textures/Engines/Nagata 2S-16I/Internals/Nagata 2S-16i Titanium Pistons.png" id="2_hh1v6"]
+[ext_resource type="Texture2D" uid="uid://rv2yn7jaypjf" path="res://Textures/Engines/Nagata 2S-16I/Internals/Nagata 2S-16i Pistons NM.png" id="3_5kfr6"]
+[ext_resource type="Texture2D" uid="uid://c2vs2rlxbt784" path="res://Textures/Engines/Nagata 2S-16I/Internals/Nagata 2S-16i Pistons Spec.png" id="4_y7rr4"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_maotm"]
+diffuse_texture = ExtResource("2_hh1v6")
+normal_texture = ExtResource("3_5kfr6")
+specular_texture = ExtResource("4_y7rr4")
+specular_color = Color(0.603922, 0.521569, 1, 1)
+specular_shininess = 0.42
+
+[node name="Nagata 2S-16i Titanium High Compression Internals" type="Node2D"]
+script = ExtResource("1_7bf6b")
+rarity = "epic"
+lenght = 23
+width = 5
+Engine_ID = 2
+Part_Number = 11
+description = "Higher compression variant of the titanium internals for the 2S-16i Engine, designed for naturally aspirtaed and low boost engines"
+price = 4000
+weight = 18
+compression = 12.5
+max_rpm = 9200
+max_tq = 1200
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = SubResource("CanvasTexture_maotm")

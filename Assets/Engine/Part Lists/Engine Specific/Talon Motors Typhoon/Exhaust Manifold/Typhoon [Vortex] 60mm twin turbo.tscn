@@ -37,6 +37,7 @@ Part_Number = 2
 lenght = 8
 width = 11
 description = "An exhaust manifold with two 70mm turbos mounted to it. The turbo system is designed by the aftermarkets parts company Vortex, the turbos are nowhere near the most efficient turbos available, however, they are definately able to bring out a lot more power from the Typhoon Engine compared to the stock exhaust manifold"
+price = 5500
 weight = 65
 tq_mod = 1.0
 turbo = true

@@ -1,0 +1,29 @@
+[gd_scene load_steps=6 format=3 uid="uid://rktrpj1q4i7t"]
+
+[ext_resource type="Script" path="res://Assets/Engine/Part_scripts/Block.gd" id="1_fcjeo"]
+[ext_resource type="Texture2D" uid="uid://lkmh3a6l6b88" path="res://Textures/Engines/Nagata 2S-16I/Block/Nagata 2S-16i Aluminium Block.png" id="2_4drkx"]
+[ext_resource type="Texture2D" uid="uid://02e0qpngsdbk" path="res://Textures/Engines/Nagata 2S-16I/Block/Nagata 2S-16i Block NM.png" id="3_b27qf"]
+[ext_resource type="Texture2D" uid="uid://b4vc6b3dj5f22" path="res://Textures/Engines/Nagata 2S-16I/Block/Nagata 2S-16i Aluminium Block Spec.png" id="4_d3pca"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_8byoe"]
+diffuse_texture = ExtResource("2_4drkx")
+normal_texture = ExtResource("3_b27qf")
+specular_texture = ExtResource("4_d3pca")
+specular_shininess = 0.5
+
+[node name="Nagata 2S-16i Cast Aluminium Block" type="Node2D"]
+script = ExtResource("1_fcjeo")
+rarity = "rare"
+layout = "Inline"
+lenght = 27
+width = 9
+Engine_ID = 2
+Part_Number = 2
+description = "A light weight slightly less durable block for the 2S-16i Engine"
+price = 2500
+weight = 45
+tq = 185
+max_tq = 450
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = SubResource("CanvasTexture_8byoe")

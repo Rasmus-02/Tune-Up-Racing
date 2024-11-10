@@ -18,7 +18,7 @@ func _ready():
 	airflow = $Airflow
 
 func _process(_delta):
-	if engine != null:
+	if engine != null and engine.is_in_group("Engine"):
 		rpm = engine.rpm
 		running()
 		sound_controller()

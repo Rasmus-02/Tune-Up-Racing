@@ -17,6 +17,7 @@ script = ExtResource("1_8h2t1")
 rarity = "uncommon"
 Part_Number = 1
 description = "A spoiler designed by Nagata to be mounted on sportier versions of the Nagata Koi"
+price = 350
 weight = 3
 drag = 0.03
 downforce = 80

@@ -1,0 +1,32 @@
+[gd_scene load_steps=6 format=3 uid="uid://t86bo21v0egh"]
+
+[ext_resource type="Script" path="res://Assets/Engine/Part_scripts/Intake_Manifold.gd" id="1_e7vj0"]
+[ext_resource type="Texture2D" uid="uid://yswfa7u4sk7k" path="res://Textures/Engines/Nagata 2S-16I/Intake/Nagata 2S-16i [Vortex] Intake Manifold.png" id="2_7rf8h"]
+[ext_resource type="Texture2D" uid="uid://cxcu1cejp6507" path="res://Textures/Engines/Nagata 2S-16I/Intake/Nagata 2S-16i [Vortex] Intake Manifold HM_n.png" id="3_qvooj"]
+[ext_resource type="Texture2D" uid="uid://bsqshe6vvdbhu" path="res://Textures/Engines/Nagata 2S-16I/Intake/Nagata 2S-16i [Vortex] Intake Manifold Spec.png" id="4_svba4"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_oa52d"]
+diffuse_texture = ExtResource("2_7rf8h")
+normal_texture = ExtResource("3_qvooj")
+specular_texture = ExtResource("4_svba4")
+specular_shininess = 0.5
+
+[node name="Nagata 2S-16i [Vortex] Intake Manifold" type="Node2D"]
+script = ExtResource("1_e7vj0")
+rarity = "rare"
+layout = "front"
+lenght = 8
+width = 10
+Engine_ID = 2
+Part_Number = 5
+description = "A high performance intake manifold designed by the aftermarket parts manufacturer Vortex for the 2S-16i Engine. A great choise, especially for naturally aspirated cars"
+price = 900
+weight = 8
+tq_mod = 1.13
+max_compression_modifier = 1.02
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = SubResource("CanvasTexture_oa52d")
+
+[node name="Air filter location" type="Marker2D" parent="."]
+position = Vector2(21, -4)

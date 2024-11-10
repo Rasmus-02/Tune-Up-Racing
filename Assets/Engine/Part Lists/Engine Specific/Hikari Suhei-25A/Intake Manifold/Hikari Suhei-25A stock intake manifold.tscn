@@ -19,6 +19,7 @@ lenght = 4
 Engine_ID = 3
 Part_Number = 1
 description = "The factory intake manifold for the Hikari Suhei-25A Engine"
+price = 350
 weight = 12
 
 [node name="Sprite2D" type="Sprite2D" parent="."]

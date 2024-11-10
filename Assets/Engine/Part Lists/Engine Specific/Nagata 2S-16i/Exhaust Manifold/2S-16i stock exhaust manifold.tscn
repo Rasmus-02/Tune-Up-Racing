@@ -36,6 +36,7 @@ Engine_ID = 2
 Part_Number = 1
 width = 7
 description = "The factory exhaust manifold for the 2S-16i Engine"
+price = 250
 weight = 15
 tq_mod = 1.0
 

@@ -19,6 +19,7 @@ Part_Number = 1
 lenght = 9
 width = 21
 description = "The factory intake that comes with the 2S-16i Engine"
+price = 100
 weight = 2
 tq_mod = 1.0
 intake_db_mod = -1.0

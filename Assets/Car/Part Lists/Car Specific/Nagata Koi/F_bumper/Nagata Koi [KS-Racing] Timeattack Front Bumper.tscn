@@ -23,8 +23,9 @@ script = ExtResource("1_caqdx")
 rarity = "rare"
 Part_Number = 2
 description = "The factory front bumper for the Nagata Koi with a KS-Racing carbon fiber lip bolted on to it for some extra downforce"
-weight = 9
-downforce = 60
+price = 800
+weight = 10
+downforce = 80
 drag = 0.06
 engine_cool_mod = 0.05
 

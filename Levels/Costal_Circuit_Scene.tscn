@@ -102,6 +102,7 @@ text = "0.8"
 horizontal_alignment = 1
 
 [node name="Current Time" type="Label" parent="UI"]
+visible = false
 layout_mode = 0
 offset_left = -2239.98
 offset_top = -1237.17
@@ -113,6 +114,7 @@ theme_override_constants/outline_size = 6
 text = "Current: 0:15:00"
 
 [node name="Record Time" type="Label" parent="UI"]
+visible = false
 layout_mode = 0
 offset_left = -2239.98
 offset_top = -1148.33

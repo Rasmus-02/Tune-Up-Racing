@@ -19,6 +19,7 @@ width = 5
 Engine_ID = 2
 Part_Number = 1
 description = "The factory internals for the 2S-16i Engine"
+price = 1250
 weight = 25
 compression = 10.5
 max_rpm = 7500

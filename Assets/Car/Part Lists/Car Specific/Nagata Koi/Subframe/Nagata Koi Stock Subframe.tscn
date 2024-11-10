@@ -16,6 +16,7 @@ script = ExtResource("1_so6ua")
 rarity = "uncommon"
 Part_Number = 1
 description = "The factory subframe for the Nagata Koi"
+price = 200
 weight = 15
 
 [node name="Sprite2D" type="Sprite2D" parent="."]

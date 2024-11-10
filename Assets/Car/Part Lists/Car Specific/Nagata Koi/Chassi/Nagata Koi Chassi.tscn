@@ -27,6 +27,7 @@ engine_bay_width = 51
 engine_bay_start_lenght = 54
 Part_Number = 1
 description = "An affordable nimble little Japanese hatchback"
+price = 10000
 weight = 780
 downforce = 25
 drag = 0.25

@@ -6,7 +6,7 @@ var placing_list = []
 var player_placing : int
 var start = false
 
-func _process(delta):
+func _process(_delta):
 	if Input.is_action_just_pressed("Handbrake"):
 		start = true
 	
@@ -15,12 +15,10 @@ func _process(delta):
 		set_placings()
 
 func set_placings():
-	var i = 0
 	#Update the car list
 	var temp_car_list = []
 	for car in car_list:
 		temp_car_list.append([car, car.get_node("AI").track_progress])
-		i += 1
 	
 	#Sort the list acording to which car is first
 	temp_car_list.sort_custom(func(a, b): return a[1] > b[1]) #Sort the cars according to track progress

@@ -17,6 +17,7 @@ specular_shininess = 0.5
 script = ExtResource("1_ifobb")
 rarity = "uncommon"
 Part_Number = 1
+price = 150
 weight = 2
 
 [node name="Sprite2D" type="Sprite2D" parent="."]

@@ -11,6 +11,7 @@ var id = [0,15,Part_Number,rarity] #Engine ID, Part type, Part number, rank
 @export_multiline var description = ""
 
 @export_category("Stats")
+@export_range(0 , 10000000) var price : int
 @export_enum("RWD", "FWD", "AWD") var drivetrain : int #0=RWD, 1=FWD, 2=AWD
 @export var weight = 0
 @export var shift_time = 0.0

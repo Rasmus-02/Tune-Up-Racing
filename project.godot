@@ -22,8 +22,8 @@ config/icon="res://Textures/Testing/Godot_ICON.svg"
 Save_Load="*res://Save_Game/Save_Load.gd"
 SelectedScene="*res://UI/Selected_Scene.gd"
 FontColorSettings="*res://UI/Fonts/Font_Color_Settings.gd"
+AssetList="*res://Assets/Algorithms/asset_list.tscn"
 Laptime="*res://Game_Logic/laptime.gd"
-AssetList="*res://Assets/Generation_Algorithms/asset_list.tscn"
 Placing="*res://Game_Logic/placing.gd"
 
 [display]

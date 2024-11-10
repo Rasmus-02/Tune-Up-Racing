@@ -36,6 +36,7 @@ Engine_ID = 3
 Part_Number = 2
 width = 7
 description = "The factory turbo for the boosted variant of the Hikari Suhei-25A Engine"
+price = 2250
 weight = 52
 tq_mod = 1.0
 turbo = true

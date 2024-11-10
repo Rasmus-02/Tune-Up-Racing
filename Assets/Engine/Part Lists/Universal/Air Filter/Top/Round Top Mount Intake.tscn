@@ -17,6 +17,7 @@ rarity = "uncommon"
 layout = "top"
 Part_Number = 3
 description = "A circular top mounted air filter"
+price = 75
 weight = 4
 tq_mod = 0.95
 

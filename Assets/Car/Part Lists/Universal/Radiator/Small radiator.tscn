@@ -18,6 +18,7 @@ rarity = "uncommon"
 Part_Number = 1
 width = 2
 description = "A small and cheap radiator designed for less demanding engines"
+price = 200
 weight = 4
 cooling = 1.0
 

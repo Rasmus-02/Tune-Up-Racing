@@ -11,7 +11,7 @@ normal_texture = ExtResource("3_ebqy2")
 specular_texture = ExtResource("4_4p332")
 specular_shininess = 0.5
 
-[node name="Nagata 2S-16i Stock Block" type="Node2D"]
+[node name="Nagata 2S-16i Cast Iron Block" type="Node2D"]
 script = ExtResource("1_2565c")
 rarity = "uncommon"
 layout = "Inline"
@@ -20,6 +20,7 @@ width = 9
 Engine_ID = 2
 Part_Number = 1
 description = "The factory block for the 2S-16i Engine"
+price = 1500
 weight = 60
 tq = 180
 max_tq = 550

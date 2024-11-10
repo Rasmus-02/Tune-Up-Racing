@@ -25,6 +25,7 @@ width = 21
 Engine_ID = 1
 Part_Number = 2
 description = "A sportier top end  for the Typhoon engine, with improved airflow and reduced weight"
+price = 1400
 weight = 30.0
 tq_mod = 0.95
 max_hp_rpm = 5500

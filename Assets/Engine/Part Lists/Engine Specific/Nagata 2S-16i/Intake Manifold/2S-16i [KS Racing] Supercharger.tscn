@@ -20,6 +20,7 @@ width = 11
 Engine_ID = 2
 Part_Number = 2
 description = "A Supercharger designed for high end race cars by KS Racing for the Nagata 2S-16i Engine"
+price = 3800
 weight = 26
 tq_mod = 1.05
 max_compression_modifier = 0.95

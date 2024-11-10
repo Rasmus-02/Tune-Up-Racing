@@ -9,6 +9,7 @@ var id = [Car_ID,13,Part_Number,rarity] #Engine ID, Part type, Part number, rank
 @export_multiline var description = ""
 
 @export_category("Stats")
+@export_range(0 , 10000000) var price : int
 @export var weight = 0
 @export var width : int
 @export var grip = 0

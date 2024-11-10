@@ -1,0 +1,29 @@
+[gd_scene load_steps=6 format=3 uid="uid://b7kgfr4t5lgmy"]
+
+[ext_resource type="Script" path="res://Assets/Engine/Part_scripts/Internals.gd" id="1_mrhop"]
+[ext_resource type="Texture2D" uid="uid://dwwl7m1jlvhu0" path="res://Textures/Engines/Nagata 2S-16I/Internals/Nagata 2S-16i Forged Pistons.png" id="2_rhv87"]
+[ext_resource type="Texture2D" uid="uid://rv2yn7jaypjf" path="res://Textures/Engines/Nagata 2S-16I/Internals/Nagata 2S-16i Pistons NM.png" id="3_f0ksq"]
+[ext_resource type="Texture2D" uid="uid://c2vs2rlxbt784" path="res://Textures/Engines/Nagata 2S-16I/Internals/Nagata 2S-16i Pistons Spec.png" id="4_o1s3t"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_8qrlk"]
+diffuse_texture = ExtResource("2_rhv87")
+normal_texture = ExtResource("3_f0ksq")
+specular_texture = ExtResource("4_o1s3t")
+specular_shininess = 0.5
+
+[node name="Nagata 2S-16i Forged Low Compression Internals" type="Node2D"]
+script = ExtResource("1_mrhop")
+rarity = "rare"
+lenght = 23
+width = 5
+Engine_ID = 2
+Part_Number = 6
+description = "Lower compression variant of the forged internals for the 2S-16i Engine, designed for boosted engines"
+price = 2500
+weight = 22
+compression = 9.0
+max_rpm = 8500
+max_tq = 700
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = SubResource("CanvasTexture_8qrlk")

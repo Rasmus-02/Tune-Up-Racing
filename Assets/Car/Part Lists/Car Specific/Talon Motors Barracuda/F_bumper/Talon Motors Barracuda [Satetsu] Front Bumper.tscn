@@ -24,6 +24,7 @@ rarity = "rare"
 Car_ID = 1
 Part_Number = 3
 description = "A Frontbumper and lip combo developed by Satetsu Racing for the Talon Motors Barracuda to improve high speed handling"
+price = 700
 weight = 9
 downforce = 75
 drag = 0.05

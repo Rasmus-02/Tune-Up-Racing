@@ -19,6 +19,7 @@ width = 19
 Engine_ID = 1
 Part_Number = 2
 description = "Higher compression variants of the factory internals for the Typhoon Engine, designed for naturally aspirated and low boost engines"
+price = 2000
 weight = 40
 compression = 9.5
 max_rpm = 7000

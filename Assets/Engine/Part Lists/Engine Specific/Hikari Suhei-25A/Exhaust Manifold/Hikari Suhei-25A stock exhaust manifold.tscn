@@ -35,6 +35,7 @@ rarity = "uncommon"
 Engine_ID = 3
 Part_Number = 1
 description = "The factory exhaust manifold for the Hikari Suhei-25A Engine"
+price = 350
 weight = 18
 tq_mod = 0.98
 

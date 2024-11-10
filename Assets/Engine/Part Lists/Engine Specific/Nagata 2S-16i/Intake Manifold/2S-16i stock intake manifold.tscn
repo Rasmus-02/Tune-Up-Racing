@@ -20,6 +20,7 @@ width = 7
 Engine_ID = 2
 Part_Number = 1
 description = "The factory intake manifold for the 2S-16i Engine"
+price = 250
 weight = 8
 
 [node name="Sprite2D" type="Sprite2D" parent="."]

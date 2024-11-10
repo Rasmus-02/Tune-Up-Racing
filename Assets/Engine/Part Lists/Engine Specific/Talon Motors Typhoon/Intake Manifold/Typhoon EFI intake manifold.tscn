@@ -19,6 +19,7 @@ lenght = -1
 Engine_ID = 1
 Part_Number = 3
 description = "The factory electronic fuel injection intake manifold that was featured on later variants of the Typhoon engine"
+price = 1000
 weight = 12
 
 [node name="Sprite2D" type="Sprite2D" parent="."]

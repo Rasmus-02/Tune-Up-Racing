@@ -37,8 +37,9 @@ Engine_ID = 2
 Part_Number = 4
 width = 9
 description = "A tubular exhaust manifold for the 2S-16i Engine designed by the tuning shop Satetsu for improved airflow"
+price = 850
 weight = 9
-tq_mod = 1.1
+tq_mod = 1.12
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = SubResource("CanvasTexture_23fjm")

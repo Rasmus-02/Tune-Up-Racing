@@ -19,6 +19,7 @@ rarity = "uncommon"
 Car_ID = 2
 Part_Number = 1
 description = "The factory taillights for the Hikari Tasai"
+price = 150
 weight = 4
 
 [node name="Sprite2D" type="Sprite2D" parent="."]

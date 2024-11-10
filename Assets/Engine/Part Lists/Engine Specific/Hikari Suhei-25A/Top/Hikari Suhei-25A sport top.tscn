@@ -25,6 +25,7 @@ width = 35
 Engine_ID = 3
 Part_Number = 2
 description = "A Higher revving top end for the Hikari Suhei-25A Engine"
+price = 1100
 weight = 26.0
 tq_mod = 1.05
 max_hp_rpm = 6200

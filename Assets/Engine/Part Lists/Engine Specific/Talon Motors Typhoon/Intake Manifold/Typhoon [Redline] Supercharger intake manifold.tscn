@@ -19,6 +19,7 @@ lenght = -1
 Engine_ID = 1
 Part_Number = 2
 description = "A Supercharger for the Typhoon engine designed by the American tuning company Redline"
+price = 6200
 weight = 32
 tq_mod = 0.95
 max_compression_modifier = 0.95

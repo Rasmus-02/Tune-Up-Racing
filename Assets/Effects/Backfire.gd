@@ -9,11 +9,12 @@ var backfire_threshold : float
 
 func _ready():
 	car = get_parent().get_parent().get_parent().get_parent().get_parent()
-	engine = car.engine
+	if car != null and car.is_in_group("Car"):
+		engine = car.engine
 
 var temp_gear = 0
 func _process(_delta):
-	if engine != null and int(car.selected_engine) != 0 and engine.is_running == true:
+	if engine != null and int(car.selected_engine) != 0 and engine.is_running == true and car.is_in_group("Car"):
 		backfire_threshold = ((100.0 - engine.torque**0.5) * engine.smoothness)
 		
 		#increases and backfires when at threshold

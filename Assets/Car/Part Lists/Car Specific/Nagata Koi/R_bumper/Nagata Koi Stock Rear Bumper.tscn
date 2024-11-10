@@ -23,6 +23,7 @@ script = ExtResource("1_bw1ld")
 rarity = "uncommon"
 Part_Number = 1
 description = "The factory rear bumper for the Nagata Koi"
+price = 150
 weight = 5
 downforce = 5
 drag = 0.02

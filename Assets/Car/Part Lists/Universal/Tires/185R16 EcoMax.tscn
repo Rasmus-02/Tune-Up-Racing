@@ -23,6 +23,7 @@ script = ExtResource("1_7kdfo")
 rarity = "uncommon"
 Part_Number = 1
 description = "Cheap Chinese tires, works well enough for the price and are long lasting, however they might not be something you would want to bring to a racetrack"
+price = 500
 weight = 8
 width = 185
 grip = 850

@@ -1,0 +1,64 @@
+[gd_scene load_steps=14 format=3 uid="uid://d36niqompf1yh"]
+
+[ext_resource type="Script" path="res://Assets/Engine/Part_scripts/Exhaust_Manifold.gd" id="1_qehki"]
+[ext_resource type="Texture2D" uid="uid://bsjupnissqqm6" path="res://Textures/Engines/Nagata 2S-16I/Exhaust/[Vortex] 50mm turbo mk1/Nagata 2S-16i [Vortex] 50mm Turbo mk1.png" id="2_e440l"]
+[ext_resource type="Texture2D" uid="uid://yivijj5fatsu" path="res://Textures/Engines/Nagata 2S-16I/Exhaust/[Vortex] 50mm turbo mk1/Nagata 2S-16i [Vortex] 50mm Turbo mk1 NM.png" id="3_1d5dh"]
+[ext_resource type="Texture2D" uid="uid://0id2ebr7eato" path="res://Textures/Engines/Nagata 2S-16I/Exhaust/[Vortex] 50mm turbo mk1/Nagata 2S-16i [Vortex] 50mm Turbo mk1 Spec.png" id="4_vqvvl"]
+[ext_resource type="Texture2D" uid="uid://t7e3fbsccuki" path="res://Textures/Engines/Nagata 2S-16I/Exhaust/Stock/Nagata 2S-16i Exhaust Manifold_T.png" id="5_xycv4"]
+[ext_resource type="Texture2D" uid="uid://cyrgbxu7xvc8y" path="res://Textures/Engines/Nagata 2S-16I/Exhaust/Stock/Nagata 2S-16i Exhaust Manifold_T NM.png" id="6_jcniq"]
+[ext_resource type="Texture2D" uid="uid://w0rlbkfsuc5t" path="res://Textures/Engines/Nagata 2S-16I/Exhaust/Stock/Nagata 2S-16i Exhaust Manifold_T Spec.png" id="7_g34wa"]
+[ext_resource type="Texture2D" uid="uid://dm65u133nd2y0" path="res://Textures/Engines/Nagata 2S-16I/Exhaust/Stock/Nagata 2S-16i Exhaust Manifold_L.png" id="8_cf4he"]
+[ext_resource type="Texture2D" uid="uid://d1g38ro0boro5" path="res://Textures/Engines/Nagata 2S-16I/Exhaust/Stock/Nagata 2S-16i Exhaust Manifold_L NM.png" id="9_vgjfc"]
+[ext_resource type="Texture2D" uid="uid://da2jf3l6ifcdr" path="res://Textures/Engines/Nagata 2S-16I/Exhaust/Stock/Nagata 2S-16i Exhaust Manifold_L Spec.png" id="10_kepju"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_23fjm"]
+diffuse_texture = ExtResource("2_e440l")
+normal_texture = ExtResource("3_1d5dh")
+specular_texture = ExtResource("4_vqvvl")
+specular_shininess = 0.4
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_inuwe"]
+diffuse_texture = ExtResource("5_xycv4")
+normal_texture = ExtResource("6_jcniq")
+specular_texture = ExtResource("7_g34wa")
+specular_shininess = 0.3
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_g6r2h"]
+diffuse_texture = ExtResource("8_cf4he")
+normal_texture = ExtResource("9_vgjfc")
+specular_texture = ExtResource("10_kepju")
+specular_shininess = 0.3
+
+[node name="Nagata 2S-16i [Vortex] VRT50 V1 Turbo Manifold" type="Node2D"]
+script = ExtResource("1_qehki")
+rarity = "uncommon"
+Engine_ID = 2
+Part_Number = 5
+lenght = 8
+width = 13
+description = "An affordable 50mm turbo designed for the 2S-16i Engine by the aftermarket parts manufacturer Vortex"
+price = 950
+weight = 40
+tq_mod = 1.0
+turbo = true
+turbo_efficiency = 0.75
+turbo_type = "single"
+turbo_1_size = 50.0
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = SubResource("CanvasTexture_23fjm")
+
+[node name="Trans" type="Sprite2D" parent="."]
+visible = false
+z_index = -5
+position = Vector2(-3, -20)
+texture = SubResource("CanvasTexture_inuwe")
+
+[node name="Long" type="Sprite2D" parent="."]
+visible = false
+z_index = -5
+position = Vector2(-36, 2)
+texture = SubResource("CanvasTexture_g6r2h")
+
+[node name="Air filter location" type="Marker2D" parent="."]
+position = Vector2(4, 11)

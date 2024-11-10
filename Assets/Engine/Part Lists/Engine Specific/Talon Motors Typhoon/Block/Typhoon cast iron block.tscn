@@ -20,6 +20,7 @@ width = 21
 Engine_ID = 1
 Part_Number = 1
 description = "The factory block made out of cast iron, for the Typhoon engine by Talon Motors"
+price = 3000
 weight = 110
 tq = 500
 max_tq = 950

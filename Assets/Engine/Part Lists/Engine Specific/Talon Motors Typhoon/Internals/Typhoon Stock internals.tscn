@@ -19,6 +19,7 @@ width = 19
 Engine_ID = 1
 Part_Number = 1
 description = "The factory internals for the Typhoon Engine"
+price = 2000
 weight = 40
 compression = 8.5
 max_rpm = 7000

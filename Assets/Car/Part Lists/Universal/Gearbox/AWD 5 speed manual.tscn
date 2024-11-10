@@ -20,6 +20,7 @@ Part_Number = 3
 lenght = 21
 width = 18
 description = "A 5 speed manual gearbox designed for AWD longitudinal layout"
+price = 4000
 drivetrain = 2
 weight = 70
 shift_time = 0.5

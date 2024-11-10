@@ -17,6 +17,7 @@ script = ExtResource("1_l3csx")
 rarity = "epic"
 Part_Number = 2
 description = "A large carbon fiber wing by KS-Racing for the Nagata Koi, designed to generate significant downforce and keep the car firmly planted at all times"
+price = 800
 weight = 6
 drag = 0.05
 downforce = 200

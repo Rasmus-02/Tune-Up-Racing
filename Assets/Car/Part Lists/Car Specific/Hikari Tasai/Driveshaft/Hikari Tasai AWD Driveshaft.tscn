@@ -17,6 +17,7 @@ rarity = "uncommon"
 Car_ID = 2
 Part_Number = 1
 description = "The factory all wheel drive driveshaft that comes in the Hikari Tasai"
+price = 1200
 weight = 40
 drivetrain = 2
 max_torque = 450

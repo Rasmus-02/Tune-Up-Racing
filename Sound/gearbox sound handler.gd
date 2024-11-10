@@ -9,7 +9,7 @@ func _ready():
 
 var shift = false
 func _process(_delta):
-	if engine != null:
+	if engine != null and engine.is_in_group("Engine"):
 		if engine.shift_cooldown == true and shift == false:
 			shift = true
 			shift_sound.play()

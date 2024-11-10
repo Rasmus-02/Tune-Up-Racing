@@ -20,6 +20,7 @@ Part_Number = 1
 lenght = 15
 width = 18
 description = "A 5 speed manual gearbox designed for FWD transverse layout"
+price = 2500
 drivetrain = 1
 weight = 42
 shift_time = 0.5

@@ -1,0 +1,31 @@
+[gd_scene load_steps=6 format=3 uid="uid://cj80m5ggb6l3d"]
+
+[ext_resource type="Script" path="res://Assets/Engine/Part_scripts/Intake_Manifold.gd" id="1_6dsl0"]
+[ext_resource type="Texture2D" uid="uid://eh16qj7vm7lq" path="res://Textures/Engines/Nagata 2S-16I/Intake/Nagata 2S-16i Performance Intake Manifold.png" id="2_r7w6b"]
+[ext_resource type="Texture2D" uid="uid://0wmu0ol3nmjr" path="res://Textures/Engines/Nagata 2S-16I/Intake/Nagata 2S-16i Performance Intake Manifold HM_n.png" id="3_1ov7p"]
+[ext_resource type="Texture2D" uid="uid://dgvkifd7i8wdl" path="res://Textures/Engines/Nagata 2S-16I/Intake/Nagata 2S-16i Performance Intake Manifold Spec.png" id="4_ls3if"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_oa52d"]
+diffuse_texture = ExtResource("2_r7w6b")
+normal_texture = ExtResource("3_1ov7p")
+specular_texture = ExtResource("4_ls3if")
+specular_shininess = 0.5
+
+[node name="Nagata 2S-16i Performance Intake Manifold" type="Node2D"]
+script = ExtResource("1_6dsl0")
+rarity = "uncommon"
+layout = "front"
+lenght = 8
+width = 8
+Engine_ID = 2
+Part_Number = 6
+description = "A better flowing intake manifold for the 2S-16i Engine, featured on some of Nagatas racecars in the early 2000s"
+price = 400
+weight = 10
+tq_mod = 1.06
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = SubResource("CanvasTexture_oa52d")
+
+[node name="Air filter location" type="Marker2D" parent="."]
+position = Vector2(21, -4)

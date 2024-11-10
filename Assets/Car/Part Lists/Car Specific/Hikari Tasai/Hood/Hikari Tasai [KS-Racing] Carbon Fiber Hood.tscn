@@ -18,6 +18,7 @@ rarity = "rare"
 Car_ID = 2
 Part_Number = 2
 description = "A Carbon fiber hood designed for the Hikari Tasai by KS-Racing. This carbon fiber hood has been designed to improve cooling airflow while reducing weight"
+price = 800
 weight = 8
 downforce = 20
 drag = 0.045

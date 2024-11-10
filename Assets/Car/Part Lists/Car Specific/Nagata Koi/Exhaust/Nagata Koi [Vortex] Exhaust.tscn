@@ -19,6 +19,7 @@ script = ExtResource("1_fpf7d")
 rarity = "uncommon"
 Part_Number = 2
 description = "The Stock Exhaust that comes with the Nagata Koi"
+price = 350
 weight = 25
 sound_dampening = 7
 pitch_tweak = 0.98

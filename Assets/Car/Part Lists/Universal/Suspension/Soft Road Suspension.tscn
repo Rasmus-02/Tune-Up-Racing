@@ -17,6 +17,7 @@ script = ExtResource("1_8vo3r")
 rarity = "uncommon"
 Part_Number = 1
 description = "Standard passenger car suspension, nothing special, gets you from point A to point B comfortably"
+price = 750
 weight = 40
 handling_bonus = 0.9
 

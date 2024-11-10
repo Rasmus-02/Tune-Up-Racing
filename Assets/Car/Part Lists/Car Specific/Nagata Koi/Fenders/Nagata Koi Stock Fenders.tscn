@@ -23,6 +23,7 @@ script = ExtResource("1_5ayk5")
 rarity = "uncommon"
 Part_Number = 1
 description = "The factory fenders for the Nagata Koi"
+price = 300
 weight = 12
 downforce = 15
 drag = 0.03

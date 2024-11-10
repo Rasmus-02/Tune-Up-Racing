@@ -37,6 +37,7 @@ Part_Number = 3
 lenght = 9
 width = 19
 description = "A Sequential turbo system designed for optimal low-end and high-end power. Developed  for the 2S-16i Engine by the aftermarket parts company TurboKraft. "
+price = 5200
 weight = 62
 tq_mod = 1.03
 turbo = true

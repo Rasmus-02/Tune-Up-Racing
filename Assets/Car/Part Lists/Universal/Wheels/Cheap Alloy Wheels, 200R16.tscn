@@ -19,6 +19,7 @@ script = ExtResource("1_ro2rv")
 rarity = "uncommon"
 Part_Number = 1
 description = "Cheap alloy wheels, nothing special about them but they get the job done"
+price = 600
 weight = 26
 max_tire_width = 200
 brake_cooling = 0.1

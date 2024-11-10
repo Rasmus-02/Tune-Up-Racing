@@ -25,6 +25,7 @@ width = 35
 Engine_ID = 3
 Part_Number = 1
 description = "The factory top end for the Hikari Suhei-25A Engine"
+price = 650
 weight = 28.0
 tq_mod = 1.0
 max_hp_rpm = 5700

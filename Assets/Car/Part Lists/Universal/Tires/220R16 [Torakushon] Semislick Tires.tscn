@@ -23,6 +23,7 @@ script = ExtResource("1_4v2jc")
 rarity = "rare"
 Part_Number = 2
 description = "Soft and grippy semi slick tires made by Japanese tire company Torakushon"
+price = 1000
 weight = 10
 width = 220
 grip = 1100

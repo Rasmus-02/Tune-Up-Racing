@@ -39,6 +39,7 @@ func spawn_engine_by_parts():
 	add_child(top)
 	add_child(intake_manifold)
 	add_child(exhaust_manifold)
+	exhaust_manifold.z_index += 1
 	add_child(air_filter)
 	#For Choosing where to spawn air filter and in what orientation
 	if selected_intake_manifold != 0 and exhaust_manifold.turbo == false:

@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://Assets/Engine/Code/Engine_Script.gd" id="1_wi6mr"]
 [ext_resource type="PackedScene" uid="uid://t73q80dtia40" path="res://Assets/Engine/Code/engine_spawner.tscn" id="2_bsecv"]
 
-[node name="Engine" type="Node2D"]
+[node name="Engine" type="Node2D" groups=["Engine"]]
 script = ExtResource("1_wi6mr")
 
 [node name="Engine_spawner" parent="." instance=ExtResource("2_bsecv")]

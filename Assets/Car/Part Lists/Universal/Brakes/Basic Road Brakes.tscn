@@ -15,6 +15,7 @@ script = ExtResource("1_2ea1k")
 rarity = "uncommon"
 Part_Number = 1
 description = "Basic small and cheap disc brakes common on passanger cars"
+price = 650
 weight = 40
 brake_force = 700
 brake_cooling = 1.5

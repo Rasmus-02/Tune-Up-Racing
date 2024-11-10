@@ -17,6 +17,7 @@ rarity = "uncommon"
 Engine_ID = 3
 Part_Number = 3
 description = "Lower compression variant of the factory internals for the Hikari Suhei-25A Engine, designed for boosted engines"
+price = 1400
 weight = 33
 compression = 8.0
 max_rpm = 8000

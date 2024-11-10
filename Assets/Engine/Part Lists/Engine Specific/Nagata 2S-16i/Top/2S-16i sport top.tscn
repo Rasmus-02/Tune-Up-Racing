@@ -26,6 +26,7 @@ width = 8
 Engine_ID = 2
 Part_Number = 2
 description = "A higher reving top end with better airflow for the 2S-16i Engine"
+price = 950
 weight = 22.0
 tq_mod = 1.05
 max_hp_rpm = 6200

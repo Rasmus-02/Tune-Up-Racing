@@ -1,0 +1,56 @@
+[gd_scene load_steps=14 format=3 uid="uid://cfrc17lvobkko"]
+
+[ext_resource type="Script" path="res://Assets/Engine/Part_scripts/Exhaust_Manifold.gd" id="1_ihtaq"]
+[ext_resource type="Texture2D" uid="uid://cxik0bqts65qr" path="res://Textures/Engines/Nagata 2S-16I/Exhaust/[Vortex] Performance Exhaust Manifold/Nagata 2S-16i [Vortex] Performance Exhaust Manifold.png" id="2_7borx"]
+[ext_resource type="Texture2D" uid="uid://c7ovc3s8vyeme" path="res://Textures/Engines/Nagata 2S-16I/Exhaust/[Vortex] Performance Exhaust Manifold/Nagata 2S-16i [Vortex] Performance Exhaust Manifold NM.png" id="3_82xws"]
+[ext_resource type="Texture2D" uid="uid://bskwenpldtp0b" path="res://Textures/Engines/Nagata 2S-16I/Exhaust/[Vortex] Performance Exhaust Manifold/Nagata 2S-16i [Vortex] Performance Exhaust Manifold Spec.png" id="4_r2t8w"]
+[ext_resource type="Texture2D" uid="uid://t7e3fbsccuki" path="res://Textures/Engines/Nagata 2S-16I/Exhaust/Stock/Nagata 2S-16i Exhaust Manifold_T.png" id="5_4egjp"]
+[ext_resource type="Texture2D" uid="uid://cyrgbxu7xvc8y" path="res://Textures/Engines/Nagata 2S-16I/Exhaust/Stock/Nagata 2S-16i Exhaust Manifold_T NM.png" id="6_l7rw1"]
+[ext_resource type="Texture2D" uid="uid://w0rlbkfsuc5t" path="res://Textures/Engines/Nagata 2S-16I/Exhaust/Stock/Nagata 2S-16i Exhaust Manifold_T Spec.png" id="7_dlq03"]
+[ext_resource type="Texture2D" uid="uid://dm65u133nd2y0" path="res://Textures/Engines/Nagata 2S-16I/Exhaust/Stock/Nagata 2S-16i Exhaust Manifold_L.png" id="8_eoo1i"]
+[ext_resource type="Texture2D" uid="uid://d1g38ro0boro5" path="res://Textures/Engines/Nagata 2S-16I/Exhaust/Stock/Nagata 2S-16i Exhaust Manifold_L NM.png" id="9_smd44"]
+[ext_resource type="Texture2D" uid="uid://da2jf3l6ifcdr" path="res://Textures/Engines/Nagata 2S-16I/Exhaust/Stock/Nagata 2S-16i Exhaust Manifold_L Spec.png" id="10_0rkdy"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_23fjm"]
+diffuse_texture = ExtResource("2_7borx")
+normal_texture = ExtResource("3_82xws")
+specular_texture = ExtResource("4_r2t8w")
+specular_shininess = 0.35
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_inuwe"]
+diffuse_texture = ExtResource("5_4egjp")
+normal_texture = ExtResource("6_l7rw1")
+specular_texture = ExtResource("7_dlq03")
+specular_shininess = 0.3
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_g6r2h"]
+diffuse_texture = ExtResource("8_eoo1i")
+normal_texture = ExtResource("9_smd44")
+specular_texture = ExtResource("10_0rkdy")
+specular_shininess = 0.3
+
+[node name="Nagata 2S-16i [Vortex] Performance Exhaust Manifold" type="Node2D"]
+script = ExtResource("1_ihtaq")
+rarity = "uncommon"
+Engine_ID = 2
+Part_Number = 8
+width = 9
+description = "An exhaust manifold with improved airflow designed for the 2S-16i Engine by the aftermarket parts manufacturer Vortex"
+price = 400
+weight = 13
+tq_mod = 1.05
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = SubResource("CanvasTexture_23fjm")
+
+[node name="Trans" type="Sprite2D" parent="."]
+visible = false
+z_index = -5
+position = Vector2(0, -20)
+texture = SubResource("CanvasTexture_inuwe")
+
+[node name="Long" type="Sprite2D" parent="."]
+visible = false
+z_index = -5
+position = Vector2(-30, 2)
+texture = SubResource("CanvasTexture_g6r2h")

@@ -18,6 +18,7 @@ rarity = "epic"
 Part_Number = 2
 width = 4
 description = "A high performance radiator designed by Redline"
+price = 1000
 weight = 7
 cooling = 2.0
 

@@ -24,6 +24,7 @@ rarity = "rare"
 Car_ID = 1
 Part_Number = 1
 description = "The factory rear bumper for the Talon Motors Barracuda"
+price = 150
 weight = 2
 downforce = 7
 drag = 0.01

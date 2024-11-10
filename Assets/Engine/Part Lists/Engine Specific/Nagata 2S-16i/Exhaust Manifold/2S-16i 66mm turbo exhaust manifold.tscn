@@ -29,7 +29,7 @@ normal_texture = ExtResource("9_4ju0e")
 specular_texture = ExtResource("10_mbmao")
 specular_shininess = 0.3
 
-[node name="Nagata 2S-16i 66mm Turbo Exhaust Manifold" type="Node2D"]
+[node name="Nagata 2S-16i 66mm Turbo Manifold" type="Node2D"]
 script = ExtResource("1_6cb4k")
 rarity = "rare"
 Engine_ID = 2
@@ -37,6 +37,7 @@ Part_Number = 2
 lenght = 8
 width = 13
 description = "A factory exhaust manifold with a 66mm Turbo mounted to it"
+price = 1800
 weight = 47
 tq_mod = 1.0
 turbo = true

@@ -36,6 +36,7 @@ Engine_ID = 1
 Part_Number = 1
 width = 4
 description = "The factory exhaust manifold for the Typhoon Engine"
+price = 600
 weight = 30
 tq_mod = 1.0
 

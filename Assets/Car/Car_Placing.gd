@@ -4,7 +4,7 @@ extends Node2D
 var car_placing : int
 var performance_bonus = 1.0
 var grip_bonus = 1.3
-var difficulty = 1.15
+var difficulty = 1.15#1.15
 
 func _process(delta):
 	

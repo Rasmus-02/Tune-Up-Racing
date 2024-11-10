@@ -25,6 +25,7 @@ width = 8
 Engine_ID = 2
 Part_Number = 4
 description = "A high performance top end for the 2S-16i Engine, developed for high reving naturally aspirated race car engines by the japanese tuning shop Satetsu"
+price = 4200
 weight = 18.0
 tq_mod = 1.2
 max_hp_rpm = 7500

@@ -19,6 +19,7 @@ Part_Number = 2
 lenght = 5
 width = 4
 description = "An affordable cold air intake suitable for mos engines, boosted or naturally aspirated"
+price = 250
 weight = 1
 tq_mod = 1.05
 intake_db_mod = 2.0

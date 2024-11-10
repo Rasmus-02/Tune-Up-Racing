@@ -26,6 +26,7 @@ script = ExtResource("1_8exqf")
 rarity = "rare"
 Part_Number = 2
 description = "Widebody fenders for the Nagata Koi designed by Vortex"
+price = 550
 weight = 16
 downforce = 20
 drag = 0.04

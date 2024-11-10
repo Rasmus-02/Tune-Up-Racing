@@ -18,9 +18,10 @@ polygon = PackedVector2Array(-11, -5, 11, -5, 11, -3, 10, -2, 10, 0, 11, 1, 11, 
 script = ExtResource("1_r8vcl")
 rarity = "rare"
 Part_Number = 2
-description = "High quality lightweight forged wheels made by the Greman car manufacturer Fritz"
-weight = 22
-brake_cooling = 0.12
+description = "High quality lightweight forged wheels made by the German car manufacturer Fritz"
+price = 2000
+weight = 20
+brake_cooling = 0.15
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = SubResource("CanvasTexture_sfomr")

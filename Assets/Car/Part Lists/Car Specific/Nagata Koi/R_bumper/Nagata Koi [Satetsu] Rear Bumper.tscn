@@ -1,0 +1,38 @@
+[gd_scene load_steps=9 format=3 uid="uid://bcqdmiwkqv8tg"]
+
+[ext_resource type="Script" path="res://Assets/Car/Code/Part_scripts/R_bumper.gd" id="1_olues"]
+[ext_resource type="Texture2D" uid="uid://bxn4r47w5vapb" path="res://Textures/Cars/Nagata Koi/Rear Bumper/Nagata Koi [Satetsu] Rear Bumper.png" id="2_74wyq"]
+[ext_resource type="Texture2D" uid="uid://clwsx15att7rr" path="res://Textures/Cars/Nagata Koi/Rear Bumper/Nagata Koi [Satetsu] Rear Bumper NM.png" id="3_667s6"]
+[ext_resource type="Texture2D" uid="uid://cp8u16yba02p2" path="res://Textures/Cars/Nagata Koi/Rear Bumper/Nagata Koi [Satetsu] Rear Bumper Spec.png" id="4_iaf3y"]
+[ext_resource type="Script" path="res://Textures/Cars/Color_selector.gd" id="5_mk7pk"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_r5f60"]
+diffuse_texture = ExtResource("2_74wyq")
+normal_texture = ExtResource("3_667s6")
+specular_texture = ExtResource("4_iaf3y")
+specular_shininess = 0.5
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_pappr"]
+blend_mode = 1
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_gxeul"]
+polygon = PackedVector2Array(-56.0884, -39.6985, -62.0884, -38.6985, -68.0884, -35.6985, -72.0884, -31.6985, -75.0884, -24.6985, -76.0884, -17.6985, -76.0884, 21.3015, -75.0884, 28.3015, -72.0884, 35.3015, -68.0884, 39.3015, -62.0884, 42.3015, -56.0884, 43.3015)
+
+[node name="Nagata Koi [Satetsu] Rear Bumper" type="Node2D"]
+script = ExtResource("1_olues")
+rarity = "rare"
+Part_Number = 2
+description = "A rear bumper with a diffuser installed for improved downforce for the Nagata Koi, designed by Satetsu"
+price = 400
+weight = 4
+downforce = 70
+drag = 0.03
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = SubResource("CanvasTexture_r5f60")
+script = ExtResource("5_mk7pk")
+
+[node name="LightOccluder2D2" type="LightOccluder2D" parent="Sprite2D"]
+material = SubResource("CanvasItemMaterial_pappr")
+position = Vector2(-29.9116, -2.30154)
+occluder = SubResource("OccluderPolygon2D_gxeul")

@@ -20,6 +20,7 @@ Part_Number = 2
 lenght = 21
 width = 11
 description = "A 6 speed manual gearbox designed for RWD Longitudinal layout"
+price = 3250
 weight = 40
 shift_time = 0.45
 max_hp = 400

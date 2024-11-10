@@ -26,6 +26,7 @@ width = 36
 Engine_ID = 3
 Part_Number = 4
 description = "A high performance top end for the Hikari Suhei-25A Engine, developed for maximum high rpm performance by Avalon Racing"
+price = 5500
 weight = 24.0
 tq_mod = 1.18
 max_hp_rpm = 7400

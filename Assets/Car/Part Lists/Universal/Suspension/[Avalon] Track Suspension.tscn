@@ -17,6 +17,7 @@ script = ExtResource("1_qrifr")
 rarity = "epic"
 Part_Number = 2
 description = "A coilover suspension set designed to great precision by Avalon for optimal traction around the corners on the racetrack "
+price = 4000
 weight = 20
 handling_bonus = 1.2
 

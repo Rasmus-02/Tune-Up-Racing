@@ -16,6 +16,7 @@ script = ExtResource("1_stjl3")
 rarity = "uncommon"
 Part_Number = 1
 description = "The factory front wheel drive driveshaft that comes in the Nagata Koi"
+price = 800
 weight = 10
 drivetrain = 1
 max_torque = 350

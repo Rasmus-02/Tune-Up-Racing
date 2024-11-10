@@ -35,6 +35,7 @@ script = ExtResource("1_tyasp")
 rarity = "uncommon"
 Part_Number = 1
 description = "The factory headlights for the Nagata Koi"
+price = 150
 weight = 5
 drag = 0.01
 

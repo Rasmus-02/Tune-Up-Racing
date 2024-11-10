@@ -17,6 +17,7 @@ script = ExtResource("1_elt4c")
 rarity = "uncommon"
 Part_Number = 1
 description = "The factory mirrors for the Nagata Koi"
+price = 100
 weight = 2
 drag = 0.01
 

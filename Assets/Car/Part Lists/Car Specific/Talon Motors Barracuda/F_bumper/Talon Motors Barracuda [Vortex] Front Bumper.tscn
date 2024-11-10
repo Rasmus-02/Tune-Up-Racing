@@ -24,6 +24,7 @@ rarity = "rare"
 Car_ID = 1
 Part_Number = 2
 description = "A front bumper with improved cooling designed by the aftermarket parts manufacturer Vortex for the Talon Motors Barracuda"
+price = 550
 weight = 6
 downforce = 45
 drag = 0.05

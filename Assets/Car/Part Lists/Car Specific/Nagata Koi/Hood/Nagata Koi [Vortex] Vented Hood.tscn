@@ -17,6 +17,7 @@ script = ExtResource("1_5ssmk")
 rarity = "uncommon"
 Part_Number = 2
 description = "A vented hood for the Nagata Koi, designed by the aftermarket parts manufacturer Vortex, with improved cooling airflow in mind"
+price = 350
 weight = 14
 downforce = 20
 drag = 0.05

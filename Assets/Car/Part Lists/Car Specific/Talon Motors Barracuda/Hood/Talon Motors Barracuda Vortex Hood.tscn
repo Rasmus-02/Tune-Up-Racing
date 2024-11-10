@@ -18,6 +18,7 @@ rarity = "rare"
 Car_ID = 1
 Part_Number = 2
 description = "A hood designed for improved engine cooling by the aftermarket parts manufacturer Vortex for the Talon Motors Barracuda"
+price = 600
 weight = 24
 downforce = 35
 drag = 0.04
