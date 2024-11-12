@@ -1,4 +1,4 @@
-[gd_scene load_steps=128 format=3 uid="uid://bpjbw8pi8ej12"]
+[gd_scene load_steps=129 format=3 uid="uid://bpjbw8pi8ej12"]
 
 [ext_resource type="Script" path="res://Levels/Garage.gd" id="1_mx11h"]
 [ext_resource type="Texture2D" uid="uid://b350jwt2tgchl" path="res://addons/rmsmartshape/assets/light1-1.png" id="2_05wol"]
@@ -1009,6 +1009,9 @@ specular_shininess = 0.4
 diffuse_texture = ExtResource("47_t18cl")
 normal_texture = ExtResource("48_qeu7k")
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_f0y50"]
+size = Vector2(94, 32)
+
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_4xp8d"]
 light_mode = 1
 
@@ -1426,11 +1429,18 @@ position = Vector2(-340.178, 813.494)
 rotation = 6.86556
 texture = SubResource("CanvasTexture_08bfq")
 
-[node name="Computer" type="Node2D" parent="Props"]
+[node name="Computer_Desk" type="Node2D" parent="Props" node_paths=PackedStringArray("player")]
 position = Vector2(-294.357, 415)
 script = ExtResource("49_7jfjo")
+player = NodePath("../../Player")
 
-[node name="TempSprite" type="Polygon2D" parent="Props/Computer"]
+[node name="Interaction_Area" type="Area2D" parent="Props/Computer_Desk" groups=["Computer"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Props/Computer_Desk/Interaction_Area"]
+position = Vector2(-10.643, -13)
+shape = SubResource("RectangleShape2D_f0y50")
+
+[node name="TempSprite" type="Polygon2D" parent="Props/Computer_Desk" groups=["Computer"]]
 color = Color(0.568627, 0.388235, 0.270588, 1)
 polygon = PackedVector2Array(36.1313, -28.8965, 36.2856, 2.47079, -57.2997, 2.61111, -57.3123, -28.8965)
 

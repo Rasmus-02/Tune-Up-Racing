@@ -48,32 +48,10 @@ var update = false
 @export var selected_radiator = 0
 @export var selected_exhaust = 0
 @export var in_garage = 0
-@export var selected_color = Color(0.0, 0.0, 0.0)
 var suspension_list = [null,null,null,null]
 var wheel_list = [null,null,null,null]
 var tire_list = [null,null,null,null]
 var brake_list = [null,null,null,null]
-
-
-func paint_car():
-	#set selected color
-	chassi.get_node("Sprite2D").import_new_color = selected_color
-	fenders.get_node("Sprite2D").import_new_color = selected_color
-	f_bumper.get_node("Sprite2D").import_new_color = selected_color
-	r_bumper.get_node("Sprite2D").import_new_color = selected_color
-	hood.get_node("Sprite2D").import_new_color = selected_color
-	spoiler.get_node("Sprite2D").import_new_color = selected_color
-	mirrors.get_node("Sprite2D").import_new_color = selected_color
-	headlights.get_node("Sprite2D").import_new_color = selected_color
-	#run color change method
-	chassi.get_node("Sprite2D").change_color()
-	fenders.get_node("Sprite2D").change_color()
-	f_bumper.get_node("Sprite2D").change_color()
-	r_bumper.get_node("Sprite2D").change_color()
-	hood.get_node("Sprite2D").change_color()
-	spoiler.get_node("Sprite2D").change_color()
-	mirrors.get_node("Sprite2D").change_color()
-	headlights.get_node("Sprite2D").change_color()
 
 func instantiate_car():
 	specific = get_child(0)
@@ -253,8 +231,6 @@ func reload_car():
 			wheel_list[i].queue_free()
 	#respawns the car
 	instantiate_car()
-	#changes the color of the car
-	paint_car()
 
 func _process(_delta):
 	if radiator_loaded == false:

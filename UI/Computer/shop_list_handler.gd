@@ -40,7 +40,7 @@ func _ready():
 var temp_hovered = null
 func _process(_delta):
 	#Manage the highlight system
-	if true_hovered_item != null:
+	if true_hovered_item != null and has_focus():
 		#Disable previous highlighted selection
 		if temp_hovered != null:
 			set_item_custom_bg_color(get_both_tabs(temp_hovered)[0], Color(0, 0, 0, 0))
@@ -50,6 +50,16 @@ func _process(_delta):
 			set_item_custom_bg_color(get_both_tabs(true_hovered_item)[0], highlighted_item_color)
 			set_item_custom_bg_color(get_both_tabs(true_hovered_item)[1], highlighted_item_color)
 		temp_hovered = true_hovered_item
+	
+	#This is used to make sure the green price text isn't ovewritten by the "Hover text color" in itemlist theme
+	if temp_hovered != null and temp_hovered % 2 == 1:
+		add_theme_color_override("font_hovered_color", Color(0, 0.80000001192093, 0))
+	else:
+		add_theme_color_override("font_hovered_color", Color(0.29019600152969, 0.29019600152969, 0.29019600152969))
+	
+	#For search function, so that if pressing enter it will search
+	if $"../Top Tab/Search Bar".has_focus() and Input.is_action_just_pressed("ui_accept"):
+		_on_search_button_pressed()
 
 var hovered_item := -1
 var true_hovered_item = null
@@ -63,8 +73,9 @@ func _input(event):
 				true_hovered_item = index
 			hovered_item = index
 	elif Input.is_action_just_pressed("ui_accept") and current_index == temp_index and has_focus():
-		stats_tab.open()
-		release_focus()
+		_on_item_selected(current_index)
+		#stats_tab.open()
+		#release_focus()
 
 
 func populate_list():
@@ -93,6 +104,7 @@ func populate_list():
 		else: #if engine
 			add_item(part_list[i].name, engine_icons[id][rarity]) #Find correct icon type and color
 		add_item("                  Price: "+ price+ "$")
+		set_item_custom_fg_color(get_item_count()-1,Color(0, 0.80000001192093, 0))
 
 
 func _on_search_button_pressed():
@@ -153,8 +165,7 @@ func get_selected_item(index):
 
 func _on_item_clicked(index, _at_position, mouse_button_index): #To select the 2 tabs that make up 1 part
 	if mouse_button_index == 1:
-		current_index = index
-		clicked = true
+		#clicked = true
 		_on_item_selected(index)
 
 var temp_index = null
@@ -166,6 +177,8 @@ func _on_item_selected(index):
 	select(tabs[0], false)
 	select(tabs[1], false)
 	select_mode = 0
+	print("real index ",index)
+	print("temp index ",temp_index)
 	if index == temp_index: #For controller and mouse also uses it now
 		stats_tab.selected_item = get_selected_item(index)
 		stats_tab.open()

@@ -2,9 +2,7 @@ extends Sprite2D
 
 @export var import_new_color : Color
 var origin = Color(0.0, 0.0, 0.0)
-
-#func _ready():
-#	change_color()
+var loaded = false
 
 func change_color():
 	var new_color = Color(1.0, 0.0, 0.0)

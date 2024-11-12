@@ -13,6 +13,8 @@ func _process(delta):
 			var engine = get_ai_car().engine
 			get_child(i).load_car_from_algorithm(car)
 			get_child(i).engine.load_car_from_algorithm(engine)
+			
+			get_child(i).selected_color = Color(0, 1, 0)
 		loaded = true
 
 

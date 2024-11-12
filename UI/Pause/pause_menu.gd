@@ -2,6 +2,7 @@ extends Control
 
 @onready var pause_menu = $"."
 @onready var sc_timer = $Scene_change_timer
+@export var player : CharacterBody2D
 var current_scene = ""
 var main = null
 
@@ -12,6 +13,7 @@ func _ready():
 
 func check_scene():
 	if SelectedScene.scene == "Track": #hide cursor
+		player = null
 		return 1
 	elif SelectedScene.scene == "garage": #show cursor
 		return 2
@@ -37,23 +39,25 @@ func _process(_delta):
 
 var pause_state = true #menue starts closed
 func open_close_pause():
-	if pause_state: #show menue
-		$MarginContainer/VBoxContainer/Resume.grab_focus()
-		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
-		Engine.time_scale = 0 #pauses
-		pause_menu.show()
-		#hide restart in garage
-		if current_scene != "Track":
-			$MarginContainer/VBoxContainer/Restart.hide()
-		else:
-			$MarginContainer/VBoxContainer/Restart.show()
-		pause_state = false
-	else: #hide menue
-		if check_scene() == 1:
-			Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
-		Engine.time_scale = 1 #unpauses
-		pause_menu.hide()
-		pause_state = true
+	if player == null or player.ui_visible == false:
+		print(player.ui_visible)
+		if pause_state: #show menue
+			$MarginContainer/VBoxContainer/Resume.grab_focus()
+			Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+			Engine.time_scale = 0 #pauses
+			pause_menu.show()
+			#hide restart in garage
+			if current_scene != "Track":
+				$MarginContainer/VBoxContainer/Restart.hide()
+			else:
+				$MarginContainer/VBoxContainer/Restart.show()
+			pause_state = false
+		else: #hide menue
+			if check_scene() == 1:
+				Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+			Engine.time_scale = 1 #unpauses
+			pause_menu.hide()
+			pause_state = true
 
 func _on_resume_pressed():
 	open_close_pause()

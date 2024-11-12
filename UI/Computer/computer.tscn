@@ -1,0 +1,96 @@
+[gd_scene load_steps=13 format=3 uid="uid://ca4jw5y51ms2e"]
+
+[ext_resource type="Shader" path="res://Shaders/CRT.gdshader" id="1_1b8w0"]
+[ext_resource type="Script" path="res://UI/Computer/Computer_Powerbutton.gd" id="1_mvcos"]
+[ext_resource type="Texture2D" uid="uid://p6ge1i2batrc" path="res://Textures/UI/Computer/Computer.png" id="1_nx8i8"]
+[ext_resource type="AudioStream" uid="uid://bg86i4b7nvt2t" path="res://Sound/CRT Static.mp3" id="2_rc1yq"]
+[ext_resource type="PackedScene" uid="uid://cbj7bnjqlxc52" path="res://UI/Computer/Webbrowser.tscn" id="2_tjn7o"]
+[ext_resource type="Texture2D" uid="uid://b350jwt2tgchl" path="res://addons/rmsmartshape/assets/light1-1.png" id="3_02jpd"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ricr3"]
+shader = ExtResource("1_1b8w0")
+shader_parameter/resolution = Vector2(1200, 900)
+shader_parameter/scan_line_amount = 0.13
+shader_parameter/warp_amount = 0.013
+shader_parameter/noise_amount = 0.032
+shader_parameter/interference_amount = 0.183
+shader_parameter/grille_amount = 0.065
+shader_parameter/grille_size = 1.0
+shader_parameter/vignette_amount = 0.6
+shader_parameter/vignette_intensity = 0.409
+shader_parameter/aberation_amount = 0.352
+shader_parameter/roll_line_amount = 0.022
+shader_parameter/roll_speed = 1.0
+shader_parameter/scan_line_strength = -6.087
+shader_parameter/pixel_strength = -2.0
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_j56r5"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_karbx"]
+bg_color = Color(0, 0, 0, 0.0823529)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_jlgqj"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_dv7wx"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_h56lh"]
+
+[node name="Computer" type="Node2D"]
+light_mask = 524289
+visibility_layer = 524289
+script = ExtResource("1_mvcos")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+position = Vector2(154.451, 107.374)
+stream = ExtResource("2_rc1yq")
+volume_db = 12.0
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+light_mask = 524289
+visibility_layer = 524289
+position = Vector2(-2.24, -1.115)
+scale = Vector2(1.506, 1.506)
+texture = ExtResource("1_nx8i8")
+
+[node name="CanvasModulate" type="ColorRect" parent="."]
+z_index = 500
+material = SubResource("ShaderMaterial_ricr3")
+offset_left = -195.0
+offset_top = -194.0
+offset_right = -191.0
+offset_bottom = -191.0
+scale = Vector2(96.05, 95.335)
+color = Color(0, 0, 0, 1)
+
+[node name="PointLight2D" type="PointLight2D" parent="CanvasModulate"]
+range_z_min = 3498
+range_z_max = 3499
+texture = ExtResource("3_02jpd")
+
+[node name="Webbrowser" parent="." instance=ExtResource("2_tjn7o")]
+material = SubResource("ShaderMaterial_ricr3")
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -1279.6
+offset_top = -787.479
+offset_right = -1279.6
+offset_bottom = -787.479
+scale = Vector2(0.2, 0.2)
+pivot_offset = Vector2(1276.11, 741.859)
+size_flags_horizontal = 4
+
+[node name="Button" type="Button" parent="."]
+offset_left = 154.451
+offset_top = 107.374
+offset_right = 193.601
+offset_bottom = 128.484
+theme_override_styles/normal = SubResource("StyleBoxEmpty_j56r5")
+theme_override_styles/hover = SubResource("StyleBoxFlat_karbx")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_jlgqj")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_dv7wx")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_h56lh")
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

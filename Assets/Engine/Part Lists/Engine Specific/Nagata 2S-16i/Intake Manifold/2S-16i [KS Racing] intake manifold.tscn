@@ -11,7 +11,7 @@ normal_texture = ExtResource("3_nbiks")
 specular_texture = ExtResource("4_j53tl")
 specular_shininess = 0.5
 
-[node name="Nagata 2S-16i [KS Racing] Intake Manifold" type="Node2D"]
+[node name="Nagata 2S-16i [KS-Racing] Intake Manifold" type="Node2D"]
 script = ExtResource("1_lxhhm")
 rarity = "rare"
 layout = "front"

@@ -325,7 +325,6 @@ func load_car_from_algorithm(dictionary):
 	selected_gearbox = dictionary.gearbox
 	selected_radiator = dictionary.radiator
 	selected_exhaust = dictionary.exhaust
-	selected_color = Color(1.0,0.5,0.5, 1)
 	
 	#Damage stats
 	chassi_durability = 100
@@ -375,7 +374,6 @@ func update_car_parts():
 	self.get_child(0).get_child(0).get_child(0).selected_gearbox = selected_gearbox
 	self.get_child(0).get_child(0).get_child(0).selected_radiator = selected_radiator
 	self.get_child(0).get_child(0).get_child(0).selected_exhaust = selected_exhaust
-	self.get_child(0).get_child(0).get_child(0).selected_color = selected_color
 	self.get_child(0).get_child(0).get_child(0).in_garage = in_garage
 	update_stats()
 
@@ -451,6 +449,28 @@ func update_stats():
 	#If Saved gear ratio is missing gears, reset it to default
 	if gear_ratio == null or gear_ratio.size() < gearbox.gear_ratio.size():
 		gear_ratio = gearbox.gear_ratio
+	paint_car()
+
+#Change the color of the car
+func paint_car():
+	#set selected color
+	chassi.get_node("Sprite2D").import_new_color = selected_color
+	fenders.get_node("Sprite2D").import_new_color = selected_color
+	f_bumper.get_node("Sprite2D").import_new_color = selected_color
+	r_bumper.get_node("Sprite2D").import_new_color = selected_color
+	hood.get_node("Sprite2D").import_new_color = selected_color
+	spoiler.get_node("Sprite2D").import_new_color = selected_color
+	mirrors.get_node("Sprite2D").import_new_color = selected_color
+	headlights.get_node("Sprite2D").import_new_color = selected_color
+	#run color change method
+	chassi.get_node("Sprite2D").change_color()
+	fenders.get_node("Sprite2D").change_color()
+	f_bumper.get_node("Sprite2D").change_color()
+	r_bumper.get_node("Sprite2D").change_color()
+	hood.get_node("Sprite2D").change_color()
+	spoiler.get_node("Sprite2D").change_color()
+	mirrors.get_node("Sprite2D").change_color()
+	headlights.get_node("Sprite2D").change_color()
 #endregion
 
 

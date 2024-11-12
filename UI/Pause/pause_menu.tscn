@@ -1,10 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://bxei516mvsvwr"]
+[gd_scene load_steps=4 format=3 uid="uid://bxei516mvsvwr"]
 
 [ext_resource type="Script" path="res://UI/Pause/pause_menu.gd" id="1_gxb3s"]
 [ext_resource type="Shader" path="res://Shaders/Blur.gdshader" id="2_46dlv"]
-
-[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_7tsgl"]
-light_mode = 1
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_fukf4"]
 shader = ExtResource("2_46dlv")
@@ -14,11 +11,7 @@ shader_parameter/blurAmount2 = 2.547
 shader_parameter/whiteTintIntensity1 = 0.127
 shader_parameter/whiteTintIntensity2 = 0.077
 
-[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_sxs01"]
-light_mode = 1
-
 [node name="Pause_Menu" type="Control"]
-material = SubResource("CanvasItemMaterial_7tsgl")
 layout_mode = 3
 anchors_preset = 8
 anchor_left = 0.5
@@ -40,7 +33,6 @@ offset_right = 6652.0
 offset_bottom = 3691.0
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
-material = SubResource("CanvasItemMaterial_sxs01")
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -55,7 +47,6 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
-material = SubResource("CanvasItemMaterial_sxs01")
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
@@ -63,17 +54,14 @@ theme_override_constants/separation = 18
 alignment = 1
 
 [node name="Resume" type="Button" parent="MarginContainer/VBoxContainer"]
-material = SubResource("CanvasItemMaterial_sxs01")
 layout_mode = 2
 text = " Resume "
 
 [node name="Restart" type="Button" parent="MarginContainer/VBoxContainer"]
-material = SubResource("CanvasItemMaterial_sxs01")
 layout_mode = 2
 text = "Restart"
 
 [node name="Quit" type="Button" parent="MarginContainer/VBoxContainer"]
-material = SubResource("CanvasItemMaterial_sxs01")
 layout_mode = 2
 text = " Quit "
 

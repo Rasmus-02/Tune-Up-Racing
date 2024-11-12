@@ -1,10 +1,11 @@
 extends Panel
 
 @export var part_list : ItemList
-@onready var stat_text = $RichTextLabel
-@onready var title = $Label
+@onready var stat_text = $Stat_text
+@onready var title = $Name
 @onready var part = $"Display/Nagata Koi Stock Front Bumper"
 @onready var part_position = $"Part Location"
+@onready var price_label = $Price
 var selected_item = null
 
 #region Open / Close
@@ -41,27 +42,29 @@ func update_stats():
 
 func update_title():
 	title.text = selected_item.name
+	price_label.text = "Price: " + str(selected_item.price) + "$"
 	update_image() #go to next state
 
 func update_image(): #add the part to the scene as an image
-	var part_location = $Display
+	var part_location = $"Display/Part Location"
 	if part_location.get_child_count() != 0:
 		part_location.remove_child(part_location.get_child(0))
 	part_location.add_child(selected_item)
 	#Set scale, position and rotation
 	if selected_item.type == 0: #if Car set scale to 2x
-		selected_item.global_scale = Vector2(2,2)
+		selected_item.global_scale = Vector2(0.5,0.5)
 	elif selected_item.type == 1: #if Engine set scale to 4x because parts are smaller
-		selected_item.global_scale = Vector2(4,4)
-	selected_item.global_position = part_position.global_position
+		selected_item.global_scale = Vector2(1,1)
 	selected_item.rotation = deg_to_rad(-90)
+	#selected_item.position = $Display.position + Vector2(32,-230)
+	selected_item.global_position = part_location.global_position
+	$"Display/Lighting/Light Axis".global_position = part_location.global_position
+	selected_item.z_index = 1
+	print(selected_item.z_index)
 	#Check if paintable
 	if selected_item.get_node("Sprite2D").get_script() != null:
 		selected_item.get_node("Sprite2D").import_new_color = Color(0.88173288106918, 0.81472492218018, 0.74073696136475)
 		selected_item.get_node("Sprite2D").change_color()
-
-
-
 
 #Function for getting the CORRECT stats to display in CORRECT order
 #region Stat
@@ -246,3 +249,6 @@ func get_stats(part, id : int, type : int):
 					update_display(stats[3], null, "", "")
 					update_display(stats[4], part.weight, "Weight", "Kg")
 					update_display(stats[5], part.durability, "Durability", "%")
+
+func _on_exit_button_pressed():
+	close()

@@ -11,7 +11,7 @@ normal_texture = ExtResource("3_itg3i")
 specular_texture = ExtResource("4_tg3pe")
 specular_shininess = 0.55
 
-[node name="Nagata 2S-16i [KS Racing] S1600 Supercharger" type="Node2D"]
+[node name="Nagata 2S-16i [KS-Racing] S1600 Supercharger" type="Node2D"]
 script = ExtResource("1_404di")
 rarity = "epic"
 layout = "front"

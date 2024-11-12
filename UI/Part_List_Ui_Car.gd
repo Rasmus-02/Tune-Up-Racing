@@ -112,7 +112,6 @@ func size_check(index):
 	var left = temp_part.size[0]
 	var right = temp_part.size[1]
 	var front = temp_part.size[2]
-	var rear = temp_part.size[3]
 	var engine_bay = car.engine_bay_size
 	var engine_offset = null
 	engine_offset = car.engine_position_offset

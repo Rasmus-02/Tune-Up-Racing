@@ -1,0 +1,278 @@
+[gd_scene load_steps=14 format=3 uid="uid://xetjn1k22kut"]
+
+[ext_resource type="Theme" uid="uid://b7cej2d60vjv1" path="res://UI/Computer/Computer.tres" id="1_4ibdy"]
+[ext_resource type="Script" path="res://UI/Computer/shop_list_handler.gd" id="4_jv0f3"]
+[ext_resource type="Script" path="res://UI/Computer/Stats_Tab.gd" id="4_sxy5m"]
+[ext_resource type="Theme" uid="uid://djwkn1r8xu4oo" path="res://UI/Computer/Computer_stats.tres" id="4_yq8au"]
+[ext_resource type="Texture2D" uid="uid://dds3p523p0ik5" path="res://Shaders/light.png" id="6_4owkj"]
+[ext_resource type="Script" path="res://UI/Computer/Part_Categories_Shop.gd" id="6_sdh5w"]
+[ext_resource type="Script" path="res://UI/Computer/Shop_Display_Light.gd" id="6_yqa17"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_spjpg"]
+bg_color = Color(0.658824, 0.654902, 0.615686, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pivpp"]
+bg_color = Color(0.588235, 0.584314, 0.54902, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lekva"]
+content_margin_left = 20.0
+content_margin_top = 10.0
+content_margin_right = 10.0
+content_margin_bottom = 10.0
+bg_color = Color(0.890196, 0.882353, 0.827451, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lew1o"]
+content_margin_left = 20.0
+content_margin_top = 10.0
+content_margin_right = 10.0
+content_margin_bottom = 10.0
+bg_color = Color(0.85, 0.843058, 0.7905, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rxj4r"]
+bg_color = Color(0.890196, 0.882353, 0.827451, 1)
+expand_margin_left = 13.0
+expand_margin_right = 18.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fk4s6"]
+bg_color = Color(0.890196, 0.882353, 0.827451, 1)
+border_color = Color(0.658824, 0.654902, 0.615686, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+shadow_color = Color(0, 0, 0, 0.176471)
+shadow_size = 15
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_4ibdy")
+
+[node name="OS Top Panel" type="Panel" parent="."]
+z_index = -1
+layout_mode = 2
+offset_left = 320.0
+offset_right = 2240.0
+offset_bottom = 1440.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_spjpg")
+
+[node name="OS Top Panel" type="Panel" parent="OS Top Panel"]
+layout_mode = 0
+offset_left = 10.0
+offset_top = 13.0
+offset_right = 1910.0
+offset_bottom = 63.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_pivpp")
+
+[node name="Top Page Panel" type="Panel" parent="OS Top Panel"]
+layout_mode = 2
+offset_left = 10.0
+offset_top = 76.0
+offset_right = 1910.0
+offset_bottom = 209.0
+
+[node name="Parts" type="ItemList" parent="." node_paths=PackedStringArray("category_list", "stats_tab")]
+layout_mode = 2
+offset_left = 700.0
+offset_top = 209.0
+offset_right = 2230.0
+offset_bottom = 1430.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_lekva")
+theme_override_styles/selected = SubResource("StyleBoxFlat_lew1o")
+allow_reselect = true
+max_columns = 2
+same_column_width = true
+fixed_column_width = 742
+fixed_icon_size = Vector2i(68, 64)
+script = ExtResource("4_jv0f3")
+category_list = NodePath("../Part Categories")
+stats_tab = NodePath("../Control/Part Stats")
+highlighted_item_color = Color(0.8, 0.793467, 0.744, 1)
+
+[node name="Part Categories" type="ItemList" parent="."]
+layout_mode = 2
+offset_left = 329.8
+offset_top = 209.0
+offset_right = 699.8
+offset_bottom = 1430.0
+theme_override_styles/selected = SubResource("StyleBoxFlat_rxj4r")
+theme_override_styles/selected_focus = SubResource("StyleBoxFlat_rxj4r")
+script = ExtResource("6_sdh5w")
+
+[node name="Top Tab" type="HBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 350.0
+offset_top = 92.0
+offset_right = 2210.0
+offset_bottom = 187.0
+theme_override_constants/separation = 20
+
+[node name="Car_Tab" type="Button" parent="Top Tab"]
+layout_mode = 2
+toggle_mode = true
+text = " CAR "
+
+[node name="Engine_Tab" type="Button" parent="Top Tab"]
+layout_mode = 2
+toggle_mode = true
+text = "ENGINE"
+
+[node name="Both_Tab" type="Button" parent="Top Tab"]
+layout_mode = 2
+toggle_mode = true
+text = " BOTH "
+
+[node name="Search Bar" type="TextEdit" parent="Top Tab"]
+layout_mode = 2
+size_flags_horizontal = 3
+placeholder_text = "Search for a part here"
+
+[node name="Search Button" type="Button" parent="Top Tab"]
+layout_mode = 2
+text = "Search"
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 679.0
+offset_top = 312.0
+offset_right = 719.0
+offset_bottom = 352.0
+theme = ExtResource("4_yq8au")
+
+[node name="Part Stats" type="Panel" parent="Control" node_paths=PackedStringArray("part_list", "image_display_layer")]
+layout_mode = 0
+offset_right = 1176.0
+offset_bottom = 882.0
+pivot_offset = Vector2(588, 441)
+script = ExtResource("4_sxy5m")
+part_list = NodePath("../../Parts")
+image_display_layer = NodePath("CanvasLayer")
+
+[node name="Label" type="Label" parent="Control/Part Stats"]
+layout_mode = 0
+offset_left = 57.0
+offset_top = 44.0
+offset_right = 1129.0
+offset_bottom = 155.0
+text = "Nagata Koi Front Bumper"
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Control/Part Stats"]
+layout_mode = 0
+offset_left = 678.0
+offset_top = 128.0
+offset_right = 1170.0
+offset_bottom = 882.0
+text = "Torque: 400
+Weight: 200
+Max Torque: 600
+Efficiency: 86%
+
+Price: 600$
+"
+
+[node name="Display" type="Panel" parent="Control/Part Stats"]
+layout_mode = 0
+offset_left = 57.0
+offset_top = 128.0
+offset_right = 644.0
+offset_bottom = 824.0
+pivot_offset = Vector2(588, 441)
+theme_override_styles/panel = SubResource("StyleBoxFlat_fk4s6")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="Control/Part Stats"]
+
+[node name="Lighting" type="Node2D" parent="Control/Part Stats/CanvasLayer"]
+position = Vector2(1025.56, 781.884)
+
+[node name="Light Axis" type="Node2D" parent="Control/Part Stats/CanvasLayer/Lighting"]
+position = Vector2(3.43979, -7.88367)
+scale = Vector2(0.804, 0.647)
+script = ExtResource("6_yqa17")
+
+[node name="PointLight2D5" type="PointLight2D" parent="Control/Part Stats/CanvasLayer/Lighting/Light Axis"]
+position = Vector2(682.836, -0.000116774)
+scale = Vector2(2.26275, 1.23804)
+energy = 0.6
+range_z_max = 4096
+range_layer_max = 1
+texture = ExtResource("6_4owkj")
+texture_scale = 3.4
+height = 335.0
+
+[node name="PointLight2D" type="PointLight2D" parent="Control/Part Stats/CanvasLayer/Lighting"]
+visible = false
+position = Vector2(-395.042, -69.886)
+rotation = 3.14159
+scale = Vector2(0.804, 0.647)
+energy = 0.6
+range_z_max = 4096
+range_layer_min = 1
+range_layer_max = 1
+texture = ExtResource("6_4owkj")
+texture_scale = 3.4
+height = 335.0
+
+[node name="PointLight2D2" type="PointLight2D" parent="Control/Part Stats/CanvasLayer/Lighting"]
+visible = false
+position = Vector2(404.753, -69.886)
+scale = Vector2(0.804, 0.647)
+energy = 0.6
+range_z_max = 4096
+range_layer_min = 1
+range_layer_max = 1
+texture = ExtResource("6_4owkj")
+texture_scale = 3.4
+height = 335.0
+
+[node name="PointLight2D3" type="PointLight2D" parent="Control/Part Stats/CanvasLayer/Lighting"]
+visible = false
+position = Vector2(6.58292, 528.099)
+rotation = 1.5708
+scale = Vector2(0.864, 0.647)
+energy = 0.6
+range_z_max = 4096
+range_layer_min = 1
+range_layer_max = 1
+texture = ExtResource("6_4owkj")
+texture_scale = 3.4
+height = 335.0
+
+[node name="PointLight2D4" type="PointLight2D" parent="Control/Part Stats/CanvasLayer/Lighting"]
+visible = false
+position = Vector2(6.58292, -602.656)
+rotation = -1.5708
+scale = Vector2(0.864478, 0.646519)
+energy = 0.6
+range_z_max = 4096
+range_layer_min = 1
+range_layer_max = 1
+texture = ExtResource("6_4owkj")
+texture_scale = 3.4
+height = 335.0
+
+[node name="CanvasModulate" type="CanvasModulate" parent="Control/Part Stats/CanvasLayer/Lighting"]
+color = Color(0.0392157, 0.113725, 0.172549, 1)
+
+[node name="Part Location" type="Marker2D" parent="Control/Part Stats/CanvasLayer"]
+position = Vector2(1028.95, 774.395)
+
+[node name="Button" type="Button" parent="Control/Part Stats"]
+layout_mode = 0
+offset_left = 679.59
+offset_top = 741.344
+offset_right = 879.59
+offset_bottom = 825.344
+text = "  Buy  "
+
+[connection signal="item_clicked" from="Parts" to="Parts" method="_on_item_clicked"]
+[connection signal="item_selected" from="Parts" to="Parts" method="_on_item_selected"]
+[connection signal="item_selected" from="Part Categories" to="Parts" method="_on_part_categories_item_selected"]
+[connection signal="pressed" from="Top Tab/Car_Tab" to="Parts" method="_on_car_tab_pressed"]
+[connection signal="pressed" from="Top Tab/Engine_Tab" to="Parts" method="_on_engine_tab_pressed"]
+[connection signal="pressed" from="Top Tab/Both_Tab" to="Parts" method="_on_both_tab_pressed"]
+[connection signal="pressed" from="Top Tab/Search Button" to="Parts" method="_on_search_button_pressed"]

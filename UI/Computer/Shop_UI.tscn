@@ -1,18 +1,14 @@
 [gd_scene load_steps=15 format=3 uid="uid://xetjn1k22kut"]
 
-[ext_resource type="Theme" uid="uid://b7cej2d60vjv1" path="res://UI/Computer/Computer.tres" id="1_4ibdy"]
-[ext_resource type="Script" path="res://UI/Computer/shop_list_handler.gd" id="4_jv0f3"]
-[ext_resource type="Script" path="res://UI/Computer/Stats_Tab.gd" id="4_sxy5m"]
-[ext_resource type="Theme" uid="uid://djwkn1r8xu4oo" path="res://UI/Computer/Computer_stats.tres" id="4_yq8au"]
-[ext_resource type="Script" path="res://UI/Computer/Part_Categories_Shop.gd" id="6_sdh5w"]
-[ext_resource type="Texture2D" uid="uid://dev72y2p4x7r8" path="res://Textures/Cars/Nagata Koi/Taillights/Nagata Koi Stock Taillights NM.png" id="6_v2l33"]
-[ext_resource type="Texture2D" uid="uid://d0eq0v48u8ant" path="res://Shaders/Light_Circle.png" id="7_k6v4a"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_spjpg"]
-bg_color = Color(0.658824, 0.654902, 0.615686, 1)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pivpp"]
-bg_color = Color(0.588235, 0.584314, 0.54902, 1)
+[ext_resource type="Theme" uid="uid://b7cej2d60vjv1" path="res://UI/Computer/Shop.tres" id="1_ttnr5"]
+[ext_resource type="Script" path="res://UI/Computer/shop_list_handler.gd" id="2_tk8gg"]
+[ext_resource type="StyleBox" uid="uid://dle3as3q1srn4" path="res://UI/Computer/Highlighted_item_shop.tres" id="3_48bvi"]
+[ext_resource type="Script" path="res://UI/Computer/Part_Categories_Shop.gd" id="3_hty7b"]
+[ext_resource type="Theme" uid="uid://djwkn1r8xu4oo" path="res://UI/Computer/Shop_stats.tres" id="4_1l0pp"]
+[ext_resource type="Script" path="res://UI/Computer/Search Bar.gd" id="4_bcd1o"]
+[ext_resource type="Script" path="res://UI/Computer/Stats_Tab.gd" id="5_jrjlh"]
+[ext_resource type="Script" path="res://UI/Computer/Shop_Display_Light.gd" id="6_t03qx"]
+[ext_resource type="Texture2D" uid="uid://dds3p523p0ik5" path="res://Shaders/light.png" id="7_el63x"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lekva"]
 content_margin_left = 20.0
@@ -26,12 +22,14 @@ content_margin_left = 20.0
 content_margin_top = 10.0
 content_margin_right = 10.0
 content_margin_bottom = 10.0
-bg_color = Color(0.85, 0.843058, 0.7905, 1)
+bg_color = Color(0.290196, 0.290196, 0.290196, 0.2)
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rxj4r"]
-bg_color = Color(0.890196, 0.882353, 0.827451, 1)
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_so04u"]
+bg_color = Color(0.290196, 0.290196, 0.290196, 0.129412)
 expand_margin_left = 13.0
 expand_margin_right = 18.0
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_57b0w"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fk4s6"]
 bg_color = Color(0.890196, 0.882353, 0.827451, 1)
@@ -43,75 +41,58 @@ corner_radius_bottom_left = 15
 shadow_color = Color(0, 0, 0, 0.176471)
 shadow_size = 15
 
-[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_3kyuo"]
-polygon = PackedVector2Array(753.023, 439.778, 747.498, 440.153, 742.863, 442.166, 738.977, 445.725, 736.963, 449.096, 735.793, 453.216, 736.06, 1122.73, 738.51, 1129.75, 742.259, 1133.28, 747.345, 1135.56, 752.326, 1136.19, 1308.47, 1135.7, 1312.09, 1135.02, 1317.22, 1132.45, 1320.33, 1129.31, 1322.52, 1124.23, 1322.97, 1116.84, 1322.92, 453.292, 1321.83, 449.037, 1318.63, 444.299, 1314.36, 441.512, 1309.64, 440.025)
-
-[node name="Control" type="Control"]
+[node name="Shop" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme = ExtResource("1_4ibdy")
+theme = ExtResource("1_ttnr5")
 
-[node name="OS Top Panel" type="Panel" parent="."]
-z_index = -1
+[node name="Top Page Panel" type="Panel" parent="."]
 layout_mode = 2
-offset_left = 320.0
-offset_right = 2240.0
-offset_bottom = 1440.0
-theme_override_styles/panel = SubResource("StyleBoxFlat_spjpg")
-
-[node name="OS Top Panel" type="Panel" parent="OS Top Panel"]
-layout_mode = 0
-offset_left = 10.0
-offset_top = 13.0
-offset_right = 1910.0
-offset_bottom = 63.0
-theme_override_styles/panel = SubResource("StyleBoxFlat_pivpp")
-
-[node name="Top Page Panel" type="Panel" parent="OS Top Panel"]
-layout_mode = 2
-offset_left = 10.0
-offset_top = 76.0
-offset_right = 1910.0
-offset_bottom = 209.0
+offset_left = 330.0
+offset_top = 89.0
+offset_right = 2230.0
+offset_bottom = 222.0
 
 [node name="Parts" type="ItemList" parent="." node_paths=PackedStringArray("category_list", "stats_tab")]
 layout_mode = 2
 offset_left = 700.0
-offset_top = 209.0
+offset_top = 222.0
 offset_right = 2230.0
 offset_bottom = 1430.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_lekva")
 theme_override_styles/selected = SubResource("StyleBoxFlat_lew1o")
+theme_override_styles/selected_focus = SubResource("StyleBoxFlat_lew1o")
 allow_reselect = true
 max_columns = 2
 same_column_width = true
 fixed_column_width = 742
 fixed_icon_size = Vector2i(68, 64)
-script = ExtResource("4_jv0f3")
+script = ExtResource("2_tk8gg")
 category_list = NodePath("../Part Categories")
 stats_tab = NodePath("../Control/Part Stats")
-highlighted_item_color = Color(0.8, 0.793467, 0.744, 1)
+highlighted_item_color = Color(0.290196, 0.290196, 0.290196, 0.129412)
 
 [node name="Part Categories" type="ItemList" parent="."]
 layout_mode = 2
-offset_left = 329.8
-offset_top = 209.0
-offset_right = 699.8
+offset_left = 330.0
+offset_top = 222.0
+offset_right = 700.0
 offset_bottom = 1430.0
-theme_override_styles/selected = SubResource("StyleBoxFlat_rxj4r")
-theme_override_styles/selected_focus = SubResource("StyleBoxFlat_rxj4r")
-script = ExtResource("6_sdh5w")
+theme_override_styles/hovered = SubResource("StyleBoxFlat_so04u")
+theme_override_styles/selected = ExtResource("3_48bvi")
+theme_override_styles/selected_focus = ExtResource("3_48bvi")
+script = ExtResource("3_hty7b")
 
 [node name="Top Tab" type="HBoxContainer" parent="."]
 layout_mode = 0
 offset_left = 350.0
-offset_top = 92.0
+offset_top = 105.0
 offset_right = 2210.0
-offset_bottom = 187.0
+offset_bottom = 200.0
 theme_override_constants/separation = 20
 
 [node name="Car_Tab" type="Button" parent="Top Tab"]
@@ -133,6 +114,7 @@ text = " BOTH "
 layout_mode = 2
 size_flags_horizontal = 3
 placeholder_text = "Search for a part here"
+script = ExtResource("4_bcd1o")
 
 [node name="Search Button" type="Button" parent="Top Tab"]
 layout_mode = 2
@@ -145,17 +127,26 @@ offset_left = 679.0
 offset_top = 312.0
 offset_right = 719.0
 offset_bottom = 352.0
-theme = ExtResource("4_yq8au")
+theme = ExtResource("4_1l0pp")
 
 [node name="Part Stats" type="Panel" parent="Control" node_paths=PackedStringArray("part_list")]
+visible = false
 layout_mode = 0
 offset_right = 1176.0
 offset_bottom = 882.0
 pivot_offset = Vector2(588, 441)
-script = ExtResource("4_sxy5m")
+script = ExtResource("5_jrjlh")
 part_list = NodePath("../../Parts")
 
-[node name="Label" type="Label" parent="Control/Part Stats"]
+[node name="Background Blocker" type="Panel" parent="Control/Part Stats"]
+layout_mode = 0
+offset_left = -349.0
+offset_top = -236.0
+offset_right = 1551.0
+offset_bottom = 1118.0
+theme_override_styles/panel = SubResource("StyleBoxEmpty_57b0w")
+
+[node name="Name" type="Label" parent="Control/Part Stats"]
 layout_mode = 0
 offset_left = 57.0
 offset_top = 44.0
@@ -163,7 +154,16 @@ offset_right = 1129.0
 offset_bottom = 155.0
 text = "Nagata Koi Front Bumper"
 
-[node name="RichTextLabel" type="RichTextLabel" parent="Control/Part Stats"]
+[node name="Price" type="Label" parent="Control/Part Stats"]
+layout_mode = 0
+offset_left = 684.0
+offset_top = 661.0
+offset_right = 1756.0
+offset_bottom = 772.0
+theme_override_colors/font_color = Color(0, 0.8, 0, 1)
+text = "Price: -"
+
+[node name="Stat_text" type="RichTextLabel" parent="Control/Part Stats"]
 layout_mode = 0
 offset_left = 678.0
 offset_top = 128.0
@@ -186,35 +186,54 @@ offset_bottom = 824.0
 pivot_offset = Vector2(588, 441)
 theme_override_styles/panel = SubResource("StyleBoxFlat_fk4s6")
 
-[node name="CanvasLayer" type="CanvasLayer" parent="Control/Part Stats/Display"]
+[node name="Lighting" type="Node2D" parent="Control/Part Stats/Display"]
+position = Vector2(289.56, 341.884)
 
-[node name="Sprite2D" type="Sprite2D" parent="Control/Part Stats/Display/CanvasLayer"]
-position = Vector2(1025.56, 781.884)
-texture = ExtResource("6_v2l33")
+[node name="Light Axis" type="Node2D" parent="Control/Part Stats/Display/Lighting"]
+position = Vector2(3.43979, -7.88367)
+scale = Vector2(0.804, 0.647)
+script = ExtResource("6_t03qx")
 
-[node name="CanvasModulate" type="CanvasModulate" parent="Control/Part Stats/Display/CanvasLayer"]
-position = Vector2(1025.56, 781.884)
+[node name="PointLight2D5" type="PointLight2D" parent="Control/Part Stats/Display/Lighting/Light Axis"]
+position = Vector2(700, 0)
+scale = Vector2(1.3, 1)
+range_z_min = 2999
+range_z_max = 3100
+texture = ExtResource("7_el63x")
+texture_scale = 3.4
+height = 130.0
+
+[node name="PointLight2D6" type="PointLight2D" parent="Control/Part Stats/Display/Lighting/Light Axis"]
+position = Vector2(-700, 0)
+rotation = -3.14159
+scale = Vector2(1.3, 1)
+range_z_min = 2999
+range_z_max = 3100
+texture = ExtResource("7_el63x")
+texture_scale = 3.4
+height = 130.0
+
+[node name="CanvasModulate" type="CanvasModulate" parent="Control/Part Stats/Display/Lighting"]
 color = Color(0.0392157, 0.113725, 0.172549, 1)
 
-[node name="LightOccluder2D" type="LightOccluder2D" parent="Control/Part Stats/Display/CanvasLayer"]
-occluder = SubResource("OccluderPolygon2D_3kyuo")
+[node name="Part Location" type="Marker2D" parent="Control/Part Stats/Display"]
+position = Vector2(292.95, 334.395)
 
-[node name="PointLight2D" type="PointLight2D" parent="Control/Part Stats/Display/CanvasLayer"]
-position = Vector2(754.231, 579.209)
-shadow_enabled = true
-texture = ExtResource("7_k6v4a")
-texture_scale = 3.4
-
-[node name="Part Location" type="Marker2D" parent="Control/Part Stats"]
-position = Vector2(349.951, 462.395)
-
-[node name="Button" type="Button" parent="Control/Part Stats"]
+[node name="Buy Button" type="Button" parent="Control/Part Stats"]
 layout_mode = 0
 offset_left = 679.59
 offset_top = 741.344
 offset_right = 879.59
 offset_bottom = 825.344
-text = "  Buy  "
+text = "   Buy   "
+
+[node name="Exit Button" type="Button" parent="Control/Part Stats"]
+layout_mode = 0
+offset_left = 1073.0
+offset_top = 17.0
+offset_right = 1158.0
+offset_bottom = 102.0
+text = "X"
 
 [connection signal="item_clicked" from="Parts" to="Parts" method="_on_item_clicked"]
 [connection signal="item_selected" from="Parts" to="Parts" method="_on_item_selected"]
@@ -222,4 +241,6 @@ text = "  Buy  "
 [connection signal="pressed" from="Top Tab/Car_Tab" to="Parts" method="_on_car_tab_pressed"]
 [connection signal="pressed" from="Top Tab/Engine_Tab" to="Parts" method="_on_engine_tab_pressed"]
 [connection signal="pressed" from="Top Tab/Both_Tab" to="Parts" method="_on_both_tab_pressed"]
+[connection signal="text_changed" from="Top Tab/Search Bar" to="Top Tab/Search Bar" method="_on_text_changed"]
 [connection signal="pressed" from="Top Tab/Search Button" to="Parts" method="_on_search_button_pressed"]
+[connection signal="pressed" from="Control/Part Stats/Exit Button" to="Control/Part Stats" method="_on_exit_button_pressed"]

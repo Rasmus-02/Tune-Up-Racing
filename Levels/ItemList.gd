@@ -8,7 +8,7 @@ var temptab
 @onready var engine_editor = $"../Engine Edit Controller"
 @onready var description_animation = $"../../Props/Editor UI Description"
 
-func _process(delta):
+func _process(_delta):
 	if Input.is_action_just_pressed("ui_accept") or Input.is_action_just_pressed("Interact"):
 		if get_selected_items() != null and get_selected_items().size() == 1:
 			_on_item_clicked(get_selected_items()[0], null, 1)

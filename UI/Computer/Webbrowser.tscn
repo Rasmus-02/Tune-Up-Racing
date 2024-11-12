@@ -1,0 +1,104 @@
+[gd_scene load_steps=11 format=3 uid="uid://cbj7bnjqlxc52"]
+
+[ext_resource type="Theme" uid="uid://b7cej2d60vjv1" path="res://UI/Computer/Shop.tres" id="1_iqbph"]
+[ext_resource type="PackedScene" uid="uid://xetjn1k22kut" path="res://UI/Computer/Shop_UI.tscn" id="2_6pl0m"]
+[ext_resource type="Theme" uid="uid://7wejusv27ogr" path="res://UI/Computer/Website_Browser.tres" id="2_fxky7"]
+[ext_resource type="Texture2D" uid="uid://b03u1ie1y51j4" path="res://Textures/UI/Computer/websites/CarParts.png" id="3_70prc"]
+[ext_resource type="Script" path="res://UI/Computer/Page Selector.gd" id="3_uyab6"]
+[ext_resource type="Texture2D" uid="uid://covbob5w0qa4s" path="res://Textures/UI/Computer/websites/InventoryManager.png" id="4_0xncc"]
+[ext_resource type="PackedScene" uid="uid://dyjfrdyxvu7x8" path="res://UI/Computer/Inventory_UI.tscn" id="7_151o6"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_q6dxs"]
+bg_color = Color(0.658824, 0.654902, 0.615686, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hdbc0"]
+bg_color = Color(0.588235, 0.584314, 0.54902, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0fcxx"]
+bg_color = Color(0.658824, 0.654902, 0.615686, 1)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+corner_detail = 4
+anti_aliasing = false
+
+[node name="Webbrowser" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_iqbph")
+
+[node name="Browser Background Panel" type="Panel" parent="."]
+layout_mode = 0
+offset_left = 319.0
+offset_right = 2241.0
+offset_bottom = 1440.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_q6dxs")
+
+[node name="Browser Top panel" type="Panel" parent="Browser Background Panel"]
+layout_mode = 0
+offset_left = 11.0
+offset_top = 13.0
+offset_right = 1910.0
+offset_bottom = 76.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_hdbc0")
+
+[node name="Back Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 334.865
+offset_top = 19.311
+offset_right = 434.865
+offset_bottom = 103.311
+scale = Vector2(0.6, 0.6)
+theme_override_styles/normal = SubResource("StyleBoxFlat_0fcxx")
+text = "<--"
+
+[node name="Page Selector" type="Control" parent="." node_paths=PackedStringArray("page_selector", "page_shop", "page_inventory")]
+anchors_preset = 0
+offset_left = 330.0
+offset_top = 89.0
+offset_right = 2230.0
+offset_bottom = 1430.0
+theme = ExtResource("2_fxky7")
+script = ExtResource("3_uyab6")
+page_selector = NodePath("Selector")
+page_shop = NodePath("../Shop")
+page_inventory = NodePath("../Inventory")
+
+[node name="Selector" type="Panel" parent="Page Selector"]
+layout_mode = 0
+offset_right = 1900.0
+offset_bottom = 1341.0
+
+[node name="GridContainer" type="GridContainer" parent="Page Selector/Selector"]
+layout_mode = 0
+offset_left = 111.449
+offset_top = 63.551
+offset_right = 321.449
+offset_bottom = 202.551
+scale = Vector2(8, 8)
+columns = 2
+
+[node name="Shop Button" type="Button" parent="Page Selector/Selector/GridContainer"]
+layout_mode = 2
+icon = ExtResource("3_70prc")
+
+[node name="Inventory Button" type="Button" parent="Page Selector/Selector/GridContainer"]
+layout_mode = 2
+icon = ExtResource("4_0xncc")
+
+[node name="Shop" parent="." instance=ExtResource("2_6pl0m")]
+visible = false
+layout_mode = 1
+
+[node name="Inventory" parent="." instance=ExtResource("7_151o6")]
+visible = false
+layout_mode = 1
+
+[connection signal="pressed" from="Back Button" to="Page Selector" method="_on_back_button_pressed"]
+[connection signal="pressed" from="Page Selector/Selector/GridContainer/Shop Button" to="Page Selector" method="_on_shop_button_pressed"]
+[connection signal="pressed" from="Page Selector/Selector/GridContainer/Inventory Button" to="Page Selector" method="_on_inventory_button_pressed"]

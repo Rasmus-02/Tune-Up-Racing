@@ -5,6 +5,7 @@ extends CharacterBody2D
 var ui_visible = false
 var in_controll = false
 var selected_car = null
+var interaction_object = null
 var garage = null
 var car_list
 @onready var sprite = $AnimatedSprite2D
@@ -77,10 +78,16 @@ func disable_enable(): #For disabling movement input
 func _on_selector_body_entered(body): #Select car in range
 	if body.is_in_group("Car"):
 		selected_car = body
-
 func _on_selector_body_exited(body): #Deselect car when out of range
 	if body.is_in_group("Car"):
 		selected_car = null
+
+func _on_selector_area_entered(area): #Select Object in range such as computer
+	if area.is_in_group("Computer"):
+		interaction_object = area
+func _on_selector_area_exited(area): #Deselect Object when not in range
+	if area.is_in_group("Computer"):
+		interaction_object = null
 
 
 #Interaction with car from player character
@@ -92,9 +99,17 @@ func interact():
 			hide_ui()
 		else:
 			show_ui()
-	elif Input.is_action_just_pressed("ui_cancel") and ui_visible == true:
+	elif selected_car != null and Input.is_action_just_pressed("ui_cancel") and ui_visible == true:
 		if ui_visible == true:
 			hide_ui()
+	
+	elif interaction_object != null and Input.is_action_just_pressed("Interact"):
+		interaction_object.get_parent().interact()
+		ui_visible = true
+
+func stop_interacting():
+	interaction_object.get_parent().exit()
+	ui_visible = false
 
 func hide_ui():
 	car_garage_ui.hide()
@@ -213,3 +228,4 @@ func move_car():
 	$"../Move_Menu_Garage".hide()
 	ui_visible = false
 	
+
