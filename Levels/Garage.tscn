@@ -1179,7 +1179,7 @@ position = Vector2(-293.707, 269.455)
 
 [node name="Player" parent="." instance=ExtResource("6_je1ng")]
 z_index = 998
-position = Vector2(124.765, 491.971)
+position = Vector2(-303, 457)
 
 [node name="Floors and Walls" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_myahk")

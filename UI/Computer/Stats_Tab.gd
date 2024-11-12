@@ -6,6 +6,7 @@ extends Panel
 @onready var part = $"Display/Nagata Koi Stock Front Bumper"
 @onready var part_position = $"Part Location"
 @onready var price_label = $Price
+var status = "closed"
 var selected_item = null
 
 #region Open / Close
@@ -14,11 +15,13 @@ func _input(_event): #Check only when a button is pressed
 		close()
 
 func open(): #open stats 
+	status = "open"
 	self.show()
 	grab_focus()
 	update_stats()
 
 func close(): #close stats
+	status = "closed"
 	self.hide()
 	release_focus()
 	part_list.grab_focus()

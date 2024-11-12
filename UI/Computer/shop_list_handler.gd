@@ -40,13 +40,13 @@ func _ready():
 var temp_hovered = null
 func _process(_delta):
 	#Manage the highlight system
-	if true_hovered_item != null and has_focus():
+	if true_hovered_item != null and stats_tab.status == "closed":
 		#Disable previous highlighted selection
-		if temp_hovered != null:
+		if temp_hovered != null and temp_hovered <= item_count:
 			set_item_custom_bg_color(get_both_tabs(temp_hovered)[0], Color(0, 0, 0, 0))
 			set_item_custom_bg_color(get_both_tabs(temp_hovered)[1], Color(0, 0, 0, 0))
 		#Highlight new selection
-		if (get_selected_items().size() == 0 or (get_both_tabs(true_hovered_item)[0] != get_selected_items()[0] and get_both_tabs(true_hovered_item)[1] != get_selected_items()[0])):
+		if true_hovered_item <= item_count and (get_selected_items().size() == 0 or (get_both_tabs(true_hovered_item)[0] != get_selected_items()[0] and get_both_tabs(true_hovered_item)[1] != get_selected_items()[0])):
 			set_item_custom_bg_color(get_both_tabs(true_hovered_item)[0], highlighted_item_color)
 			set_item_custom_bg_color(get_both_tabs(true_hovered_item)[1], highlighted_item_color)
 		temp_hovered = true_hovered_item
@@ -74,13 +74,12 @@ func _input(event):
 			hovered_item = index
 	elif Input.is_action_just_pressed("ui_accept") and current_index == temp_index and has_focus():
 		_on_item_selected(current_index)
-		#stats_tab.open()
-		#release_focus()
 
 
 func populate_list():
-	part_list.clear()
-	clear()
+	temp_hovered = null
+	true_hovered_item = null
+	clear_list()
 	var search_text = $"../Top Tab/Search Bar".text
 	part_list = AssetList.get_parts(selected_category, 5, null, search_text)
 	
@@ -106,6 +105,12 @@ func populate_list():
 		add_item("                  Price: "+ price+ "$")
 		set_item_custom_fg_color(get_item_count()-1,Color(0, 0.80000001192093, 0))
 
+func clear_list():
+	if part_list != null and part_list != []:
+		for i in part_list:
+			i.queue_free()
+		part_list.clear()
+		clear()
 
 func _on_search_button_pressed():
 	populate_list()
@@ -144,7 +149,6 @@ func _on_both_tab_pressed():
 func _on_part_categories_item_selected(index): #From Category list
 	if index != 0: #if not "ALL ..." Tab
 		selected_category = category_list.get_item_text(index)
-		print("CATEGORY PRESSED")
 	else:
 		match selected_tab:
 			"car":
@@ -158,6 +162,7 @@ func _on_part_categories_item_selected(index): #From Category list
 
 func get_selected_item(index):
 	var part_name = get_item_text(index)
+	print(selected_tab)
 	for i in part_list:
 		if i.name == part_name:
 			return i
@@ -177,8 +182,6 @@ func _on_item_selected(index):
 	select(tabs[0], false)
 	select(tabs[1], false)
 	select_mode = 0
-	print("real index ",index)
-	print("temp index ",temp_index)
 	if index == temp_index: #For controller and mouse also uses it now
 		stats_tab.selected_item = get_selected_item(index)
 		stats_tab.open()

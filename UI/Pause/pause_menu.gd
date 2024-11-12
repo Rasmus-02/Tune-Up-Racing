@@ -40,7 +40,6 @@ func _process(_delta):
 var pause_state = true #menue starts closed
 func open_close_pause():
 	if player == null or player.ui_visible == false:
-		print(player.ui_visible)
 		if pause_state: #show menue
 			$MarginContainer/VBoxContainer/Resume.grab_focus()
 			Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)

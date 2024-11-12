@@ -151,14 +151,14 @@ corner_radius_bottom_left = 2
 corner_detail = 4
 anti_aliasing = false
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ckkpb"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6y3xd"]
 content_margin_left = 20.0
 content_margin_top = 10.0
 content_margin_right = 20.0
 content_margin_bottom = 10.0
-bg_color = Color(0.94902, 0.941176, 0.894118, 1)
+bg_color = Color(0.843137, 0.843137, 0.843137, 1)
 border_width_left = 5
-border_width_bottom = 3
+border_width_bottom = 5
 corner_radius_top_left = 2
 corner_radius_top_right = 2
 corner_radius_bottom_right = 2
@@ -173,7 +173,7 @@ content_margin_right = 20.0
 content_margin_bottom = 10.0
 bg_color = Color(0.890196, 0.882353, 0.827451, 1)
 border_width_left = 5
-border_width_bottom = 3
+border_width_bottom = 5
 corner_radius_top_left = 2
 corner_radius_top_right = 2
 corner_radius_bottom_right = 2
@@ -181,14 +181,14 @@ corner_radius_bottom_left = 2
 corner_detail = 4
 anti_aliasing = false
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_orllh"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gomdr"]
 content_margin_left = 20.0
 content_margin_top = 10.0
 content_margin_right = 20.0
 content_margin_bottom = 10.0
-bg_color = Color(0.94902, 0.941176, 0.894118, 1)
+bg_color = Color(0.890196, 0.882353, 0.827451, 1)
 border_width_left = 5
-border_width_bottom = 3
+border_width_bottom = 5
 corner_radius_top_left = 2
 corner_radius_top_right = 2
 corner_radius_bottom_right = 2
@@ -225,8 +225,9 @@ ItemList/styles/selected_focus = SubResource("StyleBoxFlat_6wqmn")
 Panel/styles/panel = SubResource("StyleBoxFlat_7bpsn")
 TextEdit/colors/font_color = Color(0.290196, 0.290196, 0.290196, 1)
 TextEdit/colors/font_outline_color = Color(0.290196, 0.290196, 0.290196, 1)
-TextEdit/styles/focus = SubResource("StyleBoxFlat_ckkpb")
+TextEdit/colors/font_placeholder_color = Color(0.290196, 0.290196, 0.290196, 0.196078)
+TextEdit/styles/focus = SubResource("StyleBoxFlat_6y3xd")
 TextEdit/styles/normal = SubResource("StyleBoxFlat_i46yx")
-TextEdit/styles/read_only = SubResource("StyleBoxFlat_orllh")
+TextEdit/styles/read_only = SubResource("StyleBoxFlat_gomdr")
 TooltipLabel/colors/font_color = Color(0.87451, 0.87451, 0.87451, 0)
 TooltipPanel/styles/panel = SubResource("StyleBoxEmpty_xihbx")

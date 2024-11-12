@@ -53,14 +53,14 @@ theme = ExtResource("1_ttnr5")
 [node name="Top Page Panel" type="Panel" parent="."]
 layout_mode = 2
 offset_left = 330.0
-offset_top = 89.0
+offset_top = 100.0
 offset_right = 2230.0
-offset_bottom = 222.0
+offset_bottom = 233.0
 
 [node name="Parts" type="ItemList" parent="." node_paths=PackedStringArray("category_list", "stats_tab")]
 layout_mode = 2
 offset_left = 700.0
-offset_top = 222.0
+offset_top = 233.0
 offset_right = 2230.0
 offset_bottom = 1430.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_lekva")
@@ -79,7 +79,7 @@ highlighted_item_color = Color(0.290196, 0.290196, 0.290196, 0.129412)
 [node name="Part Categories" type="ItemList" parent="."]
 layout_mode = 2
 offset_left = 330.0
-offset_top = 222.0
+offset_top = 233.0
 offset_right = 700.0
 offset_bottom = 1430.0
 theme_override_styles/hovered = SubResource("StyleBoxFlat_so04u")
@@ -90,9 +90,9 @@ script = ExtResource("3_hty7b")
 [node name="Top Tab" type="HBoxContainer" parent="."]
 layout_mode = 0
 offset_left = 350.0
-offset_top = 105.0
+offset_top = 116.0
 offset_right = 2210.0
-offset_bottom = 200.0
+offset_bottom = 211.0
 theme_override_constants/separation = 20
 
 [node name="Car_Tab" type="Button" parent="Top Tab"]
@@ -149,9 +149,9 @@ theme_override_styles/panel = SubResource("StyleBoxEmpty_57b0w")
 [node name="Name" type="Label" parent="Control/Part Stats"]
 layout_mode = 0
 offset_left = 57.0
-offset_top = 44.0
+offset_top = 27.0
 offset_right = 1129.0
-offset_bottom = 155.0
+offset_bottom = 138.0
 text = "Nagata Koi Front Bumper"
 
 [node name="Price" type="Label" parent="Control/Part Stats"]

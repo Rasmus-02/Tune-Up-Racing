@@ -13,14 +13,22 @@ bg_color = Color(0.658824, 0.654902, 0.615686, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hdbc0"]
 bg_color = Color(0.588235, 0.584314, 0.54902, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+shadow_color = Color(0, 0, 0, 0.0705882)
+shadow_size = 5
+anti_aliasing = false
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0fcxx"]
 bg_color = Color(0.658824, 0.654902, 0.615686, 1)
-corner_radius_top_left = 3
-corner_radius_top_right = 3
-corner_radius_bottom_right = 3
-corner_radius_bottom_left = 3
-corner_detail = 4
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+shadow_color = Color(0, 0, 0, 0.0705882)
+shadow_size = 5
 anti_aliasing = false
 
 [node name="Webbrowser" type="Control"]
@@ -41,23 +49,27 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_q6dxs")
 
 [node name="Browser Top panel" type="Panel" parent="Browser Background Panel"]
 layout_mode = 0
-offset_left = 11.0
-offset_top = 13.0
+offset_left = 108.0
+offset_top = 10.0
 offset_right = 1910.0
-offset_bottom = 76.0
+offset_bottom = 90.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_hdbc0")
 
 [node name="Back Button" type="Button" parent="."]
 layout_mode = 0
-offset_left = 334.865
-offset_top = 19.311
-offset_right = 434.865
-offset_bottom = 103.311
-scale = Vector2(0.6, 0.6)
+offset_left = 330.0
+offset_top = 10.0
+offset_right = 410.0
+offset_bottom = 90.0
+theme_override_colors/font_color = Color(0.94902, 0.941176, 0.894118, 1)
+theme_override_colors/font_pressed_color = Color(0.94902, 0.941176, 0.894118, 1)
+theme_override_colors/font_hover_color = Color(0.94902, 0.941176, 0.894118, 1)
+theme_override_colors/font_focus_color = Color(0.94902, 0.941176, 0.894118, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.94902, 0.941176, 0.894118, 1)
 theme_override_styles/normal = SubResource("StyleBoxFlat_0fcxx")
 text = "<--"
 
-[node name="Page Selector" type="Control" parent="." node_paths=PackedStringArray("page_selector", "page_shop", "page_inventory")]
+[node name="Page Selector" type="Control" parent="." node_paths=PackedStringArray("page_selector", "page_shop", "page_inventory", "pagename")]
 anchors_preset = 0
 offset_left = 330.0
 offset_top = 89.0
@@ -68,9 +80,11 @@ script = ExtResource("3_uyab6")
 page_selector = NodePath("Selector")
 page_shop = NodePath("../Shop")
 page_inventory = NodePath("../Inventory")
+pagename = NodePath("../Website Name")
 
 [node name="Selector" type="Panel" parent="Page Selector"]
 layout_mode = 0
+offset_top = 11.0
 offset_right = 1900.0
 offset_bottom = 1341.0
 
@@ -98,6 +112,15 @@ layout_mode = 1
 [node name="Inventory" parent="." instance=ExtResource("7_151o6")]
 visible = false
 layout_mode = 1
+
+[node name="Website Name" type="Label" parent="."]
+layout_mode = 0
+offset_left = 450.0
+offset_top = 14.0
+offset_right = 835.0
+offset_bottom = 78.0
+theme_override_colors/font_color = Color(0.94902, 0.941176, 0.894118, 1)
+text = "https://gooble.com"
 
 [connection signal="pressed" from="Back Button" to="Page Selector" method="_on_back_button_pressed"]
 [connection signal="pressed" from="Page Selector/Selector/GridContainer/Shop Button" to="Page Selector" method="_on_shop_button_pressed"]
