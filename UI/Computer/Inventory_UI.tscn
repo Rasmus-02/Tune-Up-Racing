@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://dyjfrdyxvu7x8"]
+[gd_scene load_steps=17 format=3 uid="uid://dyjfrdyxvu7x8"]
 
 [ext_resource type="Theme" uid="uid://clrwm0elgwsqr" path="res://UI/Computer/Inventory.tres" id="1_7jwjh"]
 [ext_resource type="Script" path="res://UI/Computer/shop_list_handler.gd" id="2_ngcte"]
@@ -9,6 +9,8 @@
 [ext_resource type="Script" path="res://UI/Computer/Stats_Tab.gd" id="7_h338w"]
 [ext_resource type="Script" path="res://UI/Computer/Shop_Display_Light.gd" id="8_spr05"]
 [ext_resource type="Texture2D" uid="uid://dds3p523p0ik5" path="res://Shaders/light.png" id="9_3gf5l"]
+[ext_resource type="Script" path="res://UI/Computer/Buy_Sell_Part.gd" id="10_tckgv"]
+[ext_resource type="Texture2D" uid="uid://b350jwt2tgchl" path="res://addons/rmsmartshape/assets/light1-1.png" id="11_on3r8"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lekva"]
 content_margin_left = 20.0
@@ -75,6 +77,7 @@ fixed_icon_size = Vector2i(68, 64)
 script = ExtResource("2_ngcte")
 category_list = NodePath("../Part Categories")
 stats_tab = NodePath("../Control/Part Stats")
+function = "Sell"
 highlighted_item_color = Color(0.290196, 0.290196, 0.290196, 0.129412)
 
 [node name="Part Categories" type="ItemList" parent="."]
@@ -215,19 +218,18 @@ texture_scale = 3.4
 height = 130.0
 
 [node name="CanvasModulate" type="CanvasModulate" parent="Control/Part Stats/Display/Lighting"]
-visible = false
 color = Color(0.0392157, 0.113725, 0.172549, 1)
 
 [node name="Part Location" type="Marker2D" parent="Control/Part Stats/Display"]
 position = Vector2(292.95, 334.395)
 
-[node name="Buy Button" type="Button" parent="Control/Part Stats"]
+[node name="Buy Sell Button" type="Button" parent="Control/Part Stats"]
 layout_mode = 0
 offset_left = 679.59
 offset_top = 741.344
 offset_right = 879.59
 offset_bottom = 825.344
-text = "   Buy   "
+text = "   Sell   "
 
 [node name="Exit Button" type="Button" parent="Control/Part Stats"]
 layout_mode = 0
@@ -237,6 +239,53 @@ offset_right = 1158.0
 offset_bottom = 102.0
 text = "X"
 
+[node name="Part Confirmation Popup" type="Panel" parent="Control/Part Stats" node_paths=PackedStringArray("part_stats")]
+visible = false
+layout_mode = 0
+offset_left = 276.0
+offset_top = 315.0
+offset_right = 899.0
+offset_bottom = 597.0
+script = ExtResource("10_tckgv")
+part_stats = NodePath("..")
+function = "Sell"
+
+[node name="Label" type="Label" parent="Control/Part Stats/Part Confirmation Popup"]
+layout_mode = 0
+offset_left = 53.0
+offset_top = 8.0
+offset_right = 568.0
+offset_bottom = 139.0
+text = "Are you sure you want to 
+sell this part?"
+horizontal_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Control/Part Stats/Part Confirmation Popup"]
+layout_mode = 0
+offset_left = 93.0
+offset_top = 154.0
+offset_right = 518.0
+offset_bottom = 254.0
+theme_override_constants/separation = 25
+
+[node name="Yes" type="Button" parent="Control/Part Stats/Part Confirmation Popup/HBoxContainer"]
+custom_minimum_size = Vector2(200, 100)
+layout_mode = 2
+text = "Yes"
+
+[node name="No" type="Button" parent="Control/Part Stats/Part Confirmation Popup/HBoxContainer"]
+custom_minimum_size = Vector2(200, 100)
+layout_mode = 2
+text = "No"
+
+[node name="PointLight2D" type="PointLight2D" parent="Control/Part Stats/Part Confirmation Popup"]
+position = Vector2(306, 142)
+energy = 0.75
+range_z_min = 3493
+range_z_max = 3493
+texture = ExtResource("11_on3r8")
+texture_scale = 10.0
+
 [connection signal="item_clicked" from="Parts" to="Parts" method="_on_item_clicked"]
 [connection signal="item_selected" from="Parts" to="Parts" method="_on_item_selected"]
 [connection signal="item_selected" from="Part Categories" to="Parts" method="_on_part_categories_item_selected"]
@@ -245,4 +294,7 @@ text = "X"
 [connection signal="pressed" from="Top Tab/Both_Tab" to="Parts" method="_on_both_tab_pressed"]
 [connection signal="text_changed" from="Top Tab/Search Bar" to="Top Tab/Search Bar" method="_on_text_changed"]
 [connection signal="pressed" from="Top Tab/Search Button" to="Parts" method="_on_search_button_pressed"]
+[connection signal="pressed" from="Control/Part Stats/Buy Sell Button" to="Control/Part Stats" method="_on_buy_sell_button_pressed"]
 [connection signal="pressed" from="Control/Part Stats/Exit Button" to="Control/Part Stats" method="_on_exit_button_pressed"]
+[connection signal="pressed" from="Control/Part Stats/Part Confirmation Popup/HBoxContainer/Yes" to="Control/Part Stats/Part Confirmation Popup" method="_on_yes_pressed"]
+[connection signal="pressed" from="Control/Part Stats/Part Confirmation Popup/HBoxContainer/No" to="Control/Part Stats/Part Confirmation Popup" method="_on_no_pressed"]

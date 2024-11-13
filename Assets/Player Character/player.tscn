@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://c2temcei51jwy"]
+[gd_scene load_steps=20 format=3 uid="uid://c2temcei51jwy"]
 
 [ext_resource type="Script" path="res://Assets/Player Character/Player.gd" id="1_bbvfw"]
 [ext_resource type="Texture2D" uid="uid://b350jwt2tgchl" path="res://addons/rmsmartshape/assets/light1-1.png" id="2_sien1"]
@@ -11,6 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://dwao6lrmjmnts" path="res://Textures/UI/Car Handling/Move Icon.png" id="6_cxgng"]
 [ext_resource type="Texture2D" uid="uid://bo6v0dexo3kvb" path="res://Textures/UI/Car Handling/Info Icon.png" id="7_dth36"]
 [ext_resource type="Texture2D" uid="uid://c4m3aknxd0f4u" path="res://Textures/UI/Car Handling/Dyno Icon.png" id="7_xbq35"]
+[ext_resource type="PackedScene" uid="uid://c4yqhcejl0djd" path="res://Assets/Player Character/player_statcard.tscn" id="12_tht3q"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_vyxlc"]
 radius = 11.0375
@@ -95,7 +96,7 @@ texture_scale = 50.0
 [node name="Pause_Menu" parent="Character" node_paths=PackedStringArray("player") instance=ExtResource("2_wcfdf")]
 visible = false
 light_mask = 524288
-z_index = 1000
+z_index = 2000
 anchors_preset = 0
 anchor_left = 0.0
 anchor_top = 0.0
@@ -112,6 +113,14 @@ shape = SubResource("CapsuleShape2D_vyxlc")
 
 [node name="Camera2D" type="Camera2D" parent="Character"]
 zoom = Vector2(3, 3)
+
+[node name="Statcard" parent="Character/Camera2D" instance=ExtResource("12_tht3q")]
+z_index = 1999
+offset_left = -423.133
+offset_top = -237.251
+offset_right = -423.133
+offset_bottom = -237.251
+scale = Vector2(1.5, 1.5)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Character"]
 root_node = NodePath("../AnimatedSprite2D")

@@ -2,6 +2,7 @@ extends ItemList
 
 @export var category_list : ItemList
 @export var stats_tab : Panel
+@export_enum("Buy", "Sell") var function : String
 var part_list = []
 var clicked = false
 var selected_tab = "both"
@@ -65,7 +66,7 @@ var hovered_item := -1
 var true_hovered_item = null
 
 func _input(event):
-	if event is InputEventMouseMotion:
+	if event is InputEventMouseMotion or InputEventMouseButton:
 		var mouse_pos := get_local_mouse_position()
 		var index := get_item_at_position(mouse_pos, true)
 		if hovered_item != index:
@@ -81,12 +82,21 @@ func populate_list():
 	true_hovered_item = null
 	clear_list()
 	var search_text = $"../Top Tab/Search Bar".text
-	part_list = AssetList.get_parts(selected_category, 5, null, search_text)
+	if function == "Buy":
+		part_list = AssetList.get_parts(selected_category, 5, null, search_text, "")
+	else:
+		part_list = AssetList.get_parts(selected_category, 5, null, search_text, "Save")
 	
 	for i in part_list.size():
 		var id = part_list[i].id[1]
 		var rarity = 0
 		var price = str(part_list[i].price)
+		
+		if function == "Sell": 
+			price = str(int(part_list[i].price * 0.8 * (float(part_list[i].durability) / 100.0)))
+		
+		
+		
 		match part_list[i].rarity: #Convert Rarity from string to int
 			"common":
 				rarity = 0
@@ -161,8 +171,11 @@ func _on_part_categories_item_selected(index): #From Category list
 
 
 func get_selected_item(index):
+	#Make it so if you press the right item (price) it ges index of left item (item)
+	if index % 2 != 0:
+		index -= 1
+	
 	var part_name = get_item_text(index)
-	print(selected_tab)
 	for i in part_list:
 		if i.name == part_name:
 			return i

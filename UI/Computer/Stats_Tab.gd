@@ -6,6 +6,8 @@ extends Panel
 @onready var part = $"Display/Nagata Koi Stock Front Bumper"
 @onready var part_position = $"Part Location"
 @onready var price_label = $Price
+@onready var popup = $"Part Confirmation Popup"
+@export var not_enough_money_popup : Panel
 var status = "closed"
 var selected_item = null
 
@@ -45,7 +47,10 @@ func update_stats():
 
 func update_title():
 	title.text = selected_item.name
-	price_label.text = "Price: " + str(selected_item.price) + "$"
+	if popup.function == "Buy":
+		price_label.text = "Price: " + str(selected_item.price) + "$"
+	else: 
+		price_label.text = "Price: " + str(int(selected_item.price * 0.8 * (float(selected_item.durability) / 100.0))) + "$"
 	update_image() #go to next state
 
 func update_image(): #add the part to the scene as an image
@@ -63,7 +68,6 @@ func update_image(): #add the part to the scene as an image
 	selected_item.global_position = part_location.global_position
 	$"Display/Lighting/Light Axis".global_position = part_location.global_position
 	selected_item.z_index = 1
-	print(selected_item.z_index)
 	#Check if paintable
 	if selected_item.get_node("Sprite2D").get_script() != null:
 		selected_item.get_node("Sprite2D").import_new_color = Color(0.88173288106918, 0.81472492218018, 0.74073696136475)
@@ -255,3 +259,12 @@ func get_stats(part, id : int, type : int):
 
 func _on_exit_button_pressed():
 	close()
+
+func _on_buy_sell_button_pressed():
+	if popup.function == "Buy":
+		if selected_item.price <= Save_Load.money:
+			popup.open()
+		else:
+			not_enough_money_popup.open()
+	else:
+		popup.open()

@@ -4,7 +4,38 @@ var engine = null
 var car = null
 var engines = {}
 var cars = {}
-var part_inventory = {}
+var money = 0
+var xp = 0
+var level = 0
+var part_inventory = {
+	"car" : {
+		"Front Bumper" : {},
+		"Rear Bumper" : {},
+		"Fenders" : {},
+		"Hood" : {},
+		"Mirrors" : {},
+		"Headlights" : {},
+		"Taillights" : {},
+		"Spoiler" : {},
+		"Suspension" : {},
+		"Wheels" : {},
+		"Tires" : {},
+		"Brakes" : {},
+		"Subframe" : {},
+		"Driveshaft" : {},
+		"Gearbox" : {},
+		"Radiator" : {},
+		"Exhaust" : {}
+	},
+	"engine" : {
+		"Block" : {},
+		"Internals" : {},
+		"Top" : {},
+		"Exhaust Manifold" : {},
+		"Intake Manifold" : {},
+		"Airfilter" : {}
+	}
+}
 var file_location = "user://savegame.save"
 var temp_key = null
 var temp_key_car = null
@@ -32,6 +63,10 @@ func _ready():
 		print("part_inventory loaded")
 	if load_file("selected_car_key") != null:
 		selected_car_key = load_file("selected_car_key")
+	if load_file("player_stats") != null:
+		xp = load_file("player_stats").xp
+		level = load_file("player_stats").level
+		money = load_file("player_stats").money
 	
 	#IF SAVEFILE IS EMPTY
 	if FileAccess.file_exists(file_location) == false:
@@ -44,6 +79,15 @@ func _ready():
 			print("NEW SAVEFILE CREATED")
 			_ready()
 
+
+func save_player_stats():
+	if money != null:
+		var part_dict = {
+			"xp" : xp,
+			"level" : level,
+			"money" : money
+		}
+		return part_dict
 
 func save_engine_stats():
 	if engine != null:
@@ -100,7 +144,7 @@ func save_selected_key(key):
 
 func save():
 	if FileAccess.file_exists(file_location):
-		var save_dict = {"engines" : engines, "engine parts" : save_engine_stats(), "cars" : cars, "car parts" : save_car_stats(),"part_inventory" : part_inventory, "selected_car_key" : save_selected_key(selected_car_key)}
+		var save_dict = {"engines" : engines, "engine parts" : save_engine_stats(), "cars" : cars, "car parts" : save_car_stats(),"part_inventory" : part_inventory, "selected_car_key" : save_selected_key(selected_car_key), "player_stats" : save_player_stats()}
 		var save_game = FileAccess.open(file_location, FileAccess.WRITE)
 		var json_string = JSON.stringify(save_dict)
 		save_game.store_line(json_string)
@@ -111,7 +155,7 @@ func add_engine(): #for adding engines to the players inventory
 	#adds a engine to the dictionary
 	var i = 0
 	if engines != null:
-		i = largest_key("engine") + 1 #+1 to set the next engine
+		i = largest_key("engine", null) + 1 #+1 to set the next engine
 		temp_key = i
 	engines[i] = save_engine_stats()
 	save() #saves the engine to a JSON file
@@ -119,7 +163,7 @@ func add_car(): #for adding cars to the players inventory
 	#adds a car to the dictionary
 	var i = 0
 	if cars != null:
-		i = largest_key("car") + 1 #+1 to set the next car
+		i = largest_key("car", null) + 1 #+1 to set the next car
 		temp_key_car = i
 	cars[i] = save_car_stats()
 	save()#saves the car to a JSON file
@@ -130,14 +174,19 @@ func inv_add(item_to_add): #for adding parts to the players inventory (works dif
 	#4 = the key it has, 5 = durability)
 	#{Type, ID, Part_Type, Part_number, Key, Durablility} 
 	var i = 0
+	var part = id_to_string(item_to_add) #Convert int id to string names
+	#Get correct key
 	if part_inventory != null:
-		i = largest_key("part_inventory") + 1 #+1 to set the next car
+		#send correct part type directory to largest_key() function
+		i = largest_key("part_inventory",part_inventory.get(part[0]).get(part[1])) + 1 #+1 to set the next item
 	else:
 		i = 0
 	temp_key_part = i
 	item_to_add.Key = temp_key_part
-	part_inventory[i] = item_to_add #adds one item
+	#Adds a part to the correct place in part inventory
+	part_inventory.get(part[0]).get(part[1])[i] = item_to_add #adds one item to a specified category
 	save() #saves the car to a JSON fil
+
 
 func remove_engine(INDEX):
 	engines = load_file("engines")
@@ -147,19 +196,20 @@ func remove_car(INDEX):
 	cars = load_file("cars")
 	cars.erase(str(INDEX))
 	save()
-func remove_inv(INDEX):
+func remove_inv(INDEX): #TODO
 	part_inventory = load_file("part_inventory")
 	part_inventory.erase(str(INDEX))
 	save()
 
-func largest_key(category):
+
+func largest_key(category, _part_location):
 	var type = null
 	if category == "car":
 		type = cars
 	elif category == "engine":
 		type = engines
 	elif category == "part_inventory":
-		type = part_inventory
+		type = _part_location
 	#For loop for finding the biggest key
 	var temp = 0
 	for n in type.keys().size():
@@ -170,30 +220,35 @@ func largest_key(category):
 	return temp
 
 func inv_check(part_to_be_checked): #checks if a part exists in the inventory
+	part_inventory = load_file("part_inventory")
 	var type = part_to_be_checked.type
 	var part_type = part_to_be_checked.id[1]
 	var part_number = part_to_be_checked.Part_Number
-	var id = 402
-	#print(part_to_be_checked)
-	if type == 1:
-		id = part_to_be_checked.Engine_ID
-	elif type == 0:
-		id = part_to_be_checked.Car_ID
-	
-	var size = part_inventory.size()
-	var durability = 0
-	var n = 0
-	var i = 0
-	var results = []
-	while i < size:
-		if part_inventory.get(str(n)) != null:
-			i+=1
-			var inv_part = part_inventory.get(str(n))
-			if inv_part.Type == type and inv_part.Part_Type == part_type and inv_part.Part_number == part_number and inv_part.ID == id:
-				durability = inv_part.Durability
-				results.append(durability)
-		n += 1
-	return results
+	var id = 402 #not assigned yet
+	#Access the correct place in directory
+	var formated_part_to_be_checked = {"Type" : type, "Part_number" : part_number, "Part_Type" : part_type, "ID" : null, "Durability" : 100}
+	var dir_location = id_to_string(formated_part_to_be_checked)
+	if dir_location[0] != "empty_part":
+		#print(part_to_be_checked)
+		if type == 1:
+			id = part_to_be_checked.Engine_ID
+		elif type == 0:
+			id = part_to_be_checked.Car_ID
+		
+		var size = part_inventory.get(dir_location[0]).get(dir_location[1]).size() #dir_location to get if car or engine and what type
+		var durability = 0
+		var n = 0
+		var i = 0
+		var results = []
+		while i < size:
+			if part_inventory.get(dir_location[0]).get(dir_location[1]).get(str(n)) != null:
+				i+=1
+				var inv_part = part_inventory.get(dir_location[0]).get(dir_location[1]).get(str(n))
+				if inv_part.Type == type and inv_part.Part_Type == part_type and inv_part.Part_number == part_number and inv_part.ID == id:
+					durability = inv_part.Durability
+					results.append(durability)
+			n += 1
+		return results
 
  
 func edit_engine(engine_node): #For editing an engine in the dictionary
@@ -230,9 +285,12 @@ func load_file(filetype):
 			elif filetype == "car parts":
 				return parsedResult.get("car parts")
 			elif filetype == "part_inventory":
-				return parsedResult.get("part_inventory")
+				if parsedResult.get("part_inventory") != {}:
+					return parsedResult.get("part_inventory")
 			elif filetype == "selected_car_key":
 				return parsedResult.get("selected_car_key")
+			elif filetype == "player_stats":
+				return parsedResult.get("player_stats")
 			elif filetype == "all":
 				return parsedResult
 		else:
@@ -296,3 +354,103 @@ func select_engine(KEY):
 		"rarity": sc.rarity
 	}
 	return part_dict
+
+
+#Takes in directory of item stats (same type as inv add) and returns an array: 
+#[(car or engine) , (part category name)]
+func id_to_string(item_to_add):
+	var part_type_string : String
+	var type_string : String
+	match item_to_add.Type:
+		0: #CAR
+			type_string = "car"
+			match item_to_add.Part_Type:
+				1:
+					part_type_string = "Driveshaft"
+				2:
+					part_type_string = "Fenders"
+				3:
+					part_type_string = "Front Bumper"
+				4:
+					part_type_string = "Headlights"
+				5:
+					part_type_string = "Hood"
+				6:
+					part_type_string = "Mirrors"
+				7:
+					part_type_string = "Rear Bumper"
+				8:
+					part_type_string = "Subframe"
+				9:
+					part_type_string = "Taillights"
+				10:
+					part_type_string = "Spoiler"
+				11:
+					part_type_string = "Brakes"
+				12:
+					part_type_string = "Suspension"
+				13:
+					part_type_string = "Tires"
+				14:
+					part_type_string = "Wheels"
+				15:
+					part_type_string = "Gearbox"
+				16:
+					part_type_string = "Radiator"
+				17:
+					part_type_string = "Exhaust"
+		
+		1: #ENGINE
+			type_string = "engine"
+			match item_to_add.Part_Type:
+				0:
+					part_type_string = "Block"
+				1:
+					part_type_string = "Exhaust Manifold"
+				2:
+					part_type_string = "Intake Manifold"
+				3:
+					part_type_string = "Internals"
+				4:
+					part_type_string = "Top"
+				5:
+					part_type_string = "Airfilter"
+		2:
+			type_string = "empty_part"
+			part_type_string = "empty_part"
+	
+	return [type_string,part_type_string]
+
+#DEVTOOLS
+func clear_inventory():
+	part_inventory = {
+		"car" : {
+			"Front Bumper" : {},
+			"Rear Bumper" : {},
+			"Fenders" : {},
+			"Hood" : {},
+			"Mirrors" : {},
+			"Headlights" : {},
+			"Taillights" : {},
+			"Spoiler" : {},
+			"Suspension" : {},
+			"Wheels" : {},
+			"Tires" : {},
+			"Brakes" : {},
+			"Subframe" : {},
+			"Driveshaft" : {},
+			"Gearbox" : {},
+			"Radiator" : {},
+			"Exhaust" : {}
+		},
+		"engine" : {
+			"Block" : {},
+			"Internals" : {},
+			"Top" : {},
+			"Exhaust Manifold" : {},
+			"Intake Manifold" : {},
+			"Airfilter" : {}
+		}
+	}
+	print(part_inventory)
+	save()

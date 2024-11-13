@@ -517,7 +517,7 @@ func _on_save_pressed():
 #FOR TESTING#
 func _on_add_pressed():
 	car_list = Save_Load.load_file("cars")
-	key = Save_Load.largest_key("car") + 1
+	key = Save_Load.largest_key("car", null) + 1
 	Save_Load.set_car(car)
 	car.selected_car = 0
 	car.selected_car_key = key
@@ -545,7 +545,7 @@ func _on_add_pressed():
 
 func _on_add_engine_button_pressed():
 	button_sound.play()
-	selected_key = Save_Load.largest_key("engine") + 1
+	selected_key = Save_Load.largest_key("engine", null) + 1
 	engine.selected_block = 0
 	engine.selected_internals = 0
 	engine.selected_top = 0

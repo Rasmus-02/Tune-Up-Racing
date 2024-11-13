@@ -1,0 +1,108 @@
+[gd_scene load_steps=11 format=3 uid="uid://c4yqhcejl0djd"]
+
+[ext_resource type="Theme" uid="uid://qykmoumcml8g" path="res://UI/Default UI Theme.tres" id="1_gdnfh"]
+[ext_resource type="Script" path="res://Assets/Player Character/Statcard_Animations.gd" id="2_5jgpb"]
+[ext_resource type="Texture2D" uid="uid://crgi1d62udbpx" path="res://Textures/Testing/Portrait_Animated.png" id="2_ptxjq"]
+[ext_resource type="Texture2D" uid="uid://ceylwovb2ky3" path="res://Textures/UI/Player Stats/Statcard.png" id="4_3gvpa"]
+[ext_resource type="Texture2D" uid="uid://duc4bmve4nbyu" path="res://Textures/UI/Player Stats/Statcard progress bar.png" id="5_yv6au"]
+[ext_resource type="Script" path="res://Assets/Player Character/Level_Color.gd" id="6_ss4vf"]
+[ext_resource type="Script" path="res://Assets/Player Character/Money.gd" id="7_0euky"]
+
+[sub_resource type="Animation" id="Animation_at86e"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_fnd0x"]
+resource_name = "idle"
+length = 5.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 4.7, 4.8, 4.9),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 1]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_exs43"]
+_data = {
+"RESET": SubResource("Animation_at86e"),
+"idle": SubResource("Animation_fnd0x")
+}
+
+[node name="Statcard" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_gdnfh")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+root_node = NodePath("../Portrait Picture")
+libraries = {
+"": SubResource("AnimationLibrary_exs43")
+}
+script = ExtResource("2_5jgpb")
+
+[node name="Portrait Picture" type="Sprite2D" parent="."]
+position = Vector2(24, 23)
+texture = ExtResource("2_ptxjq")
+vframes = 3
+
+[node name="Statcard Frame" type="Sprite2D" parent="."]
+position = Vector2(24, 39)
+texture = ExtResource("4_3gvpa")
+
+[node name="ProgressBar" type="TextureProgressBar" parent="."]
+layout_mode = 2
+offset_left = 4.0
+offset_top = 52.0
+offset_right = 44.0
+offset_bottom = 60.0
+step = 0.1
+value = 62.7
+texture_progress = ExtResource("5_yv6au")
+script = ExtResource("6_ss4vf")
+
+[node name="Level" type="Label" parent="ProgressBar"]
+layout_mode = 2
+offset_top = -3.0
+offset_right = 45.0
+offset_bottom = 10.0
+scale = Vector2(0.9, 0.9)
+theme_override_colors/font_outline_color = Color(0.290196, 0.290196, 0.290196, 1)
+theme_override_constants/outline_size = 2
+text = "LVL 1"
+horizontal_alignment = 1
+
+[node name="Money" type="Label" parent="."]
+layout_mode = 2
+offset_left = 4.0
+offset_top = 61.0
+offset_right = 48.0
+offset_bottom = 74.0
+scale = Vector2(0.9, 0.9)
+theme_override_colors/font_color = Color(0, 0.8, 0, 1)
+theme_override_colors/font_outline_color = Color(0.290196, 0.290196, 0.290196, 1)
+theme_override_constants/outline_size = 2
+text = "0$"
+horizontal_alignment = 1
+script = ExtResource("7_0euky")
