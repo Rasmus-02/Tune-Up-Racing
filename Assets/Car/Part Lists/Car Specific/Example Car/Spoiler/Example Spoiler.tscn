@@ -1,10 +1,15 @@
-[gd_scene load_steps=7 format=3 uid="uid://d1vl2l3qi62fh"]
+[gd_scene load_steps=9 format=3 uid="uid://d1vl2l3qi62fh"]
 
 [ext_resource type="Script" path="res://Assets/Car/Code/Part_scripts/Spoiler.gd" id="1_8pbmb"]
+[ext_resource type="Shader" path="res://Shaders/Test/ColorSelector.gdshader" id="2_k4qa6"]
 [ext_resource type="Texture2D" uid="uid://cdi8ab1fncjr4" path="res://Textures/Cars/Nagata Koi/Spoiler/Factory Roof Spoiler.png" id="2_kakta"]
 [ext_resource type="Texture2D" uid="uid://b35ri3he7vd4o" path="res://Textures/Cars/Nagata Koi/Spoiler/Nagata Koi Spoiler NM.png" id="3_tcsbt"]
 [ext_resource type="Texture2D" uid="uid://b3r7guxoiudo0" path="res://Textures/Cars/Nagata Koi/Spoiler/Factory Roof Spoiler Spec.png" id="4_nk2qs"]
 [ext_resource type="Script" path="res://Textures/Cars/Color_selector.gd" id="5_d7hpw"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_el0pr"]
+shader = ExtResource("2_k4qa6")
+shader_parameter/import_new_color = null
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_swaqy"]
 diffuse_texture = ExtResource("2_kakta")
@@ -22,5 +27,6 @@ drag = 0.05
 downforce = 100
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_el0pr")
 texture = SubResource("CanvasTexture_swaqy")
 script = ExtResource("5_d7hpw")

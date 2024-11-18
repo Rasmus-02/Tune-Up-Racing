@@ -1,34 +1,22 @@
-[gd_scene load_steps=13 format=3 uid="uid://cwbpq4d7151jg"]
+[gd_scene load_steps=10 format=3 uid="uid://cwbpq4d7151jg"]
 
 [ext_resource type="Script" path="res://Assets/Car/Code/Part_scripts/Headlights.gd" id="1_u5s8l"]
-[ext_resource type="Shader" path="res://Shaders/Glow.gdshader" id="2_nxg8w"]
+[ext_resource type="Shader" path="res://Shaders/Test/ColorSelector.gdshader" id="2_hwy42"]
 [ext_resource type="Texture2D" uid="uid://2yymg606fo0i" path="res://Textures/Cars/Talon Motors Barracuda/Headlights/Talon Motors Barracuda Headlights.png" id="3_qq413"]
 [ext_resource type="Texture2D" uid="uid://dldxjsxpmxxtt" path="res://Textures/Cars/Talon Motors Barracuda/Headlights/Talon Motors Barracuda Headlights NM.png" id="4_lxrhs"]
 [ext_resource type="Texture2D" uid="uid://c5uwo313d7i6l" path="res://Textures/Cars/Talon Motors Barracuda/Headlights/Talon Motors Barracuda Headlights Spec.png" id="5_wetwg"]
-[ext_resource type="Script" path="res://Textures/Cars/Color_selector.gd" id="6_ipsqr"]
 [ext_resource type="Texture2D" uid="uid://dds3p523p0ik5" path="res://Shaders/light.png" id="6_khgjb"]
 [ext_resource type="PackedScene" uid="uid://brbx33n7duy1v" path="res://Shaders/headlights.tscn" id="7_1p88t"]
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_7ki0c"]
-shader = ExtResource("2_nxg8w")
-shader_parameter/color1 = null
-shader_parameter/color2 = null
-shader_parameter/threshold = null
-shader_parameter/intensity = null
-shader_parameter/opacity = null
-shader_parameter/glow_color = null
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_d2vgq"]
+shader = ExtResource("2_hwy42")
+shader_parameter/import_new_color = null
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_ma2ib"]
 diffuse_texture = ExtResource("3_qq413")
 normal_texture = ExtResource("4_lxrhs")
 specular_texture = ExtResource("5_wetwg")
 specular_shininess = 0.5
-
-[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_05qle"]
-polygon = PackedVector2Array(103, -17, 104, -17, 104, -21, 103, -21, 103, -22, 102, -22, 101, -22, 101, -29, 100, -29, 100, -30, 99, -30, 99, -27, 100, -27, 100, -25, 101, -25, 101, -22, 102, -22, 102, -19, 103, -19)
-
-[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_e8rph"]
-polygon = PackedVector2Array(99, 30, 100, 30, 100, 29, 101, 29, 101, 25, 101, 22, 103, 22, 103, 21, 104, 21, 104, 17, 103, 17, 103, 19, 102, 19, 102, 22, 101, 22, 101, 25, 100, 25, 100, 27, 99, 27)
 
 [node name="Talon Motors Barracuda Stock Headlights" type="Node2D"]
 script = ExtResource("1_u5s8l")
@@ -41,9 +29,8 @@ weight = 5
 drag = 0.03
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-material = SubResource("ShaderMaterial_7ki0c")
+material = SubResource("ShaderMaterial_d2vgq")
 texture = SubResource("CanvasTexture_ma2ib")
-script = ExtResource("6_ipsqr")
 
 [node name="L_Light" type="PointLight2D" parent="Sprite2D"]
 position = Vector2(99.058, -25.5)
@@ -66,13 +53,6 @@ energy = 3.0
 texture = ExtResource("6_khgjb")
 texture_scale = 0.02
 height = 100.0
-
-[node name="L_Occluder" type="LightOccluder2D" parent="Sprite2D"]
-occluder = SubResource("OccluderPolygon2D_05qle")
-
-[node name="R_Occluder" type="LightOccluder2D" parent="Sprite2D"]
-position = Vector2(0, -1)
-occluder = SubResource("OccluderPolygon2D_e8rph")
 
 [node name="Lights" parent="." instance=ExtResource("7_1p88t")]
 light_mask = 1

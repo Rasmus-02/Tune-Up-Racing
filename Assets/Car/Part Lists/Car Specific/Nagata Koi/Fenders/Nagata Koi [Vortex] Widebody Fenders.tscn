@@ -1,10 +1,14 @@
-[gd_scene load_steps=10 format=3 uid="uid://bc8oi2t3mju2o"]
+[gd_scene load_steps=11 format=3 uid="uid://bc8oi2t3mju2o"]
 
 [ext_resource type="Script" path="res://Assets/Car/Code/Part_scripts/Fenders.gd" id="1_8exqf"]
+[ext_resource type="Shader" path="res://Shaders/Test/ColorSelector.gdshader" id="2_gc6ib"]
 [ext_resource type="Texture2D" uid="uid://duhnc6633eto8" path="res://Textures/Cars/Nagata Koi/Fenders/Nagata Koi [Vortex] Widebody Fenders.png" id="2_pn4p2"]
 [ext_resource type="Texture2D" uid="uid://bonvaj0uh8cmn" path="res://Textures/Cars/Nagata Koi/Fenders/Nagata Koi [Vortex] Widebody Fenders NM.png" id="3_5ojmp"]
 [ext_resource type="Texture2D" uid="uid://kndlqnhmixhn" path="res://Textures/Cars/Nagata Koi/Fenders/Nagata Koi [Vortex] Widebody Fenders Spec.png" id="4_2v6nw"]
-[ext_resource type="Script" path="res://Textures/Cars/Color_selector.gd" id="5_2lhjt"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_k8477"]
+shader = ExtResource("2_gc6ib")
+shader_parameter/import_new_color = null
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_vufhm"]
 diffuse_texture = ExtResource("2_pn4p2")
@@ -33,8 +37,8 @@ drag = 0.04
 max_tire_width = 240
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_k8477")
 texture = SubResource("CanvasTexture_vufhm")
-script = ExtResource("5_2lhjt")
 
 [node name="LightOccluder2D2" type="LightOccluder2D" parent="Sprite2D"]
 material = SubResource("CanvasItemMaterial_ak8kv")

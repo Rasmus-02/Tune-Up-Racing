@@ -1,10 +1,14 @@
-[gd_scene load_steps=7 format=3 uid="uid://d28r1dn2qs1aa"]
+[gd_scene load_steps=8 format=3 uid="uid://d28r1dn2qs1aa"]
 
 [ext_resource type="Script" path="res://Assets/Car/Code/Part_scripts/Spoiler.gd" id="1_v8k6m"]
 [ext_resource type="Texture2D" uid="uid://pr4s3any4ynx" path="res://Textures/Cars/Talon Motors Barracuda/Spoiler/Talon Motors Barracuda [Satetsu] Spoiler.png" id="2_0hh20"]
+[ext_resource type="Shader" path="res://Shaders/Test/ColorSelector.gdshader" id="2_5nna4"]
 [ext_resource type="Texture2D" uid="uid://sd6wyytg5w28" path="res://Textures/Cars/Talon Motors Barracuda/Spoiler/Talon Motors Barracuda [Satetsu] Spoiler NM.png" id="3_3ypnn"]
 [ext_resource type="Texture2D" uid="uid://c6aqg2q2x1jhh" path="res://Textures/Cars/Talon Motors Barracuda/Spoiler/Talon Motors Barracuda [Satetsu] Spoiler Spec.png" id="4_hjiww"]
-[ext_resource type="Script" path="res://Textures/Cars/Color_selector.gd" id="5_is2w1"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_vnc73"]
+shader = ExtResource("2_5nna4")
+shader_parameter/import_new_color = null
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_swaqy"]
 diffuse_texture = ExtResource("2_0hh20")
@@ -24,5 +28,5 @@ drag = 0.04
 downforce = 80
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_vnc73")
 texture = SubResource("CanvasTexture_swaqy")
-script = ExtResource("5_is2w1")

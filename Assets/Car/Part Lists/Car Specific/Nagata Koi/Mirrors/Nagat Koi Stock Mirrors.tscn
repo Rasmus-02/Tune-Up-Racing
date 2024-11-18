@@ -1,10 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://b21k76crcd8sm"]
+[gd_scene load_steps=6 format=3 uid="uid://b21k76crcd8sm"]
 
 [ext_resource type="Script" path="res://Assets/Car/Code/Part_scripts/Mirrors.gd" id="1_elt4c"]
 [ext_resource type="Texture2D" uid="uid://cv7qryw2qng4k" path="res://Textures/Cars/Nagata Koi/Mirrors/Nagata Koi Stock Mirrors.png" id="2_1l5q5"]
 [ext_resource type="Texture2D" uid="uid://6w1l8eojvd3l" path="res://Textures/Cars/Nagata Koi/Mirrors/Nagata Koi Stock Mirrors NM.png" id="3_op17t"]
 [ext_resource type="Texture2D" uid="uid://btdishoh54atv" path="res://Textures/Cars/Nagata Koi/Mirrors/Nagata Koi Stock Mirrors Spec.png" id="4_7s7u4"]
-[ext_resource type="Script" path="res://Textures/Cars/Color_selector.gd" id="5_b2nru"]
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_e2ut5"]
 diffuse_texture = ExtResource("2_1l5q5")
@@ -23,4 +22,3 @@ drag = 0.01
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = SubResource("CanvasTexture_e2ut5")
-script = ExtResource("5_b2nru")

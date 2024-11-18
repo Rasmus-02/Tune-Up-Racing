@@ -134,6 +134,7 @@ var wheels = null
 var gearbox = null
 var exhaust = null
 var radiator = null
+var parts = [chassi, driveshaft, subframe, fenders, f_bumper, r_bumper, hood, headlights, taillights, spoiler, mirrors, gearbox, radiator,exhaust,brakes,suspension,tires,wheels]
 
 var tiresmoke = preload("res://Assets/Effects/TireSmoke.tscn")
 var tiremark = preload("res://Assets/Effects/tiremark.tscn")
@@ -279,7 +280,7 @@ func load_car(index):
 		selected_gearbox = 0
 		selected_radiator = 0
 		selected_exhaust = 0
-		selected_color = Color(1.0,0.5,0.5, 1)
+		selected_color = Color(0.5,0.5,0.5, 1)
 		
 		#Damage stats
 		chassi_durability = 100
@@ -377,7 +378,6 @@ func update_car_parts():
 	self.get_child(0).get_child(0).get_child(0).in_garage = in_garage
 	update_stats()
 
-var parts = [chassi, driveshaft, subframe, fenders, f_bumper, r_bumper, hood, headlights, taillights, spoiler, mirrors, gearbox, radiator,exhaust,brakes,suspension,tires,wheels]
 #updates the stats from car_spawner
 func update_stats():
 	specific_parts = get_child(0).get_child(0).get_child(0).get_child(0) #from part list specific to the engine
@@ -457,24 +457,14 @@ func update_stats():
 
 #Change the color of the car
 func paint_car():
-	#set selected color
-	chassi.get_node("Sprite2D").import_new_color = selected_color
-	fenders.get_node("Sprite2D").import_new_color = selected_color
-	f_bumper.get_node("Sprite2D").import_new_color = selected_color
-	r_bumper.get_node("Sprite2D").import_new_color = selected_color
-	hood.get_node("Sprite2D").import_new_color = selected_color
-	spoiler.get_node("Sprite2D").import_new_color = selected_color
-	mirrors.get_node("Sprite2D").import_new_color = selected_color
-	headlights.get_node("Sprite2D").import_new_color = selected_color
-	#run color change method
-	chassi.get_node("Sprite2D").change_color()
-	fenders.get_node("Sprite2D").change_color()
-	f_bumper.get_node("Sprite2D").change_color()
-	r_bumper.get_node("Sprite2D").change_color()
-	hood.get_node("Sprite2D").change_color()
-	spoiler.get_node("Sprite2D").change_color()
-	mirrors.get_node("Sprite2D").change_color()
-	headlights.get_node("Sprite2D").change_color()
+	var paint_parts = [chassi, driveshaft, subframe, fenders, f_bumper, r_bumper, hood, headlights, taillights, spoiler, mirrors, gearbox, radiator,exhaust,brakes,suspension,tires,wheels]
+	
+	for part in paint_parts:
+		if part != null and part.get_node("Sprite2D").get_script() != null:
+			print(part, " Painted")
+			part.paint_part()
+		
+	paint_parts.clear()
 #endregion
 
 

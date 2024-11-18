@@ -19,3 +19,7 @@ var id = [Car_ID,0,Part_Number,rarity] #Engine ID, Part type, Part number, rank
 @export var wheelbase = 0 #cm
 
 var durability = 100 #100%
+
+func paint_part():
+	if $Sprite2D.get_script() != null:
+		$Sprite2D.paint(Color(1,0,0,1))

@@ -1,10 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://be5l0vrrsto6h"]
+[gd_scene load_steps=6 format=3 uid="uid://be5l0vrrsto6h"]
 
 [ext_resource type="Script" path="res://Assets/Car/Code/Part_scripts/Hood.gd" id="1_n3cee"]
 [ext_resource type="Texture2D" uid="uid://bhoyfxjbxos8" path="res://Textures/Cars/Nagata Koi/Hood/Nagata Koi KS_Racing Carbon Fiber Hood.png" id="2_fgk52"]
 [ext_resource type="Texture2D" uid="uid://cf1iawux7iwxv" path="res://Textures/Cars/Nagata Koi/Hood/Nagata Koi Stock Hood NM.png" id="3_jirww"]
 [ext_resource type="Texture2D" uid="uid://ov8dndh4twha" path="res://Textures/Cars/Nagata Koi/Hood/Nagata Koi KS_Racing Carbon Fiber Hood Spec.png" id="4_5r2fn"]
-[ext_resource type="Script" path="res://Textures/Cars/Color_selector.gd" id="5_vnpel"]
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_hjvi5"]
 diffuse_texture = ExtResource("2_fgk52")
@@ -24,4 +23,3 @@ drag = 0.03
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = SubResource("CanvasTexture_hjvi5")
-script = ExtResource("5_vnpel")

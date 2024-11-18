@@ -1,7 +1,6 @@
-[gd_scene load_steps=6 format=3 uid="uid://dhwkwyf5130mh"]
+[gd_scene load_steps=5 format=3 uid="uid://dhwkwyf5130mh"]
 
 [ext_resource type="Script" path="res://Assets/Empty Part/Empty_Part.gd" id="1_tg03p"]
-[ext_resource type="Script" path="res://Textures/Cars/Color_selector.gd" id="2_5a5n4"]
 [ext_resource type="Texture2D" uid="uid://dqu8ic145ruj" path="res://Assets/Empty Part/Empty Sprite.png" id="2_ffj2u"]
 [ext_resource type="PackedScene" uid="uid://wxkv830afosy" path="res://Assets/Car/Part Lists/Universal/Radiator/Radiator Piping.tscn" id="4_eb0qp"]
 
@@ -15,7 +14,6 @@ script = ExtResource("1_tg03p")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = SubResource("CanvasTexture_tmbw4")
-script = ExtResource("2_5a5n4")
 
 [node name="Trans" type="Sprite2D" parent="."]
 visible = false

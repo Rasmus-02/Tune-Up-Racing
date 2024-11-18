@@ -1,10 +1,14 @@
-[gd_scene load_steps=8 format=3 uid="uid://bcbpbhs8i0rsr"]
+[gd_scene load_steps=9 format=3 uid="uid://bcbpbhs8i0rsr"]
 
 [ext_resource type="Script" path="res://Assets/Car/Code/Part_scripts/R_bumper.gd" id="1_kesf3"]
 [ext_resource type="Texture2D" uid="uid://eig6xmke362h" path="res://Textures/Cars/Hikari Tasai/Rear bumper/Hikari Tasai Stock Rear Bumper.png" id="2_ol42t"]
+[ext_resource type="Shader" path="res://Shaders/Test/ColorSelector.gdshader" id="2_rkard"]
 [ext_resource type="Texture2D" uid="uid://ttpuwvghi26a" path="res://Textures/Cars/Hikari Tasai/Rear bumper/Hikari Tasai Stock Rear Bumper HM NM.png" id="3_h3uby"]
 [ext_resource type="Texture2D" uid="uid://6eu00nxqxahg" path="res://Textures/Cars/Hikari Tasai/Rear bumper/Hikari Tasai Stock Rear Bumper Spec.png" id="4_5xcgj"]
-[ext_resource type="Script" path="res://Textures/Cars/Color_selector.gd" id="5_dqiw0"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_oursw"]
+shader = ExtResource("2_rkard")
+shader_parameter/import_new_color = null
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_r5f60"]
 diffuse_texture = ExtResource("2_ol42t")
@@ -27,8 +31,8 @@ downforce = 5
 drag = 0.02
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_oursw")
 texture = SubResource("CanvasTexture_r5f60")
-script = ExtResource("5_dqiw0")
 
 [node name="LightOccluder2D" type="LightOccluder2D" parent="."]
 position = Vector2(-6, 0)

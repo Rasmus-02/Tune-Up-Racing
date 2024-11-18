@@ -1,10 +1,14 @@
-[gd_scene load_steps=7 format=3 uid="uid://dyj3gtsiagl6r"]
+[gd_scene load_steps=8 format=3 uid="uid://dyj3gtsiagl6r"]
 
 [ext_resource type="Script" path="res://Assets/Car/Code/Part_scripts/Mirrors.gd" id="1_h66we"]
+[ext_resource type="Shader" path="res://Shaders/Test/ColorSelector.gdshader" id="2_arwnj"]
 [ext_resource type="Texture2D" uid="uid://vem8vseuoqtv" path="res://Textures/Cars/Talon Motors Barracuda/Mirrors/Talon Motors Barracuda Mirrors.png" id="2_lwpv2"]
 [ext_resource type="Texture2D" uid="uid://b8xu6wyqmbqxv" path="res://Textures/Cars/Talon Motors Barracuda/Mirrors/Talon Motors Barracuda Mirrors NM.png" id="3_qxc5w"]
 [ext_resource type="Texture2D" uid="uid://dwk227gbqixo5" path="res://Textures/Cars/Talon Motors Barracuda/Mirrors/Talon Motors Barracuda Mirrors Spec.png" id="4_w52xu"]
-[ext_resource type="Script" path="res://Textures/Cars/Color_selector.gd" id="5_rr2td"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_mgxvb"]
+shader = ExtResource("2_arwnj")
+shader_parameter/import_new_color = null
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_e2ut5"]
 diffuse_texture = ExtResource("2_lwpv2")
@@ -23,5 +27,5 @@ weight = 2
 drag = 0.01
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_mgxvb")
 texture = SubResource("CanvasTexture_e2ut5")
-script = ExtResource("5_rr2td")

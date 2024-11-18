@@ -1,10 +1,14 @@
-[gd_scene load_steps=9 format=3 uid="uid://daj3ixa2m7me6"]
+[gd_scene load_steps=10 format=3 uid="uid://daj3ixa2m7me6"]
 
 [ext_resource type="Script" path="res://Assets/Car/Code/Part_scripts/R_bumper.gd" id="1_hctfp"]
 [ext_resource type="Texture2D" uid="uid://bjaeqfaxqndtc" path="res://Textures/Cars/Nagata Koi/Rear Bumper/Nagata Koi Stock Rear Bumper.png" id="2_mj56s"]
+[ext_resource type="Shader" path="res://Shaders/Test/ColorSelector.gdshader" id="2_xcx0j"]
 [ext_resource type="Texture2D" uid="uid://bg1ec8sb428na" path="res://Textures/Cars/Nagata Koi/Rear Bumper/Nagata Koi Stock Rear Bumper NM.png" id="3_s2vry"]
 [ext_resource type="Texture2D" uid="uid://ct471s1xjr4as" path="res://Textures/Cars/Nagata Koi/Rear Bumper/Nagata Koi Stock Rear Bumper Spec.png" id="4_kd0tv"]
-[ext_resource type="Script" path="res://Textures/Cars/Color_selector.gd" id="5_j0cpn"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_3gfj6"]
+shader = ExtResource("2_xcx0j")
+shader_parameter/import_new_color = null
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_r5f60"]
 diffuse_texture = ExtResource("2_mj56s")
@@ -28,8 +32,8 @@ downforce = 5
 drag = 0.02
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_3gfj6")
 texture = SubResource("CanvasTexture_r5f60")
-script = ExtResource("5_j0cpn")
 
 [node name="LightOccluder2D2" type="LightOccluder2D" parent="Sprite2D"]
 material = SubResource("CanvasItemMaterial_pappr")

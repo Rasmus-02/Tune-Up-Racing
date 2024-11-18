@@ -1,11 +1,17 @@
-[gd_scene load_steps=10 format=3 uid="uid://dtm32ism4pjlr"]
+[gd_scene load_steps=12 format=3 uid="uid://dtm32ism4pjlr"]
 
 [ext_resource type="Script" path="res://Assets/Car/Code/Part_scripts/Chassi.gd" id="1_4ialf"]
 [ext_resource type="Texture2D" uid="uid://dlh5qaqombv3e" path="res://Textures/Cars/Nagata Koi/Chassi/Nagata Koi Chassi.png" id="2_4eyvq"]
+[ext_resource type="Shader" path="res://Shaders/Test/ColorSelector.gdshader" id="2_jf2ft"]
 [ext_resource type="Texture2D" uid="uid://cf3y8plo5n68s" path="res://Textures/Cars/Nagata Koi/Chassi/Nagata Koi Chassi NM2.png" id="3_4b3ba"]
 [ext_resource type="Script" path="res://Textures/Cars/Color_selector.gd" id="3_knp0k"]
 [ext_resource type="Texture2D" uid="uid://peas8menq8de" path="res://Textures/Cars/Nagata Koi/Chassi/Nagata Koi Chassi Spec.png" id="4_bvvri"]
 [ext_resource type="PackedScene" uid="uid://bdgi70ouxoi6w" path="res://Assets/Car/Part Lists/Car Specific/Nagata Koi/Windows/Nagata Koi Windows.tscn" id="6_al466"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_uuaor"]
+resource_local_to_scene = true
+shader = ExtResource("2_jf2ft")
+shader_parameter/import_new_color = Vector4(0, 0, 0, 0)
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_jbiqp"]
 diffuse_texture = ExtResource("2_4eyvq")
@@ -34,6 +40,7 @@ drag = 0.25
 wheelbase = 133
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_uuaor")
 texture = SubResource("CanvasTexture_jbiqp")
 script = ExtResource("3_knp0k")
 

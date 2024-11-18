@@ -1,10 +1,14 @@
-[gd_scene load_steps=9 format=3 uid="uid://cvqgxe0o38np0"]
+[gd_scene load_steps=10 format=3 uid="uid://cvqgxe0o38np0"]
 
 [ext_resource type="Script" path="res://Assets/Car/Code/Part_scripts/F_Bumper.gd" id="1_aipiq"]
 [ext_resource type="Texture2D" uid="uid://udge13u4q1i2" path="res://Textures/Cars/Talon Motors Barracuda/Front Bumper/Talon Motors Barracuda Satetsu F_Bumper.png" id="2_kc721"]
+[ext_resource type="Shader" path="res://Shaders/Test/ColorSelector.gdshader" id="2_r7wvs"]
 [ext_resource type="Texture2D" uid="uid://c7bv2pdgelsyy" path="res://Textures/Cars/Talon Motors Barracuda/Front Bumper/Talon Motors Barracuda Satetsu F_Bumper NM.png" id="3_prkns"]
 [ext_resource type="Texture2D" uid="uid://d1dydbsqfqb4g" path="res://Textures/Cars/Talon Motors Barracuda/Front Bumper/Talon Motors Barracuda Satetsu F_Bumper Spec.png" id="4_46o1c"]
-[ext_resource type="Script" path="res://Textures/Cars/Color_selector.gd" id="5_4tkdb"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_yi46f"]
+shader = ExtResource("2_r7wvs")
+shader_parameter/import_new_color = null
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_0hbqo"]
 diffuse_texture = ExtResource("2_kc721")
@@ -31,8 +35,8 @@ drag = 0.05
 engine_cool_mod = 0.05
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_yi46f")
 texture = SubResource("CanvasTexture_0hbqo")
-script = ExtResource("5_4tkdb")
 
 [node name="LightOccluder2D2" type="LightOccluder2D" parent="Sprite2D"]
 material = SubResource("CanvasItemMaterial_nxqv5")
