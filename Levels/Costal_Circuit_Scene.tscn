@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://vwfaixjbvl6j"]
+[gd_scene load_steps=22 format=3 uid="uid://vwfaixjbvl6j"]
 
 [ext_resource type="PackedScene" uid="uid://bxei516mvsvwr" path="res://UI/Pause/pause_menu.tscn" id="1_62obq"]
 [ext_resource type="Script" path="res://Levels/Scene_changer.gd" id="1_vtmsh"]
@@ -11,6 +11,62 @@
 [ext_resource type="Texture2D" uid="uid://cqi2q66pj8sfu" path="res://Textures/UI/In Race/In race hud gauge temperature.png" id="8_qjjss"]
 [ext_resource type="Texture2D" uid="uid://dkb5c24vbdukd" path="res://Textures/UI/Minimaps/Costal Circuit Minimap.png" id="9_4rfxy"]
 [ext_resource type="Script" path="res://Levels/Minimap.gd" id="9_10ajj"]
+[ext_resource type="Texture2D" uid="uid://sls8i3whvytm" path="res://Textures/UI/In Race/Start Lights.png" id="9_vuq2v"]
+[ext_resource type="Texture2D" uid="uid://ctgrd0bewx4qk" path="res://Textures/UI/In Race/Start Lights_Light.png" id="10_dhpsx"]
+[ext_resource type="Script" path="res://UI/Race UI/Start Lights.gd" id="10_yw4g0"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3tn2f"]
+atlas = ExtResource("10_dhpsx")
+region = Rect2(0, 0, 329, 135)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xkeoo"]
+atlas = ExtResource("10_dhpsx")
+region = Rect2(0, 135, 329, 135)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0ocrf"]
+atlas = ExtResource("10_dhpsx")
+region = Rect2(0, 270, 329, 135)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mujea"]
+atlas = ExtResource("10_dhpsx")
+region = Rect2(0, 405, 329, 135)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ns6pn"]
+atlas = ExtResource("10_dhpsx")
+region = Rect2(0, 540, 329, 135)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1xryj"]
+atlas = ExtResource("10_dhpsx")
+region = Rect2(0, 675, 329, 135)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_5r1yl"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3tn2f")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xkeoo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0ocrf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mujea")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ns6pn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3tn2f")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1xryj")
+}],
+"loop": false,
+"name": &"Start",
+"speed": 1.5
+}]
 
 [node name="Track" type="Node2D"]
 script = ExtResource("1_vtmsh")
@@ -101,6 +157,31 @@ theme_override_colors/font_color = Color(0.266667, 0.462745, 1, 1)
 text = "0.8"
 horizontal_alignment = 1
 
+[node name="Start Lights" type="Sprite2D" parent="UI/AspectRatioContainer"]
+position = Vector2(1280, 720)
+scale = Vector2(3, 3)
+texture = ExtResource("9_vuq2v")
+offset = Vector2(0.57251, -0.019989)
+script = ExtResource("10_yw4g0")
+
+[node name="Timer" type="Timer" parent="UI/AspectRatioContainer/Start Lights"]
+wait_time = 4.5
+one_shot = true
+
+[node name="Lights" type="AnimatedSprite2D" parent="UI/AspectRatioContainer/Start Lights"]
+sprite_frames = SubResource("SpriteFrames_5r1yl")
+animation = &"Start"
+
+[node name="Press Button Text" type="Label" parent="UI/AspectRatioContainer/Start Lights"]
+offset_left = -145.763
+offset_top = 66.36
+offset_right = 250.237
+offset_bottom = 117.36
+scale = Vector2(0.745, 0.745)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 6
+text = "[Press Enter To Continue]"
+
 [node name="Current Time" type="Label" parent="UI"]
 visible = false
 layout_mode = 0
@@ -149,3 +230,5 @@ offset_right = 1277.14
 offset_bottom = 702.516
 scale = Vector2(1, 1)
 size_flags_horizontal = 4
+
+[connection signal="timeout" from="UI/AspectRatioContainer/Start Lights/Timer" to="UI/AspectRatioContainer/Start Lights" method="_on_timer_timeout"]

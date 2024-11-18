@@ -211,6 +211,7 @@ func check_engine_structure():
 	#Check so the engine structure is valid
 	var refresh = false #goes true if engine strucutre is incorrect which refreshes the engine
 	#Check that the engine is loaded because block can't be 0
+	
 	if selected_block != 0:
 		#Check that internals isn't empty
 		if selected_internals == 0:
@@ -232,6 +233,20 @@ func check_engine_structure():
 			if selected_air_filter != 0:
 				refresh = true
 			selected_air_filter = 0
+		
+		#Add back parts that got removed to inventory
+		if player == true:
+			if selected_top == 0 and top.Part_Number != 0:
+				Save_Load.inv_add(top)
+			if selected_internals == 0 and internals.Part_Number != 0:
+				Save_Load.inv_add(internals)
+			if selected_intake_manifold == 0 and intake_manifold.Part_Number != 0:
+				Save_Load.inv_add(intake_manifold)
+				print("NEW INTAKE")
+			if selected_exhaust_manifold == 0 and exhaust_manifold.Part_Number != 0:
+				Save_Load.inv_add(exhaust_manifold)
+			if selected_air_filter == 0 and air_filter.Part_Number != 0:
+				Save_Load.inv_add(air_filter)
 		
 		if refresh == true:
 			update_engine_parts()

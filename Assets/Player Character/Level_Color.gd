@@ -7,7 +7,7 @@ func _ready():
 	update_level()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
+func _process(_delta):
 	#Update progress bar and give player xp
 	if xp_to_next_level != null and xp_to_next_level != 0 and value != (Save_Load.xp / xp_to_next_level) * 100:
 		value = (Save_Load.xp / xp_to_next_level) * 100

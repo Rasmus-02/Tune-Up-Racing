@@ -2,12 +2,11 @@ extends Node2D
 
 @export var car : CharacterBody2D
 var car_placing : int
-var performance_bonus = 1.0
+var performance_bonus = 1.05
 var grip_bonus = 1.3
 var difficulty = 1.15#1.15
 
 func _process(delta):
-	
 	#Player
 	if car.player == true:
 		performance_bonus = 1.0

@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://xetjn1k22kut"]
+[gd_scene load_steps=19 format=3 uid="uid://xetjn1k22kut"]
 
 [ext_resource type="Theme" uid="uid://b7cej2d60vjv1" path="res://UI/Computer/Shop.tres" id="1_ttnr5"]
 [ext_resource type="Script" path="res://UI/Computer/shop_list_handler.gd" id="2_tk8gg"]
@@ -10,6 +10,7 @@
 [ext_resource type="Script" path="res://UI/Computer/Shop_Display_Light.gd" id="6_t03qx"]
 [ext_resource type="Texture2D" uid="uid://dds3p523p0ik5" path="res://Shaders/light.png" id="7_el63x"]
 [ext_resource type="Script" path="res://UI/Computer/Buy_Sell_Part.gd" id="10_ho447"]
+[ext_resource type="AudioStream" uid="uid://c8f4tiw3oaya7" path="res://Sound/Buy.mp3" id="10_rxrl6"]
 [ext_resource type="Texture2D" uid="uid://b350jwt2tgchl" path="res://addons/rmsmartshape/assets/light1-1.png" id="11_g6fwg"]
 [ext_resource type="Script" path="res://UI/Computer/Part insufficient money Popup.gd" id="12_524wy"]
 
@@ -66,6 +67,7 @@ offset_left = 700.0
 offset_top = 233.0
 offset_right = 2230.0
 offset_bottom = 1430.0
+theme_override_constants/outline_size = 0
 theme_override_styles/panel = SubResource("StyleBoxFlat_lekva")
 theme_override_styles/selected = SubResource("StyleBoxFlat_lew1o")
 theme_override_styles/selected_focus = SubResource("StyleBoxFlat_lew1o")
@@ -133,7 +135,7 @@ offset_right = 719.0
 offset_bottom = 352.0
 theme = ExtResource("4_1l0pp")
 
-[node name="Part Stats" type="Panel" parent="Control" node_paths=PackedStringArray("part_list", "not_enough_money_popup")]
+[node name="Part Stats" type="Panel" parent="Control" node_paths=PackedStringArray("part_list", "not_enough_money_popup", "buy_sell_button")]
 visible = false
 layout_mode = 0
 offset_right = 1176.0
@@ -142,6 +144,7 @@ pivot_offset = Vector2(588, 441)
 script = ExtResource("5_jrjlh")
 part_list = NodePath("../../Parts")
 not_enough_money_popup = NodePath("Not Enough Money Popup")
+buy_sell_button = NodePath("Buy Sell Button")
 
 [node name="Background Blocker" type="Panel" parent="Control/Part Stats"]
 layout_mode = 0
@@ -165,7 +168,7 @@ offset_left = 684.0
 offset_top = 661.0
 offset_right = 1756.0
 offset_bottom = 772.0
-theme_override_colors/font_color = Color(0, 0.8, 0, 1)
+theme_override_colors/font_color = Color(0, 0.690196, 0, 1)
 text = "Price: -"
 
 [node name="Stat_text" type="RichTextLabel" parent="Control/Part Stats"]
@@ -240,7 +243,10 @@ offset_right = 1158.0
 offset_bottom = 102.0
 text = "X"
 
-[node name="Part Confirmation Popup" type="Panel" parent="Control/Part Stats" node_paths=PackedStringArray("part_stats")]
+[node name="Buy_sell_Sound" type="AudioStreamPlayer" parent="Control/Part Stats"]
+stream = ExtResource("10_rxrl6")
+
+[node name="Part Confirmation Popup" type="Panel" parent="Control/Part Stats" node_paths=PackedStringArray("part_stats", "buy_sell_sound")]
 visible = false
 z_index = 495
 layout_mode = 0
@@ -251,6 +257,7 @@ offset_bottom = 597.0
 script = ExtResource("10_ho447")
 part_stats = NodePath("..")
 function = "Buy"
+buy_sell_sound = NodePath("../Buy_sell_Sound")
 
 [node name="Label" type="Label" parent="Control/Part Stats/Part Confirmation Popup"]
 layout_mode = 0

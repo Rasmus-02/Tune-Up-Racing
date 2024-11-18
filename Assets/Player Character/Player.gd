@@ -2,6 +2,7 @@ extends CharacterBody2D
 
 @export var movement_speed: int
 @onready var car_garage_ui = $"../Interact_Menu_Garage"
+@onready var footsteps = $Footsteps
 var ui_visible = false
 var in_controll = false
 var selected_car = null
@@ -62,9 +63,15 @@ func movement():
 func animation_handler():
 	if velocity.length() > 0:
 		animation.play("Walk")
+		if footsteps.playing == false:
+			footsteps.play()
+		print(footsteps.playing)
+		
 		animation.speed_scale = velocity.length() / 120
 	else:
 		animation.play("Idle")
+		if footsteps.playing == true:
+			footsteps.stop()
 		animation.speed_scale = .2
 
 

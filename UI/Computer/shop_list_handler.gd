@@ -4,6 +4,7 @@ extends ItemList
 @export var stats_tab : Panel
 @export_enum("Buy", "Sell") var function : String
 var part_list = []
+var durability_list = []
 var clicked = false
 var selected_tab = "both"
 var selected_category = "all"
@@ -41,7 +42,7 @@ func _ready():
 var temp_hovered = null
 func _process(_delta):
 	#Manage the highlight system
-	if true_hovered_item != null and stats_tab.status == "closed":
+	if true_hovered_item != null and stats_tab.status == "closed" and get_parent().visible == true:
 		#Disable previous highlighted selection
 		if temp_hovered != null and temp_hovered <= item_count:
 			set_item_custom_bg_color(get_both_tabs(temp_hovered)[0], Color(0, 0, 0, 0))
@@ -54,7 +55,7 @@ func _process(_delta):
 	
 	#This is used to make sure the green price text isn't ovewritten by the "Hover text color" in itemlist theme
 	if temp_hovered != null and temp_hovered % 2 == 1:
-		add_theme_color_override("font_hovered_color", Color(0, 0.80000001192093, 0))
+		add_theme_color_override("font_hovered_color", Color(0, 0.69019609689713, 0))
 	else:
 		add_theme_color_override("font_hovered_color", Color(0.29019600152969, 0.29019600152969, 0.29019600152969))
 	
@@ -73,7 +74,8 @@ func _input(event):
 			if index != null and index != -1: 
 				true_hovered_item = index
 			hovered_item = index
-	elif Input.is_action_just_pressed("ui_accept") and current_index == temp_index and has_focus():
+	if Input.is_action_just_pressed("ui_accept") and current_index == temp_index and has_focus():
+		print("CHANGE INDEX")
 		_on_item_selected(current_index)
 
 
@@ -82,20 +84,22 @@ func populate_list():
 	true_hovered_item = null
 	clear_list()
 	var search_text = $"../Top Tab/Search Bar".text
+	#IN SHOP
 	if function == "Buy":
 		part_list = AssetList.get_parts(selected_category, 5, null, search_text, "")
+	#IN INVENTORY
 	else:
 		part_list = AssetList.get_parts(selected_category, 5, null, search_text, "Save")
 	
 	for i in part_list.size():
 		var id = part_list[i].id[1]
 		var rarity = 0
+		#Durability is added to seperate list to find part with correct durability
+		var durability = part_list[i].durability
+		durability_list.append(durability)
 		var price = str(part_list[i].price)
-		
 		if function == "Sell": 
-			price = str(int(part_list[i].price * 0.8 * (float(part_list[i].durability) / 100.0)))
-		
-		
+			price = str(int(part_list[i].price * 0.8 * (float(durability) / 100.0)))
 		
 		match part_list[i].rarity: #Convert Rarity from string to int
 			"common":
@@ -113,14 +117,16 @@ func populate_list():
 		else: #if engine
 			add_item(part_list[i].name, engine_icons[id][rarity]) #Find correct icon type and color
 		add_item("                  Price: "+ price+ "$")
-		set_item_custom_fg_color(get_item_count()-1,Color(0, 0.80000001192093, 0))
+		set_item_custom_fg_color(get_item_count()-1,Color(0, 0.69019609689713, 0))
 
 func clear_list():
+	clear()
 	if part_list != null and part_list != []:
 		for i in part_list:
 			i.queue_free()
 		part_list.clear()
-		clear()
+		durability_list.clear()
+
 
 func _on_search_button_pressed():
 	populate_list()
@@ -176,8 +182,9 @@ func get_selected_item(index):
 		index -= 1
 	
 	var part_name = get_item_text(index)
+	var durability = durability_list[index / 2] #every second item (because price is item)
 	for i in part_list:
-		if i.name == part_name:
+		if i.name == part_name and i.durability == durability:
 			return i
 
 

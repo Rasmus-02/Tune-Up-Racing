@@ -1,16 +1,21 @@
 extends Panel
+@onready var part_list = $"../../../Parts"
 @export var part_stats : Control
 @export var function : String
+@export var buy_sell_sound : AudioStreamPlayer
+@onready var yes_button = $HBoxContainer/Yes
 var status = "closed"
 
 func _input(_event):
 	if Input.is_action_just_pressed("ui_cancel"):
 		close()
+	#elif Input.is_action_just_pressed("ui_accept"):
+	#	_on_yes_pressed()	
 
 func open():
 	status = "open"
 	self.show()
-	grab_focus()
+	yes_button.grab_focus()
 
 func close():
 	status = "closed"
@@ -22,24 +27,19 @@ func close():
 func buy_part():
 	var part = part_stats.selected_item
 	if part.price <= Save_Load.money:
-		var type = part.type
-		var part_number = part.Part_Number
-		var part_type = part.id[1]
-		var id = null #Gets defined in the if statements bellow because of different names
-		if type == 0:
-			id = part.Car_ID
-		elif type == 1:
-			id = part.Engine_ID
+		buy_sell_sound.play()
 		Save_Load.money -= int(part.price)
-		Save_Load.save()
-		Save_Load.inv_add({"Type" : type, "Part_number" : part_number, "Part_Type" : part_type, "ID" : id, "Durability" : 100})
+		Save_Load.inv_add(part)
+		part_stats.close()
 
 func sell_part():
 	var part = part_stats.selected_item
 	var price = int(part.price * 0.8 * (float(part.durability) / 100.0))
+	buy_sell_sound.play()
 	Save_Load.money += int(price)
-	Save_Load.save()
-	#Save_Load.inv_add({"Type" : type, "Part_number" : part_number, "Part_Type" : part_type, "ID" : id, "Durability" : 100})
+	Save_Load.remove_inv(part_stats.selected_item)
+	part_list.populate_list()
+	part_stats.close()
 
 func _on_yes_pressed():
 	#Exists in inventory and shop therefore this is needed to decide action

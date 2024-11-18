@@ -11,7 +11,7 @@ normal_texture = ExtResource("3_ddj72")
 specular_texture = ExtResource("4_a8120")
 specular_shininess = 0.3
 
-[node name="Round top mount intake" type="Node2D"]
+[node name="Round Top Mount Air Filter" type="Node2D"]
 script = ExtResource("1_5wclc")
 rarity = "uncommon"
 layout = "top"

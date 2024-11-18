@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://dyjfrdyxvu7x8"]
+[gd_scene load_steps=18 format=3 uid="uid://dyjfrdyxvu7x8"]
 
 [ext_resource type="Theme" uid="uid://clrwm0elgwsqr" path="res://UI/Computer/Inventory.tres" id="1_7jwjh"]
 [ext_resource type="Script" path="res://UI/Computer/shop_list_handler.gd" id="2_ngcte"]
@@ -9,6 +9,7 @@
 [ext_resource type="Script" path="res://UI/Computer/Stats_Tab.gd" id="7_h338w"]
 [ext_resource type="Script" path="res://UI/Computer/Shop_Display_Light.gd" id="8_spr05"]
 [ext_resource type="Texture2D" uid="uid://dds3p523p0ik5" path="res://Shaders/light.png" id="9_3gf5l"]
+[ext_resource type="AudioStream" uid="uid://le4esdbxm4i2" path="res://Sound/Sell.mp3" id="10_kvq3p"]
 [ext_resource type="Script" path="res://UI/Computer/Buy_Sell_Part.gd" id="10_tckgv"]
 [ext_resource type="Texture2D" uid="uid://b350jwt2tgchl" path="res://addons/rmsmartshape/assets/light1-1.png" id="11_on3r8"]
 
@@ -133,7 +134,7 @@ offset_right = 719.0
 offset_bottom = 352.0
 theme = ExtResource("6_8gbun")
 
-[node name="Part Stats" type="Panel" parent="Control" node_paths=PackedStringArray("part_list")]
+[node name="Part Stats" type="Panel" parent="Control" node_paths=PackedStringArray("part_list", "buy_sell_button")]
 visible = false
 layout_mode = 0
 offset_right = 1176.0
@@ -141,6 +142,7 @@ offset_bottom = 882.0
 pivot_offset = Vector2(588, 441)
 script = ExtResource("7_h338w")
 part_list = NodePath("../../Parts")
+buy_sell_button = NodePath("Buy Sell Button")
 
 [node name="Background Blocker" type="Panel" parent="Control/Part Stats"]
 layout_mode = 0
@@ -164,7 +166,7 @@ offset_left = 684.0
 offset_top = 661.0
 offset_right = 1756.0
 offset_bottom = 772.0
-theme_override_colors/font_color = Color(0, 0.8, 0, 1)
+theme_override_colors/font_color = Color(0, 0.690196, 0, 1)
 text = "Price: -"
 
 [node name="Stat_text" type="RichTextLabel" parent="Control/Part Stats"]
@@ -239,8 +241,12 @@ offset_right = 1158.0
 offset_bottom = 102.0
 text = "X"
 
-[node name="Part Confirmation Popup" type="Panel" parent="Control/Part Stats" node_paths=PackedStringArray("part_stats")]
+[node name="Buy_sell_Sound" type="AudioStreamPlayer" parent="Control/Part Stats"]
+stream = ExtResource("10_kvq3p")
+
+[node name="Part Confirmation Popup" type="Panel" parent="Control/Part Stats" node_paths=PackedStringArray("part_stats", "buy_sell_sound")]
 visible = false
+z_index = 495
 layout_mode = 0
 offset_left = 276.0
 offset_top = 315.0
@@ -249,6 +255,7 @@ offset_bottom = 597.0
 script = ExtResource("10_tckgv")
 part_stats = NodePath("..")
 function = "Sell"
+buy_sell_sound = NodePath("../Buy_sell_Sound")
 
 [node name="Label" type="Label" parent="Control/Part Stats/Part Confirmation Popup"]
 layout_mode = 0

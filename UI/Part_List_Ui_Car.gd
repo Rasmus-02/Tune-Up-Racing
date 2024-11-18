@@ -9,6 +9,7 @@ var engine = null
 var temp_array = null
 var temp_stat_array = []
 var temp_part = null
+var equipped_part = null #The part that isn't in the inventory
 var temp_part_select_part = null
 var updated = false
 var selected_part = []
@@ -79,14 +80,24 @@ func populate_list():
 			for keys in temp_delte_list.size():
 				engine_list_inventory.erase(temp_delte_list[keys])
 	#for other parts than engine
+	var list_index = 0
 	if selected_tab != 0 and selected_tab != 18:
 		list.clear()
-		for i in temp_array.size():
-			temp_part = temp_array[i].instantiate()
+		for i in temp_array.size()+1:
+			temp_part = temp_array[list_index].instantiate()
 			var checked_part = Save_Load.inv_check(temp_part)
 			if temp_part.Part_Number == 0: #EMPTY PART
 				list.add_item(temp_part.name)
 				temp_stat_array.append(0) #adds empty value
+			elif i == 1 and temp_stat_array.size() != 2: #If empty part and equipped part has been added
+				if equipped_part.name != "[empty]":
+					var part_name = equipped_part.name
+					part_name = part_name.replace(car_name, "") #reformat name
+					list.add_item(part_name)
+					list.set_background_color(list.get_item_count()-1)
+					temp_stat_array.append(equipped_part.durability) #adds empty value
+					list.set_item_custom_fg_color(list.get_item_count()-1,FontColorSettings.get_color(equipped_part.rarity)) #set color based on rarity
+				list_index -= 1
 			elif checked_part.size() > 0: #checks if the part exists in the players inventory
 				for n in checked_part.size():
 					temp_stat_array.append(checked_part[n])
@@ -94,6 +105,7 @@ func populate_list():
 					var part_name = temp_part.name
 					part_name = part_name.replace(car_name, "")
 					list.add_item(part_name)
+					
 					#Make it so it is impossible to equip wrong gearbox
 					if selected_tab == 15:
 						if temp_part.drivetrain != car.drive_train_type:
@@ -106,7 +118,7 @@ func populate_list():
 						if car.selected_gearbox != 0: #Can't unequip drivetrain if there is a gearbox installed
 							list.set_item_disabled(0, true)
 					list.set_item_custom_fg_color(list.get_item_count()-1,FontColorSettings.get_color(temp_part.rarity)) #set color based on rarity
-			i += 1
+			list_index += 1
 
 func size_check(index):
 	var left = temp_part.size[0]
@@ -155,16 +167,20 @@ func _on_item_selected(index): #when a part in the item list is clicked (node si
 		selected_key = engine_list_inventory.keys()[index] #the key for the engine that got selected
 		temp_part_select_part = engine_list_inventory.get(str(selected_key))
 
-	else:
-		print(" ")
-		for i in temp_array.size():
+	else: #If not engine
+		#If part that is on car
+		if index == 1 and equipped_part.name != "[empty]":
+			temp_part_select_part = equipped_part
+		#All the other parts from inventory
+		else:
+			for i in temp_array.size():
 				temp_part_select_part = temp_array[i].instantiate()
 				if temp_part_select_part.get_name() == car_name + list.get_item_text(index) or temp_part_select_part.get_name() == list.get_item_text(index): #if correct part by name
 					break
 				elif index == 0: #If empty part
 					break
+				temp_part_select_part.queue_free()
 				i += 1
-	
 	#Update Stat Tab
 	stats.change_part(temp_part_select_part, str(selected_tab))
 	#sends update to engine that parts have changed
@@ -187,57 +203,194 @@ func _on_item_selected(index): #when a part in the item list is clicked (node si
 			populate_list()
 			
 		1:
+			if index != 1 or (equipped_part.name == "[empty]" and index > 0):
+				if car.f_bumper.name != "[empty]":
+					Save_Load.inv_add(car.f_bumper)
+				if temp_part_select_part.name != "[empty]":
+					Save_Load.remove_inv(temp_part_select_part)
+			
 			car.selected_f_bumper = temp_part_select_part.Part_Number
+			car.f_bumper_durability = temp_stat_array[index]
 			update_car()
+			_on_front__bumper_button_pressed()
 		2:
+			if index != 1 or (equipped_part.name == "[empty]" and index > 0):
+				if car.r_bumper.name != "[empty]":
+					Save_Load.inv_add(car.r_bumper)
+				if temp_part_select_part.name != "[empty]":
+					Save_Load.remove_inv(temp_part_select_part)
+			
 			car.selected_r_bumper = temp_part_select_part.Part_Number
+			car.r_bumper_durability = temp_stat_array[index]
 			update_car()
+			_on_rear_bumper_button_pressed()
 		3:
+			if index != 1 or (equipped_part.name == "[empty]" and index > 0):
+				if car.fenders.name != "[empty]":
+					Save_Load.inv_add(car.fenders)
+				if temp_part_select_part.name != "[empty]":
+					Save_Load.remove_inv(temp_part_select_part)
+			
 			car.selected_fenders = temp_part_select_part.Part_Number
+			car.fenders_durability = temp_stat_array[index]
 			update_car()
+			_on_fenders_button_pressed()
 		4:
+			if index != 1 or (equipped_part.name == "[empty]" and index > 0):
+				if car.hood.name != "[empty]":
+					Save_Load.inv_add(car.hood)
+				if temp_part_select_part.name != "[empty]":
+					Save_Load.remove_inv(temp_part_select_part)
+			
 			car.selected_hood = temp_part_select_part.Part_Number
+			car.hood_durability = temp_stat_array[index]
 			update_car()
+			_on_hood_button_pressed()
 		5:
+			if index != 1 or (equipped_part.name == "[empty]" and index > 0):
+				if car.mirrors.name != "[empty]":
+					Save_Load.inv_add(car.mirrors)
+				if temp_part_select_part.name != "[empty]":
+					Save_Load.remove_inv(temp_part_select_part)
+			
 			car.selected_mirrors = temp_part_select_part.Part_Number
+			car.mirrors_durability = temp_stat_array[index]
 			update_car()
+			_on_mirrors_button_pressed()
 		6:
+			if index != 1 or (equipped_part.name == "[empty]" and index > 0):
+				if car.headlights.name != "[empty]":
+					Save_Load.inv_add(car.headlights)
+				if temp_part_select_part.name != "[empty]":
+					Save_Load.remove_inv(temp_part_select_part)
+			
 			car.selected_headlights = temp_part_select_part.Part_Number
+			car.headlights_durability = temp_stat_array[index]
 			update_car()
+			_on_headlights_button_pressed()
 		7:
+			if index != 1 or (equipped_part.name == "[empty]" and index > 0):
+				if car.taillights.name != "[empty]":
+					Save_Load.inv_add(car.taillights)
+				if temp_part_select_part.name != "[empty]":
+					Save_Load.remove_inv(temp_part_select_part)
+			
 			car.selected_taillights = temp_part_select_part.Part_Number
+			car.taillights_durability = temp_stat_array[index]
 			update_car()
+			_on_taillights_button_pressed()
 		8:
+			if index != 1 or (equipped_part.name == "[empty]" and index > 0):
+				if car.spoiler.name != "[empty]":
+					Save_Load.inv_add(car.spoiler)
+				if temp_part_select_part.name != "[empty]":
+					Save_Load.remove_inv(temp_part_select_part)
+			
 			car.selected_spoiler = temp_part_select_part.Part_Number
+			car.spoiler_durability = temp_stat_array[index]
 			update_car()
+			_on_spoiler_button_pressed()
 		9:
+			if index != 1 or (equipped_part.name == "[empty]" and index > 0):
+				if car.suspension.name != "[empty]":
+					Save_Load.inv_add(car.suspension)
+				if temp_part_select_part.name != "[empty]":
+					Save_Load.remove_inv(temp_part_select_part)
+					print("remove part: ",temp_part_select_part)
+			
 			car.selected_suspension = temp_part_select_part.Part_Number
+			car.suspension_durability = temp_stat_array[index]
 			update_car()
+			_on_suspension_button_pressed()
 		10:
+			if index != 1 or (equipped_part.name == "[empty]" and index > 0):
+				if car.wheels.name != "[empty]":
+					Save_Load.inv_add(car.wheels)
+				if temp_part_select_part.name != "[empty]":
+					Save_Load.remove_inv(temp_part_select_part)
+			
 			car.selected_wheels = temp_part_select_part.Part_Number
+			car.wheels_durability = temp_stat_array[index]
 			update_car()
+			_on_wheels_button_pressed()
 		11:
+			if index != 1 or (equipped_part.name == "[empty]" and index > 0):
+				if car.tires.name != "[empty]":
+					Save_Load.inv_add(car.tires)
+				if temp_part_select_part.name != "[empty]":
+					Save_Load.remove_inv(temp_part_select_part)
+			
 			car.selected_tires = temp_part_select_part.Part_Number
+			car.tires_durability = temp_stat_array[index]
 			update_car()
+			_on_tires_button_pressed()
 		12:
+			if index != 1 or (equipped_part.name == "[empty]" and index > 0):
+				if car.brakes.name != "[empty]":
+					Save_Load.inv_add(car.brakes)
+				if temp_part_select_part.name != "[empty]":
+					Save_Load.remove_inv(temp_part_select_part)
+			
 			car.selected_brakes = temp_part_select_part.Part_Number
+			car.brakes_durability = temp_stat_array[index]
 			update_car()
+			_on_brakes_button_pressed()
 		13:
+			if index != 1 or (equipped_part.name == "[empty]" and index > 0):
+				if car.subframe.name != "[empty]":
+					Save_Load.inv_add(car.subframe)
+				if temp_part_select_part.name != "[empty]":
+					Save_Load.remove_inv(temp_part_select_part)
+			
 			car.selected_subframe = temp_part_select_part.Part_Number
+			car.subframe_durability = temp_stat_array[index]
 			update_car()
+			_on_subframe_button_pressed()
 		14:
+			if index != 1 or (equipped_part.name == "[empty]" and index > 0):
+				if car.driveshaft.name != "[empty]":
+					Save_Load.inv_add(car.driveshaft)
+				if temp_part_select_part.name != "[empty]":
+					Save_Load.remove_inv(temp_part_select_part)
+			
 			car.selected_driveshaft = temp_part_select_part.Part_Number
+			car.suspension_durability = temp_stat_array[index]
 			update_car()
-			populate_list()
+			#populate list used to be here, if any problems with driveshaft updating
+			_on_driveshaft_button_pressed()
 		15:
+			if index != 1 or (equipped_part.name == "[empty]" and index > 0):
+				if car.gearbox.name != "[empty]":
+					Save_Load.inv_add(car.gearbox)
+				if temp_part_select_part.name != "[empty]":
+					Save_Load.remove_inv(temp_part_select_part)
+			
 			car.selected_gearbox = temp_part_select_part.Part_Number
+			car.suspension_durability = temp_stat_array[index]
 			update_car()
+			_on_gearbox_button_pressed()
 		16:
+			if index != 1 or (equipped_part.name == "[empty]" and index > 0):
+				if car.radiator.name != "[empty]":
+					Save_Load.inv_add(car.radiator)
+				if temp_part_select_part.name != "[empty]":
+					Save_Load.remove_inv(temp_part_select_part)
+			
 			car.selected_radiator = temp_part_select_part.Part_Number
+			car.radiator_durability = temp_stat_array[index]
 			update_car()
+			_on_radiator_button_pressed()
 		17:
+			if index != 1 or (equipped_part.name == "[empty]" and index > 0):
+				if car.exhaust.name != "[empty]":
+					Save_Load.inv_add(car.exhaust)
+				if temp_part_select_part.name != "[empty]":
+					Save_Load.remove_inv(temp_part_select_part)
+			
 			car.selected_exhaust = temp_part_select_part.Part_Number
+			car.exhaust_durability = temp_stat_array[index]
 			update_car()
+			_on_exhaust_button_pressed()
 
 func update_car():
 	car.update_car_parts()
@@ -288,41 +441,50 @@ func _on_front__bumper_button_pressed():
 	button_sound.play()
 	temp_array = specific_parts.f_bumper
 	selected_tab = 1
+	equipped_part = car.f_bumper #updates the equipped part
 	populate_list()
 func _on_rear_bumper_button_pressed():
 	button_sound.play()
 	temp_array = specific_parts.r_bumper
 	selected_tab = 2
+	equipped_part = car.r_bumper #updates the equipped part
 	populate_list()
 func _on_fenders_button_pressed():
 	button_sound.play()
 	temp_array = specific_parts.fenders
 	selected_tab = 3
+	equipped_part = car.fenders #updates the equipped part
 	populate_list()
 func _on_hood_button_pressed():
 	button_sound.play()
 	temp_array = specific_parts.hood
 	selected_tab = 4
+	equipped_part = car.hood #updates the equipped part
 	populate_list()
 func _on_mirrors_button_pressed():
 	button_sound.play()
 	temp_array = specific_parts.mirrors
 	selected_tab = 5
+	equipped_part = car.mirrors #updates the equipped part
 	populate_list()
 func _on_headlights_button_pressed():
 	button_sound.play()
 	temp_array = specific_parts.headlights
 	selected_tab = 6
+	equipped_part = car.headlights #updates the equipped part
 	populate_list()
 func _on_taillights_button_pressed():
 	button_sound.play()
 	temp_array = specific_parts.taillights
 	selected_tab = 7
+	equipped_part = car.taillights #updates the equipped part
 	populate_list()
 func _on_spoiler_button_pressed():
 	button_sound.play()
 	temp_array = specific_parts.spoiler
 	selected_tab = 8
+	equipped_part = car.spoiler #updates the equipped part
+	print("EQUIPPED PART:  ", equipped_part,"     Temp Array: ",temp_array)
 	populate_list()
 #===============================================================================
 
@@ -337,21 +499,25 @@ func _on_suspension_button_pressed():
 	button_sound.play()
 	temp_array = universal_parts.suspension
 	selected_tab = 9
+	equipped_part = car.suspension #updates the equipped part
 	populate_list()
 func _on_wheels_button_pressed():
 	button_sound.play()
 	temp_array = universal_parts.wheels
 	selected_tab = 10
+	equipped_part = car.wheels #updates the equipped part
 	populate_list()
 func _on_tires_button_pressed():
 	button_sound.play()
 	temp_array = universal_parts.tires
 	selected_tab = 11
+	equipped_part = car.tires #updates the equipped part
 	populate_list()
 func _on_brakes_button_pressed():
 	button_sound.play()
 	temp_array = universal_parts.brakes
 	selected_tab = 12
+	equipped_part = car.brakes #updates the equipped part
 	populate_list()
 #===============================================================================
 
@@ -366,28 +532,33 @@ func _on_subframe_button_pressed():
 	button_sound.play()
 	temp_array = specific_parts.subframe
 	selected_tab = 13
+	equipped_part = car.subframe #updates the equipped part
 	populate_list()
 func _on_driveshaft_button_pressed():
 	button_sound.play()
 	temp_array = specific_parts.driveshaft
 	selected_tab = 14
+	equipped_part = car.driveshaft #updates the equipped part
 	populate_list()
 func _on_gearbox_button_pressed():
 	button_sound.play()
 	temp_array = universal_parts.gearbox
 	selected_tab = 15
+	equipped_part = car.gearbox #updates the equipped part
 	populate_list()
 
 func _on_radiator_button_pressed():
 	button_sound.play()
 	temp_array = universal_parts.radiator
 	selected_tab = 16
+	equipped_part = car.radiator #updates the equipped part
 	populate_list()
 
 func _on_exhaust_button_pressed():
 	button_sound.play()
 	temp_array = specific_parts.exhaust
 	selected_tab = 17
+	equipped_part = car.exhaust #updates the equipped part
 	populate_list()
 #===============================================================================
 

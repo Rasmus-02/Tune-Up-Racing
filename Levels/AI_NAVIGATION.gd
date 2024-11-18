@@ -6,6 +6,7 @@ func handle_body(body):
 	if body.is_in_group("Car"):
 		if body.loaded == false:
 			body.get_node("AI").import_racing_line(Racing_Line)
+			print("Smible",body)
 			Placing.car_list.append(body)
 
 func _on_start_body_entered(body):

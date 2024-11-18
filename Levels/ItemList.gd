@@ -14,13 +14,13 @@ func _process(_delta):
 			_on_item_clicked(get_selected_items()[0], null, 1)
 	
 	#Make Engine Double clickable
-	if get_selected_items().size() == 0 and car_editor.selected_tab == 0 and (car_editor.active or engine_editor.active):
+	if get_selected_items().size() == 0 and car_editor.selected_tab == 0 and (car_editor.active or engine_editor.active) and temp_click_index <= item_count and has_focus():
 		clicked = false
 		select(temp_click_index, true)
 
 
 func _on_item_clicked(index, at_position, mouse_button_index):
-	if mouse_button_index == 1 and has_focus():
+	if mouse_button_index == 1 and has_focus() and index <= item_count:
 		clicked = true
 		$"../Timer".start()
 		click_time += 1

@@ -4,6 +4,7 @@ var selected_tab = 0
 var part_category = null
 var specific_parts = null
 var universal_parts = null
+var equipped_part = null
 var engine = null
 @onready var list = $"../ItemList"
 var temp_array = null
@@ -43,6 +44,7 @@ func instantiate():
 	
 	$"../Engine_Group/Block_button".grab_focus()
 	temp_array = specific_parts.block
+	equipped_part = engine.block
 	part_category = "block"
 	selected_tab = 0
 	if engine != null:
@@ -53,12 +55,22 @@ func instantiate():
 func populate_list():
 	temp_stat_array.clear()
 	list.clear()
-	for i in temp_array.size():
-		temp_part = temp_array[i].instantiate()
+	var list_index = 0
+	for i in temp_array.size()+1:
+		temp_part = temp_array[list_index].instantiate()
 		var checked_part = Save_Load.inv_check(temp_part)
-		if temp_part.Part_Number == 0:
+		if temp_part.Part_Number == 0: #If empty
 			list.add_item(temp_part.name)
 			temp_stat_array.append(0) #adds empty value
+		elif i == 1 and temp_stat_array.size() != 2: #If empty part and equipped part has been added
+			if equipped_part.name != "[empty]":
+				var part_name = equipped_part.name
+				part_name = part_name.replace(engine_name, "") #reformat name
+				list.add_item(part_name)
+				list.set_background_color(list.get_item_count()-1)
+				temp_stat_array.append(equipped_part.durability) #adds empty value
+				list.set_item_custom_fg_color(list.get_item_count()-1,FontColorSettings.get_color(equipped_part.rarity)) #set color based on rarity
+			list_index -= 1
 		elif checked_part.size() > 0: #checks if the part exists in the players inventory
 			for n in checked_part.size():
 				temp_stat_array.append(checked_part[n])
@@ -68,7 +80,7 @@ func populate_list():
 				list.set_item_custom_fg_color(list.get_item_count()-1,FontColorSettings.get_color(temp_part.rarity)) #set color based on rarity
 				if engine.part_placeable(part_category, temp_part) == false or engine.size_check(part_category, temp_part) == false: #or engine.size_check(part_category, temp_part) == false:
 					list.set_item_disabled(temp_stat_array.size()-1, true)
-		i += 1
+		list_index += 1
 
 
 func _process(_delta):
@@ -88,12 +100,14 @@ func _on_block_button_pressed():
 	temp_array = specific_parts.block
 	selected_tab = 0
 	part_category = "block"
+	equipped_part = engine.block #updates the equipped part
 	populate_list()
 	tab_changed()
 func _on_internals_button_pressed():
 	button_sound.play()
 	temp_array = specific_parts.internals
 	selected_tab = 1
+	equipped_part = engine.internals #updates the equipped part
 	part_category = "internals"
 	populate_list()
 	tab_changed()
@@ -101,6 +115,7 @@ func _on_top_button_pressed():
 	button_sound.play()
 	temp_array = specific_parts.top
 	selected_tab = 2
+	equipped_part = engine.top #updates the equipped part
 	part_category = "top"
 	populate_list()
 	tab_changed()
@@ -108,6 +123,7 @@ func _on_exhaust_manifold_button_pressed():
 	button_sound.play()
 	temp_array = specific_parts.exhaust_manifold
 	selected_tab = 3
+	equipped_part = engine.exhaust_manifold #updates the equipped part
 	part_category = "exhaust_manifold"
 	populate_list()
 	tab_changed()
@@ -115,6 +131,7 @@ func _on_intake_manifold_button_pressed():
 	button_sound.play()
 	temp_array = specific_parts.intake_manifold
 	selected_tab = 4
+	equipped_part = engine.intake_manifold #updates the equipped part
 	part_category = "intake_manifold"
 	populate_list()
 	tab_changed()
@@ -122,6 +139,7 @@ func _on_air_filter_button_pressed():
 	button_sound.play()
 	temp_array = universal_parts.air_filter
 	selected_tab = 5
+	equipped_part = engine.air_filter #updates the equipped part
 	part_category = "air_filter"
 	populate_list()
 	tab_changed()
@@ -165,13 +183,17 @@ func _on_item_selected(index): #when a part in the item list is clicked (node si
 
 
 		#for loop for finding the correct part
-		for i in selected_part.size():
-			temp_part_select_part = selected_part[i].instantiate()
-			if temp_part_select_part.get_name() == engine_name + list.get_item_text(index) or temp_part_select_part.get_name() == list.get_item_text(index): #if correct part by name
-				break
-			elif index == 0: #If empty part
-				break
-			i += 1
+		if index == 1 and equipped_part.name != "[empty]":
+			temp_part_select_part = equipped_part
+		else:
+			for i in selected_part.size():
+				temp_part_select_part = selected_part[i].instantiate()
+				if temp_part_select_part.get_name() == engine_name + list.get_item_text(index) or temp_part_select_part.get_name() == list.get_item_text(index): #if correct part by name
+					break
+				elif index == 0: #If empty part
+					break
+				temp_part_select_part.queue_free()
+				i += 1
 		
 		#Updates stat tv
 		stats.change_part(temp_part_select_part, part_category)
@@ -179,29 +201,71 @@ func _on_item_selected(index): #when a part in the item list is clicked (node si
 		#sends update to engine that parts have changed
 		match selected_tab:
 			0:
+				if index != 1 or (equipped_part.name == "[empty]" and index > 0):
+					if engine.block.name != "[empty]":
+						Save_Load.inv_add(engine.block)
+					if temp_part_select_part.name != "[empty]":
+						Save_Load.remove_inv(temp_part_select_part)
+				
 				engine.selected_block = temp_part_select_part.Part_Number
 				engine.block_durability = temp_stat_array[index]
 				update_engine()
+				_on_block_button_pressed()
 			1:
+				if index != 1 or (equipped_part.name == "[empty]" and index > 0):
+					if engine.internals.name != "[empty]":
+						Save_Load.inv_add(engine.internals)
+					if temp_part_select_part.name != "[empty]":
+						Save_Load.remove_inv(temp_part_select_part)
+						
 				engine.selected_internals = temp_part_select_part.Part_Number
 				engine.internals_durability = temp_stat_array[index]
 				update_engine()
+				_on_internals_button_pressed()
 			2:
+				if index != 1 or (equipped_part.name == "[empty]" and index > 0):
+					if engine.top.name != "[empty]":
+						Save_Load.inv_add(engine.top)
+					if temp_part_select_part.name != "[empty]":
+						Save_Load.remove_inv(temp_part_select_part)
+						
 				engine.selected_top = temp_part_select_part.Part_Number
 				engine.top_durability = temp_stat_array[index]
 				update_engine()
+				_on_top_button_pressed()
 			3:
+				if index != 1 or (equipped_part.name == "[empty]" and index > 0):
+					if engine.exhaust_manifold.name != "[empty]":
+						Save_Load.inv_add(engine.exhaust_manifold)
+					if temp_part_select_part.name != "[empty]":
+						Save_Load.remove_inv(temp_part_select_part)
+				
 				engine.selected_exhaust_manifold = temp_part_select_part.Part_Number
 				engine.exhaust_manifold_durability = temp_stat_array[index]
 				update_engine()
+				_on_exhaust_manifold_button_pressed()
 			4:
+				if index != 1 or (equipped_part.name == "[empty]" and index > 0):
+					if engine.intake_manifold.name != "[empty]":
+						Save_Load.inv_add(engine.intake_manifold)
+					if temp_part_select_part.name != "[empty]":
+						Save_Load.remove_inv(temp_part_select_part)
+				
 				engine.selected_intake_manifold = temp_part_select_part.Part_Number
 				engine.intake_manifold_durability = temp_stat_array[index]
 				update_engine()
+				_on_intake_manifold_button_pressed()
 			5:
+				if index != 1 or (equipped_part.name == "[empty]" and index > 0):
+					if engine.air_filter.name != "[empty]":
+						Save_Load.inv_add(engine.air_filter)
+					if temp_part_select_part.name != "[empty]":
+						Save_Load.remove_inv(temp_part_select_part)
+				
 				engine.selected_air_filter = temp_part_select_part.Part_Number
 				engine.air_filter_durability = temp_stat_array[index]
 				update_engine()
+				_on_air_filter_button_pressed()
 
 func slider_controller():
 	boost_text.text = str(float(boost_slider.value)/10.0) + "BAR"

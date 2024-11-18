@@ -1,4 +1,4 @@
-[gd_scene load_steps=129 format=3 uid="uid://bpjbw8pi8ej12"]
+[gd_scene load_steps=137 format=3 uid="uid://bpjbw8pi8ej12"]
 
 [ext_resource type="Script" path="res://Levels/Garage.gd" id="1_mx11h"]
 [ext_resource type="Texture2D" uid="uid://b350jwt2tgchl" path="res://addons/rmsmartshape/assets/light1-1.png" id="2_05wol"]
@@ -57,6 +57,10 @@
 [ext_resource type="Texture2D" uid="uid://cyj8yuekbx6ag" path="res://Textures/Garage/Props/Godot Plush.png" id="47_t18cl"]
 [ext_resource type="Texture2D" uid="uid://b7b2ofushpi2g" path="res://Textures/Garage/Props/Godot Plush NM.png" id="48_qeu7k"]
 [ext_resource type="Script" path="res://Assets/Props/Computer.gd" id="49_7jfjo"]
+[ext_resource type="Texture2D" uid="uid://dlvjckmd46tbi" path="res://Textures/Garage/Props/Computer Desk.png" id="50_trqpd"]
+[ext_resource type="Texture2D" uid="uid://ywj0j8shvtjv" path="res://Textures/Garage/Props/Computer Desk NM.png" id="51_dvwiy"]
+[ext_resource type="Texture2D" uid="uid://blla0sx3ysdat" path="res://Textures/Garage/Props/Computer Desk Spec.png" id="52_5te7o"]
+[ext_resource type="Texture2D" uid="uid://calycmhophto" path="res://Shaders/light beam.png" id="53_byfck"]
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_v35fn"]
 diffuse_texture = ExtResource("7_qy3vp")
@@ -1010,7 +1014,22 @@ diffuse_texture = ExtResource("47_t18cl")
 normal_texture = ExtResource("48_qeu7k")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_f0y50"]
-size = Vector2(94, 32)
+size = Vector2(46, 32)
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_yjirk"]
+diffuse_texture = ExtResource("50_trqpd")
+normal_texture = ExtResource("51_dvwiy")
+specular_texture = ExtResource("52_5te7o")
+specular_shininess = 0.24
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mhr7p"]
+size = Vector2(97, 36)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_20flb"]
+size = Vector2(16.2753, 15.5523)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_ni8qn"]
+polygon = PackedVector2Array(-5.42479, 7.98883, -8.93028, 4.49402, -7.60063, 3.13629, -5.45361, 5.17596, -4.717, 4.5365, -3.3844, 5.80475, -2.629, 5.18365, 3.16885, 5.19733, 3.75085, 5.76727, 5.298, 4.45038, 5.89957, 5.11304, 8.02353, 2.97296, 9.31812, 4.24072, 6.01274, 7.93176)
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_4xp8d"]
 light_mode = 1
@@ -1179,7 +1198,7 @@ position = Vector2(-293.707, 269.455)
 
 [node name="Player" parent="." instance=ExtResource("6_je1ng")]
 z_index = 998
-position = Vector2(-303, 457)
+position = Vector2(-210, 524)
 
 [node name="Floors and Walls" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_myahk")
@@ -1437,12 +1456,54 @@ player = NodePath("../../Player")
 [node name="Interaction_Area" type="Area2D" parent="Props/Computer_Desk" groups=["Computer"]]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Props/Computer_Desk/Interaction_Area"]
-position = Vector2(-10.643, -13)
+position = Vector2(-7.64301, -13)
 shape = SubResource("RectangleShape2D_f0y50")
 
+[node name="Computer Sprite" type="Sprite2D" parent="Props/Computer_Desk"]
+position = Vector2(-11.643, 2)
+texture = SubResource("CanvasTexture_yjirk")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Props/Computer_Desk/Computer Sprite"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Props/Computer_Desk/Computer Sprite/StaticBody2D"]
+position = Vector2(0.5, -15)
+shape = SubResource("RectangleShape2D_mhr7p")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Props/Computer_Desk/Computer Sprite/StaticBody2D"]
+position = Vector2(-34.9994, 15.7443)
+rotation = 0.795851
+shape = SubResource("RectangleShape2D_20flb")
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="Props/Computer_Desk/Computer Sprite/StaticBody2D"]
+position = Vector2(-34.9994, 15.7443)
+rotation = 0.795851
+occluder = SubResource("OccluderPolygon2D_ni8qn")
+
 [node name="TempSprite" type="Polygon2D" parent="Props/Computer_Desk" groups=["Computer"]]
+visible = false
 color = Color(0.568627, 0.388235, 0.270588, 1)
 polygon = PackedVector2Array(36.1313, -28.8965, 36.2856, 2.47079, -57.2997, 2.61111, -57.3123, -28.8965)
+
+[node name="PointLight2D" type="PointLight2D" parent="Props/Computer_Desk"]
+position = Vector2(-11.643, -11)
+rotation = 1.5708
+scale = Vector2(1.47, 4.94)
+color = Color(0.25098, 0.662745, 1, 1)
+energy = 0.2
+shadow_enabled = true
+texture = ExtResource("53_byfck")
+texture_scale = 0.1
+height = 4820.0
+
+[node name="PointLight2D2" type="PointLight2D" parent="Props/Computer_Desk"]
+position = Vector2(-11.643, -11)
+rotation = 1.5708
+scale = Vector2(1.47, 4.94)
+color = Color(0.25098, 0.662745, 1, 1)
+energy = 0.3
+texture = ExtResource("53_byfck")
+texture_scale = 0.1
+height = 4820.0
 
 [node name="Sound" type="Node" parent="."]
 

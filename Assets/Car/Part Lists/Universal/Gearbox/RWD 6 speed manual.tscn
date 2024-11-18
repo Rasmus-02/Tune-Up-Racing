@@ -13,7 +13,7 @@ normal_texture = ExtResource("3_l3moy")
 specular_texture = ExtResource("4_kabqx")
 specular_shininess = 0.5
 
-[node name="RWD 6 speed manual" type="Node2D"]
+[node name="RWD 6 Speed Manual Gearbox" type="Node2D"]
 script = ExtResource("1_vse3b")
 rarity = "rare"
 Part_Number = 2

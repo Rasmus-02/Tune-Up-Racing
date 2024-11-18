@@ -6,16 +6,23 @@ func _process(delta):
 	#Nice effect makes money change smoothly
 	if Save_Load.money != displayed_money:
 		var difference = Save_Load.money - displayed_money
-		if difference < -100:
+		#*
+		if difference < -displayed_money * 0.02:
 			displayed_money *= 0.98
 			difference = Save_Load.money - displayed_money
+		elif difference > 10 and difference < displayed_money * 0.02:
+			displayed_money -= difference * 0.9
+		#-
 		if difference < 0:
 			displayed_money -= 1
 			difference = Save_Load.money - displayed_money
-			
-		if difference > 100:
+		#+
+		if difference > displayed_money * 0.02:
 			displayed_money *= 1.02
 			difference = Save_Load.money - int(displayed_money)
+		elif difference > 10 and difference < displayed_money * 0.02:
+			displayed_money += difference * 1.1
+		#+
 		if difference > 0:
 			displayed_money += 1
 			difference = Save_Load.money - displayed_money

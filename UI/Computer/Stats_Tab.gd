@@ -8,6 +8,7 @@ extends Panel
 @onready var price_label = $Price
 @onready var popup = $"Part Confirmation Popup"
 @export var not_enough_money_popup : Panel
+@export var buy_sell_button : Button
 var status = "closed"
 var selected_item = null
 
@@ -15,11 +16,13 @@ var selected_item = null
 func _input(_event): #Check only when a button is pressed
 	if Input.is_action_pressed("ui_cancel"):
 		close()
+	#elif Input.is_action_just_pressed("ui_accept"):
+	#	_on_buy_sell_button_pressed()
 
 func open(): #open stats 
 	status = "open"
 	self.show()
-	grab_focus()
+	buy_sell_button.grab_focus()
 	update_stats()
 
 func close(): #close stats

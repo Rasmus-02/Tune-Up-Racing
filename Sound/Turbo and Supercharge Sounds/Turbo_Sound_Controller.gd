@@ -39,10 +39,10 @@ func sound_controller():
 			turbo_charge.pitch_scale = (engine.boost_turbo ** 0.4 + 0.50) * sound_rng
 			turbo_charge.volume_db = -75 + 60 * engine.airflow_post_turbo ** 0.2
 			
-			if Input.is_action_pressed("Forward") and engine.shift_cooldown != true:
+			if engine.forward > 0 and engine.shift_cooldown != true:
 				surging = false
 			
-			if ((Input.is_action_just_released("Forward") and engine.dyno != 2 and engine.dyno != 3) or (engine.shift_cooldown and surging == false)) and turbo_flutter.is_playing() == false:
+			if ((engine.forward <= 0 and engine.dyno != 2 and engine.dyno != 3) or (engine.shift_cooldown and surging == false)) and turbo_flutter.is_playing() == false:
 				surging = true
 				turbo_flutter.volume_db = -80 + 83 * (engine.boost_turbo / 3)**0.1
 				turbo_flutter.pitch_scale = 0.7 + (200.0 / engine.turbo_size) / 8.0 #Smaller Turbos higher pitch surge

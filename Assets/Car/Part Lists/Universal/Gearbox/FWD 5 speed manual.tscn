@@ -13,7 +13,7 @@ normal_texture = ExtResource("3_0ldyc")
 specular_texture = ExtResource("4_foa3l")
 specular_shininess = 0.5
 
-[node name="FWD 5 speed manual" type="Node2D"]
+[node name="FWD 5 Speed Manual Gearbox" type="Node2D"]
 script = ExtResource("1_csx2m")
 rarity = "uncommon"
 Part_Number = 1

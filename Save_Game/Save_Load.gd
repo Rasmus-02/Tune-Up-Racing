@@ -173,8 +173,16 @@ func inv_add(item_to_add): #for adding parts to the players inventory (works dif
 	#2 = Part type (what type of part it is), 3 = Part number (what part in specific it is), 
 	#4 = the key it has, 5 = durability)
 	#{Type, ID, Part_Type, Part_number, Key, Durablility} 
+	
+	var id = null #Gets defined in the if statements bellow because of different names
+	if item_to_add.type == 0:
+		id = item_to_add.Car_ID
+	elif item_to_add.type == 1:
+		id = item_to_add.Engine_ID
+	
+	var dict_format = {"Type" : item_to_add.type, "ID" : id, "Part_Type" : item_to_add.id[1], "Part_number" : item_to_add.Part_Number, "Key" : null, "Durability" : item_to_add.durability}
 	var i = 0
-	var part = id_to_string(item_to_add) #Convert int id to string names
+	var part = id_to_string(dict_format) #Convert int id to string names
 	#Get correct key
 	if part_inventory != null:
 		#send correct part type directory to largest_key() function
@@ -182,9 +190,9 @@ func inv_add(item_to_add): #for adding parts to the players inventory (works dif
 	else:
 		i = 0
 	temp_key_part = i
-	item_to_add.Key = temp_key_part
+	dict_format.Key = temp_key_part
 	#Adds a part to the correct place in part inventory
-	part_inventory.get(part[0]).get(part[1])[i] = item_to_add #adds one item to a specified category
+	part_inventory.get(part[0]).get(part[1])[i] = dict_format #adds one item to a specified category
 	save() #saves the car to a JSON fil
 
 
@@ -196,10 +204,31 @@ func remove_car(INDEX):
 	cars = load_file("cars")
 	cars.erase(str(INDEX))
 	save()
-func remove_inv(INDEX): #TODO
-	part_inventory = load_file("part_inventory")
-	part_inventory.erase(str(INDEX))
-	save()
+func remove_inv(item_to_remove): #for adding parts to the players inventory (works differently from car and engine)
+	#adds a part to the dictionary 
+	#(part format [0 = Type(0 = Car 1 = Engine), 1 = ID (what car or engine it is for), 
+	#2 = Part type (what type of part it is), 3 = Part number (what part in specific it is), 
+	#4 = the key it has, 5 = durability)
+	#{Type, ID, Part_Type, Part_number, Key, Durablility} 
+	#Check if engine or car
+	var id = null
+	if "Engine_ID" in item_to_remove: 
+		id = item_to_remove.Engine_ID #if engine
+	else:
+		id = item_to_remove.Car_ID #if car
+	#Get part to string form
+	var dict_format = {"Type" : item_to_remove.type, "ID" : id, "Part_Type" : item_to_remove.id[1], "Part_number" : item_to_remove.Part_Number, "Key" : null, "Durability" : item_to_remove.durability}
+	var part = id_to_string(dict_format) #Convert int id to string name
+	#Find the item in part_inventory:
+	var part_key : int
+	for inv_part in part_inventory.get(part[0]).get(part[1]).values():
+		print("part_key ",inv_part,"   inv_part.Key ",dict_format)
+		if inv_part.ID == dict_format.ID and inv_part.Part_number == dict_format.Part_number and inv_part.Durability == dict_format.Durability:
+			part_key = inv_part.Key
+	print("PART IN SAVE FILE: ", part_inventory.get(part[0]).get(part[1]).get(part_key),"  Key: ", part_key)#part_inventory.get(part[0]).get(part[1]).get(str(part_key)))
+	part_inventory.get(part[0]).get(part[1]).erase(str(part_key)) #get the item at correct key and remove it
+	part_inventory.get(part[0]).get(part[1]).erase(part_key)
+	save() #saves the changes
 
 
 func largest_key(category, _part_location):

@@ -7,11 +7,8 @@ var player_placing : int
 var start = false
 
 func _process(_delta):
-	if Input.is_action_just_pressed("Handbrake"):
-		start = true
-	
 	#populate the placing list
-	if start == true:
+	if RaceStatus.started:
 		set_placings()
 
 func set_placings():

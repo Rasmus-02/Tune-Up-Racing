@@ -377,11 +377,13 @@ func update_car_parts():
 	self.get_child(0).get_child(0).get_child(0).in_garage = in_garage
 	update_stats()
 
+var parts = [chassi, driveshaft, subframe, fenders, f_bumper, r_bumper, hood, headlights, taillights, spoiler, mirrors, gearbox, radiator,exhaust,brakes,suspension,tires,wheels]
 #updates the stats from car_spawner
 func update_stats():
 	specific_parts = get_child(0).get_child(0).get_child(0).get_child(0) #from part list specific to the engine
 	universal_parts = get_child(0).get_child(0).get_child(0).get_child(1) #from universal part list
-	var parts = [chassi, driveshaft, subframe, fenders, f_bumper, r_bumper, hood, headlights, taillights, spoiler, mirrors, gearbox, radiator,exhaust,brakes,suspension,tires,wheels]
+	
+	#Clears the list
 	for i in parts.size():
 		if parts[i] != null:
 			parts[i].queue_free()
@@ -404,6 +406,8 @@ func update_stats():
 	suspension = universal_parts.suspension[selected_suspension].instantiate()
 	tires = universal_parts.tires[selected_tires].instantiate()
 	wheels = universal_parts.wheels[selected_wheels].instantiate()
+	
+
 	
 	var node = get_child(0).get_child(0).get_node("Part Selector")
 	weight = chassi.weight + driveshaft.weight + subframe.weight + fenders.weight + f_bumper.weight + r_bumper.weight + hood.weight + headlights.weight + taillights.weight + spoiler.weight + mirrors.weight + brakes.weight + suspension.weight + tires.weight + wheels.weight  + gearbox.weight + radiator.weight + exhaust.weight + engine.weight
@@ -512,7 +516,7 @@ func  _physics_process(delta):
 			light_controll("headlights",true, 1)
 			gearbox_function()
 			_on_gear_change_timer_timeout()
-			if SelectedScene.scene == "Track": #Make it so the car can move, on dyno the car should not move
+			if SelectedScene.scene == "Track" and RaceStatus.started == true: #Make it so the car can move, on dyno the car should not move
 				rubberbanding = $Placing.performance_bonus
 				get_input()
 				calculate_steering(delta)

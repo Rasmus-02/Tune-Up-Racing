@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://c2temcei51jwy"]
+[gd_scene load_steps=22 format=3 uid="uid://c2temcei51jwy"]
 
 [ext_resource type="Script" path="res://Assets/Player Character/Player.gd" id="1_bbvfw"]
 [ext_resource type="Texture2D" uid="uid://b350jwt2tgchl" path="res://addons/rmsmartshape/assets/light1-1.png" id="2_sien1"]
@@ -11,6 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://dwao6lrmjmnts" path="res://Textures/UI/Car Handling/Move Icon.png" id="6_cxgng"]
 [ext_resource type="Texture2D" uid="uid://bo6v0dexo3kvb" path="res://Textures/UI/Car Handling/Info Icon.png" id="7_dth36"]
 [ext_resource type="Texture2D" uid="uid://c4m3aknxd0f4u" path="res://Textures/UI/Car Handling/Dyno Icon.png" id="7_xbq35"]
+[ext_resource type="AudioStream" uid="uid://ye1fn2chltuq" path="res://Sound/Footsteps.mp3" id="8_4jgnn"]
 [ext_resource type="PackedScene" uid="uid://c4yqhcejl0djd" path="res://Assets/Player Character/player_statcard.tscn" id="12_tht3q"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_vyxlc"]
@@ -80,6 +81,9 @@ specular_shininess = 0.12
 radius = 17.8532
 height = 36.4481
 
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_df70x"]
+polygon = PackedVector2Array(-15, -6, -14, -6, -14, -7, -11, -7, -11, -6, -10, -6, -10, -5, -8, -5, -8, -6, -7, -7, -3, -7, -2, -6, -2, -7, 2, -7, 2, -6, 3, -7, 7, -7, 8, -6, 8, -5, 10, -5, 10, -6, 11, -6, 11, -7, 14, -7, 14, -6, 15, -6, 15, 3, 14, 3, 14, 4, 12, 4, 12, 5, 4, 5, 4, 6, 2, 6, 2, 7, -2, 7, -2, 6, -4, 6, -4, 5, -12, 5, -12, 4, -14, 4, -14, 3, -15, 3)
+
 [node name="Player" type="Node2D"]
 
 [node name="Character" type="CharacterBody2D" parent="."]
@@ -139,12 +143,20 @@ vframes = 6
 position = Vector2(-0.0208673, -5.31964)
 shape = SubResource("CapsuleShape2D_xicv1")
 
+[node name="LightOccluder2D" type="LightOccluder2D" parent="Character/AnimatedSprite2D"]
+occluder = SubResource("OccluderPolygon2D_df70x")
+
 [node name="Computer" parent="Character" node_paths=PackedStringArray("player") instance=ExtResource("3_82x7n")]
 visible = false
 light_mask = 524288
 z_index = 2000
 position = Vector2(0, 15.35)
 player = NodePath("..")
+
+[node name="Footsteps" type="AudioStreamPlayer" parent="Character"]
+stream = ExtResource("8_4jgnn")
+volume_db = -10.628
+autoplay = true
 
 [node name="Interact_Menu_Garage" type="HBoxContainer" parent="."]
 visible = false
