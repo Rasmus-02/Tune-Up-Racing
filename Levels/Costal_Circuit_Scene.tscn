@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://vwfaixjbvl6j"]
+[gd_scene load_steps=23 format=3 uid="uid://vwfaixjbvl6j"]
 
 [ext_resource type="PackedScene" uid="uid://bxei516mvsvwr" path="res://UI/Pause/pause_menu.tscn" id="1_62obq"]
 [ext_resource type="Script" path="res://Levels/Scene_changer.gd" id="1_vtmsh"]
@@ -14,6 +14,7 @@
 [ext_resource type="Texture2D" uid="uid://sls8i3whvytm" path="res://Textures/UI/In Race/Start Lights.png" id="9_vuq2v"]
 [ext_resource type="Texture2D" uid="uid://ctgrd0bewx4qk" path="res://Textures/UI/In Race/Start Lights_Light.png" id="10_dhpsx"]
 [ext_resource type="Script" path="res://UI/Race UI/Start Lights.gd" id="10_yw4g0"]
+[ext_resource type="AudioStream" uid="uid://dvlc8bt8bi17a" path="res://Sound/StartLights.mp3" id="12_qq8mv"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_3tn2f"]
 atlas = ExtResource("10_dhpsx")
@@ -171,6 +172,8 @@ one_shot = true
 [node name="Lights" type="AnimatedSprite2D" parent="UI/AspectRatioContainer/Start Lights"]
 sprite_frames = SubResource("SpriteFrames_5r1yl")
 animation = &"Start"
+frame = 6
+frame_progress = 1.0
 
 [node name="Press Button Text" type="Label" parent="UI/AspectRatioContainer/Start Lights"]
 offset_left = -145.763
@@ -181,6 +184,9 @@ scale = Vector2(0.745, 0.745)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 6
 text = "[Press Enter To Continue]"
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="UI/AspectRatioContainer/Start Lights"]
+stream = ExtResource("12_qq8mv")
 
 [node name="Current Time" type="Label" parent="UI"]
 visible = false

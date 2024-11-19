@@ -9,7 +9,7 @@
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_hor5o"]
 shader = ExtResource("2_34u44")
-shader_parameter/import_new_color = null
+shader_parameter/import_new_color = Vector4(0.15, 0.004, 0.216, 0)
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_uy0d4"]
 diffuse_texture = ExtResource("2_07d14")
@@ -40,6 +40,7 @@ material = SubResource("ShaderMaterial_hor5o")
 texture = SubResource("CanvasTexture_uy0d4")
 
 [node name="LightOccluder2D" type="LightOccluder2D" parent="Sprite2D"]
+visible = false
 occluder = SubResource("OccluderPolygon2D_eq7jf")
 
 [node name="Hikari Tasai Windows" parent="Sprite2D" instance=ExtResource("4_123jn")]

@@ -111,6 +111,15 @@ var gearbox_durability = 100
 var radiator_durability = 100
 var exhaust_durability = 100
 
+@export var chassi_color = Color(1,1,1,1)
+@export var fenders_color = Color(1,1,1,1)
+@export var f_bumper_color = Color(1,1,1,1)
+@export var r_bumper_color = Color(1,1,1,1)
+@export var hood_color = Color(1,1,1,1)
+@export var headlights_color = Color(1,1,1,1)
+@export var taillights_color = Color(1,1,1,1)
+@export var spoiler_color = Color(1,1,1,1)
+@export var mirrors_color = Color(1,1,1,1)
 
 var specific_parts = null
 var universal_parts = null
@@ -238,6 +247,16 @@ func load_car(index):
 			i+=1
 		selected_color = Color(float(r),float(g),float(b),1.0) #sets the color with alpha of 1
 		
+		chassi_color = selected_color
+		fenders_color = selected_color
+		f_bumper_color = selected_color
+		r_bumper_color = selected_color
+		hood_color = selected_color
+		headlights_color = selected_color
+		taillights_color = selected_color
+		spoiler_color = selected_color
+		mirrors_color = selected_color
+		
 		#Damage stats
 		chassi_durability = load_file.chassi[1]
 		f_bumper_durability = load_file.f_bumper[1]
@@ -281,6 +300,15 @@ func load_car(index):
 		selected_radiator = 0
 		selected_exhaust = 0
 		selected_color = Color(0.5,0.5,0.5, 1)
+		chassi_color = selected_color
+		fenders_color = selected_color
+		f_bumper_color = selected_color
+		r_bumper_color = selected_color
+		hood_color = selected_color
+		headlights_color = selected_color
+		taillights_color = selected_color
+		spoiler_color = selected_color
+		mirrors_color = selected_color
 		
 		#Damage stats
 		chassi_durability = 100
@@ -326,6 +354,16 @@ func load_car_from_algorithm(dictionary):
 	selected_gearbox = dictionary.gearbox
 	selected_radiator = dictionary.radiator
 	selected_exhaust = dictionary.exhaust
+	
+	chassi_color = selected_color
+	fenders_color = selected_color
+	f_bumper_color = selected_color
+	r_bumper_color = selected_color
+	hood_color = selected_color
+	headlights_color = selected_color
+	taillights_color = selected_color
+	spoiler_color = selected_color
+	mirrors_color = selected_color
 	
 	#Damage stats
 	chassi_durability = 100
@@ -457,14 +495,21 @@ func update_stats():
 
 #Change the color of the car
 func paint_car():
+	pass
 	var paint_parts = [chassi, driveshaft, subframe, fenders, f_bumper, r_bumper, hood, headlights, taillights, spoiler, mirrors, gearbox, radiator,exhaust,brakes,suspension,tires,wheels]
 	
-	for part in paint_parts:
-		if part != null and part.get_node("Sprite2D").get_script() != null:
-			print(part, " Painted")
-			part.paint_part()
-		
-	paint_parts.clear()
+	#chassi.paint_part("red", "PAINT CAR")
+	#chassi.get_node("Sprite2D").material.set_shader_parameter("import_new_color", Color.RED)
+	
+	#for part in paint_parts:
+	#	if part != null and part.get_node("Sprite2D").get_script() != null:
+	#		part.paint_part(Color.AQUAMARINE)
+	#for part in paint_parts:
+	#	if part != null and part.get_node("Sprite2D").get_script() != null:
+	#		print(part, " Painted")
+	#		part.paint_part()
+	#	
+	#paint_parts.clear()
 #endregion
 
 
@@ -493,6 +538,7 @@ func is_loaded():
 		engine.is_running = false
 
 func  _physics_process(delta):
+	#paint_car()
 	export_signal()
 	if is_ready == false:
 			car_constructor()
@@ -530,8 +576,11 @@ func  _physics_process(delta):
 			$"Sound effects/Tire Screetch".pitch_scale = 1 + (sound_rng*1.2 * (1 + drag*-10000))
 			
 			#Wind Sound
-			$"Sound effects/Wind Noise".volume_db = -80 + 83 * ((speed_kmh / 200)** 0.2)
-			$"Sound effects/Wind Noise".pitch_scale = 1 + 1 * (speed_kmh / 500)
+			if player == true:
+				$"Sound effects/Wind Noise".volume_db = -80 + 83 * ((speed_kmh / 200)** 0.2)
+				$"Sound effects/Wind Noise".pitch_scale = 1 + 1 * (speed_kmh / 500)
+			else:
+				$"Sound effects/Wind Noise".volume_db = -80
 		else:
 			$"Sound effects/Tire Screetch".volume_db = -80
 			$"Sound effects/Tire Screetch".pitch_scale = 1

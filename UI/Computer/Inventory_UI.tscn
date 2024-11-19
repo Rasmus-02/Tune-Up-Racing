@@ -222,7 +222,7 @@ height = 130.0
 [node name="CanvasModulate" type="CanvasModulate" parent="Control/Part Stats/Display/Lighting"]
 color = Color(0.0392157, 0.113725, 0.172549, 1)
 
-[node name="Part Location" type="Marker2D" parent="Control/Part Stats/Display"]
+[node name="Part Location" type="Marker2D" parent="Control/Part Stats/Display" groups=["Computer"]]
 position = Vector2(292.95, 334.395)
 
 [node name="Buy Sell Button" type="Button" parent="Control/Part Stats"]

@@ -26,6 +26,7 @@ AssetList="*res://Assets/Algorithms/asset_list.tscn"
 Laptime="*res://Game_Logic/laptime.gd"
 Placing="*res://Game_Logic/placing.gd"
 RaceStatus="*res://Game_Logic/race_status.gd"
+Colors="*res://Libraries/colors.gd"
 
 [display]
 

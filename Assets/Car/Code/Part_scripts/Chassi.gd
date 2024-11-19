@@ -20,6 +20,24 @@ var id = [Car_ID,0,Part_Number,rarity] #Engine ID, Part type, Part number, rank
 
 var durability = 100 #100%
 
-func paint_part():
-	if $Sprite2D.get_script() != null:
-		$Sprite2D.paint(Color(1,0,0,1))
+
+
+#For Painting the part
+var car
+func _ready():
+	if get_parent() != null and get_parent().get_parent() != null and get_parent().get_parent().get_parent() != null:
+		car = get_parent().get_parent().get_parent().get_parent()
+
+func _process(delta):
+	if car != null and car.is_in_group("Car"):
+		paint_part(car.chassi_color)
+	elif get_parent().is_in_group("Computer"):
+		paint_part(get_parent().get_parent().get_parent().selected_color)
+
+func paint_part(color):
+	var new_material = ShaderMaterial.new()
+	var shader = load("res://Shaders/Test/ColorSelector.gdshader")
+	new_material.shader = shader
+	if $Sprite2D:
+		$Sprite2D.material = new_material
+		$Sprite2D.material.set_shader_parameter("import_new_color", color)

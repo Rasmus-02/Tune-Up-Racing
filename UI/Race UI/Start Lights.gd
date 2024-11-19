@@ -11,6 +11,7 @@ func _input(_event):
 func start():
 	$"Press Button Text".hide()
 	$Timer.start()
+	$AudioStreamPlayer2D.play()
 	$Lights.play("Start")
 
 func _on_timer_timeout():

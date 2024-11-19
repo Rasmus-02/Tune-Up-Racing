@@ -4,19 +4,6 @@ extends Sprite2D
 var origin = Color(0.0, 0.0, 0.0)
 var loaded = false
 
-func _ready():
-	if self.material != null:
-		self.material.set_shader_parameter("import_new_color", Color(1,1,1,1))
-
-func _process(delta):
-	pass
-	#if get_parent().name == "Nagata Koi Chassi":
-	#	if get_parent().get_parent().name == "Part Selector":
-	#		paint(Color(0,1.0,1,1))
-func paint(color):
-	if self.material != null:
-		self.material.set_shader_parameter("import_new_color", color)
-
 func change_color():
 	var new_color = Color(1.0, 0.0, 0.0)
 	var image: Image = self.texture.get_image()
@@ -54,3 +41,5 @@ func change_color():
 		var new_texture = ImageTexture.create_from_image(image)
 		self.texture.set_diffuse_texture(new_texture) 
 		i += 1
+
+

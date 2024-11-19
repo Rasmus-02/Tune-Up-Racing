@@ -11,6 +11,7 @@ extends Panel
 @export var buy_sell_button : Button
 var status = "closed"
 var selected_item = null
+var selected_color : Color
 
 #region Open / Close
 func _input(_event): #Check only when a button is pressed
@@ -71,10 +72,8 @@ func update_image(): #add the part to the scene as an image
 	selected_item.global_position = part_location.global_position
 	$"Display/Lighting/Light Axis".global_position = part_location.global_position
 	selected_item.z_index = 1
-	#Check if paintable
-	if selected_item.get_node("Sprite2D").get_script() != null:
-		selected_item.get_node("Sprite2D").import_new_color = Color(0.88173288106918, 0.81472492218018, 0.74073696136475)
-		selected_item.get_node("Sprite2D").change_color()
+	#Change color
+	selected_color = Color(0.86274510622025, 0.80392158031464, 0.76470589637756)
 
 #Function for getting the CORRECT stats to display in CORRECT order
 #region Stat
