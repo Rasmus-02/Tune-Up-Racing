@@ -1,6 +1,5 @@
-[gd_scene load_steps=23 format=3 uid="uid://vwfaixjbvl6j"]
+[gd_scene load_steps=22 format=3 uid="uid://vwfaixjbvl6j"]
 
-[ext_resource type="PackedScene" uid="uid://bxei516mvsvwr" path="res://UI/Pause/pause_menu.tscn" id="1_62obq"]
 [ext_resource type="Script" path="res://Levels/Scene_changer.gd" id="1_vtmsh"]
 [ext_resource type="PackedScene" uid="uid://ccebqq52ue0h3" path="res://Levels/Costal_Circuit.tscn" id="2_1evb1"]
 [ext_resource type="Texture2D" uid="uid://bw5ms55wbs345" path="res://Textures/UI/In Race/In race hud gauge.png" id="4_6r1gu"]
@@ -227,8 +226,5 @@ text = "Position: 2/8"
 position = Vector2(-1963.26, 0)
 texture = ExtResource("9_4rfxy")
 script = ExtResource("9_10ajj")
-
-[node name="Pause_Menu" parent="." instance=ExtResource("1_62obq")]
-visible = false
 
 [connection signal="timeout" from="UI/AspectRatioContainer/Start Lights/Timer" to="UI/AspectRatioContainer/Start Lights" method="_on_timer_timeout"]

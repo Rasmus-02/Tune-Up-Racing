@@ -1,13 +1,20 @@
-[gd_scene load_steps=10 format=3 uid="uid://bxei516mvsvwr"]
+[gd_scene load_steps=18 format=3 uid="uid://bxei516mvsvwr"]
 
 [ext_resource type="Script" path="res://UI/Pause/pause_menu.gd" id="1_gxb3s"]
 [ext_resource type="Shader" path="res://Shaders/Blur.gdshader" id="2_46dlv"]
 [ext_resource type="Theme" uid="uid://c7tubrt5yedxc" path="res://UI/Pause/Custom Menu.tres" id="2_wdjda"]
 [ext_resource type="Texture2D" uid="uid://ck2dwntd4pbea" path="res://Textures/UI/Pause/Settings Menu.png" id="3_5ee3y"]
+[ext_resource type="Script" path="res://UI/Pause/SettingsMenu.gd" id="5_5kapj"]
 [ext_resource type="Texture2D" uid="uid://dsnu5wef3oarb" path="res://Textures/UI/Pause/Pause Menu Button.png" id="5_6bwdl"]
+[ext_resource type="Texture2D" uid="uid://87styogytpcl" path="res://Textures/UI/Pause/Settings Menu Button General.png" id="5_32qnk"]
+[ext_resource type="Texture2D" uid="uid://bokrngucby3yy" path="res://Textures/UI/Pause/Settings Menu Button General Hovered.png" id="6_j8gcc"]
 [ext_resource type="Texture2D" uid="uid://cwbapn3ucth0l" path="res://Textures/UI/Pause/Pause Menu Button Hovered.png" id="6_qh2yd"]
 [ext_resource type="Texture2D" uid="uid://dvc55ixojomne" path="res://Textures/UI/Pause/Pause Menu Quit Button.png" id="7_61kuj"]
 [ext_resource type="Texture2D" uid="uid://ctm1jvfu6wtve" path="res://Textures/UI/Pause/Pause Menu Quit Button Hovered.png" id="8_2oqh3"]
+[ext_resource type="Texture2D" uid="uid://badpj5pxvjmyq" path="res://Textures/UI/Pause/Settings Menu Button Volume.png" id="9_6mm0k"]
+[ext_resource type="Texture2D" uid="uid://dfdh50xe8rmwv" path="res://Textures/UI/Pause/Settings Menu Button Volume Hovered.png" id="10_srkm3"]
+[ext_resource type="Texture2D" uid="uid://d02p67ovipv0q" path="res://Textures/UI/Pause/Settings Menu Button Keybinds.png" id="11_0ug85"]
+[ext_resource type="Texture2D" uid="uid://dsgr72h72mcp3" path="res://Textures/UI/Pause/Settings Menu Button Keybinds Hovered.png" id="12_5rjlk"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_fukf4"]
 shader = ExtResource("2_46dlv")
@@ -17,10 +24,14 @@ shader_parameter/blurAmount2 = 2.547
 shader_parameter/whiteTintIntensity1 = 0.127
 shader_parameter/whiteTintIntensity2 = 0.077
 
-[node name="Pause_Menu" type="CanvasLayer" node_paths=PackedStringArray("restart", "resume")]
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_b68as"]
+
+[node name="Pause_Menu" type="CanvasLayer" node_paths=PackedStringArray("restart", "resume", "settings", "menu")]
 script = ExtResource("1_gxb3s")
-restart = NodePath("Control/MarginContainer/PauseMenu/VBoxContainer/Restart")
-resume = NodePath("Control/MarginContainer/PauseMenu/VBoxContainer/Resume")
+restart = NodePath("Control/MarginContainer/PauseMenu/Buttons/Restart")
+resume = NodePath("Control/MarginContainer/PauseMenu/Buttons/Resume")
+settings = NodePath("Control/MarginContainer/SettingsMenu")
+menu = NodePath("Control/MarginContainer/PauseMenu")
 
 [node name="Control" type="Control" parent="."]
 layout_mode = 3
@@ -29,10 +40,8 @@ theme = ExtResource("2_wdjda")
 
 [node name="MarginContainer" type="MarginContainer" parent="Control"]
 layout_mode = 0
-offset_left = -313.0
-offset_top = -630.0
-offset_right = 2247.0
-offset_bottom = 810.0
+offset_right = 2560.0
+offset_bottom = 1440.0
 
 [node name="ColorRect" type="ColorRect" parent="Control/MarginContainer"]
 light_mask = 1023
@@ -40,18 +49,299 @@ material = SubResource("ShaderMaterial_fukf4")
 custom_minimum_size = Vector2(2560, 1440)
 layout_mode = 2
 
-[node name="SettingsMenu" type="Sprite2D" parent="Control/MarginContainer"]
-visible = false
+[node name="SettingsMenu" type="Sprite2D" parent="Control/MarginContainer" node_paths=PackedStringArray("general_settings", "audio_settings")]
 z_index = 1
 position = Vector2(1280, 720)
 scale = Vector2(8, 8)
 texture = ExtResource("3_5ee3y")
+script = ExtResource("5_5kapj")
+general_settings = NodePath("General Settings")
+audio_settings = NodePath("Audio Settings")
+
+[node name="Buttons" type="VBoxContainer" parent="Control/MarginContainer/SettingsMenu"]
+offset_left = -47.125
+offset_top = -49.75
+offset_right = 5.875
+offset_bottom = 50.25
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme = ExtResource("2_wdjda")
+theme_override_constants/separation = 0
+alignment = 1
+
+[node name="General Settings" type="TextureButton" parent="Control/MarginContainer/SettingsMenu/Buttons"]
+layout_mode = 2
+texture_normal = ExtResource("5_32qnk")
+texture_pressed = ExtResource("6_j8gcc")
+texture_hover = ExtResource("6_j8gcc")
+texture_focused = ExtResource("6_j8gcc")
+
+[node name="Label" type="Label" parent="Control/MarginContainer/SettingsMenu/Buttons/General Settings"]
+layout_mode = 0
+offset_left = 7.5
+offset_top = 18.625
+offset_right = 137.5
+offset_bottom = 82.625
+scale = Vector2(0.25, 0.25)
+theme_override_colors/font_color = Color(0.266667, 0.462745, 1, 1)
+theme_override_font_sizes/font_size = 16
+text = "General"
+
+[node name="Audio Settings" type="TextureButton" parent="Control/MarginContainer/SettingsMenu/Buttons"]
+layout_mode = 2
+texture_normal = ExtResource("9_6mm0k")
+texture_pressed = ExtResource("10_srkm3")
+texture_hover = ExtResource("10_srkm3")
+texture_focused = ExtResource("10_srkm3")
+
+[node name="Label" type="Label" parent="Control/MarginContainer/SettingsMenu/Buttons/Audio Settings"]
+layout_mode = 0
+offset_left = 8.625
+offset_top = 18.625
+offset_right = 158.625
+offset_bottom = 82.625
+scale = Vector2(0.25, 0.25)
+theme_override_colors/font_color = Color(0.266667, 0.462745, 1, 1)
+theme_override_font_sizes/font_size = 16
+text = "Audio"
+
+[node name="Keybind Settings" type="TextureButton" parent="Control/MarginContainer/SettingsMenu/Buttons"]
+visible = false
+layout_mode = 2
+texture_normal = ExtResource("11_0ug85")
+texture_pressed = ExtResource("12_5rjlk")
+texture_hover = ExtResource("12_5rjlk")
+texture_focused = ExtResource("12_5rjlk")
+
+[node name="Label" type="Label" parent="Control/MarginContainer/SettingsMenu/Buttons/Keybind Settings"]
+layout_mode = 0
+offset_left = 7.0
+offset_top = 19.0
+offset_right = 37.0
+offset_bottom = 32.0
+scale = Vector2(0.25, 0.25)
+theme_override_colors/font_color = Color(0.266667, 0.462745, 1, 1)
+theme_override_font_sizes/font_size = 16
+text = "Controls"
+
+[node name="General Settings" type="Label" parent="Control/MarginContainer/SettingsMenu"]
+custom_minimum_size = Vector2(30, 0)
+offset_left = -13.0
+offset_top = -34.5
+offset_right = 117.0
+offset_bottom = -13.5
+scale = Vector2(0.4, 0.4)
+theme_override_font_sizes/font_size = 26
+theme_override_styles/normal = SubResource("StyleBoxEmpty_b68as")
+text = "General Settings"
+horizontal_alignment = 1
+
+[node name="General Settings Tab" type="HBoxContainer" parent="Control/MarginContainer/SettingsMenu/General Settings"]
+offset_left = -2.09549
+offset_top = 29.9991
+offset_right = 133.905
+offset_bottom = 65.9991
+
+[node name="Text" type="VBoxContainer" parent="Control/MarginContainer/SettingsMenu/General Settings/General Settings Tab"]
+custom_minimum_size = Vector2(70, 0)
+layout_mode = 2
+
+[node name="Camera" type="Label" parent="Control/MarginContainer/SettingsMenu/General Settings/General Settings Tab/Text"]
+custom_minimum_size = Vector2(30, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.266667, 0.462745, 1, 1)
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxEmpty_b68as")
+text = "Camera Mode"
+
+[node name="Display" type="Label" parent="Control/MarginContainer/SettingsMenu/General Settings/General Settings Tab/Text"]
+custom_minimum_size = Vector2(30, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.266667, 0.462745, 1, 1)
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxEmpty_b68as")
+text = "Display Mode"
+
+[node name="Resolution" type="Label" parent="Control/MarginContainer/SettingsMenu/General Settings/General Settings Tab/Text"]
+custom_minimum_size = Vector2(30, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.266667, 0.462745, 1, 1)
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxEmpty_b68as")
+text = "Resolution"
+
+[node name="V-Sync" type="Label" parent="Control/MarginContainer/SettingsMenu/General Settings/General Settings Tab/Text"]
+custom_minimum_size = Vector2(30, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.266667, 0.462745, 1, 1)
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxEmpty_b68as")
+text = "V-Sync"
+
+[node name="Settings" type="VBoxContainer" parent="Control/MarginContainer/SettingsMenu/General Settings/General Settings Tab"]
+layout_mode = 2
+
+[node name="Camera" type="OptionButton" parent="Control/MarginContainer/SettingsMenu/General Settings/General Settings Tab/Settings"]
+layout_mode = 2
+theme = ExtResource("2_wdjda")
+theme_override_colors/font_color = Color(0.733333, 0.231373, 0.231373, 1)
+theme_override_colors/font_pressed_color = Color(0.815686, 0.203922, 0.266667, 1)
+theme_override_colors/font_hover_color = Color(0.815686, 0.203922, 0.266667, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.815686, 0.203922, 0.266667, 1)
+theme_override_colors/font_focus_color = Color(0.815686, 0.203922, 0.266667, 1)
+theme_override_font_sizes/font_size = 20
+item_count = 2
+selected = 0
+popup/item_0/text = "Static"
+popup/item_0/id = 0
+popup/item_1/text = "Dynamic"
+popup/item_1/id = 1
+
+[node name="Display" type="OptionButton" parent="Control/MarginContainer/SettingsMenu/General Settings/General Settings Tab/Settings"]
+layout_mode = 2
+theme = ExtResource("2_wdjda")
+theme_override_colors/font_color = Color(0.733333, 0.231373, 0.231373, 1)
+theme_override_colors/font_pressed_color = Color(0.815686, 0.203922, 0.266667, 1)
+theme_override_colors/font_hover_color = Color(0.815686, 0.203922, 0.266667, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.815686, 0.203922, 0.266667, 1)
+theme_override_colors/font_focus_color = Color(0.815686, 0.203922, 0.266667, 1)
+theme_override_font_sizes/font_size = 20
+item_count = 3
+selected = 0
+popup/item_0/text = "Fullscreen"
+popup/item_0/id = 0
+popup/item_1/text = "Borderless"
+popup/item_1/id = 1
+popup/item_2/text = "Windowed"
+popup/item_2/id = 2
+
+[node name="Resolution" type="OptionButton" parent="Control/MarginContainer/SettingsMenu/General Settings/General Settings Tab/Settings"]
+layout_mode = 2
+theme = ExtResource("2_wdjda")
+theme_override_colors/font_color = Color(0.733333, 0.231373, 0.231373, 1)
+theme_override_colors/font_pressed_color = Color(0.815686, 0.203922, 0.266667, 1)
+theme_override_colors/font_hover_color = Color(0.815686, 0.203922, 0.266667, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.815686, 0.203922, 0.266667, 1)
+theme_override_colors/font_focus_color = Color(0.815686, 0.203922, 0.266667, 1)
+theme_override_font_sizes/font_size = 20
+item_count = 3
+selected = 1
+popup/item_0/text = "1280x720"
+popup/item_0/id = 0
+popup/item_1/text = "1920x1080"
+popup/item_1/id = 1
+popup/item_2/text = "2560x1440"
+popup/item_2/id = 2
+
+[node name="V-Sync" type="OptionButton" parent="Control/MarginContainer/SettingsMenu/General Settings/General Settings Tab/Settings"]
+layout_mode = 2
+theme = ExtResource("2_wdjda")
+theme_override_colors/font_color = Color(0.733333, 0.231373, 0.231373, 1)
+theme_override_colors/font_pressed_color = Color(0.815686, 0.203922, 0.266667, 1)
+theme_override_colors/font_hover_color = Color(0.815686, 0.203922, 0.266667, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.815686, 0.203922, 0.266667, 1)
+theme_override_colors/font_focus_color = Color(0.815686, 0.203922, 0.266667, 1)
+theme_override_font_sizes/font_size = 20
+item_count = 2
+selected = 0
+popup/item_0/text = "Off"
+popup/item_0/id = 0
+popup/item_1/text = "On"
+popup/item_1/id = 1
+
+[node name="Audio Settings" type="Label" parent="Control/MarginContainer/SettingsMenu"]
+visible = false
+custom_minimum_size = Vector2(30, 0)
+offset_left = -13.0
+offset_top = -34.5
+offset_right = 117.0
+offset_bottom = -13.5
+scale = Vector2(0.4, 0.4)
+theme_override_font_sizes/font_size = 26
+theme_override_styles/normal = SubResource("StyleBoxEmpty_b68as")
+text = "Audio Settings"
+horizontal_alignment = 1
+
+[node name="General Settings Tab" type="HBoxContainer" parent="Control/MarginContainer/SettingsMenu/Audio Settings"]
+offset_left = -2.09549
+offset_top = 29.9991
+offset_right = 133.905
+offset_bottom = 65.9991
+
+[node name="Text" type="VBoxContainer" parent="Control/MarginContainer/SettingsMenu/Audio Settings/General Settings Tab"]
+custom_minimum_size = Vector2(70, 0)
+layout_mode = 2
+
+[node name="General Volume" type="Label" parent="Control/MarginContainer/SettingsMenu/Audio Settings/General Settings Tab/Text"]
+custom_minimum_size = Vector2(30, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.266667, 0.462745, 1, 1)
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxEmpty_b68as")
+text = "General Volume"
+
+[node name="Car Volume" type="Label" parent="Control/MarginContainer/SettingsMenu/Audio Settings/General Settings Tab/Text"]
+custom_minimum_size = Vector2(30, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.266667, 0.462745, 1, 1)
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxEmpty_b68as")
+text = "Car Volume"
+
+[node name="Music Volume" type="Label" parent="Control/MarginContainer/SettingsMenu/Audio Settings/General Settings Tab/Text"]
+custom_minimum_size = Vector2(30, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.266667, 0.462745, 1, 1)
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxEmpty_b68as")
+text = "Music Voulme"
+
+[node name="Ambient Volume" type="Label" parent="Control/MarginContainer/SettingsMenu/Audio Settings/General Settings Tab/Text"]
+custom_minimum_size = Vector2(30, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.266667, 0.462745, 1, 1)
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxEmpty_b68as")
+text = "Ambient Volume"
+
+[node name="Settings" type="VBoxContainer" parent="Control/MarginContainer/SettingsMenu/Audio Settings/General Settings Tab"]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="General Volume" type="HSlider" parent="Control/MarginContainer/SettingsMenu/Audio Settings/General Settings Tab/Settings"]
+custom_minimum_size = Vector2(58.86, 20)
+layout_mode = 2
+theme = ExtResource("2_wdjda")
+max_value = 1.0
+step = 0.05
+
+[node name="Car Volume" type="HSlider" parent="Control/MarginContainer/SettingsMenu/Audio Settings/General Settings Tab/Settings"]
+custom_minimum_size = Vector2(58.86, 20)
+layout_mode = 2
+theme = ExtResource("2_wdjda")
+max_value = 1.0
+step = 0.05
+
+[node name="Music Volume" type="HSlider" parent="Control/MarginContainer/SettingsMenu/Audio Settings/General Settings Tab/Settings"]
+custom_minimum_size = Vector2(58.86, 20)
+layout_mode = 2
+theme = ExtResource("2_wdjda")
+max_value = 1.0
+step = 0.05
+
+[node name="Ambient Volume" type="HSlider" parent="Control/MarginContainer/SettingsMenu/Audio Settings/General Settings Tab/Settings"]
+custom_minimum_size = Vector2(58.86, 20)
+layout_mode = 2
+theme = ExtResource("2_wdjda")
+max_value = 1.0
+step = 0.05
 
 [node name="PauseMenu" type="Sprite2D" parent="Control/MarginContainer"]
+visible = false
 position = Vector2(1280, 731)
 scale = Vector2(8, 8)
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Control/MarginContainer/PauseMenu"]
+[node name="Buttons" type="VBoxContainer" parent="Control/MarginContainer/PauseMenu"]
 offset_left = -27.0
 offset_top = -49.0
 offset_right = 26.0
@@ -62,14 +352,14 @@ theme = ExtResource("2_wdjda")
 theme_override_constants/separation = 0
 alignment = 1
 
-[node name="Resume" type="TextureButton" parent="Control/MarginContainer/PauseMenu/VBoxContainer"]
+[node name="Resume" type="TextureButton" parent="Control/MarginContainer/PauseMenu/Buttons"]
 layout_mode = 2
 texture_normal = ExtResource("5_6bwdl")
 texture_pressed = ExtResource("5_6bwdl")
 texture_hover = ExtResource("6_qh2yd")
 texture_focused = ExtResource("5_6bwdl")
 
-[node name="Label" type="Label" parent="Control/MarginContainer/PauseMenu/VBoxContainer/Resume"]
+[node name="Label" type="Label" parent="Control/MarginContainer/PauseMenu/Buttons/Resume"]
 layout_mode = 0
 offset_left = 10.125
 offset_top = 1.0
@@ -79,14 +369,14 @@ scale = Vector2(0.25, 0.25)
 theme_override_colors/font_color = Color(0.266667, 0.462745, 1, 1)
 text = "Resume"
 
-[node name="Settings" type="TextureButton" parent="Control/MarginContainer/PauseMenu/VBoxContainer"]
+[node name="Settings" type="TextureButton" parent="Control/MarginContainer/PauseMenu/Buttons"]
 layout_mode = 2
 texture_normal = ExtResource("5_6bwdl")
 texture_pressed = ExtResource("5_6bwdl")
 texture_hover = ExtResource("6_qh2yd")
 texture_focused = ExtResource("5_6bwdl")
 
-[node name="Label" type="Label" parent="Control/MarginContainer/PauseMenu/VBoxContainer/Settings"]
+[node name="Label" type="Label" parent="Control/MarginContainer/PauseMenu/Buttons/Settings"]
 layout_mode = 0
 offset_left = 8.375
 offset_top = 0.625
@@ -96,14 +386,14 @@ scale = Vector2(0.25, 0.25)
 theme_override_colors/font_color = Color(0.266667, 0.462745, 1, 1)
 text = "Settings"
 
-[node name="Restart" type="TextureButton" parent="Control/MarginContainer/PauseMenu/VBoxContainer"]
+[node name="Restart" type="TextureButton" parent="Control/MarginContainer/PauseMenu/Buttons"]
 layout_mode = 2
 texture_normal = ExtResource("5_6bwdl")
 texture_pressed = ExtResource("5_6bwdl")
 texture_hover = ExtResource("6_qh2yd")
 texture_focused = ExtResource("5_6bwdl")
 
-[node name="Label" type="Label" parent="Control/MarginContainer/PauseMenu/VBoxContainer/Restart"]
+[node name="Label" type="Label" parent="Control/MarginContainer/PauseMenu/Buttons/Restart"]
 layout_mode = 0
 offset_left = 8.625
 offset_top = 1.125
@@ -113,14 +403,14 @@ scale = Vector2(0.25, 0.25)
 theme_override_colors/font_color = Color(0.266667, 0.462745, 1, 1)
 text = "Restart"
 
-[node name="Quit" type="TextureButton" parent="Control/MarginContainer/PauseMenu/VBoxContainer"]
+[node name="Quit" type="TextureButton" parent="Control/MarginContainer/PauseMenu/Buttons"]
 layout_mode = 2
 texture_normal = ExtResource("7_61kuj")
 texture_pressed = ExtResource("8_2oqh3")
 texture_hover = ExtResource("8_2oqh3")
 texture_focused = ExtResource("8_2oqh3")
 
-[node name="Label" type="Label" parent="Control/MarginContainer/PauseMenu/VBoxContainer/Quit"]
+[node name="Label" type="Label" parent="Control/MarginContainer/PauseMenu/Buttons/Quit"]
 layout_mode = 0
 offset_left = 17.75
 offset_top = 0.625
@@ -134,6 +424,9 @@ text = "Quit"
 wait_time = 0.05
 one_shot = true
 
-[connection signal="pressed" from="Control/MarginContainer/PauseMenu/VBoxContainer/Resume" to="." method="_on_resume_pressed"]
-[connection signal="pressed" from="Control/MarginContainer/PauseMenu/VBoxContainer/Restart" to="." method="_on_restart_pressed"]
-[connection signal="pressed" from="Control/MarginContainer/PauseMenu/VBoxContainer/Quit" to="." method="_on_quit_pressed"]
+[connection signal="pressed" from="Control/MarginContainer/SettingsMenu/Buttons/General Settings" to="Control/MarginContainer/SettingsMenu" method="_on_general_settings_pressed"]
+[connection signal="pressed" from="Control/MarginContainer/SettingsMenu/Buttons/Audio Settings" to="Control/MarginContainer/SettingsMenu" method="_on_audio_settings_pressed"]
+[connection signal="pressed" from="Control/MarginContainer/PauseMenu/Buttons/Resume" to="." method="_on_resume_pressed"]
+[connection signal="pressed" from="Control/MarginContainer/PauseMenu/Buttons/Settings" to="." method="_on_settings_pressed"]
+[connection signal="pressed" from="Control/MarginContainer/PauseMenu/Buttons/Restart" to="." method="_on_restart_pressed"]
+[connection signal="pressed" from="Control/MarginContainer/PauseMenu/Buttons/Quit" to="." method="_on_quit_pressed"]

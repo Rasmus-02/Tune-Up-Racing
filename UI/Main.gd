@@ -14,15 +14,18 @@ func _input(event):
 
 func open_close_pause_menu():
 	if pause_menu.visible:
-		pause_menu.hide()
+		pause_menu.close()
 	else:
 		update_pause_menu_position()
-		pause_menu.show()
+		pause_menu.open()
 	pass
 
 func update_pause_menu_position():
+	#Vector 2:s in the end to place them on correct location on screen (canvas layer i weird)
 	if SelectedScene.scene == "garage":
-		pause_menu.get_child(0).global_position = get_node("Garage").get_node("Player").global_position
+		pause_menu.get_child(0).global_position = get_node("Garage").get_node("Player").global_position + Vector2(-314, -631) 
+	elif SelectedScene.scene == "Track":
+		pause_menu.get_child(0).global_position = get_node("Track").get_node("Track").get_node("Track_View").get_node("Costal_circuit").get_node("Player").get_child(0).global_position + Vector2(9727, -247)
 
 
 

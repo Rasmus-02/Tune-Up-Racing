@@ -1,5 +1,6 @@
-[gd_resource type="Theme" load_steps=16 format=3 uid="uid://c7tubrt5yedxc"]
+[gd_resource type="Theme" load_steps=20 format=3 uid="uid://c7tubrt5yedxc"]
 
+[ext_resource type="Texture2D" uid="uid://dx1qv30yafi1w" path="res://Textures/UI/Pause/Menu Slider.png" id="1_8qf58"]
 [ext_resource type="FontFile" uid="uid://di6d0fynxwcgs" path="res://UI/Fonts/m3x6.ttf" id="1_v8um6"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tles6"]
@@ -41,6 +42,45 @@ corner_radius_top_right = 1
 corner_radius_bottom_right = 1
 corner_radius_bottom_left = 1
 shadow_color = Color(0, 0, 0, 0.34902)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_g4f10"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(0.733333, 0.231373, 0.231373, 1)
+corner_radius_top_left = 2
+corner_radius_top_right = 2
+corner_radius_bottom_right = 2
+corner_radius_bottom_left = 2
+corner_detail = 6
+anti_aliasing = false
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jrmf6"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(0.733333, 0.231373, 0.231373, 1)
+corner_radius_top_left = 2
+corner_radius_top_right = 2
+corner_radius_bottom_right = 2
+corner_radius_bottom_left = 2
+corner_detail = 6
+anti_aliasing = false
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xed4i"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(0.1, 0.1, 0.1, 0.6)
+corner_radius_top_left = 2
+corner_radius_top_right = 2
+corner_radius_bottom_right = 2
+corner_radius_bottom_left = 2
+corner_detail = 6
+anti_aliasing = false
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_uyaln"]
 content_margin_left = 20.0
@@ -170,6 +210,13 @@ Button/styles/normal = SubResource("StyleBoxFlat_235hl")
 Button/styles/pressed = SubResource("StyleBoxFlat_5wgyt")
 GridContainer/constants/h_separation = 18
 GridContainer/constants/v_separation = 18
+HSlider/icons/grabber = ExtResource("1_8qf58")
+HSlider/icons/grabber_disabled = ExtResource("1_8qf58")
+HSlider/icons/grabber_highlight = ExtResource("1_8qf58")
+HSlider/icons/tick = null
+HSlider/styles/grabber_area = SubResource("StyleBoxFlat_g4f10")
+HSlider/styles/grabber_area_highlight = SubResource("StyleBoxFlat_jrmf6")
+HSlider/styles/slider = SubResource("StyleBoxFlat_xed4i")
 ItemList/colors/font_color = Color(0.290196, 0.290196, 0.290196, 1)
 ItemList/colors/font_hovered_color = Color(0.290196, 0.290196, 0.290196, 1)
 ItemList/colors/font_outline_color = Color(0.290196, 0.290196, 0.290196, 1)

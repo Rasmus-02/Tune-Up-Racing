@@ -5,6 +5,8 @@ extends CanvasLayer
 @export var restart : TextureButton
 @export var resume : TextureButton
 @export var player : CharacterBody2D
+@export var settings : Sprite2D
+@export var menu : Sprite2D
 var current_scene = ""
 var main = null
 
@@ -12,6 +14,19 @@ func _ready():
 	restart.hide()
 	main = get_tree().get_root().get_node("Main")
 	Engine.time_scale = 1 #unpauses
+
+func open():
+	#hide restart in garage
+	if current_scene != "Track":
+		restart.hide()
+	else:
+		restart.show()
+	Engine.time_scale = 0 #pauses
+	pause_menu.show()
+
+func close():
+	Engine.time_scale = 1 #unpauses
+	pause_menu.hide()
 
 func check_scene():
 	if SelectedScene.scene == "Track": #hide cursor
@@ -22,7 +37,6 @@ func check_scene():
 	else:
 		return 0
 
-
 func scene_changed():
 	if current_scene != SelectedScene.scene:
 		sc_timer.start()
@@ -32,36 +46,10 @@ func scene_changed():
 			Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 		current_scene = SelectedScene.scene
 
-func _process(_delta):
-	scene_changed()
-	if Input.is_action_just_pressed("Pause") and check_scene() != 0 and sc_timer.is_stopped():
-		open_close_pause()
-	elif pause_state == false and Input.is_action_just_pressed("ui_cancel"):
-		open_close_pause()
 
-var pause_state = true #menue starts closed
-func open_close_pause():
-	if player == null or player.ui_visible == false:
-		if pause_state: #show menue
-			resume.grab_focus()
-			Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
-			Engine.time_scale = 0 #pauses
-			pause_menu.show()
-			#hide restart in garage
-			if current_scene != "Track":
-				restart.hide()
-			else:
-				restart.show()
-			pause_state = false
-		else: #hide menue
-			if check_scene() == 1:
-				Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
-			Engine.time_scale = 1 #unpauses
-			pause_menu.hide()
-			pause_state = true
-
+# = Buttons =======================================================================
 func _on_resume_pressed():
-	open_close_pause()
+	close()
 
 func _on_quit_pressed():
 	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
@@ -71,9 +59,17 @@ func _on_quit_pressed():
 		RaceStatus.started = false
 		Placing.car_list.clear()
 		main.change_scene("garage")
+		close()
 
 func _on_restart_pressed():
-	open_close_pause()
+	close()
 	RaceStatus.started = false
 	Placing.car_list.clear()
 	main.change_scene("costal_circuit")
+
+var settings_open = false
+func _on_settings_pressed():
+	settings.show()
+	menu.hide()
+	settings_open = true
+	
