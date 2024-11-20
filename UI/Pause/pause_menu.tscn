@@ -1,7 +1,13 @@
-[gd_scene load_steps=4 format=3 uid="uid://bxei516mvsvwr"]
+[gd_scene load_steps=10 format=3 uid="uid://bxei516mvsvwr"]
 
 [ext_resource type="Script" path="res://UI/Pause/pause_menu.gd" id="1_gxb3s"]
 [ext_resource type="Shader" path="res://Shaders/Blur.gdshader" id="2_46dlv"]
+[ext_resource type="Theme" uid="uid://c7tubrt5yedxc" path="res://UI/Pause/Custom Menu.tres" id="2_wdjda"]
+[ext_resource type="Texture2D" uid="uid://ck2dwntd4pbea" path="res://Textures/UI/Pause/Settings Menu.png" id="3_5ee3y"]
+[ext_resource type="Texture2D" uid="uid://dsnu5wef3oarb" path="res://Textures/UI/Pause/Pause Menu Button.png" id="5_6bwdl"]
+[ext_resource type="Texture2D" uid="uid://cwbapn3ucth0l" path="res://Textures/UI/Pause/Pause Menu Button Hovered.png" id="6_qh2yd"]
+[ext_resource type="Texture2D" uid="uid://dvc55ixojomne" path="res://Textures/UI/Pause/Pause Menu Quit Button.png" id="7_61kuj"]
+[ext_resource type="Texture2D" uid="uid://ctm1jvfu6wtve" path="res://Textures/UI/Pause/Pause Menu Quit Button Hovered.png" id="8_2oqh3"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_fukf4"]
 shader = ExtResource("2_46dlv")
@@ -11,64 +17,123 @@ shader_parameter/blurAmount2 = 2.547
 shader_parameter/whiteTintIntensity1 = 0.127
 shader_parameter/whiteTintIntensity2 = 0.077
 
-[node name="Pause_Menu" type="Control"]
-layout_mode = 3
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-grow_horizontal = 2
-grow_vertical = 2
-scale = Vector2(1.25, 1.25)
+[node name="Pause_Menu" type="CanvasLayer" node_paths=PackedStringArray("restart", "resume")]
 script = ExtResource("1_gxb3s")
+restart = NodePath("Control/MarginContainer/PauseMenu/VBoxContainer/Restart")
+resume = NodePath("Control/MarginContainer/PauseMenu/VBoxContainer/Resume")
 
-[node name="ColorRect" type="ColorRect" parent="."]
-material = SubResource("ShaderMaterial_fukf4")
-custom_minimum_size = Vector2(10000, 6000)
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+theme = ExtResource("2_wdjda")
+
+[node name="MarginContainer" type="MarginContainer" parent="Control"]
 layout_mode = 0
-offset_left = -3348.0
-offset_top = -2309.0
-offset_right = 6652.0
-offset_bottom = 3691.0
+offset_left = -313.0
+offset_top = -630.0
+offset_right = 2247.0
+offset_bottom = 810.0
 
-[node name="MarginContainer" type="MarginContainer" parent="."]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -91.5
-offset_top = -91.0
-offset_right = 91.5
-offset_bottom = 91.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+[node name="ColorRect" type="ColorRect" parent="Control/MarginContainer"]
+light_mask = 1023
+material = SubResource("ShaderMaterial_fukf4")
+custom_minimum_size = Vector2(2560, 1440)
 layout_mode = 2
+
+[node name="SettingsMenu" type="Sprite2D" parent="Control/MarginContainer"]
+visible = false
+z_index = 1
+position = Vector2(1280, 720)
+scale = Vector2(8, 8)
+texture = ExtResource("3_5ee3y")
+
+[node name="PauseMenu" type="Sprite2D" parent="Control/MarginContainer"]
+position = Vector2(1280, 731)
+scale = Vector2(8, 8)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/MarginContainer/PauseMenu"]
+offset_left = -27.0
+offset_top = -49.0
+offset_right = 26.0
+offset_bottom = 51.0
 size_flags_horizontal = 4
 size_flags_vertical = 4
-theme_override_constants/separation = 18
+theme = ExtResource("2_wdjda")
+theme_override_constants/separation = 0
 alignment = 1
 
-[node name="Resume" type="Button" parent="MarginContainer/VBoxContainer"]
+[node name="Resume" type="TextureButton" parent="Control/MarginContainer/PauseMenu/VBoxContainer"]
 layout_mode = 2
-text = " Resume "
+texture_normal = ExtResource("5_6bwdl")
+texture_pressed = ExtResource("5_6bwdl")
+texture_hover = ExtResource("6_qh2yd")
+texture_focused = ExtResource("5_6bwdl")
 
-[node name="Restart" type="Button" parent="MarginContainer/VBoxContainer"]
+[node name="Label" type="Label" parent="Control/MarginContainer/PauseMenu/VBoxContainer/Resume"]
+layout_mode = 0
+offset_left = 10.125
+offset_top = 1.0
+offset_right = 140.125
+offset_bottom = 65.0
+scale = Vector2(0.25, 0.25)
+theme_override_colors/font_color = Color(0.266667, 0.462745, 1, 1)
+text = "Resume"
+
+[node name="Settings" type="TextureButton" parent="Control/MarginContainer/PauseMenu/VBoxContainer"]
 layout_mode = 2
+texture_normal = ExtResource("5_6bwdl")
+texture_pressed = ExtResource("5_6bwdl")
+texture_hover = ExtResource("6_qh2yd")
+texture_focused = ExtResource("5_6bwdl")
+
+[node name="Label" type="Label" parent="Control/MarginContainer/PauseMenu/VBoxContainer/Settings"]
+layout_mode = 0
+offset_left = 8.375
+offset_top = 0.625
+offset_right = 158.375
+offset_bottom = 64.625
+scale = Vector2(0.25, 0.25)
+theme_override_colors/font_color = Color(0.266667, 0.462745, 1, 1)
+text = "Settings"
+
+[node name="Restart" type="TextureButton" parent="Control/MarginContainer/PauseMenu/VBoxContainer"]
+layout_mode = 2
+texture_normal = ExtResource("5_6bwdl")
+texture_pressed = ExtResource("5_6bwdl")
+texture_hover = ExtResource("6_qh2yd")
+texture_focused = ExtResource("5_6bwdl")
+
+[node name="Label" type="Label" parent="Control/MarginContainer/PauseMenu/VBoxContainer/Restart"]
+layout_mode = 0
+offset_left = 8.625
+offset_top = 1.125
+offset_right = 158.625
+offset_bottom = 65.125
+scale = Vector2(0.25, 0.25)
+theme_override_colors/font_color = Color(0.266667, 0.462745, 1, 1)
 text = "Restart"
 
-[node name="Quit" type="Button" parent="MarginContainer/VBoxContainer"]
+[node name="Quit" type="TextureButton" parent="Control/MarginContainer/PauseMenu/VBoxContainer"]
 layout_mode = 2
-text = " Quit "
+texture_normal = ExtResource("7_61kuj")
+texture_pressed = ExtResource("8_2oqh3")
+texture_hover = ExtResource("8_2oqh3")
+texture_focused = ExtResource("8_2oqh3")
 
-[node name="Scene_change_timer" type="Timer" parent="."]
+[node name="Label" type="Label" parent="Control/MarginContainer/PauseMenu/VBoxContainer/Quit"]
+layout_mode = 0
+offset_left = 17.75
+offset_top = 0.625
+offset_right = 167.75
+offset_bottom = 64.625
+scale = Vector2(0.25, 0.25)
+theme_override_colors/font_color = Color(0.733333, 0.231373, 0.231373, 1)
+text = "Quit"
+
+[node name="Scene_change_timer" type="Timer" parent="Control"]
 wait_time = 0.05
 one_shot = true
 
-[connection signal="pressed" from="MarginContainer/VBoxContainer/Resume" to="." method="_on_resume_pressed"]
-[connection signal="pressed" from="MarginContainer/VBoxContainer/Restart" to="." method="_on_restart_pressed"]
-[connection signal="pressed" from="MarginContainer/VBoxContainer/Quit" to="." method="_on_quit_pressed"]
+[connection signal="pressed" from="Control/MarginContainer/PauseMenu/VBoxContainer/Resume" to="." method="_on_resume_pressed"]
+[connection signal="pressed" from="Control/MarginContainer/PauseMenu/VBoxContainer/Restart" to="." method="_on_restart_pressed"]
+[connection signal="pressed" from="Control/MarginContainer/PauseMenu/VBoxContainer/Quit" to="." method="_on_quit_pressed"]

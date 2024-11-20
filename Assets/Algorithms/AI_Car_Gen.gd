@@ -12,7 +12,7 @@ func _process(delta):
 			var car = get_ai_car().car
 			var engine = get_ai_car().engine
 			#Select a color from the color list
-			var max_rng = Colors.list.size()
+			var max_rng = Colors.list.size() - 1 #-1 because start at index 0
 			var rng = randi_range(0, max_rng)
 			get_child(i).selected_color = Colors.list[rng][0] #Index 0 in color is the color itself
 			#Load in the car and engine

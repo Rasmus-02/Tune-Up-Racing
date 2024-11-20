@@ -1,8 +1,7 @@
-[gd_scene load_steps=22 format=3 uid="uid://c2temcei51jwy"]
+[gd_scene load_steps=21 format=3 uid="uid://c2temcei51jwy"]
 
 [ext_resource type="Script" path="res://Assets/Player Character/Player.gd" id="1_bbvfw"]
 [ext_resource type="Texture2D" uid="uid://b350jwt2tgchl" path="res://addons/rmsmartshape/assets/light1-1.png" id="2_sien1"]
-[ext_resource type="PackedScene" uid="uid://bxei516mvsvwr" path="res://UI/Pause/pause_menu.tscn" id="2_wcfdf"]
 [ext_resource type="PackedScene" uid="uid://ca4jw5y51ms2e" path="res://UI/Computer/computer.tscn" id="3_82x7n"]
 [ext_resource type="Texture2D" uid="uid://5srt81hgxg6n" path="res://Textures/Testing/Player_Character_Test.png" id="3_xlwcc"]
 [ext_resource type="Texture2D" uid="uid://catfkupeeauru" path="res://Textures/UI/Car Handling/Drive Icon.png" id="4_5wbr7"]
@@ -96,20 +95,6 @@ range_z_min = 2000
 range_z_max = 2998
 texture = ExtResource("2_sien1")
 texture_scale = 50.0
-
-[node name="Pause_Menu" parent="Character" node_paths=PackedStringArray("player") instance=ExtResource("2_wcfdf")]
-visible = false
-light_mask = 524288
-z_index = 2000
-anchors_preset = 0
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-grow_horizontal = 1
-grow_vertical = 1
-scale = Vector2(0.446, 0.446)
-player = NodePath("..")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Character"]
 rotation = 1.5708

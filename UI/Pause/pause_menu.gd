@@ -1,13 +1,15 @@
-extends Control
+extends CanvasLayer
 
 @onready var pause_menu = $"."
-@onready var sc_timer = $Scene_change_timer
+@onready var sc_timer = $Control/Scene_change_timer
+@export var restart : TextureButton
+@export var resume : TextureButton
 @export var player : CharacterBody2D
 var current_scene = ""
 var main = null
 
 func _ready():
-	$MarginContainer/VBoxContainer/Restart.hide()
+	restart.hide()
 	main = get_tree().get_root().get_node("Main")
 	Engine.time_scale = 1 #unpauses
 
@@ -41,15 +43,15 @@ var pause_state = true #menue starts closed
 func open_close_pause():
 	if player == null or player.ui_visible == false:
 		if pause_state: #show menue
-			$MarginContainer/VBoxContainer/Resume.grab_focus()
+			resume.grab_focus()
 			Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 			Engine.time_scale = 0 #pauses
 			pause_menu.show()
 			#hide restart in garage
 			if current_scene != "Track":
-				$MarginContainer/VBoxContainer/Restart.hide()
+				restart.hide()
 			else:
-				$MarginContainer/VBoxContainer/Restart.show()
+				restart.show()
 			pause_state = false
 		else: #hide menue
 			if check_scene() == 1:
@@ -72,4 +74,6 @@ func _on_quit_pressed():
 
 func _on_restart_pressed():
 	open_close_pause()
+	RaceStatus.started = false
+	Placing.car_list.clear()
 	main.change_scene("costal_circuit")

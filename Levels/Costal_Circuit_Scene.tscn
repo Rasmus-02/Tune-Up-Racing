@@ -230,11 +230,5 @@ script = ExtResource("9_10ajj")
 
 [node name="Pause_Menu" parent="." instance=ExtResource("1_62obq")]
 visible = false
-offset_left = 1277.14
-offset_top = 702.516
-offset_right = 1277.14
-offset_bottom = 702.516
-scale = Vector2(1, 1)
-size_flags_horizontal = 4
 
 [connection signal="timeout" from="UI/AspectRatioContainer/Start Lights/Timer" to="UI/AspectRatioContainer/Start Lights" method="_on_timer_timeout"]
