@@ -191,9 +191,9 @@ common/physics_ticks_per_second=144
 [rendering]
 
 textures/canvas_textures/default_texture_filter=0
-2d/shadow_atlas/size=5000
+2d/shadow_atlas/size=4000
+limits/opengl/max_renderable_lights=64
+limits/opengl/max_lights_per_object=16
 environment/defaults/default_clear_color=Color(0.560784, 0.513726, 0.376471, 1)
 anti_aliasing/quality/msaa_2d=1
 anti_aliasing/quality/use_debanding=true
-lights_and_shadows/positional_shadow/atlas_quadrant_0_subdiv=3
-lights_and_shadows/positional_shadow/atlas_quadrant_1_subdiv=3

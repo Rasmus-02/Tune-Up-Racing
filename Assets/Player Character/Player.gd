@@ -11,10 +11,11 @@ var garage = null
 var car_list
 @onready var sprite = $AnimatedSprite2D
 @onready var animation = $AnimationPlayer
+var main = null
 
 func _ready():
+	main = get_tree().get_root().get_node("Main")
 	garage = get_parent().get_parent()
-
 
 func _physics_process(_delta):
 	movement()
@@ -65,7 +66,6 @@ func animation_handler():
 		animation.play("Walk")
 		if footsteps.playing == false:
 			footsteps.play()
-		print(footsteps.playing)
 		
 		animation.speed_scale = velocity.length() / 120
 	else:

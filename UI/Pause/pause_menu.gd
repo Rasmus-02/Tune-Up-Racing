@@ -61,6 +61,8 @@ func _on_quit_pressed():
 		main.change_scene("garage")
 		close()
 
+
+
 func _on_restart_pressed():
 	close()
 	RaceStatus.started = false
@@ -69,7 +71,6 @@ func _on_restart_pressed():
 
 var settings_open = false
 func _on_settings_pressed():
-	settings.show()
-	menu.hide()
+	settings.open()
 	settings_open = true
 	

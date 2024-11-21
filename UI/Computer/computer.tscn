@@ -44,6 +44,7 @@ script = ExtResource("1_mvcos")
 position = Vector2(154.451, 107.374)
 stream = ExtResource("2_rc1yq")
 volume_db = 12.0
+bus = &"Ambient Volume"
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 light_mask = 524289

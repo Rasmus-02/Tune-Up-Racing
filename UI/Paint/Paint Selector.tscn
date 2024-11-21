@@ -1,0 +1,42 @@
+[gd_scene load_steps=4 format=3 uid="uid://b3axgwtqnuhcd"]
+
+[ext_resource type="Texture2D" uid="uid://dd1keqnukgaju" path="res://Textures/UI/Painting/Paint Selector Grid.png" id="1_1ed7l"]
+[ext_resource type="Script" path="res://UI/Paint/Paint Selector.gd" id="1_48xsk"]
+[ext_resource type="Script" path="res://UI/Paint/Paint_Grid.gd" id="1_cxp1j"]
+
+[node name="Paint List" type="Control" node_paths=PackedStringArray("grid")]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_48xsk")
+grid = NodePath("Grid/GridContainer")
+
+[node name="Grid" type="Sprite2D" parent="."]
+position = Vector2(121.226, 95.4093)
+texture = ExtResource("1_1ed7l")
+
+[node name="GridContainer" type="GridContainer" parent="Grid"]
+z_index = 2
+offset_left = -127.0
+offset_top = -100.0
+offset_right = 127.0
+offset_bottom = 67.0
+theme_override_constants/h_separation = 5
+theme_override_constants/v_separation = 11
+columns = 7
+script = ExtResource("1_cxp1j")
+
+[node name="Requirement" type="Label" parent="."]
+offset_left = -10.0
+offset_top = 173.278
+offset_right = 112.0
+offset_bottom = 197.278
+scale = Vector2(1.2, 1.2)
+theme_override_colors/font_color = Color(0.266667, 0.462745, 1, 1)
+theme_override_constants/line_spacing = -2
+theme_override_font_sizes/font_size = 16
+text = "Win 500 Races at night to unlock"
+autowrap_mode = 2
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(113.173, 87.132)
+zoom = Vector2(5, 5)

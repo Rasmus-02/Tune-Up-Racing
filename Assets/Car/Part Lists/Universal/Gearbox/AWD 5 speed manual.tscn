@@ -39,4 +39,5 @@ position = Vector2(21, -1)
 
 [node name="gearbox sound handler" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("5_fhvm1")
+bus = &"Car Volume"
 script = ExtResource("6_cm7hu")

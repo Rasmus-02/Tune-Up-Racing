@@ -6,7 +6,6 @@ var no_throttle_1000 = null
 var throttle_4000 = null
 var no_throttle_4000 = null
 var airflow = null
-@export var aiflow_db = -28
 
 
 func _ready():
@@ -54,23 +53,22 @@ func sound_controller():
 		
 		
 		if (engine.forward > 0 or engine.dyno == 2 or engine.dyno == 3) and engine.shift_cooldown != true:
-			airflow.volume_db = aiflow_db
-			airflow.volume_db = -20 + rpm / 600.0
+			airflow.volume_db = (-20 + (rpm / 600.0) ** 0.8)
 			if slider_value <= 1:
-				throttle_1000.volume_db = (linear_to_db(fade_out) - 6) - engine.volume_dampening_car
-				throttle_4000.volume_db = (linear_to_db(fade_in) +6) - engine.volume_dampening_car
+				throttle_1000.volume_db = ((linear_to_db(fade_out) - 6) - engine.volume_dampening_car)
+				throttle_4000.volume_db = ((linear_to_db(fade_in) +6) - engine.volume_dampening_car)
 			else:
-				throttle_4000.volume_db = (slider_value ** 0.5 * 5) - engine.volume_dampening_car#max volume
+				throttle_4000.volume_db = ((slider_value ** 0.5 * 5) - engine.volume_dampening_car)#max volume
 			no_throttle_4000.volume_db = -80
 			no_throttle_1000.volume_db = -80
 			
 			
 		else:
 			if slider_value <= 1:
-				no_throttle_1000.volume_db = (linear_to_db(fade_out) - 6) - engine.volume_dampening_car
-				no_throttle_4000.volume_db = (linear_to_db(fade_in) + 6) - engine.volume_dampening_car
+				no_throttle_1000.volume_db = ((linear_to_db(fade_out) - 6) - engine.volume_dampening_car)
+				no_throttle_4000.volume_db = ((linear_to_db(fade_in) + 6) - engine.volume_dampening_car)
 			else:
-				no_throttle_4000.volume_db = (slider_value ** 0.5 * 5) - engine.volume_dampening_car #max volume
+				no_throttle_4000.volume_db = ((slider_value ** 0.5 * 5) - engine.volume_dampening_car) #max volume
 			airflow.volume_db = -80
 			throttle_4000.volume_db = -80
 			throttle_1000.volume_db = -80

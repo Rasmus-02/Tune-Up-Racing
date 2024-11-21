@@ -37,19 +37,23 @@ texture = SubResource("CanvasTexture_ogrmj")
 
 [node name="Sound_handler" type="Node2D" parent="."]
 script = ExtResource("5_wd7vn")
-aiflow_db = -27
 
 [node name="engine_sound_throttle_1000rpm" type="AudioStreamPlayer2D" parent="Sound_handler"]
 stream = ExtResource("6_1747w")
+bus = &"Car Volume"
 
 [node name="engine_sound_no_throttle_1000rpm" type="AudioStreamPlayer2D" parent="Sound_handler"]
 stream = ExtResource("7_rmkdl")
+bus = &"Car Volume"
 
 [node name="engine_sound_no_throttle_4000rpm" type="AudioStreamPlayer2D" parent="Sound_handler"]
 stream = ExtResource("8_vbxg5")
+bus = &"Car Volume"
 
 [node name="engine_sound_throttle_4000rpm" type="AudioStreamPlayer2D" parent="Sound_handler"]
 stream = ExtResource("9_m8v5d")
+bus = &"Car Volume"
 
 [node name="Airflow" type="AudioStreamPlayer2D" parent="Sound_handler"]
 stream = ExtResource("10_gtmvb")
+bus = &"Car Volume"

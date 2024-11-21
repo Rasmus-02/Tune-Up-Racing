@@ -572,12 +572,12 @@ func  _physics_process(delta):
 			velocity += acceleration * delta
 			var sound_rng = randf_range(-0.05, 0.05)
 			#Tire sound
-			$"Sound effects/Tire Screetch".volume_db = -84.0 + (80.0 - 80.0 * (float(tire_limit) / float(max_tire_limit) +.01)**1.5)
+			$"Sound effects/Tire Screetch".volume_db = (-84.0 + (80.0 - 80.0 * (float(tire_limit) / float(max_tire_limit) +.01)**1.5))
 			$"Sound effects/Tire Screetch".pitch_scale = 1 + (sound_rng*1.2 * (1 + drag*-10000))
 			
 			#Wind Sound
 			if player == true:
-				$"Sound effects/Wind Noise".volume_db = -80 + 83 * ((speed_kmh / 200)** 0.2)
+				$"Sound effects/Wind Noise".volume_db = (-80 + 80 * ((speed_kmh / 200)** 0.2))
 				$"Sound effects/Wind Noise".pitch_scale = 1 + 1 * (speed_kmh / 500)
 			else:
 				$"Sound effects/Wind Noise".volume_db = -80

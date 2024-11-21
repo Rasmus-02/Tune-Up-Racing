@@ -4,12 +4,13 @@ var costal_circuit = load("res://Levels/Costal_Circuit_Scene.tscn")
 @export var pause_menu : CanvasLayer
 var current_scene_instance = null
 var current_scene
+var pause_blocked = false
 
 func _ready():
 	change_scene(garage)
 
 func _input(event):
-	if Input.is_action_just_pressed("Pause"): #Open or close pause menu
+	if Input.is_action_just_pressed("Pause") and pause_blocked == false: #Open or close pause menu
 		open_close_pause_menu()
 
 func open_close_pause_menu():
@@ -25,7 +26,7 @@ func update_pause_menu_position():
 	if SelectedScene.scene == "garage":
 		pause_menu.get_child(0).global_position = get_node("Garage").get_node("Player").global_position + Vector2(-314, -631) 
 	elif SelectedScene.scene == "Track":
-		pause_menu.get_child(0).global_position = get_node("Track").get_node("Track").get_node("Track_View").get_node("Costal_circuit").get_node("Player").get_child(0).global_position + Vector2(9727, -247)
+		pause_menu.get_child(0).global_position = get_node("Track").get_node("Track").global_position
 
 
 

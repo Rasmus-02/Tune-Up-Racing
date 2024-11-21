@@ -1,4 +1,4 @@
-[gd_scene load_steps=137 format=3 uid="uid://bpjbw8pi8ej12"]
+[gd_scene load_steps=136 format=3 uid="uid://bpjbw8pi8ej12"]
 
 [ext_resource type="Script" path="res://Levels/Garage.gd" id="1_mx11h"]
 [ext_resource type="Texture2D" uid="uid://b350jwt2tgchl" path="res://addons/rmsmartshape/assets/light1-1.png" id="2_05wol"]
@@ -9,7 +9,6 @@
 [ext_resource type="Texture2D" uid="uid://bgtl830558pmd" path="res://Textures/Garage/Floor_Walls/Tilemap Garage Floor.png" id="7_qy3vp"]
 [ext_resource type="AudioStream" uid="uid://c4imjgqils8m0" path="res://Sound/Birds.mp3" id="8_5q5bs"]
 [ext_resource type="Texture2D" uid="uid://b7bw2pjs3rapg" path="res://Textures/Garage/Floor_Walls/Tilemap Garage Floor NM.png" id="8_x1vv6"]
-[ext_resource type="AudioStream" uid="uid://ffc2yiq7gvl6" path="res://Sound/Wind Noise.mp3" id="9_fy5ee"]
 [ext_resource type="Texture2D" uid="uid://bxxewxijhs23e" path="res://Textures/Garage/Floor_Walls/Tilemap Garage Floor Spec.png" id="9_hln1k"]
 [ext_resource type="Texture2D" uid="uid://brcxbvuhnjgoj" path="res://Textures/Garage/Floor_Walls/Wood Walls L.png" id="10_8r3j6"]
 [ext_resource type="Texture2D" uid="uid://ox4pra1y8lxf" path="res://Textures/Tracks/Terrain/Grass.tres" id="11_c3sc7"]
@@ -1509,14 +1508,9 @@ height = 4820.0
 
 [node name="Birds" type="AudioStreamPlayer" parent="Sound"]
 stream = ExtResource("8_5q5bs")
-volume_db = -22.0
+volume_db = -30.0
 autoplay = true
-
-[node name="Wind" type="AudioStreamPlayer" parent="Sound"]
-stream = ExtResource("9_fy5ee")
-volume_db = -50.0
-pitch_scale = 0.75
-autoplay = true
+bus = &"Ambient Volume"
 
 [node name="Car Edit UI" type="Control" parent="."]
 layout_mode = 3

@@ -40,15 +40,20 @@ script = ExtResource("5_7fofh")
 
 [node name="engine_sound_throttle_1000rpm" type="AudioStreamPlayer2D" parent="Sound_handler"]
 stream = ExtResource("6_yljeq")
+bus = &"Car Volume"
 
 [node name="engine_sound_no_throttle_1000rpm" type="AudioStreamPlayer2D" parent="Sound_handler"]
 stream = ExtResource("7_a2oox")
+bus = &"Car Volume"
 
 [node name="engine_sound_no_throttle_4000rpm" type="AudioStreamPlayer2D" parent="Sound_handler"]
 stream = ExtResource("8_7kj63")
+bus = &"Car Volume"
 
 [node name="engine_sound_throttle_4000rpm" type="AudioStreamPlayer2D" parent="Sound_handler"]
 stream = ExtResource("9_5rr4n")
+bus = &"Car Volume"
 
 [node name="Airflow" type="AudioStreamPlayer2D" parent="Sound_handler"]
 stream = ExtResource("10_tv6hn")
+bus = &"Car Volume"

@@ -98,15 +98,18 @@ script = ExtResource("4_oh734")
 stream = ExtResource("9_fxkhb")
 volume_db = -80.0
 autoplay = true
+bus = &"Car Volume"
 
 [node name="Wind Noise" type="AudioStreamPlayer2D" parent="Sound effects"]
 stream = ExtResource("10_0ljn4")
 volume_db = -80.0
 autoplay = true
+bus = &"Ambient Volume"
 area_mask = 2
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Sound effects"]
 stream = ExtResource("8_buk3u")
+bus = &"Car Volume"
 
 [node name="Player_Inputs" type="Node2D" parent="." node_paths=PackedStringArray("car")]
 script = ExtResource("8_1xy05")

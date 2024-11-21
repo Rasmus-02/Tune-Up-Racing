@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://c2temcei51jwy"]
+[gd_scene load_steps=22 format=3 uid="uid://c2temcei51jwy"]
 
 [ext_resource type="Script" path="res://Assets/Player Character/Player.gd" id="1_bbvfw"]
 [ext_resource type="Texture2D" uid="uid://b350jwt2tgchl" path="res://addons/rmsmartshape/assets/light1-1.png" id="2_sien1"]
@@ -11,6 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://bo6v0dexo3kvb" path="res://Textures/UI/Car Handling/Info Icon.png" id="7_dth36"]
 [ext_resource type="Texture2D" uid="uid://c4m3aknxd0f4u" path="res://Textures/UI/Car Handling/Dyno Icon.png" id="7_xbq35"]
 [ext_resource type="AudioStream" uid="uid://ye1fn2chltuq" path="res://Sound/Footsteps.mp3" id="8_4jgnn"]
+[ext_resource type="PackedScene" uid="uid://b3axgwtqnuhcd" path="res://UI/Paint/Paint Selector.tscn" id="8_wllgc"]
 [ext_resource type="PackedScene" uid="uid://c4yqhcejl0djd" path="res://Assets/Player Character/player_statcard.tscn" id="12_tht3q"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_vyxlc"]
@@ -140,8 +141,18 @@ player = NodePath("..")
 
 [node name="Footsteps" type="AudioStreamPlayer" parent="Character"]
 stream = ExtResource("8_4jgnn")
-volume_db = -10.628
+volume_db = -12.0
 autoplay = true
+bus = &"Ambient Volume"
+
+[node name="Paint List" parent="Character" instance=ExtResource("8_wllgc")]
+visible = false
+z_index = 1010
+offset_left = -195.0
+offset_top = -136.0
+offset_right = -195.0
+offset_bottom = -136.0
+scale = Vector2(1.6, 1.6)
 
 [node name="Interact_Menu_Garage" type="HBoxContainer" parent="."]
 visible = false

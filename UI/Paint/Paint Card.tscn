@@ -1,0 +1,56 @@
+[gd_scene load_steps=5 format=3 uid="uid://dtaysyrjtw7vy"]
+
+[ext_resource type="Texture2D" uid="uid://7vcq3o05l05k" path="res://Textures/UI/Painting/Paint Selector.png" id="1_cvl1m"]
+[ext_resource type="Script" path="res://UI/Paint/paintcard.gd" id="2_rqho2"]
+[ext_resource type="Texture2D" uid="uid://c5ri6cq1uk0do" path="res://Textures/UI/Painting/Paint Selector BG.png" id="3_e173e"]
+[ext_resource type="Texture2D" uid="uid://nh0ptkgtg262" path="res://Textures/UI/Painting/Paint Selector BG Panel.png" id="3_ejoq1"]
+
+[node name="Control" type="TextureButton"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -2528.0
+offset_bottom = -1408.0
+grow_horizontal = 2
+grow_vertical = 2
+texture_normal = ExtResource("1_cvl1m")
+texture_pressed = ExtResource("1_cvl1m")
+texture_hover = ExtResource("1_cvl1m")
+texture_disabled = ExtResource("1_cvl1m")
+texture_focused = ExtResource("1_cvl1m")
+script = ExtResource("2_rqho2")
+
+[node name="Background" type="Sprite2D" parent="."]
+z_index = -1
+position = Vector2(16, 19)
+texture = ExtResource("3_ejoq1")
+hframes = 2
+
+[node name="Rarity" type="TextureRect" parent="."]
+z_index = -2
+layout_mode = 0
+offset_left = 24.0
+offset_top = 32.0
+offset_right = 58.0
+offset_bottom = 66.0
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("3_e173e")
+
+[node name="Color Name" type="Label" parent="."]
+layout_mode = 0
+offset_left = 3.0
+offset_top = 3.0
+offset_right = 133.0
+offset_bottom = 133.0
+scale = Vector2(0.2, 0.2)
+theme_override_colors/font_outline_color = Color(0.140447, 0.140447, 0.140447, 1)
+theme_override_constants/outline_size = 6
+theme_override_font_sizes/font_size = 64
+text = "Color Name"
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[connection signal="focus_entered" from="." to="." method="_on_focus_entered"]
+[connection signal="focus_exited" from="." to="." method="_on_focus_exited"]
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]

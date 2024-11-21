@@ -22,10 +22,14 @@ var car_name : String
 var active = false
 @onready var button_sound = $"../Button_Click"
 @onready var stats = $"../../Props/Editor UI Stats/Editor Ui Stats"
+var main = null
 
+func _ready():
+	main = get_tree().get_root().get_node("Main")
 
 var initiated = false
 func initiate():
+	main.pause_blocked = true
 	list.clear()
 	engine_list.clear()
 	engine_list_inventory.clear()
@@ -591,6 +595,7 @@ func _on_return_button_pressed():
 		SelectedScene.scene = SelectedScene.garage[0]
 		current_animation = null
 		list.clear()
+		main.pause_blocked = false
 	elif $"../Engine Edit Controller".selected_tab != 7:
 		animation_controller("main")
 		$"../Main_Group/Engine_button".grab_focus()

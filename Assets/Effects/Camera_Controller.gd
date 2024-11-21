@@ -15,3 +15,7 @@ func _physics_process(delta):
 	zoom_level.y = clamp(zoom_level.y, 0.2, zoom_mod)
 	self.zoom = zoom_level
 	self.global_position = get_parent().global_position + get_parent().velocity * 0.15
+	
+	#Set ignore rotation as true
+	if Settings.camera_mode == 1 and ignore_rotation == true:
+		ignore_rotation = false
