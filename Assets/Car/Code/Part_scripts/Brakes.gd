@@ -16,3 +16,4 @@ var id = [Car_ID,11,Part_Number,rarity] #Engine ID, Part type, Part number, rank
 @export var brake_fade_limit = 0 #Degrees celcius
 
 var durability = 100 #100%
+var color = 0

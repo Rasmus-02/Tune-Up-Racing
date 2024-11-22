@@ -4,7 +4,7 @@ extends ItemList
 @export var stats_tab : Panel
 @export_enum("Buy", "Sell") var function : String
 var part_list = []
-var durability_list = []
+var stat_list = []
 var clicked = false
 var selected_tab = "both"
 var selected_category = "all"
@@ -75,7 +75,6 @@ func _input(event):
 				true_hovered_item = index
 			hovered_item = index
 	if Input.is_action_just_pressed("ui_accept") and current_index == temp_index and has_focus():
-		print("CHANGE INDEX")
 		_on_item_selected(current_index)
 
 
@@ -91,12 +90,14 @@ func populate_list():
 	else:
 		part_list = AssetList.get_parts(selected_category, 5, null, search_text, "Save")
 	
+	stat_list.clear()
 	for i in part_list.size():
 		var id = part_list[i].id[1]
 		var rarity = 0
 		#Durability is added to seperate list to find part with correct durability
 		var durability = part_list[i].durability
-		durability_list.append(durability)
+		var color = part_list[i].color
+		stat_list.append([durability, color])
 		var price = str(part_list[i].price)
 		if function == "Sell": 
 			price = str(int(part_list[i].price * 0.8 * (float(durability) / 100.0)))
@@ -125,7 +126,7 @@ func clear_list():
 		for i in part_list:
 			i.queue_free()
 		part_list.clear()
-		durability_list.clear()
+		stat_list.clear()
 
 
 func _on_search_button_pressed():
@@ -182,9 +183,10 @@ func get_selected_item(index):
 		index -= 1
 	
 	var part_name = get_item_text(index)
-	var durability = durability_list[index / 2] #every second item (because price is item)
+	var durability = stat_list[index / 2][0] #every second item (because price is item)
+	var color = stat_list[index / 2][1]
 	for i in part_list:
-		if i.name == part_name and i.durability == durability:
+		if i.name == part_name and i.durability == durability and i.color == color:
 			return i
 
 

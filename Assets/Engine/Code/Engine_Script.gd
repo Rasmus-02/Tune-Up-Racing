@@ -204,6 +204,15 @@ func engine_stats():
 	weight = block.weight + internals.weight + top.weight + intake_manifold.weight + exhaust_manifold.weight + air_filter.weight
 	rarity = get_node("Engine_spawner").current_engine[2]
 	loaded = true
+	
+	#Damage stats !!! THIS UPDATES THE STATS IN THE ACTUAL PARTS !!! important because couldn't be changed from other scripts directly
+	block.durability = block_durability
+	internals.durability = internals_durability
+	top.durability = top_durability
+	intake_manifold.durability = intake_manifold_durability
+	exhaust_manifold.durability = exhaust_manifold_durability
+	air_filter.durability = air_filter_durability
+		
 	check_engine_structure()
 	update_size()
 
@@ -242,7 +251,6 @@ func check_engine_structure():
 				Save_Load.inv_add(internals)
 			if selected_intake_manifold == 0 and intake_manifold.Part_Number != 0:
 				Save_Load.inv_add(intake_manifold)
-				print("NEW INTAKE")
 			if selected_exhaust_manifold == 0 and exhaust_manifold.Part_Number != 0:
 				Save_Load.inv_add(exhaust_manifold)
 			if selected_air_filter == 0 and air_filter.Part_Number != 0:
@@ -411,7 +419,6 @@ func update_size():
 
 
 func part_placeable(type, node):
-	print("PART PLACEBLE ACTIVE")
 	#Check if there is a block
 	if type == "top" or type == "internals":
 		if selected_block != 0: 

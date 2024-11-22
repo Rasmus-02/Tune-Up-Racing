@@ -24,6 +24,7 @@ var id = [Engine_ID,1,Part_Number,rarity] #Engine ID, Part type, Part number, ra
 @export var turbo_4_size = 0.0
 
 var durability = 100 #100%
+var color = 0
 
 func get_turbo_max_size():
 	match turbo_type:

@@ -16,3 +16,4 @@ var id = [Car_ID,1,Part_Number,rarity] #Engine ID, Part type, Part number, rank
 @export var drivetrain_loss = 0.0 #FWD: 10-15% loss,  RWD: 10-18% loss,  AWD: 17-25% loss
 
 var durability = 100 #100%
+var color = 0

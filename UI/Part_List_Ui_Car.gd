@@ -92,14 +92,14 @@ func populate_list():
 			var checked_part = Save_Load.inv_check(temp_part)
 			if temp_part.Part_Number == 0: #EMPTY PART
 				list.add_item(temp_part.name)
-				temp_stat_array.append(0) #adds empty value
+				temp_stat_array.append([0,0]) #adds empty value
 			elif i == 1 and temp_stat_array.size() != 2: #If empty part and equipped part has been added
 				if equipped_part.name != "[empty]":
 					var part_name = equipped_part.name
 					part_name = part_name.replace(car_name, "") #reformat name
 					list.add_item(part_name)
 					list.set_background_color(list.get_item_count()-1)
-					temp_stat_array.append(equipped_part.durability) #adds empty value
+					temp_stat_array.append([equipped_part.durability, equipped_part.color])
 					list.set_item_custom_fg_color(list.get_item_count()-1,FontColorSettings.get_color(equipped_part.rarity)) #set color based on rarity
 				list_index -= 1
 			elif checked_part.size() > 0: #checks if the part exists in the players inventory
@@ -186,6 +186,8 @@ func _on_item_selected(index): #when a part in the item list is clicked (node si
 				temp_part_select_part.queue_free()
 				i += 1
 	#Update Stat Tab
+	temp_part_select_part.durability = temp_stat_array[index][0]
+	temp_part_select_part.color = temp_stat_array[index][1]
 	stats.change_part(temp_part_select_part, str(selected_tab))
 	#sends update to engine that parts have changed
 	match selected_tab:
@@ -214,7 +216,8 @@ func _on_item_selected(index): #when a part in the item list is clicked (node si
 					Save_Load.remove_inv(temp_part_select_part)
 			
 			car.selected_f_bumper = temp_part_select_part.Part_Number
-			car.f_bumper_durability = temp_stat_array[index]
+			car.f_bumper_durability = temp_stat_array[index][0]
+			car.f_bumper_color = temp_stat_array[index][1]
 			update_car()
 			_on_front__bumper_button_pressed()
 		2:
@@ -225,7 +228,8 @@ func _on_item_selected(index): #when a part in the item list is clicked (node si
 					Save_Load.remove_inv(temp_part_select_part)
 			
 			car.selected_r_bumper = temp_part_select_part.Part_Number
-			car.r_bumper_durability = temp_stat_array[index]
+			car.r_bumper_durability = temp_stat_array[index][0]
+			car.r_bumper_color = temp_stat_array[index][1]
 			update_car()
 			_on_rear_bumper_button_pressed()
 		3:
@@ -236,7 +240,8 @@ func _on_item_selected(index): #when a part in the item list is clicked (node si
 					Save_Load.remove_inv(temp_part_select_part)
 			
 			car.selected_fenders = temp_part_select_part.Part_Number
-			car.fenders_durability = temp_stat_array[index]
+			car.fenders_durability = temp_stat_array[index][0]
+			car.fenders_color = temp_stat_array[index][1]
 			update_car()
 			_on_fenders_button_pressed()
 		4:
@@ -247,7 +252,8 @@ func _on_item_selected(index): #when a part in the item list is clicked (node si
 					Save_Load.remove_inv(temp_part_select_part)
 			
 			car.selected_hood = temp_part_select_part.Part_Number
-			car.hood_durability = temp_stat_array[index]
+			car.hood_durability = temp_stat_array[index][0]
+			car.hood_color = temp_stat_array[index][1]
 			update_car()
 			_on_hood_button_pressed()
 		5:
@@ -258,7 +264,8 @@ func _on_item_selected(index): #when a part in the item list is clicked (node si
 					Save_Load.remove_inv(temp_part_select_part)
 			
 			car.selected_mirrors = temp_part_select_part.Part_Number
-			car.mirrors_durability = temp_stat_array[index]
+			car.mirrors_durability = temp_stat_array[index][0]
+			car.mirrors_color = temp_stat_array[index][1]
 			update_car()
 			_on_mirrors_button_pressed()
 		6:
@@ -269,7 +276,8 @@ func _on_item_selected(index): #when a part in the item list is clicked (node si
 					Save_Load.remove_inv(temp_part_select_part)
 			
 			car.selected_headlights = temp_part_select_part.Part_Number
-			car.headlights_durability = temp_stat_array[index]
+			car.headlights_durability = temp_stat_array[index][0]
+			car.headlights_color = temp_stat_array[index][1]
 			update_car()
 			_on_headlights_button_pressed()
 		7:
@@ -280,7 +288,8 @@ func _on_item_selected(index): #when a part in the item list is clicked (node si
 					Save_Load.remove_inv(temp_part_select_part)
 			
 			car.selected_taillights = temp_part_select_part.Part_Number
-			car.taillights_durability = temp_stat_array[index]
+			car.taillights_durability = temp_stat_array[index][0]
+			car.taillights_color = temp_stat_array[index][1]
 			update_car()
 			_on_taillights_button_pressed()
 		8:
@@ -291,7 +300,8 @@ func _on_item_selected(index): #when a part in the item list is clicked (node si
 					Save_Load.remove_inv(temp_part_select_part)
 			
 			car.selected_spoiler = temp_part_select_part.Part_Number
-			car.spoiler_durability = temp_stat_array[index]
+			car.spoiler_durability = temp_stat_array[index][0]
+			car.spoiler_color = temp_stat_array[index][1]
 			update_car()
 			_on_spoiler_button_pressed()
 		9:
@@ -300,10 +310,9 @@ func _on_item_selected(index): #when a part in the item list is clicked (node si
 					Save_Load.inv_add(car.suspension)
 				if temp_part_select_part.name != "[empty]":
 					Save_Load.remove_inv(temp_part_select_part)
-					print("remove part: ",temp_part_select_part)
 			
 			car.selected_suspension = temp_part_select_part.Part_Number
-			car.suspension_durability = temp_stat_array[index]
+			car.suspension_durability = temp_stat_array[index][0]
 			update_car()
 			_on_suspension_button_pressed()
 		10:
@@ -314,7 +323,7 @@ func _on_item_selected(index): #when a part in the item list is clicked (node si
 					Save_Load.remove_inv(temp_part_select_part)
 			
 			car.selected_wheels = temp_part_select_part.Part_Number
-			car.wheels_durability = temp_stat_array[index]
+			car.wheels_durability = temp_stat_array[index][0]
 			update_car()
 			_on_wheels_button_pressed()
 		11:
@@ -325,7 +334,7 @@ func _on_item_selected(index): #when a part in the item list is clicked (node si
 					Save_Load.remove_inv(temp_part_select_part)
 			
 			car.selected_tires = temp_part_select_part.Part_Number
-			car.tires_durability = temp_stat_array[index]
+			car.tires_durability = temp_stat_array[index][0]
 			update_car()
 			_on_tires_button_pressed()
 		12:
@@ -336,7 +345,7 @@ func _on_item_selected(index): #when a part in the item list is clicked (node si
 					Save_Load.remove_inv(temp_part_select_part)
 			
 			car.selected_brakes = temp_part_select_part.Part_Number
-			car.brakes_durability = temp_stat_array[index]
+			car.brakes_durability = temp_stat_array[index][0]
 			update_car()
 			_on_brakes_button_pressed()
 		13:
@@ -347,7 +356,7 @@ func _on_item_selected(index): #when a part in the item list is clicked (node si
 					Save_Load.remove_inv(temp_part_select_part)
 			
 			car.selected_subframe = temp_part_select_part.Part_Number
-			car.subframe_durability = temp_stat_array[index]
+			car.subframe_durability = temp_stat_array[index][0]
 			update_car()
 			_on_subframe_button_pressed()
 		14:
@@ -358,7 +367,7 @@ func _on_item_selected(index): #when a part in the item list is clicked (node si
 					Save_Load.remove_inv(temp_part_select_part)
 			
 			car.selected_driveshaft = temp_part_select_part.Part_Number
-			car.suspension_durability = temp_stat_array[index]
+			car.driveshaft_durability = temp_stat_array[index][0]
 			update_car()
 			#populate list used to be here, if any problems with driveshaft updating
 			_on_driveshaft_button_pressed()
@@ -370,7 +379,7 @@ func _on_item_selected(index): #when a part in the item list is clicked (node si
 					Save_Load.remove_inv(temp_part_select_part)
 			
 			car.selected_gearbox = temp_part_select_part.Part_Number
-			car.suspension_durability = temp_stat_array[index]
+			car.gearbox_durability = temp_stat_array[index][0]
 			update_car()
 			_on_gearbox_button_pressed()
 		16:
@@ -381,7 +390,7 @@ func _on_item_selected(index): #when a part in the item list is clicked (node si
 					Save_Load.remove_inv(temp_part_select_part)
 			
 			car.selected_radiator = temp_part_select_part.Part_Number
-			car.radiator_durability = temp_stat_array[index]
+			car.radiator_durability = temp_stat_array[index][0]
 			update_car()
 			_on_radiator_button_pressed()
 		17:
@@ -392,7 +401,7 @@ func _on_item_selected(index): #when a part in the item list is clicked (node si
 					Save_Load.remove_inv(temp_part_select_part)
 			
 			car.selected_exhaust = temp_part_select_part.Part_Number
-			car.exhaust_durability = temp_stat_array[index]
+			car.exhaust_durability = temp_stat_array[index][0]
 			update_car()
 			_on_exhaust_button_pressed()
 
@@ -488,7 +497,6 @@ func _on_spoiler_button_pressed():
 	temp_array = specific_parts.spoiler
 	selected_tab = 8
 	equipped_part = car.spoiler #updates the equipped part
-	print("EQUIPPED PART:  ", equipped_part,"     Temp Array: ",temp_array)
 	populate_list()
 #===============================================================================
 

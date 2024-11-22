@@ -19,3 +19,4 @@ var id = [Engine_ID,4,Part_Number,rarity] #Engine ID, Part type, Part number, ra
 @export_range(0,1,0.01) var smoothness
 
 var durability = 100 #100%
+var color = 0

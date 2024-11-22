@@ -16,3 +16,4 @@ var id = [Car_ID,13,Part_Number,rarity] #Engine ID, Part type, Part number, rank
 @export var treadwear = 0.0 #durabilityloss per second of driving
 
 var durability = 100 #100%
+var color = 0

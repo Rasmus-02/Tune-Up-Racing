@@ -16,3 +16,4 @@ var id = [Car_ID,17,Part_Number,rarity] #Engine ID, Part type, Part number, rank
 @export_range(0.8, 1.2) var pitch_tweak = 1.0 #DB_Dampening
 
 var durability = 100 #100%
+var color = 0

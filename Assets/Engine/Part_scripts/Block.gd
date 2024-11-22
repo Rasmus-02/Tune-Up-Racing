@@ -18,3 +18,4 @@ var id = [Engine_ID,0,Part_Number,rarity] #Engine ID, Part type, Part number, ra
 @export var max_tq = 0
 
 var durability = 100 #100%
+var color = 0

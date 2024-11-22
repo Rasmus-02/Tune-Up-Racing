@@ -10,7 +10,7 @@ func _ready():
 func _process(_delta):
 	pass
 	#if Input.is_action_just_pressed("Handbrake"):
-	#	Save_Load.inv_add({"Type" : 1, "Part_number" : 11, "Part_Type" : 3, "ID" : 2, "Durability" : 100})
+	#	Save_Load.inv_add({"T ype" : 1, "Part_number" : 11, "Part_Type" : 3, "ID" : 2, "Durability" : 100})
 	#	Save_Load.inv_add({"Type" : 1, "Part_number" : 12, "Part_Type" : 3, "ID" : 2, "Durability" : 100})
 	#	Save_Load.inv_add({"Type" : 0, "Part_number" : 3, "Part_Type" : 3, "ID" : 0, "Durability" : 100})
 	#	Save_Load.inv_add({"Type" : 0, "Part_number" : 2, "Part_Type" : 7, "ID" : 0, "Durability" : 100})

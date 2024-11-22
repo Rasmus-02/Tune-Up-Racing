@@ -1,6 +1,6 @@
 shader_type canvas_item;
 
-uniform vec4 import_new_color; // Use a color picker in the editor
+uniform vec3 import_new_color; // Use a color picker in the editor
 
 void fragment() {
     vec4 color = texture(TEXTURE, UV);

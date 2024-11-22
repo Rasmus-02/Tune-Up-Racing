@@ -18,3 +18,4 @@ var id = [0,5,Part_Number,rarity] #Engine ID, Part type, Part number, rank
 @export_range(-5,5, 0.1) var intake_db_mod
 
 var durability = 100 #100%
+var color = 0

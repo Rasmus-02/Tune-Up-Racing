@@ -184,10 +184,11 @@ func iterate_array(temp_array, rarity, search_word, save_or_not):
 							var item_array = Save_Load.inv_check(temp_part)
 							if item_array.size() != 0: #If item is saved in inventory (also check how many of that item)
 								var index = 0
-								for durability in item_array: #For loop to add many of same item if there are more than 1, otherwise loop ends with 1
+								for stats in item_array: #For loop to add many of same item if there are more than 1, otherwise loop ends with 1
 									if index > 0: #If multiples (to not overwrite durability)
 										temp_part = temp_array[i+1].instantiate()
-									temp_part.durability = durability
+									temp_part.durability = stats[0]
+									temp_part.color = stats[1]
 									part_list.append(temp_part)
 									index += 1
 						else:

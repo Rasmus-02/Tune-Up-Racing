@@ -15,3 +15,4 @@ var id = [0,16,Part_Number,rarity] #Engine ID, Part type, Part number, rank
 @export var cooling = 0.0 #degrees / second
 
 var durability = 100 #100%
+var color = 0

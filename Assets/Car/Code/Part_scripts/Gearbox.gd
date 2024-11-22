@@ -20,3 +20,4 @@ var id = [0,15,Part_Number,rarity] #Engine ID, Part type, Part number, rank
 @export var gear_ratio = [4.0, 3.5, 2.0, 1.5, 1.0, 0.8, 0.65] #Index 0 = final drive
 
 var durability = 100 #100%
+var color = 0

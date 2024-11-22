@@ -23,3 +23,4 @@ var id = [Engine_ID,2,Part_Number,rarity] #Engine ID, Part type, Part number, ra
 
 
 var durability = 100 #100%
+var color = 0

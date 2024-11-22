@@ -64,3 +64,4 @@ var sequential_switch_rpm = 0
 var pitch_tweak = 0.0
 var sound_dampening = 0.0
 var durability = 0 #100%
+var color = 0

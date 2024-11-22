@@ -247,15 +247,15 @@ func load_car(index):
 			i+=1
 		selected_color = Color(float(r),float(g),float(b),1.0) #sets the color with alpha of 1
 		
-		chassi_color = selected_color
-		fenders_color = selected_color
-		f_bumper_color = selected_color
-		r_bumper_color = selected_color
-		hood_color = selected_color
-		headlights_color = selected_color
-		taillights_color = selected_color
-		spoiler_color = selected_color
-		mirrors_color = selected_color
+		chassi_color = load_file.chassi[2]
+		fenders_color = load_file.fenders[2]
+		f_bumper_color = load_file.f_bumper[2]
+		r_bumper_color = load_file.r_bumper[2]
+		hood_color = load_file.hood[2]
+		headlights_color = load_file.headlights[2]
+		taillights_color = load_file.taillights[2]
+		spoiler_color = load_file.spoiler[2]
+		mirrors_color = load_file.mirrors[2]
 		
 		#Damage stats
 		chassi_durability = load_file.chassi[1]
@@ -300,15 +300,15 @@ func load_car(index):
 		selected_radiator = 0
 		selected_exhaust = 0
 		selected_color = Color(0.5,0.5,0.5, 1)
-		chassi_color = selected_color
-		fenders_color = selected_color
-		f_bumper_color = selected_color
-		r_bumper_color = selected_color
-		hood_color = selected_color
-		headlights_color = selected_color
-		taillights_color = selected_color
-		spoiler_color = selected_color
-		mirrors_color = selected_color
+		chassi_color = 0
+		fenders_color = 0
+		f_bumper_color = 0
+		r_bumper_color = 0
+		hood_color = 0
+		headlights_color = 0
+		taillights_color = 0
+		spoiler_color = 0
+		mirrors_color = 0
 		
 		#Damage stats
 		chassi_durability = 100
@@ -355,15 +355,15 @@ func load_car_from_algorithm(dictionary):
 	selected_radiator = dictionary.radiator
 	selected_exhaust = dictionary.exhaust
 	
-	chassi_color = selected_color
-	fenders_color = selected_color
-	f_bumper_color = selected_color
-	r_bumper_color = selected_color
-	hood_color = selected_color
-	headlights_color = selected_color
-	taillights_color = selected_color
-	spoiler_color = selected_color
-	mirrors_color = selected_color
+	chassi_color = 0
+	fenders_color = 0
+	f_bumper_color = 0
+	r_bumper_color = 0
+	hood_color = 0
+	headlights_color = 0
+	taillights_color = 0
+	spoiler_color = 0
+	mirrors_color = 0
 	
 	#Damage stats
 	chassi_durability = 100
@@ -414,6 +414,7 @@ func update_car_parts():
 	self.get_child(0).get_child(0).get_child(0).selected_radiator = selected_radiator
 	self.get_child(0).get_child(0).get_child(0).selected_exhaust = selected_exhaust
 	self.get_child(0).get_child(0).get_child(0).in_garage = in_garage
+	
 	update_stats()
 
 #updates the stats from car_spawner
@@ -445,7 +446,35 @@ func update_stats():
 	tires = universal_parts.tires[selected_tires].instantiate()
 	wheels = universal_parts.wheels[selected_wheels].instantiate()
 	
-
+	#!!! THIS UPDATES THE STATS IN THE ACTUAL PARTS !!! important because couldn't be changed from other scripts directly
+	chassi.durability = chassi_durability
+	f_bumper.durability = f_bumper_durability
+	r_bumper.durability = r_bumper_durability
+	fenders.durability = fenders_durability
+	hood.durability = hood_durability
+	mirrors.durability = mirrors_durability
+	headlights.durability = headlights_durability
+	taillights.durability = taillights_durability
+	spoiler.durability = spoiler_durability
+	suspension.durability = suspension_durability
+	wheels.durability = wheels_durability
+	tires.durability = tires_durability
+	brakes.durability = brakes_durability
+	subframe.durability = subframe_durability
+	driveshaft.durability = driveshaft_durability
+	gearbox.durability = gearbox_durability
+	radiator.durability = radiator_durability
+	exhaust.durability = exhaust_durability
+	
+	chassi.color = chassi_color
+	fenders.color = fenders_color
+	f_bumper.color = f_bumper_color
+	r_bumper.color = r_bumper_color
+	hood.color = hood_color
+	headlights.color = headlights_color
+	taillights.color = taillights_color
+	spoiler.color = spoiler_color
+	mirrors.color = mirrors_color
 	
 	var node = get_child(0).get_child(0).get_node("Part Selector")
 	weight = chassi.weight + driveshaft.weight + subframe.weight + fenders.weight + f_bumper.weight + r_bumper.weight + hood.weight + headlights.weight + taillights.weight + spoiler.weight + mirrors.weight + brakes.weight + suspension.weight + tires.weight + wheels.weight  + gearbox.weight + radiator.weight + exhaust.weight + engine.weight
@@ -491,26 +520,6 @@ func update_stats():
 	#If Saved gear ratio is missing gears, reset it to default
 	if gear_ratio == null or gear_ratio.size() < gearbox.gear_ratio.size():
 		gear_ratio = gearbox.gear_ratio
-	paint_car()
-
-#Change the color of the car
-func paint_car():
-	pass
-	var paint_parts = [chassi, driveshaft, subframe, fenders, f_bumper, r_bumper, hood, headlights, taillights, spoiler, mirrors, gearbox, radiator,exhaust,brakes,suspension,tires,wheels]
-	
-	#chassi.paint_part("red", "PAINT CAR")
-	#chassi.get_node("Sprite2D").material.set_shader_parameter("import_new_color", Color.RED)
-	
-	#for part in paint_parts:
-	#	if part != null and part.get_node("Sprite2D").get_script() != null:
-	#		part.paint_part(Color.AQUAMARINE)
-	#for part in paint_parts:
-	#	if part != null and part.get_node("Sprite2D").get_script() != null:
-	#		print(part, " Painted")
-	#		part.paint_part()
-	#	
-	#paint_parts.clear()
-#endregion
 
 
 func is_functional():
@@ -537,8 +546,7 @@ func is_loaded():
 	else:
 		engine.is_running = false
 
-func  _physics_process(delta):
-	#paint_car()
+func _physics_process(delta):
 	export_signal()
 	if is_ready == false:
 			car_constructor()

@@ -11,7 +11,7 @@ extends Panel
 @export var buy_sell_button : Button
 var status = "closed"
 var selected_item = null
-var selected_color : Color
+var selected_color : int
 
 #region Open / Close
 func _input(_event): #Check only when a button is pressed
@@ -73,7 +73,7 @@ func update_image(): #add the part to the scene as an image
 	$"Display/Lighting/Light Axis".global_position = part_location.global_position
 	selected_item.z_index = 1
 	#Change color
-	selected_color = Color(0.86274510622025, 0.80392158031464, 0.76470589637756)
+	selected_color = selected_item.color
 
 #Function for getting the CORRECT stats to display in CORRECT order
 #region Stat

@@ -1,6 +1,6 @@
 extends TextureProgressBar
 
-var xp_to_next_level = null
+var xp_to_next_level : float
 @onready var level_sign = $Level
 
 func _ready():
@@ -9,8 +9,10 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
 	#Update progress bar and give player xp
-	if xp_to_next_level != null and xp_to_next_level != 0 and value != (Save_Load.xp / xp_to_next_level) * 100:
-		value = (Save_Load.xp / xp_to_next_level) * 100
+	var formatted_xp_percentage = float("%.1f" % ((Save_Load.xp / xp_to_next_level) * 100))
+	if xp_to_next_level != null and xp_to_next_level != 0 and value > formatted_xp_percentage + 0.1 and value > formatted_xp_percentage - 0.1:
+		value = formatted_xp_percentage
+		print("save_called")
 		Save_Load.save()
 	
 	#If reach next level xp, level up

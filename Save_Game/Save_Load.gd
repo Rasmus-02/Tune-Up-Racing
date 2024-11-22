@@ -114,17 +114,17 @@ func save_car_stats():
 			"engine" : car.selected_engine,
 			"name" : car.get_child(0).get_child(0).name,
 			"car_id" : car.selected_car,
-			"chassi" : [car.selected_chassi, car.chassi_durability],
+			"chassi" : [car.selected_chassi, car.chassi_durability, car.chassi_color],
 			"driveshaft" : [car.selected_driveshaft, car.driveshaft_durability],
 			"subframe" : [car.selected_subframe, car.subframe_durability],
-			"fenders" : [car.selected_fenders, car.fenders_durability],
-			"f_bumper" : [car.selected_f_bumper, car.f_bumper_durability],
-			"r_bumper" : [car.selected_r_bumper, car.r_bumper_durability],
-			"hood" : [car.selected_hood, car.hood_durability],
-			"headlights" : [car.selected_headlights, car.headlights_durability],
-			"taillights" : [car.selected_taillights, car.taillights_durability],
-			"spoiler": [car.selected_spoiler, car.spoiler_durability],
-			"mirrors" : [car.selected_mirrors, car.mirrors_durability],
+			"fenders" : [car.selected_fenders, car.fenders_durability, car.fenders_color],
+			"f_bumper" : [car.selected_f_bumper, car.f_bumper_durability, car.f_bumper_color],
+			"r_bumper" : [car.selected_r_bumper, car.r_bumper_durability, car.r_bumper_color],
+			"hood" : [car.selected_hood, car.hood_durability, car.hood_color],
+			"headlights" : [car.selected_headlights, car.headlights_durability, car.headlights_color],
+			"taillights" : [car.selected_taillights, car.taillights_durability, car.taillights_color],
+			"spoiler": [car.selected_spoiler, car.spoiler_durability, car.spoiler_color],
+			"mirrors" : [car.selected_mirrors, car.mirrors_durability, car.mirrors_color],
 			"brakes" : [car.selected_brakes, car.brakes_durability],
 			"suspension" : [car.selected_suspension, car.suspension_durability],
 			"tires" : [car.selected_tires, car.tires_durability],
@@ -143,6 +143,7 @@ func save_selected_key(key):
 	return selected_car_key
 
 func save():
+	#print("save_called")
 	if FileAccess.file_exists(file_location):
 		var save_dict = {"engines" : engines, "engine parts" : save_engine_stats(), "cars" : cars, "car parts" : save_car_stats(),"part_inventory" : part_inventory, "selected_car_key" : save_selected_key(selected_car_key), "player_stats" : save_player_stats()}
 		var save_game = FileAccess.open(file_location, FileAccess.WRITE)
@@ -172,7 +173,8 @@ func inv_add(item_to_add): #for adding parts to the players inventory (works dif
 	#(part format [0 = Type(0 = Car 1 = Engine), 1 = ID (what car or engine it is for), 
 	#2 = Part type (what type of part it is), 3 = Part number (what part in specific it is), 
 	#4 = the key it has, 5 = durability)
-	#{Type, ID, Part_Type, Part_number, Key, Durablility} 
+	#6 = Color index of part (if not paintable just leave it as 0)
+	#{Type, ID, Part_Type, Part_number, Key, Durablility, Color} 
 	
 	var id = null #Gets defined in the if statements bellow because of different names
 	if item_to_add.type == 0:
@@ -180,7 +182,7 @@ func inv_add(item_to_add): #for adding parts to the players inventory (works dif
 	elif item_to_add.type == 1:
 		id = item_to_add.Engine_ID
 	
-	var dict_format = {"Type" : item_to_add.type, "ID" : id, "Part_Type" : item_to_add.id[1], "Part_number" : item_to_add.Part_Number, "Key" : null, "Durability" : item_to_add.durability}
+	var dict_format = {"Type" : item_to_add.type, "ID" : id, "Part_Type" : item_to_add.id[1], "Part_number" : item_to_add.Part_Number, "Key" : null, "Durability" : item_to_add.durability, "Color" : item_to_add.color}
 	var i = 0
 	var part = id_to_string(dict_format) #Convert int id to string names
 	#Get correct key
@@ -209,7 +211,7 @@ func remove_inv(item_to_remove): #for adding parts to the players inventory (wor
 	#(part format [0 = Type(0 = Car 1 = Engine), 1 = ID (what car or engine it is for), 
 	#2 = Part type (what type of part it is), 3 = Part number (what part in specific it is), 
 	#4 = the key it has, 5 = durability)
-	#{Type, ID, Part_Type, Part_number, Key, Durablility} 
+	#{Type, ID, Part_Type, Part_number, Key, Durablility, Color} 
 	#Check if engine or car
 	var id = null
 	if "Engine_ID" in item_to_remove: 
@@ -217,15 +219,15 @@ func remove_inv(item_to_remove): #for adding parts to the players inventory (wor
 	else:
 		id = item_to_remove.Car_ID #if car
 	#Get part to string form
-	var dict_format = {"Type" : item_to_remove.type, "ID" : id, "Part_Type" : item_to_remove.id[1], "Part_number" : item_to_remove.Part_Number, "Key" : null, "Durability" : item_to_remove.durability}
+	var dict_format = {"Type" : item_to_remove.type, "ID" : id, "Part_Type" : item_to_remove.id[1], "Part_number" : item_to_remove.Part_Number, "Key" : null, "Durability" : item_to_remove.durability, "Color" : item_to_remove.color}
 	var part = id_to_string(dict_format) #Convert int id to string name
 	#Find the item in part_inventory:
 	var part_key : int
 	for inv_part in part_inventory.get(part[0]).get(part[1]).values():
 		print("part_key ",inv_part,"   inv_part.Key ",dict_format)
-		if inv_part.ID == dict_format.ID and inv_part.Part_number == dict_format.Part_number and inv_part.Durability == dict_format.Durability:
+		if inv_part.ID == dict_format.ID and inv_part.Part_number == dict_format.Part_number and inv_part.Durability == dict_format.Durability and inv_part.Color == dict_format.Color:
 			part_key = inv_part.Key
-	print("PART IN SAVE FILE: ", part_inventory.get(part[0]).get(part[1]).get(part_key),"  Key: ", part_key)#part_inventory.get(part[0]).get(part[1]).get(str(part_key)))
+	print("PART IN SAVE FILE: ", part_inventory.get(part[0]).get(part[1]).get(str(part_key)),"  Key: ", part_key)#part_inventory.get(part[0]).get(part[1]).get(str(part_key)))
 	part_inventory.get(part[0]).get(part[1]).erase(str(part_key)) #get the item at correct key and remove it
 	part_inventory.get(part[0]).get(part[1]).erase(part_key)
 	save() #saves the changes
@@ -255,7 +257,7 @@ func inv_check(part_to_be_checked): #checks if a part exists in the inventory
 	var part_number = part_to_be_checked.Part_Number
 	var id = 402 #not assigned yet
 	#Access the correct place in directory
-	var formated_part_to_be_checked = {"Type" : type, "Part_number" : part_number, "Part_Type" : part_type, "ID" : null, "Durability" : 100}
+	var formated_part_to_be_checked = {"Type" : type, "Part_number" : part_number, "Part_Type" : part_type, "ID" : null, "Durability" : 100, "Color": 0}
 	var dir_location = id_to_string(formated_part_to_be_checked)
 	if dir_location[0] != "empty_part":
 		#print(part_to_be_checked)
@@ -266,6 +268,7 @@ func inv_check(part_to_be_checked): #checks if a part exists in the inventory
 		
 		var size = part_inventory.get(dir_location[0]).get(dir_location[1]).size() #dir_location to get if car or engine and what type
 		var durability = 0
+		var color = 0
 		var n = 0
 		var i = 0
 		var results = []
@@ -275,7 +278,8 @@ func inv_check(part_to_be_checked): #checks if a part exists in the inventory
 				var inv_part = part_inventory.get(dir_location[0]).get(dir_location[1]).get(str(n))
 				if inv_part.Type == type and inv_part.Part_Type == part_type and inv_part.Part_number == part_number and inv_part.ID == id:
 					durability = inv_part.Durability
-					results.append(durability)
+					color = inv_part.Color
+					results.append([durability, color])
 			n += 1
 		return results
 
@@ -335,17 +339,17 @@ func select_car(KEY):
 		"engine" : sc.engine,
 		"name" : sc.name,
 		"car_id" : sc.car_id,
-		"chassi" : [sc.chassi[0],sc.chassi[1]],
+		"chassi" : [sc.chassi[0],sc.chassi[1],sc.chassi[2]],
 		"driveshaft" : [sc.driveshaft[0],sc.driveshaft[1]],
 		"subframe" : [sc.subframe[0],sc.subframe[1]],
-		"fenders" : [sc.fenders[0],sc.fenders[1]],
-		"f_bumper" : [sc.f_bumper[0],sc.f_bumper[1]],
-		"r_bumper" : [sc.r_bumper[0],sc.r_bumper[1]],
-		"hood" : [sc.hood[0],sc.hood[1]],
-		"headlights" : [sc.headlights[0],sc.headlights[1]],
-		"taillights" : [sc.taillights[0],sc.taillights[1]],
-		"spoiler": [sc.spoiler[0],sc.spoiler[1]],
-		"mirrors" : [sc.mirrors[0],sc.mirrors[1]],
+		"fenders" : [sc.fenders[0],sc.fenders[1],sc.fenders[2]],
+		"f_bumper" : [sc.f_bumper[0],sc.f_bumper[1],sc.f_bumper[2]],
+		"r_bumper" : [sc.r_bumper[0],sc.r_bumper[1],sc.r_bumper[2]],
+		"hood" : [sc.hood[0],sc.hood[1],sc.hood[2]],
+		"headlights" : [sc.headlights[0],sc.headlights[1],sc.headlights[2]],
+		"taillights" : [sc.taillights[0],sc.taillights[1],sc.taillights[2]],
+		"spoiler": [sc.spoiler[0],sc.spoiler[1],sc.spoiler[2]],
+		"mirrors" : [sc.mirrors[0],sc.mirrors[1],sc.mirrors[2]],
 		"brakes" : [sc.brakes[0],sc.brakes[1]],
 		"suspension" : [sc.suspension[0],sc.suspension[1]],
 		"tires" : [sc.tires[0],sc.tires[1]],

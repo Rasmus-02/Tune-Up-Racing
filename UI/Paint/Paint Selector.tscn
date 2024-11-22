@@ -26,6 +26,7 @@ columns = 7
 script = ExtResource("1_cxp1j")
 
 [node name="Requirement" type="Label" parent="."]
+layout_mode = 0
 offset_left = -10.0
 offset_top = 173.278
 offset_right = 112.0
