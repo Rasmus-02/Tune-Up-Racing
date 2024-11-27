@@ -58,14 +58,11 @@ animations = [{
 "texture": SubResource("AtlasTexture_ns6pn")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_3tn2f")
-}, {
-"duration": 1.0,
 "texture": SubResource("AtlasTexture_1xryj")
 }],
 "loop": false,
 "name": &"Start",
-"speed": 1.5
+"speed": 1.0
 }]
 
 [node name="Track" type="Node2D"]
@@ -165,13 +162,13 @@ offset = Vector2(0.57251, -0.019989)
 script = ExtResource("10_yw4g0")
 
 [node name="Timer" type="Timer" parent="UI/AspectRatioContainer/Start Lights"]
-wait_time = 4.5
+wait_time = 5.5
 one_shot = true
 
 [node name="Lights" type="AnimatedSprite2D" parent="UI/AspectRatioContainer/Start Lights"]
 sprite_frames = SubResource("SpriteFrames_5r1yl")
 animation = &"Start"
-frame = 6
+frame = 5
 frame_progress = 1.0
 
 [node name="Press Button Text" type="Label" parent="UI/AspectRatioContainer/Start Lights"]
@@ -184,8 +181,9 @@ theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 6
 text = "[Press Enter To Continue]"
 
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="UI/AspectRatioContainer/Start Lights"]
+[node name="Start_Sound" type="AudioStreamPlayer" parent="UI/AspectRatioContainer/Start Lights"]
 stream = ExtResource("12_qq8mv")
+volume_db = -2.0
 
 [node name="Current Time" type="Label" parent="UI"]
 visible = false
@@ -228,3 +226,4 @@ texture = ExtResource("9_4rfxy")
 script = ExtResource("9_10ajj")
 
 [connection signal="timeout" from="UI/AspectRatioContainer/Start Lights/Timer" to="UI/AspectRatioContainer/Start Lights" method="_on_timer_timeout"]
+[connection signal="finished" from="UI/AspectRatioContainer/Start Lights/Start_Sound" to="UI/AspectRatioContainer/Start Lights" method="_on_start_sound_finished"]

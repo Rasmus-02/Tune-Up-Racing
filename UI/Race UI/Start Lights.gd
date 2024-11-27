@@ -11,9 +11,12 @@ func _input(_event):
 func start():
 	$"Press Button Text".hide()
 	$Timer.start()
-	$AudioStreamPlayer2D.play()
+	$Start_Sound.play()
 	$Lights.play("Start")
 
 func _on_timer_timeout():
 	RaceStatus.started = true
+	hide()
+
+func _on_start_sound_finished():
 	queue_free()

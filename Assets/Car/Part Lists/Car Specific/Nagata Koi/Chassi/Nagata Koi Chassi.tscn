@@ -9,13 +9,13 @@
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_36oji"]
 shader = ExtResource("2_jf2ft")
-shader_parameter/import_new_color = null
+shader_parameter/import_new_color = Vector3(1, 0.35, 0.071)
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_jbiqp"]
 diffuse_texture = ExtResource("2_4eyvq")
 normal_texture = ExtResource("3_4b3ba")
 specular_texture = ExtResource("4_bvvri")
-specular_shininess = 0.5
+specular_shininess = 0.58
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_taee6"]
 blend_mode = 1

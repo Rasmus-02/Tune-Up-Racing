@@ -2,7 +2,7 @@ extends Label
 
 var displayed_money = 0
 
-func _process(delta):
+func _process(_delta):
 	#Nice effect makes money change smoothly
 	if Save_Load.money != displayed_money:
 		var difference = Save_Load.money - displayed_money

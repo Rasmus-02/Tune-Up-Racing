@@ -19,7 +19,7 @@ func _process(_delta):
 		select(temp_click_index, true)
 
 
-func _on_item_clicked(index, at_position, mouse_button_index):
+func _on_item_clicked(index, _at_position, mouse_button_index):
 	if mouse_button_index == 1 and has_focus() and index <= item_count:
 		clicked = true
 		$"../Timer".start()

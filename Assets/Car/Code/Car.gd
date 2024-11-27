@@ -153,11 +153,11 @@ var collision = preload("res://Assets/Effects/Collision.tscn")
 #region Import Export
 
 #IMPORT STATS FROM ENGINE
-func _on_engine_rpm_info(rpm, max_rpm):
+func _on_engine_rpm_info(rpm, import_max_rpm):
 	engine_rpm = rpm
-	max_engine_rpm = max_rpm
+	max_engine_rpm = import_max_rpm
 
-func _on_engine_stats(horsepower, torque, max_torque):
+func _on_engine_stats(_horsepower, torque, max_torque):
 	#max_engine_power = (((((horsepower*2)*hp_modifier) + ((torque*2)*tq_modifier))/2)) * drivetrain_loss * exhaust_tq_mod
 	max_engine_power = (torque) * (1-drivetrain_loss) * exhaust_tq_mod
 	engine_power = (max_engine_power * 150) * rubberbanding

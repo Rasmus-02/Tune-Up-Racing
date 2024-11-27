@@ -24,7 +24,9 @@ var fenders = [empty, stock_fender, vortex_widebody, satetsu_widebody]
 var stock_front_bumper = preload("res://Assets/Car/Part Lists/Car Specific/Nagata Koi/F_bumper/Nagata Koi Stock Front Bumper.tscn") #1
 var ks_racing_timeattack_front_bumper = preload("res://Assets/Car/Part Lists/Car Specific/Nagata Koi/F_bumper/Nagata Koi [KS-Racing] Timeattack Front Bumper.tscn") #2
 var satetsu_front_bumper = preload("res://Assets/Car/Part Lists/Car Specific/Nagata Koi/F_bumper/Nagata Koi [Satetsu] Front Bumper.tscn") #3
-var f_bumper = [empty, stock_front_bumper, ks_racing_timeattack_front_bumper, satetsu_front_bumper]
+var vortex_front_bumper = preload("res://Assets/Car/Part Lists/Car Specific/Nagata Koi/F_bumper/Nagata Koi [Vortex] Front Bumper.tscn") #4
+var redline_front_bumper = preload("res://Assets/Car/Part Lists/Car Specific/Nagata Koi/F_bumper/Nagata Koi [Redline] Front Bumper.tscn") #5
+var f_bumper = [empty, stock_front_bumper, ks_racing_timeattack_front_bumper, satetsu_front_bumper, vortex_front_bumper, redline_front_bumper]
 
 #Headlights
 var stock_headlights = preload("res://Assets/Car/Part Lists/Car Specific/Nagata Koi/Headlights/Nagata Koi Stock Headlights.tscn") #1
@@ -34,7 +36,9 @@ var headlights = [empty, stock_headlights]
 var stock_hood = preload("res://Assets/Car/Part Lists/Car Specific/Nagata Koi/Hood/Nagata Koi Stock Hood.tscn") #1
 var vortex_vented_hood = preload("res://Assets/Car/Part Lists/Car Specific/Nagata Koi/Hood/Nagata Koi [Vortex] Vented Hood.tscn") #2
 var ks_racing_carbon_hood = preload("res://Assets/Car/Part Lists/Car Specific/Nagata Koi/Hood/Nagata Koi [KS-Racing] Carbon Fiber Hood.tscn") #3
-var hood = [empty, stock_hood, vortex_vented_hood, ks_racing_carbon_hood]
+var satetsu_vented_hood = preload("res://Assets/Car/Part Lists/Car Specific/Nagata Koi/Hood/Nagata Koi [Satetsu] Vented Hood.tscn") #4
+var redline_carbon_hood = preload("res://Assets/Car/Part Lists/Car Specific/Nagata Koi/Hood/Nagata Koi [Redline] Vented Carbon Fiber Hood.tscn") #5
+var hood = [empty, stock_hood, vortex_vented_hood, ks_racing_carbon_hood, satetsu_vented_hood, redline_carbon_hood]
 
 #Mirrors
 var stock_mirrors = preload("res://Assets/Car/Part Lists/Car Specific/Nagata Koi/Mirrors/Nagat Koi Stock Mirrors.tscn")#1

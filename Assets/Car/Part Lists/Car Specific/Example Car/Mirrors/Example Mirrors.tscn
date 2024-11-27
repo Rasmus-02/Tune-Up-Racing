@@ -16,6 +16,7 @@ script = ExtResource("1_6m1rb")
 rarity = "D"
 Part_Number = 1
 description = "The factory mirrors for the Nagata Koi"
+paintable = false
 weight = 2
 drag = 0.01
 

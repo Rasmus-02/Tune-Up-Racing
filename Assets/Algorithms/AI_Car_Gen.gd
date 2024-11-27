@@ -41,14 +41,18 @@ func get_ai_car():
 	var car = null
 	var engine = null
 	var step = 0 #TESTING TOOL TO BENCHMARK PERFORMANCE
+	var precision = 0.8
 	#Generate a car that isn't null
 	while car == null:
 		step += 1
-		car = generate_car(rarity, weight, tq, grip, downforce, brake_force)
+		if step > 5:
+			precision -= 0.02
+		precision = clamp(precision, 0.25, 0.8)
+		car = generate_car(rarity, weight, tq, grip, downforce, brake_force, precision)
 		
 		#Try 3 time to find an engine
 		for i in 3:
-			engine = generate_engine(weight, car.weight, tq, car.engine_bay_size, car.position_offset, car.drivetrain, car.stock_engine)
+			engine = generate_engine(weight, car.weight, tq, car.engine_bay_size, car.position_offset, car.drivetrain, car.stock_engine, precision)
 			step += 1
 			if engine != null:
 				break

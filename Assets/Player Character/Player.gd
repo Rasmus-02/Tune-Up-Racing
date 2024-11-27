@@ -124,7 +124,7 @@ func hide_ui():
 	ui_visible = false
 
 func show_ui():
-	if get_parent().get_parent().get_node("Car Edit UI").get_node("Car Edit Controller").active == false and get_parent().get_parent().get_node("Car Edit UI").get_node("Engine Edit Controller").active == false:
+	if get_parent().get_parent().get_node("Car Edit UI").get_node("Car Edit Controller").active == false and get_parent().get_parent().get_node("Car Edit UI").get_node("Engine Edit Controller").active == false and get_parent().get_parent().get_node("Props").get_node("Paint Booth").active == false:
 		#set position where the us should spawn
 		$"../Interact_Menu_Garage".global_position = selected_car.global_position +Vector2(-75,55)
 		#reset which buttons are visible
@@ -138,6 +138,8 @@ func show_ui():
 			$"../Interact_Menu_Garage/Edit_Car_button".show()
 		if selected_car.in_garage == 2:
 			$"../Interact_Menu_Garage/Dyno_button".show()
+		if selected_car.in_garage == 3:
+			$"../Interact_Menu_Garage/Paint_Car_button".show()
 		car_garage_ui.show()
 		$"../Interact_Menu_Garage/Drive_Car_button".grab_focus()
 		ui_visible = true
@@ -157,6 +159,14 @@ func _on_dyno_button_pressed():
 		get_parent().get_parent().get_node("Props").get_node("Dyno").update()
 		selected_car.loaded = true
 		selected_car.run_dyno()
+		ui_visible = false
+		car_garage_ui.hide()
+
+func _on_paint_car_button_pressed():
+	if selected_car != null:
+		Save_Load.selected_car_key = selected_car.selected_car_key
+		Save_Load.save()
+		get_parent().get_parent().get_node("Props").get_node("Paint Booth").open()
 		ui_visible = false
 		car_garage_ui.hide()
 
@@ -182,42 +192,44 @@ func _on_move_car_button_pressed():
 func check_if_movable(place):
 	car_list = Save_Load.load_file("cars")
 	var car_list_array = car_list.keys()
+	print("\n")
 	for i in car_list.size():
+		print("CAR CHECKED: ", car_list.get(car_list_array[i]).get("key"),"      PLACE TO CHECK IF EMPTY: ",place)
 		if place == car_list.get(car_list_array[i]).get("in_garage"):
 			return false
 
 func _on_move_to_lift_pressed():
-	if check_if_movable(1) != false:
+	if check_if_movable(1) != false and selected_car.selected_car_key != null:
 		selected_car.in_garage = 1
 		save()
 		move_car()
 
 func _on_move_to_dyno_pressed():
-	if check_if_movable(2) != false:
+	if check_if_movable(2) != false and selected_car.selected_car_key != null:
 		selected_car.in_garage = 2
 		save()
 		move_car()
 
 func _on_move_to_paint_pressed():
-	if check_if_movable(3) != false:
+	if check_if_movable(3) != false and selected_car.selected_car_key != null:
 		selected_car.in_garage = 3
 		save()
 		move_car()
 
 func _on_move_to_garage_parking_1_pressed():
-	if check_if_movable(4) != false:
+	if check_if_movable(4) != false and selected_car.selected_car_key != null:
 		selected_car.in_garage = 4
 		save()
 		move_car()
 
 func _on_move_to_garage_parking_2_pressed():
-	if check_if_movable(5) != false:
+	if check_if_movable(5) != false and selected_car.selected_car_key != null:
 		selected_car.in_garage = 5
 		save()
 		move_car()
 
 func _on_move_to_garage_parking_3_pressed():
-	if check_if_movable(6) != false:
+	if check_if_movable(6) != false and selected_car.selected_car_key != null:
 		selected_car.in_garage = 6
 		save()
 		move_car()
@@ -225,6 +237,7 @@ func _on_move_to_garage_parking_3_pressed():
 
 func save():
 	var key = selected_car.selected_car_key
+	print("KEY : ",key)
 	Save_Load.temp_key_car = key #car key
 	Save_Load.edit_car(selected_car)
 	Save_Load.save()
@@ -235,4 +248,3 @@ func move_car():
 	$"../Move_Menu_Garage".hide()
 	ui_visible = false
 	
-

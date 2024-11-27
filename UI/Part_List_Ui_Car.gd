@@ -185,10 +185,10 @@ func _on_item_selected(index): #when a part in the item list is clicked (node si
 					break
 				temp_part_select_part.queue_free()
 				i += 1
-	#Update Stat Tab
-	temp_part_select_part.durability = temp_stat_array[index][0]
-	temp_part_select_part.color = temp_stat_array[index][1]
-	stats.change_part(temp_part_select_part, str(selected_tab))
+		#Update Stat Tab
+		temp_part_select_part.durability = temp_stat_array[index][0]
+		temp_part_select_part.color = temp_stat_array[index][1]
+		stats.change_part(temp_part_select_part, str(selected_tab))
 	#sends update to engine that parts have changed
 	match selected_tab:
 		0:
@@ -591,7 +591,7 @@ func _on_tune_button_pressed():
 func _on_return_button_pressed():
 	$"../Tune_Gearbox".hide()
 	button_sound.play()
-	if current_animation == "main":
+	if current_animation == "main" and active == true:
 		save_gearbox_stats() #Save tuned gearbox ratios
 		update_car()
 		active = false

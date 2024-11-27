@@ -9,7 +9,7 @@ var pause_blocked = false
 func _ready():
 	change_scene(garage)
 
-func _input(event):
+func _input(_event):
 	if Input.is_action_just_pressed("Pause") and pause_blocked == false: #Open or close pause menu
 		open_close_pause_menu()
 
@@ -21,15 +21,13 @@ func open_close_pause_menu():
 		pause_menu.open()
 	pass
 
+
 func update_pause_menu_position():
 	#Vector 2:s in the end to place them on correct location on screen (canvas layer i weird)
 	if SelectedScene.scene == "garage":
 		pause_menu.get_child(0).global_position = get_node("Garage").get_node("Player").global_position + Vector2(-314, -631) 
 	elif SelectedScene.scene == "Track":
 		pause_menu.get_child(0).global_position = get_node("Track").get_node("Track").global_position
-
-
-
 
 
 func change_scene(scene):

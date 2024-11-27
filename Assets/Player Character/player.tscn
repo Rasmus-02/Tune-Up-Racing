@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://c2temcei51jwy"]
+[gd_scene load_steps=23 format=3 uid="uid://c2temcei51jwy"]
 
 [ext_resource type="Script" path="res://Assets/Player Character/Player.gd" id="1_bbvfw"]
 [ext_resource type="Texture2D" uid="uid://b350jwt2tgchl" path="res://addons/rmsmartshape/assets/light1-1.png" id="2_sien1"]
@@ -12,6 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://c4m3aknxd0f4u" path="res://Textures/UI/Car Handling/Dyno Icon.png" id="7_xbq35"]
 [ext_resource type="AudioStream" uid="uid://ye1fn2chltuq" path="res://Sound/Footsteps.mp3" id="8_4jgnn"]
 [ext_resource type="PackedScene" uid="uid://b3axgwtqnuhcd" path="res://UI/Paint/Paint Selector.tscn" id="8_wllgc"]
+[ext_resource type="Texture2D" uid="uid://c5noau7l5t07q" path="res://Textures/UI/Car Handling/Paint Icon.png" id="12_j6ns8"]
 [ext_resource type="PackedScene" uid="uid://c4yqhcejl0djd" path="res://Assets/Player Character/player_statcard.tscn" id="12_tht3q"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_vyxlc"]
@@ -203,6 +204,16 @@ icon = ExtResource("7_xbq35")
 icon_alignment = 1
 expand_icon = true
 
+[node name="Paint_Car_button" type="Button" parent="Interact_Menu_Garage"]
+visible = false
+layout_mode = 2
+theme_override_constants/icon_max_width = 55
+theme_override_font_sizes/font_size = 56
+text = "    "
+icon = ExtResource("12_j6ns8")
+icon_alignment = 1
+expand_icon = true
+
 [node name="Move_Car_button" type="Button" parent="Interact_Menu_Garage"]
 visible = false
 layout_mode = 2
@@ -268,6 +279,7 @@ text = "Move to Parking 3"
 [connection signal="pressed" from="Interact_Menu_Garage/Drive_Car_button" to="Character" method="_on_drive_car_button_pressed"]
 [connection signal="pressed" from="Interact_Menu_Garage/Edit_Car_button" to="Character" method="_on_edit_car_button_pressed"]
 [connection signal="pressed" from="Interact_Menu_Garage/Dyno_button" to="Character" method="_on_dyno_button_pressed"]
+[connection signal="pressed" from="Interact_Menu_Garage/Paint_Car_button" to="Character" method="_on_paint_car_button_pressed"]
 [connection signal="pressed" from="Interact_Menu_Garage/Move_Car_button" to="Character" method="_on_move_car_button_pressed"]
 [connection signal="pressed" from="Interact_Menu_Garage/Info_Car_button" to="Character" method="_on_sell_car_button_pressed"]
 [connection signal="pressed" from="Move_Menu_Garage/VBoxContainer/Move_To_Lift" to="Character" method="_on_move_to_lift_pressed"]

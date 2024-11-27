@@ -8,11 +8,12 @@ func populate_grid():
 			get_child(i).queue_free()
 	
 	#Update List
+	var index = 0
 	for color in Colors.list:
 		var instance = paint_card.instantiate()
-		print("ADD")
-		instance.paint(color[1], color[0], color[2], 1)
+		instance.paint(color[1], color[0], color[2], index, 1)
 		add_child(instance)
+		index += 1
 
 func update_requirement(requirement):
 	$"../../Requirement".text = requirement

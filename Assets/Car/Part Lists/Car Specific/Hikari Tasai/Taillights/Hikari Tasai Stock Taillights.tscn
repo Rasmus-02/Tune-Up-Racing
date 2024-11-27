@@ -19,6 +19,7 @@ rarity = "uncommon"
 Car_ID = 2
 Part_Number = 1
 description = "The factory taillights for the Hikari Tasai"
+paintable = false
 price = 150
 weight = 4
 

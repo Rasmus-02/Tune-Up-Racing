@@ -6,7 +6,7 @@ var performance_bonus = 1.0
 var grip_bonus = 1.3
 var difficulty = 1.15
 
-func _process(delta):
+func _process(_delta):
 	#Player
 	if car.player == true:
 		performance_bonus = 1.0

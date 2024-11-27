@@ -3,6 +3,7 @@ extends Node2D
 var car = preload("res://Assets/Car/Car.tscn")
 var lift_car = null #the car that is on the lift
 var dyno_car = null
+var paint_car = null
 @onready var spawn_positions = $"Car Spawn Positions"
 
 func _on_car_1_pressed():
@@ -29,6 +30,8 @@ func _ready():
 						lift_car = new_car
 					elif car_to_check.in_garage == 2:
 						dyno_car = new_car
+					elif car_to_check.in_garage == 3:
+						paint_car = new_car
 					new_car.global_position = car_spawn_position
 
 func move_car(car_to_move):
@@ -37,4 +40,5 @@ func move_car(car_to_move):
 		lift_car = car_to_move
 	elif car_to_move.in_garage == 2:
 		dyno_car = car_to_move
-		print(dyno_car)
+	elif car_to_move.in_garage == 3:
+		paint_car = car_to_move

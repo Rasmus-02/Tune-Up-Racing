@@ -1,0 +1,43 @@
+[gd_scene load_steps=10 format=3 uid="uid://dosvovbo7wn58"]
+
+[ext_resource type="Script" path="res://Assets/Car/Code/Part_scripts/F_Bumper.gd" id="1_84qgg"]
+[ext_resource type="Shader" path="res://Shaders/Test/ColorSelector.gdshader" id="2_cedji"]
+[ext_resource type="Texture2D" uid="uid://cpuqb2cmngpbs" path="res://Textures/Cars/Nagata Koi/Front Bumper/Nagata Koi Redline Front Bumper.png" id="3_1ao3n"]
+[ext_resource type="Texture2D" uid="uid://76xf6svqghun" path="res://Textures/Cars/Nagata Koi/Front Bumper/Nagata Koi Redline Front Bumper NM.png" id="4_15jhp"]
+[ext_resource type="Texture2D" uid="uid://purwja1lcmso" path="res://Textures/Cars/Nagata Koi/Front Bumper/Nagata Koi Redline Front Bumper Spec.png" id="5_vkgia"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_0k5i8"]
+shader = ExtResource("2_cedji")
+shader_parameter/import_new_color = Vector3(0.8, 0.8, 0.8)
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_0hbqo"]
+diffuse_texture = ExtResource("3_1ao3n")
+normal_texture = ExtResource("4_15jhp")
+specular_texture = ExtResource("5_vkgia")
+specular_shininess = 0.5
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_nxqv5"]
+blend_mode = 1
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_j57wh"]
+polygon = PackedVector2Array(133, 28, 133, 22, 133, -19, 133, -25, 131, -29, 125, -35, 123, -36, 114, -36, 114, 39, 123, 39, 125, 38, 131, 32)
+
+[node name="Nagata Koi [Redline] Front Bumper" type="Node2D"]
+script = ExtResource("1_84qgg")
+rarity = "rare"
+Part_Number = 5
+description = "A front bumper with a lip installed for improved downforce and cooling airflow for the Nagata Koi, designed by the high performance aftermarket parts manufacturer Redline"
+price = 800
+weight = 7
+downforce = 50
+drag = 0.055
+engine_cool_mod = 0.5
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_0k5i8")
+texture = SubResource("CanvasTexture_0hbqo")
+
+[node name="LightOccluder2D2" type="LightOccluder2D" parent="Sprite2D"]
+material = SubResource("CanvasItemMaterial_nxqv5")
+position = Vector2(-30, -2)
+occluder = SubResource("OccluderPolygon2D_j57wh")

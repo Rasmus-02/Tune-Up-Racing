@@ -9,7 +9,7 @@ var handbrake : float
 
 @export var car : CharacterBody2D
 
-func _process(delta):
+func _process(_delta):
 	if car.player == true:
 		get_inputs()
 		vibrate_controller(1 - (car.tire_limit / car.max_tire_limit))

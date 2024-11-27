@@ -4,11 +4,13 @@
 [ext_resource type="Script" path="res://UI/Paint/Paint Selector.gd" id="1_48xsk"]
 [ext_resource type="Script" path="res://UI/Paint/Paint_Grid.gd" id="1_cxp1j"]
 
-[node name="Paint List" type="Control" node_paths=PackedStringArray("grid")]
+[node name="Paint List" type="Control" node_paths=PackedStringArray("grid", "center")]
 layout_mode = 3
 anchors_preset = 0
+pivot_offset = Vector2(119.992, 80)
 script = ExtResource("1_48xsk")
 grid = NodePath("Grid/GridContainer")
+center = NodePath("Center")
 
 [node name="Grid" type="Sprite2D" parent="."]
 position = Vector2(121.226, 95.4093)
@@ -41,3 +43,6 @@ autowrap_mode = 2
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(113.173, 87.132)
 zoom = Vector2(5, 5)
+
+[node name="Center" type="Node2D" parent="."]
+position = Vector2(120, 80)

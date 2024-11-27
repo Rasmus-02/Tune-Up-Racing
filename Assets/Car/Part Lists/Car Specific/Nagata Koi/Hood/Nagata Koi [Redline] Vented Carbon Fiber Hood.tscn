@@ -1,0 +1,27 @@
+[gd_scene load_steps=6 format=3 uid="uid://b2qyevdr20pm5"]
+
+[ext_resource type="Script" path="res://Assets/Car/Code/Part_scripts/Hood.gd" id="1_p0tem"]
+[ext_resource type="Texture2D" uid="uid://djltp7f8faox5" path="res://Textures/Cars/Nagata Koi/Hood/Nagata Koi [Redline] Vented Carbon Fiber Hood.png" id="2_5n73g"]
+[ext_resource type="Texture2D" uid="uid://ci0b2aubbm58i" path="res://Textures/Cars/Nagata Koi/Hood/Nagata Koi [Redline] Vented Carbon Fiber Hood NM.png" id="3_ih2fi"]
+[ext_resource type="Texture2D" uid="uid://ov8dndh4twha" path="res://Textures/Cars/Nagata Koi/Hood/Nagata Koi KS_Racing Carbon Fiber Hood Spec.png" id="4_45nuk"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_hjvi5"]
+diffuse_texture = ExtResource("2_5n73g")
+normal_texture = ExtResource("3_ih2fi")
+specular_texture = ExtResource("4_45nuk")
+specular_shininess = 0.52
+
+[node name="Nagata Koi [Redline] Vented Carbon Fiber Hood" type="Node2D"]
+script = ExtResource("1_p0tem")
+rarity = "epic"
+Part_Number = 5
+description = "A lightweight hood with great cooling airflow for the Nagata Koi, designed by the aftermarket parts manufacturer Redline"
+paintable = false
+price = 1200
+weight = 7
+downforce = 75
+drag = 0.05
+engine_cool_mod = 0.5
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = SubResource("CanvasTexture_hjvi5")

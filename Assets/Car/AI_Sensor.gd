@@ -29,7 +29,7 @@ func _ready():
 		right_45_node.enabled = false
 		forward_car_detector.enabled = false
 
-func _process(delta):
+func _process(_delta):
 	right_90 = get_distance(right_90_node)
 	left_90 = get_distance(left_90_node)
 	if car.player == false:

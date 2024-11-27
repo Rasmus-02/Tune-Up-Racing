@@ -1,0 +1,43 @@
+[gd_scene load_steps=10 format=3 uid="uid://c8usk02dc7wsh"]
+
+[ext_resource type="Script" path="res://Assets/Car/Code/Part_scripts/F_Bumper.gd" id="1_6y7pb"]
+[ext_resource type="Shader" path="res://Shaders/Test/ColorSelector.gdshader" id="2_66brg"]
+[ext_resource type="Texture2D" uid="uid://ddbnhdqp1majc" path="res://Textures/Cars/Nagata Koi/Front Bumper/Nagata Koi Vortex Front Bumper.png" id="3_2sru4"]
+[ext_resource type="Texture2D" uid="uid://0r5lpkjuh6o2" path="res://Textures/Cars/Nagata Koi/Front Bumper/Nagata Koi Vortex Front Bumper NM.png" id="4_f7wq7"]
+[ext_resource type="Texture2D" uid="uid://e777h8uajmux" path="res://Textures/Cars/Nagata Koi/Front Bumper/Nagata Koi Vortex Front Bumper Spec.png" id="5_tqu08"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_0k5i8"]
+shader = ExtResource("2_66brg")
+shader_parameter/import_new_color = null
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_0hbqo"]
+diffuse_texture = ExtResource("3_2sru4")
+normal_texture = ExtResource("4_f7wq7")
+specular_texture = ExtResource("5_tqu08")
+specular_shininess = 0.5
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_nxqv5"]
+blend_mode = 1
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_j57wh"]
+polygon = PackedVector2Array(133, 26, 133, 17, 132, 17, 132, -14, 133, -14, 133, -23, 130, -30, 125, -35, 123, -36, 114, -36, 114, 39, 123, 39, 125, 38, 130, 33)
+
+[node name="Nagata Koi [Vortex] Front Bumper" type="Node2D"]
+script = ExtResource("1_6y7pb")
+rarity = "uncommon"
+Part_Number = 4
+description = "An affordable front bumper with improved cooling airflow for the Nagata Koi, designed by the aftermarket parts manufacturer Vortex"
+price = 325
+weight = 8
+downforce = 20
+drag = 0.04
+engine_cool_mod = 0.35
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_0k5i8")
+texture = SubResource("CanvasTexture_0hbqo")
+
+[node name="LightOccluder2D2" type="LightOccluder2D" parent="Sprite2D"]
+material = SubResource("CanvasItemMaterial_nxqv5")
+position = Vector2(-30, -2)
+occluder = SubResource("OccluderPolygon2D_j57wh")

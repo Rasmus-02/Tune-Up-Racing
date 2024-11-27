@@ -29,6 +29,7 @@ script = ExtResource("1_pa6cb")
 rarity = "D"
 Part_Number = 1
 description = "The factory headlights for the Nagata Koi"
+paintable = false
 weight = 5
 drag = 0.01
 

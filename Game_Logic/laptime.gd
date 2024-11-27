@@ -32,7 +32,7 @@ func get_current():
 	return time_to_minutes_secs_mili(ms, "Current")
 
 func time_to_minutes_secs_mili(time : float, type):
-	var mins = int(time) / 60
+	var mins = int(int(time) / 60)
 	time -= mins * 60
 	var secs = int(time) 
 	var mili = int((time - int(time)) * 100)

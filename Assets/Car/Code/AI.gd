@@ -19,7 +19,7 @@ var lap = 1.0
 func import_racing_line(line_2d):
 	racing_line = line_2d
 
-func _physics_process(delta):
+func _physics_process(_delta):
 	if SelectedScene.scene == "Track" and racing_line != null:
 		get_next_point()
 		var progress_1 = lap * 100000.0 #Make Lap the most important by making it 1000 times bigger that point weight

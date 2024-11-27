@@ -16,8 +16,9 @@ script = ExtResource("1_n3cee")
 rarity = "rare"
 Part_Number = 3
 description = "A lightweight hood for the Nagata Koi, designed by KS-Racing"
+paintable = false
 price = 700
-weight = 7
+weight = 8
 downforce = 30
 drag = 0.03
 

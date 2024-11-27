@@ -26,10 +26,10 @@ polygon = PackedVector2Array(135.912, 24.3015, 135.912, 16.2769, 135, 16, 134.91
 script = ExtResource("1_jscgv")
 rarity = "rare"
 Part_Number = 3
-description = "A  dront bumper with a lip installed for improved downforce for the Nagata Koi, designed by Satetsu"
+description = "A front bumper with a lip installed for improved downforce for the Nagata Koi, designed by Satetsu"
 price = 550
 weight = 8
-downforce = 40
+downforce = 50
 drag = 0.05
 engine_cool_mod = 0.3
 

@@ -1,10 +1,9 @@
 class_name generator
 extends Node
-var precision = 0.6#0.8
 var difficulty = 1.15
 
 #Main Functions
-func generate_car(rarity, weight, torque_estimate, grip, downforce, brake_force):
+func generate_car(rarity, weight, torque_estimate, grip, downforce, brake_force, precision):
 	torque_estimate = torque_estimate * difficulty
 	grip *= difficulty
 	downforce *= difficulty
@@ -24,10 +23,9 @@ func generate_car(rarity, weight, torque_estimate, grip, downforce, brake_force)
 		randomize()
 		var rng = randi_range(0, car_array.size() - 1) #Pick A Random Chassi from the array
 		var car_model = car_array[rng]
-		print(" ")
-		print("Car array: ",car_array)
-		print("Car model: ",car_model
-		)
+		#print(" ")
+		#print("Car array: ",car_array)
+		#print("Car model: ",car_model)
 		
 		#Find proper parts for the chassi
 		var chassi = car_model.chassi[0].instantiate()
@@ -48,11 +46,11 @@ func generate_car(rarity, weight, torque_estimate, grip, downforce, brake_force)
 		var radiator = _find_suitable_part("radiator", universal.radiator, null, null, null)
 		
 		var car_weight = car_model.chassi[0].instantiate().weight + driveshaft.weight + gearbox.weight + fenders.weight + wheels.weight + tires.weight + spoiler.weight + f_bumper.weight + headlight.weight + taillights.weight + mirrors.weight + subframe.weight + exhaust.weight + brakes.weight + suspension.weight + radiator.weight
-		print(car_weight)
+		#print(car_weight)
 		var r_bumper = _find_suitable_part("r_bumper", car_model.r_bumper, [0, weight - car_weight], null, null)
-		print(r_bumper.weight)
+		#print(r_bumper.weight)
 		var hood = _find_suitable_part("hood", car_model.hood, [0, weight - car_weight], null, null)
-		print(hood.weight)
+		#print(hood.weight)
 		car_weight += hood.weight + r_bumper.weight
 		
 		var engine_position_offset = Vector2.ZERO
@@ -87,7 +85,7 @@ func generate_car(rarity, weight, torque_estimate, grip, downforce, brake_force)
 		"suspension" : suspension.Part_Number,
 		"radiator" : radiator.Part_Number,}
 
-func generate_engine(weight, car_weight, torque, engine_bay_size, engine_offset, drivetrain, stock_engine):
+func generate_engine(weight, car_weight, torque, engine_bay_size, engine_offset, drivetrain, stock_engine, precision):
 	torque *= difficulty
 	
 	randomize()
@@ -107,7 +105,6 @@ func generate_engine(weight, car_weight, torque, engine_bay_size, engine_offset,
 	var engine_array = []
 	var universal = AssetList.engine_list.get_child(0)
 	var max_weight = weight - car_weight #The max weight for the engine
-	var block_weight_percent = 0.33
 	var stock_or_swapped = randi_range(0, 10)
 	#Use Stock Engine
 	if stock_or_swapped <= 5:
@@ -139,7 +136,7 @@ func generate_engine(weight, car_weight, torque, engine_bay_size, engine_offset,
 			est_tq += (intake_manifold.supercharer_displacement_capacity * 0.0004)
 		est_tq *= intake_manifold.tq_mod
 		est_tq_nb *= intake_manifold.tq_mod
-		var exhaust_manifold = _find_suitable_part("exhaust_manifold", engine_model.exhaust_manifold, [torque * precision, torque / precision], [0,max_width_r - block.width * 0.5], [est_tq, torque, est_tq_nb])
+		var exhaust_manifold = _find_suitable_part("exhaust_manifold", engine_model.exhaust_manifold, [torque * precision, torque / precision], [0,max_width_r - block.width * 0.5], [est_tq, torque, est_tq_nb, intake_manifold.layout])
 		if exhaust_manifold.turbo == true:
 			boost_estimate_turbo = _estimate_boost(est_tq, est_tq_nb, torque, exhaust_manifold.get_turbo_max_size(), exhaust_manifold.turbo_efficiency)
 			boost_estimate_total += boost_estimate_turbo
@@ -179,52 +176,52 @@ func generate_engine(weight, car_weight, torque, engine_bay_size, engine_offset,
 		#print("exhaust width: ", block.width * 0.5 + exhaust_manifold.width)
 		if block.lenght > max_lenght: #check so part doesn't fits in engine bay
 			return(null)
-			print("Block too long")
+			#print("Block too long")
 		#V ENGINES
 		if block.layout == "V": #different calc for V engines 
 			#Exhaust Manifold
 			if block.width * 0.5 + exhaust_manifold.width > max_width_l or block.width * 0.5 + exhaust_manifold.width > max_width_r or block.lenght + exhaust_manifold.lenght > max_lenght: #check so part doesn't fits in engine bay
-				print("exhaust manifold to large")
+				#print("exhaust manifold to large")
 				return(null)
 			#Intake Manifold
 			if block.lenght + intake_manifold.lenght + air_filter.lenght > max_lenght: #check so part doesn't fits in engine bay
-				print("intake manifold to large  ", intake_manifold, "  ", engine_bay_size)
+				#print("intake manifold to large  ", intake_manifold, "  ", engine_bay_size)
 				return(null)
 			#Air Filter
 			if block.lenght + air_filter.lenght + intake_manifold.lenght > max_lenght: #check so part doesn't fits in engine bay
-				print("air to large")
+				#print("air to large")
 				return(null)
 		#Other Engines
 		else:
 			#Exhaust Manifold
 			if block.width * 0.5 + exhaust_manifold.width > max_width_r or block.lenght + exhaust_manifold.lenght > max_lenght: #check so part doesn't fits in engine bay
-				print("exhaust manifold to large")
+				#print("exhaust manifold to large")
 				return(null)
 			#Intake Manifold
 			if block.width * 0.5 + intake_manifold.width > max_width_l or block.lenght + intake_manifold.lenght > max_lenght: #check so part doesn't fits in engine bay
-				print("intake manifold to large")
+				#print("intake manifold to large")
 				return(null)
 		
 		#If engine is not within torque limits return NULL to generate new one
 		if est_tq < torque * precision or est_tq > torque / precision:
-			print("Too much / too little torque:  ", est_tq, " ", torque)
+			#print("Too much / too little torque:  ", est_tq, " ", torque)
 			return null
 		
 		#If engine is not withing weight limits return NULL to generate new one
 		var engine_weight = block.weight + exhaust_manifold.weight + intake_manifold.weight + internals.weight + air_filter.weight + top.weight
 		if engine_weight < max_weight * (precision * 0.8) or engine_weight > max_weight / (precision * 0.8):
-			print("too heavy engine: ", engine_model, " ", exhaust_manifold, " ", weight, " ", engine_weight)
+			#print("too heavy engine: ", engine_model, " ", exhaust_manifold, " ", weight, " ", engine_weight)
 			return null
 		
 		#If engine is knocking return NULL to generate new one
 		if boost_estimate_total > top.max_compression:
-			print("Too much boost / Compression:  ", boost_estimate_total)
+			#print("Too much boost / Compression:  ", boost_estimate_total)
 			return null
 		
 		
-		print(" ")
-		print("SUCCESS")
-		print(" ")
+		#print(" ")
+		#print("SUCCESS")
+		#print(" ")
 		#If engine is within torque limits return engine
 		return {"Engine_ID" : block.Engine_ID,
 		"max_boost" : boost_estimate_turbo,
@@ -300,7 +297,10 @@ func _find_suitable_part(category ,category_array, stat1_range, stat2_range, sta
 					stat_1 *= instance.tq_mod
 				else:
 					stat_1 = stat_import[0] * instance.tq_mod
-				stat_2 = instance.width
+				if stat_import[3] == "top" and instance.turbo == true: #If carb and turbo make it illegal (by pretending to be huge so it won't fit)
+					stat_2 = 9999
+				else:
+					stat_2 = instance.width
 			"internals":
 				instance = category_array[i+1].instantiate()
 				stat_1 = instance.max_tq
@@ -316,8 +316,6 @@ func _find_suitable_part(category ,category_array, stat1_range, stat2_range, sta
 				instance = category_array[i+1].instantiate()
 				stat_2 = instance.layout
 		
-		if stat1_range != null:
-			print("CHECK: ",instance," stat:", stat_1, " min:", stat1_range[0]," max:", stat1_range[1])
 		if (stat1_range == null or stat_1 >= stat1_range[0] and stat_1 <= stat1_range[1]) and (stat2_range == null or stat_2 >= stat2_range[0] and stat_2 <= stat2_range[1]):
 			temp_array.append(instance)
 		elif (stat2_range == null or stat_2 >= stat2_range[0] and stat_2 <= stat2_range[1]):
