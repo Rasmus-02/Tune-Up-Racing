@@ -32,6 +32,7 @@ script = ExtResource("5_hpubw")
 
 [node name="Backfire_Sound" type="AudioStreamPlayer2D" parent="Backfire"]
 stream = ExtResource("6_ksulv")
+bus = &"Car Volume"
 
 [node name="Exhaust_1" type="Marker2D" parent="Backfire"]
 position = Vector2(-119, -27)

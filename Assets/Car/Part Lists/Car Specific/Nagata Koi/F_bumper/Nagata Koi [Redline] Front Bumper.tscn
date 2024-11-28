@@ -20,7 +20,7 @@ specular_shininess = 0.5
 blend_mode = 1
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_j57wh"]
-polygon = PackedVector2Array(133, 28, 133, 22, 133, -19, 133, -25, 131, -29, 125, -35, 123, -36, 114, -36, 114, 39, 123, 39, 125, 38, 131, 32)
+polygon = PackedVector2Array(135, 29, 135, -26, 133, -30, 126, -37, 114, -37, 114, 40, 126, 40, 133, 33)
 
 [node name="Nagata Koi [Redline] Front Bumper" type="Node2D"]
 script = ExtResource("1_84qgg")

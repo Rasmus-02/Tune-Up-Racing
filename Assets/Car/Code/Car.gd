@@ -478,7 +478,7 @@ func update_stats():
 	
 	var node = get_child(0).get_child(0).get_node("Part Selector")
 	weight = chassi.weight + driveshaft.weight + subframe.weight + fenders.weight + f_bumper.weight + r_bumper.weight + hood.weight + headlights.weight + taillights.weight + spoiler.weight + mirrors.weight + brakes.weight + suspension.weight + tires.weight + wheels.weight  + gearbox.weight + radiator.weight + exhaust.weight + engine.weight
-	handling_bonus = (1+suspension.handling_bonus/((1+(weight/1000.0))/2.0))/2 #weight to make heavier cars handle worse
+	handling_bonus = (1+((suspension.handling_bonus + subframe.handling_bonus) * 0.5)/((1+(weight/1000.0))/2.0))/2 #weight to make heavier cars handle worse
 	max_tire_limit = tires.grip
 	treadwear = tires.treadwear
 	brake_force = (brakes.brake_force / (weight/1000.0)) *-1
@@ -756,12 +756,15 @@ func light_controll(light_type,on_off, strenght):
 					taillight.texture_scale = 0.15
 					i+=1
 		var headlight_strenght = strenght / 30.0
-		var left_headlight_sprite = self.get_child(0).get_child(0).get_child(0).headlights.get_child(0).get_child(0)
-		var right_headlight_sprite = self.get_child(0).get_child(0).get_child(0).headlights.get_child(0).get_child(1)
+		var headlight_sprite = self.get_child(0).get_child(0).get_child(0).headlights.get_node("Sprite2D")
 		if light_type == "headlights": #Headlights
 			#Set the light of the sprite
-			left_headlight_sprite.energy = strenght*3.0
-			right_headlight_sprite.energy = strenght*3.0
+			if on_off == true: #Turn on headlight sprite
+				headlight_sprite.frame = 1
+				headlight_sprite.get_child(0).show() #The unshaded lightmask
+			else: #Turn off headlight sprite
+				headlight_sprite.frame = 0
+				headlight_sprite.get_child(0).show() #The unshaded lightmask
 			var index = 0
 			for i in 2: #Set the actual light coming of
 				index = i

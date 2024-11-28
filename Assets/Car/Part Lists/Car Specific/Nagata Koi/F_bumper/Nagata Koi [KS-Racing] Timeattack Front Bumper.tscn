@@ -25,7 +25,7 @@ polygon = PackedVector2Array(132.912, 22.3015, 132.912, -18.6985, 129.912, -27.6
 [node name="Nagata Koi [KS-Racing] Timeattack Front Bumper" type="Node2D"]
 script = ExtResource("1_caqdx")
 rarity = "rare"
-Part_Number = 2
+Part_Number = 6
 description = "The factory front bumper for the Nagata Koi with a KS-Racing carbon fiber lip bolted on to it for some extra downforce"
 price = 800
 weight = 10

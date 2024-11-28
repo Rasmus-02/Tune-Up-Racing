@@ -1,0 +1,24 @@
+[gd_scene load_steps=6 format=3 uid="uid://cx77hyepiv47u"]
+
+[ext_resource type="Script" path="res://Assets/Car/Code/Part_scripts/Subframe.gd" id="1_hd74q"]
+[ext_resource type="Texture2D" uid="uid://btfnohtni50t7" path="res://Textures/Cars/Nagata Koi/Subframe/Nagata Koi [Satetsu] Lightweight Subframe.png" id="2_gno5q"]
+[ext_resource type="Texture2D" uid="uid://m5luiicnx7ba" path="res://Textures/Cars/Nagata Koi/Subframe/Nagata Koi [Satetsu] Lightweight Subframe NM.png" id="3_bc2be"]
+[ext_resource type="Texture2D" uid="uid://jd5ra4rm1jp8" path="res://Textures/Cars/Nagata Koi/Subframe/Nagata Koi [Satetsu] Lightweight Subframe Spec.png" id="4_0ik1p"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_0jkfa"]
+diffuse_texture = ExtResource("2_gno5q")
+normal_texture = ExtResource("3_bc2be")
+specular_texture = ExtResource("4_0ik1p")
+specular_shininess = 0.5
+
+[node name="Nagata Koi [Satetsu] Lightweight Subframe" type="Node2D"]
+script = ExtResource("1_hd74q")
+rarity = "epic"
+Part_Number = 4
+description = "A lightweight subframe for the Nagata Koi providing better handling and reduced weight, designed by Satetsu"
+price = 950
+weight = 11
+handling_bonus = 1.06
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = SubResource("CanvasTexture_0jkfa")

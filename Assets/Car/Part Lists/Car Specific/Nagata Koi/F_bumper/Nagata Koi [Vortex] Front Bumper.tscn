@@ -30,7 +30,7 @@ description = "An affordable front bumper with improved cooling airflow for the 
 price = 325
 weight = 8
 downforce = 20
-drag = 0.04
+drag = 0.045
 engine_cool_mod = 0.35
 
 [node name="Sprite2D" type="Sprite2D" parent="."]

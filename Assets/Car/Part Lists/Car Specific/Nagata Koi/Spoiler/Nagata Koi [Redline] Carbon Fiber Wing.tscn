@@ -1,0 +1,26 @@
+[gd_scene load_steps=6 format=3 uid="uid://lh2efbcf1h5j"]
+
+[ext_resource type="Script" path="res://Assets/Car/Code/Part_scripts/Spoiler.gd" id="1_4482p"]
+[ext_resource type="Texture2D" uid="uid://d2cc2euxqecxd" path="res://Textures/Cars/Nagata Koi/Spoiler/Nagata Koi [Redline] Carbon Fiber Wing.png" id="2_mivhc"]
+[ext_resource type="Texture2D" uid="uid://bbxl4r00wlfxj" path="res://Textures/Cars/Nagata Koi/Spoiler/Nagata Koi [Redline] Carbon Fiber Wing NM.png" id="3_kqrvq"]
+[ext_resource type="Texture2D" uid="uid://8mv5f8l7og0g" path="res://Textures/Cars/Nagata Koi/Spoiler/Nagata Koi [Redline] Carbon Fiber Wing Spec.png" id="4_jp1j0"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_swaqy"]
+diffuse_texture = ExtResource("2_mivhc")
+normal_texture = ExtResource("3_kqrvq")
+specular_texture = ExtResource("4_jp1j0")
+specular_shininess = 0.5
+
+[node name="Nagata Koi [Redline] Carbon Fiber Wing" type="Node2D"]
+script = ExtResource("1_4482p")
+rarity = "epic"
+Part_Number = 4
+description = "A large carbon fiber wing by Redline for the Nagata Koi, designed to generate as much downforce as possible and keep the car firmly planted at all times, the downside is that it also generates a lot of drag"
+paintable = false
+price = 1200
+weight = 10
+drag = 0.075
+downforce = 300
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = SubResource("CanvasTexture_swaqy")

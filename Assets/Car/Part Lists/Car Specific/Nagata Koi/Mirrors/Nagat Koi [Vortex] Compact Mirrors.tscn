@@ -1,0 +1,24 @@
+[gd_scene load_steps=6 format=3 uid="uid://ci1d7elytxq5b"]
+
+[ext_resource type="Script" path="res://Assets/Car/Code/Part_scripts/Mirrors.gd" id="1_ks0jm"]
+[ext_resource type="Texture2D" uid="uid://be6s6xtf0ej5e" path="res://Textures/Cars/Nagata Koi/Mirrors/Nagata Koi [Vortex] Compact Mirrors.png" id="2_fmuok"]
+[ext_resource type="Texture2D" uid="uid://1r88v4ja0bjk" path="res://Textures/Cars/Nagata Koi/Mirrors/Nagata Koi [Vortex] Compact Mirrors NM.png" id="3_58swg"]
+[ext_resource type="Texture2D" uid="uid://d3x80kms0sfx2" path="res://Textures/Cars/Nagata Koi/Mirrors/Nagata Koi [Vortex] Compact Mirrors Spec.png" id="4_5qt7m"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_e2ut5"]
+diffuse_texture = ExtResource("2_fmuok")
+normal_texture = ExtResource("3_58swg")
+specular_texture = ExtResource("4_5qt7m")
+specular_shininess = 0.5
+
+[node name="Nagata Koi [Vortex] Compact Mirrors" type="Node2D"]
+script = ExtResource("1_ks0jm")
+rarity = "uncommon"
+Part_Number = 2
+description = "More compact, paintable mirrors for the Nagata Koi designed by Vortex"
+price = 150
+weight = 2
+drag = 0.01
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = SubResource("CanvasTexture_e2ut5")

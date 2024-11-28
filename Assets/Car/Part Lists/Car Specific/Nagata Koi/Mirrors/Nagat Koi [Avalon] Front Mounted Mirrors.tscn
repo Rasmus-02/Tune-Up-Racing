@@ -1,0 +1,25 @@
+[gd_scene load_steps=6 format=3 uid="uid://opam3xgpkg0p"]
+
+[ext_resource type="Script" path="res://Assets/Car/Code/Part_scripts/Mirrors.gd" id="1_3tgqh"]
+[ext_resource type="Texture2D" uid="uid://cr2agsucthh86" path="res://Textures/Cars/Nagata Koi/Mirrors/Nagata Koi [Avalon] Front Mounted Mirrors.png" id="2_wav3s"]
+[ext_resource type="Texture2D" uid="uid://ctk4y73rnv6xl" path="res://Textures/Cars/Nagata Koi/Mirrors/Nagata Koi [Avalon] Front Mounted Mirrors NM.png" id="3_wug7i"]
+[ext_resource type="Texture2D" uid="uid://ri3w1cfpme5p" path="res://Textures/Cars/Nagata Koi/Mirrors/Nagata Koi [Avalon] Front Mounted Mirrors Spec.png" id="4_mnqos"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_e2ut5"]
+diffuse_texture = ExtResource("2_wav3s")
+normal_texture = ExtResource("3_wug7i")
+specular_texture = ExtResource("4_mnqos")
+specular_shininess = 0.5
+
+[node name="Nagata Koi [Avalon] Front Mounted Mirrors" type="Node2D"]
+script = ExtResource("1_3tgqh")
+rarity = "rare"
+Part_Number = 3
+description = "Front mounted retro style mirrors for the Nagata Koi designed by Avalon"
+paintable = false
+price = 300
+weight = 1
+drag = 0.01
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = SubResource("CanvasTexture_e2ut5")

@@ -1132,12 +1132,12 @@ rotation = -1.37013
 color = Color(1, 0.984314, 0.964706, 1)
 energy = 0.8
 blend_mode = 2
-range_z_min = 998
+range_z_min = 999
 range_z_max = 1000
 shadow_filter_smooth = 0.5
 shadow_item_cull_mask = 2
 texture = ExtResource("2_cg0kx")
-height = 1705.0
+height = 1700.0
 
 [node name="Sun Trees" type="PointLight2D" parent="Lighting/Sun Ground"]
 position = Vector2(-0.000341471, 0.0260878)
@@ -1148,7 +1148,7 @@ range_z_max = 1100
 shadow_filter_smooth = 0.5
 shadow_item_cull_mask = 2
 texture = ExtResource("2_cg0kx")
-height = 2130.0
+height = 2999.0
 
 [node name="RoofLight" type="PointLight2D" parent="Lighting"]
 position = Vector2(89.6878, 849.566)

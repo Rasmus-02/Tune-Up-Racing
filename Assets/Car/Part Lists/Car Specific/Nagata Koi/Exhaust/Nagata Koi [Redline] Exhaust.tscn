@@ -1,0 +1,42 @@
+[gd_scene load_steps=9 format=3 uid="uid://c78y7gm3er3mq"]
+
+[ext_resource type="Script" path="res://Assets/Car/Code/Part_scripts/Exhaust.gd" id="1_cn8ww"]
+[ext_resource type="Texture2D" uid="uid://dr0ci3kcdwl2b" path="res://Textures/Cars/Nagata Koi/Exhaust/Nagata Koi [Redline] Exhaust.png" id="2_qoeg7"]
+[ext_resource type="Texture2D" uid="uid://3qykid653yr3" path="res://Textures/Cars/Nagata Koi/Exhaust/Nagata Koi [Redline] Exhaust NM.png" id="3_m4lh1"]
+[ext_resource type="Texture2D" uid="uid://de5w5lbebj71h" path="res://Textures/Cars/Nagata Koi/Exhaust/Nagata Koi [Redline] Exhaust Spec.png" id="4_vcnru"]
+[ext_resource type="Script" path="res://Assets/Effects/Backfire.gd" id="5_2rg67"]
+[ext_resource type="AudioStream" uid="uid://cfvwt4fi2efkr" path="res://Sound/Engine Sounds/Backfire.mp3" id="6_cmevj"]
+[ext_resource type="PackedScene" uid="uid://b1agqhrv0psca" path="res://Assets/Effects/Backfire.tscn" id="7_if40b"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_lr5dr"]
+diffuse_texture = ExtResource("2_qoeg7")
+normal_texture = ExtResource("3_m4lh1")
+specular_texture = ExtResource("4_vcnru")
+specular_shininess = 0.65
+
+[node name="Nagata Koi [Redline] Exhaust" type="Node2D"]
+script = ExtResource("1_cn8ww")
+rarity = "rare"
+Part_Number = 4
+description = "A high performance exhaust system designed by Redline, for the Nagata Koi."
+price = 800
+weight = 18
+tq_mod = 1.05
+sound_dampening = 5
+pitch_tweak = 0.96
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-1, 0)
+texture = SubResource("CanvasTexture_lr5dr")
+
+[node name="Backfire" type="Node2D" parent="."]
+script = ExtResource("5_2rg67")
+
+[node name="Backfire_Sound" type="AudioStreamPlayer2D" parent="Backfire"]
+stream = ExtResource("6_cmevj")
+bus = &"Car Volume"
+
+[node name="Exhaust_1" type="Marker2D" parent="Backfire"]
+position = Vector2(-106, 29)
+
+[node name="Backfire" parent="Backfire/Exhaust_1" instance=ExtResource("7_if40b")]

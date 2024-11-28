@@ -1,0 +1,47 @@
+[gd_scene load_steps=9 format=3 uid="uid://b5oe62m35708i"]
+
+[ext_resource type="Script" path="res://Assets/Car/Code/Part_scripts/Exhaust.gd" id="1_fqycw"]
+[ext_resource type="Texture2D" uid="uid://d322ukhpx6n8a" path="res://Textures/Cars/Nagata Koi/Exhaust/Nagata Koi [Niepa] Exhaust.png" id="2_5u7eo"]
+[ext_resource type="Texture2D" uid="uid://hfv7phmvgxg3" path="res://Textures/Cars/Nagata Koi/Exhaust/Nagata Koi [Niepa] Exhaust NM.png" id="3_dwmv7"]
+[ext_resource type="Texture2D" uid="uid://bjgclaadjmah7" path="res://Textures/Cars/Nagata Koi/Exhaust/Nagata Koi [Niepa] Exhaust Spec.png" id="4_olt7o"]
+[ext_resource type="Script" path="res://Assets/Effects/Backfire.gd" id="5_aa7ty"]
+[ext_resource type="AudioStream" uid="uid://cfvwt4fi2efkr" path="res://Sound/Engine Sounds/Backfire.mp3" id="6_cxuc4"]
+[ext_resource type="PackedScene" uid="uid://b1agqhrv0psca" path="res://Assets/Effects/Backfire.tscn" id="7_ml0vj"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_lr5dr"]
+diffuse_texture = ExtResource("2_5u7eo")
+normal_texture = ExtResource("3_dwmv7")
+specular_texture = ExtResource("4_olt7o")
+specular_shininess = 0.65
+
+[node name="Nagata Koi [Niepa] Exhaust" type="Node2D"]
+script = ExtResource("1_fqycw")
+rarity = "uncommon"
+Part_Number = 3
+description = "A performance exhaust system designed by Niepa, for the Nagata Koi."
+price = 350
+weight = 30
+tq_mod = 1.02
+sound_dampening = 8
+pitch_tweak = 1.02
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-1, 0)
+texture = SubResource("CanvasTexture_lr5dr")
+
+[node name="Backfire" type="Node2D" parent="."]
+script = ExtResource("5_aa7ty")
+
+[node name="Backfire_Sound" type="AudioStreamPlayer2D" parent="Backfire"]
+stream = ExtResource("6_cxuc4")
+bus = &"Car Volume"
+
+[node name="Exhaust_1" type="Marker2D" parent="Backfire"]
+position = Vector2(-106, 28)
+
+[node name="Backfire" parent="Backfire/Exhaust_1" instance=ExtResource("7_ml0vj")]
+
+[node name="Exhaust_2" type="Marker2D" parent="Backfire"]
+position = Vector2(-106, 24)
+
+[node name="Backfire" parent="Backfire/Exhaust_2" instance=ExtResource("7_ml0vj")]

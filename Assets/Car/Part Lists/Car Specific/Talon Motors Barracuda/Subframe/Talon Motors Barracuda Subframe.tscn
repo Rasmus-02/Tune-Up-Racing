@@ -19,6 +19,7 @@ Part_Number = 1
 description = "The factory subframe for the Talon Motors Barracuda"
 price = 350
 weight = 25
+handling_bonus = 1.0
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = SubResource("CanvasTexture_0jkfa")

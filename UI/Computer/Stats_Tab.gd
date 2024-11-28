@@ -181,14 +181,14 @@ func get_stats(part, id : int, type : int):
 					update_display(stats[3], part.drag, "Drag", "")
 					update_display(stats[4], part.weight, "Weight", "Kg")
 					update_display(stats[5], part.durability, "Durability", "%")
-				9, 8: #taillights, subframe
+				9: #taillights
 					update_display(stats[0], null, "", "")
 					update_display(stats[1], null, "", "")
 					update_display(stats[2], null, "", "")
 					update_display(stats[3], null, "", "")
 					update_display(stats[4], part.weight, "Weight", "Kg")
 					update_display(stats[5], part.durability, "Durability", "%")
-				12: #suspension
+				12, 8: #suspension, subframe
 					update_display(stats[0], int(part.handling_bonus * 100), "Handling", "%")
 					update_display(stats[1], null, "", "")
 					update_display(stats[2], null, "", "")
