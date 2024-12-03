@@ -1,0 +1,45 @@
+[gd_scene load_steps=10 format=3 uid="uid://cuu1tkexqmtfp"]
+
+[ext_resource type="Script" path="res://Assets/Car/Code/Part_scripts/Fenders.gd" id="1_ocq8x"]
+[ext_resource type="Shader" path="res://Shaders/Test/ColorSelector.gdshader" id="2_tnc1q"]
+[ext_resource type="Texture2D" uid="uid://b2tr26ov21mfn" path="res://Textures/Cars/Talon Motors Barracuda/Fenders/Talon Motors Barracuda [Niepa] Widebody Fenders.png" id="3_phtgx"]
+[ext_resource type="Texture2D" uid="uid://dpvdwa4jq8ao0" path="res://Textures/Cars/Talon Motors Barracuda/Fenders/Talon Motors Barracuda [Niepa] Widebody Fenders NM.png" id="4_e56nd"]
+[ext_resource type="Texture2D" uid="uid://ct1anffi46u8p" path="res://Textures/Cars/Talon Motors Barracuda/Fenders/Talon Motors Barracuda [Niepa] Widebody Fenders Spec.png" id="5_q1suv"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_akfhv"]
+shader = ExtResource("2_tnc1q")
+shader_parameter/import_new_color = null
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_vufhm"]
+diffuse_texture = ExtResource("3_phtgx")
+normal_texture = ExtResource("4_e56nd")
+specular_texture = ExtResource("5_q1suv")
+specular_shininess = 0.5
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_3wvub"]
+polygon = PackedVector2Array(98, 39, 84, 44, 39, 44, 37, 43, 31, 41, 28, 39, 28, 37, 28, -40, 31, -42, 37, -44, 39, -45, 84, -45, 88, -44, 98, -40, 98, -39, 92, -36, 92, 35, 98, 38)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_1h2bm"]
+polygon = PackedVector2Array(-39, 42, -42, 44, -90, 44, -93, 42, -93, -43, -90, -45, -42, -45, -39, -43)
+
+[node name="Talon Motors Barracuda [Niepa] Widebody Fenders" type="Node2D"]
+script = ExtResource("1_ocq8x")
+rarity = "epic"
+Car_ID = 1
+Part_Number = 3
+description = "Widebody fenders for the Talon Motors Barracuda designed by Niepa"
+price = 850
+weight = 22
+downforce = 10
+drag = 0.04
+max_tire_width = 280
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_akfhv")
+texture = SubResource("CanvasTexture_vufhm")
+
+[node name="LightOccluder2D3" type="LightOccluder2D" parent="."]
+occluder = SubResource("OccluderPolygon2D_3wvub")
+
+[node name="LightOccluder2D4" type="LightOccluder2D" parent="."]
+occluder = SubResource("OccluderPolygon2D_1h2bm")

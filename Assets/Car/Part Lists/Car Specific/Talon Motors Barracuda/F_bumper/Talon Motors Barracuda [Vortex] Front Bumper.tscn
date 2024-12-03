@@ -26,13 +26,13 @@ polygon = PackedVector2Array(142.912, 17.3015, 139.912, 28.3015, 135.912, 37.301
 script = ExtResource("1_olcf6")
 rarity = "rare"
 Car_ID = 1
-Part_Number = 2
+Part_Number = 3
 description = "A front bumper with improved cooling designed by the aftermarket parts manufacturer Vortex for the Talon Motors Barracuda"
 price = 550
-weight = 6
-downforce = 45
-drag = 0.05
-engine_cool_mod = 0.2
+weight = 7
+downforce = 25
+drag = 0.04
+engine_cool_mod = 0.25
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 material = SubResource("ShaderMaterial_k0hce")

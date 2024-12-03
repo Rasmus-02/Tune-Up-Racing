@@ -24,11 +24,11 @@ polygon = PackedVector2Array(143.912, 17.3015, 140.912, 24.3015, 141.912, 28.301
 
 [node name="Talon Motors Barracuda [Satetsu] Front Bumper" type="Node2D"]
 script = ExtResource("1_aipiq")
-rarity = "rare"
+rarity = "epic"
 Car_ID = 1
-Part_Number = 3
+Part_Number = 5
 description = "A Frontbumper and lip combo developed by Satetsu Racing for the Talon Motors Barracuda to improve high speed handling"
-price = 700
+price = 850
 weight = 9
 downforce = 75
 drag = 0.05

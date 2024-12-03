@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://cbe0m3t1pyfdv"
+path="res://.godot/imported/Typhoon redline t4.mp3-387785da8ea14ab942334cb8b35a607d.mp3str"
+
+[deps]
+
+source_file="res://Sound/Engine Sounds/Typhoon/Typhoon redline t4.mp3"
+dest_files=["res://.godot/imported/Typhoon redline t4.mp3-387785da8ea14ab942334cb8b35a607d.mp3str"]
+
+[params]
+
+loop=true
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

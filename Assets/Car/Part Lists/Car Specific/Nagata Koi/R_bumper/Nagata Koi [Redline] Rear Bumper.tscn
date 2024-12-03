@@ -1,0 +1,42 @@
+[gd_scene load_steps=10 format=3 uid="uid://chrmt3628h65t"]
+
+[ext_resource type="Script" path="res://Assets/Car/Code/Part_scripts/R_bumper.gd" id="1_m2laj"]
+[ext_resource type="Shader" path="res://Shaders/Test/ColorSelector.gdshader" id="2_fr6kc"]
+[ext_resource type="Texture2D" uid="uid://lv3gyf7nhvc2" path="res://Textures/Cars/Nagata Koi/Rear Bumper/Nagata Koi [Redline] Rear Bumper.png" id="3_qchbn"]
+[ext_resource type="Texture2D" uid="uid://car82olljtw6y" path="res://Textures/Cars/Nagata Koi/Rear Bumper/Nagata Koi [Redline] Rear Bumper NM.png" id="4_dbrh6"]
+[ext_resource type="Texture2D" uid="uid://enkanmgdxspo" path="res://Textures/Cars/Nagata Koi/Rear Bumper/Nagata Koi [Redline] Rear Bumper Spec.png" id="5_dr2fg"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_a4wir"]
+shader = ExtResource("2_fr6kc")
+shader_parameter/import_new_color = null
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_r5f60"]
+diffuse_texture = ExtResource("3_qchbn")
+normal_texture = ExtResource("4_dbrh6")
+specular_texture = ExtResource("5_dr2fg")
+specular_shininess = 0.5
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_pappr"]
+blend_mode = 1
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_gxeul"]
+polygon = PackedVector2Array(-56.0884, -39.6985, -67.0884, -39.6985, -73.0884, -36.6985, -75.0884, -34.6985, -76.0884, -32.6985, -76.0884, -29.6985, -74.0884, -29.6985, -77.0884, -22.6985, -78.0884, -21.6985, -78.0884, -17.6985, -79.0884, -15.6985, -79.0884, 19.3015, -78.0884, 21.3015, -78.0884, 25.3015, -77.0884, 26.3015, -76.0884, 28.3015, -74.0884, 33.3015, -76.0884, 33.3015, -76.0884, 36.3015, -73.0884, 40.3015, -67.0884, 43.3015, -56.0884, 43.3015)
+
+[node name="Nagata Koi [Redline] Rear Bumper" type="Node2D"]
+script = ExtResource("1_m2laj")
+rarity = "epic"
+Part_Number = 6
+description = "A rear bumper with a diffuser and canards for greatly improved downforce while still keeping a relatively low drag coefficient, designed for the Nagata Koi by Redline"
+price = 850
+weight = 8
+downforce = 65
+drag = 0.04
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_a4wir")
+texture = SubResource("CanvasTexture_r5f60")
+
+[node name="LightOccluder2D2" type="LightOccluder2D" parent="Sprite2D"]
+material = SubResource("CanvasItemMaterial_pappr")
+position = Vector2(-29.9116, -2.30154)
+occluder = SubResource("OccluderPolygon2D_gxeul")

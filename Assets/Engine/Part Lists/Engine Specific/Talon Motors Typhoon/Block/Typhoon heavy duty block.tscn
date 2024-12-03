@@ -1,0 +1,29 @@
+[gd_scene load_steps=6 format=3 uid="uid://cqraubfhn00e"]
+
+[ext_resource type="Script" path="res://Assets/Engine/Part_scripts/Block.gd" id="1_6gxtb"]
+[ext_resource type="Texture2D" uid="uid://moc3nw5v7ipd" path="res://Textures/Engines/Talon Motors Typhoon/Block/Typhoon Heavy Duty Cast Iron Block.png" id="2_giguf"]
+[ext_resource type="Texture2D" uid="uid://6hsybsfbuoyu" path="res://Textures/Engines/Talon Motors Typhoon/Block/Typhoon Heavy Duty Block NM.png" id="3_c1iox"]
+[ext_resource type="Texture2D" uid="uid://b043v6bcw7d4c" path="res://Textures/Engines/Talon Motors Typhoon/Block/Typhoon Cast Iron Block Spec.png" id="4_pan04"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_8byoe"]
+diffuse_texture = ExtResource("2_giguf")
+normal_texture = ExtResource("3_c1iox")
+specular_texture = ExtResource("4_pan04")
+specular_shininess = 0.5
+
+[node name="Talon Motors Typhoon Heavy Duty Block" type="Node2D"]
+script = ExtResource("1_6gxtb")
+rarity = "epic"
+layout = "V"
+lenght = 30
+width = 21
+Engine_ID = 1
+Part_Number = 3
+description = "A more durable heavy duty block for the Typhoon engine by Talon Motors. This block is able to withstand a lot more torque than the factory block"
+price = 7500
+weight = 125
+tq = 480
+max_tq = 2000
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = SubResource("CanvasTexture_8byoe")

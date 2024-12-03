@@ -1,0 +1,49 @@
+[gd_scene load_steps=8 format=3 uid="uid://cbabkm2m0mphd"]
+
+[ext_resource type="Script" path="res://Assets/Car/Code/Part_scripts/Taillights.gd" id="1_if8qb"]
+[ext_resource type="Texture2D" uid="uid://hgid5hx1jqd5" path="res://Textures/Cars/Nagata Koi/Taillights/Nagata Koi [Satetsu] Taillights.png" id="2_6h5pf"]
+[ext_resource type="Texture2D" uid="uid://dev72y2p4x7r8" path="res://Textures/Cars/Nagata Koi/Taillights/Nagata Koi Stock Taillights NM.png" id="3_ysk8q"]
+[ext_resource type="Texture2D" uid="uid://cy5qhodj4jsp1" path="res://Textures/Cars/Nagata Koi/Taillights/Nagata Koi Stock Taillights Spec.png" id="4_sqc83"]
+[ext_resource type="Texture2D" uid="uid://dds3p523p0ik5" path="res://Shaders/light.png" id="5_hxj7h"]
+[ext_resource type="PackedScene" uid="uid://ceb752tulxcv" path="res://Shaders/taillights.tscn" id="6_m0bwt"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_5na48"]
+diffuse_texture = ExtResource("2_6h5pf")
+normal_texture = ExtResource("3_ysk8q")
+specular_texture = ExtResource("4_sqc83")
+specular_shininess = 0.5
+
+[node name="Nagata Koi [Satetsu] Taillights" type="Node2D"]
+script = ExtResource("1_if8qb")
+rarity = "rare"
+Part_Number = 4
+description = "Taillights designed by the tuning shop Satetsu for the Nagata Koi"
+paintable = false
+price = 450
+weight = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = SubResource("CanvasTexture_5na48")
+
+[node name="L_Light" type="PointLight2D" parent="Sprite2D"]
+visible = false
+position = Vector2(-91, -30)
+scale = Vector2(1.2, 1.2)
+skew = 0.326377
+color = Color(0.345098, 0, 0, 1)
+texture = ExtResource("5_hxj7h")
+texture_scale = 0.02
+height = 100.0
+
+[node name="R_Light" type="PointLight2D" parent="Sprite2D"]
+visible = false
+position = Vector2(-91, 30)
+scale = Vector2(1.2, 1.2)
+skew = -0.326377
+color = Color(0.345098, 0, 0, 1)
+texture = ExtResource("5_hxj7h")
+texture_scale = 0.02
+height = 100.0
+
+[node name="Taillights" parent="." instance=ExtResource("6_m0bwt")]
+position = Vector2(-96, 0)

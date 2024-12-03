@@ -199,7 +199,8 @@ func inv_add(item_to_add): #for adding parts to the players inventory (works dif
 
 
 func remove_engine(INDEX):
-	engines = load_file("engines")
+	if engines == null:
+		engines = load_file("engines")
 	engines.erase(str(INDEX))
 	save()
 func remove_car(INDEX):
@@ -224,10 +225,10 @@ func remove_inv(item_to_remove): #for adding parts to the players inventory (wor
 	#Find the item in part_inventory:
 	var part_key : int
 	for inv_part in part_inventory.get(part[0]).get(part[1]).values():
-		print("part_key ",inv_part,"   inv_part.Key ",dict_format)
+#		print("part_key ",inv_part,"   inv_part.Key ",dict_format)
 		if inv_part.ID == dict_format.ID and inv_part.Part_number == dict_format.Part_number and inv_part.Durability == dict_format.Durability and inv_part.Color == dict_format.Color:
 			part_key = inv_part.Key
-	print("PART IN SAVE FILE: ", part_inventory.get(part[0]).get(part[1]).get(str(part_key)),"  Key: ", part_key)#part_inventory.get(part[0]).get(part[1]).get(str(part_key)))
+#	print("PART IN SAVE FILE: ", part_inventory.get(part[0]).get(part[1]).get(str(part_key)),"  Key: ", part_key)#part_inventory.get(part[0]).get(part[1]).get(str(part_key)))
 	part_inventory.get(part[0]).get(part[1]).erase(str(part_key)) #get the item at correct key and remove it
 	part_inventory.get(part[0]).get(part[1]).erase(part_key)
 	save() #saves the changes

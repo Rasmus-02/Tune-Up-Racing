@@ -3,8 +3,8 @@ extends Node2D
 @export var car : CharacterBody2D
 var car_placing : int
 var performance_bonus = 1.0
-var grip_bonus = 1.3
-var difficulty = 1.15
+var grip_bonus = 1.35
+var difficulty = 1.2
 
 func _process(_delta):
 	#Player
@@ -14,7 +14,7 @@ func _process(_delta):
 	
 	#Behind Player
 	elif car_placing > Placing.player_placing:
-		performance_bonus = 1.0 + ((car_placing - Placing.player_placing) * 0.005) ** 0.3
+		performance_bonus = 1.0 + ((car_placing - Placing.player_placing) * 0.04) ** 0.4
 		performance_bonus *= difficulty
 	
 	#In front of player
@@ -23,5 +23,5 @@ func _process(_delta):
 		performance_bonus *= difficulty
 	
 	elif car_placing < Placing.player_placing - 1:
-		performance_bonus = 1.0 - ((Placing.player_placing - car_placing) * 0.002) ** 0.4
+		performance_bonus = 1.0 - ((Placing.player_placing - car_placing) * 0.01) ** 0.4
 		performance_bonus *= difficulty

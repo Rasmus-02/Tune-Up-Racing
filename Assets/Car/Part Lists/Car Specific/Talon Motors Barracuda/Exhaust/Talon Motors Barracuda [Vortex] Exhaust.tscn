@@ -1,0 +1,41 @@
+[gd_scene load_steps=9 format=3 uid="uid://dy6nrq6ee4751"]
+
+[ext_resource type="Script" path="res://Assets/Car/Code/Part_scripts/Exhaust.gd" id="1_6a84i"]
+[ext_resource type="Texture2D" uid="uid://besbr8d37tuah" path="res://Textures/Cars/Talon Motors Barracuda/Exhaust/Talon Motors Barracuda [Vortex] Exhaust.png" id="2_mwxek"]
+[ext_resource type="Texture2D" uid="uid://babj65dnoplkj" path="res://Textures/Cars/Talon Motors Barracuda/Exhaust/Talon Motors Barracuda [Vortex] Exhaust NM.png" id="3_7flkh"]
+[ext_resource type="Texture2D" uid="uid://0ya1tyebm6lo" path="res://Textures/Cars/Talon Motors Barracuda/Exhaust/Talon Motors Barracuda [Vortex] Exhaust Spec.png" id="4_smo7t"]
+[ext_resource type="Script" path="res://Assets/Effects/Backfire.gd" id="5_5l1l4"]
+[ext_resource type="AudioStream" uid="uid://cfvwt4fi2efkr" path="res://Sound/Engine Sounds/Backfire.mp3" id="6_a2kue"]
+[ext_resource type="PackedScene" uid="uid://b1agqhrv0psca" path="res://Assets/Effects/Backfire.tscn" id="7_u7jah"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_lr5dr"]
+diffuse_texture = ExtResource("2_mwxek")
+normal_texture = ExtResource("3_7flkh")
+specular_texture = ExtResource("4_smo7t")
+specular_shininess = 0.65
+
+[node name="Talon Motors Barracuda [Vortex] Exhaust" type="Node2D"]
+script = ExtResource("1_6a84i")
+rarity = "uncommon"
+Car_ID = 1
+Part_Number = 2
+description = "A budget exhaust system designed by Vortex for the Talon Motors Barracuda"
+price = 400
+weight = 28
+tq_mod = 0.96
+sound_dampening = 4
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = SubResource("CanvasTexture_lr5dr")
+
+[node name="Backfire" type="Node2D" parent="."]
+script = ExtResource("5_5l1l4")
+
+[node name="Backfire_Sound" type="AudioStreamPlayer2D" parent="Backfire"]
+stream = ExtResource("6_a2kue")
+bus = &"Car Volume"
+
+[node name="Exhaust_1" type="Marker2D" parent="Backfire"]
+position = Vector2(-116, 21)
+
+[node name="Backfire" parent="Backfire/Exhaust_1" instance=ExtResource("7_u7jah")]

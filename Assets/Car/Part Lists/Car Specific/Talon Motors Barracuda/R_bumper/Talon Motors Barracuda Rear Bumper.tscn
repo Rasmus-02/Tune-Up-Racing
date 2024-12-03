@@ -1,17 +1,18 @@
-[gd_scene load_steps=10 format=3 uid="uid://djc5eb2qav1pk"]
+[gd_scene load_steps=12 format=3 uid="uid://djc5eb2qav1pk"]
 
 [ext_resource type="Script" path="res://Assets/Car/Code/Part_scripts/R_bumper.gd" id="1_xcu5r"]
-[ext_resource type="Texture2D" uid="uid://7fdqr7o0syvg" path="res://Textures/Cars/Talon Motors Barracuda/Rear Bumper/Talon Motors Barracuda R_Bumper.png" id="2_40kfb"]
 [ext_resource type="Shader" path="res://Shaders/Test/ColorSelector.gdshader" id="2_m2awx"]
 [ext_resource type="Texture2D" uid="uid://bdg0gpufhg8sv" path="res://Textures/Cars/Talon Motors Barracuda/Rear Bumper/Talon Motors Barracuda R_Bumper NM.png" id="3_6jxu2"]
+[ext_resource type="Texture2D" uid="uid://dj4sdbyjy3810" path="res://Textures/Cars/Talon Motors Barracuda/Rear Bumper/Talon Motors Barracuda R_Bumper 1.png" id="3_orwr3"]
 [ext_resource type="Texture2D" uid="uid://c6brboimac071" path="res://Textures/Cars/Talon Motors Barracuda/Rear Bumper/Talon Motors Barracuda R_Bumper Spec.png" id="4_umg64"]
+[ext_resource type="Texture2D" uid="uid://cuh1immbiul6e" path="res://Textures/Cars/Talon Motors Barracuda/Rear Bumper/Talon Motors Barracuda R_Bumper 2.png" id="6_eixh4"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_ip5rf"]
 shader = ExtResource("2_m2awx")
 shader_parameter/import_new_color = null
 
-[sub_resource type="CanvasTexture" id="CanvasTexture_r5f60"]
-diffuse_texture = ExtResource("2_40kfb")
+[sub_resource type="CanvasTexture" id="CanvasTexture_k31ew"]
+diffuse_texture = ExtResource("3_orwr3")
 normal_texture = ExtResource("3_6jxu2")
 specular_texture = ExtResource("4_umg64")
 specular_shininess = 0.5
@@ -21,6 +22,12 @@ blend_mode = 1
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_2i07l"]
 polygon = PackedVector2Array(-84.0884, 34.3015, -84.0884, -30.6985, -79.0884, -30.6985, -79.0884, 34.3015)
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_r5f60"]
+diffuse_texture = ExtResource("6_eixh4")
+normal_texture = ExtResource("3_6jxu2")
+specular_texture = ExtResource("4_umg64")
+specular_shininess = 0.5
 
 [node name="Talon Motors Barracuda Stock Rear Bumper" type="Node2D"]
 script = ExtResource("1_xcu5r")
@@ -35,9 +42,13 @@ drag = 0.01
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 material = SubResource("ShaderMaterial_ip5rf")
-texture = SubResource("CanvasTexture_r5f60")
+texture = SubResource("CanvasTexture_k31ew")
 
 [node name="LightOccluder2D2" type="LightOccluder2D" parent="Sprite2D"]
 material = SubResource("CanvasItemMaterial_pappr")
 position = Vector2(-29.9116, -2.30154)
 occluder = SubResource("OccluderPolygon2D_2i07l")
+
+[node name="Unpaintable" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_ip5rf")
+texture = SubResource("CanvasTexture_r5f60")

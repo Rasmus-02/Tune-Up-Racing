@@ -1,0 +1,32 @@
+[gd_scene load_steps=8 format=3 uid="uid://b1ugwbok2iuot"]
+
+[ext_resource type="Script" path="res://Assets/Car/Code/Part_scripts/Mirrors.gd" id="1_xqewq"]
+[ext_resource type="Shader" path="res://Shaders/Test/ColorSelector.gdshader" id="2_2esaf"]
+[ext_resource type="Texture2D" uid="uid://d4kdxgdonqgtr" path="res://Textures/Cars/Talon Motors Barracuda/Mirrors/Talon Motors Barracuda [KS-Racing] Mirrors.png" id="3_b1pho"]
+[ext_resource type="Texture2D" uid="uid://b8xu6wyqmbqxv" path="res://Textures/Cars/Talon Motors Barracuda/Mirrors/Talon Motors Barracuda Mirrors NM.png" id="4_niu37"]
+[ext_resource type="Texture2D" uid="uid://cl4hwe5j6g8i3" path="res://Textures/Cars/Talon Motors Barracuda/Mirrors/Talon Motors Barracuda [KS-Racing] Mirrors Spec.png" id="5_2tfve"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_mgxvb"]
+shader = ExtResource("2_2esaf")
+shader_parameter/import_new_color = null
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_e2ut5"]
+diffuse_texture = ExtResource("3_b1pho")
+normal_texture = ExtResource("4_niu37")
+specular_texture = ExtResource("5_2tfve")
+specular_shininess = 0.5
+
+[node name="Talon Motors Barracuda [KS-Racing] Carbon Fiber Mirrors" type="Node2D"]
+script = ExtResource("1_xqewq")
+rarity = "rare"
+Car_ID = 1
+Part_Number = 4
+description = "Carbon fiber mirrors for the Talon Motors Barracuda, designed by KS-Racing"
+paintable = false
+price = 400
+weight = 1
+drag = 0.01
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_mgxvb")
+texture = SubResource("CanvasTexture_e2ut5")

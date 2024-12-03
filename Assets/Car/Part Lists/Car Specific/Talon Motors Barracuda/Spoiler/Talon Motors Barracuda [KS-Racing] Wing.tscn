@@ -1,0 +1,39 @@
+[gd_scene load_steps=9 format=3 uid="uid://d34eeix0x18dr"]
+
+[ext_resource type="Script" path="res://Assets/Car/Code/Part_scripts/Spoiler.gd" id="1_sfjqy"]
+[ext_resource type="Shader" path="res://Shaders/Test/ColorSelector.gdshader" id="2_rnfb8"]
+[ext_resource type="Texture2D" uid="uid://dv6kqjc4tv1gb" path="res://Textures/Cars/Talon Motors Barracuda/Spoiler/Talon Motors Barracuda [KS-Racing] Wing.png" id="3_r41r3"]
+[ext_resource type="Texture2D" uid="uid://bcvtjojk1nrjr" path="res://Textures/Cars/Talon Motors Barracuda/Spoiler/Talon Motors Barracuda [KS-Racing] Wing NM.png" id="4_4hx4q"]
+[ext_resource type="Texture2D" uid="uid://ncrp6wqdfmsm" path="res://Textures/Cars/Talon Motors Barracuda/Spoiler/Talon Motors Barracuda [KS-Racing] Wing Spec.png" id="5_l2ysr"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_vnc73"]
+shader = ExtResource("2_rnfb8")
+shader_parameter/import_new_color = null
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_swaqy"]
+diffuse_texture = ExtResource("3_r41r3")
+normal_texture = ExtResource("4_4hx4q")
+specular_texture = ExtResource("5_l2ysr")
+specular_shininess = 0.5
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_1v1h7"]
+polygon = PackedVector2Array(-111, 46, -98, 46, -97, 45, -97, 34, -96, 34, -96, -35, -97, -35, -97, -46, -98, -47, -111, -47, -112, -46, -112, -35, -111, -35, -111, -23, -110, -23, -110, 22, -111, 22, -111, 34, -112, 34.0924, -112, 45)
+
+[node name="Talon Motors Barracuda [KS-Racing] Wing" type="Node2D"]
+script = ExtResource("1_sfjqy")
+rarity = "epic"
+Car_ID = 1
+Part_Number = 4
+description = "A carbon fiber wing for the Talon Motors Barracuda, designed by KS-Racing to provide a huge amount of downforce"
+paintable = false
+price = 2200
+weight = 6
+drag = 0.06
+downforce = 275
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_vnc73")
+texture = SubResource("CanvasTexture_swaqy")
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="Sprite2D"]
+occluder = SubResource("OccluderPolygon2D_1v1h7")

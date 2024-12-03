@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://3meotsrevpdt"
+path="res://.godot/imported/Typhoon satetsu t1.mp3-77f6f55f8641cbe64a7d489ac0735a7b.mp3str"
+
+[deps]
+
+source_file="res://Sound/Engine Sounds/Typhoon/Typhoon satetsu t1.mp3"
+dest_files=["res://.godot/imported/Typhoon satetsu t1.mp3-77f6f55f8641cbe64a7d489ac0735a7b.mp3str"]
+
+[params]
+
+loop=true
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

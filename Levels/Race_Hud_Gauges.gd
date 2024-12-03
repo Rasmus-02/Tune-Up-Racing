@@ -17,6 +17,7 @@ var gear : int
 @onready var current_time = $"../../Current Time"
 @onready var record_time = $"../../Record Time"
 @onready var position_indicator = $"../../Position"
+@onready var lap_indicator = $"../../Lap Count"
 
 func _ready():
 	car = get_parent().get_parent().get_parent().get_child(0).get_child(0).get_child(0).get_node("Player").get_node("Car")
@@ -31,6 +32,7 @@ func _physics_process(_delta):
 		update_text_dial(gear_dial, gear)
 		update_text_dial(boost_digital, boost)
 		update_text_dial(position_indicator, "Position: " + str(Placing.player_placing) + "/" + str(Placing.car_list.size()))
+		update_text_dial(lap_indicator, "Lap: " + str(Placing.player_lap) + "/" + str(Placing.max_lap))
 		if Laptime.get_current() != null:
 			update_text_dial(current_time, "Current: " + Laptime.get_current())
 		if Laptime.get_record() != null:

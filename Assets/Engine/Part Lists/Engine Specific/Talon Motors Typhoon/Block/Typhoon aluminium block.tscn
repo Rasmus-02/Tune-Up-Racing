@@ -1,0 +1,29 @@
+[gd_scene load_steps=6 format=3 uid="uid://bnkmickdlljh2"]
+
+[ext_resource type="Script" path="res://Assets/Engine/Part_scripts/Block.gd" id="1_l2g1j"]
+[ext_resource type="Texture2D" uid="uid://djdj4sp0mmpap" path="res://Textures/Engines/Talon Motors Typhoon/Block/Typhoon Aluminium Block.png" id="2_is8go"]
+[ext_resource type="Texture2D" uid="uid://bq2w27gebd8fe" path="res://Textures/Engines/Talon Motors Typhoon/Block/Typhoon Cast Iron Block NM.png" id="3_ps3yi"]
+[ext_resource type="Texture2D" uid="uid://c1mrj1yuw2rsv" path="res://Textures/Engines/Talon Motors Typhoon/Block/Typhoon Aluminium Block Spec.png" id="4_0eivt"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_8byoe"]
+diffuse_texture = ExtResource("2_is8go")
+normal_texture = ExtResource("3_ps3yi")
+specular_texture = ExtResource("4_0eivt")
+specular_shininess = 0.5
+
+[node name="Talon Motors Typhoon Aluminium Block" type="Node2D"]
+script = ExtResource("1_l2g1j")
+rarity = "rare"
+layout = "V"
+lenght = 30
+width = 21
+Engine_ID = 1
+Part_Number = 2
+description = "A light weight slightly less durable block for the Typhoon engine by Talon Motors"
+price = 4500
+weight = 85
+tq = 550
+max_tq = 650
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = SubResource("CanvasTexture_8byoe")

@@ -1,0 +1,55 @@
+[gd_scene load_steps=13 format=3 uid="uid://ho7jfsuedi6n"]
+
+[ext_resource type="Script" path="res://Assets/Car/Code/Part_scripts/R_bumper.gd" id="1_8ng5x"]
+[ext_resource type="Shader" path="res://Shaders/Test/ColorSelector.gdshader" id="2_51rdl"]
+[ext_resource type="Texture2D" uid="uid://bsyani2xy3v24" path="res://Textures/Cars/Talon Motors Barracuda/Rear Bumper/Talon Motors Barracuda Facelift R_Bumper 1.png" id="3_ii3hc"]
+[ext_resource type="Texture2D" uid="uid://8bywc7do43sm" path="res://Textures/Cars/Talon Motors Barracuda/Rear Bumper/Talon Motors Barracuda [Redline] R_Bumper NM.png" id="4_4ib8d"]
+[ext_resource type="Texture2D" uid="uid://p18gmvnpm1ti" path="res://Textures/Cars/Talon Motors Barracuda/Rear Bumper/Talon Motors Barracuda Facelift R_Bumper Spec.png" id="5_c1bwy"]
+[ext_resource type="Texture2D" uid="uid://bh6anm0yecrmk" path="res://Textures/Cars/Talon Motors Barracuda/Rear Bumper/Talon Motors Barracuda [Redline] R_Bumper 2.png" id="6_fxm4f"]
+[ext_resource type="Texture2D" uid="uid://cuhc1rydux5qg" path="res://Textures/Cars/Talon Motors Barracuda/Rear Bumper/Talon Motors Barracuda [Redline] R_Bumper Spec.png" id="7_anct8"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ip5rf"]
+shader = ExtResource("2_51rdl")
+shader_parameter/import_new_color = null
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_k31ew"]
+diffuse_texture = ExtResource("3_ii3hc")
+normal_texture = ExtResource("4_4ib8d")
+specular_texture = ExtResource("5_c1bwy")
+specular_shininess = 0.5
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_kpf7o"]
+blend_mode = 1
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_pehlw"]
+polygon = PackedVector2Array(-87.0884, 36.3015, -87.0884, -32.6985, -85.0884, -35.6985, -80.0884, -38.6985, -72.0884, -40.6985, -64.0884, -40.6985, -64.0884, 44.3015, -72.0884, 44.3015, -80.0884, 42.3015, -85.0884, 39.3015)
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_r5f60"]
+diffuse_texture = ExtResource("6_fxm4f")
+normal_texture = ExtResource("4_4ib8d")
+specular_texture = ExtResource("7_anct8")
+specular_shininess = 0.5
+
+[node name="Talon Motors Barracuda [Redline] Rear Bumper" type="Node2D"]
+script = ExtResource("1_8ng5x")
+rarity = "epic"
+Car_ID = 1
+Part_Number = 3
+description = "A rear bumper with a diffuser for extra downforce, designed by Redline for the Talon Motors Barracuda"
+price = 750
+weight = 6
+downforce = 40
+drag = 0.03
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_ip5rf")
+texture = SubResource("CanvasTexture_k31ew")
+
+[node name="LightOccluder2D2" type="LightOccluder2D" parent="Sprite2D"]
+material = SubResource("CanvasItemMaterial_kpf7o")
+position = Vector2(-29.9116, -2.30154)
+occluder = SubResource("OccluderPolygon2D_pehlw")
+
+[node name="Unpaintable" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_ip5rf")
+texture = SubResource("CanvasTexture_r5f60")

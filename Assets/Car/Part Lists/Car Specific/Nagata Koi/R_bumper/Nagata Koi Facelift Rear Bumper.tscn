@@ -1,0 +1,42 @@
+[gd_scene load_steps=10 format=3 uid="uid://bee488gvk23oa"]
+
+[ext_resource type="Script" path="res://Assets/Car/Code/Part_scripts/R_bumper.gd" id="1_8r6oj"]
+[ext_resource type="Shader" path="res://Shaders/Test/ColorSelector.gdshader" id="2_5a8ex"]
+[ext_resource type="Texture2D" uid="uid://brsdkv8amesn5" path="res://Textures/Cars/Nagata Koi/Rear Bumper/Nagata Koi Facelift Rear Bumper.png" id="3_b1sif"]
+[ext_resource type="Texture2D" uid="uid://da47uupwggbn4" path="res://Textures/Cars/Nagata Koi/Rear Bumper/Nagata Koi Facelift Rear Bumper NM.png" id="4_nrh1g"]
+[ext_resource type="Texture2D" uid="uid://swu35ptppidh" path="res://Textures/Cars/Nagata Koi/Rear Bumper/Nagata Koi Facelift Rear Bumper Spec.png" id="5_u13hh"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_a4wir"]
+shader = ExtResource("2_5a8ex")
+shader_parameter/import_new_color = null
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_r5f60"]
+diffuse_texture = ExtResource("3_b1sif")
+normal_texture = ExtResource("4_nrh1g")
+specular_texture = ExtResource("5_u13hh")
+specular_shininess = 0.5
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_pappr"]
+blend_mode = 1
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_gxeul"]
+polygon = PackedVector2Array(-56.0884, -39.6985, -61.0884, -39.6985, -68.0884, -36.6985, -73.0884, -31.6985, -76.0884, -24.6985, -76.0884, 28.3015, -73.0884, 35.3015, -68.0884, 40.3015, -61.0884, 43.3015, -56.0884, 43.3015)
+
+[node name="Nagata Koi Facelift Rear Bumper" type="Node2D"]
+script = ExtResource("1_8r6oj")
+rarity = "uncommon"
+Part_Number = 2
+description = "The factory rear bumper featured on later models of the Nagata Koi"
+price = 250
+weight = 5
+downforce = 10
+drag = 0.02
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_a4wir")
+texture = SubResource("CanvasTexture_r5f60")
+
+[node name="LightOccluder2D2" type="LightOccluder2D" parent="Sprite2D"]
+material = SubResource("CanvasItemMaterial_pappr")
+position = Vector2(-29.9116, -2.30154)
+occluder = SubResource("OccluderPolygon2D_gxeul")

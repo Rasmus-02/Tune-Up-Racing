@@ -1,0 +1,33 @@
+[gd_scene load_steps=8 format=3 uid="uid://dp58ikrovdb3s"]
+
+[ext_resource type="Script" path="res://Assets/Car/Code/Part_scripts/Hood.gd" id="1_djfh3"]
+[ext_resource type="Shader" path="res://Shaders/Test/ColorSelector.gdshader" id="2_fp74o"]
+[ext_resource type="Texture2D" uid="uid://2f2ufxhc6sji" path="res://Textures/Cars/Talon Motors Barracuda/Hood/Talon Motors Barracuda Niepa Hood.png" id="3_uh8i0"]
+[ext_resource type="Texture2D" uid="uid://cv02hcdjrpc1h" path="res://Textures/Cars/Talon Motors Barracuda/Hood/Talon Motors Barracuda Niepa Hood NM.png" id="4_xs0ue"]
+[ext_resource type="Texture2D" uid="uid://dcp0yi2luu71g" path="res://Textures/Cars/Talon Motors Barracuda/Hood/Talon Motors Barracuda Niepa Hood Spec.png" id="5_kivhe"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ouqxx"]
+shader = ExtResource("2_fp74o")
+shader_parameter/import_new_color = null
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_hjvi5"]
+diffuse_texture = ExtResource("3_uh8i0")
+normal_texture = ExtResource("4_xs0ue")
+specular_texture = ExtResource("5_kivhe")
+specular_shininess = 0.5
+
+[node name="Talon Motors Barracuda [Niepa] Vented Hood" type="Node2D"]
+script = ExtResource("1_djfh3")
+rarity = "rare"
+Car_ID = 1
+Part_Number = 3
+description = "A hood designed for improved engine cooling without additional drag for the Talon Motors Barracuda, designed by the aftermarket parts manufacturer Niepa"
+price = 700
+weight = 26
+downforce = 40
+drag = 0.03
+engine_cool_mod = 0.2
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_ouqxx")
+texture = SubResource("CanvasTexture_hjvi5")

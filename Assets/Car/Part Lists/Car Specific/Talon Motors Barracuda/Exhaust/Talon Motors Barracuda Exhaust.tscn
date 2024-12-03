@@ -1,17 +1,17 @@
 [gd_scene load_steps=9 format=3 uid="uid://bb1waqw5mupvx"]
 
 [ext_resource type="Script" path="res://Assets/Car/Code/Part_scripts/Exhaust.gd" id="1_hasm4"]
-[ext_resource type="Texture2D" uid="uid://vdapacglwbn3" path="res://Textures/Cars/Talon Motors Barracuda/Exhaust/Talon Motors Barracuda Exhaust.png" id="2_lu5js"]
-[ext_resource type="Texture2D" uid="uid://g0iknnbm4awa" path="res://Textures/Cars/Talon Motors Barracuda/Exhaust/Talon Motors Barracuda Exhaust NM.png" id="3_x0jk1"]
-[ext_resource type="Texture2D" uid="uid://c0kv3r2dwho8w" path="res://Textures/Cars/Talon Motors Barracuda/Exhaust/Talon Motors Barracuda Exhaust Spec.png" id="4_7syk0"]
+[ext_resource type="Texture2D" uid="uid://dma6mluot6gvw" path="res://Textures/Cars/Talon Motors Barracuda/Exhaust/Talon Motors Barracuda Stock Exhaust.png" id="2_tyo0w"]
+[ext_resource type="Texture2D" uid="uid://cstfyquu07mnp" path="res://Textures/Cars/Talon Motors Barracuda/Exhaust/Talon Motors Barracuda Stock Exhaust NM.png" id="3_v3vye"]
+[ext_resource type="Texture2D" uid="uid://dr1m847mdegxm" path="res://Textures/Cars/Talon Motors Barracuda/Exhaust/Talon Motors Barracuda Stock Exhaust Spec.png" id="4_gfjfh"]
 [ext_resource type="Script" path="res://Assets/Effects/Backfire.gd" id="5_g4h6i"]
 [ext_resource type="AudioStream" uid="uid://cfvwt4fi2efkr" path="res://Sound/Engine Sounds/Backfire.mp3" id="6_q6hvj"]
 [ext_resource type="PackedScene" uid="uid://b1agqhrv0psca" path="res://Assets/Effects/Backfire.tscn" id="7_6cx7u"]
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_lr5dr"]
-diffuse_texture = ExtResource("2_lu5js")
-normal_texture = ExtResource("3_x0jk1")
-specular_texture = ExtResource("4_7syk0")
+diffuse_texture = ExtResource("2_tyo0w")
+normal_texture = ExtResource("3_v3vye")
+specular_texture = ExtResource("4_gfjfh")
 specular_shininess = 0.65
 
 [node name="Talon Motors Barracuda Stock Exhaust" type="Node2D"]
@@ -20,8 +20,8 @@ rarity = "rare"
 Car_ID = 1
 Part_Number = 1
 description = "The Stock Exhaust for the Talon Motors Barracuda"
-price = 450
-weight = 30
+price = 600
+weight = 34
 tq_mod = 0.97
 sound_dampening = 8
 pitch_tweak = 0.99

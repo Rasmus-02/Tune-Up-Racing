@@ -29,7 +29,7 @@ price = 800
 weight = 32.0
 tq_mod = 0.9
 max_hp_rpm = 5000
-max_compression = 9.0
+max_compression = 9.5
 smoothness = 0.9
 
 [node name="Sprite2D" type="Sprite2D" parent="."]

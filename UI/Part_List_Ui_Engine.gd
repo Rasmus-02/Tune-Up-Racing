@@ -78,7 +78,8 @@ func populate_list():
 				part_name = part_name.replace(engine_name, "")
 				list.add_item(part_name)
 				list.set_item_custom_fg_color(list.get_item_count()-1,FontColorSettings.get_color(temp_part.rarity)) #set color based on rarity
-				if engine.part_placeable(part_category, temp_part) == false or engine.size_check(part_category, temp_part) == false: #or engine.size_check(part_category, temp_part) == false:
+				if engine.part_placeable(part_category, temp_part) == false or engine.size_check(part_category, temp_part) == false:
+					print("Disable: ",part_name)
 					list.set_item_disabled(temp_stat_array.size()-1, true)
 		list_index += 1
 

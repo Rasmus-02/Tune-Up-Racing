@@ -1,0 +1,31 @@
+[gd_scene load_steps=8 format=3 uid="uid://1gdyqcakn2tj"]
+
+[ext_resource type="Script" path="res://Assets/Car/Code/Part_scripts/Mirrors.gd" id="1_yfqgt"]
+[ext_resource type="Shader" path="res://Shaders/Test/ColorSelector.gdshader" id="2_11du1"]
+[ext_resource type="Texture2D" uid="uid://bpwbkpxo4fm7b" path="res://Textures/Cars/Talon Motors Barracuda/Mirrors/Talon Motors Barracuda [Niepa] Mirrors.png" id="3_hfwwm"]
+[ext_resource type="Texture2D" uid="uid://cq8as8hqrogq2" path="res://Textures/Cars/Talon Motors Barracuda/Mirrors/Talon Motors Barracuda [Niepa] Mirrors NM.png" id="4_40ysa"]
+[ext_resource type="Texture2D" uid="uid://bpcn71tc5016g" path="res://Textures/Cars/Talon Motors Barracuda/Mirrors/Talon Motors Barracuda [Niepa] Mirrors Spec.png" id="5_dlump"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_mgxvb"]
+shader = ExtResource("2_11du1")
+shader_parameter/import_new_color = null
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_e2ut5"]
+diffuse_texture = ExtResource("3_hfwwm")
+normal_texture = ExtResource("4_40ysa")
+specular_texture = ExtResource("5_dlump")
+specular_shininess = 0.5
+
+[node name="Talon Motors Barracuda [Niepa] Mirrors" type="Node2D"]
+script = ExtResource("1_yfqgt")
+rarity = "rare"
+Car_ID = 1
+Part_Number = 2
+description = "Aftermarket mirrors for the Talon Motors Barracuda, designed by Niepa"
+price = 200
+weight = 2
+drag = 0.01
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_mgxvb")
+texture = SubResource("CanvasTexture_e2ut5")

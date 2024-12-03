@@ -26,7 +26,7 @@ price = 600
 weight = 24
 downforce = 35
 drag = 0.04
-engine_cool_mod = 0.25
+engine_cool_mod = 0.35
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 material = SubResource("ShaderMaterial_ouqxx")

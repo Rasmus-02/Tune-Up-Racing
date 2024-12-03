@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bo1qxlfjxiovx"
-path="res://.godot/imported/[Satesu] Nagata 2S-16i Racing Top.png-3b6bebb62feef3452d7ac5ce67c3c540.ctex"
+uid="uid://3j0d135yw4j6"
+path="res://.godot/imported/Talon Motors Barracuda Redline Subframe.png-0383ecac685702750eff04ce58596daa.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Textures/Engines/Talon Motors Typhoon/Top/[Satesu] Nagata 2S-16i Racing Top.png"
-dest_files=["res://.godot/imported/[Satesu] Nagata 2S-16i Racing Top.png-3b6bebb62feef3452d7ac5ce67c3c540.ctex"]
+source_file="res://Textures/Cars/Talon Motors Barracuda/Subframe/Talon Motors Barracuda Redline Subframe.png"
+dest_files=["res://.godot/imported/Talon Motors Barracuda Redline Subframe.png-0383ecac685702750eff04ce58596daa.ctex"]
 
 [params]
 

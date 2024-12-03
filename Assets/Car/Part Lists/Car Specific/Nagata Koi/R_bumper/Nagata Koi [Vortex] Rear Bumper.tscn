@@ -1,0 +1,42 @@
+[gd_scene load_steps=10 format=3 uid="uid://bk4615nxs45kw"]
+
+[ext_resource type="Script" path="res://Assets/Car/Code/Part_scripts/R_bumper.gd" id="1_kv0ch"]
+[ext_resource type="Shader" path="res://Shaders/Test/ColorSelector.gdshader" id="2_r8p3b"]
+[ext_resource type="Texture2D" uid="uid://dbyepay3042xp" path="res://Textures/Cars/Nagata Koi/Rear Bumper/Nagata Koi [Vortex] Rear Bumper.png" id="3_82fam"]
+[ext_resource type="Texture2D" uid="uid://baexogag7xxgj" path="res://Textures/Cars/Nagata Koi/Rear Bumper/Nagata Koi [Vortex] Rear Bumper NM.png" id="4_s0rqx"]
+[ext_resource type="Texture2D" uid="uid://v4ts5cja164s" path="res://Textures/Cars/Nagata Koi/Rear Bumper/Nagata Koi [Vortex] Rear Bumper Spec.png" id="5_wu5nn"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_a4wir"]
+shader = ExtResource("2_r8p3b")
+shader_parameter/import_new_color = null
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_r5f60"]
+diffuse_texture = ExtResource("3_82fam")
+normal_texture = ExtResource("4_s0rqx")
+specular_texture = ExtResource("5_wu5nn")
+specular_shininess = 0.5
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_r58o2"]
+blend_mode = 1
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_8l74y"]
+polygon = PackedVector2Array(-56.0884, -39.6985, -68.0884, -39.6985, -72.0884, -37.6985, -77.0884, -32.6985, -77.0884, -27.6985, -75.0884, -27.6985, -75.0884, -24.6985, -76.0884, -24.6985, -76.0884, 28.3015, -75.0884, 28.3015, -75.0884, 31.3015, -77.0884, 31.3015, -77.0884, 36.3015, -72.0884, 41.3015, -68.0884, 43.3015, -56.0884, 43.3015)
+
+[node name="Nagata Koi [Vortex] Rear Bumper" type="Node2D"]
+script = ExtResource("1_kv0ch")
+rarity = "uncommon"
+Part_Number = 3
+description = "A rear bumper with canards for improved downforce, designed for the Nagata Koi by Vortex"
+price = 300
+weight = 7
+downforce = 25
+drag = 0.03
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_a4wir")
+texture = SubResource("CanvasTexture_r5f60")
+
+[node name="LightOccluder2D2" type="LightOccluder2D" parent="Sprite2D"]
+material = SubResource("CanvasItemMaterial_r58o2")
+position = Vector2(-29.9116, -2.30154)
+occluder = SubResource("OccluderPolygon2D_8l74y")

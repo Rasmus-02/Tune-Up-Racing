@@ -7,9 +7,9 @@
 [ext_resource type="Texture2D" uid="uid://bof31hqrfsoac" path="res://Textures/Engines/Talon Motors Typhoon/Exhaust/Stock/Typhoon Stock Exhaust Manifold_T.png" id="5_t4k4f"]
 [ext_resource type="Texture2D" uid="uid://cmkd6mb4vx2o2" path="res://Textures/Engines/Talon Motors Typhoon/Exhaust/Stock/Typhoon Stock Exhaust Manifold_T NM.png" id="6_22qpu"]
 [ext_resource type="Texture2D" uid="uid://dfypavait5uff" path="res://Textures/Engines/Talon Motors Typhoon/Exhaust/Stock/Typhoon Stock Exhaust Manifold_T Spec.png" id="7_3fm8w"]
-[ext_resource type="Texture2D" uid="uid://dehu2i3rfmyqj" path="res://Textures/Engines/Talon Motors Typhoon/Exhaust/Stock/Typhoon Stock Exhaust Manifold_L.png" id="8_tvdfv"]
-[ext_resource type="Texture2D" uid="uid://d31fqodl2shfm" path="res://Textures/Engines/Talon Motors Typhoon/Exhaust/Stock/Typhoon Stock Exhaust Manifold_L NM.png" id="9_hdoqi"]
-[ext_resource type="Texture2D" uid="uid://d1idrndwajc35" path="res://Textures/Engines/Talon Motors Typhoon/Exhaust/Stock/Typhoon Stock Exhaust Manifold_L Spec.png" id="10_5hfp7"]
+[ext_resource type="Texture2D" uid="uid://dm65u133nd2y0" path="res://Textures/Engines/Nagata 2S-16I/Exhaust/Stock/Nagata 2S-16i Exhaust Manifold_L.png" id="8_clco5"]
+[ext_resource type="Texture2D" uid="uid://d1g38ro0boro5" path="res://Textures/Engines/Nagata 2S-16I/Exhaust/Stock/Nagata 2S-16i Exhaust Manifold_L NM.png" id="9_aks66"]
+[ext_resource type="Texture2D" uid="uid://da2jf3l6ifcdr" path="res://Textures/Engines/Nagata 2S-16I/Exhaust/Stock/Nagata 2S-16i Exhaust Manifold_L Spec.png" id="10_q6xxa"]
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_23fjm"]
 diffuse_texture = ExtResource("2_5brq7")
@@ -23,23 +23,23 @@ normal_texture = ExtResource("6_22qpu")
 specular_texture = ExtResource("7_3fm8w")
 specular_shininess = 0.3
 
-[sub_resource type="CanvasTexture" id="CanvasTexture_g6r2h"]
-diffuse_texture = ExtResource("8_tvdfv")
-normal_texture = ExtResource("9_hdoqi")
-specular_texture = ExtResource("10_5hfp7")
+[sub_resource type="CanvasTexture" id="CanvasTexture_c8e4m"]
+diffuse_texture = ExtResource("8_clco5")
+normal_texture = ExtResource("9_aks66")
+specular_texture = ExtResource("10_q6xxa")
 specular_shininess = 0.3
 
-[node name="Talon Motors Typhoon [Vortex] 60mm Twin Turbos" type="Node2D"]
+[node name="Talon Motors Typhoon [Vortex] VRTT60 Twin Turbos" type="Node2D"]
 script = ExtResource("1_tspds")
 rarity = "epic"
 Engine_ID = 1
-Part_Number = 2
+Part_Number = 5
 lenght = 8
 width = 11
-description = "An exhaust manifold with two 70mm turbos mounted to it. The turbo system is designed by the aftermarkets parts company Vortex, the turbos are nowhere near the most efficient turbos available, however, they are definately able to bring out a lot more power from the Typhoon Engine compared to the stock exhaust manifold"
+description = "An exhaust manifold with two 60mm turbos mounted to it. The turbo system is designed by the aftermarkets parts company Vortex, the turbos are nowhere near the most efficient turbos available, however, they are definately able to bring out a lot more power from the Typhoon Engine compared to the stock exhaust manifold"
 price = 5500
 weight = 65
-tq_mod = 1.0
+tq_mod = 0.9
 turbo = true
 turbo_efficiency = 0.78
 turbo_type = "twin"
@@ -59,7 +59,16 @@ texture = SubResource("CanvasTexture_inuwe")
 visible = false
 z_index = -5
 position = Vector2(-4, 0)
-texture = SubResource("CanvasTexture_g6r2h")
+
+[node name="Long" type="Sprite2D" parent="Long"]
+z_index = -5
+position = Vector2(-38, 5)
+texture = SubResource("CanvasTexture_c8e4m")
+
+[node name="Long2" type="Sprite2D" parent="Long"]
+z_index = -5
+position = Vector2(-38, -23)
+texture = SubResource("CanvasTexture_c8e4m")
 
 [node name="Air filter location" type="Marker2D" parent="."]
 position = Vector2(12, 14)

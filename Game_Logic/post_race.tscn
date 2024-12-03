@@ -1,0 +1,213 @@
+[gd_scene load_steps=7 format=3 uid="uid://dxscpexiaytjn"]
+
+[ext_resource type="Theme" uid="uid://qykmoumcml8g" path="res://UI/Default UI Theme.tres" id="1_b04le"]
+[ext_resource type="Script" path="res://Post Race.gd" id="1_fmu6f"]
+[ext_resource type="Texture2D" uid="uid://duc4bmve4nbyu" path="res://Textures/UI/Player Stats/Statcard progress bar.png" id="3_0nge1"]
+[ext_resource type="Script" path="res://Game_Logic/Post_Race_Earned_Labels.gd" id="3_dol5u"]
+[ext_resource type="Script" path="res://Assets/Player Character/Level_Color.gd" id="4_m7jxw"]
+[ext_resource type="Script" path="res://Assets/Player Character/Money.gd" id="5_hu5xk"]
+
+[node name="Post Race" type="Control" node_paths=PackedStringArray("race_results", "level_up")]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+theme = ExtResource("1_b04le")
+script = ExtResource("1_fmu6f")
+race_results = NodePath("Race Resluts/Race Resluts")
+level_up = NodePath("Race Resluts/Level Up")
+
+[node name="Race Resluts" type="Panel" parent="."]
+layout_mode = 0
+offset_left = -190.0
+offset_top = -136.0
+offset_right = 191.0
+offset_bottom = 136.0
+
+[node name="Race Resluts" type="VBoxContainer" parent="Race Resluts"]
+layout_mode = 0
+offset_left = 26.9391
+offset_right = 354.939
+offset_bottom = 157.0
+
+[node name="Position" type="Label" parent="Race Resluts/Race Resluts"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 128
+text = "2"
+horizontal_alignment = 1
+
+[node name="Position description" type="Label" parent="Race Resluts/Race Resluts"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 64
+text = "Well Done, 2:nd place"
+horizontal_alignment = 1
+
+[node name="Earned" type="Control" parent="Race Resluts/Race Resluts" node_paths=PackedStringArray("xp_label", "money_label", "label", "description")]
+layout_mode = 2
+script = ExtResource("3_dol5u")
+xp_label = NodePath("XP")
+money_label = NodePath("Money")
+label = NodePath("../Position")
+description = NodePath("../Position description")
+
+[node name="XP" type="Label" parent="Race Resluts/Race Resluts/Earned"]
+layout_mode = 0
+offset_left = 83.6335
+offset_top = -0.704025
+offset_right = 127.633
+offset_bottom = 12.296
+scale = Vector2(3.6, 3.6)
+theme_override_colors/font_color = Color(0.168627, 0.701961, 1, 1)
+theme_override_colors/font_outline_color = Color(0.290196, 0.290196, 0.290196, 1)
+theme_override_constants/outline_size = 2
+text = "+50xp"
+horizontal_alignment = 1
+
+[node name="Money" type="Label" parent="Race Resluts/Race Resluts/Earned"]
+layout_mode = 0
+offset_left = 83.6335
+offset_top = 47.5618
+offset_right = 127.633
+offset_bottom = 60.5618
+scale = Vector2(3.6, 3.6)
+theme_override_colors/font_color = Color(0, 0.8, 0, 1)
+theme_override_colors/font_outline_color = Color(0.290196, 0.290196, 0.290196, 1)
+theme_override_constants/outline_size = 2
+text = "+500$"
+horizontal_alignment = 1
+
+[node name="Total" type="Control" parent="Race Resluts/Race Resluts"]
+visible = false
+layout_mode = 2
+
+[node name="XP" type="TextureProgressBar" parent="Race Resluts/Race Resluts/Total"]
+layout_mode = 0
+offset_left = 4.87064
+offset_top = 7.63956
+offset_right = 44.8706
+offset_bottom = 15.6396
+scale = Vector2(8, 4)
+step = 0.1
+value = 100.0
+texture_progress = ExtResource("3_0nge1")
+script = ExtResource("4_m7jxw")
+
+[node name="Level" type="Label" parent="Race Resluts/Race Resluts/Total/XP"]
+layout_mode = 2
+offset_left = 9.61669
+offset_top = -3.0
+offset_right = 54.6167
+offset_bottom = 10.0
+scale = Vector2(0.45, 0.9)
+theme_override_colors/font_outline_color = Color(0.290196, 0.290196, 0.290196, 1)
+theme_override_constants/outline_size = 2
+text = "LVL 1"
+horizontal_alignment = 1
+
+[node name="Money" type="Label" parent="Race Resluts/Race Resluts/Total"]
+layout_mode = 0
+offset_left = 83.6335
+offset_top = 44.1944
+offset_right = 127.633
+offset_bottom = 57.1944
+scale = Vector2(3.6, 3.6)
+theme_override_colors/font_color = Color(0, 0.8, 0, 1)
+theme_override_colors/font_outline_color = Color(0.290196, 0.290196, 0.290196, 1)
+theme_override_constants/outline_size = 2
+text = "0$"
+horizontal_alignment = 1
+script = ExtResource("5_hu5xk")
+
+[node name="Level Up" type="VBoxContainer" parent="Race Resluts"]
+visible = false
+layout_mode = 0
+offset_left = 26.9391
+offset_right = 354.939
+offset_bottom = 157.0
+
+[node name="Level" type="Label" parent="Race Resluts/Level Up"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 128
+text = "10"
+horizontal_alignment = 1
+
+[node name="Level description" type="Label" parent="Race Resluts/Level Up"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 64
+text = "Level Up!"
+horizontal_alignment = 1
+
+[node name="Earned" type="Control" parent="Race Resluts/Level Up" node_paths=PackedStringArray("xp_label", "money_label", "label", "description")]
+layout_mode = 2
+script = ExtResource("3_dol5u")
+xp_label = NodePath("../../Race Resluts/Earned/XP")
+money_label = NodePath("../../Race Resluts/Earned/Money")
+label = NodePath("../Level")
+description = NodePath("../Level description")
+
+[node name="XP" type="Label" parent="Race Resluts/Level Up/Earned"]
+layout_mode = 0
+offset_left = 83.6335
+offset_top = -0.704025
+offset_right = 127.633
+offset_bottom = 12.296
+scale = Vector2(3.6, 3.6)
+theme_override_colors/font_color = Color(0.168627, 0.701961, 1, 1)
+theme_override_colors/font_outline_color = Color(0.290196, 0.290196, 0.290196, 1)
+theme_override_constants/outline_size = 2
+text = "+0$"
+horizontal_alignment = 1
+
+[node name="Money" type="Label" parent="Race Resluts/Level Up/Earned"]
+layout_mode = 0
+offset_left = 83.6335
+offset_top = 47.5618
+offset_right = 127.633
+offset_bottom = 60.5618
+scale = Vector2(3.6, 3.6)
+theme_override_colors/font_color = Color(0, 0.8, 0, 1)
+theme_override_colors/font_outline_color = Color(0.290196, 0.290196, 0.290196, 1)
+theme_override_constants/outline_size = 2
+text = "+0$"
+horizontal_alignment = 1
+
+[node name="Total" type="Control" parent="Race Resluts/Level Up"]
+visible = false
+layout_mode = 2
+
+[node name="XP" type="TextureProgressBar" parent="Race Resluts/Level Up/Total"]
+layout_mode = 0
+offset_left = 4.87064
+offset_top = 7.63956
+offset_right = 44.8706
+offset_bottom = 15.6396
+scale = Vector2(8, 4)
+step = 0.1
+value = 100.0
+texture_progress = ExtResource("3_0nge1")
+script = ExtResource("4_m7jxw")
+
+[node name="Level" type="Label" parent="Race Resluts/Level Up/Total/XP"]
+layout_mode = 2
+offset_left = 9.61669
+offset_top = -3.0
+offset_right = 54.6167
+offset_bottom = 10.0
+scale = Vector2(0.45, 0.9)
+theme_override_colors/font_outline_color = Color(0.290196, 0.290196, 0.290196, 1)
+theme_override_constants/outline_size = 2
+text = "LVL 1"
+horizontal_alignment = 1
+
+[node name="Money" type="Label" parent="Race Resluts/Level Up/Total"]
+layout_mode = 0
+offset_left = 83.6335
+offset_top = 44.1944
+offset_right = 127.633
+offset_bottom = 57.1944
+scale = Vector2(3.6, 3.6)
+theme_override_colors/font_color = Color(0, 0.8, 0, 1)
+theme_override_colors/font_outline_color = Color(0.290196, 0.290196, 0.290196, 1)
+theme_override_constants/outline_size = 2
+text = "0$"
+horizontal_alignment = 1
+script = ExtResource("5_hu5xk")

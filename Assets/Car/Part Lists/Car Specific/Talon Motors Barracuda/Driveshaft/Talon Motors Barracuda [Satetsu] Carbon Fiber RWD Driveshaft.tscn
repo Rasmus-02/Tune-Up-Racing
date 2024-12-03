@@ -1,0 +1,29 @@
+[gd_scene load_steps=6 format=3 uid="uid://c3ngh2kbsjcjv"]
+
+[ext_resource type="Script" path="res://Assets/Car/Code/Part_scripts/Driveshaft.gd" id="1_ikf3l"]
+[ext_resource type="Texture2D" uid="uid://dbw3tp80rs8sq" path="res://Textures/Cars/Talon Motors Barracuda/Driveshaft/Talon Motors Barracuda [Satetsu] Carbon Fiber RWD Driveshaft.png" id="2_6vrhr"]
+[ext_resource type="Texture2D" uid="uid://dyqcsufcv3csh" path="res://Textures/Cars/Talon Motors Barracuda/Driveshaft/Talon Motors Barracuda [Satetsu] Carbon Fiber RWD Driveshaft NM.png" id="3_pbvkb"]
+[ext_resource type="Texture2D" uid="uid://bnynposrljcup" path="res://Textures/Cars/Talon Motors Barracuda/Driveshaft/Talon Motors Barracuda [Satetsu] Carbon Fiber RWD Driveshaft Spec.png" id="4_xsh4l"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_vrqcw"]
+diffuse_texture = ExtResource("2_6vrhr")
+normal_texture = ExtResource("3_pbvkb")
+specular_texture = ExtResource("4_xsh4l")
+specular_shininess = 0.5
+
+[node name="Talon Motors Barracuda [Satetsu] RWD Driveshaft" type="Node2D"]
+script = ExtResource("1_ikf3l")
+rarity = "legendary"
+Car_ID = 1
+Part_Number = 3
+description = "A lightweight, super durable and very efficient rear wheel drive driveshaft for the Talon Motors Barracuda. Designed by Satetsu"
+price = 6000
+weight = 18
+max_torque = 2000
+drivetrain_loss = 0.13
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = SubResource("CanvasTexture_vrqcw")
+
+[node name="Gearbox" type="Marker2D" parent="."]
+position = Vector2(24, 0)

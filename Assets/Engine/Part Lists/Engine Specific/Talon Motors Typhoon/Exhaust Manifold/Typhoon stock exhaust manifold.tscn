@@ -36,9 +36,9 @@ Engine_ID = 1
 Part_Number = 1
 width = 4
 description = "The factory exhaust manifold for the Typhoon Engine"
-price = 600
+price = 500
 weight = 30
-tq_mod = 1.0
+tq_mod = 0.95
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = SubResource("CanvasTexture_23fjm")

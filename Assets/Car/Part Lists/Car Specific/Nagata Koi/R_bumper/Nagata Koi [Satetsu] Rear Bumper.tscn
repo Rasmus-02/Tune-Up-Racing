@@ -25,11 +25,11 @@ polygon = PackedVector2Array(-56.0884, -39.6985, -62.0884, -38.6985, -68.0884, -
 [node name="Nagata Koi [Satetsu] Rear Bumper" type="Node2D"]
 script = ExtResource("1_olues")
 rarity = "rare"
-Part_Number = 2
+Part_Number = 4
 description = "A rear bumper with a diffuser installed for improved downforce for the Nagata Koi, designed by Satetsu"
-price = 400
+price = 500
 weight = 4
-downforce = 70
+downforce = 40
 drag = 0.03
 
 [node name="Sprite2D" type="Sprite2D" parent="."]

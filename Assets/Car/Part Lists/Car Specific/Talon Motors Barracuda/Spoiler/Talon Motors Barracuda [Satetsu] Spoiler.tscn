@@ -22,10 +22,10 @@ rarity = "rare"
 Car_ID = 1
 Part_Number = 1
 description = "A Spoiler designed for improved high speed handling by Satetsu Racing for the Talon Motors Barracuda"
-price = 750
+price = 500
 weight = 2
-drag = 0.04
-downforce = 80
+drag = 0.02
+downforce = 60
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 material = SubResource("ShaderMaterial_vnc73")

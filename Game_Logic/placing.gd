@@ -5,15 +5,19 @@ var car_list = [] #Index 0 will be the player thanks to the level structure
 var placing_list = []
 var player_placing : int
 var start = false
+var max_lap = 3 #Can set max lap count here
+var map_bonus = 1.0
+var player_lap = 0
 
 func _process(_delta):
 	#populate the placing list
-	if RaceStatus.started:
+	if RaceStatus.started and RaceStatus.finished == false:
 		set_placings()
 
 func set_placings():
 	#Update the car list
 	var temp_car_list = []
+	temp_car_list.clear()
 	for car in car_list:
 		temp_car_list.append([car, car.get_node("AI").track_progress])
 	
@@ -22,6 +26,7 @@ func set_placings():
 	placing_list = temp_car_list
 	#print(placing_list)
 	update_car_placings()
+	update_player_lap()
 
 func update_car_placings():
 	for i in placing_list.size():
@@ -29,3 +34,7 @@ func update_car_placings():
 		if car == car_list[0]:
 			player_placing = i+1
 		car.get_node("Placing").car_placing = i+1
+
+func update_player_lap():
+	player_lap = int(car_list[0].get_node("AI").lap)
+	player_lap = clamp(player_lap, 1, max_lap)

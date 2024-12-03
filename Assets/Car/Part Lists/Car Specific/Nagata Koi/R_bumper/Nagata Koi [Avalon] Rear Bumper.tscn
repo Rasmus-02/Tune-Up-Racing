@@ -1,0 +1,42 @@
+[gd_scene load_steps=10 format=3 uid="uid://delmmserwy3io"]
+
+[ext_resource type="Script" path="res://Assets/Car/Code/Part_scripts/R_bumper.gd" id="1_exc8w"]
+[ext_resource type="Shader" path="res://Shaders/Test/ColorSelector.gdshader" id="2_f05dp"]
+[ext_resource type="Texture2D" uid="uid://daq4kuk31dvts" path="res://Textures/Cars/Nagata Koi/Rear Bumper/Nagata Koi [Avalon] Rear Bumper.png" id="3_jqytj"]
+[ext_resource type="Texture2D" uid="uid://dyq070wqcjx0m" path="res://Textures/Cars/Nagata Koi/Rear Bumper/Nagata Koi [Avalon] Rear Bumper NM.png" id="4_tct2x"]
+[ext_resource type="Texture2D" uid="uid://cg3y2w4kkhuu1" path="res://Textures/Cars/Nagata Koi/Rear Bumper/Nagata Koi [Avalon] Rear Bumper Spec.png" id="5_ql2l1"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_a4wir"]
+shader = ExtResource("2_f05dp")
+shader_parameter/import_new_color = null
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_r5f60"]
+diffuse_texture = ExtResource("3_jqytj")
+normal_texture = ExtResource("4_tct2x")
+specular_texture = ExtResource("5_ql2l1")
+specular_shininess = 0.5
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_pappr"]
+blend_mode = 1
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_gxeul"]
+polygon = PackedVector2Array(-56.0884, -39.6985, -68.0884, -39.6985, -72.0884, -37.6985, -77.0884, -32.6985, -77.0884, -27.6985, -75.0884, -27.6985, -75.0884, -24.6985, -81.0884, -24.6985, -81.0884, -22.6985, -80.0884, -22.6985, -80.0884, -8.69846, -79.0884, -8.69846, -79.0884, 12.3015, -80.0884, 12.3015, -80.0884, 26.3015, -81.0884, 26.3015, -81.0884, 28.3015, -75.0884, 28.3015, -75.0884, 31.3015, -77.0884, 31.3015, -77.0884, 36.3015, -72.0884, 41.3015, -68.0884, 43.3015, -56.0884, 43.3015)
+
+[node name="Nagata Koi [Avalon] Rear Bumper" type="Node2D"]
+script = ExtResource("1_exc8w")
+rarity = "rare"
+Part_Number = 5
+description = "A rear bumper with a huge diffuser mounted to it for greatly improved downforce. Designed for the Nagata Koi by the British racing team Avalon"
+price = 700
+weight = 12
+downforce = 80
+drag = 0.05
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_a4wir")
+texture = SubResource("CanvasTexture_r5f60")
+
+[node name="LightOccluder2D2" type="LightOccluder2D" parent="Sprite2D"]
+material = SubResource("CanvasItemMaterial_pappr")
+position = Vector2(-29.9116, -2.30154)
+occluder = SubResource("OccluderPolygon2D_gxeul")

@@ -1,0 +1,29 @@
+[gd_scene load_steps=6 format=3 uid="uid://qn244mn8mx4i"]
+
+[ext_resource type="Script" path="res://Assets/Engine/Part_scripts/Internals.gd" id="1_pc63y"]
+[ext_resource type="Texture2D" uid="uid://no4l7frl50gy" path="res://Textures/Engines/Talon Motors Typhoon/Internals/Typhoon Forged Internals.png" id="2_gr4nk"]
+[ext_resource type="Texture2D" uid="uid://doadnxj1rkyuk" path="res://Textures/Engines/Talon Motors Typhoon/Internals/Typhoon Stock Internals NM.png" id="3_orlya"]
+[ext_resource type="Texture2D" uid="uid://da2w4icir2ppf" path="res://Textures/Engines/Talon Motors Typhoon/Internals/Typhoon Stock Internals Spec.png" id="4_ogtck"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_8qrlk"]
+diffuse_texture = ExtResource("2_gr4nk")
+normal_texture = ExtResource("3_orlya")
+specular_texture = ExtResource("4_ogtck")
+specular_shininess = 0.5
+
+[node name="Talon Motors Typhoon Forged Internals" type="Node2D"]
+script = ExtResource("1_pc63y")
+rarity = "epic"
+lenght = 26
+width = 19
+Engine_ID = 1
+Part_Number = 4
+description = "Durable Forged internals for the Typhoon Engine"
+price = 4000
+weight = 36
+compression = 8.5
+max_rpm = 8000
+max_tq = 1250
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = SubResource("CanvasTexture_8qrlk")

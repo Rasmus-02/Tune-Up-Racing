@@ -1,17 +1,18 @@
-[gd_scene load_steps=10 format=3 uid="uid://dtrjcilvf61b2"]
+[gd_scene load_steps=12 format=3 uid="uid://dtrjcilvf61b2"]
 
 [ext_resource type="Script" path="res://Assets/Car/Code/Part_scripts/F_Bumper.gd" id="1_caqdx"]
-[ext_resource type="Texture2D" uid="uid://cnqfhfjwuxcdr" path="res://Textures/Cars/Nagata Koi/Front Bumper/Nagata Koi [KS-Racing] Timeattack Front Bumper.png" id="2_12gtw"]
 [ext_resource type="Shader" path="res://Shaders/Test/ColorSelector.gdshader" id="2_w3as3"]
 [ext_resource type="Texture2D" uid="uid://cbea4grblek52" path="res://Textures/Cars/Nagata Koi/Front Bumper/Nagata Koi [KS-Racing] Timeattack Front Bumper NM.png" id="3_8ojyu"]
+[ext_resource type="Texture2D" uid="uid://bmwrnbhp2lcul" path="res://Textures/Cars/Nagata Koi/Front Bumper/Nagata Koi [KS-Racing] Timeattack Front Bumper 1.png" id="3_y24q5"]
 [ext_resource type="Texture2D" uid="uid://s5kw35dsupo6" path="res://Textures/Cars/Nagata Koi/Front Bumper/Nagata Koi [KS-Racing] Timeattack Front Bumper Spec.png" id="4_dkwx3"]
+[ext_resource type="Texture2D" uid="uid://dk1a7lgsjbheu" path="res://Textures/Cars/Nagata Koi/Front Bumper/Nagata Koi [KS-Racing] Timeattack Front Bumper 2.png" id="6_w0njj"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_djwft"]
 shader = ExtResource("2_w3as3")
 shader_parameter/import_new_color = null
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_0hbqo"]
-diffuse_texture = ExtResource("2_12gtw")
+diffuse_texture = ExtResource("3_y24q5")
 normal_texture = ExtResource("3_8ojyu")
 specular_texture = ExtResource("4_dkwx3")
 specular_shininess = 0.5
@@ -20,7 +21,13 @@ specular_shininess = 0.5
 blend_mode = 1
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_j57wh"]
-polygon = PackedVector2Array(132.912, 22.3015, 132.912, -18.6985, 129.912, -27.6985, 124.912, -32.6985, 118.912, -35.6985, 113.912, -35.6985, 113.912, 39.3015, 118.912, 39.3015, 124.912, 36.3015, 129.912, 31.3015)
+polygon = PackedVector2Array(132.912, 22.3015, 132.912, 16.3015, 135.912, 19.3015, 136.912, 18.3015, 132.912, 14.3015, 132.912, -10.6985, 136.912, -14.6985, 135.912, -15.6985, 132.912, -12.5357, 132.912, -18.6985, 129.912, -27.6985, 124.912, -32.6985, 118.912, -35.6985, 113.912, -35.6985, 113.912, 39.3015, 118.912, 39.3015, 124.912, 36.3015, 129.912, 31.3015)
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_26hn5"]
+diffuse_texture = ExtResource("6_w0njj")
+normal_texture = ExtResource("3_8ojyu")
+specular_texture = ExtResource("4_dkwx3")
+specular_shininess = 0.5
 
 [node name="Nagata Koi [KS-Racing] Timeattack Front Bumper" type="Node2D"]
 script = ExtResource("1_caqdx")
@@ -41,3 +48,7 @@ texture = SubResource("CanvasTexture_0hbqo")
 material = SubResource("CanvasItemMaterial_nxqv5")
 position = Vector2(-29.9116, -2.30154)
 occluder = SubResource("OccluderPolygon2D_j57wh")
+
+[node name="Unpaintable" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_djwft")
+texture = SubResource("CanvasTexture_26hn5")

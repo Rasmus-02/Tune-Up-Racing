@@ -1,0 +1,57 @@
+[gd_scene load_steps=9 format=3 uid="uid://c7cd8v8g7mm26"]
+
+[ext_resource type="Script" path="res://Assets/Car/Code/Part_scripts/Exhaust.gd" id="1_soie4"]
+[ext_resource type="Texture2D" uid="uid://daato54fbosh" path="res://Textures/Cars/Talon Motors Barracuda/Exhaust/Talon Motors Barracuda [Niepa] Exhaust.png" id="2_2b1qh"]
+[ext_resource type="Texture2D" uid="uid://bfm2kb8reywbw" path="res://Textures/Cars/Talon Motors Barracuda/Exhaust/Talon Motors Barracuda [Niepa] Exhaust NM.png" id="3_85djm"]
+[ext_resource type="Texture2D" uid="uid://byv2tl7lryq1t" path="res://Textures/Cars/Talon Motors Barracuda/Exhaust/Talon Motors Barracuda [Niepa] Exhaust Spec.png" id="4_y6fl0"]
+[ext_resource type="Script" path="res://Assets/Effects/Backfire.gd" id="5_axs7b"]
+[ext_resource type="AudioStream" uid="uid://cfvwt4fi2efkr" path="res://Sound/Engine Sounds/Backfire.mp3" id="6_qkcu2"]
+[ext_resource type="PackedScene" uid="uid://b1agqhrv0psca" path="res://Assets/Effects/Backfire.tscn" id="7_bindx"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_lr5dr"]
+diffuse_texture = ExtResource("2_2b1qh")
+normal_texture = ExtResource("3_85djm")
+specular_texture = ExtResource("4_y6fl0")
+specular_shininess = 0.65
+
+[node name="Talon Motors Barracuda [Niepa] Exhaust" type="Node2D"]
+script = ExtResource("1_soie4")
+rarity = "rare"
+Car_ID = 1
+Part_Number = 3
+description = "A performance exhaust system designed by Niepa for the Talon Motors Barracuda"
+price = 850
+weight = 38
+tq_mod = 1.02
+sound_dampening = 7
+pitch_tweak = 0.98
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = SubResource("CanvasTexture_lr5dr")
+
+[node name="Backfire" type="Node2D" parent="."]
+script = ExtResource("5_axs7b")
+
+[node name="Backfire_Sound" type="AudioStreamPlayer2D" parent="Backfire"]
+stream = ExtResource("6_qkcu2")
+bus = &"Car Volume"
+
+[node name="Exhaust_1" type="Marker2D" parent="Backfire"]
+position = Vector2(-116, 24)
+
+[node name="Backfire" parent="Backfire/Exhaust_1" instance=ExtResource("7_bindx")]
+
+[node name="Exhaust_2" type="Marker2D" parent="Backfire"]
+position = Vector2(-116, 19)
+
+[node name="Backfire2" parent="Backfire/Exhaust_2" instance=ExtResource("7_bindx")]
+
+[node name="Exhaust_3" type="Marker2D" parent="Backfire"]
+position = Vector2(-116, -20)
+
+[node name="Backfire" parent="Backfire/Exhaust_3" instance=ExtResource("7_bindx")]
+
+[node name="Exhaust_4" type="Marker2D" parent="Backfire"]
+position = Vector2(-116, -25)
+
+[node name="Backfire2" parent="Backfire/Exhaust_4" instance=ExtResource("7_bindx")]

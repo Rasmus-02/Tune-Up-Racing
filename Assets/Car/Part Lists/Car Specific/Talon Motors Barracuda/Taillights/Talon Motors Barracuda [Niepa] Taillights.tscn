@@ -1,0 +1,46 @@
+[gd_scene load_steps=8 format=3 uid="uid://rwa0kspbx3hr"]
+
+[ext_resource type="Script" path="res://Assets/Car/Code/Part_scripts/Taillights.gd" id="1_jchc1"]
+[ext_resource type="Texture2D" uid="uid://cuasbhmu1v62" path="res://Textures/Cars/Talon Motors Barracuda/Taillights/Talon Motors Barracuda [Niepa] Taillights.png" id="2_r5ngx"]
+[ext_resource type="Texture2D" uid="uid://b3mf7w1abusod" path="res://Textures/Cars/Talon Motors Barracuda/Taillights/Talon Motors Barracuda [Niepa] Taillights NM.png" id="3_vknkh"]
+[ext_resource type="Texture2D" uid="uid://ctwbton87bdrb" path="res://Textures/Cars/Talon Motors Barracuda/Taillights/Talon Motors Barracuda [Niepa] Taillights Spec.png" id="4_xjty0"]
+[ext_resource type="Texture2D" uid="uid://dds3p523p0ik5" path="res://Shaders/light.png" id="5_ug1ls"]
+[ext_resource type="PackedScene" uid="uid://ceb752tulxcv" path="res://Shaders/taillights.tscn" id="6_ej2ii"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_5na48"]
+diffuse_texture = ExtResource("2_r5ngx")
+normal_texture = ExtResource("3_vknkh")
+specular_texture = ExtResource("4_xjty0")
+specular_shininess = 0.5
+
+[node name="Talon Motors Barracuda [Niepa] Taillights" type="Node2D"]
+script = ExtResource("1_jchc1")
+rarity = "rare"
+Car_ID = 1
+Part_Number = 3
+description = "Aftermarket taillights for the Talon Motors Barracuda, designed by Niepa"
+paintable = false
+price = 350
+weight = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = SubResource("CanvasTexture_5na48")
+
+[node name="L_Light" type="PointLight2D" parent="Sprite2D"]
+position = Vector2(-111, -26)
+scale = Vector2(1.2, 1.2)
+color = Color(0.345098, 0, 0, 1)
+texture = ExtResource("5_ug1ls")
+texture_scale = 0.02
+height = 100.0
+
+[node name="R_Light" type="PointLight2D" parent="Sprite2D"]
+position = Vector2(-111, 25)
+scale = Vector2(1.2, 1.2)
+color = Color(0.345098, 0, 0, 1)
+texture = ExtResource("5_ug1ls")
+texture_scale = 0.02
+height = 100.0
+
+[node name="Taillights" parent="." instance=ExtResource("6_ej2ii")]
+position = Vector2(-101, 0)

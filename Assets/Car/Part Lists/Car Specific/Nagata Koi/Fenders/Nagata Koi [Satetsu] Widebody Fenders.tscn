@@ -33,7 +33,7 @@ description = "Widebody fenders for the Nagata Koi designed by Satetsu
 "
 price = 650
 weight = 16
-downforce = 30
+downforce = 40
 drag = 0.03
 max_tire_width = 220
 

@@ -32,7 +32,7 @@ Part_Number = 2
 description = "Widebody fenders for the Nagata Koi designed by Vortex"
 price = 550
 weight = 16
-downforce = 20
+downforce = 15
 drag = 0.04
 max_tire_width = 240
 

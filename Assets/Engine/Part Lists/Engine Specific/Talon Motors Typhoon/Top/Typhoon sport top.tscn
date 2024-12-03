@@ -24,12 +24,12 @@ lenght = 32
 width = 21
 Engine_ID = 1
 Part_Number = 2
-description = "A sportier top end  for the Typhoon engine, with improved airflow and reduced weight"
+description = "A sportier top end for the Typhoon engine, with improved airflow and reduced weight"
 price = 1400
 weight = 30.0
 tq_mod = 0.95
 max_hp_rpm = 5500
-max_compression = 10.0
+max_compression = 10.5
 smoothness = 0.87
 
 [node name="Sprite2D" type="Sprite2D" parent="."]

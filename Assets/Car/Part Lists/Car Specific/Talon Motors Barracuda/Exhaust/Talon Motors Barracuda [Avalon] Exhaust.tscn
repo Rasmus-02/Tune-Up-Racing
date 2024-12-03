@@ -1,0 +1,47 @@
+[gd_scene load_steps=9 format=3 uid="uid://dbx30oe1jj6mj"]
+
+[ext_resource type="Script" path="res://Assets/Car/Code/Part_scripts/Exhaust.gd" id="1_uaa1l"]
+[ext_resource type="Texture2D" uid="uid://sbr4pu1pghsb" path="res://Textures/Cars/Talon Motors Barracuda/Exhaust/Talon Motors Barracuda [Avalon] Exhaust.png" id="2_75qn1"]
+[ext_resource type="Texture2D" uid="uid://drvbpl6k4ll1j" path="res://Textures/Cars/Talon Motors Barracuda/Exhaust/Talon Motors Barracuda [Avalon] Exhaust NM.png" id="3_2ep21"]
+[ext_resource type="Texture2D" uid="uid://bil2eniugsaln" path="res://Textures/Cars/Talon Motors Barracuda/Exhaust/Talon Motors Barracuda [Avalon] Exhaust Spec.png" id="4_3is2w"]
+[ext_resource type="Script" path="res://Assets/Effects/Backfire.gd" id="5_05tdc"]
+[ext_resource type="AudioStream" uid="uid://cfvwt4fi2efkr" path="res://Sound/Engine Sounds/Backfire.mp3" id="6_dcubv"]
+[ext_resource type="PackedScene" uid="uid://b1agqhrv0psca" path="res://Assets/Effects/Backfire.tscn" id="7_4bsp7"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_lr5dr"]
+diffuse_texture = ExtResource("2_75qn1")
+normal_texture = ExtResource("3_2ep21")
+specular_texture = ExtResource("4_3is2w")
+specular_shininess = 0.65
+
+[node name="Talon Motors Barracuda [Avalon] Exhaust" type="Node2D"]
+script = ExtResource("1_uaa1l")
+rarity = "epic"
+Car_ID = 1
+Part_Number = 5
+description = "A high performance exhaust system designed by Avalon for the Talon Motors Barracuda"
+price = 1800
+weight = 27
+tq_mod = 1.1
+sound_dampening = 6
+pitch_tweak = 1.04
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = SubResource("CanvasTexture_lr5dr")
+
+[node name="Backfire" type="Node2D" parent="."]
+script = ExtResource("5_05tdc")
+
+[node name="Backfire_Sound" type="AudioStreamPlayer2D" parent="Backfire"]
+stream = ExtResource("6_dcubv")
+bus = &"Car Volume"
+
+[node name="Exhaust_1" type="Marker2D" parent="Backfire"]
+position = Vector2(-118, 4)
+
+[node name="Backfire" parent="Backfire/Exhaust_1" instance=ExtResource("7_4bsp7")]
+
+[node name="Exhaust_2" type="Marker2D" parent="Backfire"]
+position = Vector2(-118, -4)
+
+[node name="Backfire2" parent="Backfire/Exhaust_2" instance=ExtResource("7_4bsp7")]

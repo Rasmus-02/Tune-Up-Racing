@@ -1,0 +1,39 @@
+[gd_scene load_steps=9 format=3 uid="uid://dv3lp24i4wwpu"]
+
+[ext_resource type="Script" path="res://Assets/Car/Code/Part_scripts/Spoiler.gd" id="1_6l7hf"]
+[ext_resource type="Shader" path="res://Shaders/Test/ColorSelector.gdshader" id="2_i0akq"]
+[ext_resource type="Texture2D" uid="uid://bfvvp0owvhniw" path="res://Textures/Cars/Talon Motors Barracuda/Spoiler/Talon Motors Barracuda [Avalon] Spoiler.png" id="3_ts321"]
+[ext_resource type="Texture2D" uid="uid://bwjo0a5ydya8l" path="res://Textures/Cars/Talon Motors Barracuda/Spoiler/Talon Motors Barracuda [Avalon] Spoiler NM.png" id="4_44e6r"]
+[ext_resource type="Texture2D" uid="uid://dlclpxukdpj4i" path="res://Textures/Cars/Talon Motors Barracuda/Spoiler/Talon Motors Barracuda [Avalon] Spoiler Spec.png" id="5_vxveq"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_vnc73"]
+shader = ExtResource("2_i0akq")
+shader_parameter/import_new_color = null
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_swaqy"]
+diffuse_texture = ExtResource("3_ts321")
+normal_texture = ExtResource("4_44e6r")
+specular_texture = ExtResource("5_vxveq")
+specular_shininess = 0.5
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_1v1h7"]
+polygon = PackedVector2Array(-128, -46, -128, -44, -127, -44, -127, 43, -128, 43, -128, 45, -111, 45, -111, 43, -112, 43, -112, 24, -106, 24, -106, 19, -112, 19.0632, -112, -19.9816, -104, -20, -104, -25, -112, -25.0306, -112, -44, -111, -44, -111, -46)
+
+[node name="Talon Motors Barracuda [Avalon] Wing" type="Node2D"]
+script = ExtResource("1_6l7hf")
+rarity = "legendary"
+Car_ID = 1
+Part_Number = 5
+description = "A carbon fiber wing for the Talon Motors Barracuda, designed by the racing team Avalon to provide a great deal of downforce without adding too much drag"
+paintable = false
+price = 3200
+weight = 10
+drag = 0.045
+downforce = 225
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_vnc73")
+texture = SubResource("CanvasTexture_swaqy")
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="Sprite2D"]
+occluder = SubResource("OccluderPolygon2D_1v1h7")

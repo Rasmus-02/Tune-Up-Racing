@@ -16,7 +16,7 @@ var Blueprint_Blue = [Color(0, 0.35, 0.7), "Blueprint Blue", "Win 20 Build Chall
 
 var Ruby_Rust = [Color(0.55, 0.2, 0.2), "Ruby Rust", "Win Three Races to Unlock", 0.4] 
 var Alligator_Green = [Color(0.44, 0.54, 0.36), "Alligator Green", "Win 10 Races to Unlock", 0.45]
-var Cherry_Red = [Color(0.65, 0.08, 0.16), "Cherry Red", "Win 50 Races to Unlock", 0.58]
+var Cherry_Red = [Color(0.66, 0.05, 0.12), "Cherry Red", "Win 50 Races to Unlock", 0.58]
 var Sky_Blue = [Color(0.4, 0.7, 0.8), "Sky Blue", "Win 100 Races to Unlock", 0.35]
 var Racing_Green = [Color(0, 0.26, 0.145), "Racing Green", "Win 250 Races to Unlock", 0.58]
 var Gold = [Color(0.69, 0.604, 0.392), "Gold", "Win 500 Races to Unlock", 0.6]

@@ -11,14 +11,18 @@ var koi_chassi = preload("res://Assets/Car/Part Lists/Car Specific/Nagata Koi/Ch
 var chassi = [koi_chassi]
 
 #Driveshaft
-var stock_fwd_driveshaft = preload("res://Assets/Car/Part Lists/Car Specific/Nagata Koi/Driveshaft/Nagata Koi Stock FWD Driveshaft.tscn") #0
-var driveshaft = [empty, stock_fwd_driveshaft]
+var stock_fwd_driveshaft = preload("res://Assets/Car/Part Lists/Car Specific/Nagata Koi/Driveshaft/Nagata Koi Stock FWD Driveshaft.tscn") #1
+var redline_fwd_driveshaft = preload("res://Assets/Car/Part Lists/Car Specific/Nagata Koi/Driveshaft/Nagata Koi [Redline] Reinforced FWD Driveshaft.tscn") #2
+var ks_racing_fwd_driveshaft = preload("res://Assets/Car/Part Lists/Car Specific/Nagata Koi/Driveshaft/Nagata Koi [KS-Racing] Carbon Fiber FWD Driveshaft.tscn") #3
+var driveshaft = [empty, stock_fwd_driveshaft, redline_fwd_driveshaft, ks_racing_fwd_driveshaft]
 
 #Fenders
 var stock_fender = preload("res://Assets/Car/Part Lists/Car Specific/Nagata Koi/Fenders/Nagata Koi Stock Fenders.tscn") #1
 var vortex_widebody = preload("res://Assets/Car/Part Lists/Car Specific/Nagata Koi/Fenders/Nagata Koi [Vortex] Widebody Fenders.tscn") #2
 var satetsu_widebody = preload("res://Assets/Car/Part Lists/Car Specific/Nagata Koi/Fenders/Nagata Koi [Satetsu] Widebody Fenders.tscn") #3
-var fenders = [empty, stock_fender, vortex_widebody, satetsu_widebody]
+var redline_widebody = preload("res://Assets/Car/Part Lists/Car Specific/Nagata Koi/Fenders/Nagata Koi [Redline] Widebody Fenders.tscn") #4
+var ks_racing_widebody = preload("res://Assets/Car/Part Lists/Car Specific/Nagata Koi/Fenders/Nagata Koi [KS-Racing] Carbon Fiber Widebody Fenders.tscn") #5
+var fenders = [empty, stock_fender, vortex_widebody, satetsu_widebody, redline_widebody, ks_racing_widebody]
 
 #F_bumper
 var stock_front_bumper = preload("res://Assets/Car/Part Lists/Car Specific/Nagata Koi/F_bumper/Nagata Koi Stock Front Bumper.tscn") #1
@@ -31,7 +35,9 @@ var f_bumper = [empty, stock_front_bumper, facelift_front_bumper, satetsu_front_
 
 #Headlights
 var stock_headlights = preload("res://Assets/Car/Part Lists/Car Specific/Nagata Koi/Headlights/Nagata Koi Stock Headlights.tscn") #1
-var headlights = [empty, stock_headlights]
+var niepa_headlights = preload("res://Assets/Car/Part Lists/Car Specific/Nagata Koi/Headlights/Nagata Koi [Niepa] Headlights.tscn") #2
+var ks_racing_headlights = preload("res://Assets/Car/Part Lists/Car Specific/Nagata Koi/Headlights/Nagata Koi [KS-Racing] Vent Headlights.tscn") #3
+var headlights = [empty, stock_headlights, niepa_headlights, ks_racing_headlights]
 
 #Hood
 var stock_hood = preload("res://Assets/Car/Part Lists/Car Specific/Nagata Koi/Hood/Nagata Koi Stock Hood.tscn") #1
@@ -50,8 +56,12 @@ var mirrors = [empty, stock_mirrors, vortex_mirrors, avalon_mirrors, ks_racing_m
 
 #R_bumper
 var stock_rear_bumper = preload("res://Assets/Car/Part Lists/Car Specific/Nagata Koi/R_bumper/Nagata Koi Stock Rear Bumper.tscn")#1
-var satetsu_rear_bumper = preload("res://Assets/Car/Part Lists/Car Specific/Nagata Koi/R_bumper/Nagata Koi [Satetsu] Rear Bumper.tscn") #2
-var r_bumper = [empty, stock_rear_bumper, satetsu_rear_bumper]
+var facelift_rear_bumper = preload("res://Assets/Car/Part Lists/Car Specific/Nagata Koi/R_bumper/Nagata Koi Facelift Rear Bumper.tscn")#2
+var vortex_rear_bumper = preload("res://Assets/Car/Part Lists/Car Specific/Nagata Koi/R_bumper/Nagata Koi [Vortex] Rear Bumper.tscn")#3
+var satetsu_rear_bumper = preload("res://Assets/Car/Part Lists/Car Specific/Nagata Koi/R_bumper/Nagata Koi [Satetsu] Rear Bumper.tscn") #4
+var avalon_rear_bumper = preload("res://Assets/Car/Part Lists/Car Specific/Nagata Koi/R_bumper/Nagata Koi [Avalon] Rear Bumper.tscn")#5
+var redline_rear_bumper = preload("res://Assets/Car/Part Lists/Car Specific/Nagata Koi/R_bumper/Nagata Koi [Redline] Rear Bumper.tscn")#6
+var r_bumper = [empty, stock_rear_bumper, facelift_rear_bumper, vortex_rear_bumper, satetsu_rear_bumper, avalon_rear_bumper, redline_rear_bumper]
 
 #Subframe
 var stock_subframe = preload("res://Assets/Car/Part Lists/Car Specific/Nagata Koi/Subframe/Nagata Koi Stock Subframe.tscn")#1
@@ -62,7 +72,10 @@ var subframe = [empty, stock_subframe, vortex_subframe, redline_subframe, satets
 
 #Taillights
 var stock_taillights = preload("res://Assets/Car/Part Lists/Car Specific/Nagata Koi/Taillights/Nagata Koi Stock Taillights.tscn")#1
-var taillights = [empty, stock_taillights]
+var facelift_taillights = preload("res://Assets/Car/Part Lists/Car Specific/Nagata Koi/Taillights/Nagata Koi Facelift Taillights.tscn")#2
+var niepa_taillights = preload("res://Assets/Car/Part Lists/Car Specific/Nagata Koi/Taillights/Nagata Koi [Niepa] Taillights.tscn")#3
+var satetsu_taillights = preload("res://Assets/Car/Part Lists/Car Specific/Nagata Koi/Taillights/Nagata Koi [Satetsu] Taillights.tscn")#4
+var taillights = [empty, stock_taillights, facelift_taillights, niepa_taillights, satetsu_taillights]
 
 #Windows
 var roof_spoiler = preload("res://Assets/Car/Part Lists/Car Specific/Nagata Koi/Spoiler/Nagata Koi Factory Roof Spoiler.tscn")#1

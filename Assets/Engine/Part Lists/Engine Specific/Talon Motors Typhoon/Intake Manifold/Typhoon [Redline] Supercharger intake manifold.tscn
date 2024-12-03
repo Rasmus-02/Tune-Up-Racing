@@ -11,20 +11,20 @@ normal_texture = ExtResource("3_1im8d")
 specular_texture = ExtResource("4_twtdk")
 specular_shininess = 0.5
 
-[node name="Talon Motors Typhoon [Redline] RS2200 Supercharger" type="Node2D"]
+[node name="Talon Motors Typhoon [Redline] RS2000 Supercharger" type="Node2D"]
 script = ExtResource("1_mmtqn")
 rarity = "epic"
 layout = "front"
 lenght = -1
 Engine_ID = 1
-Part_Number = 2
+Part_Number = 6
 description = "A Supercharger for the Typhoon engine designed by the American tuning company Redline"
 price = 6200
 weight = 32
-tq_mod = 0.95
+tq_mod = 0.93
 max_compression_modifier = 0.95
 supercharger = true
-supercharer_displacement_capacity = 2200.0
+supercharer_displacement_capacity = 2000.0
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = SubResource("CanvasTexture_oa52d")

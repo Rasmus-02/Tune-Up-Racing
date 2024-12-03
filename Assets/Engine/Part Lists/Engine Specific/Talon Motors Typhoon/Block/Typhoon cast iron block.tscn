@@ -23,7 +23,7 @@ description = "The factory block made out of cast iron, for the Typhoon engine b
 price = 3000
 weight = 110
 tq = 500
-max_tq = 950
+max_tq = 800
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = SubResource("CanvasTexture_8byoe")

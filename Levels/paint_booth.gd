@@ -35,7 +35,6 @@ func close():
 func select_color(color):
 	selected_color = color
 	var new_color = Colors.list[selected_color][0]
-	print(new_color)
 	self.material.set_shader_parameter("import_new_color", new_color)
 
 #Opens paint selector in player

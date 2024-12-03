@@ -1,0 +1,43 @@
+[gd_scene load_steps=9 format=3 uid="uid://d6gfr4wwfqfa"]
+
+[ext_resource type="Script" path="res://Assets/Car/Code/Part_scripts/Exhaust.gd" id="1_u6tfk"]
+[ext_resource type="Texture2D" uid="uid://c0v6gbks3o3km" path="res://Textures/Cars/Talon Motors Barracuda/Exhaust/Talon Motors Barracuda [Redline] Exhaust.png" id="2_ishew"]
+[ext_resource type="Texture2D" uid="uid://cu5qqffg86mwh" path="res://Textures/Cars/Talon Motors Barracuda/Exhaust/Talon Motors Barracuda [Redline] Exhaust NM.png" id="3_mrhnx"]
+[ext_resource type="Texture2D" uid="uid://dv3wpva5rxohh" path="res://Textures/Cars/Talon Motors Barracuda/Exhaust/Talon Motors Barracuda [Redline] Exhaust Spec.png" id="4_yrpas"]
+[ext_resource type="Script" path="res://Assets/Effects/Backfire.gd" id="5_5i0ib"]
+[ext_resource type="AudioStream" uid="uid://cfvwt4fi2efkr" path="res://Sound/Engine Sounds/Backfire.mp3" id="6_gnxha"]
+[ext_resource type="PackedScene" uid="uid://b1agqhrv0psca" path="res://Assets/Effects/Backfire.tscn" id="7_2h8rp"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_lr5dr"]
+diffuse_texture = ExtResource("2_ishew")
+normal_texture = ExtResource("3_mrhnx")
+specular_texture = ExtResource("4_yrpas")
+specular_shininess = 0.65
+
+[node name="Talon Motors Barracuda [Redline] Exhaust" type="Node2D"]
+script = ExtResource("1_u6tfk")
+rarity = "epic"
+Car_ID = 1
+Part_Number = 4
+description = "A high performance exhaust system designed by Redline for the Talon Motors Barracuda"
+price = 1200
+weight = 22
+tq_mod = 1.07
+sound_dampening = 5
+pitch_tweak = 0.97
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = SubResource("CanvasTexture_lr5dr")
+
+[node name="Backfire" type="Node2D" parent="."]
+script = ExtResource("5_5i0ib")
+
+[node name="Backfire_Sound" type="AudioStreamPlayer2D" parent="Backfire"]
+stream = ExtResource("6_gnxha")
+bus = &"Car Volume"
+
+[node name="Exhaust_1" type="Marker2D" parent="Backfire"]
+position = Vector2(-116, 21)
+
+[node name="Backfire" parent="Backfire/Exhaust_1" instance=ExtResource("7_2h8rp")]
+position = Vector2(-1, 0)

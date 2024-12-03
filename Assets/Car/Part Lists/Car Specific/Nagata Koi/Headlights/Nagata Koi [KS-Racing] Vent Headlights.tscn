@@ -1,0 +1,49 @@
+[gd_scene load_steps=11 format=3 uid="uid://1376t7e8r2gn"]
+
+[ext_resource type="Script" path="res://Assets/Car/Code/Part_scripts/Headlights.gd" id="1_q43jj"]
+[ext_resource type="Shader" path="res://Shaders/Test/ColorSelector.gdshader" id="2_wuxct"]
+[ext_resource type="Texture2D" uid="uid://bbh5yc6khotnq" path="res://Textures/Cars/Nagata Koi/Headlights/Nagata Koi [KS-Racing] Vent Headlight.png" id="3_u1wjf"]
+[ext_resource type="Texture2D" uid="uid://cqqscrbrnl1hm" path="res://Textures/Cars/Nagata Koi/Headlights/Nagata Koi [KS-Racing] Vent Headlight NM.png" id="4_r4oj7"]
+[ext_resource type="Texture2D" uid="uid://mg15xatvfvjv" path="res://Textures/Cars/Nagata Koi/Headlights/Nagata Koi [KS-Racing] Vent Headlight Spec.png" id="5_1c01t"]
+[ext_resource type="Texture2D" uid="uid://buoc035ggvyal" path="res://Textures/Cars/Nagata Koi/Headlights/Nagata Koi [KS-Racing] Vent Headlight Lightmask.png" id="6_uj0oj"]
+[ext_resource type="PackedScene" uid="uid://brbx33n7duy1v" path="res://Shaders/headlights.tscn" id="7_o2ko2"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_7wf7g"]
+shader = ExtResource("2_wuxct")
+shader_parameter/import_new_color = null
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_ma2ib"]
+diffuse_texture = ExtResource("3_u1wjf")
+normal_texture = ExtResource("4_r4oj7")
+specular_texture = ExtResource("5_1c01t")
+specular_shininess = 0.5
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_5vuxv"]
+blend_mode = 1
+light_mode = 1
+
+[node name="Nagata Koi [KS-Racing] Vent Headlights" type="Node2D"]
+script = ExtResource("1_q43jj")
+rarity = "rare"
+Part_Number = 3
+description = "Vented headlights for the Nagata Koi for improved cooling airflow to the engine, designed by KS-Racing"
+paintable = false
+price = 350
+weight = 3
+drag = 0.02
+engine_cool_mod = 0.25
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_7wf7g")
+texture = SubResource("CanvasTexture_ma2ib")
+vframes = 2
+
+[node name="Lightmask" type="Sprite2D" parent="Sprite2D"]
+visible = false
+material = SubResource("CanvasItemMaterial_5vuxv")
+texture = ExtResource("6_uj0oj")
+
+[node name="Lights" parent="." instance=ExtResource("7_o2ko2")]
+light_mask = 1
+position = Vector2(7, -28)
+scale = Vector2(0.8, 0.45)

@@ -167,14 +167,14 @@ func get_stats(part, id : int, type : int):
 		0:
 			match id:
 				#Car
-				3, 5: #front bumper, hood
+				3, 5, 4: #front bumper, hood, headlights
 					update_display(stats[0], part.downforce, "Downforce", "Kg")
 					update_display(stats[1], part.engine_cool_mod, "Cooling", "C°/s")
 					update_display(stats[2], null, "", "")
 					update_display(stats[3], part.drag, "Drag", "")
 					update_display(stats[4], part.weight, "Weight", "Kg")
 					update_display(stats[5], part.durability, "Durability", "%")
-				7, 2, 6, 4, 10: #rear bumper, fenders, mirrors, headlights, spoiler
+				7, 2, 6, 10: #rear bumper, fenders, mirrors, spoiler
 					update_display(stats[0], part.downforce, "Downforce", "Kg")
 					update_display(stats[1], null, "", "")
 					update_display(stats[2], null, "", "")

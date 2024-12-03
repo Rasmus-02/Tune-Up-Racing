@@ -1258,7 +1258,7 @@ position = Vector2(-293.707, 269.455)
 
 [node name="Player" parent="." instance=ExtResource("6_je1ng")]
 z_index = 998
-position = Vector2(313.848, 630.908)
+position = Vector2(427.864, 619.11)
 
 [node name="Floors and Walls" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_myahk")
@@ -1538,11 +1538,6 @@ shape = SubResource("RectangleShape2D_20flb")
 position = Vector2(-34.9994, 15.7443)
 rotation = 0.795851
 occluder = SubResource("OccluderPolygon2D_ni8qn")
-
-[node name="TempSprite" type="Polygon2D" parent="Props/Computer_Desk" groups=["Computer"]]
-visible = false
-color = Color(0.568627, 0.388235, 0.270588, 1)
-polygon = PackedVector2Array(36.1313, -28.8965, 36.2856, 2.47079, -57.2997, 2.61111, -57.3123, -28.8965)
 
 [node name="PointLight2D" type="PointLight2D" parent="Props/Computer_Desk"]
 position = Vector2(-11.643, -11)

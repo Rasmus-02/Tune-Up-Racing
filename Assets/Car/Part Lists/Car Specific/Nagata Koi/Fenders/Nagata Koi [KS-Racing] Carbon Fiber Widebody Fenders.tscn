@@ -1,0 +1,59 @@
+[gd_scene load_steps=11 format=3 uid="uid://ciwmf7xhix00e"]
+
+[ext_resource type="Script" path="res://Assets/Car/Code/Part_scripts/Fenders.gd" id="1_mrnyt"]
+[ext_resource type="Shader" path="res://Shaders/Test/ColorSelector.gdshader" id="2_gnaqx"]
+[ext_resource type="Texture2D" uid="uid://dgv71k14dh0w1" path="res://Textures/Cars/Nagata Koi/Fenders/Nagata Koi [KS-Racing] Widebody Fenders.png" id="3_4fsgg"]
+[ext_resource type="Texture2D" uid="uid://bqovjyj8u1qsx" path="res://Textures/Cars/Nagata Koi/Fenders/Nagata Koi [KS-Racing] Widebody Fenders NM.png" id="4_wlswj"]
+[ext_resource type="Texture2D" uid="uid://b335ir3xqjkw8" path="res://Textures/Cars/Nagata Koi/Fenders/Nagata Koi [KS-Racing] Widebody Fenders Spec.png" id="5_ygodn"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_xkdlp"]
+shader = ExtResource("2_gnaqx")
+shader_parameter/import_new_color = null
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_vufhm"]
+diffuse_texture = ExtResource("3_4fsgg")
+normal_texture = ExtResource("4_wlswj")
+specular_texture = ExtResource("5_ygodn")
+specular_shininess = 0.5
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_ak8kv"]
+blend_mode = 1
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_naikx"]
+polygon = PackedVector2Array(69.9116, -33.6985, 66.9116, -37.6985, 66.9116, -39.6985, 77.9116, -39.6985, 77.9116, -41.6985, 78.9116, -42.6985, 105.912, -42.6985, 110.912, -39.6985, 118.912, -36.6985, 122.912, -34.6985, 124.912, -32.6985, 124.912, -31.6985, 117.912, -31.6985, 112.912, -33.6985)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_knfek"]
+polygon = PackedVector2Array(-56.0884, -41.6985, -55.0884, -42.6985, -24.0884, -42.6985, -22.0884, -40.6985, -22.0884, 44.3015, -24.0884, 46.3015, -55.0884, 46.3015, -56.0884, 45.3015)
+
+[node name="Nagata Koi [KS-Racing] Carbon Fiber Widebody Fenders" type="Node2D"]
+script = ExtResource("1_mrnyt")
+rarity = "epic"
+Part_Number = 5
+description = "Lightweight carbon fiber widebody fenders for the Nagata Koi designed by KS-Racing
+"
+paintable = false
+price = 950
+weight = 8
+downforce = 25
+drag = 0.03
+max_tire_width = 240
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_xkdlp")
+texture = SubResource("CanvasTexture_vufhm")
+
+[node name="LightOccluder2D2" type="LightOccluder2D" parent="Sprite2D"]
+material = SubResource("CanvasItemMaterial_ak8kv")
+position = Vector2(-29.9116, -2.30154)
+occluder = SubResource("OccluderPolygon2D_naikx")
+
+[node name="LightOccluder2D3" type="LightOccluder2D" parent="Sprite2D"]
+material = SubResource("CanvasItemMaterial_ak8kv")
+position = Vector2(-29.915, 1.3)
+scale = Vector2(1, -1)
+occluder = SubResource("OccluderPolygon2D_naikx")
+
+[node name="LightOccluder2D4" type="LightOccluder2D" parent="Sprite2D"]
+material = SubResource("CanvasItemMaterial_ak8kv")
+position = Vector2(-29.9116, -2.30154)
+occluder = SubResource("OccluderPolygon2D_knfek")

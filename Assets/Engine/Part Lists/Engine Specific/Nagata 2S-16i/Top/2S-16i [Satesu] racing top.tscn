@@ -1,7 +1,7 @@
 [gd_scene load_steps=12 format=3 uid="uid://smmgdmsxwixm"]
 
 [ext_resource type="Script" path="res://Assets/Engine/Part_scripts/Top.gd" id="1_yjq71"]
-[ext_resource type="Texture2D" uid="uid://bo1qxlfjxiovx" path="res://Textures/Engines/Talon Motors Typhoon/Top/[Satesu] Nagata 2S-16i Racing Top.png" id="2_mrnck"]
+[ext_resource type="Texture2D" uid="uid://bo1qxlfjxiovx" path="res://Textures/Engines/Nagata 2S-16I/Top/[Satesu] Nagata 2S-16i Racing Top.png" id="2_mrnck"]
 [ext_resource type="Texture2D" uid="uid://c7mjty2867wtt" path="res://Textures/Engines/Nagata 2S-16I/Top/Nagata 2S-16i Racing Top NM.png" id="3_0iq3r"]
 [ext_resource type="Texture2D" uid="uid://d0y7pmtqldira" path="res://Textures/Engines/Nagata 2S-16I/Top/Nagata 2S-16i Racing Top Spec.png" id="4_apjmo"]
 [ext_resource type="Script" path="res://Assets/Engine/Code/Sound_handler_engine.gd" id="5_5p48u"]

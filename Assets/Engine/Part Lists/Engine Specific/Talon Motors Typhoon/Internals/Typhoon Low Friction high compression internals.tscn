@@ -1,0 +1,29 @@
+[gd_scene load_steps=6 format=3 uid="uid://jl4q108crjeb"]
+
+[ext_resource type="Script" path="res://Assets/Engine/Part_scripts/Internals.gd" id="1_n2g8e"]
+[ext_resource type="Texture2D" uid="uid://c435uem83wbui" path="res://Textures/Engines/Talon Motors Typhoon/Internals/Typhoon Low Friction Forged Internals.png" id="2_xo8aa"]
+[ext_resource type="Texture2D" uid="uid://doadnxj1rkyuk" path="res://Textures/Engines/Talon Motors Typhoon/Internals/Typhoon Stock Internals NM.png" id="3_p27n3"]
+[ext_resource type="Texture2D" uid="uid://da2w4icir2ppf" path="res://Textures/Engines/Talon Motors Typhoon/Internals/Typhoon Stock Internals Spec.png" id="4_u1c7p"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_8qrlk"]
+diffuse_texture = ExtResource("2_xo8aa")
+normal_texture = ExtResource("3_p27n3")
+specular_texture = ExtResource("4_u1c7p")
+specular_shininess = 0.5
+
+[node name="Talon Motors Typhoon Low Friction High Comp Internals" type="Node2D"]
+script = ExtResource("1_n2g8e")
+rarity = "epic"
+lenght = 26
+width = 19
+Engine_ID = 1
+Part_Number = 8
+description = "Higher compression variants of the factory internals for the Typhoon Engine, designed for naturally aspirated and low boost engines"
+price = 3500
+weight = 32
+compression = 9.5
+max_rpm = 9000
+max_tq = 950
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = SubResource("CanvasTexture_8qrlk")

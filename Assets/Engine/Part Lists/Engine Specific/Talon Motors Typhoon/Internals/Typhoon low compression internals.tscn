@@ -11,7 +11,7 @@ normal_texture = ExtResource("3_u282e")
 specular_texture = ExtResource("4_flyc4")
 specular_shininess = 0.5
 
-[node name="Talon Motors Typhoon Low Compression Internals" type="Node2D"]
+[node name="Talon Motors Typhoon Low Comp Internals" type="Node2D"]
 script = ExtResource("1_uh4ne")
 rarity = "rare"
 lenght = 26

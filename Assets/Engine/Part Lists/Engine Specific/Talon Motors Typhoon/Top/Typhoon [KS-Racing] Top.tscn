@@ -1,0 +1,59 @@
+[gd_scene load_steps=12 format=3 uid="uid://dw2litnt3tq2r"]
+
+[ext_resource type="Script" path="res://Assets/Engine/Part_scripts/Top.gd" id="1_dfvb1"]
+[ext_resource type="Texture2D" uid="uid://cot0qxcaskd1k" path="res://Textures/Engines/Talon Motors Typhoon/Top/Typhoon [KS-Racing] Race Top.png" id="2_bm5nd"]
+[ext_resource type="Texture2D" uid="uid://c64qrvrbpwi75" path="res://Textures/Engines/Talon Motors Typhoon/Top/Typhoon Stock Top NM.png" id="3_3nlat"]
+[ext_resource type="Texture2D" uid="uid://co4jjos5ftikt" path="res://Textures/Engines/Talon Motors Typhoon/Top/Typhoon [KS-Racing] Race Top Spec.png" id="4_kpqrg"]
+[ext_resource type="Script" path="res://Assets/Engine/Code/Sound_handler_engine.gd" id="5_bkxc6"]
+[ext_resource type="AudioStream" uid="uid://bbpglkldh22xt" path="res://Sound/Engine Sounds/Typhoon/Typhoon ks_racing t1.mp3" id="6_n88ue"]
+[ext_resource type="AudioStream" uid="uid://ba8fjs1w3bp1o" path="res://Sound/Engine Sounds/Typhoon/Typhoon ks_racing nt1.mp3" id="7_ivji4"]
+[ext_resource type="AudioStream" uid="uid://djfu05vvcwog5" path="res://Sound/Engine Sounds/Typhoon/Typhoon ks_racing nt4.mp3" id="8_w0ehj"]
+[ext_resource type="AudioStream" uid="uid://5i0qmtlau5l5" path="res://Sound/Engine Sounds/Typhoon/Typhoon ks_racing t4.mp3" id="9_6ct0d"]
+[ext_resource type="AudioStream" uid="uid://bumo62fftckdb" path="res://Sound/AirFlow Sound.mp3" id="10_cmwpn"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_kt11d"]
+diffuse_texture = ExtResource("2_bm5nd")
+normal_texture = ExtResource("3_3nlat")
+specular_texture = ExtResource("4_kpqrg")
+specular_shininess = 0.52
+
+[node name="Talon Motors Typhoon [KS-Racing] Race Top" type="Node2D"]
+script = ExtResource("1_dfvb1")
+rarity = "legendary"
+lenght = 32
+width = 21
+Engine_ID = 1
+Part_Number = 6
+description = "A very high performance racing top end for the Typhoon engine, designed by KS-Racing"
+price = 8000
+weight = 22.0
+tq_mod = 1.2
+max_hp_rpm = 6800
+max_compression = 12.5
+smoothness = 0.81
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = SubResource("CanvasTexture_kt11d")
+
+[node name="Sound_handler" type="Node2D" parent="."]
+script = ExtResource("5_bkxc6")
+
+[node name="engine_sound_throttle_1000rpm" type="AudioStreamPlayer2D" parent="Sound_handler"]
+stream = ExtResource("6_n88ue")
+bus = &"Car Volume"
+
+[node name="engine_sound_no_throttle_1000rpm" type="AudioStreamPlayer2D" parent="Sound_handler"]
+stream = ExtResource("7_ivji4")
+bus = &"Car Volume"
+
+[node name="engine_sound_no_throttle_4000rpm" type="AudioStreamPlayer2D" parent="Sound_handler"]
+stream = ExtResource("8_w0ehj")
+bus = &"Car Volume"
+
+[node name="engine_sound_throttle_4000rpm" type="AudioStreamPlayer2D" parent="Sound_handler"]
+stream = ExtResource("9_6ct0d")
+bus = &"Car Volume"
+
+[node name="Airflow" type="AudioStreamPlayer2D" parent="Sound_handler"]
+stream = ExtResource("10_cmwpn")
+bus = &"Car Volume"

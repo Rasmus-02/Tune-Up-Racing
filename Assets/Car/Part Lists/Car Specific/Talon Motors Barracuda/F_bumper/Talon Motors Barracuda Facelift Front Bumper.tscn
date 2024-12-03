@@ -1,0 +1,44 @@
+[gd_scene load_steps=10 format=3 uid="uid://barn425ea8g8e"]
+
+[ext_resource type="Script" path="res://Assets/Car/Code/Part_scripts/F_Bumper.gd" id="1_8cth0"]
+[ext_resource type="Shader" path="res://Shaders/Test/ColorSelector.gdshader" id="2_dx131"]
+[ext_resource type="Texture2D" uid="uid://cnx2auu6dhy24" path="res://Textures/Cars/Talon Motors Barracuda/Front Bumper/Talon Motors Barracuda Facelift F_Bumper.png" id="3_bq4sg"]
+[ext_resource type="Texture2D" uid="uid://dut4358eorb4l" path="res://Textures/Cars/Talon Motors Barracuda/Front Bumper/Talon Motors Barracuda Facelift F_Bumper NM.png" id="4_m4rgc"]
+[ext_resource type="Texture2D" uid="uid://dkpdmkoaqvtxh" path="res://Textures/Cars/Talon Motors Barracuda/Front Bumper/Talon Motors Barracuda Facelift F_Bumper Spec.png" id="5_s5ta0"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_relsq"]
+shader = ExtResource("2_dx131")
+shader_parameter/import_new_color = null
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_0hbqo"]
+diffuse_texture = ExtResource("3_bq4sg")
+normal_texture = ExtResource("4_m4rgc")
+specular_texture = ExtResource("5_s5ta0")
+specular_shininess = 0.5
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_nxqv5"]
+blend_mode = 1
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_x7pue"]
+polygon = PackedVector2Array(141.912, -21.6985, 141.912, 25.3015, 140.912, 30.3015, 137.912, 37.3015, 133.912, 41.3015, 126.912, 44.3015, 110.912, 44.3015, 110.912, -40.6985, 126.912, -40.6985, 133.912, -37.6985, 137.912, -33.6985, 140.912, -26.6985)
+
+[node name="Talon Motors Barracuda Facelift Front Bumper" type="Node2D"]
+script = ExtResource("1_8cth0")
+rarity = "rare"
+Car_ID = 1
+Part_Number = 2
+description = "The factory front bumper for later variants of the Talon Motors Barracuda"
+price = 550
+weight = 10
+downforce = 40
+drag = 0.03
+engine_cool_mod = 0.05
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_relsq")
+texture = SubResource("CanvasTexture_0hbqo")
+
+[node name="LightOccluder2D2" type="LightOccluder2D" parent="Sprite2D"]
+material = SubResource("CanvasItemMaterial_nxqv5")
+position = Vector2(-29.9116, -2.30154)
+occluder = SubResource("OccluderPolygon2D_x7pue")

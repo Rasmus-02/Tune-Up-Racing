@@ -1,0 +1,32 @@
+[gd_scene load_steps=8 format=3 uid="uid://bbbcn8cwwgad1"]
+
+[ext_resource type="Script" path="res://Assets/Car/Code/Part_scripts/Mirrors.gd" id="1_myyav"]
+[ext_resource type="Shader" path="res://Shaders/Test/ColorSelector.gdshader" id="2_guowf"]
+[ext_resource type="Texture2D" uid="uid://cdyb4buavvb3u" path="res://Textures/Cars/Talon Motors Barracuda/Mirrors/Talon Motors Barracuda [Avalon] Mirrors.png" id="3_uugep"]
+[ext_resource type="Texture2D" uid="uid://cufd18rowlxjy" path="res://Textures/Cars/Talon Motors Barracuda/Mirrors/Talon Motors Barracuda [Avalon] Mirrors NM.png" id="4_augw0"]
+[ext_resource type="Texture2D" uid="uid://v11udrsqhlxk" path="res://Textures/Cars/Talon Motors Barracuda/Mirrors/Talon Motors Barracuda [Avalon] Mirrors Spec.png" id="5_pv8la"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_mgxvb"]
+shader = ExtResource("2_guowf")
+shader_parameter/import_new_color = null
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_e2ut5"]
+diffuse_texture = ExtResource("3_uugep")
+normal_texture = ExtResource("4_augw0")
+specular_texture = ExtResource("5_pv8la")
+specular_shininess = 0.5
+
+[node name="Talon Motors Barracuda [Avalon] Mirrors" type="Node2D"]
+script = ExtResource("1_myyav")
+rarity = "rare"
+Car_ID = 1
+Part_Number = 3
+description = "Aftermarket retro style mirrors for the Talon Motors Barracuda, designed by Avalon"
+paintable = false
+price = 300
+weight = 2
+drag = 0.01
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_mgxvb")
+texture = SubResource("CanvasTexture_e2ut5")

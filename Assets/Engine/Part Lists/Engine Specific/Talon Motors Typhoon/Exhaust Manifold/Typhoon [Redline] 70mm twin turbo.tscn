@@ -1,0 +1,74 @@
+[gd_scene load_steps=14 format=3 uid="uid://b5wsp33njsya5"]
+
+[ext_resource type="Script" path="res://Assets/Engine/Part_scripts/Exhaust_Manifold.gd" id="1_bd537"]
+[ext_resource type="Texture2D" uid="uid://b7klvx8a0tsfp" path="res://Textures/Engines/Talon Motors Typhoon/Exhaust/Typhoon [Redline] 70mm twin-turbos.png" id="2_o8eda"]
+[ext_resource type="Texture2D" uid="uid://cqo7kphierhoq" path="res://Textures/Engines/Talon Motors Typhoon/Exhaust/Typhoon [Redline] 70mm twin-turbos NM.png" id="3_huyla"]
+[ext_resource type="Texture2D" uid="uid://ceqilga7yitnv" path="res://Textures/Engines/Talon Motors Typhoon/Exhaust/Typhoon [Redline] 70mm twin-turbos Spec.png" id="4_v0rw1"]
+[ext_resource type="Texture2D" uid="uid://bof31hqrfsoac" path="res://Textures/Engines/Talon Motors Typhoon/Exhaust/Stock/Typhoon Stock Exhaust Manifold_T.png" id="5_k6xxy"]
+[ext_resource type="Texture2D" uid="uid://cmkd6mb4vx2o2" path="res://Textures/Engines/Talon Motors Typhoon/Exhaust/Stock/Typhoon Stock Exhaust Manifold_T NM.png" id="6_h72n2"]
+[ext_resource type="Texture2D" uid="uid://dfypavait5uff" path="res://Textures/Engines/Talon Motors Typhoon/Exhaust/Stock/Typhoon Stock Exhaust Manifold_T Spec.png" id="7_l2w51"]
+[ext_resource type="Texture2D" uid="uid://dm65u133nd2y0" path="res://Textures/Engines/Nagata 2S-16I/Exhaust/Stock/Nagata 2S-16i Exhaust Manifold_L.png" id="8_kyhwt"]
+[ext_resource type="Texture2D" uid="uid://d1g38ro0boro5" path="res://Textures/Engines/Nagata 2S-16I/Exhaust/Stock/Nagata 2S-16i Exhaust Manifold_L NM.png" id="9_ii1iu"]
+[ext_resource type="Texture2D" uid="uid://da2jf3l6ifcdr" path="res://Textures/Engines/Nagata 2S-16I/Exhaust/Stock/Nagata 2S-16i Exhaust Manifold_L Spec.png" id="10_xgl75"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_23fjm"]
+diffuse_texture = ExtResource("2_o8eda")
+normal_texture = ExtResource("3_huyla")
+specular_texture = ExtResource("4_v0rw1")
+specular_shininess = 0.3
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_inuwe"]
+diffuse_texture = ExtResource("5_k6xxy")
+normal_texture = ExtResource("6_h72n2")
+specular_texture = ExtResource("7_l2w51")
+specular_shininess = 0.3
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_lk5w4"]
+diffuse_texture = ExtResource("8_kyhwt")
+normal_texture = ExtResource("9_ii1iu")
+specular_texture = ExtResource("10_xgl75")
+specular_shininess = 0.3
+
+[node name="Talon Motors Typhoon [Redline] RTT70 Twin Turbos" type="Node2D"]
+script = ExtResource("1_bd537")
+rarity = "legendary"
+Engine_ID = 1
+Part_Number = 6
+lenght = 9
+width = 14
+description = "An exhaust manifold with two 70mm turbos mounted to it. The turbo system is designed by the high performance aftermarkets parts manufacturer Redline. The RTT70 is a turbo system designed for achieving 1000+ horsepower with supporting mods"
+price = 10000
+weight = 75
+tq_mod = 1.0
+turbo = true
+turbo_efficiency = 0.9
+turbo_type = "twin"
+turbo_1_size = 70.0
+turbo_2_size = 70.0
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = SubResource("CanvasTexture_23fjm")
+
+[node name="Trans" type="Sprite2D" parent="."]
+visible = false
+z_index = -5
+position = Vector2(-3, 3)
+texture = SubResource("CanvasTexture_inuwe")
+
+[node name="Long" type="Sprite2D" parent="."]
+visible = false
+z_index = -5
+position = Vector2(-4, 0)
+
+[node name="Long" type="Sprite2D" parent="Long"]
+z_index = -5
+position = Vector2(-38, 8)
+texture = SubResource("CanvasTexture_lk5w4")
+
+[node name="Long2" type="Sprite2D" parent="Long"]
+z_index = -5
+position = Vector2(-38, -26)
+texture = SubResource("CanvasTexture_lk5w4")
+
+[node name="Air filter location" type="Marker2D" parent="."]
+position = Vector2(14, 11)

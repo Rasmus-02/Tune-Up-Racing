@@ -14,6 +14,7 @@ var id = [Car_ID,4,Part_Number,rarity] #Engine ID, Part type, Part number, rank
 @export var weight = 0
 @export var downforce = 0
 @export var drag = 0.0 #drag coeff
+@export var engine_cool_mod = 0.0
 
 var durability = 100 #100%
 var color = 0

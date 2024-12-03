@@ -161,6 +161,7 @@ func refresh_spawner():
 	update_engine_parts()
 
 func update_engine_parts():
+	print("SB ",selected_block, " ST ", selected_top)
 	#sends signal to part list to update engine
 	if self.get_child(0).get_child(0) != null:
 		#sends the updated parts to part list
@@ -221,40 +222,48 @@ func check_engine_structure():
 	var refresh = false #goes true if engine strucutre is incorrect which refreshes the engine
 	#Check that the engine is loaded because block can't be 0
 	
-	if selected_block != 0:
-		#Check that internals isn't empty
-		if selected_internals == 0:
-			if selected_top != 0 or selected_intake_manifold != 0 or selected_exhaust_manifold != 0 or selected_air_filter != 0:
-				refresh = true
+	#Check that block isn't empty
+	if selected_block == 0:
+		if selected_internals != 0 or selected_top != 0 or selected_intake_manifold != 0 or selected_exhaust_manifold != 0 or selected_air_filter != 0:
+			refresh = true
+			selected_internals = 0
 			selected_top = 0
 			selected_intake_manifold = 0
 			selected_exhaust_manifold = 0
 			selected_air_filter = 0
-		#Check that top isn't empty
-		if selected_top == 0:
-			if selected_intake_manifold != 0 or selected_exhaust_manifold != 0 or selected_air_filter != 0:
-				refresh = true
+	#Check that internals isn't empty
+	if selected_internals == 0:
+		if selected_top != 0 or selected_intake_manifold != 0 or selected_exhaust_manifold != 0 or selected_air_filter != 0:
+			refresh = true
+			selected_top = 0
 			selected_intake_manifold = 0
 			selected_exhaust_manifold = 0
 			selected_air_filter = 0
-		#Check that intake isn't empty and make sure it is the same layout as the manifold
-		if (selected_intake_manifold == 0 and exhaust_manifold.turbo == false) or intake_manifold.layout != air_filter.layout:
-			if selected_air_filter != 0:
-				refresh = true
+	#Check that top isn't empty
+	if selected_top == 0:
+		if selected_intake_manifold != 0 or selected_exhaust_manifold != 0 or selected_air_filter != 0:
+			refresh = true
+			selected_intake_manifold = 0
+			selected_exhaust_manifold = 0
 			selected_air_filter = 0
-		
-		#Add back parts that got removed to inventory
-		if player == true:
-			if selected_top == 0 and top.Part_Number != 0:
-				Save_Load.inv_add(top)
-			if selected_internals == 0 and internals.Part_Number != 0:
-				Save_Load.inv_add(internals)
-			if selected_intake_manifold == 0 and intake_manifold.Part_Number != 0:
-				Save_Load.inv_add(intake_manifold)
-			if selected_exhaust_manifold == 0 and exhaust_manifold.Part_Number != 0:
-				Save_Load.inv_add(exhaust_manifold)
-			if selected_air_filter == 0 and air_filter.Part_Number != 0:
-				Save_Load.inv_add(air_filter)
+	#Check that intake isn't empty and make sure it is the same layout as the manifold
+	if (selected_intake_manifold == 0 and exhaust_manifold.turbo == false) or intake_manifold.layout != air_filter.layout:
+		if selected_air_filter != 0:
+			refresh = true
+			selected_air_filter = 0
+
+	#Add back parts that got removed to inventory
+	if player == true:
+		if selected_top == 0 and top.Part_Number != 0:
+			Save_Load.inv_add(top)
+		if selected_internals == 0 and internals.Part_Number != 0:
+			Save_Load.inv_add(internals)
+		if selected_intake_manifold == 0 and intake_manifold.Part_Number != 0:
+			Save_Load.inv_add(intake_manifold)
+		if selected_exhaust_manifold == 0 and exhaust_manifold.Part_Number != 0:
+			Save_Load.inv_add(exhaust_manifold)
+		if selected_air_filter == 0 and air_filter.Part_Number != 0:
+			Save_Load.inv_add(air_filter)
 		
 		if refresh == true:
 			update_engine_parts()
@@ -364,7 +373,7 @@ func size_check(type, node):
 	#WIDTH (exhaust manifold)
 	if block.layout == "V": #different calc for V engines 
 		if type == "exhaust_manifold":
-			if block.width * 0.5 + exhaust_manifold.width > max_engine_width_left or block.width * 0.5 + exhaust_manifold.width > max_engine_width_right or block.lenght + node.lenght > max_engine_lenght_forward: #check so part doesn't fits in engine bay
+			if block.width * 0.5 + node.width > max_engine_width_left or block.width * 0.5 + node.width > max_engine_width_right or block.lenght + node.lenght > max_engine_lenght_forward: #check so part doesn't fits in engine bay
 				return false
 			else:
 				return true
@@ -420,8 +429,13 @@ func update_size():
 
 func part_placeable(type, node):
 	#Check if there is a block
-	if type == "top" or type == "internals":
+	if type == "internals":
 		if selected_block != 0: 
+			return true
+		else:
+			return false
+	if type == "top":
+		if selected_internals != 0: 
 			return true
 		else:
 			return false
@@ -440,7 +454,6 @@ func part_placeable(type, node):
 		else:
 			return false
 		
-
 #endregion
 
 

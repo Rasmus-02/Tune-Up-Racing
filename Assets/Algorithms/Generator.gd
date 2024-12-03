@@ -1,6 +1,6 @@
 class_name generator
 extends Node
-var difficulty = 1.15
+var difficulty = 1.35
 
 #Main Functions
 func generate_car(rarity, weight, torque_estimate, grip, downforce, brake_force, precision):

@@ -1,0 +1,72 @@
+[gd_scene load_steps=15 format=3 uid="uid://dspqxvn33qgog"]
+
+[ext_resource type="Script" path="res://Assets/Engine/Part_scripts/Exhaust_Manifold.gd" id="1_bmhiv"]
+[ext_resource type="Texture2D" uid="uid://5c0qddfhvvsg" path="res://Textures/Engines/Talon Motors Typhoon/Exhaust/Typhoon Niepa Performance Exhaust Manifold.png" id="2_65aee"]
+[ext_resource type="Texture2D" uid="uid://dmdudyhghrjcy" path="res://Textures/Engines/Talon Motors Typhoon/Exhaust/Typhoon Niepa Performance Exhaust Manifold NM.png" id="3_csskg"]
+[ext_resource type="Texture2D" uid="uid://c0e11wyn1usy3" path="res://Textures/Engines/Talon Motors Typhoon/Exhaust/Typhoon Niepa Performance Exhaust Manifold Spec.png" id="4_antjs"]
+[ext_resource type="Texture2D" uid="uid://t7e3fbsccuki" path="res://Textures/Engines/Nagata 2S-16I/Exhaust/Stock/Nagata 2S-16i Exhaust Manifold_T.png" id="5_gddmn"]
+[ext_resource type="Texture2D" uid="uid://cyrgbxu7xvc8y" path="res://Textures/Engines/Nagata 2S-16I/Exhaust/Stock/Nagata 2S-16i Exhaust Manifold_T NM.png" id="6_br4fl"]
+[ext_resource type="Texture2D" uid="uid://w0rlbkfsuc5t" path="res://Textures/Engines/Nagata 2S-16I/Exhaust/Stock/Nagata 2S-16i Exhaust Manifold_T Spec.png" id="7_w8amr"]
+[ext_resource type="Texture2D" uid="uid://dm65u133nd2y0" path="res://Textures/Engines/Nagata 2S-16I/Exhaust/Stock/Nagata 2S-16i Exhaust Manifold_L.png" id="8_j16gv"]
+[ext_resource type="Texture2D" uid="uid://d1g38ro0boro5" path="res://Textures/Engines/Nagata 2S-16I/Exhaust/Stock/Nagata 2S-16i Exhaust Manifold_L NM.png" id="9_im51g"]
+[ext_resource type="Texture2D" uid="uid://da2jf3l6ifcdr" path="res://Textures/Engines/Nagata 2S-16I/Exhaust/Stock/Nagata 2S-16i Exhaust Manifold_L Spec.png" id="10_aeik4"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_23fjm"]
+diffuse_texture = ExtResource("2_65aee")
+normal_texture = ExtResource("3_csskg")
+specular_texture = ExtResource("4_antjs")
+specular_shininess = 0.3
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_0o5oh"]
+diffuse_texture = ExtResource("5_gddmn")
+normal_texture = ExtResource("6_br4fl")
+specular_texture = ExtResource("7_w8amr")
+specular_shininess = 0.3
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_g6r2h"]
+specular_shininess = 0.3
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_6o75u"]
+diffuse_texture = ExtResource("8_j16gv")
+normal_texture = ExtResource("9_im51g")
+specular_texture = ExtResource("10_aeik4")
+specular_shininess = 0.3
+
+[node name="Talon Motors Typhoon [Niepa] Exhaust Manifold" type="Node2D"]
+script = ExtResource("1_bmhiv")
+rarity = "rare"
+Engine_ID = 1
+Part_Number = 4
+width = 9
+description = "An exhaust manifold with improved airflowfor the Typhoon Engine. Designed by Niepa"
+price = 1200
+weight = 28
+tq_mod = 1.08
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = SubResource("CanvasTexture_23fjm")
+
+[node name="Trans" type="Sprite2D" parent="."]
+visible = false
+z_index = -5
+position = Vector2(-27, 4)
+
+[node name="Trans" type="Sprite2D" parent="Trans"]
+z_index = -5
+position = Vector2(1, -19)
+texture = SubResource("CanvasTexture_0o5oh")
+
+[node name="Long" type="Sprite2D" parent="."]
+visible = false
+z_index = -5
+texture = SubResource("CanvasTexture_g6r2h")
+
+[node name="Long" type="Sprite2D" parent="Long"]
+z_index = -5
+position = Vector2(-53, 7)
+texture = SubResource("CanvasTexture_6o75u")
+
+[node name="Long2" type="Sprite2D" parent="Long"]
+z_index = -5
+position = Vector2(-53, -25)
+texture = SubResource("CanvasTexture_6o75u")

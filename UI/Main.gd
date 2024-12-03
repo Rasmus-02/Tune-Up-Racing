@@ -31,6 +31,8 @@ func update_pause_menu_position():
 
 
 func change_scene(scene):
+	RaceStatus.started = false
+	RaceStatus.finished = false
 	if scene is String:
 		match scene:
 			"costal_circuit":

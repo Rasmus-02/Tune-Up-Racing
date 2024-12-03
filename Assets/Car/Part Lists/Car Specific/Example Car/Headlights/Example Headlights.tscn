@@ -24,7 +24,7 @@ light_mode = 1
 
 [node name="Nagata Koi Stock Headlights" type="Node2D"]
 script = ExtResource("1_pa6cb")
-rarity = "D"
+rarity = "uncommon"
 Part_Number = 1
 description = "The factory headlights for the Nagata Koi"
 paintable = false

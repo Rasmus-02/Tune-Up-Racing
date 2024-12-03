@@ -16,6 +16,7 @@ var selected_part = []
 var parts = null
 var engine_list = {}
 var car_list = {}
+var block_list = {}
 var engine_list_inventory = [] #engine list with just avalible engines
 var selected_key = 0
 var car_name : String
@@ -79,13 +80,23 @@ func populate_list():
 						temp_delte_list.append(temp_part.key) #engines that are equipped won't show upp, so they get removed from back end too
 					i += 1
 				n+=1
+			list.add_item("[Create Engine]")
 			#Remove engines that aren't avalible to equip from list
 			engine_list_inventory = engine_list.duplicate() #duplicate to remove dependencies
 			for keys in temp_delte_list.size():
 				engine_list_inventory.erase(temp_delte_list[keys])
+	
+	#if "Create Engine" tab selected
+	if selected_tab == -1:
+		list.clear()
+		block_list = AssetList.get_parts("Block", 5, null, "", "Save")
+		for block in block_list:
+			list.add_item(block.name)
+			list.set_item_custom_fg_color(list.get_item_count()-1,FontColorSettings.get_color(block.rarity)) #set color based on rarity
+	
 	#for other parts than engine
 	var list_index = 0
-	if selected_tab != 0 and selected_tab != 18:
+	if selected_tab > 0 and selected_tab != 18:
 		list.clear()
 		for i in temp_array.size()+1:
 			temp_part = temp_array[list_index].instantiate()
@@ -162,7 +173,7 @@ func _physics_process(_delta):
 func _on_item_selected(index): #when a part in the item list is clicked (node signal)
 	button_sound.play()
 	#if statement for finding the correct engine
-	if selected_tab == 0:
+	if selected_tab == 0 and index < engine_list_inventory.size(): #update engine if (CREATE ENGINE) Not pressed
 		Save_Load.save()
 		#Add deselected engine back to inventory
 		engine.in_car = null
@@ -170,7 +181,16 @@ func _on_item_selected(index): #when a part in the item list is clicked (node si
 		#update list of engines
 		selected_key = engine_list_inventory.keys()[index] #the key for the engine that got selected
 		temp_part_select_part = engine_list_inventory.get(str(selected_key))
-
+	
+	elif selected_tab == 0: #If "Create Engine" clicked
+		selected_tab = -1
+		populate_list()
+	
+	elif selected_tab == -1: #If in "Block Selector" in "Create Engine", add engine and go back to engine selector
+		add_engine(block_list[index])
+		selected_tab = 0
+		populate_list()
+	
 	else: #If not engine
 		#If part that is on car
 		if index == 1 and equipped_part.name != "[empty]":
@@ -408,7 +428,7 @@ func _on_item_selected(index): #when a part in the item list is clicked (node si
 func update_car():
 	car.update_car_parts()
 	_on_save_pressed()
-	if selected_tab != 0 and selected_tab != 18:
+	if selected_tab > 0 and selected_tab != 18:
 		$"../Description".text = temp_part_select_part.description
 
 func update_engine():
@@ -589,9 +609,10 @@ func _on_tune_button_pressed():
 		$"../Tune_Gearbox/Stats".get_child(n).show()
 #===============================================================================
 func _on_return_button_pressed():
+	var engine_editor = $"../Engine Edit Controller"
 	$"../Tune_Gearbox".hide()
 	button_sound.play()
-	if current_animation == "main" and active == true:
+	if current_animation == "main" and active == true: #Close editor
 		save_gearbox_stats() #Save tuned gearbox ratios
 		update_car()
 		active = false
@@ -604,10 +625,16 @@ func _on_return_button_pressed():
 		current_animation = null
 		list.clear()
 		main.pause_blocked = false
-	elif $"../Engine Edit Controller".selected_tab != 7:
+	elif engine_editor.selected_tab != 7: #Back To Main tab from sub-tabs
 		animation_controller("main")
 		$"../Main_Group/Engine_button".grab_focus()
 		selected_tab = 0
+		#Exit engine controller
+		if engine_editor.active == true and engine.selected_block == 0:
+			var engine_to_remove = engine.selected_engine_key #Memorize key
+			_on_item_selected(0) #Change engine to "Empty Engine"
+			Save_Load.remove_engine(engine_to_remove) #Remove empty engine from inventory
+			
 		populate_list()
 
 func initialise_gearbox_sliders():
@@ -689,7 +716,29 @@ func _on_save_pressed():
 	Save_Load.save()
 	car_list = Save_Load.load_file("cars")
 
-
+func add_engine(block):
+	button_sound.play()
+	var new_selected_key = Save_Load.largest_key("engine", null) + 1
+	engine.selected_block = block.Part_Number
+	engine.selected_internals = 0
+	engine.selected_top = 0
+	engine.selected_exhaust_manifold = 0
+	engine.selected_intake_manifold = 0
+	engine.selected_air_filter = 0
+	engine.selected_engine = block.Engine_ID
+	engine.selected_engine_key = new_selected_key
+	engine.block_durability = block.durability
+	engine.internals_durability = 100
+	engine.top_durability = 100
+	engine.exhaust_manifold_durability = 100
+	engine.intake_manifold_durability = 100
+	engine.air_filter_durability = 100
+	engine.in_car = null
+	Save_Load.temp_key = new_selected_key
+	engine.refresh_spawner()
+	engine.update_engine_parts()
+	Save_Load.add_engine() #Add the engine with the selected parts to inventory
+	Save_Load.remove_inv(block) #Remove the engine part from the inventory to prevent duplication
 
 
 
@@ -727,24 +776,4 @@ func _on_add_pressed():
 	car.update_car_parts()
 	Save_Load.add_car()
 
-func _on_add_engine_button_pressed():
-	button_sound.play()
-	selected_key = Save_Load.largest_key("engine", null) + 1
-	engine.selected_block = 0
-	engine.selected_internals = 0
-	engine.selected_top = 0
-	engine.selected_exhaust_manifold = 0
-	engine.selected_intake_manifold = 0
-	engine.selected_air_filter = 0
-	engine.selected_engine = 0
-	engine.selected_engine_key = selected_key
-	engine.block_durability = 100
-	engine.internals_durability = 100
-	engine.top_durability = 100
-	engine.exhaust_manifold_durability = 100
-	engine.intake_manifold_durability = 100
-	engine.air_filter_durability = 100
-	Save_Load.temp_key = selected_key
-	engine.update_engine_parts()
-	Save_Load.add_engine()
-	populate_list()
+

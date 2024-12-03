@@ -1,0 +1,48 @@
+[gd_scene load_steps=11 format=3 uid="uid://ba2fqyqkh7tt4"]
+
+[ext_resource type="Script" path="res://Assets/Car/Code/Part_scripts/Headlights.gd" id="1_iwh3f"]
+[ext_resource type="Shader" path="res://Shaders/Test/ColorSelector.gdshader" id="2_opft7"]
+[ext_resource type="Texture2D" uid="uid://7bbcl8gb3f0m" path="res://Textures/Cars/Talon Motors Barracuda/Headlights/Talon Motors Barracuda Facelift Headlights.png" id="3_vygre"]
+[ext_resource type="Texture2D" uid="uid://bw2ix1flaqni6" path="res://Textures/Cars/Talon Motors Barracuda/Headlights/Talon Motors Barracuda Facelift Headlights NM.png" id="4_7ta1g"]
+[ext_resource type="Texture2D" uid="uid://dxv0owcl4dby0" path="res://Textures/Cars/Talon Motors Barracuda/Headlights/Talon Motors Barracuda Facelift Headlights Spec.png" id="5_iiqpd"]
+[ext_resource type="Texture2D" uid="uid://c67kmjh5a2n35" path="res://Textures/Cars/Talon Motors Barracuda/Headlights/Talon Motors Barracuda Facelift Headlights Lightmask.png" id="6_186io"]
+[ext_resource type="PackedScene" uid="uid://brbx33n7duy1v" path="res://Shaders/headlights.tscn" id="7_mk50j"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_d2vgq"]
+shader = ExtResource("2_opft7")
+shader_parameter/import_new_color = null
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_ma2ib"]
+diffuse_texture = ExtResource("3_vygre")
+normal_texture = ExtResource("4_7ta1g")
+specular_texture = ExtResource("5_iiqpd")
+specular_shininess = 0.5
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_d8sp1"]
+blend_mode = 1
+light_mode = 1
+
+[node name="Talon Motors Barracuda Facelift Headlights" type="Node2D"]
+script = ExtResource("1_iwh3f")
+rarity = "rare"
+Car_ID = 1
+Part_Number = 2
+description = "The factory headlights featured on later variants of the Talon Motors Barracuda"
+paintable = false
+price = 300
+weight = 4
+drag = 0.03
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_d2vgq")
+texture = SubResource("CanvasTexture_ma2ib")
+
+[node name="Lightmask" type="Sprite2D" parent="Sprite2D"]
+visible = false
+modulate = Color(1, 0.894118, 0.756863, 1)
+material = SubResource("CanvasItemMaterial_d8sp1")
+texture = ExtResource("6_186io")
+
+[node name="Lights" parent="." instance=ExtResource("7_mk50j")]
+light_mask = 1
+scale = Vector2(1, 1.05)

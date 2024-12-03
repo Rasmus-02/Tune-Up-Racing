@@ -20,10 +20,10 @@ rarity = "epic"
 Part_Number = 5
 description = "A race exhaust system designed by the racing team Avalon, for the Nagata Koi."
 price = 2000
-weight = 25
+weight = 30
 tq_mod = 1.1
 sound_dampening = 6
-pitch_tweak = 1.02
+pitch_tweak = 1.03
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(-1, 0)

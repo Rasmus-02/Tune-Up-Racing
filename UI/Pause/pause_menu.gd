@@ -56,7 +56,6 @@ func _on_quit_pressed():
 	if SelectedScene.scene == "garage": #Closes down the game
 		get_tree().quit()
 	else:
-		RaceStatus.started = false
 		Placing.car_list.clear()
 		main.change_scene("garage")
 		close()
@@ -65,7 +64,6 @@ func _on_quit_pressed():
 
 func _on_restart_pressed():
 	close()
-	RaceStatus.started = false
 	Placing.car_list.clear()
 	main.change_scene("costal_circuit")
 

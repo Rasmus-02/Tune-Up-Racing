@@ -562,6 +562,8 @@ func _physics_process(delta):
 			_on_gear_change_timer_timeout()
 			if SelectedScene.scene == "Track" and RaceStatus.started == true: #Make it so the car can move, on dyno the car should not move
 				rubberbanding = $Placing.performance_bonus
+				if RaceStatus.finished == true and player == true:
+					player = false
 				get_input()
 				calculate_steering(delta)
 				move_and_slide()
@@ -760,7 +762,8 @@ func light_controll(light_type,on_off, strenght):
 		if light_type == "headlights": #Headlights
 			#Set the light of the sprite
 			if on_off == true: #Turn on headlight sprite
-				headlight_sprite.frame = 1
+				if headlight_sprite.vframes > 1: #If animated (popups)
+					headlight_sprite.frame = 1
 				headlight_sprite.get_child(0).show() #The unshaded lightmask
 			else: #Turn off headlight sprite
 				headlight_sprite.frame = 0
@@ -859,7 +862,7 @@ func get_input():
 		acceleration = forward * (transform.x * ((engine_power / (weight / 10)) * ((1 + (tire_limit/max_tire_limit))/2)))
 		var drivetrain_grip_mod = 1
 		if drive_train_type == 0: #RWD
-			drivetrain_grip_mod = 1
+			drivetrain_grip_mod = 1.05
 		elif drive_train_type == 1: #FWD
 			drivetrain_grip_mod = 0.85
 		elif drive_train_type == 2: #AWD
@@ -1016,6 +1019,23 @@ func traction_constructor():
 	#AWD construcotr
 	if drive_train_type == 2:
 		traction_fast_max += 0.002 #Less slip with AWD
+
+func get_value(): #Calculates how much car is worth by all parts combined
+	var combined_parts = [engine.block, engine.internals, engine.top, engine.exhaust_manifold, engine.intake_manifold, 
+		engine.air_filter, chassi, driveshaft, subframe, fenders, f_bumper, r_bumper, hood, headlights, taillights, spoiler, 
+		mirrors, gearbox, radiator,exhaust,brakes,suspension,tires,wheels]
+	var value : int
+	for part in combined_parts:
+		if part != null: #Null check
+			value += int(part.price * 0.8 * (float(part.durability) / 100.0)) #Durability damage reduces value
+	
+	return value
+
+func reward_bonus():
+	var value = get_value()
+	if value > 0:
+		var bonus = (value / 20000.0) ** 0.2 # Sets 20.000$ to be baseline (0% bonus) ** 0.2 makes it so smaller punnsihment for bellow 20.000$ and smaller reward for above
+		return bonus
 
 #region Bridge
 var above_bridge = false
