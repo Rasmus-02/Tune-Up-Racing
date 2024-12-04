@@ -3,6 +3,7 @@ extends Control
 @export var page_selector : Control
 @export var page_shop : Control
 @export var page_inventory : Control
+@export var page_difficulty : Control
 @export var pagename : Label
 
 
@@ -16,6 +17,7 @@ func close_pages():
 	page_shop.hide()
 	page_selector.hide()
 	page_inventory.hide()
+	page_difficulty.hide()
 	#Clear all lists
 	page_shop.get_node("Parts").clear_list()
 	page_inventory.get_node("Parts").clear_list()
@@ -30,4 +32,9 @@ func _on_inventory_button_pressed():
 	close_pages()
 	page_inventory.show()
 	page_inventory.get_node("Parts").populate_list()
-	pagename.text = "http://localhost:8000"
+	pagename.text = "https://inventory.manager.com"
+
+func _on_difficulty_button_pressed():
+	page_difficulty.show()
+	page_difficulty.open()
+	pagename.text = "https://localhost:8000"

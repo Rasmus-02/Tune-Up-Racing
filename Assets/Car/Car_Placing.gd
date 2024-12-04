@@ -3,8 +3,8 @@ extends Node2D
 @export var car : CharacterBody2D
 var car_placing : int
 var performance_bonus = 1.0
-var grip_bonus = 1.35
-var difficulty = 1.2
+var grip_bonus = 1.4
+var difficulty = 1.2 * Settings.get_difficulty_bonus("AI Difficulty")
 
 func _process(_delta):
 	#Player

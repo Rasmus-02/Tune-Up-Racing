@@ -1,0 +1,423 @@
+[gd_scene load_steps=25 format=3 uid="uid://cq61hnxmnu2nk"]
+
+[ext_resource type="Texture2D" uid="uid://dleoxcqy3h4m5" path="res://Textures/UI/Computer/Difficulties/Difficulty-Beginner.png" id="1_0bdji"]
+[ext_resource type="Script" path="res://UI/Computer/Difficulty_Selector.gd" id="1_nm8b6"]
+[ext_resource type="Texture2D" uid="uid://bu65dixr33ao4" path="res://Textures/UI/Computer/Difficulties/Difficulty-Beginner-ON.png" id="2_gp15n"]
+[ext_resource type="Texture2D" uid="uid://drkorvooi0is0" path="res://Textures/UI/Computer/Difficulties/Difficulty-Beginner-Hovered.png" id="3_h0i44"]
+[ext_resource type="Texture2D" uid="uid://clsvncyjydfbv" path="res://Textures/UI/Computer/Difficulties/Difficulty-Easy.png" id="4_30krv"]
+[ext_resource type="Texture2D" uid="uid://oep85arqo668" path="res://Textures/UI/Computer/Difficulties/Difficulty-Beginner-Disabled.png" id="5_hekff"]
+[ext_resource type="Texture2D" uid="uid://bth5t84htngm1" path="res://Textures/UI/Computer/Difficulties/Difficulty-Easy-ON.png" id="5_mlmoe"]
+[ext_resource type="Texture2D" uid="uid://ddhpb00js14ya" path="res://Textures/UI/Computer/Difficulties/Difficulty-Easy-Hover.png" id="6_37vvy"]
+[ext_resource type="Texture2D" uid="uid://baw0vp1tulbvh" path="res://Textures/UI/Computer/Difficulties/Difficulty-Medium.png" id="7_efb6t"]
+[ext_resource type="Texture2D" uid="uid://cc7h56tahggre" path="res://Textures/UI/Computer/Difficulties/Difficulty-Medium-ON.png" id="8_wlqx5"]
+[ext_resource type="Texture2D" uid="uid://bvuw1jw5bsonm" path="res://Textures/UI/Computer/Difficulties/Difficulty-Easy-Disabled.png" id="9_351gs"]
+[ext_resource type="Texture2D" uid="uid://u7ws3c5j1e5c" path="res://Textures/UI/Computer/Difficulties/Difficulty-Medium-Hovered.png" id="9_qusx1"]
+[ext_resource type="Texture2D" uid="uid://du74kwm2f0sma" path="res://Textures/UI/Computer/Difficulties/Difficulty-Hard.png" id="10_dm5c2"]
+[ext_resource type="Texture2D" uid="uid://daa5lrfc8it7o" path="res://Textures/UI/Computer/Difficulties/Difficulty-Hard-ON.png" id="11_tvr5j"]
+[ext_resource type="Texture2D" uid="uid://c81u12m77n3" path="res://Textures/UI/Computer/Difficulties/Difficulty-Hard-Hovered.png" id="12_l8e2u"]
+[ext_resource type="Texture2D" uid="uid://bajjcjeoqpcvu" path="res://Textures/UI/Computer/Difficulties/Difficulty-Insane.png" id="13_qjg5l"]
+[ext_resource type="Texture2D" uid="uid://mf0k80ebl4mt" path="res://Textures/UI/Computer/Difficulties/Difficulty-Medium-Disabled.png" id="13_trw6q"]
+[ext_resource type="Texture2D" uid="uid://cdbgcnvkikq3n" path="res://Textures/UI/Computer/Difficulties/Difficulty-Insane-ON.png" id="14_5f2w5"]
+[ext_resource type="Texture2D" uid="uid://pbf3k5xvotup" path="res://Textures/UI/Computer/Difficulties/Difficulty-Insane-Hovered.png" id="15_o0v3j"]
+[ext_resource type="Texture2D" uid="uid://tdi4n5ncpxql" path="res://Textures/UI/Computer/Difficulties/Difficulty-Hard-Disabled.png" id="17_5nnt0"]
+[ext_resource type="Texture2D" uid="uid://bf8iephagqan7" path="res://Textures/UI/Computer/Difficulties/Difficulty-Insane-Disabled.png" id="21_lp6er"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_feld2"]
+bg_color = Color(0.788235, 0.686275, 0.431373, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cjhwh"]
+bg_color = Color(0.72549, 0.631373, 0.396078, 1)
+corner_radius_top_right = 40
+corner_radius_bottom_right = 40
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_whs1h"]
+bg_color = Color(0.72549, 0.631373, 0.396078, 1)
+corner_radius_bottom_right = 40
+anti_aliasing = false
+
+[node name="Difficulty" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_nm8b6")
+
+[node name="Browser Background Panel" type="Panel" parent="."]
+offset_left = 329.0
+offset_top = 100.0
+offset_right = 2230.0
+offset_bottom = 1430.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_feld2")
+
+[node name="Label BG" type="Panel" parent="Browser Background Panel"]
+offset_left = 1.0
+offset_top = 115.0
+offset_right = 1250.0
+offset_bottom = 390.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_cjhwh")
+
+[node name="Description BG" type="Panel" parent="Browser Background Panel"]
+offset_left = 1.0
+offset_top = 746.0
+offset_right = 1692.0
+offset_bottom = 1110.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_whs1h")
+
+[node name="Header" type="Label" parent="."]
+layout_mode = 0
+offset_left = 383.0
+offset_top = 175.0
+offset_right = 959.0
+offset_bottom = 277.0
+scale = Vector2(2, 2)
+theme_override_colors/font_outline_color = Color(0.145098, 0.145098, 0.145098, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 128
+text = "Select a Difficulty"
+
+[node name="Description" type="Label" parent="."]
+layout_mode = 0
+offset_left = 380.0
+offset_top = 365.0
+offset_right = 1540.0
+offset_bottom = 467.0
+theme_override_colors/font_outline_color = Color(0.145098, 0.145098, 0.145098, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 128
+text = "(Higher Difficulties = Higher Rewards)"
+
+[node name="Buttons" type="HBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 719.0
+offset_top = 608.0
+offset_right = 905.0
+offset_bottom = 694.0
+scale = Vector2(7, 7)
+
+[node name="Beginner" type="TextureButton" parent="Buttons"]
+layout_mode = 2
+toggle_mode = true
+texture_normal = ExtResource("1_0bdji")
+texture_pressed = ExtResource("2_gp15n")
+texture_hover = ExtResource("3_h0i44")
+texture_disabled = ExtResource("5_hekff")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Buttons/Beginner"]
+layout_mode = 0
+offset_left = 8.99999
+offset_top = 32.8571
+offset_right = 177.0
+offset_bottom = 558.857
+scale = Vector2(0.1, 0.1)
+
+[node name="Requirement" type="Label" parent="Buttons/Beginner/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_outline_color = Color(0.145098, 0.145098, 0.145098, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 128
+text = "LVL 0"
+horizontal_alignment = 1
+
+[node name="Money_Bonus" type="Label" parent="Buttons/Beginner/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_outline_color = Color(0.145098, 0.145098, 0.145098, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 128
+text = "50%"
+horizontal_alignment = 1
+
+[node name="Xp_Bonus" type="Label" parent="Buttons/Beginner/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_outline_color = Color(0.145098, 0.145098, 0.145098, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 128
+text = "60%"
+horizontal_alignment = 1
+
+[node name="AI" type="Label" parent="Buttons/Beginner/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_outline_color = Color(0.145098, 0.145098, 0.145098, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 128
+text = "65%"
+horizontal_alignment = 1
+
+[node name="Time-Attack" type="Label" parent="Buttons/Beginner/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_outline_color = Color(0.145098, 0.145098, 0.145098, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 128
+text = "150%"
+horizontal_alignment = 1
+
+[node name="Descriptions" type="VBoxContainer" parent="Buttons/Beginner"]
+layout_mode = 0
+offset_left = -52.8571
+offset_top = 33.1429
+offset_right = 347.143
+offset_bottom = 559.143
+scale = Vector2(0.1, 0.1)
+
+[node name="Description 0" type="Label" parent="Buttons/Beginner/Descriptions"]
+layout_mode = 2
+theme_override_colors/font_outline_color = Color(0.145098, 0.145098, 0.145098, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 128
+text = "Unlock Level:"
+
+[node name="Description 1" type="Label" parent="Buttons/Beginner/Descriptions"]
+layout_mode = 2
+theme_override_colors/font_outline_color = Color(0.145098, 0.145098, 0.145098, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 128
+text = "Money Bonus:"
+
+[node name="Description 2" type="Label" parent="Buttons/Beginner/Descriptions"]
+layout_mode = 2
+theme_override_colors/font_outline_color = Color(0.145098, 0.145098, 0.145098, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 128
+text = "Xp Bonus:"
+
+[node name="Description 3" type="Label" parent="Buttons/Beginner/Descriptions"]
+layout_mode = 2
+theme_override_colors/font_outline_color = Color(0.145098, 0.145098, 0.145098, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 128
+text = "AI Difficulty:"
+
+[node name="Description 4" type="Label" parent="Buttons/Beginner/Descriptions"]
+layout_mode = 2
+theme_override_colors/font_outline_color = Color(0.145098, 0.145098, 0.145098, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 128
+text = "Time Bonus:"
+
+[node name="Easy" type="TextureButton" parent="Buttons"]
+layout_mode = 2
+toggle_mode = true
+texture_normal = ExtResource("4_30krv")
+texture_pressed = ExtResource("5_mlmoe")
+texture_hover = ExtResource("6_37vvy")
+texture_disabled = ExtResource("9_351gs")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Buttons/Easy"]
+layout_mode = 0
+offset_left = 7.28571
+offset_top = 32.8571
+offset_right = 207.286
+offset_bottom = 558.857
+scale = Vector2(0.1, 0.1)
+
+[node name="Requirement" type="Label" parent="Buttons/Easy/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_outline_color = Color(0.145098, 0.145098, 0.145098, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 128
+text = "LVL 10"
+horizontal_alignment = 1
+
+[node name="Money_Bonus" type="Label" parent="Buttons/Easy/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_outline_color = Color(0.145098, 0.145098, 0.145098, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 128
+text = "75%"
+horizontal_alignment = 1
+
+[node name="Xp_Bonus" type="Label" parent="Buttons/Easy/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_outline_color = Color(0.145098, 0.145098, 0.145098, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 128
+text = "80%"
+horizontal_alignment = 1
+
+[node name="AI" type="Label" parent="Buttons/Easy/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_outline_color = Color(0.145098, 0.145098, 0.145098, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 128
+text = "80%"
+horizontal_alignment = 1
+
+[node name="Time-Attack" type="Label" parent="Buttons/Easy/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_outline_color = Color(0.145098, 0.145098, 0.145098, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 128
+text = "125%"
+horizontal_alignment = 1
+
+[node name="Medium" type="TextureButton" parent="Buttons"]
+layout_mode = 2
+toggle_mode = true
+texture_normal = ExtResource("7_efb6t")
+texture_pressed = ExtResource("8_wlqx5")
+texture_hover = ExtResource("9_qusx1")
+texture_disabled = ExtResource("13_trw6q")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Buttons/Medium"]
+offset_left = 7.28571
+offset_top = 32.8571
+offset_right = 207.286
+offset_bottom = 558.857
+scale = Vector2(0.1, 0.1)
+
+[node name="Requirement" type="Label" parent="Buttons/Medium/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_outline_color = Color(0.145098, 0.145098, 0.145098, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 128
+text = "LVL 20"
+horizontal_alignment = 1
+
+[node name="Money_Bonus" type="Label" parent="Buttons/Medium/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_outline_color = Color(0.145098, 0.145098, 0.145098, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 128
+text = "100%"
+horizontal_alignment = 1
+
+[node name="Xp_Bonus" type="Label" parent="Buttons/Medium/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_outline_color = Color(0.145098, 0.145098, 0.145098, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 128
+text = "100%"
+horizontal_alignment = 1
+
+[node name="AI" type="Label" parent="Buttons/Medium/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_outline_color = Color(0.145098, 0.145098, 0.145098, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 128
+text = "100%"
+horizontal_alignment = 1
+
+[node name="Time-Attack" type="Label" parent="Buttons/Medium/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_outline_color = Color(0.145098, 0.145098, 0.145098, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 128
+text = "100%"
+horizontal_alignment = 1
+
+[node name="Hard" type="TextureButton" parent="Buttons"]
+layout_mode = 2
+toggle_mode = true
+texture_normal = ExtResource("10_dm5c2")
+texture_pressed = ExtResource("11_tvr5j")
+texture_hover = ExtResource("12_l8e2u")
+texture_disabled = ExtResource("17_5nnt0")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Buttons/Hard"]
+offset_left = 7.28571
+offset_top = 32.8571
+offset_right = 207.286
+offset_bottom = 558.857
+scale = Vector2(0.1, 0.1)
+
+[node name="Requirement" type="Label" parent="Buttons/Hard/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_outline_color = Color(0.145098, 0.145098, 0.145098, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 128
+text = "LVL 30"
+horizontal_alignment = 1
+
+[node name="Money_Bonus" type="Label" parent="Buttons/Hard/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_outline_color = Color(0.145098, 0.145098, 0.145098, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 128
+text = "125%"
+horizontal_alignment = 1
+
+[node name="Xp_Bonus" type="Label" parent="Buttons/Hard/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_outline_color = Color(0.145098, 0.145098, 0.145098, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 128
+text = "125%"
+horizontal_alignment = 1
+
+[node name="AI" type="Label" parent="Buttons/Hard/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_outline_color = Color(0.145098, 0.145098, 0.145098, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 128
+text = "125%"
+horizontal_alignment = 1
+
+[node name="Time-Attack" type="Label" parent="Buttons/Hard/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_outline_color = Color(0.145098, 0.145098, 0.145098, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 128
+text = "75%"
+horizontal_alignment = 1
+
+[node name="Insane" type="TextureButton" parent="Buttons"]
+layout_mode = 2
+toggle_mode = true
+texture_normal = ExtResource("13_qjg5l")
+texture_pressed = ExtResource("14_5f2w5")
+texture_hover = ExtResource("15_o0v3j")
+texture_disabled = ExtResource("21_lp6er")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Buttons/Insane"]
+offset_left = 7.28571
+offset_top = 32.8571
+offset_right = 207.286
+offset_bottom = 558.857
+scale = Vector2(0.1, 0.1)
+
+[node name="Requirement" type="Label" parent="Buttons/Insane/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_outline_color = Color(0.145098, 0.145098, 0.145098, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 128
+text = "LVL 40"
+horizontal_alignment = 1
+
+[node name="Money_Bonus" type="Label" parent="Buttons/Insane/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_outline_color = Color(0.145098, 0.145098, 0.145098, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 128
+text = "200%"
+horizontal_alignment = 1
+
+[node name="Xp_Bonus" type="Label" parent="Buttons/Insane/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_outline_color = Color(0.145098, 0.145098, 0.145098, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 128
+text = "150%"
+horizontal_alignment = 1
+
+[node name="AI" type="Label" parent="Buttons/Insane/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_outline_color = Color(0.145098, 0.145098, 0.145098, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 128
+text = "150%"
+horizontal_alignment = 1
+
+[node name="Time-Attack" type="Label" parent="Buttons/Insane/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_outline_color = Color(0.145098, 0.145098, 0.145098, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 128
+text = "50%"
+horizontal_alignment = 1
+
+[connection signal="pressed" from="Buttons/Beginner" to="." method="_on_beginner_pressed"]
+[connection signal="pressed" from="Buttons/Easy" to="." method="_on_easy_pressed"]
+[connection signal="pressed" from="Buttons/Medium" to="." method="_on_medium_pressed"]
+[connection signal="pressed" from="Buttons/Hard" to="." method="_on_hard_pressed"]
+[connection signal="pressed" from="Buttons/Insane" to="." method="_on_insane_pressed"]

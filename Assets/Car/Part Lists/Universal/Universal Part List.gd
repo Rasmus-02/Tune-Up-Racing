@@ -16,12 +16,14 @@ var suspension = [empty, soft_road_suspension, avalon_track_suspension]
 #Tires
 var EcoMax185R16 = preload("res://Assets/Car/Part Lists/Universal/Tires/185R16 EcoMax.tscn") #1
 var Torakushon220R16_semislicks = preload("res://Assets/Car/Part Lists/Universal/Tires/220R16 [Torakushon] Semislick Tires.tscn") #2
-var tires = [empty, EcoMax185R16, Torakushon220R16_semislicks]
+var Torakushon260R16_semislicks = preload("res://Assets/Car/Part Lists/Universal/Tires/260R16 [Torakushon] Semislick Tires.tscn") #3
+var tires = [empty, EcoMax185R16, Torakushon220R16_semislicks, Torakushon260R16_semislicks]
 
 #Wheels
 var cheap_alloy_wheels_180_200_R16 = preload("res://Assets/Car/Part Lists/Universal/Wheels/Cheap Alloy Wheels, 200R16.tscn") #1
 var fritz_lightweight_forged_200_220_R16 = preload("res://Assets/Car/Part Lists/Universal/Wheels/[Fritz] Lightweight Forged Wheels, 220R16.tscn") #2
-var wheels = [empty, cheap_alloy_wheels_180_200_R16, fritz_lightweight_forged_200_220_R16]
+var satetsu_lightweight_forged_260_R16 = preload("res://Assets/Car/Part Lists/Universal/Wheels/[Satetsu] Lightweight Forged Wheels, 260R16.tscn") #3
+var wheels = [empty, cheap_alloy_wheels_180_200_R16, fritz_lightweight_forged_200_220_R16, satetsu_lightweight_forged_260_R16]
 
 #Gearbox
 var FWD_5speed_manual = preload("res://Assets/Car/Part Lists/Universal/Gearbox/FWD 5 speed manual.tscn") #1

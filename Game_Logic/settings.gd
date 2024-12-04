@@ -1,20 +1,22 @@
 extends Node
 
 var file_location = "user://settings.save"
-#var resolution_settings = {0 : Vector2(850, 480) ,1 : Vector2(1280, 720), 2 : Vector2(1920, 1080), 3 : Vector2(2560, 1440)}
+# var resolution_settings = {0 : Vector2(850, 480) ,1 : Vector2(1280, 720), 2 : Vector2(1920, 1080), 3 : Vector2(2560, 1440)}
 
+#Difficulty
+var difficulty : int # 0 - 4
 
 #General
-var camera_mode : int #0 = static || 1 = dynamic
-var display_mode : int #0 = fullscreen || 1 = windowed
-#var resolution = 0 #the index in resolution settings
-var vsync : int #0 = off || 1 = on
+var camera_mode : int # 0 = static || 1 = dynamic
+var display_mode : int # 0 = fullscreen || 1 = windowed
+#var resolution = 0 # the index in resolution settings
+var vsync : int # 0 = off || 1 = on
 
 #Audio
-var general_volume : float #0 - 1
-var car_volume : float #0 - 1
-var music_volume : float #0 - 1
-var ambient_volume : float #0 - 1
+var general_volume : float # 0 - 1
+var car_volume : float # 0 - 1
+var music_volume : float # 0 - 1
+var ambient_volume : float # 0 - 1
 
 func _ready():
 	#If file doesn't exist create new file
@@ -29,9 +31,9 @@ func _ready():
 func save_settings():
 	if FileAccess.file_exists(file_location):
 		print("CAMERA:  ",camera_mode)
-		var save_dict = {"camera_mode" : camera_mode, "display_mode" : display_mode,"vsync" : vsync, 
-		"general_volume" : general_volume, "car_volume" : car_volume, "music_volume" : music_volume,
-		"ambient_volume" : ambient_volume}
+		var save_dict = {"difficulty" : difficulty,"camera_mode" : camera_mode, "display_mode" : display_mode,
+		"vsync" : vsync, "general_volume" : general_volume, "car_volume" : car_volume, 
+		"music_volume" : music_volume, "ambient_volume" : ambient_volume}
 		var save_game = FileAccess.open(file_location, FileAccess.WRITE)
 		var json_string = JSON.stringify(save_dict)
 		save_game.store_line(json_string)
@@ -45,6 +47,8 @@ func load_file():
 		var dataFile = FileAccess.open(file_location, FileAccess.READ)
 		var parsedResult = JSON.parse_string(dataFile.get_as_text())
 		
+		#Difficulty
+		difficulty = parsedResult.difficulty
 		#General
 		camera_mode = parsedResult.camera_mode
 		display_mode = parsedResult.display_mode
@@ -99,3 +103,55 @@ func apply_settings():
 	AudioServer.set_bus_volume_db(1, linear_to_db(car_volume))
 	AudioServer.set_bus_volume_db(2, linear_to_db(ambient_volume))
 	AudioServer.set_bus_volume_db(3, linear_to_db(music_volume))
+
+func get_difficulty_bonus(type : String):
+	var level = Save_Load.level
+	match type:
+		"Money Bonus":
+			match difficulty:
+				0: # Beginner
+					return 0.5 
+				1: # Easy
+					return 0.75 
+				2: # Medium
+					return 1.0
+				3: # Hard
+					return 1.25 
+				4: # Insane
+					return 2.0 
+		"Xp Bonus":
+			match difficulty:
+				0: # Beginner
+					return 0.6 
+				1: # Easy
+					return 0.8 
+				2: # Medium
+					return 1.0
+				3: # Hard
+					return 1.25 
+				4: # Insane
+					return 1.5
+		"AI Difficulty":
+			match difficulty:
+				0: # Beginner
+					return 0.65 
+				1: # Easy
+					return 0.8 
+				2: # Medium
+					return 1.0
+				3: # Hard
+					return 1.25 
+				4: # Insane
+					return 1.5
+		"Time Bonus":
+			match difficulty:
+				0: # Beginner
+					return 1.5
+				1: # Easy
+					return 1.25
+				2: # Medium
+					return 1.0
+				3: # Hard
+					return 0.75 
+				4: # Insane
+					return 0.5

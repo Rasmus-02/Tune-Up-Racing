@@ -20,7 +20,6 @@ func open():
 	player_level = Save_Load.level
 	paused = false
 
-
 func race_reward():
 	#Baseline
 	var money = 150.0
@@ -40,7 +39,10 @@ func race_reward():
 	var lenght_bonus = ((float(Placing.max_lap) * float(Placing.map_bonus)) / 3) ** 0.8 #Baseline laps is 3, **0.8 to reduce effect of difference
 	money * lenght_bonus
 	xp * lenght_bonus
-	
+	#Bonus for Difficulty
+	money * Settings.get_difficulty_bonus("Money Bonus") 
+	xp * Settings.get_difficulty_bonus("Xp Bonus") 
+	#Set the rewards
 	money_reward = int(money)
 	xp_reward = int(xp)
 
@@ -56,10 +58,10 @@ func _process(delta):
 	if xp_to_add != 0:
 		var xp = xp_reward * 0.005
 		if xp <= xp_to_add:
-			Save_Load.xp += xp
+			Save_Load.xp += int(xp)
 			xp_to_add -= xp
 		else:
-			Save_Load.xp += xp_to_add
+			Save_Load.xp += int(xp_to_add)
 			xp_to_add = 0
 		if xp_to_add <= 0:
 			race_results.get_node("Total").get_node("XP").save_pause = false
@@ -68,10 +70,10 @@ func _process(delta):
 	if money_to_add != 0:
 		var money = money_reward * 0.005
 		if money <= money_to_add:
-			Save_Load.money += money
+			Save_Load.money += int(money)
 			money_to_add -= money
 		else:
-			Save_Load.money += money_to_add
+			Save_Load.money += int(money_to_add)
 			money_to_add = 0
 
 #If level up queue reward
@@ -128,7 +130,6 @@ func _input(event):
 				event_finnished = true
 				level_up.hide()
 
-
 func reward_1(tab, panel, label, description):
 	tab.show()
 	selected_panel = panel
@@ -150,4 +151,4 @@ func add_money_and_xp(xp , money):
 	money.displayed_money = Save_Load.money
 	xp_to_add = xp_reward #Adds the xp and money to the player
 	money_to_add = money_reward #Adds the xp and money to the player
-	Save_Load.money += money_reward
+	Save_Load.money += int(money_reward)

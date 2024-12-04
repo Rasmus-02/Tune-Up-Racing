@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bhlmlyfbwcbx6"
-path="res://.godot/imported/Cheap Wheels 180-220R16 NM.png-c987e815b8e16b2d88e2f849dc1c30ee.ctex"
+uid="uid://c81u12m77n3"
+path="res://.godot/imported/Difficulty-Hard-Hovered.png-c8caa6dbe9b0e50fb5b88dbb511aeb70.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Textures/Cars/Universal/Wheels/Cheap Wheels 180-220R16/Cheap Wheels 180-220R16 NM.png"
-dest_files=["res://.godot/imported/Cheap Wheels 180-220R16 NM.png-c987e815b8e16b2d88e2f849dc1c30ee.ctex"]
+source_file="res://Textures/UI/Computer/Difficulties/Difficulty-Hard-Hovered.png"
+dest_files=["res://.godot/imported/Difficulty-Hard-Hovered.png-c8caa6dbe9b0e50fb5b88dbb511aeb70.ctex"]
 
 [params]
 

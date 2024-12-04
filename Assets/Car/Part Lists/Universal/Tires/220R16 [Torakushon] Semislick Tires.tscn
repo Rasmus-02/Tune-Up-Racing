@@ -26,7 +26,7 @@ description = "Soft and grippy semi slick tires made by Japanese tire company To
 price = 1000
 weight = 10
 width = 220
-grip = 1100
+grip = 1050
 treadwear = 0.04
 
 [node name="Sprite2D" type="Sprite2D" parent="."]

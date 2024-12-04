@@ -26,7 +26,7 @@ description = "Cheap Chinese tires, works well enough for the price and are long
 price = 500
 weight = 8
 width = 185
-grip = 850
+grip = 800
 treadwear = 0.02
 
 [node name="Sprite2D" type="Sprite2D" parent="."]

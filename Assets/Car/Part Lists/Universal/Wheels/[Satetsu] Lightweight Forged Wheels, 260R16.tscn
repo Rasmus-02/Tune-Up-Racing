@@ -1,0 +1,31 @@
+[gd_scene load_steps=7 format=3 uid="uid://bwj14bnlr0b06"]
+
+[ext_resource type="Script" path="res://Assets/Car/Code/Part_scripts/Wheels.gd" id="1_iiopp"]
+[ext_resource type="Texture2D" uid="uid://dl2ywqaxg0in1" path="res://Textures/Cars/Universal/Wheels/Satetsu 260R16 Forged/[Satetsu] 260R16 Forged Wheels.png" id="2_rhyfj"]
+[ext_resource type="Texture2D" uid="uid://b1lfuv6gjdq3" path="res://Textures/Cars/Universal/Wheels/Satetsu 260R16 Forged/[Satetsu] 260R16 Forged Wheels NM.png" id="3_n1jeu"]
+[ext_resource type="Texture2D" uid="uid://dqpn5h18b27u" path="res://Textures/Cars/Universal/Wheels/Satetsu 260R16 Forged/[Satetsu] 260R16 Forged Wheels Spec.png" id="4_bowat"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_sfomr"]
+diffuse_texture = ExtResource("2_rhyfj")
+normal_texture = ExtResource("3_n1jeu")
+specular_texture = ExtResource("4_bowat")
+specular_shininess = 0.6
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_3g1rc"]
+polygon = PackedVector2Array(-11, -7, 11, -7, 11, -5, 9, -3, 9, -1, 11, 1, 11, 3, -11, 3, -11, 1, -9, -1, -9, -3, -11, -5)
+
+[node name="[Satetsu] 260R16 Lightweight Forged Wheels" type="Node2D"]
+script = ExtResource("1_iiopp")
+rarity = "epic"
+Part_Number = 3
+description = "High quality lightweight forged wheels made by the Japanese racing tuning shop Satetsu"
+price = 3500
+weight = 22
+max_tire_width = 260
+brake_cooling = 0.2
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = SubResource("CanvasTexture_sfomr")
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="Sprite2D"]
+occluder = SubResource("OccluderPolygon2D_3g1rc")

@@ -1153,8 +1153,8 @@ height = 2999.0
 [node name="RoofLight" type="PointLight2D" parent="Lighting"]
 position = Vector2(89.6878, 849.566)
 rotation = 1.5708
-color = Color(1, 0.968627, 0.878431, 1)
-energy = 1.16
+color = Color(1, 0.960784, 0.898039, 1)
+energy = 1.14
 range_z_max = 998
 shadow_enabled = true
 shadow_filter_smooth = 0.5
