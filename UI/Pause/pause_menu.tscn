@@ -42,16 +42,21 @@ layout_mode = 3
 anchors_preset = 0
 theme = ExtResource("2_wdjda")
 
+[node name="ColorRect" type="ColorRect" parent="Control"]
+light_mask = 1023
+z_index = -1
+material = SubResource("ShaderMaterial_fukf4")
+custom_minimum_size = Vector2(4000, 3000)
+layout_mode = 2
+offset_left = -683.558
+offset_top = -703.95
+offset_right = 3316.44
+offset_bottom = 2296.05
+
 [node name="MarginContainer" type="MarginContainer" parent="Control"]
 layout_mode = 0
 offset_right = 2560.0
 offset_bottom = 1440.0
-
-[node name="ColorRect" type="ColorRect" parent="Control/MarginContainer"]
-light_mask = 1023
-material = SubResource("ShaderMaterial_fukf4")
-custom_minimum_size = Vector2(2560, 1440)
-layout_mode = 2
 
 [node name="SettingsMenu" type="Sprite2D" parent="Control/MarginContainer" node_paths=PackedStringArray("general_settings", "audio_settings", "pause_menu")]
 z_index = 1

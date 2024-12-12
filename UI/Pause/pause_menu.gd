@@ -17,7 +17,7 @@ func _ready():
 
 func open():
 	#hide restart in garage
-	if current_scene != "Track":
+	if SelectedScene.scene != "Track":
 		restart.hide()
 	else:
 		restart.show()

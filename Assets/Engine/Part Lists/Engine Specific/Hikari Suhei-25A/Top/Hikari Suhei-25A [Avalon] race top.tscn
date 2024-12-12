@@ -24,14 +24,14 @@ rarity = "epic"
 lenght = 20
 width = 36
 Engine_ID = 3
-Part_Number = 4
+Part_Number = 6
 description = "A high performance top end for the Hikari Suhei-25A Engine, developed for maximum high rpm performance by Avalon Racing"
 price = 5500
 weight = 24.0
-tq_mod = 1.18
+tq_mod = 1.2
 max_hp_rpm = 7400
 max_compression = 12.0
-smoothness = 0.8
+smoothness = 0.86
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = SubResource("CanvasTexture_2f31e")

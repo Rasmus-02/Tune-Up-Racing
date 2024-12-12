@@ -1,0 +1,33 @@
+[gd_scene load_steps=8 format=3 uid="uid://bq2en4vor2045"]
+
+[ext_resource type="Script" path="res://Assets/Car/Code/Part_scripts/Spoiler.gd" id="1_fpnjh"]
+[ext_resource type="Shader" path="res://Shaders/Test/ColorSelector.gdshader" id="2_pc7ud"]
+[ext_resource type="Texture2D" uid="uid://beglgkohkdsgu" path="res://Textures/Cars/Hikari Tasai/Spoiler/Hikari Tasai [KS-Racing] Wing.png" id="3_s4w8g"]
+[ext_resource type="Texture2D" uid="uid://ddf1qceq46e3v" path="res://Textures/Cars/Hikari Tasai/Spoiler/Hikari Tasai [KS-Racing] Wing NM.png" id="4_s8k7d"]
+[ext_resource type="Texture2D" uid="uid://b8ynd0kus0pnb" path="res://Textures/Cars/Hikari Tasai/Spoiler/Hikari Tasai [KS-Racing] Wing Spec.png" id="5_3gc7d"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_gibfk"]
+shader = ExtResource("2_pc7ud")
+shader_parameter/import_new_color = null
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_swaqy"]
+diffuse_texture = ExtResource("3_s4w8g")
+normal_texture = ExtResource("4_s8k7d")
+specular_texture = ExtResource("5_3gc7d")
+specular_shininess = 0.5
+
+[node name="Hikari Tasai [KS-Racing] Wing" type="Node2D"]
+script = ExtResource("1_fpnjh")
+rarity = "epic"
+Car_ID = 2
+Part_Number = 4
+description = "A large wing by KS-Racing providing a large amount of downforce for the Hikari Tasai."
+paintable = false
+price = 1250
+weight = 4
+drag = 0.055
+downforce = 225
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_gibfk")
+texture = SubResource("CanvasTexture_swaqy")

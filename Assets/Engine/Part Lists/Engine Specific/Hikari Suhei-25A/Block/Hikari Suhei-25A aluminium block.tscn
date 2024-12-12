@@ -1,0 +1,29 @@
+[gd_scene load_steps=6 format=3 uid="uid://drd5iaqyesmw4"]
+
+[ext_resource type="Script" path="res://Assets/Engine/Part_scripts/Block.gd" id="1_7m2pr"]
+[ext_resource type="Texture2D" uid="uid://c5yk3hpea7k8v" path="res://Textures/Engines/Hikari Suhei-25A/Block/Hikai Suhei-25A Aluminium Block.png" id="2_egtj0"]
+[ext_resource type="Texture2D" uid="uid://bq3iihhy7e46q" path="res://Textures/Engines/Hikari Suhei-25A/Block/Hikai Suhei-25A Block NM.png" id="3_cjdvc"]
+[ext_resource type="Texture2D" uid="uid://c5c6ls4yn3p5n" path="res://Textures/Engines/Hikari Suhei-25A/Block/Hikai Suhei-25A Aluminium Block Spec.png" id="4_4yhnq"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_8byoe"]
+diffuse_texture = ExtResource("2_egtj0")
+normal_texture = ExtResource("3_cjdvc")
+specular_texture = ExtResource("4_4yhnq")
+specular_shininess = 0.5
+
+[node name="Hikari Suhei-25A Aluminium Block" type="Node2D"]
+script = ExtResource("1_7m2pr")
+rarity = "rare"
+layout = "Boxer"
+lenght = 19
+width = 25
+Engine_ID = 3
+Part_Number = 2
+description = "A lighter block for the Hikari Suhei-25A Engine"
+price = 3500
+weight = 55
+tq = 270
+max_tq = 400
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = SubResource("CanvasTexture_8byoe")

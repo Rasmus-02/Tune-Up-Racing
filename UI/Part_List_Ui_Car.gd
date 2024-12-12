@@ -122,18 +122,19 @@ func populate_list():
 					list.add_item(part_name)
 					
 					#Make it so it is impossible to equip wrong gearbox
-					if selected_tab == 15:
+					if selected_tab == 15: #GEARBOX
 						if temp_part.drivetrain != car.drive_train_type:
-							list.set_item_disabled(i+n, true)
+							list.set_item_disabled(list.item_count-1+n, true)
 						if car.selected_engine != "0": #Can't unequip gearbox if there is an engine in the car
 							list.set_item_disabled(0, true)
-					if selected_tab == 14:
-						if temp_part.drivetrain != car.gearbox.drivetrain and car.drive_train_type != 9999: #Can't have different drivetrain than the gearbox
-							list.set_item_disabled(i+n, true)
+					if selected_tab == 14: #DRIVESHAFT
+						if temp_part.drivetrain != car.gearbox.drivetrain and car.drive_train_type != 9999 and car.gearbox.drivetrain != 9999: #Can't have different drivetrain than the gearbox
+							list.set_item_disabled(list.item_count-1+n, true)
 						if car.selected_gearbox != 0: #Can't unequip drivetrain if there is a gearbox installed
 							list.set_item_disabled(0, true)
 					list.set_item_custom_fg_color(list.get_item_count()-1,FontColorSettings.get_color(temp_part.rarity)) #set color based on rarity
 			list_index += 1
+	print("populate: ",equipped_part)
 
 func size_check(index):
 	var left = temp_part.size[0]
@@ -192,19 +193,14 @@ func _on_item_selected(index): #when a part in the item list is clicked (node si
 		populate_list()
 	
 	else: #If not engine
-		#If part that is on car
-		if index == 1 and equipped_part.name != "[empty]":
-			temp_part_select_part = equipped_part
-		#All the other parts from inventory
-		else:
-			for i in temp_array.size():
-				temp_part_select_part = temp_array[i].instantiate()
-				if temp_part_select_part.get_name() == car_name + list.get_item_text(index) or temp_part_select_part.get_name() == list.get_item_text(index): #if correct part by name
-					break
-				elif index == 0: #If empty part
-					break
-				temp_part_select_part.queue_free()
-				i += 1
+		for i in temp_array.size():
+			temp_part_select_part = temp_array[i].instantiate()
+			if temp_part_select_part.get_name() == car_name + list.get_item_text(index) or temp_part_select_part.get_name() == list.get_item_text(index): #if correct part by name
+				break
+			elif index == 0: #If empty part
+				break
+			temp_part_select_part.queue_free()
+			i += 1
 		#Update Stat Tab
 		temp_part_select_part.durability = temp_stat_array[index][0]
 		temp_part_select_part.color = temp_stat_array[index][1]
@@ -229,6 +225,7 @@ func _on_item_selected(index): #when a part in the item list is clicked (node si
 			populate_list()
 			
 		1:
+			equipped_part = car.f_bumper
 			if index != 1 or (equipped_part.name == "[empty]" and index > 0):
 				if car.f_bumper.name != "[empty]":
 					Save_Load.inv_add(car.f_bumper)
@@ -241,6 +238,7 @@ func _on_item_selected(index): #when a part in the item list is clicked (node si
 			update_car()
 			_on_front__bumper_button_pressed()
 		2:
+			equipped_part = car.r_bumper
 			if index != 1 or (equipped_part.name == "[empty]" and index > 0):
 				if car.r_bumper.name != "[empty]":
 					Save_Load.inv_add(car.r_bumper)
@@ -253,6 +251,7 @@ func _on_item_selected(index): #when a part in the item list is clicked (node si
 			update_car()
 			_on_rear_bumper_button_pressed()
 		3:
+			equipped_part = car.fenders
 			if index != 1 or (equipped_part.name == "[empty]" and index > 0):
 				if car.fenders.name != "[empty]":
 					Save_Load.inv_add(car.fenders)
@@ -265,6 +264,7 @@ func _on_item_selected(index): #when a part in the item list is clicked (node si
 			update_car()
 			_on_fenders_button_pressed()
 		4:
+			equipped_part = car.hood
 			if index != 1 or (equipped_part.name == "[empty]" and index > 0):
 				if car.hood.name != "[empty]":
 					Save_Load.inv_add(car.hood)
@@ -277,6 +277,7 @@ func _on_item_selected(index): #when a part in the item list is clicked (node si
 			update_car()
 			_on_hood_button_pressed()
 		5:
+			equipped_part = car.mirrors
 			if index != 1 or (equipped_part.name == "[empty]" and index > 0):
 				if car.mirrors.name != "[empty]":
 					Save_Load.inv_add(car.mirrors)
@@ -289,6 +290,7 @@ func _on_item_selected(index): #when a part in the item list is clicked (node si
 			update_car()
 			_on_mirrors_button_pressed()
 		6:
+			equipped_part = car.headlights
 			if index != 1 or (equipped_part.name == "[empty]" and index > 0):
 				if car.headlights.name != "[empty]":
 					Save_Load.inv_add(car.headlights)
@@ -301,6 +303,7 @@ func _on_item_selected(index): #when a part in the item list is clicked (node si
 			update_car()
 			_on_headlights_button_pressed()
 		7:
+			equipped_part = car.taillights
 			if index != 1 or (equipped_part.name == "[empty]" and index > 0):
 				if car.taillights.name != "[empty]":
 					Save_Load.inv_add(car.taillights)
@@ -313,6 +316,7 @@ func _on_item_selected(index): #when a part in the item list is clicked (node si
 			update_car()
 			_on_taillights_button_pressed()
 		8:
+			equipped_part = car.spoiler
 			if index != 1 or (equipped_part.name == "[empty]" and index > 0):
 				if car.spoiler.name != "[empty]":
 					Save_Load.inv_add(car.spoiler)
@@ -325,6 +329,7 @@ func _on_item_selected(index): #when a part in the item list is clicked (node si
 			update_car()
 			_on_spoiler_button_pressed()
 		9:
+			equipped_part = car.suspension
 			if index != 1 or (equipped_part.name == "[empty]" and index > 0):
 				if car.suspension.name != "[empty]":
 					Save_Load.inv_add(car.suspension)
@@ -336,6 +341,7 @@ func _on_item_selected(index): #when a part in the item list is clicked (node si
 			update_car()
 			_on_suspension_button_pressed()
 		10:
+			equipped_part = car.wheels
 			if index != 1 or (equipped_part.name == "[empty]" and index > 0):
 				if car.wheels.name != "[empty]":
 					Save_Load.inv_add(car.wheels)
@@ -347,6 +353,7 @@ func _on_item_selected(index): #when a part in the item list is clicked (node si
 			update_car()
 			_on_wheels_button_pressed()
 		11:
+			equipped_part = car.tires
 			if index != 1 or (equipped_part.name == "[empty]" and index > 0):
 				if car.tires.name != "[empty]":
 					Save_Load.inv_add(car.tires)
@@ -358,6 +365,7 @@ func _on_item_selected(index): #when a part in the item list is clicked (node si
 			update_car()
 			_on_tires_button_pressed()
 		12:
+			equipped_part = car.brakes
 			if index != 1 or (equipped_part.name == "[empty]" and index > 0):
 				if car.brakes.name != "[empty]":
 					Save_Load.inv_add(car.brakes)
@@ -369,6 +377,7 @@ func _on_item_selected(index): #when a part in the item list is clicked (node si
 			update_car()
 			_on_brakes_button_pressed()
 		13:
+			equipped_part = car.subframe
 			if index != 1 or (equipped_part.name == "[empty]" and index > 0):
 				if car.subframe.name != "[empty]":
 					Save_Load.inv_add(car.subframe)
@@ -380,6 +389,7 @@ func _on_item_selected(index): #when a part in the item list is clicked (node si
 			update_car()
 			_on_subframe_button_pressed()
 		14:
+			equipped_part = car.driveshaft
 			if index != 1 or (equipped_part.name == "[empty]" and index > 0):
 				if car.driveshaft.name != "[empty]":
 					Save_Load.inv_add(car.driveshaft)
@@ -392,6 +402,7 @@ func _on_item_selected(index): #when a part in the item list is clicked (node si
 			#populate list used to be here, if any problems with driveshaft updating
 			_on_driveshaft_button_pressed()
 		15:
+			equipped_part = car.gearbox
 			if index != 1 or (equipped_part.name == "[empty]" and index > 0):
 				if car.gearbox.name != "[empty]":
 					Save_Load.inv_add(car.gearbox)
@@ -403,6 +414,7 @@ func _on_item_selected(index): #when a part in the item list is clicked (node si
 			update_car()
 			_on_gearbox_button_pressed()
 		16:
+			equipped_part = car.radiator
 			if index != 1 or (equipped_part.name == "[empty]" and index > 0):
 				if car.radiator.name != "[empty]":
 					Save_Load.inv_add(car.radiator)
@@ -414,6 +426,7 @@ func _on_item_selected(index): #when a part in the item list is clicked (node si
 			update_car()
 			_on_radiator_button_pressed()
 		17:
+			equipped_part = car.exhaust
 			if index != 1 or (equipped_part.name == "[empty]" and index > 0):
 				if car.exhaust.name != "[empty]":
 					Save_Load.inv_add(car.exhaust)
@@ -469,12 +482,13 @@ func _on_body_button_pressed():
 	animation_controller("body")
 	_on_front__bumper_button_pressed()
 	$"../Body_Group/Front _bumper_button".grab_focus()
-	
+
 func _on_front__bumper_button_pressed():
 	button_sound.play()
 	temp_array = specific_parts.f_bumper
 	selected_tab = 1
 	equipped_part = car.f_bumper #updates the equipped part
+	print(equipped_part)
 	populate_list()
 func _on_rear_bumper_button_pressed():
 	button_sound.play()

@@ -1,0 +1,31 @@
+[gd_scene load_steps=6 format=3 uid="uid://cdya6py0dythi"]
+
+[ext_resource type="Script" path="res://Assets/Engine/Part_scripts/Intake_Manifold.gd" id="1_4huxx"]
+[ext_resource type="Texture2D" uid="uid://cioqibhrb1bd3" path="res://Textures/Engines/Hikari Suhei-25A/Intake/Hikai Suhei-25A [KS-Racing] Intake Manifold.png" id="2_671p2"]
+[ext_resource type="Texture2D" uid="uid://c0el6t62bams5" path="res://Textures/Engines/Hikari Suhei-25A/Intake/Hikai Suhei-25A [KS-Racing] Intake Manifold NM.png" id="3_v6ibo"]
+[ext_resource type="Texture2D" uid="uid://cdjejdp0lklsq" path="res://Textures/Engines/Hikari Suhei-25A/Intake/Hikai Suhei-25A [KS-Racing] Intake Manifold Spec.png" id="4_nq6e3"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_oa52d"]
+diffuse_texture = ExtResource("2_671p2")
+normal_texture = ExtResource("3_v6ibo")
+specular_texture = ExtResource("4_nq6e3")
+specular_shininess = 0.5
+
+[node name="Hikari Suhei-25A [KS-Racing] Intake Manifold" type="Node2D"]
+script = ExtResource("1_4huxx")
+rarity = "epic"
+layout = "front"
+lenght = 4
+Engine_ID = 3
+Part_Number = 5
+description = "A High Performance intake manifold for the Hikari Suhei-25A Engine, designed by KS-Racing"
+price = 2400
+weight = 16
+tq_mod = 1.05
+max_compression_modifier = 1.2
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = SubResource("CanvasTexture_oa52d")
+
+[node name="Air filter location" type="Marker2D" parent="."]
+position = Vector2(10, 3)

@@ -9,7 +9,8 @@
 diffuse_texture = ExtResource("2_x1j2v")
 normal_texture = ExtResource("3_mwfnv")
 specular_texture = ExtResource("4_e2ads")
-specular_shininess = 0.5
+specular_color = Color(0.603922, 0.521569, 1, 1)
+specular_shininess = 0.42
 
 [node name="Talon Motors Typhoon Titanium Internals" type="Node2D"]
 script = ExtResource("1_rrfg7")

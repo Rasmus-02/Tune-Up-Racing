@@ -1,0 +1,31 @@
+[gd_scene load_steps=8 format=3 uid="uid://bi1lgops55uxp"]
+
+[ext_resource type="Script" path="res://Assets/Car/Code/Part_scripts/Mirrors.gd" id="1_aohhr"]
+[ext_resource type="Shader" path="res://Shaders/Test/ColorSelector.gdshader" id="2_72b6d"]
+[ext_resource type="Texture2D" uid="uid://sqp3qbloqdr5" path="res://Textures/Cars/Hikari Tasai/Mirrors/Hikari Tasai [Avalon] Mirrors.png" id="3_lc2jy"]
+[ext_resource type="Texture2D" uid="uid://b4s0dn41q86tq" path="res://Textures/Cars/Hikari Tasai/Mirrors/Hikari Tasai [Avalon] Mirrors NM.png" id="4_d8eno"]
+[ext_resource type="Texture2D" uid="uid://d34e7ksr5tk3t" path="res://Textures/Cars/Hikari Tasai/Mirrors/Hikari Tasai [Avalon] Mirrors Spec.png" id="5_ws3n5"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_bmsxb"]
+shader = ExtResource("2_72b6d")
+shader_parameter/import_new_color = null
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_e2ut5"]
+diffuse_texture = ExtResource("3_lc2jy")
+normal_texture = ExtResource("4_d8eno")
+specular_texture = ExtResource("5_ws3n5")
+specular_shininess = 0.5
+
+[node name="Hikari Tasai [Avalon] Mirrors" type="Node2D"]
+script = ExtResource("1_aohhr")
+rarity = "rare"
+Car_ID = 2
+Part_Number = 3
+description = "Aftermarket mirrors for the Hikari Tasai, designed by Avalon"
+price = 300
+weight = 2
+drag = 0.01
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_bmsxb")
+texture = SubResource("CanvasTexture_e2ut5")

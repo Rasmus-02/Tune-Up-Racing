@@ -1,0 +1,25 @@
+[gd_scene load_steps=6 format=3 uid="uid://cfggoi3ntmjfo"]
+
+[ext_resource type="Script" path="res://Assets/Car/Code/Part_scripts/Subframe.gd" id="1_r1x23"]
+[ext_resource type="Texture2D" uid="uid://cas1q4xx186ix" path="res://Textures/Cars/Hikari Tasai/Subframe/Hikari Tasai [Redline] Subframe.png" id="2_rd2e8"]
+[ext_resource type="Texture2D" uid="uid://bot310y430h4e" path="res://Textures/Cars/Hikari Tasai/Subframe/Hikari Tasai [Redline] Subframe NM.png" id="3_fhkl6"]
+[ext_resource type="Texture2D" uid="uid://bjjjco3bwsbsi" path="res://Textures/Cars/Hikari Tasai/Subframe/Hikari Tasai [Redline] Subframe Spec.png" id="4_u1lf5"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_0jkfa"]
+diffuse_texture = ExtResource("2_rd2e8")
+normal_texture = ExtResource("3_fhkl6")
+specular_texture = ExtResource("4_u1lf5")
+specular_shininess = 0.5
+
+[node name="Hikari Tasai [Redline] Reinforced Subframe" type="Node2D"]
+script = ExtResource("1_r1x23")
+rarity = "epic"
+Car_ID = 2
+Part_Number = 3
+description = "A reinforced subframe for the Hikari Tasai providing better handling, designed by Redline"
+price = 950
+weight = 40
+handling_bonus = 1.1
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = SubResource("CanvasTexture_0jkfa")

@@ -1,0 +1,54 @@
+[gd_scene load_steps=12 format=3 uid="uid://cq3cxgx5vax5d"]
+
+[ext_resource type="Script" path="res://Assets/Car/Code/Part_scripts/Headlights.gd" id="1_63atm"]
+[ext_resource type="Shader" path="res://Shaders/Test/ColorSelector.gdshader" id="2_wlm05"]
+[ext_resource type="Texture2D" uid="uid://cgypmwna87ly0" path="res://Textures/Cars/Hikari Tasai/Headlights/Hikari Tasai [KS-Racing] Vent Headlights.png" id="3_4r7ch"]
+[ext_resource type="Texture2D" uid="uid://cc6lmuyjnumiy" path="res://Textures/Cars/Hikari Tasai/Headlights/Hikari Tasai [KS-Racing] Vent Headlights NM.png" id="4_wibja"]
+[ext_resource type="Texture2D" uid="uid://2upavi3o0jlk" path="res://Textures/Cars/Hikari Tasai/Headlights/Hikari Tasai [KS-Racing] Vent Headlights Spec.png" id="5_xtv73"]
+[ext_resource type="Texture2D" uid="uid://b0dqhohxw1f1y" path="res://Textures/Cars/Hikari Tasai/Headlights/Hikari Tasai [KS-Racing] Vent Headlights Lightmask.png" id="6_fbbyx"]
+[ext_resource type="PackedScene" uid="uid://brbx33n7duy1v" path="res://Shaders/headlights.tscn" id="7_vt107"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_k5tqf"]
+shader = ExtResource("2_wlm05")
+shader_parameter/import_new_color = null
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_ma2ib"]
+diffuse_texture = ExtResource("3_4r7ch")
+normal_texture = ExtResource("4_wibja")
+specular_texture = ExtResource("5_xtv73")
+specular_shininess = 0.5
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_566wh"]
+blend_mode = 1
+light_mode = 1
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_shjy8"]
+shader = ExtResource("2_wlm05")
+shader_parameter/import_new_color = null
+
+[node name="Hikari Tasai [KS-Racing] Vent Headlights" type="Node2D"]
+script = ExtResource("1_63atm")
+rarity = "rare"
+Car_ID = 2
+Part_Number = 4
+description = "Aftermarket headlights for the Hikari Tasai. Designed to improve airflow into the engine for better cooling performance"
+price = 600
+weight = 5
+drag = 0.03
+engine_cool_mod = 0.2
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_k5tqf")
+texture = SubResource("CanvasTexture_ma2ib")
+vframes = 2
+
+[node name="Lightmask" type="Sprite2D" parent="Sprite2D"]
+visible = false
+material = SubResource("CanvasItemMaterial_566wh")
+texture = ExtResource("6_fbbyx")
+
+[node name="Lights" parent="." instance=ExtResource("7_vt107")]
+light_mask = 1
+material = SubResource("ShaderMaterial_shjy8")
+position = Vector2(0, -28)
+scale = Vector2(1, 0.45)

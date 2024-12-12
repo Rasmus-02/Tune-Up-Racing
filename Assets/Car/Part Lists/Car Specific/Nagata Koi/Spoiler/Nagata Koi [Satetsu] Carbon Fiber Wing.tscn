@@ -11,13 +11,13 @@ normal_texture = ExtResource("3_xayb8")
 specular_texture = ExtResource("4_57nuj")
 specular_shininess = 0.5
 
-[node name="Nagata Koi [Satetsu] Carbon Fiber Wing" type="Node2D"]
+[node name="Nagata Koi [Satetsu] Wing" type="Node2D"]
 script = ExtResource("1_6gblc")
 rarity = "epic"
 Part_Number = 5
 description = "A double decker carbon fiber wing by Satetsu for the Nagata Koi, designed to generate as much downforce as possible without too much additional drag."
 paintable = false
-price = 1250
+price = 1450
 weight = 7
 drag = 0.06
 downforce = 260

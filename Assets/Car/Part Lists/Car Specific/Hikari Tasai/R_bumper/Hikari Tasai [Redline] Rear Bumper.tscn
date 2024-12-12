@@ -1,0 +1,50 @@
+[gd_scene load_steps=11 format=3 uid="uid://dgu3rhtioervo"]
+
+[ext_resource type="Script" path="res://Assets/Car/Code/Part_scripts/R_bumper.gd" id="1_aap4f"]
+[ext_resource type="Shader" path="res://Shaders/Test/ColorSelector.gdshader" id="2_3lmgs"]
+[ext_resource type="Texture2D" uid="uid://c0rmidhsm7ldr" path="res://Textures/Cars/Hikari Tasai/Rear bumper/Hikari Tasai [Redline] Rear Bumper.png" id="3_hjop1"]
+[ext_resource type="Texture2D" uid="uid://b50roxcdbcdnp" path="res://Textures/Cars/Hikari Tasai/Rear bumper/Hikari Tasai [Redline] Rear Bumper NM.png" id="4_kbp1m"]
+[ext_resource type="Texture2D" uid="uid://kggv5hch8y81" path="res://Textures/Cars/Hikari Tasai/Rear bumper/Hikari Tasai [Redline] Rear Bumper Spec.png" id="5_kvcfi"]
+[ext_resource type="Texture2D" uid="uid://cvoco1vq580ut" path="res://Textures/Cars/Hikari Tasai/Rear bumper/Hikari Tasai [Redline] Rear Bumper 1.png" id="6_gjp5q"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_oursw"]
+shader = ExtResource("2_3lmgs")
+shader_parameter/import_new_color = null
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_r5f60"]
+diffuse_texture = ExtResource("3_hjop1")
+normal_texture = ExtResource("4_kbp1m")
+specular_texture = ExtResource("5_kvcfi")
+specular_shininess = 0.5
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_mr2se"]
+diffuse_texture = ExtResource("6_gjp5q")
+normal_texture = ExtResource("4_kbp1m")
+specular_texture = ExtResource("5_kvcfi")
+specular_shininess = 0.5
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_t85q0"]
+polygon = PackedVector2Array(-101, 40, -103, 40, -107, 38, -109, 36, -110, 34, -115, 34, -115, 25, -113, 25, -113, 18, -115, 18, -115, 11, -112, 10.9688, -112, 3, -115, 3, -115, -4, -112, -3.97125, -112, -12, -115, -12, -115, -19, -113, -19, -113, -26, -115, -26, -115, -35, -110, -35, -109, -37, -107, -39, -103, -41, -101, -41)
+
+[node name="Hikari Tasai [Redline] Rear Bumper" type="Node2D"]
+script = ExtResource("1_aap4f")
+rarity = "epic"
+Car_ID = 2
+Part_Number = 5
+description = "An aftermarket time-attack rear bumper with a large diffuser, generating a lot of downforce. Designed for the Hikari Tasai by Redline"
+price = 2250
+weight = 8
+downforce = 105
+drag = 0.055
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_oursw")
+texture = SubResource("CanvasTexture_r5f60")
+
+[node name="Unpaintable" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_oursw")
+texture = SubResource("CanvasTexture_mr2se")
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="."]
+position = Vector2(-6, 0)
+occluder = SubResource("OccluderPolygon2D_t85q0")

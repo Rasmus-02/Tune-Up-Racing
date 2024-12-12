@@ -1,0 +1,31 @@
+[gd_scene load_steps=8 format=3 uid="uid://c01w7fnuwqx1b"]
+
+[ext_resource type="Script" path="res://Assets/Car/Code/Part_scripts/Mirrors.gd" id="1_8pcyb"]
+[ext_resource type="Shader" path="res://Shaders/Test/ColorSelector.gdshader" id="2_7k5by"]
+[ext_resource type="Texture2D" uid="uid://5dh53gbvhfwr" path="res://Textures/Cars/Hikari Tasai/Mirrors/Hikari Tasai [Vortex] Mirrors.png" id="3_xjlmx"]
+[ext_resource type="Texture2D" uid="uid://cc0i65ic0k7tm" path="res://Textures/Cars/Hikari Tasai/Mirrors/Hikari Tasai [Vortex] Mirrors NM.png" id="4_2wtt1"]
+[ext_resource type="Texture2D" uid="uid://cbhp4vbddk3km" path="res://Textures/Cars/Hikari Tasai/Mirrors/Hikari Tasai [Vortex] Mirrors Spec.png" id="5_w51j3"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_bmsxb"]
+shader = ExtResource("2_7k5by")
+shader_parameter/import_new_color = null
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_e2ut5"]
+diffuse_texture = ExtResource("3_xjlmx")
+normal_texture = ExtResource("4_2wtt1")
+specular_texture = ExtResource("5_w51j3")
+specular_shininess = 0.5
+
+[node name="Hikari Tasai [Vortex] Mirrors" type="Node2D"]
+script = ExtResource("1_8pcyb")
+rarity = "uncommon"
+Car_ID = 2
+Part_Number = 2
+description = "Aftermarket mirrors for the Hikari Tasai, designed by Vortex"
+price = 150
+weight = 2
+drag = 0.01
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_bmsxb")
+texture = SubResource("CanvasTexture_e2ut5")

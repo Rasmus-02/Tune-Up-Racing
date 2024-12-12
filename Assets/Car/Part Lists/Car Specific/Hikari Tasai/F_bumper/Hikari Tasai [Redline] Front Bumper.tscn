@@ -1,0 +1,51 @@
+[gd_scene load_steps=13 format=3 uid="uid://cpb0udn8h7wr0"]
+
+[ext_resource type="Script" path="res://Assets/Car/Code/Part_scripts/F_Bumper.gd" id="1_5o2js"]
+[ext_resource type="Shader" path="res://Shaders/Test/ColorSelector.gdshader" id="2_33ef7"]
+[ext_resource type="Texture2D" uid="uid://cmv40jfq6rsq" path="res://Textures/Cars/Hikari Tasai/Front Bumper/Hikari Tasai [Redline] Front Bumper.png" id="3_7epfw"]
+[ext_resource type="Texture2D" uid="uid://dfq0j0gqvs7wj" path="res://Textures/Cars/Hikari Tasai/Front Bumper/Hikari Tasai [Redline] Front Bumper NM.png" id="4_wo6tg"]
+[ext_resource type="Texture2D" uid="uid://gc7uwyexhsrf" path="res://Textures/Cars/Hikari Tasai/Front Bumper/Hikari Tasai [Redline] Front Bumper Spec.png" id="5_3vpf5"]
+[ext_resource type="Texture2D" uid="uid://1my2kxi2wkqu" path="res://Textures/Cars/Hikari Tasai/Front Bumper/Hikari Tasai [Redline] Front Bumper 1.png" id="6_nm3tw"]
+[ext_resource type="Texture2D" uid="uid://hiupyhov57cv" path="res://Textures/Cars/Hikari Tasai/Front Bumper/Hikari Tasai [Redline] Front Bumper 1 NM.png" id="7_3vgju"]
+[ext_resource type="Texture2D" uid="uid://csm0nbswgwh1q" path="res://Textures/Cars/Hikari Tasai/Front Bumper/Hikari Tasai [Redline] Front Bumper 1 Spec.png" id="8_7elwj"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_tkprq"]
+shader = ExtResource("2_33ef7")
+shader_parameter/import_new_color = null
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_0hbqo"]
+diffuse_texture = ExtResource("3_7epfw")
+normal_texture = ExtResource("4_wo6tg")
+specular_texture = ExtResource("5_3vpf5")
+specular_shininess = 0.5
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_o43sn"]
+diffuse_texture = ExtResource("6_nm3tw")
+normal_texture = ExtResource("7_3vgju")
+specular_texture = ExtResource("8_7elwj")
+specular_shininess = 0.5
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_aqj35"]
+polygon = PackedVector2Array(108, -35, 110, -31, 112, -24, 112, 23, 110, 30, 108, 34, 104, 38, 100, 40, 86, 40, 85, 37, 85, -38, 86, -41, 100, -41, 104, -39)
+
+[node name="Hikari Tasai [Redline] Front Bumper" type="Node2D"]
+script = ExtResource("1_5o2js")
+rarity = "epic"
+Car_ID = 2
+Part_Number = 6
+description = "A front bumper with a large lip that generates providing a great deal of downforce. Designed for the Hikari Tasai, by Redline"
+price = 1500
+weight = 14
+downforce = 100
+drag = 0.06
+engine_cool_mod = 0.4
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_tkprq")
+texture = SubResource("CanvasTexture_0hbqo")
+
+[node name="Unpaintable" type="Sprite2D" parent="."]
+texture = SubResource("CanvasTexture_o43sn")
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="."]
+occluder = SubResource("OccluderPolygon2D_aqj35")

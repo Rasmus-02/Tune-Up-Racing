@@ -1,5 +1,6 @@
-[gd_scene load_steps=11 format=3 uid="uid://bgw6l5t4kqq76"]
+[gd_scene load_steps=12 format=3 uid="uid://bgw6l5t4kqq76"]
 
+[ext_resource type="Script" path="res://Game_Logic/Cleaner.gd" id="1_4fowv"]
 [ext_resource type="PackedScene" uid="uid://cctyed3jxvgm6" path="res://Assets/Engine/Part Lists/Part Selector/Part Selector engine.tscn" id="1_12ogh"]
 [ext_resource type="PackedScene" uid="uid://4k1ww52bhayn" path="res://Assets/Engine/Part Lists/Engine Specific/Hikari Suhei-25A/Hikari Suhei-25A  part list.tscn" id="2_eerfa"]
 [ext_resource type="PackedScene" uid="uid://0lggp6gpn8xa" path="res://Assets/Engine/Part Lists/Universal/Universal part list.tscn" id="3_aulsl"]
@@ -22,6 +23,7 @@ specular_texture = ExtResource("6_sxuy8")
 specular_shininess = 0.5
 
 [node name="Hikari Suhei-25A" type="Node2D"]
+script = ExtResource("1_4fowv")
 
 [node name="Part Selector" parent="." instance=ExtResource("1_12ogh")]
 

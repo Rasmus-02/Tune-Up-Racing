@@ -38,3 +38,13 @@ func get_turbo_max_size():
 			return turbo_1_size + turbo_2_size + turbo_3_size + turbo_4_size
 		"sequential_quad":
 			return turbo_1_size + turbo_2_size
+
+
+
+
+# ORPHAN NODE HANDLER, DELETE WHEN SCENE CHANGE
+func _init():
+	Utils.connect("freeing_orphans", Callable(self, "_free_if_orphaned"))
+func _free_if_orphaned():
+	if not is_inside_tree(): # Optional check - don't free if in the scene tree
+		queue_free()

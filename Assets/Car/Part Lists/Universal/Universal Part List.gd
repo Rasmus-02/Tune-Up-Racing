@@ -10,8 +10,9 @@ var brakes = [empty, basic_road_brakes, basic_sport_brakes]
 
 #Suspension
 var soft_road_suspension = preload("res://Assets/Car/Part Lists/Universal/Suspension/Soft Road Suspension.tscn") #1
-var avalon_track_suspension = preload("res://Assets/Car/Part Lists/Universal/Suspension/[Avalon] Track Suspension.tscn")
-var suspension = [empty, soft_road_suspension, avalon_track_suspension]
+var vortex_sport_suspension = preload("res://Assets/Car/Part Lists/Universal/Suspension/[Vortex] Sport Suspension.tscn") #2
+var avalon_track_suspension = preload("res://Assets/Car/Part Lists/Universal/Suspension/[Avalon] Track Suspension.tscn") #3
+var suspension = [empty, soft_road_suspension, vortex_sport_suspension, avalon_track_suspension]
 
 #Tires
 var EcoMax185R16 = preload("res://Assets/Car/Part Lists/Universal/Tires/185R16 EcoMax.tscn") #1

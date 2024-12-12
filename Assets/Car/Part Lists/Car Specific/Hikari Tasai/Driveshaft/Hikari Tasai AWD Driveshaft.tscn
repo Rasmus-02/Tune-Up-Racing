@@ -2,12 +2,12 @@
 
 [ext_resource type="Script" path="res://Assets/Car/Code/Part_scripts/Driveshaft.gd" id="1_i0s5w"]
 [ext_resource type="Texture2D" uid="uid://3tud0xc1aiil" path="res://Textures/Cars/Hikari Tasai/Driveshaft/Hikari Tasai AWD Driveshaft.png" id="2_71cxq"]
-[ext_resource type="Texture2D" uid="uid://be71cf81pjokr" path="res://Textures/Cars/Hikari Tasai/Driveshaft/Hikari Tasai AWD Driveshaft HM NM.png" id="3_uwxi0"]
+[ext_resource type="Texture2D" uid="uid://be71cf81pjokr" path="res://Textures/Cars/Hikari Tasai/Driveshaft/Hikari Tasai AWD Driveshaft NM.png" id="3_68qw5"]
 [ext_resource type="Texture2D" uid="uid://mnjjv55ijnvn" path="res://Textures/Cars/Hikari Tasai/Driveshaft/Hikari Tasai AWD Driveshaft Spec.png" id="4_nra1t"]
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_c5td7"]
 diffuse_texture = ExtResource("2_71cxq")
-normal_texture = ExtResource("3_uwxi0")
+normal_texture = ExtResource("3_68qw5")
 specular_texture = ExtResource("4_nra1t")
 specular_shininess = 0.5
 
@@ -17,7 +17,7 @@ rarity = "uncommon"
 Car_ID = 2
 Part_Number = 1
 description = "The factory all wheel drive driveshaft that comes in the Hikari Tasai"
-price = 1150
+price = 2250
 weight = 40
 drivetrain = 2
 max_torque = 450

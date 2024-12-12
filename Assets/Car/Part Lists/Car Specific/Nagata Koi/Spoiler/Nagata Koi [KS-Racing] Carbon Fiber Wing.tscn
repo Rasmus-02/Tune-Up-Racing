@@ -11,10 +11,10 @@ normal_texture = ExtResource("3_yngln")
 specular_texture = ExtResource("4_v6fju")
 specular_shininess = 0.5
 
-[node name="Nagata Koi [KS-Racing] Carbon Fiber Wing" type="Node2D"]
+[node name="Nagata Koi [KS-Racing] Wing" type="Node2D"]
 script = ExtResource("1_l3csx")
 rarity = "epic"
-Part_Number = 2
+Part_Number = 3
 description = "A large carbon fiber wing by KS-Racing for the Nagata Koi, designed to generate significant downforce and keep the car firmly planted at all times"
 paintable = false
 price = 800

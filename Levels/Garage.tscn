@@ -1100,8 +1100,9 @@ light_mode = 1
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_v5ft4"]
 light_mode = 1
 
-[node name="Garage" type="Node2D"]
+[node name="Garage" type="Node2D" node_paths=PackedStringArray("cars")]
 script = ExtResource("1_mx11h")
+cars = NodePath("Car_Spawner_Global")
 
 [node name="Lighting" type="Node2D" parent="."]
 position = Vector2(-19.6553, -13.5771)

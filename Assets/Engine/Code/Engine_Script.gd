@@ -85,6 +85,23 @@ var left : float
 var right : float
 var clutch : float
 
+var deleted = false
+func delete_engine():
+	deleted = true
+	# Remove all instanses in local engine script
+	var parts = [block, internals, top, intake_manifold, exhaust_manifold, air_filter]
+	for i in parts.size():
+		if parts[i] != null:
+			parts[i].free()
+	parts.clear()
+	# Go into part selector and delete all instanses
+	var part_selector = self.get_child(0).get_child(0).get_child(0)
+	part_selector.reload_engine(true)
+	specific_parts.queue_free()
+	universal_parts.queue_free()
+	self.queue_free()
+
+
 
 var spawner = preload("res://Assets/Engine/Code/engine_spawner.tscn")
 func load_engine(index):
@@ -161,7 +178,6 @@ func refresh_spawner():
 	update_engine_parts()
 
 func update_engine_parts():
-	print("SB ",selected_block, " ST ", selected_top)
 	#sends signal to part list to update engine
 	if self.get_child(0).get_child(0) != null:
 		#sends the updated parts to part list
@@ -173,12 +189,18 @@ func update_engine_parts():
 		self.get_child(0).get_child(0).get_child(0).selected_air_filter = selected_air_filter
 		self.get_child(0).get_child(0).get_child(0).selected_engine = selected_engine
 		self.get_child(0).get_child(0).get_child(0).selected_engine_key = selected_engine_key
-		self.get_child(0).get_child(0).get_child(0).reload_engine()
+		self.get_child(0).get_child(0).get_child(0).reload_engine(false)
 	self.z_index = 30
 	position_loaded = false
 	engine_stats()
 
 func engine_stats():
+	var parts = [block, internals, top, intake_manifold, exhaust_manifold, air_filter]
+	for i in parts.size():
+		if parts[i] != null:
+			parts[i].queue_free()
+	parts.clear()
+	
 	specific_parts = get_child(0).get_child(0).get_child(0).get_child(0) #from part list specific to the engine
 	universal_parts = get_child(0).get_child(0).get_child(0).get_child(1) #from universal part list (air filters)
 	block = specific_parts.block[selected_block].instantiate()
@@ -305,7 +327,7 @@ func is_functional():
 var last_engine_position = null #To check if gearbox position gets changed
 var last_drivetrain = null
 func  _physics_process(_delta):
-	if is_functional() and is_running == true:
+	if is_functional() and is_running == true and deleted == false:
 		rpm_calculator()
 		hp_tq_calculator()
 		engine_temp()
@@ -317,7 +339,7 @@ func  _physics_process(_delta):
 		temp_rpm = 0
 		temperature = 0
 		gear = 0
-	if engine_position != Vector2(0,0) and (position_loaded == false or engine_position != last_engine_position or drivetrain != last_drivetrain):
+	if engine_position != Vector2(0,0) and (position_loaded == false or engine_position != last_engine_position or drivetrain != last_drivetrain) and deleted == false:
 		last_engine_position = engine_position
 		last_drivetrain = drivetrain
 		set_engine_position()
@@ -554,12 +576,14 @@ func boost_calculator():
 			boost_turbo = boost_turbo * 0.97
 		last_rpm = rpm
 		airflow_pre = clamp(airflow_pre, 0, 9999)
-		#var max_boost_mod = (turbo_size / ((boost+1)**2.0)) * (airflow_pre / 200)
 		var max_boost_mod = ((turbo_efficiency / (((turbo_size/60.0)**(2.0)))) * airflow_pre/50) * (turbo_boost_scale * 1.5) #| efficiency ++ boost | size -- boost | horsepower ++ boost| / 50is constant
 		max_boost_mod += ((turbo_size * ((boost_turbo+1) ** 1.1))/500) * (turbo_boost_scale * 1.5)
 		max_boost_mod = clamp(max_boost_mod, 0, max_boost)
 		boost_turbo = clamp(boost_turbo, 0, max_boost_mod)
 		airflow_post_turbo = (((turbo_size/60.0)**(0.8)) * boost_turbo) * 0.8 * air_filter.tq_mod #0.8 is constant to keep things realistic (otherwise to much boost)
+	else:
+		boost_turbo = 0.0
+		airflow_post_turbo = 0.0
 	
 	if supercharger == true: #======================================================================
 		var supercharger_loss = 0.0
@@ -571,6 +595,9 @@ func boost_calculator():
 		boost_supercharger = (rpm / (max_horsepower_rpm / pulley_size)) * (supercharer_displacement_capacity * 0.0004) + supercharger_loss
 		boost_supercharger = clamp(boost_supercharger, 0, (max_horsepower_rpm / pulley_size))
 		airflow_post_supercharger = boost_supercharger * 2 * air_filter.tq_mod
+	else:
+		boost_supercharger = 0.0
+		airflow_post_supercharger = 0.0
 	
 	#combine the airflow and boost from the turbo and the supercharger
 	boost = boost_turbo + boost_supercharger

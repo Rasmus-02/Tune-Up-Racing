@@ -1,0 +1,31 @@
+[gd_scene load_steps=6 format=3 uid="uid://t6tjwrih5nvj"]
+
+[ext_resource type="Script" path="res://Assets/Engine/Part_scripts/Intake_Manifold.gd" id="1_aqs7i"]
+[ext_resource type="Texture2D" uid="uid://fll1kdk64kiq" path="res://Textures/Engines/Hikari Suhei-25A/Intake/Hikai Suhei-25A [Niepa] Intake Manifold.png" id="2_5k8tp"]
+[ext_resource type="Texture2D" uid="uid://oe7x5ft2827s" path="res://Textures/Engines/Hikari Suhei-25A/Intake/Hikai Suhei-25A [Niepa] Intake Manifold NM.png" id="3_vumx3"]
+[ext_resource type="Texture2D" uid="uid://bra6gftmiph67" path="res://Textures/Engines/Hikari Suhei-25A/Intake/Hikai Suhei-25A [Niepa] Intake Manifold Spec.png" id="4_t72h4"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_oa52d"]
+diffuse_texture = ExtResource("2_5k8tp")
+normal_texture = ExtResource("3_vumx3")
+specular_texture = ExtResource("4_t72h4")
+specular_shininess = 0.5
+
+[node name="Hikari Suhei-25A [Niepa] Intake Manifold" type="Node2D"]
+script = ExtResource("1_aqs7i")
+rarity = "uncommon"
+layout = "front"
+lenght = 4
+Engine_ID = 3
+Part_Number = 2
+description = "an alternate intake manifold for the Hikari Suhei-25A Engine, designed by Niepa"
+price = 450
+weight = 10
+tq_mod = 1.05
+max_compression_modifier = 0.97
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = SubResource("CanvasTexture_oa52d")
+
+[node name="Air filter location" type="Marker2D" parent="."]
+position = Vector2(10, 3)

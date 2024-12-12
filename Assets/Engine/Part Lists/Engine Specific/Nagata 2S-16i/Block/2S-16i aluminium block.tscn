@@ -11,7 +11,7 @@ normal_texture = ExtResource("3_b27qf")
 specular_texture = ExtResource("4_d3pca")
 specular_shininess = 0.5
 
-[node name="Nagata 2S-16i Cast Aluminium Block" type="Node2D"]
+[node name="Nagata 2S-16i Aluminium Block" type="Node2D"]
 script = ExtResource("1_fcjeo")
 rarity = "rare"
 layout = "Inline"

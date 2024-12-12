@@ -1,0 +1,25 @@
+[gd_scene load_steps=6 format=3 uid="uid://dk28stpdxvrkk"]
+
+[ext_resource type="Script" path="res://Assets/Car/Code/Part_scripts/Suspension.gd" id="1_gktri"]
+[ext_resource type="Texture2D" uid="uid://dyhlurk8skcry" path="res://Textures/Cars/Universal/Suspension/[Vortex] Sport Suspension.png" id="2_2n6f6"]
+[ext_resource type="Texture2D" uid="uid://dfnt21mdvhnf1" path="res://Textures/Cars/Universal/Suspension/Passanger car standard suspension NM.png" id="3_3fml4"]
+[ext_resource type="Texture2D" uid="uid://cormh54ruwwy6" path="res://Textures/Cars/Universal/Suspension/Passanger car standard suspension Spec.png" id="4_uw4sr"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_qa72n"]
+diffuse_texture = ExtResource("2_2n6f6")
+normal_texture = ExtResource("3_3fml4")
+specular_texture = ExtResource("4_uw4sr")
+specular_shininess = 0.5
+
+[node name="[Avalon] Track Suspension" type="Node2D"]
+z_index = 101
+script = ExtResource("1_gktri")
+rarity = "rare"
+Part_Number = 2
+description = "A coilover suspension set designed to improve handling by the aftermarket parts manufacturer Vortex"
+price = 2000
+weight = 30
+handling_bonus = 1.1
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = SubResource("CanvasTexture_qa72n")

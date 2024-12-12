@@ -1,0 +1,29 @@
+[gd_scene load_steps=6 format=3 uid="uid://pi77tu1garqo"]
+
+[ext_resource type="Script" path="res://Assets/Engine/Part_scripts/Block.gd" id="1_0qrjp"]
+[ext_resource type="Texture2D" uid="uid://cg5y43udpitv7" path="res://Textures/Engines/Hikari Suhei-25A/Block/Hikai Suhei-25A [Avalon] Magnesium Block.png" id="2_rwm5q"]
+[ext_resource type="Texture2D" uid="uid://bq3iihhy7e46q" path="res://Textures/Engines/Hikari Suhei-25A/Block/Hikai Suhei-25A Block NM.png" id="3_67obn"]
+[ext_resource type="Texture2D" uid="uid://c5c6ls4yn3p5n" path="res://Textures/Engines/Hikari Suhei-25A/Block/Hikai Suhei-25A Aluminium Block Spec.png" id="4_jpebw"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_8byoe"]
+diffuse_texture = ExtResource("2_rwm5q")
+normal_texture = ExtResource("3_67obn")
+specular_texture = ExtResource("4_jpebw")
+specular_shininess = 0.5
+
+[node name="Hikari Suhei-25A [Avalon] Magnesium Block" type="Node2D"]
+script = ExtResource("1_0qrjp")
+rarity = "epic"
+layout = "Boxer"
+lenght = 19
+width = 25
+Engine_ID = 3
+Part_Number = 4
+description = "A lvery ightweight and durable block for the Hikari Suhei-25A Engine, designed by Avalon"
+price = 9500
+weight = 48
+tq = 275
+max_tq = 1150
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = SubResource("CanvasTexture_8byoe")

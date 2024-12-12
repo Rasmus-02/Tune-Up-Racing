@@ -85,7 +85,8 @@ func populate_list():
 	var search_text = $"../Top Tab/Search Bar".text
 	#IN SHOP
 	if function == "Buy":
-		part_list = AssetList.get_parts(selected_category, 5, null, search_text, "")
+		var unlocked_rarity = (int(Save_Load.level)/10) #lvl10 = 1, lvl20 = 2 --- lvl29 = 2, lvl30 = 3 ...
+		part_list = AssetList.get_parts(selected_category, unlocked_rarity, null, search_text, "")
 	#IN INVENTORY
 	else:
 		part_list = AssetList.get_parts(selected_category, 5, null, search_text, "Save")
@@ -178,16 +179,17 @@ func _on_part_categories_item_selected(index): #From Category list
 
 
 func get_selected_item(index):
-	#Make it so if you press the right item (price) it ges index of left item (item)
-	if index % 2 != 0:
-		index -= 1
-	
-	var part_name = get_item_text(index)
-	var durability = stat_list[index / 2][0] #every second item (because price is item)
-	var color = stat_list[index / 2][1]
-	for i in part_list:
-		if i.name == part_name and i.durability == durability and i.color == color:
-			return i
+	if stat_list.size()-1 >= index / 2:
+		#Make it so if you press the right item (price) it ges index of left item (item)
+		if index % 2 != 0:
+			index -= 1
+		
+		var part_name = get_item_text(index)
+		var durability = stat_list[index / 2][0] #every second item (because price is item)
+		var color = stat_list[index / 2][1]
+		for i in part_list:
+			if i.name == part_name and i.durability == durability and i.color == color:
+				return i
 
 
 func _on_item_clicked(index, _at_position, mouse_button_index): #To select the 2 tabs that make up 1 part
@@ -198,18 +200,19 @@ func _on_item_clicked(index, _at_position, mouse_button_index): #To select the 2
 var temp_index = null
 var current_index = null
 func _on_item_selected(index):
-	current_index = index
-	select_mode = 1
-	var tabs = get_both_tabs(index)
-	select(tabs[0], false)
-	select(tabs[1], false)
-	select_mode = 0
-	if index == temp_index: #For controller and mouse also uses it now
-		stats_tab.selected_item = get_selected_item(index)
-		stats_tab.open()
-		release_focus()
-	else:
-		temp_index = index
+	if stat_list.size()-1 >= index / 2:
+		current_index = index
+		select_mode = 1
+		var tabs = get_both_tabs(index)
+		select(tabs[0], false)
+		select(tabs[1], false)
+		select_mode = 0
+		if index == temp_index: #For controller and mouse also uses it now
+			stats_tab.selected_item = get_selected_item(index)
+			stats_tab.open()
+			release_focus()
+		else:
+			temp_index = index
 
 func get_both_tabs(index): #Function for getting the correct 2 tabs
 	if index == null:

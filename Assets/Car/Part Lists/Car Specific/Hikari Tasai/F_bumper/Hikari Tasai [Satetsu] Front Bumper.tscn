@@ -1,0 +1,39 @@
+[gd_scene load_steps=9 format=3 uid="uid://cnl21a6hjr8no"]
+
+[ext_resource type="Script" path="res://Assets/Car/Code/Part_scripts/F_Bumper.gd" id="1_1fi1j"]
+[ext_resource type="Shader" path="res://Shaders/Test/ColorSelector.gdshader" id="2_xrgk7"]
+[ext_resource type="Texture2D" uid="uid://cgobmaijmvhvb" path="res://Textures/Cars/Hikari Tasai/Front Bumper/Hikari Tasai [Satetsu] Front Bumper.png" id="3_xbuas"]
+[ext_resource type="Texture2D" uid="uid://vobjhttqumwa" path="res://Textures/Cars/Hikari Tasai/Front Bumper/Hikari Tasai [Satetsu] Front Bumper NM.png" id="4_f5a8n"]
+[ext_resource type="Texture2D" uid="uid://dbrcdiudhl0w3" path="res://Textures/Cars/Hikari Tasai/Front Bumper/Hikari Tasai [Satetsu] Front Bumper Spec.png" id="5_qc4mr"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_tkprq"]
+shader = ExtResource("2_xrgk7")
+shader_parameter/import_new_color = null
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_0hbqo"]
+diffuse_texture = ExtResource("3_xbuas")
+normal_texture = ExtResource("4_f5a8n")
+specular_texture = ExtResource("5_qc4mr")
+specular_shininess = 0.5
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_aqj35"]
+polygon = PackedVector2Array(102, -37, 106, -33, 108, -29, 108, -20, 109, -20, 109, 19, 108, 18.9688, 108, 28, 106, 32, 102, 36, 98, 38, 94, 38, 92, 36, 92, -37, 94, -39, 98, -39)
+
+[node name="Hikari Tasai [Satetsu] Front Bumper" type="Node2D"]
+script = ExtResource("1_1fi1j")
+rarity = "rare"
+Car_ID = 2
+Part_Number = 4
+description = "A front bumper with a lip that generates some downforce without introducing too much drag. Designed for the Hikari Tasai, by Satetsu"
+price = 850
+weight = 11
+downforce = 60
+drag = 0.05
+engine_cool_mod = 0.3
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_tkprq")
+texture = SubResource("CanvasTexture_0hbqo")
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="."]
+occluder = SubResource("OccluderPolygon2D_aqj35")

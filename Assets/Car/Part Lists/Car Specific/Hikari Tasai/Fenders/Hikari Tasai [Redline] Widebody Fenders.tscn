@@ -1,0 +1,55 @@
+[gd_scene load_steps=10 format=3 uid="uid://bq8ehuvdqywls"]
+
+[ext_resource type="Script" path="res://Assets/Car/Code/Part_scripts/Fenders.gd" id="1_rttjv"]
+[ext_resource type="Shader" path="res://Shaders/Test/ColorSelector.gdshader" id="2_3w8ur"]
+[ext_resource type="Texture2D" uid="uid://bk24tmxcdnthg" path="res://Textures/Cars/Hikari Tasai/Fenders/Hikari Tasai [Redline] Widebody.png" id="3_ueauo"]
+[ext_resource type="Texture2D" uid="uid://dihdp0dg0s34q" path="res://Textures/Cars/Hikari Tasai/Fenders/Hikari Tasai [Redline] Widebody NM.png" id="4_pap7r"]
+[ext_resource type="Texture2D" uid="uid://bpm0rr7xn88y4" path="res://Textures/Cars/Hikari Tasai/Fenders/Hikari Tasai [Redline] Widebody Spec.png" id="5_sw2uk"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_7p8p5"]
+shader = ExtResource("2_3w8ur")
+shader_parameter/import_new_color = null
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_37acp"]
+diffuse_texture = ExtResource("3_ueauo")
+normal_texture = ExtResource("4_pap7r")
+specular_texture = ExtResource("5_sw2uk")
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_f1llb"]
+polygon = PackedVector2Array(93, -40, 99, -37, 100, -36, 101, -35, 101, -34, 39.5, -34, 34, -40, 34, -41, 36, -42, 38, -44, 79, -44)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_6wg6s"]
+polygon = PackedVector2Array(87, 37, 87, 40, 84, 42, 82, 43, 36, 43, 33, 40, 33, 37)
+
+[node name="Hikari Tasai [Redline] Widebody Fenders" type="Node2D"]
+script = ExtResource("1_rttjv")
+rarity = "epic"
+Car_ID = 2
+Part_Number = 5
+description = "Widebody fenders for the Hikari Tasai. Designed by Redline"
+price = 1500
+weight = 22
+downforce = 15
+drag = 0.045
+max_tire_width = 260
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_7p8p5")
+texture = SubResource("CanvasTexture_37acp")
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="."]
+occluder = SubResource("OccluderPolygon2D_f1llb")
+
+[node name="LightOccluder2D2" type="LightOccluder2D" parent="."]
+position = Vector2(0, -1)
+scale = Vector2(1, -1)
+occluder = SubResource("OccluderPolygon2D_f1llb")
+
+[node name="LightOccluder2D3" type="LightOccluder2D" parent="."]
+position = Vector2(-140, 0)
+occluder = SubResource("OccluderPolygon2D_6wg6s")
+
+[node name="LightOccluder2D4" type="LightOccluder2D" parent="."]
+position = Vector2(-140, -1)
+scale = Vector2(1, -1)
+occluder = SubResource("OccluderPolygon2D_6wg6s")

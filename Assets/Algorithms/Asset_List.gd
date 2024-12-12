@@ -199,12 +199,12 @@ func iterate_array(temp_array, rarity, search_word, save_or_not):
 func rarity_to_int(rarity):
 	match rarity:
 		"common":
-			return 1
+			return 0
 		"uncommon":
-			return 2
+			return 1
 		"rare":
-			return 3
+			return 2
 		"epic":
-			return 4
+			return 3
 		"legendary":
-			return 5
+			return 4

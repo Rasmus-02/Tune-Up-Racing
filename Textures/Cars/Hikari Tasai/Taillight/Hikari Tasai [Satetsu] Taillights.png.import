@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://be71cf81pjokr"
-path="res://.godot/imported/Hikari Tasai AWD Driveshaft HM NM.png-d5b490026e07fb8dbd489c95bdf2a22c.ctex"
+uid="uid://c3p31jsmc2fwp"
+path="res://.godot/imported/Hikari Tasai [Satetsu] Taillights.png-70dc6ed52d96596bdfba06e96f4a170d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Textures/Cars/Hikari Tasai/Driveshaft/Hikari Tasai AWD Driveshaft HM NM.png"
-dest_files=["res://.godot/imported/Hikari Tasai AWD Driveshaft HM NM.png-d5b490026e07fb8dbd489c95bdf2a22c.ctex"]
+source_file="res://Textures/Cars/Hikari Tasai/Taillight/Hikari Tasai [Satetsu] Taillights.png"
+dest_files=["res://.godot/imported/Hikari Tasai [Satetsu] Taillights.png-70dc6ed52d96596bdfba06e96f4a170d.ctex"]
 
 [params]
 

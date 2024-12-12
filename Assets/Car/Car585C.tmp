@@ -1,0 +1,213 @@
+[gd_scene load_steps=18 format=3 uid="uid://bnuwduemvo1ps"]
+
+[ext_resource type="Script" path="res://Assets/Car/Code/Car.gd" id="1_lh3tc"]
+[ext_resource type="Script" path="res://Assets/Car/Code/Car_spawner.gd" id="2_tuyxm"]
+[ext_resource type="Script" path="res://UI/FPS Counter.gd" id="4_oh734"]
+[ext_resource type="Script" path="res://Assets/Effects/Camera_Controller.gd" id="4_qghbh"]
+[ext_resource type="PackedScene" uid="uid://i30mnkgnwuom" path="res://Assets/Engine/Engine.tscn" id="5_dfga0"]
+[ext_resource type="Script" path="res://Assets/Car/Code/Player_Inputs.gd" id="8_1xy05"]
+[ext_resource type="AudioStream" uid="uid://dnrkqex0afvb0" path="res://Sound/Collision.mp3" id="8_buk3u"]
+[ext_resource type="AudioStream" uid="uid://cygtwx8ces4m7" path="res://Sound/TireScreetch.mp3" id="9_fxkhb"]
+[ext_resource type="Script" path="res://Assets/Car/Code/AI.gd" id="9_oifpx"]
+[ext_resource type="AudioStream" uid="uid://ffc2yiq7gvl6" path="res://Sound/Wind Noise.mp3" id="10_0ljn4"]
+[ext_resource type="Texture2D" uid="uid://c7ciifn2fk10b" path="res://Textures/Cars/Hikari Tasai/Chassi/Hikari Tasai Chassi.png" id="10_3dnkb"]
+[ext_resource type="Script" path="res://Assets/Car/AI_Sensor.gd" id="10_b3p0d"]
+[ext_resource type="Texture2D" uid="uid://dul48whe55m8a" path="res://Textures/Engines/Hikari Suhei-25A/Block/Hikai Suhei-25A Block Spec.png" id="12_liibd"]
+[ext_resource type="Script" path="res://Assets/Car/Car_Placing.gd" id="13_pvq3m"]
+[ext_resource type="PackedScene" uid="uid://bdtwk3l2aqqg7" path="res://Assets/Effects/Collision.tscn" id="14_2iard"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_vh7d5"]
+radius = 44.0
+height = 216.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_30j61"]
+radius = 201.0
+height = 760.0
+
+[node name="Car" type="CharacterBody2D" groups=["Car"]]
+collision_layer = 9
+collision_mask = 13
+motion_mode = 1
+wall_min_slide_angle = 1.72264
+floor_stop_on_slope = false
+platform_floor_layers = 4294967040
+safe_margin = 1.0
+script = ExtResource("1_lh3tc")
+selected_car = 1
+selected_color = Color(0.556863, 0.741176, 0.741176, 1)
+
+[node name="Car_spawner" type="Node2D" parent="."]
+script = ExtResource("2_tuyxm")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(0.3, 0.3)
+limit_smoothed = true
+position_smoothing_speed = 15.0
+rotation_smoothing_enabled = true
+rotation_smoothing_speed = 0.22
+script = ExtResource("4_qghbh")
+
+[node name="Label" type="Label" parent="Camera2D"]
+visible = false
+offset_left = -124.0
+offset_top = -185.0
+offset_right = 86.0
+offset_bottom = 8.0
+text = "FPS
+"
+script = ExtResource("4_oh734")
+
+[node name="Hitbox" type="CollisionShape2D" parent="."]
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_vh7d5")
+debug_color = Color(0.65098, 0.521569, 0, 0.419608)
+
+[node name="Engine" parent="." instance=ExtResource("5_dfga0")]
+rotation = -1.5708
+
+[node name="Area2D" type="Area2D" parent="."]
+visible = false
+rotation = 1.5708
+
+[node name="Area hitbox" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CapsuleShape2D_vh7d5")
+
+[node name="Label" type="Label" parent="."]
+visible = false
+offset_left = -142.0
+offset_top = -124.0
+offset_right = 158.0
+offset_bottom = 69.0
+scale = Vector2(0.4, 0.4)
+text = "speed"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label" type="Label" parent="Label"]
+layout_mode = 0
+offset_left = 427.5
+offset_top = 65.0
+offset_right = 637.5
+offset_bottom = 258.0
+text = "FPS"
+script = ExtResource("4_oh734")
+
+[node name="Sound effects" type="Node2D" parent="."]
+
+[node name="Tire Screetch" type="AudioStreamPlayer2D" parent="Sound effects"]
+stream = ExtResource("9_fxkhb")
+volume_db = -80.0
+autoplay = true
+bus = &"Car Volume"
+
+[node name="Wind Noise" type="AudioStreamPlayer2D" parent="Sound effects"]
+stream = ExtResource("10_0ljn4")
+volume_db = -80.0
+autoplay = true
+bus = &"Ambient Volume"
+area_mask = 2
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Sound effects"]
+stream = ExtResource("8_buk3u")
+bus = &"Car Volume"
+
+[node name="Player_Inputs" type="Node2D" parent="." node_paths=PackedStringArray("car")]
+script = ExtResource("8_1xy05")
+car = NodePath("..")
+
+[node name="AI" type="Node2D" parent="." node_paths=PackedStringArray("car", "sensor")]
+script = ExtResource("9_oifpx")
+car = NodePath("..")
+sensor = NodePath("Sensor")
+brake_padding = 0.2
+turn_smoothing = 0.2
+gas_aggression = 0.9
+inaccuracy = 100.0
+
+[node name="Pointer" type="Sprite2D" parent="AI"]
+visible = false
+z_index = 4096
+scale = Vector2(0.35, 0.35)
+texture = ExtResource("10_3dnkb")
+
+[node name="Sensor" type="Node2D" parent="AI" node_paths=PackedStringArray("forward_node", "car_detector_node", "forward_car_detector", "left_90_node", "left_45_node", "right_90_node", "right_45_node", "car")]
+script = ExtResource("10_b3p0d")
+forward_node = NodePath("Forward")
+car_detector_node = NodePath("Car_Detector")
+forward_car_detector = NodePath("Forward_Car_Detector")
+left_90_node = NodePath("Left")
+left_45_node = NodePath("Left45")
+right_90_node = NodePath("Right")
+right_45_node = NodePath("Right45")
+car = NodePath("../..")
+
+[node name="Forward" type="RayCast2D" parent="AI/Sensor"]
+visible = false
+position = Vector2(102, 0)
+target_position = Vector2(2560, 0)
+collision_mask = 512
+hit_from_inside = true
+collide_with_areas = true
+collide_with_bodies = false
+
+[node name="Forward_Car_Detector" type="RayCast2D" parent="AI/Sensor"]
+position = Vector2(90, 0)
+target_position = Vector2(1500, 0)
+collision_mask = 8
+
+[node name="Left" type="RayCast2D" parent="AI/Sensor"]
+rotation = -1.5708
+target_position = Vector2(2560, 0)
+collision_mask = 512
+collide_with_areas = true
+collide_with_bodies = false
+
+[node name="Left45" type="RayCast2D" parent="AI/Sensor"]
+position = Vector2(-3.8147e-06, -1.90735e-06)
+rotation = -0.785398
+target_position = Vector2(2560, 0)
+collision_mask = 512
+hit_from_inside = true
+collide_with_areas = true
+collide_with_bodies = false
+
+[node name="Right" type="RayCast2D" parent="AI/Sensor"]
+rotation = 1.5708
+target_position = Vector2(2560, 0)
+collision_mask = 512
+collide_with_areas = true
+collide_with_bodies = false
+
+[node name="Right45" type="RayCast2D" parent="AI/Sensor"]
+position = Vector2(-3.8147e-06, 1.90735e-06)
+rotation = 0.785398
+target_position = Vector2(2560, 0)
+collision_mask = 512
+hit_from_inside = true
+collide_with_areas = true
+collide_with_bodies = false
+
+[node name="Car_Detector" type="Area2D" parent="AI/Sensor"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AI/Sensor/Car_Detector"]
+position = Vector2(271, 0)
+rotation = -1.5708
+shape = SubResource("CapsuleShape2D_30j61")
+
+[node name="AI TESTING TEMP POS" type="Sprite2D" parent="AI/Sensor"]
+visible = false
+texture = ExtResource("12_liibd")
+
+[node name="Placing" type="Node2D" parent="." node_paths=PackedStringArray("car")]
+script = ExtResource("13_pvq3m")
+car = NodePath("..")
+
+[node name="Effects" type="Node2D" parent="."]
+
+[node name="Collision" parent="Effects" instance=ExtResource("14_2iard")]
+
+[connection signal="export_variables" from="." to="Engine" method="_on_car_export_variables"]
+[connection signal="rpm_info" from="Engine" to="." method="_on_engine_rpm_info"]
+[connection signal="stats" from="Engine" to="." method="_on_engine_stats"]
+[connection signal="body_entered" from="AI/Sensor/Car_Detector" to="AI/Sensor" method="_on_car_detector_body_entered"]
+[connection signal="body_exited" from="AI/Sensor/Car_Detector" to="AI/Sensor" method="_on_car_detector_body_exited"]

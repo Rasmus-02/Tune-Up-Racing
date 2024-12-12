@@ -34,8 +34,8 @@ Part_Number = 1
 description = "The factory headlights for the Hikari Tasai"
 price = 200
 weight = 8
-downforce = 4
-drag = 0.02
+downforce = -5
+drag = 0.03
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 material = SubResource("ShaderMaterial_k5tqf")

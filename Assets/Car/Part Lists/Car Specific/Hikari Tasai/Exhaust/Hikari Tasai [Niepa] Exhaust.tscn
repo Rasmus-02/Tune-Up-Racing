@@ -1,0 +1,56 @@
+[gd_scene load_steps=9 format=3 uid="uid://bb8s7x61s7nmn"]
+
+[ext_resource type="Script" path="res://Assets/Car/Code/Part_scripts/Exhaust.gd" id="1_yp26g"]
+[ext_resource type="Texture2D" uid="uid://dpm0dbk7hysx5" path="res://Textures/Cars/Hikari Tasai/Exhaust/Hikari Tasai [Niepa] Exhaust.png" id="2_512gt"]
+[ext_resource type="Texture2D" uid="uid://b64vdaygvujnx" path="res://Textures/Cars/Hikari Tasai/Exhaust/Hikari Tasai [Niepa] Exhaust NM.png" id="3_ie7y5"]
+[ext_resource type="Texture2D" uid="uid://bhhrmwni4173p" path="res://Textures/Cars/Hikari Tasai/Exhaust/Hikari Tasai [Niepa] Exhaust Spec.png" id="4_akp26"]
+[ext_resource type="Script" path="res://Assets/Effects/Backfire.gd" id="5_ie4o4"]
+[ext_resource type="AudioStream" uid="uid://cfvwt4fi2efkr" path="res://Sound/Engine Sounds/Backfire.mp3" id="6_6huwr"]
+[ext_resource type="PackedScene" uid="uid://b1agqhrv0psca" path="res://Assets/Effects/Backfire.tscn" id="7_6tli7"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_e5v36"]
+diffuse_texture = ExtResource("2_512gt")
+normal_texture = ExtResource("3_ie7y5")
+specular_texture = ExtResource("4_akp26")
+
+[node name="Hikari Tasai [Niepa] Exhaust" type="Node2D"]
+script = ExtResource("1_yp26g")
+rarity = "uncommon"
+Car_ID = 2
+Part_Number = 2
+description = "An aftermarket performance exhaust for the Hikari Tasai, designed by Niepa"
+price = 750
+weight = 36
+tq_mod = 1.01
+sound_dampening = 8
+pitch_tweak = 0.98
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = SubResource("CanvasTexture_e5v36")
+
+[node name="Backfire" type="Node2D" parent="."]
+script = ExtResource("5_ie4o4")
+
+[node name="Backfire_Sound" type="AudioStreamPlayer2D" parent="Backfire"]
+stream = ExtResource("6_6huwr")
+bus = &"Car Volume"
+
+[node name="Exhaust_1" type="Marker2D" parent="Backfire"]
+position = Vector2(-119, -27)
+
+[node name="Backfire" parent="Backfire/Exhaust_1" instance=ExtResource("7_6tli7")]
+
+[node name="Exhaust_2" type="Marker2D" parent="Backfire"]
+position = Vector2(-119, -23)
+
+[node name="Backfire" parent="Backfire/Exhaust_2" instance=ExtResource("7_6tli7")]
+
+[node name="Exhaust_3" type="Marker2D" parent="Backfire"]
+position = Vector2(-119, 21)
+
+[node name="Backfire" parent="Backfire/Exhaust_3" instance=ExtResource("7_6tli7")]
+
+[node name="Exhaust_4" type="Marker2D" parent="Backfire"]
+position = Vector2(-119, 25)
+
+[node name="Backfire" parent="Backfire/Exhaust_4" instance=ExtResource("7_6tli7")]

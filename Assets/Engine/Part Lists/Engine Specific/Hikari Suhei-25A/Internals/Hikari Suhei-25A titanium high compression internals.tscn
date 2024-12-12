@@ -1,0 +1,28 @@
+[gd_scene load_steps=6 format=3 uid="uid://ris8smnjf1j5"]
+
+[ext_resource type="Script" path="res://Assets/Engine/Part_scripts/Internals.gd" id="1_04ipk"]
+[ext_resource type="Texture2D" uid="uid://d0837nu5ftdnk" path="res://Textures/Engines/Hikari Suhei-25A/Internals/Hikai Suhei-25A Forged Internals.png" id="2_0h5ba"]
+[ext_resource type="Texture2D" uid="uid://doq5o8ebif6fy" path="res://Textures/Engines/Hikari Suhei-25A/Internals/Hikai Suhei-25A Stock Internals NM.png" id="3_3tdnv"]
+[ext_resource type="Texture2D" uid="uid://ce387pka8mgob" path="res://Textures/Engines/Hikari Suhei-25A/Internals/Hikai Suhei-25A Stock Internals Spec.png" id="4_4sscf"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_vfcaw"]
+diffuse_texture = ExtResource("2_0h5ba")
+normal_texture = ExtResource("3_3tdnv")
+specular_texture = ExtResource("4_4sscf")
+specular_color = Color(0.603922, 0.521569, 1, 1)
+specular_shininess = 0.42
+
+[node name="Hikari Suhei-25A Titanium High Comp Internals" type="Node2D"]
+script = ExtResource("1_04ipk")
+rarity = "rare"
+Engine_ID = 3
+Part_Number = 11
+description = "High compression variant of the Titanium internals for the Hikari Suhei-25A Engine, designed for naturally aspirated and low boost engines"
+price = 4500
+weight = 28
+compression = 11.5
+max_rpm = 9000
+max_tq = 1000
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = SubResource("CanvasTexture_vfcaw")

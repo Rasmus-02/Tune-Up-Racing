@@ -1,0 +1,30 @@
+[gd_scene load_steps=6 format=3 uid="uid://btxm58amic6gs"]
+
+[ext_resource type="Script" path="res://Assets/Car/Code/Part_scripts/Driveshaft.gd" id="1_700s4"]
+[ext_resource type="Texture2D" uid="uid://cmktc1nhda3li" path="res://Textures/Cars/Hikari Tasai/Driveshaft/Hikari Tasai [Niepa] AWD Driveshaft.png" id="2_nkxlb"]
+[ext_resource type="Texture2D" uid="uid://bedcahwify0w8" path="res://Textures/Cars/Hikari Tasai/Driveshaft/Hikari Tasai [Niepa] AWD Driveshaft NM.png" id="3_r50yl"]
+[ext_resource type="Texture2D" uid="uid://bp5fbhet5hrqd" path="res://Textures/Cars/Hikari Tasai/Driveshaft/Hikari Tasai [Niepa] AWD Driveshaft Spec.png" id="4_17a63"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_c5td7"]
+diffuse_texture = ExtResource("2_nkxlb")
+normal_texture = ExtResource("3_r50yl")
+specular_texture = ExtResource("4_17a63")
+specular_shininess = 0.5
+
+[node name="Hikari Tasai [Niepa] AWD Driveshaft" type="Node2D"]
+script = ExtResource("1_700s4")
+rarity = "uncommon"
+Car_ID = 2
+Part_Number = 3
+description = "A lighter more efficient, but slightly less durable all wheel drive driveshaft for the Hikari Tasai, designed by Niepa"
+price = 1850
+weight = 34
+drivetrain = 2
+max_torque = 375
+drivetrain_loss = 0.17
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = SubResource("CanvasTexture_c5td7")
+
+[node name="Gearbox" type="Marker2D" parent="."]
+position = Vector2(38, 0)

@@ -18,9 +18,9 @@ rarity = "uncommon"
 Part_Number = 1
 width = 2
 description = "A small and cheap radiator designed for less demanding engines"
-price = 200
+price = 250
 weight = 4
-cooling = 1.0
+cooling = 1.5
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = SubResource("CanvasTexture_xfat8")

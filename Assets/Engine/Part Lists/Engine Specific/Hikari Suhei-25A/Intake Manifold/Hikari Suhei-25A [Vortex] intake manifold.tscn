@@ -1,0 +1,31 @@
+[gd_scene load_steps=6 format=3 uid="uid://bv50s6mcb3gn1"]
+
+[ext_resource type="Script" path="res://Assets/Engine/Part_scripts/Intake_Manifold.gd" id="1_d6p2g"]
+[ext_resource type="Texture2D" uid="uid://c6ph6w16c5iio" path="res://Textures/Engines/Hikari Suhei-25A/Intake/Hikai Suhei-25A [Vortex] Intake Manifold.png" id="2_3ibux"]
+[ext_resource type="Texture2D" uid="uid://cmfo38qrlvrlk" path="res://Textures/Engines/Hikari Suhei-25A/Intake/Hikai Suhei-25A [Vortex] Intake Manifold NM.png" id="3_2k6hd"]
+[ext_resource type="Texture2D" uid="uid://1a28ih7rq3wh" path="res://Textures/Engines/Hikari Suhei-25A/Intake/Hikai Suhei-25A [Vortex] Intake Manifold Spec.png" id="4_codvw"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_oa52d"]
+diffuse_texture = ExtResource("2_3ibux")
+normal_texture = ExtResource("3_2k6hd")
+specular_texture = ExtResource("4_codvw")
+specular_shininess = 0.5
+
+[node name="Hikari Suhei-25A [Vortex] Intake Manifold" type="Node2D"]
+script = ExtResource("1_d6p2g")
+rarity = "rare"
+layout = "front"
+lenght = 4
+Engine_ID = 3
+Part_Number = 3
+description = "A Performance intake manifold for the Hikari Suhei-25A Engine, designed by Vortex"
+price = 850
+weight = 14
+tq_mod = 1.05
+max_compression_modifier = 1.12
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = SubResource("CanvasTexture_oa52d")
+
+[node name="Air filter location" type="Marker2D" parent="."]
+position = Vector2(10, 3)

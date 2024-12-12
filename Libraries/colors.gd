@@ -1,7 +1,7 @@
 extends Node
 
 var Factory_White = [Color(0.82, 0.8, 0.75), "Factory White", "Unlocked by Default", 0.3]
-var Apple_Green = [Color(0.31, 0.64, 0.32), "Apple Green", "Reach Level 10 to Unlock", 0.5]
+var Emerald_Green = [Color(0.31, 0.64, 0.32), "Emerald Green", "Reach Level 10 to Unlock", 0.5]
 var Electric_Blue = [Color(0.1, 0.78, 1), "Electric Blue", "Reach Level 20 to Unlock", 0.55]
 var Lavender = [Color(0.55, 0.45, 0.7), "Lavender", "Reach Level 30 to Unlock", 0.4]
 var Amber_Yellow = [Color(1, 0.75, 0), "Amber Yellow", "Reach Level 40 to Unlock", 0.5]
@@ -37,7 +37,7 @@ var Crimson_Red = [Color(0.55, 0, 0.18), "Crimson Red", "Defeat -- In the Main S
 var Lava_Orange = [Color(1, 0.35, 0.071), "Lava Orange", "Defeat --- In the Main Story to Unlock", 0.58]
 
 
-var list = [Factory_White, Apple_Green, Electric_Blue, Lavender, Amber_Yellow,
+var list = [Factory_White, Emerald_Green, Electric_Blue, Lavender, Amber_Yellow,
 	Graphite, Silver, Bronze_Gold,
 	Gray, Iron_Oxide, Blueprint_Blue,
 	Ruby_Rust, Alligator_Green, Cherry_Red, Sky_Blue, Racing_Green, Gold,

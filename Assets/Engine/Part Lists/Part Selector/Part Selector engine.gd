@@ -54,7 +54,7 @@ func spawn_engine_by_parts():
 		air_filter.rotation = deg_to_rad(-90)
 	get_parent().get_parent().update()
 
-func reload_engine():
+func reload_engine(delete):
 	#despawns the engine
 	if exhaust_manifold != null:
 		exhaust_manifold.queue_free()
@@ -69,4 +69,15 @@ func reload_engine():
 	if air_filter != null:
 		air_filter.queue_free()
 	#respawns the engine
-	instantiate_engine()
+	if delete == false:
+		instantiate_engine()
+
+
+
+
+# ORPHAN NODE HANDLER, DELETE WHEN SCENE CHANGE
+func _init():
+	Utils.connect("freeing_orphans", Callable(self, "_free_if_orphaned"))
+func _free_if_orphaned():
+	if not is_inside_tree(): # Optional check - don't free if in the scene tree
+		queue_free()

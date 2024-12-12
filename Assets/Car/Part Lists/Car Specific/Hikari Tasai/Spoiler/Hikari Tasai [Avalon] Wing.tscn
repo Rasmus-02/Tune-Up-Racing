@@ -1,0 +1,33 @@
+[gd_scene load_steps=8 format=3 uid="uid://cvrqlls0oj8og"]
+
+[ext_resource type="Script" path="res://Assets/Car/Code/Part_scripts/Spoiler.gd" id="1_fhr73"]
+[ext_resource type="Shader" path="res://Shaders/Test/ColorSelector.gdshader" id="2_m3pgw"]
+[ext_resource type="Texture2D" uid="uid://f4vgbh7y8rcb" path="res://Textures/Cars/Hikari Tasai/Spoiler/Hikari Tasai [Avalon] Wing.png" id="3_ivhhf"]
+[ext_resource type="Texture2D" uid="uid://dd53rm7cnkhug" path="res://Textures/Cars/Hikari Tasai/Spoiler/Hikari Tasai [Avalon] Wing NM.png" id="4_i4d17"]
+[ext_resource type="Texture2D" uid="uid://vjbvdac7mln7" path="res://Textures/Cars/Hikari Tasai/Spoiler/Hikari Tasai [Avalon] Wing Spec.png" id="5_g5ayi"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_gibfk"]
+shader = ExtResource("2_m3pgw")
+shader_parameter/import_new_color = null
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_swaqy"]
+diffuse_texture = ExtResource("3_ivhhf")
+normal_texture = ExtResource("4_i4d17")
+specular_texture = ExtResource("5_g5ayi")
+specular_shininess = 0.5
+
+[node name="Hikari Tasai [Avalon] Wing" type="Node2D"]
+script = ExtResource("1_fhr73")
+rarity = "epic"
+Car_ID = 2
+Part_Number = 5
+description = "A large wing by the racing team Avalon providing a large amount of downforce for the Hikari Tasai."
+paintable = false
+price = 1250
+weight = 3
+drag = 0.05
+downforce = 200
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_gibfk")
+texture = SubResource("CanvasTexture_swaqy")

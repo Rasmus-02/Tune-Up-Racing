@@ -31,7 +31,7 @@ description = "Aftermarket headlights for the Talon Motors Barracuda, designed b
 paintable = false
 price = 300
 weight = 5
-drag = 0.03
+drag = 0.02
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 material = SubResource("ShaderMaterial_d2vgq")

@@ -184,17 +184,14 @@ func _on_item_selected(index): #when a part in the item list is clicked (node si
 
 
 		#for loop for finding the correct part
-		if index == 1 and equipped_part.name != "[empty]":
-			temp_part_select_part = equipped_part
-		else:
-			for i in selected_part.size():
-				temp_part_select_part = selected_part[i].instantiate()
-				if temp_part_select_part.get_name() == engine_name + list.get_item_text(index) or temp_part_select_part.get_name() == list.get_item_text(index): #if correct part by name
-					break
-				elif index == 0: #If empty part
-					break
-				temp_part_select_part.queue_free()
-				i += 1
+		for i in selected_part.size():
+			temp_part_select_part = selected_part[i].instantiate()
+			if temp_part_select_part.get_name() == engine_name + list.get_item_text(index) or temp_part_select_part.get_name() == list.get_item_text(index): #if correct part by name
+				break
+			elif index == 0: #If empty part
+				break
+			temp_part_select_part.queue_free()
+			i += 1
 		
 		#Updates stat tv
 		temp_part_select_part.durability = temp_stat_array[index][0]
@@ -204,6 +201,7 @@ func _on_item_selected(index): #when a part in the item list is clicked (node si
 		#sends update to engine that parts have changed
 		match selected_tab:
 			0:
+				equipped_part = engine.block
 				if index != 1 or (equipped_part.name == "[empty]" and index > 0):
 					if engine.block.name != "[empty]":
 						Save_Load.inv_add(engine.block)
@@ -215,6 +213,7 @@ func _on_item_selected(index): #when a part in the item list is clicked (node si
 				update_engine()
 				_on_block_button_pressed()
 			1:
+				equipped_part = engine.internals
 				if index != 1 or (equipped_part.name == "[empty]" and index > 0):
 					if engine.internals.name != "[empty]":
 						Save_Load.inv_add(engine.internals)
@@ -226,6 +225,7 @@ func _on_item_selected(index): #when a part in the item list is clicked (node si
 				update_engine()
 				_on_internals_button_pressed()
 			2:
+				equipped_part = engine.top
 				if index != 1 or (equipped_part.name == "[empty]" and index > 0):
 					if engine.top.name != "[empty]":
 						Save_Load.inv_add(engine.top)
@@ -237,6 +237,7 @@ func _on_item_selected(index): #when a part in the item list is clicked (node si
 				update_engine()
 				_on_top_button_pressed()
 			3:
+				equipped_part = engine.exhaust_manifold
 				if index != 1 or (equipped_part.name == "[empty]" and index > 0):
 					if engine.exhaust_manifold.name != "[empty]":
 						Save_Load.inv_add(engine.exhaust_manifold)
@@ -248,6 +249,7 @@ func _on_item_selected(index): #when a part in the item list is clicked (node si
 				update_engine()
 				_on_exhaust_manifold_button_pressed()
 			4:
+				equipped_part = engine.intake_manifold
 				if index != 1 or (equipped_part.name == "[empty]" and index > 0):
 					if engine.intake_manifold.name != "[empty]":
 						Save_Load.inv_add(engine.intake_manifold)
@@ -259,6 +261,7 @@ func _on_item_selected(index): #when a part in the item list is clicked (node si
 				update_engine()
 				_on_intake_manifold_button_pressed()
 			5:
+				equipped_part = engine.air_filter
 				if index != 1 or (equipped_part.name == "[empty]" and index > 0):
 					if engine.air_filter.name != "[empty]":
 						Save_Load.inv_add(engine.air_filter)

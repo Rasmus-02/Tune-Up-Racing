@@ -1,0 +1,27 @@
+[gd_scene load_steps=6 format=3 uid="uid://cmy47hji6sylv"]
+
+[ext_resource type="Script" path="res://Assets/Engine/Part_scripts/Internals.gd" id="1_8xrv1"]
+[ext_resource type="Texture2D" uid="uid://bps7k8kmkrmp6" path="res://Textures/Engines/Hikari Suhei-25A/Internals/Hikai Suhei-25A Low Friction Internals.png" id="2_nrhf2"]
+[ext_resource type="Texture2D" uid="uid://doq5o8ebif6fy" path="res://Textures/Engines/Hikari Suhei-25A/Internals/Hikai Suhei-25A Stock Internals NM.png" id="3_f6d53"]
+[ext_resource type="Texture2D" uid="uid://ce387pka8mgob" path="res://Textures/Engines/Hikari Suhei-25A/Internals/Hikai Suhei-25A Stock Internals Spec.png" id="4_1oc1r"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_8qrlk"]
+diffuse_texture = ExtResource("2_nrhf2")
+normal_texture = ExtResource("3_f6d53")
+specular_texture = ExtResource("4_1oc1r")
+specular_shininess = 0.5
+
+[node name="Hikari Suhei-25A Low Friction Internals" type="Node2D"]
+script = ExtResource("1_8xrv1")
+rarity = "rare"
+Engine_ID = 3
+Part_Number = 7
+description = "Lightweight, low friction forged internals for the Hikari Suhei-25A Engine"
+price = 3000
+weight = 26
+compression = 9.5
+max_rpm = 10000
+max_tq = 550
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = SubResource("CanvasTexture_8qrlk")

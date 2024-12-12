@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://dism0qxb2ewu2"
+path="res://.godot/imported/Hikari_Suhei_25A_Redline_Throttle_4000.mp3-ca9d19e6a62f3b95bb62d1ef8772092c.mp3str"
+
+[deps]
+
+source_file="res://Sound/Engine Sounds/Suhei-25A/Hikari_Suhei_25A_Redline_Throttle_4000.mp3"
+dest_files=["res://.godot/imported/Hikari_Suhei_25A_Redline_Throttle_4000.mp3-ca9d19e6a62f3b95bb62d1ef8772092c.mp3str"]
+
+[params]
+
+loop=true
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

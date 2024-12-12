@@ -45,6 +45,7 @@ grow_vertical = 2
 script = ExtResource("1_nm8b6")
 
 [node name="Browser Background Panel" type="Panel" parent="."]
+layout_mode = 0
 offset_left = 329.0
 offset_top = 100.0
 offset_right = 2230.0
@@ -52,6 +53,7 @@ offset_bottom = 1430.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_feld2")
 
 [node name="Label BG" type="Panel" parent="Browser Background Panel"]
+layout_mode = 0
 offset_left = 1.0
 offset_top = 115.0
 offset_right = 1250.0
@@ -59,6 +61,7 @@ offset_bottom = 390.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_cjhwh")
 
 [node name="Description BG" type="Panel" parent="Browser Background Panel"]
+layout_mode = 0
 offset_left = 1.0
 offset_top = 746.0
 offset_right = 1692.0
@@ -260,6 +263,7 @@ texture_hover = ExtResource("9_qusx1")
 texture_disabled = ExtResource("13_trw6q")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Buttons/Medium"]
+layout_mode = 0
 offset_left = 7.28571
 offset_top = 32.8571
 offset_right = 207.286
@@ -315,6 +319,7 @@ texture_hover = ExtResource("12_l8e2u")
 texture_disabled = ExtResource("17_5nnt0")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Buttons/Hard"]
+layout_mode = 0
 offset_left = 7.28571
 offset_top = 32.8571
 offset_right = 207.286
@@ -370,6 +375,7 @@ texture_hover = ExtResource("15_o0v3j")
 texture_disabled = ExtResource("21_lp6er")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Buttons/Insane"]
+layout_mode = 0
 offset_left = 7.28571
 offset_top = 32.8571
 offset_right = 207.286

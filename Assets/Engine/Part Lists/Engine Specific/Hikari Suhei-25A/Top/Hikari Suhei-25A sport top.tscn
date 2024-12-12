@@ -1,7 +1,7 @@
 [gd_scene load_steps=12 format=3 uid="uid://ej0u17kv1om8"]
 
 [ext_resource type="Script" path="res://Assets/Engine/Part_scripts/Top.gd" id="1_daj3r"]
-[ext_resource type="Texture2D" uid="uid://bf31xlvfnwnyo" path="res://Textures/Engines/Hikari Suhei-25A/Top/Hikai Suhei-25A Sport Top.png" id="2_hajq2"]
+[ext_resource type="Texture2D" uid="uid://dmckskc667mdy" path="res://Textures/Engines/Hikari Suhei-25A/Top/Hikai Suhei-25A GT Top.png" id="2_ngqu1"]
 [ext_resource type="Texture2D" uid="uid://jsyrfgaia7ry" path="res://Textures/Engines/Hikari Suhei-25A/Top/Hikai Suhei-25A Stock Top NM.png" id="3_pkd28"]
 [ext_resource type="Texture2D" uid="uid://b58st5s7s0crh" path="res://Textures/Engines/Hikari Suhei-25A/Top/Hikai Suhei-25A Stock Top Spec.png" id="4_jufis"]
 [ext_resource type="Script" path="res://Assets/Engine/Code/Sound_handler_engine.gd" id="5_2lxov"]
@@ -12,14 +12,14 @@
 [ext_resource type="AudioStream" uid="uid://bumo62fftckdb" path="res://Sound/AirFlow Sound.mp3" id="10_pgijk"]
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_kt11d"]
-diffuse_texture = ExtResource("2_hajq2")
+diffuse_texture = ExtResource("2_ngqu1")
 normal_texture = ExtResource("3_pkd28")
 specular_texture = ExtResource("4_jufis")
 specular_shininess = 0.5
 
 [node name="Hikari Suhei-25A Sport Top" type="Node2D"]
 script = ExtResource("1_daj3r")
-rarity = "rare"
+rarity = "uncommon"
 lenght = 19
 width = 35
 Engine_ID = 3
@@ -29,8 +29,8 @@ price = 1100
 weight = 26.0
 tq_mod = 1.05
 max_hp_rpm = 6200
-max_compression = 11.5
-smoothness = 0.82
+max_compression = 11.4
+smoothness = 0.84
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = SubResource("CanvasTexture_kt11d")

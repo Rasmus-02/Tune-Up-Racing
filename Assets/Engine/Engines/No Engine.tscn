@@ -1,5 +1,6 @@
-[gd_scene load_steps=6 format=3 uid="uid://dexxy0nxd1ikx"]
+[gd_scene load_steps=7 format=3 uid="uid://dexxy0nxd1ikx"]
 
+[ext_resource type="Script" path="res://Game_Logic/Cleaner.gd" id="1_bdpjj"]
 [ext_resource type="PackedScene" uid="uid://cctyed3jxvgm6" path="res://Assets/Engine/Part Lists/Part Selector/Part Selector engine.tscn" id="1_f7q7a"]
 [ext_resource type="PackedScene" uid="uid://562gipqro1ak" path="res://Assets/Engine/Part Lists/Engine Specific/Nagata 2S-16i/nagata_2s_16i part list.tscn" id="2_hu1on"]
 [ext_resource type="Script" path="res://Assets/Engine/Part Lists/Engine Specific/Nagata 2S-16i/empty_engine part list.gd" id="3_pfb07"]
@@ -7,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://c8il6nkvjwonk" path="res://Sound/Turbo and Supercharge Sounds/Boost_Sound_Handler.tscn" id="8_fvwxq"]
 
 [node name="No Engine" type="Node2D"]
+script = ExtResource("1_bdpjj")
 
 [node name="Part Selector" parent="." instance=ExtResource("1_f7q7a")]
 

@@ -1,0 +1,25 @@
+[gd_scene load_steps=6 format=3 uid="uid://c2xo0fa57vkan"]
+
+[ext_resource type="Script" path="res://Assets/Car/Code/Part_scripts/Subframe.gd" id="1_t2prv"]
+[ext_resource type="Texture2D" uid="uid://ce6nroft6u5t8" path="res://Textures/Cars/Hikari Tasai/Subframe/Hikari Tasai [Avalon] Subframe.png" id="2_7vv8c"]
+[ext_resource type="Texture2D" uid="uid://bgjhpvuos753l" path="res://Textures/Cars/Hikari Tasai/Subframe/Hikari Tasai [Avalon] Subframe NM.png" id="3_wn4ch"]
+[ext_resource type="Texture2D" uid="uid://1cfjbx2yqro" path="res://Textures/Cars/Hikari Tasai/Subframe/Hikari Tasai [Avalon] Subframe Spec.png" id="4_8daaw"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_0jkfa"]
+diffuse_texture = ExtResource("2_7vv8c")
+normal_texture = ExtResource("3_wn4ch")
+specular_texture = ExtResource("4_8daaw")
+specular_shininess = 0.5
+
+[node name="Hikari Tasai [Avalon] Lightweight Subframe" type="Node2D"]
+script = ExtResource("1_t2prv")
+rarity = "epic"
+Car_ID = 2
+Part_Number = 4
+description = "A lightweight subframe for the Hikari Tasai providing better handling and reduced weight, designed by Avalon"
+price = 1450
+weight = 22
+handling_bonus = 1.07
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = SubResource("CanvasTexture_0jkfa")

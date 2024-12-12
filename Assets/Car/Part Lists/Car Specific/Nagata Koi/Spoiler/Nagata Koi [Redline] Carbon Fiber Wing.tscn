@@ -11,7 +11,7 @@ normal_texture = ExtResource("3_kqrvq")
 specular_texture = ExtResource("4_jp1j0")
 specular_shininess = 0.5
 
-[node name="Nagata Koi [Redline] Carbon Fiber Wing" type="Node2D"]
+[node name="Nagata Koi [Redline] Wing" type="Node2D"]
 script = ExtResource("1_4482p")
 rarity = "epic"
 Part_Number = 4

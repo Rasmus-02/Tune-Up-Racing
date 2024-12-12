@@ -1,0 +1,45 @@
+[gd_scene load_steps=9 format=3 uid="uid://dqloty5obgf2"]
+
+[ext_resource type="Script" path="res://Assets/Car/Code/Part_scripts/Exhaust.gd" id="1_g670g"]
+[ext_resource type="Texture2D" uid="uid://bt10lkep0brg4" path="res://Textures/Cars/Hikari Tasai/Exhaust/Hikari Tasai [Vortex] Exhaust.png" id="2_opuop"]
+[ext_resource type="Texture2D" uid="uid://dvkt543h7wf48" path="res://Textures/Cars/Hikari Tasai/Exhaust/Hikari Tasai [Vortex] Exhaust NM.png" id="3_gxhga"]
+[ext_resource type="Texture2D" uid="uid://neqkrjrganyo" path="res://Textures/Cars/Hikari Tasai/Exhaust/Hikari Tasai [Vortex] Exhaust Spec.png" id="4_0yuih"]
+[ext_resource type="Script" path="res://Assets/Effects/Backfire.gd" id="5_7baih"]
+[ext_resource type="AudioStream" uid="uid://cfvwt4fi2efkr" path="res://Sound/Engine Sounds/Backfire.mp3" id="6_7wuvk"]
+[ext_resource type="PackedScene" uid="uid://b1agqhrv0psca" path="res://Assets/Effects/Backfire.tscn" id="7_jsyv3"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_e5v36"]
+diffuse_texture = ExtResource("2_opuop")
+normal_texture = ExtResource("3_gxhga")
+specular_texture = ExtResource("4_0yuih")
+
+[node name="Hikari Tasai [Vortex] Exhaust" type="Node2D"]
+script = ExtResource("1_g670g")
+rarity = "uncommon"
+Car_ID = 2
+Part_Number = 3
+description = "An aftermarket performance exhaust for the Hikari Tasai, designed by Vortex"
+price = 750
+weight = 28
+sound_dampening = 7
+pitch_tweak = 0.96
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = SubResource("CanvasTexture_e5v36")
+
+[node name="Backfire" type="Node2D" parent="."]
+script = ExtResource("5_7baih")
+
+[node name="Backfire_Sound" type="AudioStreamPlayer2D" parent="Backfire"]
+stream = ExtResource("6_7wuvk")
+bus = &"Car Volume"
+
+[node name="Exhaust_1" type="Marker2D" parent="Backfire"]
+position = Vector2(-120, -26)
+
+[node name="Backfire" parent="Backfire/Exhaust_1" instance=ExtResource("7_jsyv3")]
+
+[node name="Exhaust_2" type="Marker2D" parent="Backfire"]
+position = Vector2(-120, 24)
+
+[node name="Backfire" parent="Backfire/Exhaust_2" instance=ExtResource("7_jsyv3")]

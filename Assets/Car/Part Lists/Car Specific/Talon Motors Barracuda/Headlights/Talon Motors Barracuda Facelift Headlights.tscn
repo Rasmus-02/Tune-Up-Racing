@@ -31,7 +31,7 @@ description = "The factory headlights featured on later variants of the Talon Mo
 paintable = false
 price = 300
 weight = 4
-drag = 0.03
+drag = 0.02
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 material = SubResource("ShaderMaterial_d2vgq")

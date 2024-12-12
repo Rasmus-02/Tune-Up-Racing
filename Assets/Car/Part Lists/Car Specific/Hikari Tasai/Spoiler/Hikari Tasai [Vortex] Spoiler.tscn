@@ -1,0 +1,32 @@
+[gd_scene load_steps=8 format=3 uid="uid://d1wlqw73lueb0"]
+
+[ext_resource type="Script" path="res://Assets/Car/Code/Part_scripts/Spoiler.gd" id="1_tjdu1"]
+[ext_resource type="Shader" path="res://Shaders/Test/ColorSelector.gdshader" id="2_sqi2h"]
+[ext_resource type="Texture2D" uid="uid://b40yuwq8h1474" path="res://Textures/Cars/Hikari Tasai/Spoiler/Hikari Tasai [Vortex] Spoiler.png" id="3_arutk"]
+[ext_resource type="Texture2D" uid="uid://b835fskqleo25" path="res://Textures/Cars/Hikari Tasai/Spoiler/Hikari Tasai [Vortex] Spoiler NM.png" id="4_orbqv"]
+[ext_resource type="Texture2D" uid="uid://cvs2yc43qkmx5" path="res://Textures/Cars/Hikari Tasai/Spoiler/Hikari Tasai [Vortex] Spoiler Spec.png" id="5_1k2av"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_gibfk"]
+shader = ExtResource("2_sqi2h")
+shader_parameter/import_new_color = null
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_swaqy"]
+diffuse_texture = ExtResource("3_arutk")
+normal_texture = ExtResource("4_orbqv")
+specular_texture = ExtResource("5_1k2av")
+specular_shininess = 0.5
+
+[node name="Hikari Tasai [Vortex] Spoiler" type="Node2D"]
+script = ExtResource("1_tjdu1")
+rarity = "rare"
+Car_ID = 2
+Part_Number = 2
+description = "A spoiler by the aftermarket parts manufacturer Vortex providing a decent amount of downforce for the Hikari Tasai."
+price = 400
+weight = 4
+drag = 0.03
+downforce = 70
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_gibfk")
+texture = SubResource("CanvasTexture_swaqy")

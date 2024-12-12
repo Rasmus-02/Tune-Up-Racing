@@ -29,7 +29,7 @@ func _ready():
 
 
 func _process(delta):
-	if car != null:
+	if car != null and Placing.car_list != []:
 		correction_vector  = Vector2(63, -164)
 		map_scale = 0.0122
 		#AI -1 to remove player

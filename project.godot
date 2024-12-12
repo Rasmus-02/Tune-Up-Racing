@@ -15,10 +15,13 @@ run/main_scene="res://Levels/Main.tscn"
 config/use_custom_user_dir=true
 config/custom_user_dir_name="Racing Game"
 config/features=PackedStringArray("4.2", "Forward Plus")
+boot_splash/bg_color=Color(0.105882, 0.105882, 0.105882, 1)
+boot_splash/show_image=false
 config/icon="res://Textures/Testing/Godot_ICON.svg"
 
 [autoload]
 
+Utils="*res://Game_Logic/utils.gd"
 Save_Load="*res://Save_Game/Save_Load.gd"
 SelectedScene="*res://UI/Selected_Scene.gd"
 FontColorSettings="*res://UI/Fonts/Font_Color_Settings.gd"
@@ -194,6 +197,6 @@ textures/canvas_textures/default_texture_filter=0
 2d/shadow_atlas/size=4000
 limits/opengl/max_renderable_lights=64
 limits/opengl/max_lights_per_object=16
-environment/defaults/default_clear_color=Color(0.560784, 0.513726, 0.376471, 1)
+environment/defaults/default_clear_color=Color(0.105882, 0.105882, 0.105882, 1)
 anti_aliasing/quality/msaa_2d=1
 anti_aliasing/quality/use_debanding=true

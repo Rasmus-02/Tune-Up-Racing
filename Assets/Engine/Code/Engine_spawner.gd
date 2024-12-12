@@ -31,7 +31,6 @@ func _ready():
 
 func instantiate_engine():
 	current_engine = engine_list[get_parent().selected_engine]
-	print(current_engine)
 	instance = current_engine[0]
 	add_child(instance)
 	get_parent().update_engine_parts()

@@ -1,0 +1,30 @@
+[gd_scene load_steps=6 format=3 uid="uid://ytmenpj8gq47"]
+
+[ext_resource type="Script" path="res://Assets/Car/Code/Part_scripts/Driveshaft.gd" id="1_rjeda"]
+[ext_resource type="Texture2D" uid="uid://curexjuhbv3wu" path="res://Textures/Cars/Hikari Tasai/Driveshaft/Hikari Tasai [Avalon] AWD Driveshaft.png" id="2_vhn2p"]
+[ext_resource type="Texture2D" uid="uid://j31snbow8b3n" path="res://Textures/Cars/Hikari Tasai/Driveshaft/Hikari Tasai [Avalon] AWD Driveshaft NM.png" id="3_t3gwd"]
+[ext_resource type="Texture2D" uid="uid://egq1ghpukti3" path="res://Textures/Cars/Hikari Tasai/Driveshaft/Hikari Tasai [Avalon] AWD Driveshaft Spec.png" id="4_y4dt7"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_c5td7"]
+diffuse_texture = ExtResource("2_vhn2p")
+normal_texture = ExtResource("3_t3gwd")
+specular_texture = ExtResource("4_y4dt7")
+specular_shininess = 0.5
+
+[node name="Hikari Tasai [Avalon] AWD Driveshaft" type="Node2D"]
+script = ExtResource("1_rjeda")
+rarity = "epic"
+Car_ID = 2
+Part_Number = 5
+description = "An efficient and durable all wheel drive driveshaft for the Hikari Tasai, designed by Avalon"
+price = 4200
+weight = 38
+drivetrain = 2
+max_torque = 850
+drivetrain_loss = 0.16
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = SubResource("CanvasTexture_c5td7")
+
+[node name="Gearbox" type="Marker2D" parent="."]
+position = Vector2(38, 0)

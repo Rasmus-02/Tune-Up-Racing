@@ -194,6 +194,25 @@ func _on_gear_change_timer_timeout():
 		if loaded == true:
 			shift_cooldown = false
 
+var deleted = false
+func delete_car():
+	deleted = true
+	#Clears the instanses in the car
+	parts = [chassi, driveshaft, subframe, fenders, f_bumper, r_bumper, hood, headlights, taillights, spoiler, mirrors, gearbox, radiator,exhaust,brakes,suspension,tires,wheels]
+	for i in parts.size():
+		if parts[i] != null:
+			parts[i].free()
+	parts.clear()
+	if tiresmoke_instanse != null:
+		tiresmoke_instanse.free()
+	#Go into part selector and clear
+	var part_selector = get_child(0).get_child(0).get_child(0)
+	part_selector.reload_car(true)
+	engine.delete_engine()
+	specific_parts.queue_free()
+	universal_parts.queue_free()
+	self.queue_free()
+
 func load_car(index):
 	var load_file = Save_Load.select_car(index)
 	if load_file != null:
@@ -387,7 +406,7 @@ func load_car_from_algorithm(dictionary):
 	get_node("Car_spawner").reload_car()
 	update_car_parts()
 
-func update_car_parts():
+func update_car_parts(): 
 	#selects the car
 	self.get_child(0).current_car = self.get_child(0).car_list[selected_car]
 	#sends signal to part list to update car
@@ -421,12 +440,15 @@ func update_car_parts():
 func update_stats():
 	specific_parts = get_child(0).get_child(0).get_child(0).get_child(0) #from part list specific to the engine
 	universal_parts = get_child(0).get_child(0).get_child(0).get_child(1) #from universal part list
+	var part_selector = get_child(0).get_child(0).get_child(0)
 	
 	#Clears the list
+	parts = [chassi, driveshaft, subframe, fenders, f_bumper, r_bumper, hood, headlights, taillights, spoiler, mirrors, gearbox, radiator,exhaust,brakes,suspension,tires,wheels]
 	for i in parts.size():
 		if parts[i] != null:
 			parts[i].queue_free()
-		
+	parts.clear()
+	
 	chassi = specific_parts.chassi[selected_chassi].instantiate()
 	driveshaft = specific_parts.driveshaft[selected_driveshaft].instantiate()
 	subframe = specific_parts.subframe[selected_subframe].instantiate()
@@ -476,7 +498,6 @@ func update_stats():
 	spoiler.color = spoiler_color
 	mirrors.color = mirrors_color
 	
-	var node = get_child(0).get_child(0).get_node("Part Selector")
 	weight = chassi.weight + driveshaft.weight + subframe.weight + fenders.weight + f_bumper.weight + r_bumper.weight + hood.weight + headlights.weight + taillights.weight + spoiler.weight + mirrors.weight + brakes.weight + suspension.weight + tires.weight + wheels.weight  + gearbox.weight + radiator.weight + exhaust.weight + engine.weight
 	handling_bonus = (1+((suspension.handling_bonus + subframe.handling_bonus) * 0.5)/((1+(weight/1000.0))/2.0))/2 #weight to make heavier cars handle worse
 	max_tire_limit = tires.grip
@@ -505,7 +526,7 @@ func update_stats():
 	engine_bay_size = [chassi.engine_bay_lenght - radiator.width, chassi.engine_bay_width]
 	max_gear = gearbox.gear_ratio.size()
 	shift_timer = get_child(0).get_child(0).get_node("Gear_Change_Timer")#node.shift_timer
-	engine_position = node.engine_position
+	engine_position = part_selector.engine_position
 	#Engine position offset used in size calculations
 	if drive_train_type == 1: #FWD 
 		engine_position_offset = Vector2(gearbox.get_node("Engine").position.y + driveshaft.get_node("Gearbox").position.x - chassi.engine_bay_start_lenght, driveshaft.get_node("Gearbox").position.y - gearbox.get_node("Engine").position.x)
@@ -546,11 +567,11 @@ func is_loaded():
 	else:
 		engine.is_running = false
 
-func _physics_process(delta):
+func _physics_process(delta): 
 	export_signal()
 	if is_ready == false:
 			car_constructor()
-	if is_functional():
+	if is_functional() and deleted == false:
 		if is_loaded():
 			$Label.text = str(int(speed_kmh))
 			$Label/Label.text = str(int((tire_limit/max_tire_limit)*100))

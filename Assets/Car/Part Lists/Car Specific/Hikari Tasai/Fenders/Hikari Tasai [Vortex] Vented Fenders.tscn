@@ -1,0 +1,44 @@
+[gd_scene load_steps=10 format=3 uid="uid://c5p1i1iav7jvl"]
+
+[ext_resource type="Script" path="res://Assets/Car/Code/Part_scripts/Fenders.gd" id="1_udmsx"]
+[ext_resource type="Shader" path="res://Shaders/Test/ColorSelector.gdshader" id="2_6wptw"]
+[ext_resource type="Texture2D" uid="uid://ce0w8o42yv7k7" path="res://Textures/Cars/Hikari Tasai/Fenders/Hikari Tasai [Vortex] Vented Fenders.png" id="3_tyjnl"]
+[ext_resource type="Texture2D" uid="uid://bh18saf06o2yv" path="res://Textures/Cars/Hikari Tasai/Fenders/Hikari Tasai [Vortex] Vented Fenders NM.png" id="4_2q30s"]
+[ext_resource type="Texture2D" uid="uid://bh4xcuqmyy3qw" path="res://Textures/Cars/Hikari Tasai/Fenders/Hikari Tasai [Vortex] Vented Fenders Spec.png" id="5_0gnl8"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_7p8p5"]
+shader = ExtResource("2_6wptw")
+shader_parameter/import_new_color = null
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_37acp"]
+diffuse_texture = ExtResource("3_tyjnl")
+normal_texture = ExtResource("4_2q30s")
+specular_texture = ExtResource("5_0gnl8")
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_s6a5m"]
+polygon = PackedVector2Array(93, -40, 99, -37, 100, -36, 101, -35, 101, -34, 39.5, -34, 34, -40, 34, -41, 50, -41, 51, -42, 79, -42)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_l4i7v"]
+polygon = PackedVector2Array(101, 33, 101, 34, 99, 36, 93.3, 39, 79.1, 41, 51, 41, 50, 40, 34, 40, 34, 39, 40, 33)
+
+[node name="Hikari Tasai [Vortex] Fenders" type="Node2D"]
+script = ExtResource("1_udmsx")
+rarity = "uncommon"
+Car_ID = 2
+Part_Number = 2
+description = "Aftermarket fenders for the Hikari Tasai. Designed by Vortex"
+price = 450
+weight = 12
+downforce = 30
+drag = 0.035
+max_tire_width = 220
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_7p8p5")
+texture = SubResource("CanvasTexture_37acp")
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="."]
+occluder = SubResource("OccluderPolygon2D_s6a5m")
+
+[node name="LightOccluder2D2" type="LightOccluder2D" parent="."]
+occluder = SubResource("OccluderPolygon2D_l4i7v")

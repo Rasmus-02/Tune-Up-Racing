@@ -1,9 +1,10 @@
-[gd_scene load_steps=14 format=3 uid="uid://dljbxyfwrcxgl"]
+[gd_scene load_steps=16 format=3 uid="uid://dljbxyfwrcxgl"]
 
 [ext_resource type="Script" path="res://Assets/Engine/Part_scripts/Exhaust_Manifold.gd" id="1_yagia"]
 [ext_resource type="Texture2D" uid="uid://ddr51uf5s34np" path="res://Textures/Engines/Hikari Suhei-25A/Exhaust/60mm Turbo/Hikai Suhei-25A 60mm Turbo Exhaust Manifold.png" id="2_k1h42"]
 [ext_resource type="Texture2D" uid="uid://jxsa2eww2vu4" path="res://Textures/Engines/Hikari Suhei-25A/Exhaust/60mm Turbo/Hikai Suhei-25A 60mm Turbo Exhaust Manifold NM.png" id="3_w88pd"]
 [ext_resource type="Texture2D" uid="uid://ccs1vc222n44b" path="res://Textures/Engines/Hikari Suhei-25A/Exhaust/60mm Turbo/Hikai Suhei-25A 60mm Turbo Exhaust Manifold Spec.png" id="4_k3rty"]
+[ext_resource type="Texture2D" uid="uid://blpblwb8gv345" path="res://Textures/Engines/Hikari Suhei-25A/Exhaust/60mm Turbo/Hikai Suhei-25A 60mm Turbo Exhaust Manifold 1.png" id="5_7gucx"]
 [ext_resource type="Texture2D" uid="uid://t7e3fbsccuki" path="res://Textures/Engines/Nagata 2S-16I/Exhaust/Stock/Nagata 2S-16i Exhaust Manifold_T.png" id="5_50atl"]
 [ext_resource type="Texture2D" uid="uid://cyrgbxu7xvc8y" path="res://Textures/Engines/Nagata 2S-16I/Exhaust/Stock/Nagata 2S-16i Exhaust Manifold_T NM.png" id="6_xpdvl"]
 [ext_resource type="Texture2D" uid="uid://w0rlbkfsuc5t" path="res://Textures/Engines/Nagata 2S-16I/Exhaust/Stock/Nagata 2S-16i Exhaust Manifold_T Spec.png" id="7_pdius"]
@@ -13,6 +14,12 @@
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_23fjm"]
 diffuse_texture = ExtResource("2_k1h42")
+normal_texture = ExtResource("3_w88pd")
+specular_texture = ExtResource("4_k3rty")
+specular_shininess = 0.35
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_v5xa6"]
+diffuse_texture = ExtResource("5_7gucx")
 normal_texture = ExtResource("3_w88pd")
 specular_texture = ExtResource("4_k3rty")
 specular_shininess = 0.35
@@ -29,11 +36,11 @@ normal_texture = ExtResource("9_05osy")
 specular_texture = ExtResource("10_beh1o")
 specular_shininess = 0.3
 
-[node name="Hikari Suhei-25A 60mm Turbo Exhaust Manifold" type="Node2D"]
+[node name="Hikari Suhei-25A Stock 60mm Turbo" type="Node2D"]
 script = ExtResource("1_yagia")
 rarity = "rare"
 Engine_ID = 3
-Part_Number = 2
+Part_Number = 4
 width = 7
 description = "The factory turbo for the boosted variant of the Hikari Suhei-25A Engine"
 price = 2250
@@ -46,6 +53,10 @@ turbo_1_size = 60.0
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = SubResource("CanvasTexture_23fjm")
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+z_index = -2
+texture = SubResource("CanvasTexture_v5xa6")
 
 [node name="Trans" type="Sprite2D" parent="."]
 visible = false

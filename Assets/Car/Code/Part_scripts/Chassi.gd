@@ -52,3 +52,13 @@ func paint_part(color_index):
 		
 		var new_specular = Colors.list[color_index][3]
 		get_node("Sprite2D").texture.set_specular_shininess(new_specular) #Set the shine level
+
+
+
+
+# ORPHAN NODE HANDLER, DELETE WHEN SCENE CHANGE
+func _init():
+	Utils.connect("freeing_orphans", Callable(self, "_free_if_orphaned"))
+func _free_if_orphaned():
+	if not is_inside_tree(): # Optional check - don't free if in the scene tree
+		queue_free()

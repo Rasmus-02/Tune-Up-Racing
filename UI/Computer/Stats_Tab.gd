@@ -17,8 +17,6 @@ var selected_color : int
 func _input(_event): #Check only when a button is pressed
 	if Input.is_action_pressed("ui_cancel"):
 		close()
-	#elif Input.is_action_just_pressed("ui_accept"):
-	#	_on_buy_sell_button_pressed()
 
 func open(): #open stats 
 	status = "open"
@@ -71,7 +69,7 @@ func update_image(): #add the part to the scene as an image
 	#selected_item.position = $Display.position + Vector2(32,-230)
 	selected_item.global_position = part_location.global_position
 	$"Display/Lighting/Light Axis".global_position = part_location.global_position
-	selected_item.z_index = 1
+	selected_item.z_index = 10
 	#Change color
 	selected_color = selected_item.color
 

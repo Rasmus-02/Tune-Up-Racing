@@ -1,0 +1,39 @@
+[gd_scene load_steps=9 format=3 uid="uid://k2snucjplit6"]
+
+[ext_resource type="Script" path="res://Assets/Car/Code/Part_scripts/R_bumper.gd" id="1_baf1b"]
+[ext_resource type="Shader" path="res://Shaders/Test/ColorSelector.gdshader" id="2_v7ekg"]
+[ext_resource type="Texture2D" uid="uid://bcjfhlftspnv0" path="res://Textures/Cars/Hikari Tasai/Rear bumper/Hikari Tasai [Niepa] Rear Bumper.png" id="3_2k7d5"]
+[ext_resource type="Texture2D" uid="uid://b7dq336mk22om" path="res://Textures/Cars/Hikari Tasai/Rear bumper/Hikari Tasai [Niepa] Rear Bumper NM.png" id="4_3bglg"]
+[ext_resource type="Texture2D" uid="uid://ckc4xnmsvgwhv" path="res://Textures/Cars/Hikari Tasai/Rear bumper/Hikari Tasai [Niepa] Rear Bumper Spec.png" id="5_q8tjr"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_oursw"]
+shader = ExtResource("2_v7ekg")
+shader_parameter/import_new_color = null
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_r5f60"]
+diffuse_texture = ExtResource("3_2k7d5")
+normal_texture = ExtResource("4_3bglg")
+specular_texture = ExtResource("5_q8tjr")
+specular_shininess = 0.5
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_t85q0"]
+polygon = PackedVector2Array(-89, 42, -104, 42, -110, 39, -114, 35, -115, 33, -115, 28, -112, 28, -112, 19, -115, 19, -115, -20, -112, -20, -112, -29, -115, -29, -115, -34, -114, -36, -110, -40, -104, -43, -89, -43, -88, -42, -88, 41)
+
+[node name="Hikari Tasai [Niepa] Rear Bumper" type="Node2D"]
+script = ExtResource("1_baf1b")
+rarity = "rare"
+Car_ID = 2
+Part_Number = 3
+description = "An aftermarket rear bumper for the Hikari Tasai. Designed by Niepa"
+price = 450
+weight = 9
+downforce = 25
+drag = 0.03
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_oursw")
+texture = SubResource("CanvasTexture_r5f60")
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="."]
+position = Vector2(-6, 0)
+occluder = SubResource("OccluderPolygon2D_t85q0")

@@ -1,0 +1,72 @@
+[gd_scene load_steps=16 format=3 uid="uid://dmi2ic8kdllya"]
+
+[ext_resource type="Script" path="res://Assets/Engine/Part_scripts/Exhaust_Manifold.gd" id="1_6frba"]
+[ext_resource type="Texture2D" uid="uid://cbrofra5s5a2n" path="res://Textures/Engines/Hikari Suhei-25A/Exhaust/KS-Racing/Hikai Suhei-25A KS-Racing Performance Exhaust Manifold 1.png" id="2_uj7q4"]
+[ext_resource type="Texture2D" uid="uid://cb0tn70cg76jd" path="res://Textures/Engines/Hikari Suhei-25A/Exhaust/KS-Racing/Hikai Suhei-25A KS-Racing Performance Exhaust Manifold NM.png" id="3_i8aef"]
+[ext_resource type="Texture2D" uid="uid://clb4pdd60anx" path="res://Textures/Engines/Hikari Suhei-25A/Exhaust/KS-Racing/Hikai Suhei-25A KS-Racing Performance Exhaust Manifold Spec.png" id="4_c8v0m"]
+[ext_resource type="Texture2D" uid="uid://bdatxyw8iau81" path="res://Textures/Engines/Hikari Suhei-25A/Exhaust/KS-Racing/Hikai Suhei-25A KS-Racing Performance Exhaust Manifold 2.png" id="5_qseg2"]
+[ext_resource type="Texture2D" uid="uid://t7e3fbsccuki" path="res://Textures/Engines/Nagata 2S-16I/Exhaust/Stock/Nagata 2S-16i Exhaust Manifold_T.png" id="6_ioeqm"]
+[ext_resource type="Texture2D" uid="uid://cyrgbxu7xvc8y" path="res://Textures/Engines/Nagata 2S-16I/Exhaust/Stock/Nagata 2S-16i Exhaust Manifold_T NM.png" id="7_g71wh"]
+[ext_resource type="Texture2D" uid="uid://w0rlbkfsuc5t" path="res://Textures/Engines/Nagata 2S-16I/Exhaust/Stock/Nagata 2S-16i Exhaust Manifold_T Spec.png" id="8_4ufwf"]
+[ext_resource type="Texture2D" uid="uid://dm65u133nd2y0" path="res://Textures/Engines/Nagata 2S-16I/Exhaust/Stock/Nagata 2S-16i Exhaust Manifold_L.png" id="9_6q2u1"]
+[ext_resource type="Texture2D" uid="uid://d1g38ro0boro5" path="res://Textures/Engines/Nagata 2S-16I/Exhaust/Stock/Nagata 2S-16i Exhaust Manifold_L NM.png" id="10_sskee"]
+[ext_resource type="Texture2D" uid="uid://da2jf3l6ifcdr" path="res://Textures/Engines/Nagata 2S-16I/Exhaust/Stock/Nagata 2S-16i Exhaust Manifold_L Spec.png" id="11_nwhsf"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_23fjm"]
+diffuse_texture = ExtResource("2_uj7q4")
+normal_texture = ExtResource("3_i8aef")
+specular_texture = ExtResource("4_c8v0m")
+specular_shininess = 0.3
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_vjhs3"]
+diffuse_texture = ExtResource("5_qseg2")
+normal_texture = ExtResource("3_i8aef")
+specular_texture = ExtResource("4_c8v0m")
+specular_shininess = 0.3
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_inuwe"]
+diffuse_texture = ExtResource("6_ioeqm")
+normal_texture = ExtResource("7_g71wh")
+specular_texture = ExtResource("8_4ufwf")
+specular_shininess = 0.3
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_g6r2h"]
+diffuse_texture = ExtResource("9_6q2u1")
+normal_texture = ExtResource("10_sskee")
+specular_texture = ExtResource("11_nwhsf")
+specular_shininess = 0.3
+
+[node name="Hikari Suhei-25A [KS-Racing] Exhaust Manifold" type="Node2D"]
+script = ExtResource("1_6frba")
+rarity = "rare"
+Engine_ID = 3
+Part_Number = 3
+description = "A performance exhaust manifold for the Hikari Suhei-25A Engine, designed by KS-Racing"
+price = 850
+weight = 12
+tq_mod = 1.1
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+z_index = -2
+texture = SubResource("CanvasTexture_23fjm")
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+z_index = -2
+texture = SubResource("CanvasTexture_vjhs3")
+
+[node name="Trans" type="Sprite2D" parent="."]
+visible = false
+z_index = -5
+position = Vector2(-17, -23)
+texture = SubResource("CanvasTexture_inuwe")
+
+[node name="Long" type="Sprite2D" parent="."]
+visible = false
+z_index = -5
+position = Vector2(-46, -2)
+texture = SubResource("CanvasTexture_g6r2h")
+
+[node name="Long2" type="Sprite2D" parent="Long"]
+z_index = -5
+position = Vector2(0, -14)
+texture = SubResource("CanvasTexture_g6r2h")

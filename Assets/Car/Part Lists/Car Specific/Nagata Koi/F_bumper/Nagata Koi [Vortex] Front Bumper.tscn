@@ -25,7 +25,7 @@ polygon = PackedVector2Array(133, 26, 133, 17, 132, 17, 132, -14, 133, -14, 133,
 [node name="Nagata Koi [Vortex] Front Bumper" type="Node2D"]
 script = ExtResource("1_6y7pb")
 rarity = "uncommon"
-Part_Number = 4
+Part_Number = 3
 description = "An affordable front bumper with improved cooling airflow for the Nagata Koi, designed by the aftermarket parts manufacturer Vortex"
 price = 325
 weight = 8

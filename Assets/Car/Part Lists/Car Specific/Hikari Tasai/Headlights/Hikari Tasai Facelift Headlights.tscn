@@ -1,0 +1,52 @@
+[gd_scene load_steps=12 format=3 uid="uid://b6rh64qpn2kin"]
+
+[ext_resource type="Script" path="res://Assets/Car/Code/Part_scripts/Headlights.gd" id="1_g3mlr"]
+[ext_resource type="Shader" path="res://Shaders/Test/ColorSelector.gdshader" id="2_1dgrj"]
+[ext_resource type="Texture2D" uid="uid://btwm4q66wtq4t" path="res://Textures/Cars/Hikari Tasai/Headlights/Hikari Tasai Facelift Headlights.png" id="3_bugaa"]
+[ext_resource type="Texture2D" uid="uid://bs3hwp2lx36k5" path="res://Textures/Cars/Hikari Tasai/Headlights/Hikari Tasai Facelift Headlights NM.png" id="4_78yrn"]
+[ext_resource type="Texture2D" uid="uid://c78shswu1qbg5" path="res://Textures/Cars/Hikari Tasai/Headlights/Hikari Tasai Facelift Headlights Spec.png" id="5_dam0q"]
+[ext_resource type="Texture2D" uid="uid://dgypdw7rfhiqh" path="res://Textures/Cars/Hikari Tasai/Headlights/Hikari Tasai Facelift Headlights Lightmask.png" id="6_56scc"]
+[ext_resource type="PackedScene" uid="uid://brbx33n7duy1v" path="res://Shaders/headlights.tscn" id="7_4mdef"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_k5tqf"]
+shader = ExtResource("2_1dgrj")
+shader_parameter/import_new_color = null
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_ma2ib"]
+diffuse_texture = ExtResource("3_bugaa")
+normal_texture = ExtResource("4_78yrn")
+specular_texture = ExtResource("5_dam0q")
+specular_shininess = 0.5
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_566wh"]
+blend_mode = 1
+light_mode = 1
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_shjy8"]
+shader = ExtResource("2_1dgrj")
+shader_parameter/import_new_color = null
+
+[node name="Hikari Tasai Facelift Headlights" type="Node2D"]
+script = ExtResource("1_g3mlr")
+rarity = "uncommon"
+Car_ID = 2
+Part_Number = 2
+description = "The factory headlights featured on later variants of the Hikari Tasai. Designed to reduce drag"
+paintable = false
+price = 350
+weight = 4
+downforce = 6
+drag = 0.01
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_k5tqf")
+texture = SubResource("CanvasTexture_ma2ib")
+
+[node name="Lightmask" type="Sprite2D" parent="Sprite2D"]
+visible = false
+material = SubResource("CanvasItemMaterial_566wh")
+texture = ExtResource("6_56scc")
+
+[node name="Lights" parent="." instance=ExtResource("7_4mdef")]
+light_mask = 1
+material = SubResource("ShaderMaterial_shjy8")

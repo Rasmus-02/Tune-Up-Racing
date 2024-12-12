@@ -56,6 +56,7 @@ var brake_list = [null,null,null,null]
 func instantiate_car():
 	specific = get_child(0)
 	universal = get_child(1)
+	
 	chassi = specific.chassi[selected_chassi].instantiate()
 	driveshaft = specific.driveshaft[selected_driveshaft].instantiate()
 	subframe = specific.subframe[selected_subframe].instantiate()
@@ -190,7 +191,7 @@ func radiator_constructor():
 				engine.get_node("Radiator_Piping_Longitudinal").visible = false
 				radiator_loaded = true
 
-func reload_car():
+func reload_car(delete):
 	#despawns the car
 	if chassi != null:
 		chassi.queue_free()
@@ -229,13 +230,24 @@ func reload_car():
 			tire_list[i].queue_free()
 		if wheel_list[i] != null:
 			wheel_list[i].queue_free()
+	
 	#respawns the car
-	instantiate_car()
+	if delete == false:
+		instantiate_car()
 
 func _process(_delta):
 	if radiator_loaded == false:
 		radiator_constructor()
 	if update == true:
 		radiator_loaded = false
-		reload_car()
+		reload_car(false)
 		update = false
+
+
+
+# ORPHAN NODE HANDLER, DELETE WHEN SCENE CHANGE
+func _init():
+	Utils.connect("freeing_orphans", Callable(self, "_free_if_orphaned"))
+func _free_if_orphaned():
+	if not is_inside_tree(): # Optional check - don't free if in the scene tree
+		queue_free()

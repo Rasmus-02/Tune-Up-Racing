@@ -1,0 +1,12 @@
+extends Node2D
+
+
+var main = null
+
+func _ready():
+	main = get_tree().get_root().get_node("Main")
+	$AnimationPlayer.play("start")
+	$Sprite.play("start")
+
+func _on_animation_player_animation_finished(anim_name):
+	main.change_scene("garage")

@@ -1,5 +1,6 @@
-[gd_scene load_steps=11 format=3 uid="uid://dc08gcftuqtqr"]
+[gd_scene load_steps=12 format=3 uid="uid://dc08gcftuqtqr"]
 
+[ext_resource type="Script" path="res://Game_Logic/Cleaner.gd" id="1_nesmm"]
 [ext_resource type="PackedScene" uid="uid://cctyed3jxvgm6" path="res://Assets/Engine/Part Lists/Part Selector/Part Selector engine.tscn" id="2_kijil"]
 [ext_resource type="PackedScene" uid="uid://562gipqro1ak" path="res://Assets/Engine/Part Lists/Engine Specific/Nagata 2S-16i/nagata_2s_16i part list.tscn" id="3_wwq5s"]
 [ext_resource type="PackedScene" uid="uid://0lggp6gpn8xa" path="res://Assets/Engine/Part Lists/Universal/Universal part list.tscn" id="4_t08m2"]
@@ -22,6 +23,7 @@ specular_texture = ExtResource("6_fl1pu")
 specular_shininess = 0.5
 
 [node name="Nagata 2S-16i" type="Node2D"]
+script = ExtResource("1_nesmm")
 
 [node name="Part Selector" parent="." instance=ExtResource("2_kijil")]
 
