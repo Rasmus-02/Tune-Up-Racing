@@ -1,10 +1,10 @@
-[gd_scene load_steps=8 format=3 uid="uid://baccpg151oh5u"]
+[gd_scene load_steps=9 format=3 uid="uid://baccpg151oh5u"]
 
 [ext_resource type="Script" path="res://Assets/Car/Code/Part_scripts/Taillights.gd" id="1_fm0pq"]
 [ext_resource type="Texture2D" uid="uid://br5b3o8v4uoix" path="res://Textures/Cars/Talon Motors Barracuda/Taillights/Talon Motors Barracuda Facelift Taillights.png" id="2_lnshn"]
 [ext_resource type="Texture2D" uid="uid://dkpplt6dmlc3l" path="res://Textures/Cars/Talon Motors Barracuda/Taillights/Talon Motors Barracuda Facelift Taillights NM.png" id="3_72fi0"]
 [ext_resource type="Texture2D" uid="uid://ddmfmw0lan28n" path="res://Textures/Cars/Talon Motors Barracuda/Taillights/Talon Motors Barracuda Facelift Taillights Spec.png" id="4_5q22d"]
-[ext_resource type="Texture2D" uid="uid://dds3p523p0ik5" path="res://Shaders/light.png" id="5_wyhi5"]
+[ext_resource type="Texture2D" uid="uid://bk3wswbidogwf" path="res://Textures/Cars/Talon Motors Barracuda/Taillights/mask/Talon Motors Barracuda Facelift Taillights Lightmask.png" id="5_oabwo"]
 [ext_resource type="PackedScene" uid="uid://ceb752tulxcv" path="res://Shaders/taillights.tscn" id="6_dplsx"]
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_5na48"]
@@ -12,6 +12,10 @@ diffuse_texture = ExtResource("2_lnshn")
 normal_texture = ExtResource("3_72fi0")
 specular_texture = ExtResource("4_5q22d")
 specular_shininess = 0.5
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_amd5r"]
+blend_mode = 1
+light_mode = 1
 
 [node name="Talon Motors Barracuda Facelift Taillights" type="Node2D"]
 script = ExtResource("1_fm0pq")
@@ -26,21 +30,10 @@ weight = 2
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = SubResource("CanvasTexture_5na48")
 
-[node name="L_Light" type="PointLight2D" parent="Sprite2D"]
-position = Vector2(-111, -26)
-scale = Vector2(1.2, 1.2)
-color = Color(0.345098, 0, 0, 1)
-texture = ExtResource("5_wyhi5")
-texture_scale = 0.02
-height = 100.0
-
-[node name="R_Light" type="PointLight2D" parent="Sprite2D"]
-position = Vector2(-111, 25)
-scale = Vector2(1.2, 1.2)
-color = Color(0.345098, 0, 0, 1)
-texture = ExtResource("5_wyhi5")
-texture_scale = 0.02
-height = 100.0
+[node name="Lightmask" type="Sprite2D" parent="Sprite2D"]
+modulate = Color(0, 0, 0, 1)
+material = SubResource("CanvasItemMaterial_amd5r")
+texture = ExtResource("5_oabwo")
 
 [node name="Taillights" parent="." instance=ExtResource("6_dplsx")]
 position = Vector2(-101, 0)

@@ -1,10 +1,10 @@
-[gd_scene load_steps=8 format=3 uid="uid://088s7c2ubmsb"]
+[gd_scene load_steps=9 format=3 uid="uid://088s7c2ubmsb"]
 
 [ext_resource type="Script" path="res://Assets/Car/Code/Part_scripts/Taillights.gd" id="1_p2jn0"]
 [ext_resource type="Texture2D" uid="uid://cq0sbjkcrn26q" path="res://Textures/Cars/Hikari Tasai/Taillight/Hikari Tasai Stock Taillights.png" id="2_lvddp"]
 [ext_resource type="Texture2D" uid="uid://d1qn7y3ptnuog" path="res://Textures/Cars/Hikari Tasai/Taillight/Hikari Tasai Stock Taillights NM.png" id="3_d4alu"]
 [ext_resource type="Texture2D" uid="uid://1cc4kim8jk41" path="res://Textures/Cars/Hikari Tasai/Taillight/Hikari Tasai Stock Taillights Spec.png" id="4_t5ahb"]
-[ext_resource type="Texture2D" uid="uid://dds3p523p0ik5" path="res://Shaders/light.png" id="5_386jp"]
+[ext_resource type="Texture2D" uid="uid://gthqieonu4bh" path="res://Textures/Cars/Hikari Tasai/Taillight/mask/Hikari Tasai Stock Taillights Lightmask.png" id="5_con3m"]
 [ext_resource type="PackedScene" uid="uid://ceb752tulxcv" path="res://Shaders/taillights.tscn" id="6_6rwuo"]
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_5na48"]
@@ -12,6 +12,10 @@ diffuse_texture = ExtResource("2_lvddp")
 normal_texture = ExtResource("3_d4alu")
 specular_texture = ExtResource("4_t5ahb")
 specular_shininess = 0.5
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_4877o"]
+blend_mode = 1
+light_mode = 1
 
 [node name="Hikari Tasai Stock Taillights" type="Node2D"]
 script = ExtResource("1_p2jn0")
@@ -26,23 +30,10 @@ weight = 4
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = SubResource("CanvasTexture_5na48")
 
-[node name="L_Light" type="PointLight2D" parent="Sprite2D"]
-position = Vector2(-107.628, -30)
-scale = Vector2(1.2, 1.2)
-skew = 0.326377
-color = Color(0.345098, 0, 0, 1)
-texture = ExtResource("5_386jp")
-texture_scale = 0.02
-height = 100.0
-
-[node name="R_Light" type="PointLight2D" parent="Sprite2D"]
-position = Vector2(-107.628, 30)
-scale = Vector2(1.2, 1.2)
-skew = -0.326377
-color = Color(0.345098, 0, 0, 1)
-texture = ExtResource("5_386jp")
-texture_scale = 0.02
-height = 100.0
+[node name="Lightmask" type="Sprite2D" parent="Sprite2D"]
+modulate = Color(0, 0, 0, 1)
+material = SubResource("CanvasItemMaterial_4877o")
+texture = ExtResource("5_con3m")
 
 [node name="Taillights" parent="." instance=ExtResource("6_6rwuo")]
 position = Vector2(-110, 0)

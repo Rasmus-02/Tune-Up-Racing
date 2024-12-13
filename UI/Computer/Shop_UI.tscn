@@ -313,7 +313,7 @@ offset_top = 8.0
 offset_right = 568.0
 offset_bottom = 139.0
 text = "You are too broke to buy
-this, looser"
+this, loser"
 horizontal_alignment = 1
 
 [node name="PointLight2D" type="PointLight2D" parent="Control/Part Stats/Not Enough Money Popup"]

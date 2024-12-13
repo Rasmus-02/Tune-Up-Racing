@@ -756,27 +756,26 @@ func collision_handler(): #If car crashes into something or gets crashed into
 
 func light_controll(light_type,on_off, strenght):
 	if selected_taillights != 0 and taillights != null and selected_headlights != 0 and headlights != null:
-		var left_sprite_light = self.get_child(0).get_child(0).get_child(0).taillights.get_child(0).get_child(0)
-		var right_sprite_light = self.get_child(0).get_child(0).get_child(0).taillights.get_child(0).get_child(1)
+		var taillight_sprite = self.get_child(0).get_child(0).get_child(0).taillights.get_node("Sprite2D")
 		if light_type == "rear": #Taillights
 			var index = 0
 			if on_off == true: #Set the light of the sprite
-				left_sprite_light.energy = 6
-				right_sprite_light.energy = 6
+				taillight_sprite.modulate = Color(strenght, strenght, strenght)
 				for i in 1: #Set the actual light coming of
 					index = i
 					var taillight = self.get_child(0).get_child(0).get_child(0).taillights.get_node("Taillights").get_child(index)
-					taillight.energy = 1
-					taillight.texture_scale = 0.2
+					taillight.visible = true
+					taillight.energy = strenght / 2.0
+					taillight.texture_scale = 0.1 * strenght
 					i+=1
 			elif on_off == false: #Set the light of the sprite
-				left_sprite_light.energy = 2.2
-				right_sprite_light.energy = 2.2
+				taillight_sprite.modulate = Color(0,0,0)
 				for i in 1: #Set the actual light coming of
 					index = i
 					var taillight = self.get_child(0).get_child(0).get_child(0).taillights.get_node("Taillights").get_child(index)
-					taillight.energy = 0.3
-					taillight.texture_scale = 0.15
+					taillight.visible = false
+					taillight.energy = 0
+					taillight.texture_scale = 0
 					i+=1
 		var headlight_strenght = strenght / 30.0
 		var headlight_sprite = self.get_child(0).get_child(0).get_child(0).headlights.get_node("Sprite2D")
@@ -894,21 +893,21 @@ func get_input():
 		if d > 0: #to check if car is moving forwards
 			acceleration = backward * max_braking_acceleration * d
 			tire_limit -= backward * (tirelimit_scale * (brake_force / -200.0))
-			light_controll("rear",true, 1)
+			light_controll("rear",true, 1.7)
 		else: #to check that car is not moving forwards
 			acceleration = backward * (transform.x * ((-engine_power / (weight / 10)) * (tire_limit/max_tire_limit)))
 			if velocity.length() < 100:
-				light_controll("rear",true, 1)
+				light_controll("rear",true, 1.7)
 			else:
-				light_controll("rear",false, 1)
+				light_controll("rear",true, 2.0)
 	else:
 		steering_angle = max_steering_angle# / ((velocity.length() + 4000)/4000)
 	if handbrake > 0:
 		tire_limit -= tirelimit_scale * (brake_force / -50.0)
 		acceleration = transform.x * ((brake_force * 0.35) * (d*0.7))
-		light_controll("rear",true, 1)
+		light_controll("rear",true, 1.7)
 	if backward <= 0 and handbrake <= 0:
-		light_controll("rear",false, 1)
+		light_controll("rear",true, 1.25)
 
 #for calculating how much the car is sliding
 func sliding():
