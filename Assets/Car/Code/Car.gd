@@ -63,6 +63,8 @@ var right : float
 var clutch : float
 var handbrake : float
 var rubberbanding = 1.0
+var on_road = true
+var last_on_road_position = Vector2.ZERO
 
 @export var selected_car_key = 0
 @export var selected_engine = 0
@@ -670,6 +672,15 @@ func wheel_controller():
 					wheels_on_road_array.append(false)
 			wheels_on_road = n
 			
+			#When going off the road completely, save position to teleport to if out off bounds
+			if wheels_on_road == 0:
+				if on_road == true:
+					last_on_road_position = self.global_position
+				on_road = false
+			#If back on road, reset on_road status
+			else:
+				on_road = true
+			
 			if wheels_on_road < 2:
 				Laptime.disqualify()
 		else:
@@ -752,6 +763,11 @@ func collision_handler(): #If car crashes into something or gets crashed into
 			collision.emitting = true
 			$"Sound effects/AudioStreamPlayer2D".play()
 
+
+func out_of_bounds():
+	print("Out of Bounds")
+	global_position = last_on_road_position
+	velocity = Vector2.ZERO
 
 
 func light_controll(light_type,on_off, strenght):

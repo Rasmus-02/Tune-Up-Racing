@@ -23,10 +23,10 @@ func open():
 func race_reward():
 	#Baseline
 	var money = 150.0
-	var xp = 1000.0
+	var xp = 1500.0
 	#Add player level bonuses
 	money += Save_Load.level * 25 # 25$ more per level
-	xp += Save_Load.level * 25 # 25 more per level (makes xp harder to get later on, but easier than money early on)
+	xp += Save_Load.level * 50 # 50 more per level
 	#Add bonuses based on car stats
 	money *= RaceStatus.reward_bonus
 	xp *= RaceStatus.reward_bonus

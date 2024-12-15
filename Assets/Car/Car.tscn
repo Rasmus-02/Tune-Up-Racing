@@ -123,6 +123,7 @@ brake_padding = 0.2
 turn_smoothing = 0.2
 gas_aggression = 0.9
 inaccuracy = 100.0
+breakoff_distance = 165.0
 
 [node name="Pointer" type="Sprite2D" parent="AI"]
 visible = false

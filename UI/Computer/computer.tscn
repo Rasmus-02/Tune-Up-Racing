@@ -38,6 +38,7 @@ bg_color = Color(0, 0, 0, 0.0823529)
 [node name="Computer" type="Node2D"]
 light_mask = 524289
 visibility_layer = 524289
+z_index = 5
 script = ExtResource("1_mvcos")
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
@@ -62,6 +63,7 @@ offset_right = -191.0
 offset_bottom = -191.0
 scale = Vector2(96.05, 95.335)
 color = Color(0, 0, 0, 1)
+metadata/_edit_use_anchors_ = true
 
 [node name="PointLight2D" type="PointLight2D" parent="CanvasModulate"]
 range_z_min = 3498
@@ -69,6 +71,7 @@ range_z_max = 3499
 texture = ExtResource("3_02jpd")
 
 [node name="Webbrowser" parent="." instance=ExtResource("2_tjn7o")]
+light_mask = 2
 material = SubResource("ShaderMaterial_ricr3")
 anchors_preset = 8
 anchor_left = 0.5
@@ -82,6 +85,7 @@ offset_bottom = -787.479
 scale = Vector2(0.2, 0.2)
 pivot_offset = Vector2(1276.11, 741.859)
 size_flags_horizontal = 4
+metadata/_edit_use_anchors_ = true
 
 [node name="Button" type="Button" parent="."]
 offset_left = 154.451
@@ -93,5 +97,6 @@ theme_override_styles/hover = SubResource("StyleBoxFlat_karbx")
 theme_override_styles/pressed = SubResource("StyleBoxEmpty_jlgqj")
 theme_override_styles/disabled = SubResource("StyleBoxEmpty_dv7wx")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_h56lh")
+metadata/_edit_use_anchors_ = true
 
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

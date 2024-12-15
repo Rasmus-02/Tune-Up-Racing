@@ -7,6 +7,7 @@ var cars = {}
 var money = 0
 var xp = 0
 var level = 0
+var time = [1,0,0] #Day, Hour, Minute
 var part_inventory = {
 	"car" : {
 		"Front Bumper" : {},
@@ -54,10 +55,8 @@ func _ready():
 	pass
 	if load_file("engines") != null:
 		engines = load_file("engines")
-		print("engine list loaded")
 	if load_file("cars") != null:
 		cars = load_file("cars")
-		print("car list loaded")
 	if load_file("part_inventory") != null:
 		part_inventory = load_file("part_inventory")
 		print("part_inventory loaded")
@@ -67,6 +66,8 @@ func _ready():
 		xp = load_file("player_stats").xp
 		level = load_file("player_stats").level
 		money = load_file("player_stats").money
+	if load_file("time") != null:
+		time = load_file("time")
 	
 	#IF SAVEFILE IS EMPTY
 	if FileAccess.file_exists(file_location) == false:
@@ -145,7 +146,13 @@ func save_selected_key(key):
 func save():
 	#print("save_called")
 	if FileAccess.file_exists(file_location):
-		var save_dict = {"engines" : engines, "engine parts" : save_engine_stats(), "cars" : cars, "car parts" : save_car_stats(),"part_inventory" : part_inventory, "selected_car_key" : save_selected_key(selected_car_key), "player_stats" : save_player_stats()}
+		
+		var save_dict = {"engines" : engines, "engine parts" : save_engine_stats(), 
+		"cars" : cars, "car parts" : save_car_stats(),"part_inventory" : part_inventory, 
+		"selected_car_key" : save_selected_key(selected_car_key), 
+		"player_stats" : save_player_stats(), "time" : time}
+		
+		print(save_dict)
 		var save_game = FileAccess.open(file_location, FileAccess.WRITE)
 		var json_string = JSON.stringify(save_dict)
 		save_game.store_line(json_string)
@@ -325,6 +332,8 @@ func load_file(filetype):
 				return parsedResult.get("selected_car_key")
 			elif filetype == "player_stats":
 				return parsedResult.get("player_stats")
+			elif filetype == "time":
+				return parsedResult.get("time")
 			elif filetype == "all":
 				return parsedResult
 		else:

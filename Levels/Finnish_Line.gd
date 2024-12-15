@@ -10,7 +10,7 @@ func _on_body_entered(body):
 		var car_position_node = body.get_node("AI").line_index
 		var max_position_nodes = body.get_node("AI").racing_line.get_point_count()
 		#Race Against AI
-		if car_position_node >= max_position_nodes * 0.85: #Make sure that player has completed at least 85% of the lap
+		if car_position_node >= max_position_nodes * 0.8: #Make sure that player has completed at least 85% of the lap
 			
 			if body.get_node("AI").lap == Placing.max_lap:
 				complete_count += 1 #For each car that completes race, this goes up by one

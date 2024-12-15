@@ -54,6 +54,7 @@ func _on_resume_pressed():
 func _on_quit_pressed():
 	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 	if SelectedScene.scene == "garage": #Closes down the game
+		Save_Load.save()
 		get_tree().quit()
 	else:
 		Placing.car_list.clear()

@@ -11,6 +11,7 @@ var right = 0.0
 @export_range(0.0, 1.0, 0.1) var turn_smoothing
 @export_range(0.1, 1, 0.1) var gas_aggression
 @export_range(0,200,5) var inaccuracy
+@export_range(100, 300, 1) var breakoff_distance
 var racing_line = null#: Line2D
 var pursuing = false
 var track_progress : float
@@ -103,14 +104,13 @@ func get_next_point():
 		var temp_car_dir = self_pos.direction_to(sensor.closest_car.global_position).angle() - self.global_rotation
 		var oponent_sensors = sensor.closest_car.get_node("AI").get_node("Sensor")
 		#Set the new target position to be in front to a suitable side of the opponent
-		if sensor.right_90 > 150 and sensor.left_90 > 150 and sensor.right_45 > 180 and sensor.left_45 > 180 and car.wheels_on_road == 4 and sensor.closest_car.wheels_on_road == 4 and sensor.closest_car.get_node("AI").pursuing == false and car.player == false:
+		if sensor.right_90 > breakoff_distance and sensor.left_90 > breakoff_distance and sensor.right_45 > breakoff_distance * 1.4 and sensor.left_45 > breakoff_distance * 1.4 and car.wheels_on_road == 4 and sensor.closest_car.wheels_on_road == 4 and sensor.closest_car.get_node("AI").pursuing == false and car.player == false:
 			temp_point_pos = sensor.closest_car.global_position + offset_direction * offset_distance
 			pursuing = true
 		else:
 			temp_point_pos = racing_line.get_point_position(line_index) + Vector2(inaccuracy_rng,inaccuracy_rng)
 		
 		#Change which side it will overtake on
-		#if temp_car_dir < deg_to_rad(40) and temp_car_dir > deg_to_rad(-40):
 		if oponent_sensors.left_90 > 180 and sensor.left_90 < oponent_sensors.left_90 or oponent_sensors.right_90 <= 180: #Turn Left
 			offset_angle = deg_to_rad(-25) * overtake_rng
 		elif oponent_sensors.right_90 > 180 and sensor.right_90 < oponent_sensors.right_90 or oponent_sensors.left_90 <= 180: #Turn Right

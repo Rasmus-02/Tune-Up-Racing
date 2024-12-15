@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://c4yqhcejl0djd"]
+[gd_scene load_steps=13 format=3 uid="uid://c4yqhcejl0djd"]
 
 [ext_resource type="Theme" uid="uid://qykmoumcml8g" path="res://UI/Default UI Theme.tres" id="1_gdnfh"]
 [ext_resource type="Script" path="res://Assets/Player Character/Statcard_Animations.gd" id="2_5jgpb"]
@@ -7,6 +7,8 @@
 [ext_resource type="Texture2D" uid="uid://duc4bmve4nbyu" path="res://Textures/UI/Player Stats/Statcard progress bar.png" id="5_yv6au"]
 [ext_resource type="Script" path="res://Assets/Player Character/Level_Color.gd" id="6_ss4vf"]
 [ext_resource type="Script" path="res://Assets/Player Character/Money.gd" id="7_0euky"]
+[ext_resource type="Script" path="res://Assets/Player Character/Statcard_Date_Time.gd" id="8_lgq5d"]
+[ext_resource type="Texture2D" uid="uid://dr543ma5v5awc" path="res://Textures/UI/Player Stats/Daytime Status.png" id="9_rxcr4"]
 
 [sub_resource type="Animation" id="Animation_at86e"]
 length = 0.001
@@ -68,15 +70,15 @@ texture = ExtResource("2_ptxjq")
 vframes = 3
 
 [node name="Statcard Frame" type="Sprite2D" parent="."]
-position = Vector2(24, 39)
+position = Vector2(24, 44.5084)
 texture = ExtResource("4_3gvpa")
 
 [node name="ProgressBar" type="TextureProgressBar" parent="."]
 layout_mode = 2
 offset_left = 4.0
-offset_top = 52.0
+offset_top = 51.9766
 offset_right = 44.0
-offset_bottom = 60.0
+offset_bottom = 59.9766
 step = 0.1
 value = 62.7
 texture_progress = ExtResource("5_yv6au")
@@ -106,3 +108,35 @@ theme_override_constants/outline_size = 2
 text = "0$"
 horizontal_alignment = 1
 script = ExtResource("7_0euky")
+
+[node name="Clock" type="Label" parent="."]
+layout_mode = 2
+offset_left = 22.0
+offset_top = 73.0
+offset_right = 47.0
+offset_bottom = 86.0
+scale = Vector2(0.9, 0.9)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0.290196, 0.290196, 0.290196, 1)
+theme_override_constants/outline_size = 2
+text = "20:00"
+horizontal_alignment = 1
+script = ExtResource("8_lgq5d")
+
+[node name="Date" type="Label" parent="."]
+layout_mode = 2
+offset_left = 4.0
+offset_top = 76.0
+offset_right = 20.0
+offset_bottom = 92.0
+scale = Vector2(0.5, 0.5)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0.290196, 0.290196, 0.290196, 1)
+theme_override_constants/outline_size = 2
+text = "Tue"
+horizontal_alignment = 1
+
+[node name="Sunstatus" type="Sprite2D" parent="."]
+position = Vector2(17, 80.012)
+texture = ExtResource("9_rxcr4")
+hframes = 4

@@ -13,5 +13,3 @@ func _ready():
 
 func drive():
 	get_parent().change_scene("costal_circuit")
-	#SelectedScene.next_scene = "res://Levels/Costal_Circuit_Scene.tscn"
-	#get_tree().change_scene_to_file("res://Levels/loading.tscn")
