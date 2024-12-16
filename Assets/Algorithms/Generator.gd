@@ -1,13 +1,21 @@
 class_name generator
 extends Node
 var difficulty = 1.3 * Settings.get_difficulty_bonus("AI Difficulty")
+var max_rarity : int
+var race_status : bool
 
 #Main Functions
-func generate_car(rarity, weight, torque_estimate, grip, downforce, brake_force, precision):
-	torque_estimate = torque_estimate * difficulty
-	grip *= difficulty
-	downforce *= difficulty
-	brake_force *= difficulty
+func generate_car(rarity, weight, torque_estimate, grip, downforce, brake_force, precision, race : bool):
+	#If generating AI and not purchaseable cars
+	race_status = race
+	if race == true:
+		rarity = rarity_to_int(rarity)
+		torque_estimate = torque_estimate * difficulty
+		grip *= difficulty
+		downforce *= difficulty
+		brake_force *= difficulty
+	else:
+		max_rarity = rarity
 	
 	#Find Suitable Chassi
 	var car_array = []
@@ -16,16 +24,13 @@ func generate_car(rarity, weight, torque_estimate, grip, downforce, brake_force,
 		#Make sure chassi in range for rarity and weight (75% is the estimated chassi weight of the total car)
 		var car = AssetList.car_list.get_child(i+1)
 		var instance = car.chassi[0].instantiate()
-		if instance.weight > (weight * precision) * 0.70 and instance.weight < (weight / precision) * 0.75 and instance.rarity == rarity:
+		if instance.weight > (weight * precision) * 0.70 and instance.weight < (weight / precision) * 0.75 and rarity_to_int(instance.rarity) <= rarity:
 			car_array.append(car)
 		instance.queue_free()
 	if car_array.size() != 0:
 		randomize()
 		var rng = randi_range(0, car_array.size() - 1) #Pick A Random Chassi from the array
 		var car_model = car_array[rng]
-		#print(" ")
-		#print("Car array: ",car_array)
-		#print("Car model: ",car_model)
 		
 		#Find proper parts for the chassi
 		var chassi = car_model.chassi[0].instantiate()
@@ -45,13 +50,17 @@ func generate_car(rarity, weight, torque_estimate, grip, downforce, brake_force,
 		var suspension = _find_suitable_part("suspension", universal.suspension, null, null, null)
 		var radiator = _find_suitable_part("radiator", universal.radiator, null, null, null)
 		
-		var car_weight = car_model.chassi[0].instantiate().weight + driveshaft.weight + gearbox.weight + fenders.weight + wheels.weight + tires.weight + spoiler.weight + f_bumper.weight + headlight.weight + taillights.weight + mirrors.weight + subframe.weight + exhaust.weight + brakes.weight + suspension.weight + radiator.weight
+		
+		var car_weight = chassi.weight + driveshaft.weight + gearbox.weight + fenders.weight + wheels.weight + tires.weight + spoiler.weight + f_bumper.weight + headlight.weight + taillights.weight + mirrors.weight + subframe.weight + exhaust.weight + brakes.weight + suspension.weight + radiator.weight
 		#print(car_weight)
 		var r_bumper = _find_suitable_part("r_bumper", car_model.r_bumper, [0, weight - car_weight], null, null)
 		#print(r_bumper.weight)
 		var hood = _find_suitable_part("hood", car_model.hood, [0, weight - car_weight], null, null)
 		#print(hood.weight)
 		car_weight += hood.weight + r_bumper.weight
+		
+		var car_price = chassi.price + driveshaft.price + gearbox.price + fenders.price + wheels.price + tires.price + spoiler.price + f_bumper.price + headlight.price + taillights.price + mirrors.price + subframe.price + exhaust.price + brakes.price + suspension.price + radiator.price + hood.price + r_bumper.price
+		chassi.queue_free()
 		
 		var engine_position_offset = Vector2.ZERO
 		var engine_bay_size = [chassi.engine_bay_lenght - radiator.width, chassi.engine_bay_width]
@@ -62,6 +71,7 @@ func generate_car(rarity, weight, torque_estimate, grip, downforce, brake_force,
 		
 		
 		return{"Car_ID" : driveshaft.Car_ID,
+		"price" : car_price,
 		"weight" : car_weight,
 		"position_offset" : engine_position_offset,
 		"engine_bay_size" : engine_bay_size,
@@ -85,8 +95,13 @@ func generate_car(rarity, weight, torque_estimate, grip, downforce, brake_force,
 		"suspension" : suspension.Part_Number,
 		"radiator" : radiator.Part_Number,}
 
-func generate_engine(weight, car_weight, torque, engine_bay_size, engine_offset, drivetrain, stock_engine, precision):
-	torque *= difficulty
+func generate_engine(rarity, weight, car_weight, torque, engine_bay_size, engine_offset, drivetrain, stock_engine, precision, race : bool):
+	#If generating AI and not purchaseable cars
+	race_status = race
+	if race == true:
+		torque *= difficulty
+	else:
+		max_rarity = rarity
 	
 	randomize()
 	var max_lenght
@@ -107,7 +122,7 @@ func generate_engine(weight, car_weight, torque, engine_bay_size, engine_offset,
 	var max_weight = weight - car_weight #The max weight for the engine
 	var stock_or_swapped = randi_range(0, 10)
 	#Use Stock Engine
-	if stock_or_swapped <= 5:
+	if stock_or_swapped <= 8:
 		var engine = AssetList.engine_list.get_child(stock_engine) #get engine at index specified in car part list
 		engine_array.append(engine)
 	#Find a swappable engine
@@ -213,17 +228,17 @@ func generate_engine(weight, car_weight, torque, engine_bay_size, engine_offset,
 			#print("too heavy engine: ", engine_model, " ", exhaust_manifold, " ", weight, " ", engine_weight)
 			return null
 		
+		var engine_price = block.price + exhaust_manifold.price + intake_manifold.price + internals.price + air_filter.price + top.price
+		
 		#If engine is knocking return NULL to generate new one
 		if boost_estimate_total > top.max_compression:
 			#print("Too much boost / Compression:  ", boost_estimate_total)
 			return null
 		
 		
-		#print(" ")
-		#print("SUCCESS")
-		#print(" ")
 		#If engine is within torque limits return engine
 		return {"Engine_ID" : block.Engine_ID,
+		"price" : engine_price,
 		"max_boost" : boost_estimate_turbo,
 		"max_rpm" : top.max_hp_rpm * 1.2,
 		"Tq" : est_tq,
@@ -240,6 +255,7 @@ func generate_engine(weight, car_weight, torque, engine_bay_size, engine_offset,
 
 #Side functions used by main
 func _find_suitable_part(category ,category_array, stat1_range, stat2_range, stat_import):  #Model is the Car or Engine model, Category is the type of part, Stat to check is the stat that we want
+	randomize()
 	var temp_array = []
 	var temp_backup_array = []
 	var max_rarity_offset = 1
@@ -254,7 +270,11 @@ func _find_suitable_part(category ,category_array, stat1_range, stat2_range, sta
 				instance = category_array[i+1].instantiate()
 				stat_1 = instance.drivetrain
 			"fenders":
-				instance = category_array[i+1].instantiate()
+				#Chanse if not AI CAR to be empty
+				if race_status == false and randi_range(0,10) > 8:
+					instance = category_array[0].instantiate()
+				else:
+					instance = category_array[i+1].instantiate()
 				stat_2 = instance.max_tire_width * 5
 			"wheels":
 				instance = category_array[i+1].instantiate()
@@ -264,18 +284,38 @@ func _find_suitable_part(category ,category_array, stat1_range, stat2_range, sta
 				stat_1 = instance.grip
 				stat_2 = instance.width
 			"spoiler", "f_bumper":
-				instance = category_array[i+1].instantiate()
+				#Chanse if not AI CAR to be empty
+				if race_status == false and randi_range(0,10) > 8:
+					instance = category_array[0].instantiate()
+				else:
+					instance = category_array[i+1].instantiate()
 				stat_1 = instance.downforce
 			"headlights", "taillights", "mirrors", "subframe", "exhaust", "suspension":
-				instance = category_array[i+1].instantiate()
+				#Chanse if not AI CAR to be empty
+				if race_status == false and randi_range(0,10) > 8:
+					instance = category_array[0].instantiate()
+				else:
+					instance = category_array[i+1].instantiate()
 			"hood", "r_bumper":
-				instance = category_array[i+1].instantiate()
+				#Chanse if not AI CAR to be empty
+				if race_status == false and randi_range(0,10) > 8:
+					instance = category_array[0].instantiate()
+				else:
+					instance = category_array[i+1].instantiate()
 				stat_1 = instance.weight
 			"brakes":
-				instance = category_array[i+1].instantiate()
+				#Chanse if not AI CAR to be empty
+				if race_status == false and randi_range(0,10) > 8:
+					instance = category_array[0].instantiate()
+				else:
+					instance = category_array[i+1].instantiate()
 				stat_1 = instance.brake_force
 			"radiator":
-				instance = category_array[i+1].instantiate()
+				#Chanse if not AI CAR to be empty
+				if race_status == false and randi_range(0,10) > 8:
+					instance = category_array[0].instantiate()
+				else:
+					instance = category_array[i+1].instantiate()
 			"block":
 				instance = category_array[i+1].instantiate()
 				stat_1 = instance.max_tq
@@ -317,10 +357,12 @@ func _find_suitable_part(category ,category_array, stat1_range, stat2_range, sta
 				stat_2 = instance.layout
 		
 		if (stat1_range == null or stat_1 >= stat1_range[0] and stat_1 <= stat1_range[1]) and (stat2_range == null or stat_2 >= stat2_range[0] and stat_2 <= stat2_range[1]):
-			temp_array.append(instance)
+			if race_status == true or rarity_to_int(instance.rarity) <= max_rarity: #IF generating car for shop, account for rarity
+				temp_array.append(instance)
 		elif (stat2_range == null or stat_2 >= stat2_range[0] and stat_2 <= stat2_range[1]):
 			if (stat1_range == null or stat_1 * 1.5 >= stat1_range[0] and stat_1 * 0.5 <= stat1_range[1]):
-				temp_backup_array.append(instance)
+				if race_status == true or rarity_to_int(instance.rarity) <= max_rarity: #IF generating car for shop, account for rarity
+					temp_backup_array.append(instance)
 	var rng = randi_range(0, temp_array.size()-1)
 	
 	#Backup array to prevent crash
@@ -351,6 +393,19 @@ func _estimate_boost(tq_boost, tq, goal_tq, turbo_size, turbo_efficiency):
 			max_boost_estimate = temp_max_boost
 			return max_boost_estimate
 			break
+
+func rarity_to_int(rarity):
+	match rarity:
+		"common":
+			return 0
+		"uncommon":
+			return 1
+		"rare":
+			return 2
+		"epic":
+			return 3
+		"legendary":
+			return 4
 
 func _generate_gear_ratio(gears, top_speed_estimate):
 	pass

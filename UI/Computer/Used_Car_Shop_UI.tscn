@@ -1,0 +1,371 @@
+[gd_scene load_steps=8 format=3 uid="uid://de8jud5erkt8n"]
+
+[ext_resource type="Theme" uid="uid://c8y10g2llcfgl" path="res://UI/Computer/Used_Car_Shop.tres" id="1_3duv1"]
+[ext_resource type="Script" path="res://UI/Computer/Car List.gd" id="2_5x86r"]
+[ext_resource type="Script" path="res://UI/Computer/Car Detailed.gd" id="3_e8fn7"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lekva"]
+content_margin_left = 20.0
+content_margin_top = 10.0
+content_margin_right = 10.0
+content_margin_bottom = 10.0
+bg_color = Color(1, 0.960784, 0.952941, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nan08"]
+content_margin_left = 20.0
+content_margin_top = 10.0
+content_margin_right = 20.0
+content_margin_bottom = 10.0
+bg_color = Color(0.85098, 0.392157, 0.337255, 1)
+border_width_left = 5
+border_width_bottom = 3
+border_color = Color(0.701961, 0.333333, 0.286275, 1)
+corner_radius_top_left = 2
+corner_radius_top_right = 2
+corner_radius_bottom_right = 2
+corner_radius_bottom_left = 2
+corner_detail = 4
+anti_aliasing = false
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_poaq8"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_fucll"]
+content_margin_top = 0.0
+
+[node name="Shop" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_3duv1")
+
+[node name="Top Page Panel" type="Panel" parent="."]
+layout_mode = 2
+offset_left = 330.0
+offset_top = 100.0
+offset_right = 2230.0
+offset_bottom = 233.0
+
+[node name="SiteName" type="Label" parent="Top Page Panel"]
+layout_mode = 0
+offset_left = 31.0
+offset_top = -8.0
+offset_right = 327.0
+offset_bottom = 94.0
+scale = Vector2(1.2, 1.2)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 13
+theme_override_font_sizes/font_size = 128
+text = "USED CARS"
+
+[node name="ViewSelector" type="HBoxContainer" parent="Top Page Panel"]
+layout_mode = 0
+offset_left = 599.0
+offset_top = 1.0
+offset_right = 1901.0
+offset_bottom = 128.0
+
+[node name="Car Finder" type="Button" parent="Top Page Panel/ViewSelector"]
+custom_minimum_size = Vector2(647.22, 0)
+layout_mode = 2
+text = "Find Cars"
+
+[node name="Favorites" type="Button" parent="Top Page Panel/ViewSelector"]
+custom_minimum_size = Vector2(647.22, 0)
+layout_mode = 2
+text = "Favorites
+"
+
+[node name="Cars" type="Panel" parent="."]
+layout_mode = 2
+offset_left = 930.0
+offset_top = 233.0
+offset_right = 2230.0
+offset_bottom = 1430.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_lekva")
+
+[node name="List Of Cars" type="VBoxContainer" parent="Cars" node_paths=PackedStringArray("page_number_label")]
+layout_mode = 0
+offset_left = 2.0
+offset_top = 2.0
+offset_right = 1292.0
+offset_bottom = 1059.0
+theme_override_constants/separation = 209
+script = ExtResource("2_5x86r")
+page_number_label = NodePath("../PageSelector/PageNumber")
+
+[node name="PageSelector" type="HBoxContainer" parent="Cars"]
+layout_mode = 0
+offset_left = 481.0
+offset_top = 1072.0
+offset_right = 817.0
+offset_bottom = 1174.0
+
+[node name="Previous" type="Button" parent="Cars/PageSelector"]
+layout_mode = 2
+text = "<--"
+
+[node name="PageNumber" type="Label" parent="Cars/PageSelector"]
+custom_minimum_size = Vector2(128, 0)
+layout_mode = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 11
+theme_override_font_sizes/font_size = 128
+text = "1"
+horizontal_alignment = 1
+
+[node name="Next" type="Button" parent="Cars/PageSelector"]
+layout_mode = 2
+text = "-->"
+
+[node name="Filters" type="Panel" parent="."]
+layout_mode = 2
+offset_left = 330.0
+offset_top = 233.0
+offset_right = 930.0
+offset_bottom = 1430.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_nan08")
+
+[node name="Drop Downs" type="HBoxContainer" parent="Filters"]
+layout_mode = 0
+offset_left = 10.0
+offset_top = 17.0
+offset_right = 594.0
+offset_bottom = 462.0
+
+[node name="Labels" type="VBoxContainer" parent="Filters/Drop Downs"]
+custom_minimum_size = Vector2(274, 445.725)
+layout_mode = 2
+theme_override_constants/separation = 35
+
+[node name="Brand" type="Label" parent="Filters/Drop Downs/Labels"]
+custom_minimum_size = Vector2(0, 84.835)
+layout_mode = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_styles/normal = SubResource("StyleBoxEmpty_poaq8")
+text = "Brand"
+
+[node name="Fuel Type" type="Label" parent="Filters/Drop Downs/Labels"]
+custom_minimum_size = Vector2(0, 84.835)
+layout_mode = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_styles/normal = SubResource("StyleBoxEmpty_poaq8")
+text = "Fuel Type"
+
+[node name="Gearing" type="Label" parent="Filters/Drop Downs/Labels"]
+custom_minimum_size = Vector2(0, 84.835)
+layout_mode = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_styles/normal = SubResource("StyleBoxEmpty_poaq8")
+text = "Gearing"
+
+[node name="Drive Type" type="Label" parent="Filters/Drop Downs/Labels"]
+custom_minimum_size = Vector2(0, 84.835)
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_styles/normal = SubResource("StyleBoxEmpty_poaq8")
+text = "Drive Type"
+
+[node name="Options" type="VBoxContainer" parent="Filters/Drop Downs"]
+custom_minimum_size = Vector2(300, 445.725)
+layout_mode = 2
+theme_override_constants/separation = 35
+
+[node name="Brand" type="OptionButton" parent="Filters/Drop Downs/Options"]
+layout_mode = 2
+item_count = 5
+selected = 0
+popup/item_0/text = "Any"
+popup/item_0/id = 0
+popup/item_1/text = "Nagata"
+popup/item_1/id = 1
+popup/item_2/text = "Talon Motors"
+popup/item_2/id = 2
+popup/item_3/text = "Hikari"
+popup/item_3/id = 3
+popup/item_4/text = "PWR"
+popup/item_4/id = 4
+
+[node name="Fuel Type" type="OptionButton" parent="Filters/Drop Downs/Options"]
+layout_mode = 2
+item_count = 4
+selected = 0
+popup/item_0/text = "Any"
+popup/item_0/id = 0
+popup/item_1/text = "Gasoline"
+popup/item_1/id = 1
+popup/item_2/text = "Diesel"
+popup/item_2/id = 2
+popup/item_3/text = "E85"
+popup/item_3/id = 3
+
+[node name="Gearing" type="OptionButton" parent="Filters/Drop Downs/Options"]
+layout_mode = 2
+item_count = 4
+selected = 0
+popup/item_0/text = "Any"
+popup/item_0/id = 0
+popup/item_1/text = "Manual"
+popup/item_1/id = 1
+popup/item_2/text = "Automatic"
+popup/item_2/id = 2
+popup/item_3/text = "Sequential"
+popup/item_3/id = 3
+
+[node name="Drive Type" type="OptionButton" parent="Filters/Drop Downs/Options"]
+layout_mode = 2
+item_count = 4
+selected = 0
+popup/item_0/text = "Any"
+popup/item_0/id = 0
+popup/item_1/text = "RWD"
+popup/item_1/id = 1
+popup/item_2/text = "FWD"
+popup/item_2/id = 2
+popup/item_3/text = "AWD"
+popup/item_3/id = 3
+
+[node name="Range" type="VBoxContainer" parent="Filters"]
+layout_mode = 0
+offset_left = 10.0
+offset_top = 489.0
+offset_right = 594.0
+offset_bottom = 1039.0
+theme_override_constants/separation = -30
+
+[node name="Price" type="Label" parent="Filters/Range"]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_styles/normal = SubResource("StyleBoxEmpty_fucll")
+text = "Price"
+horizontal_alignment = 1
+
+[node name="Price MinMax" type="HBoxContainer" parent="Filters/Range"]
+layout_mode = 2
+
+[node name="Labels" type="VBoxContainer" parent="Filters/Range/Price MinMax"]
+custom_minimum_size = Vector2(274, 125)
+layout_mode = 2
+theme_override_constants/separation = 35
+
+[node name="Min" type="SpinBox" parent="Filters/Range/Price MinMax/Labels"]
+layout_mode = 2
+max_value = 1e+07
+alignment = 1
+prefix = "MIN:"
+
+[node name="Options" type="VBoxContainer" parent="Filters/Range/Price MinMax"]
+custom_minimum_size = Vector2(300, 125)
+layout_mode = 2
+theme_override_constants/separation = 35
+
+[node name="Max" type="SpinBox" parent="Filters/Range/Price MinMax/Options"]
+layout_mode = 2
+max_value = 1e+07
+value = 10000.0
+alignment = 1
+prefix = "MAX:"
+
+[node name="Weight" type="Label" parent="Filters/Range"]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_styles/normal = SubResource("StyleBoxEmpty_fucll")
+text = "Weight"
+horizontal_alignment = 1
+
+[node name="Weight MinMax" type="HBoxContainer" parent="Filters/Range"]
+layout_mode = 2
+
+[node name="Labels" type="VBoxContainer" parent="Filters/Range/Weight MinMax"]
+custom_minimum_size = Vector2(274, 125)
+layout_mode = 2
+theme_override_constants/separation = 35
+
+[node name="Min" type="SpinBox" parent="Filters/Range/Weight MinMax/Labels"]
+layout_mode = 2
+max_value = 10000.0
+alignment = 1
+prefix = "MIN:"
+
+[node name="Options" type="VBoxContainer" parent="Filters/Range/Weight MinMax"]
+custom_minimum_size = Vector2(300, 125)
+layout_mode = 2
+theme_override_constants/separation = 35
+
+[node name="Max" type="SpinBox" parent="Filters/Range/Weight MinMax/Options"]
+layout_mode = 2
+max_value = 10000.0
+value = 1250.0
+alignment = 1
+prefix = "MAX:"
+
+[node name="Horsepower" type="Label" parent="Filters/Range"]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_styles/normal = SubResource("StyleBoxEmpty_fucll")
+text = "Horsepower"
+horizontal_alignment = 1
+
+[node name="Horsepower MinMax" type="HBoxContainer" parent="Filters/Range"]
+layout_mode = 2
+
+[node name="Labels" type="VBoxContainer" parent="Filters/Range/Horsepower MinMax"]
+custom_minimum_size = Vector2(274, 125)
+layout_mode = 2
+theme_override_constants/separation = 35
+
+[node name="Min" type="SpinBox" parent="Filters/Range/Horsepower MinMax/Labels"]
+layout_mode = 2
+max_value = 10000.0
+alignment = 1
+prefix = "MIN:"
+
+[node name="Options" type="VBoxContainer" parent="Filters/Range/Horsepower MinMax"]
+custom_minimum_size = Vector2(300, 125)
+layout_mode = 2
+theme_override_constants/separation = 35
+
+[node name="Max" type="SpinBox" parent="Filters/Range/Horsepower MinMax/Options"]
+layout_mode = 2
+max_value = 10000.0
+value = 250.0
+alignment = 1
+prefix = "MAX:"
+
+[node name="Buttons" type="HBoxContainer" parent="Filters"]
+layout_mode = 0
+offset_left = 10.0
+offset_top = 1057.0
+offset_right = 594.0
+offset_bottom = 1185.0
+theme_override_constants/separation = 28
+
+[node name="Apply" type="Button" parent="Filters/Buttons"]
+custom_minimum_size = Vector2(375, 0)
+layout_mode = 2
+text = "Apply"
+
+[node name="Clear" type="Button" parent="Filters/Buttons"]
+custom_minimum_size = Vector2(175, 0)
+layout_mode = 2
+text = "Clear"
+
+[node name="Car Detailed" type="Panel" parent="."]
+visible = false
+layout_mode = 2
+offset_left = 330.0
+offset_top = 233.0
+offset_right = 2230.0
+offset_bottom = 1430.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_lekva")
+script = ExtResource("3_e8fn7")
+
+[connection signal="pressed" from="Cars/PageSelector/Previous" to="Cars/List Of Cars" method="_on_previous_pressed"]
+[connection signal="pressed" from="Cars/PageSelector/Next" to="Cars/List Of Cars" method="_on_next_pressed"]

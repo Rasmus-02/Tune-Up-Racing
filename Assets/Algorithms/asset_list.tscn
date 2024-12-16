@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://bru6ephru272n"]
+[gd_scene load_steps=11 format=3 uid="uid://bru6ephru272n"]
 
 [ext_resource type="Script" path="res://Assets/Algorithms/Asset_List.gd" id="1_7h7kb"]
 [ext_resource type="Script" path="res://Assets/Car/Part Lists/Universal/Universal Part List.gd" id="2_0l3nf"]
@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://4k1ww52bhayn" path="res://Assets/Engine/Part Lists/Engine Specific/Hikari Suhei-25A/Hikari Suhei-25A  part list.tscn" id="6_m0lqm"]
 [ext_resource type="PackedScene" uid="uid://562gipqro1ak" path="res://Assets/Engine/Part Lists/Engine Specific/Nagata 2S-16i/nagata_2s_16i part list.tscn" id="7_rslnb"]
 [ext_resource type="PackedScene" uid="uid://8p8g1ahw0qts" path="res://Assets/Engine/Part Lists/Engine Specific/Talon Motors Typhoon/talon_motors_typhoon part list.tscn" id="8_2u6r4"]
+[ext_resource type="PackedScene" uid="uid://dgycrig5er4w1" path="res://Assets/Engine/Part Lists/Engine Specific/PWR SIX-4/PWR SIX-4 part list.tscn" id="10_054cr"]
 
 [node name="Asset_List" type="Node" node_paths=PackedStringArray("car_list", "engine_list")]
 script = ExtResource("1_7h7kb")
@@ -44,3 +45,5 @@ rarity = "uncommon"
 
 [node name="Hikari Suhei-25A Part List" parent="Engine" instance=ExtResource("6_m0lqm")]
 rarity = "uncommon"
+
+[node name="PWR SIX-4 Part List" parent="Engine" instance=ExtResource("10_054cr")]

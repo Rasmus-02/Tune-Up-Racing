@@ -1,0 +1,54 @@
+[gd_scene load_steps=9 format=3 uid="uid://bnhdxvccxe6x4"]
+
+[ext_resource type="PackedScene" uid="uid://bnuwduemvo1ps" path="res://Assets/Car/Car.tscn" id="1_v5fhh"]
+[ext_resource type="Texture2D" uid="uid://bgtl830558pmd" path="res://Textures/Garage/Floor_Walls/Tilemap Garage Floor.png" id="1_xqcy5"]
+[ext_resource type="Texture2D" uid="uid://b7bw2pjs3rapg" path="res://Textures/Garage/Floor_Walls/Tilemap Garage Floor NM.png" id="2_64m7c"]
+[ext_resource type="Texture2D" uid="uid://b350jwt2tgchl" path="res://addons/rmsmartshape/assets/light1-1.png" id="2_beo41"]
+[ext_resource type="Texture2D" uid="uid://bxxewxijhs23e" path="res://Textures/Garage/Floor_Walls/Tilemap Garage Floor Spec.png" id="3_huadj"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_tl5mt"]
+diffuse_texture = ExtResource("1_xqcy5")
+normal_texture = ExtResource("2_64m7c")
+specular_texture = ExtResource("3_huadj")
+specular_shininess = 0.15
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ycg6w"]
+texture = SubResource("CanvasTexture_tl5mt")
+texture_region_size = Vector2i(64, 64)
+0:0/0 = 0
+0:1/0 = 0
+0:2/0 = 0
+0:3/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_5il5d"]
+tile_size = Vector2i(64, 64)
+sources/0 = SubResource("TileSetAtlasSource_ycg6w")
+
+[node name="Car Display" type="Node2D"]
+
+[node name="TileMap" type="TileMap" parent="."]
+position = Vector2(146, 143)
+tile_set = SubResource("TileSet_5il5d")
+format = 2
+layer_0/tile_data = PackedInt32Array(-65538, 0, 2, -65537, 0, 3, -131072, 0, 1, -131071, 0, 2, -65535, 0, 1, 1, 0, 3, 65537, 0, 2, 65536, 0, 0, 131071, 0, 2, 131070, 0, 1, 65534, 0, 3, -2, 0, 3, -1, 0, 1, 65535, 0, 3, 0, 0, 0, -65536, 0, 1, 65538, 0, 3, 2, 0, 1, -65534, 0, 2, -131070, 0, 0, 131069, 0, 3, 65533, 0, 2, -3, 0, 1, -65539, 0, 0, -131075, 0, 1, -131074, 0, 2, -131073, 0, 0, -196608, 0, 2, -196607, 0, 3, -196606, 0, 3, 196605, 0, 0, 196606, 0, 0, 196607, 0, 0, 131072, 0, 3, 131073, 0, 2, 131074, 0, 0)
+
+[node name="Car" parent="." instance=ExtResource("1_v5fhh")]
+position = Vector2(144, 143)
+player = false
+selected_car = 0
+
+[node name="Level visibility" type="CanvasModulate" parent="."]
+position = Vector2(-71.445, 399.001)
+scale = Vector2(4.88201, 1.13008)
+skew = 1.26391
+color = Color(0.0392157, 0.113725, 0.172549, 1)
+
+[node name="Lamp_Walls" type="PointLight2D" parent="."]
+position = Vector2(269, 421)
+color = Color(1, 0.984314, 0.964706, 1)
+blend_mode = 2
+shadow_filter_smooth = 0.5
+shadow_item_cull_mask = 2
+texture = ExtResource("2_beo41")
+texture_scale = 50.0
+height = 1545.0

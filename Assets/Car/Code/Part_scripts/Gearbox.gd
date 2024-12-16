@@ -13,6 +13,7 @@ var id = [0,15,Part_Number,rarity] #Engine ID, Part type, Part number, rank
 @export_category("Stats")
 @export_range(0 , 10000000) var price : int
 @export_enum("RWD", "FWD", "AWD") var drivetrain : int #0=RWD, 1=FWD, 2=AWD
+@export_enum("Manual", "Automatic", "Sequential") var gearbox_type : String = "Manual"
 @export var weight = 0
 @export var shift_time = 0.0
 @export var max_hp = 0

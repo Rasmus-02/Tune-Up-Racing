@@ -22,6 +22,7 @@ description = "High quality lightweight forged wheels made by the Japanese racin
 price = 3500
 weight = 22
 max_tire_width = 260
+diameter = 16
 brake_cooling = 0.2
 
 [node name="Sprite2D" type="Sprite2D" parent="."]

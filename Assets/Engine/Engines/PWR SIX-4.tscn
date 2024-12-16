@@ -1,0 +1,45 @@
+[gd_scene load_steps=12 format=3 uid="uid://pmq0qg4nqgmf"]
+
+[ext_resource type="Script" path="res://Game_Logic/Cleaner.gd" id="1_nrdr6"]
+[ext_resource type="PackedScene" uid="uid://cctyed3jxvgm6" path="res://Assets/Engine/Part Lists/Part Selector/Part Selector engine.tscn" id="2_dal6w"]
+[ext_resource type="PackedScene" uid="uid://dgycrig5er4w1" path="res://Assets/Engine/Part Lists/Engine Specific/PWR SIX-4/PWR SIX-4 part list.tscn" id="3_ogh60"]
+[ext_resource type="PackedScene" uid="uid://0lggp6gpn8xa" path="res://Assets/Engine/Part Lists/Universal/Universal part list.tscn" id="4_tkc81"]
+[ext_resource type="Texture2D" uid="uid://bbuwwe0a5mesf" path="res://Textures/Engines/PWR SIX-4/Radiator/PWR SIX-4.0 Radiator Trans.png" id="5_tm0k2"]
+[ext_resource type="Texture2D" uid="uid://blpeshh3nm4ja" path="res://Textures/Engines/PWR SIX-4/Radiator/PWR SIX-4.0 Radiator Trans NM.png" id="6_mt5j1"]
+[ext_resource type="Texture2D" uid="uid://cyu5fxgtwaeas" path="res://Textures/Engines/PWR SIX-4/Radiator/PWR SIX-4.0 Radiator Long.png" id="7_2j20o"]
+[ext_resource type="Texture2D" uid="uid://dc6ynnrtlydqg" path="res://Textures/Engines/PWR SIX-4/Radiator/PWR SIX-4.0 Radiator Long NM.png" id="8_dgjrh"]
+[ext_resource type="PackedScene" uid="uid://c8il6nkvjwonk" path="res://Sound/Turbo and Supercharge Sounds/Boost_Sound_Handler.tscn" id="9_i8wxu"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_cp7nc"]
+diffuse_texture = ExtResource("5_tm0k2")
+normal_texture = ExtResource("6_mt5j1")
+specular_texture = ExtResource("5_tm0k2")
+specular_shininess = 0.5
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_5rrsh"]
+diffuse_texture = ExtResource("7_2j20o")
+normal_texture = ExtResource("8_dgjrh")
+specular_texture = ExtResource("7_2j20o")
+specular_shininess = 0.5
+
+[node name="PWR SIX-4" type="Node2D"]
+script = ExtResource("1_nrdr6")
+
+[node name="Part Selector" parent="." instance=ExtResource("2_dal6w")]
+
+[node name="PWR SIX-4 Part List" parent="Part Selector" instance=ExtResource("3_ogh60")]
+
+[node name="Universal Part List" parent="Part Selector" instance=ExtResource("4_tkc81")]
+
+[node name="Gearbox" type="Marker2D" parent="."]
+position = Vector2(-19, 0)
+
+[node name="Radiator_Piping_Transverse" type="Sprite2D" parent="."]
+visible = false
+texture = SubResource("CanvasTexture_cp7nc")
+
+[node name="Radiator_Piping_Longitudinal" type="Sprite2D" parent="."]
+visible = false
+texture = SubResource("CanvasTexture_5rrsh")
+
+[node name="Boost_Sound_Handler" parent="." instance=ExtResource("9_i8wxu")]

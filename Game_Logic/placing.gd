@@ -9,6 +9,10 @@ var max_lap = 3 #Can set max lap count here
 var map_bonus = 1.0
 var player_lap = 0
 
+func _ready():
+	#Set script to "not pauseable"
+	process_mode = Node.PROCESS_MODE_ALWAYS
+
 func _process(_delta):
 	#populate the placing list
 	if RaceStatus.started and RaceStatus.finished == false:

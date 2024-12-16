@@ -1,7 +1,7 @@
 #region Import Export Modular Constructors etc.
 extends Node2D
 #Export var
-signal stats(horsepower, torque, max_horsepower, max_torque)
+signal stats(horsepower, torque, max_horsepower, max_torque, top_end_fuel_type)
 signal rpm_info(rpm, max_rpm)
 var loaded = false
 
@@ -315,7 +315,7 @@ func _ready():
 		update_engine_parts()
 
 func send_update():
-	emit_signal("stats", horsepower, torque, max_torque)
+	emit_signal("stats", horsepower, torque, max_torque, top.fuel_type)
 	emit_signal("rpm_info", rpm, max_rpm)
 
 func is_functional():

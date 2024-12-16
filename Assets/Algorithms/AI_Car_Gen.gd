@@ -32,8 +32,6 @@ func _process(delta):
 		loaded = true
 
 
-
-
 func get_ai_car():
 	var rarity = player.get_child(0).current_car[2]
 	var weight = player.weight
@@ -58,11 +56,11 @@ func get_ai_car():
 		if step > 5:
 			precision -= 0.02
 		precision = clamp(precision, 0.25, 0.8)
-		car = generate_car(rarity, weight, tq, grip, downforce, brake_force, precision)
+		car = generate_car(rarity, weight, tq, grip, downforce, brake_force, precision, true)
 		
 		#Try 3 time to find an engine
 		for i in 3:
-			engine = generate_engine(weight, car.weight, tq, car.engine_bay_size, car.position_offset, car.drivetrain, car.stock_engine, precision)
+			engine = generate_engine(rarity, weight, car.weight, tq, car.engine_bay_size, car.position_offset, car.drivetrain, car.stock_engine, precision, true)
 			step += 1
 			if engine != null:
 				break

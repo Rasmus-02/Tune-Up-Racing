@@ -125,16 +125,35 @@ func populate_list():
 					if selected_tab == 15: #GEARBOX
 						if temp_part.drivetrain != car.drive_train_type:
 							list.set_item_disabled(list.item_count-1+n, true)
-						if car.selected_engine != "0": #Can't unequip gearbox if there is an engine in the car
-							list.set_item_disabled(0, true)
 					if selected_tab == 14: #DRIVESHAFT
 						if temp_part.drivetrain != car.gearbox.drivetrain and car.drive_train_type != 9999 and car.gearbox.drivetrain != 9999: #Can't have different drivetrain than the gearbox
 							list.set_item_disabled(list.item_count-1+n, true)
-						if car.selected_gearbox != 0: #Can't unequip drivetrain if there is a gearbox installed
-							list.set_item_disabled(0, true)
+					
+					#Make it so it is impossible to equip wrong tires on wrong wheels
+					if selected_tab == 10: #Wheel
+						if temp_part.diameter != car.tires.diameter and car.tires.diameter != 0:
+							list.set_item_disabled(list.item_count-1+n, true)
+						if temp_part.max_tire_width < car.tires.width:
+							list.set_item_disabled(list.item_count-1+n, true)
+					if selected_tab == 11: #Tires:
+						if temp_part.diameter != car.wheels.diameter and temp_part.diameter != 0: #If not same diameter as wheels disable, but if empty, don't disable
+							list.set_item_disabled(list.item_count-1+n, true)
+						if temp_part.width > car.wheels.max_tire_width:
+							list.set_item_disabled(list.item_count-1+n, true)
+					
 					list.set_item_custom_fg_color(list.get_item_count()-1,FontColorSettings.get_color(temp_part.rarity)) #set color based on rarity
 			list_index += 1
-	print("populate: ",equipped_part)
+	
+	#Disable empty part (Needs to be outside for loop, because if player owns 1 part that is equipped for loop won't run)
+	if selected_tab == 15: #GEARBOX
+		if car.selected_engine != "0": #Can't unequip gearbox if there is an engine in the car
+			list.set_item_disabled(0, true)
+	if selected_tab == 14: #DRIVESHAFT
+		if car.selected_gearbox != 0: #Can't unequip drivetrain if there is a gearbox installed
+			list.set_item_disabled(0, true)
+	if selected_tab == 10: #Wheel
+		if car.tires.diameter > 0: #Can't unequip wheel if tire is installed
+			list.set_item_disabled(0, true)
 
 func size_check(index):
 	var left = temp_part.size[0]
@@ -488,7 +507,6 @@ func _on_front__bumper_button_pressed():
 	temp_array = specific_parts.f_bumper
 	selected_tab = 1
 	equipped_part = car.f_bumper #updates the equipped part
-	print(equipped_part)
 	populate_list()
 func _on_rear_bumper_button_pressed():
 	button_sound.play()

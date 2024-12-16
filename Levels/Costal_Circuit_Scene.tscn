@@ -67,6 +67,7 @@ animations = [{
 }]
 
 [node name="Track" type="Node2D"]
+process_mode = 1
 script = ExtResource("1_vtmsh")
 metadata/_edit_horizontal_guides_ = []
 
@@ -169,8 +170,6 @@ one_shot = true
 [node name="Lights" type="AnimatedSprite2D" parent="UI/AspectRatioContainer/Start Lights"]
 sprite_frames = SubResource("SpriteFrames_5r1yl")
 animation = &"Start"
-frame = 5
-frame_progress = 1.0
 
 [node name="Press Button Text" type="Label" parent="UI/AspectRatioContainer/Start Lights"]
 offset_left = -145.763
@@ -227,7 +226,7 @@ offset_bottom = -1187.09
 scale = Vector2(2, 2)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 6
-text = "Position: 2/8"
+text = "Position: 6/8"
 
 [node name="Lap Count" type="Label" parent="UI"]
 layout_mode = 0

@@ -92,6 +92,7 @@ var last_on_road_position = Vector2.ZERO
 var engine_position = Vector2(0,0)
 var engine_position_offset = Vector2(0,0)
 var spawn_override_key = null
+var fuel_type : String = "Gasoline"
 
 var car_durability = 100
 var chassi_durability = 100
@@ -159,10 +160,10 @@ func _on_engine_rpm_info(rpm, import_max_rpm):
 	engine_rpm = rpm
 	max_engine_rpm = import_max_rpm
 
-func _on_engine_stats(_horsepower, torque, max_torque):
-	#max_engine_power = (((((horsepower*2)*hp_modifier) + ((torque*2)*tq_modifier))/2)) * drivetrain_loss * exhaust_tq_mod
+func _on_engine_stats(_horsepower, torque, max_torque, top_end_fuel_type):
 	max_engine_power = (torque) * (1-drivetrain_loss) * exhaust_tq_mod
 	engine_power = (max_engine_power * 150) * rubberbanding
+	fuel_type = top_end_fuel_type
 
 #EXPORT STATS FROM CAR
 func export_signal():

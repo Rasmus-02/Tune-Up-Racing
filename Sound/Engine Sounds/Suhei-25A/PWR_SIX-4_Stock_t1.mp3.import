@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://dmiu3aaebindu"
+path="res://.godot/imported/PWR_SIX-4_Stock_t1.mp3-bbae438e902d86499bdee4fedd6c4e73.mp3str"
+
+[deps]
+
+source_file="res://Sound/Engine Sounds/Suhei-25A/PWR_SIX-4_Stock_t1.mp3"
+dest_files=["res://.godot/imported/PWR_SIX-4_Stock_t1.mp3-bbae438e902d86499bdee4fedd6c4e73.mp3str"]
+
+[params]
+
+loop=true
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

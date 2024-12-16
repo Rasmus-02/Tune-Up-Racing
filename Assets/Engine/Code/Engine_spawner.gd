@@ -4,7 +4,9 @@ var No_Engine = [preload("res://Assets/Engine/Engines/No Engine.tscn").instantia
 var Talon_Motors_Typhoon = [preload("res://Assets/Engine/Engines/Talon Motors Typhoon.tscn").instantiate(), "Talon Motors Typhoon", "rare"] #1
 var Nagata_2S16i = [preload("res://Assets/Engine/Engines/Nagata 2S-16i.tscn").instantiate(), "Nagata 2S-16i", "uncommon"] #2
 var Hikari_Suhei_25A = [preload("res://Assets/Engine/Engines/Hikari Suhei-25A.tscn").instantiate(), "Hikari Suhei-25A", "uncommon"] #3
-var engine_list = [No_Engine, Talon_Motors_Typhoon, Nagata_2S16i, Hikari_Suhei_25A]
+var PWR_SIX_4 = [preload("res://Assets/Engine/Engines/PWR SIX-4.tscn").instantiate(), "PWR SIX-4", "rare"] #4
+
+var engine_list = [No_Engine, Talon_Motors_Typhoon, Nagata_2S16i, Hikari_Suhei_25A, PWR_SIX_4]
 var current_engine = null
 
 var max_torque = 1 # * 1.3 to combat power losses

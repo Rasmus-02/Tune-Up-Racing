@@ -20,7 +20,6 @@ func process_sunlight():
 		var offset = 2.0
 		var time = float(Clock.hour) + (float(Clock.minute) * 0.01666)
 		var progress = ((time - 6) / offset)
-		print("progress :",progress)
 		set_sunlight(transition(progress, night, sunrise))
 	elif Clock.hour >= 8 and Clock.hour < 12: # Sunrise to day 8 - 12 			(4 hrs)
 		var offset = 4.0

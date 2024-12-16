@@ -11,6 +11,7 @@ var garage = null
 var car_list
 @onready var sprite = $AnimatedSprite2D
 @onready var animation = $AnimationPlayer
+@onready var not_functional = $"../Interact_Menu_Garage/Drive_Car_button/Not Functional Animation"
 var main = null
 
 func _ready():
@@ -172,9 +173,12 @@ func _on_paint_car_button_pressed():
 
 
 func _on_drive_car_button_pressed():
-	Save_Load.selected_car_key = selected_car.selected_car_key
-	Save_Load.save()
-	garage.drive()
+	if selected_car.is_functional() and selected_car.engine.is_functional():
+		Save_Load.selected_car_key = selected_car.selected_car_key
+		Save_Load.save()
+		garage.drive()
+	else:
+		not_functional.play("play")
 
 func _on_info_car_button_pressed():
 	pass # Replace with function body.

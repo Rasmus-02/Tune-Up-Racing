@@ -1,0 +1,29 @@
+[gd_scene load_steps=6 format=3 uid="uid://b80goon4gkali"]
+
+[ext_resource type="Script" path="res://Assets/Engine/Part_scripts/Block.gd" id="1_mf0qw"]
+[ext_resource type="Texture2D" uid="uid://bqxtup804ngat" path="res://Textures/Engines/PWR SIX-4/Block/PWR SIX-4.0 Stock Block.png" id="2_fklqf"]
+[ext_resource type="Texture2D" uid="uid://caivpml6wj0lt" path="res://Textures/Engines/PWR SIX-4/Block/PWR SIX-4.0 Stock Block NM.png" id="3_xtce4"]
+[ext_resource type="Texture2D" uid="uid://cx6r3rxi2xxfy" path="res://Textures/Engines/PWR SIX-4/Block/PWR SIX-4.0 Stock Block Spec.png" id="4_wvbso"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_8byoe"]
+diffuse_texture = ExtResource("2_fklqf")
+normal_texture = ExtResource("3_xtce4")
+specular_texture = ExtResource("4_wvbso")
+specular_shininess = 0.5
+
+[node name="PWR SIX-4 Cast Iron Block" type="Node2D"]
+script = ExtResource("1_mf0qw")
+rarity = "rare"
+layout = "Inline"
+lenght = 41
+width = 9
+Engine_ID = 4
+Part_Number = 1
+description = "The factory block for the PWR SIX-4 Engine"
+price = 2800
+weight = 85
+tq = 300
+max_tq = 950
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = SubResource("CanvasTexture_8byoe")

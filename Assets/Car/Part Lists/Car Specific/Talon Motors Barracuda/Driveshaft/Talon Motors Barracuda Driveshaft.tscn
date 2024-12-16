@@ -26,4 +26,4 @@ drivetrain_loss = 0.15
 texture = SubResource("CanvasTexture_vrqcw")
 
 [node name="Gearbox" type="Marker2D" parent="."]
-position = Vector2(24, 0)
+position = Vector2(23, 0)

@@ -31,6 +31,14 @@ energy = 1.13
 height = 0.69
 
 [node name="Engine" parent="." instance=ExtResource("2_sffus")]
+selected_block = 1
+selected_internals = 1
+selected_top = 1
+selected_intake_manifold = 1
+selected_exhaust_manifold = 1
+selected_air_filter = 1
+selected_engine = 1
+selected_engine_key = 1
 
 [node name="tq_line" type="Line2D" parent="."]
 position = Vector2(-75, -50)

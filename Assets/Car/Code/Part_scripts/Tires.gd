@@ -12,6 +12,7 @@ var id = [Car_ID,13,Part_Number,rarity] #Engine ID, Part type, Part number, rank
 @export_range(0 , 10000000) var price : int
 @export var weight = 0
 @export var width : int
+@export var diameter = 0
 @export var grip = 0
 @export var treadwear = 0.0 #durabilityloss per second of driving
 

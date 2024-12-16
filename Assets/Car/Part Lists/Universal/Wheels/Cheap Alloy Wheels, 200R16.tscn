@@ -22,6 +22,7 @@ description = "Cheap alloy wheels, nothing special about them but they get the j
 price = 600
 weight = 26
 max_tire_width = 200
+diameter = 16
 brake_cooling = 0.1
 
 [node name="Sprite2D" type="Sprite2D" parent="."]

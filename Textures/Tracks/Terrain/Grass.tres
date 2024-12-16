@@ -17,8 +17,8 @@ color_ramp = SubResource("Gradient_n234q")
 noise = SubResource("FastNoiseLite_bv2qw")
 
 [sub_resource type="NoiseTexture2D" id="NoiseTexture2D_5iout"]
-width = 400
-height = 400
+width = 800
+height = 800
 seamless = true
 seamless_blend_skirt = 0.25
 as_normal_map = true

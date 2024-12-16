@@ -13,19 +13,21 @@ var main = null
 func _ready():
 	restart.hide()
 	main = get_tree().get_root().get_node("Main")
-	Engine.time_scale = 1 #unpauses
+	get_tree().paused = false #unpauses
 
 func open():
+	AudioServer.set_bus_volume_db(0, -80)
 	#hide restart in garage
 	if SelectedScene.scene != "Track":
 		restart.hide()
 	else:
 		restart.show()
-	Engine.time_scale = 0 #pauses
+	get_tree().paused = true #pauses
 	pause_menu.show()
 
 func close():
-	Engine.time_scale = 1 #unpauses
+	AudioServer.set_bus_volume_db(0, linear_to_db(Settings.general_volume))
+	get_tree().paused = false #unpauses
 	pause_menu.hide()
 
 func check_scene():

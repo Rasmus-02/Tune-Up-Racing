@@ -21,6 +21,7 @@ Part_Number = 2
 description = "High quality lightweight forged wheels made by the German car manufacturer Fritz"
 price = 2000
 weight = 20
+diameter = 16
 brake_cooling = 0.15
 
 [node name="Sprite2D" type="Sprite2D" parent="."]

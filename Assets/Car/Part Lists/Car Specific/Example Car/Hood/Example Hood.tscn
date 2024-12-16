@@ -9,7 +9,7 @@
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_n52vx"]
 shader = ExtResource("2_xupkh")
-shader_parameter/import_new_color = Vector4(1, 0.75, 0, 0)
+shader_parameter/import_new_color = null
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_hjvi5"]
 diffuse_texture = ExtResource("2_v0dm7")

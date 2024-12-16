@@ -26,6 +26,7 @@ description = "Soft and grippy semi slick tires made by Japanese tire company To
 price = 1450
 weight = 12
 width = 260
+diameter = 16
 grip = 1200
 treadwear = 0.04
 

@@ -42,7 +42,7 @@ var gear_ratio = [0.0,0.0,0.0]
 var smoothness = 0.0
 var hp = 0.0
 var tq = 0.0
-var rarity = ""
+var rarity = "common"
 var Car_ID = 0
 var Part_Number = 0
 var type = 2
@@ -66,6 +66,10 @@ var sound_dampening = 0.0
 var durability = 0 #100%
 var color = 0
 var price = 0
+var diameter = 0
+var max_tire_width = 0
+var fuel_type = "Gasoline"
+var gearbox_type = "No Gearbox"
 
 
 

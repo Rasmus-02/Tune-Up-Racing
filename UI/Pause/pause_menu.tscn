@@ -31,6 +31,7 @@ shader_parameter/whiteTintIntensity2 = 0.077
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_b68as"]
 
 [node name="Pause_Menu" type="CanvasLayer" node_paths=PackedStringArray("restart", "resume", "settings", "menu")]
+process_mode = 3
 script = ExtResource("1_gxb3s")
 restart = NodePath("Control/MarginContainer/PauseMenu/Buttons/Restart")
 resume = NodePath("Control/MarginContainer/PauseMenu/Buttons/Resume")

@@ -26,6 +26,7 @@ description = "Cheap Chinese tires, works well enough for the price and are long
 price = 500
 weight = 8
 width = 185
+diameter = 16
 grip = 800
 treadwear = 0.02
 

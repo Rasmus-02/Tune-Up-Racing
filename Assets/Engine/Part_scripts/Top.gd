@@ -17,6 +17,7 @@ var id = [Engine_ID,4,Part_Number,rarity] #Engine ID, Part type, Part number, ra
 @export var max_hp_rpm = 0
 @export var max_compression = 0.0
 @export_range(0,1,0.01) var smoothness
+@export_enum("Gasoline", "Diesel", "E85") var fuel_type : String = "Gasoline"
 
 var durability = 100 #100%
 var color = 0

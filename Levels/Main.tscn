@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://cmba373d7ywg1" path="res://Levels/loading.tscn" id="3_uc02o"]
 
 [node name="Main" type="Node2D" node_paths=PackedStringArray("pause_menu", "load_screen")]
+process_mode = 3
 script = ExtResource("1_wwxm3")
 pause_menu = NodePath("Pause_Menu")
 load_screen = NodePath("Loading")

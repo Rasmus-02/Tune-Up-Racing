@@ -4,6 +4,8 @@ extends Node2D
 var main = null
 
 func _ready():
+	#Set script to "not pauseable"
+	process_mode = Node.PROCESS_MODE_ALWAYS
 	main = get_tree().get_root().get_node("Main")
 	$AnimationPlayer.play("start")
 	$Sprite.play("start")

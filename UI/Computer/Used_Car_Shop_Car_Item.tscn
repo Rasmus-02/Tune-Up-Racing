@@ -1,0 +1,136 @@
+[gd_scene load_steps=11 format=3 uid="uid://b5iw4oxi2wlwk"]
+
+[ext_resource type="Script" path="res://UI/Computer/Used_Car_Shop_Car_Item.gd" id="1_8gf5m"]
+[ext_resource type="Texture2D" uid="uid://t4hg1xatd0l1" path="res://Textures/UI/Computer/Favorite Icon.png" id="1_d18p7"]
+[ext_resource type="Texture2D" uid="uid://dj3a844uphtep" path="res://Textures/UI/Computer/Favorite Icon Highlighted.png" id="2_ud713"]
+[ext_resource type="Texture2D" uid="uid://crsakh0k3umfk" path="res://Textures/UI/Computer/Favorite Icon Hovered.png" id="3_ebwj2"]
+[ext_resource type="PackedScene" uid="uid://bnhdxvccxe6x4" path="res://UI/Computer/car_display.tscn" id="5_8to2d"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kkeol"]
+content_margin_left = 20.0
+content_margin_top = 10.0
+content_margin_right = 10.0
+content_margin_bottom = 10.0
+bg_color = Color(1, 0.901961, 0.882353, 1)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_l7bqo"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_sjd0g"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ssh16"]
+bg_color = Color(1, 1, 1, 0.219608)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pigu8"]
+bg_color = Color(1, 1, 1, 0.34902)
+
+[node name="Car" type="Control" node_paths=PackedStringArray("car_name", "engine_name", "car_stats", "price", "favorited", "car_display")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_8gf5m")
+car_name = NodePath("Car1/Car Name")
+engine_name = NodePath("Car1/Engine Name")
+car_stats = NodePath("Car1/Specs")
+price = NodePath("Car1/Price")
+favorited = NodePath("Car1/Favorite")
+car_display = NodePath("Car1/Image/Image Scene Display/Car Display")
+
+[node name="Car1" type="Panel" parent="."]
+custom_minimum_size = Vector2(1290, 200)
+layout_mode = 0
+theme_override_styles/panel = SubResource("StyleBoxFlat_kkeol")
+
+[node name="Price" type="Label" parent="Car1"]
+custom_minimum_size = Vector2(0, 84.835)
+layout_mode = 2
+offset_left = 670.0
+offset_top = 59.0
+offset_right = 1070.0
+offset_bottom = 144.0
+scale = Vector2(1.5, 1.5)
+theme_override_colors/font_color = Color(0.196078, 0.196078, 0.196078, 1)
+theme_override_styles/normal = SubResource("StyleBoxEmpty_l7bqo")
+text = "25.000$"
+horizontal_alignment = 2
+vertical_alignment = 2
+
+[node name="Car Name" type="Label" parent="Car1"]
+custom_minimum_size = Vector2(0, 84.835)
+layout_mode = 2
+offset_left = 206.0
+offset_top = -8.0
+offset_right = 760.0
+offset_bottom = 77.0
+scale = Vector2(1.5, 1.5)
+theme_override_colors/font_color = Color(0.196078, 0.196078, 0.196078, 1)
+theme_override_styles/normal = SubResource("StyleBoxEmpty_l7bqo")
+text = "Hikari Tasai"
+
+[node name="Engine Name" type="Label" parent="Car1"]
+custom_minimum_size = Vector2(0, 84.835)
+layout_mode = 2
+offset_left = 206.0
+offset_top = 59.0
+offset_right = 760.0
+offset_bottom = 144.0
+scale = Vector2(0.75, 0.75)
+theme_override_colors/font_color = Color(0.196078, 0.196078, 0.196078, 1)
+theme_override_styles/normal = SubResource("StyleBoxEmpty_l7bqo")
+text = "Hikari Suhei-25A"
+vertical_alignment = 1
+
+[node name="Specs" type="Label" parent="Car1"]
+custom_minimum_size = Vector2(0, 84.835)
+layout_mode = 2
+offset_left = 206.0
+offset_top = 149.0
+offset_right = 760.0
+offset_bottom = 234.0
+scale = Vector2(0.75, 0.75)
+theme_override_colors/font_color = Color(0.196078, 0.196078, 0.196078, 1)
+theme_override_styles/normal = SubResource("StyleBoxEmpty_l7bqo")
+text = "Gasoline | Manual | AWD | Functional"
+
+[node name="Image" type="SubViewportContainer" parent="Car1"]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 9.0
+offset_right = 248.0
+offset_bottom = 249.0
+scale = Vector2(0.655, 0.655)
+
+[node name="Image Scene Display" type="SubViewport" parent="Car1/Image"]
+transparent_bg = true
+handle_input_locally = false
+mesh_lod_threshold = 0.0
+size = Vector2i(280, 280)
+render_target_update_mode = 4
+
+[node name="Car Display" parent="Car1/Image/Image Scene Display" instance=ExtResource("5_8to2d")]
+
+[node name="Selector" type="Button" parent="Car1"]
+layout_mode = 0
+offset_right = 1290.0
+offset_bottom = 200.0
+theme_override_styles/normal = SubResource("StyleBoxEmpty_sjd0g")
+theme_override_styles/hover = SubResource("StyleBoxFlat_ssh16")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_pigu8")
+theme_override_styles/focus = SubResource("StyleBoxFlat_ssh16")
+
+[node name="Favorite" type="TextureButton" parent="Car1"]
+layout_mode = 2
+offset_left = 1171.0
+offset_top = 15.0
+offset_right = 1186.0
+offset_bottom = 30.0
+scale = Vector2(6, 6)
+toggle_mode = true
+texture_normal = ExtResource("1_d18p7")
+texture_pressed = ExtResource("2_ud713")
+texture_hover = ExtResource("3_ebwj2")
+
+[connection signal="pressed" from="Car1/Selector" to="." method="_on_selector_pressed"]
+[connection signal="pressed" from="Car1/Favorite" to="." method="_on_favorite_pressed"]

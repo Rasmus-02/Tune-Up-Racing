@@ -52,6 +52,10 @@ func set_car(NODE):
 
 
 func _ready():
+	
+	#Set script to "not pauseable"
+	process_mode = Node.PROCESS_MODE_ALWAYS
+	
 	pass
 	if load_file("engines") != null:
 		engines = load_file("engines")
@@ -144,7 +148,6 @@ func save_selected_key(key):
 	return selected_car_key
 
 func save():
-	#print("save_called")
 	if FileAccess.file_exists(file_location):
 		
 		var save_dict = {"engines" : engines, "engine parts" : save_engine_stats(), 
@@ -152,12 +155,14 @@ func save():
 		"selected_car_key" : save_selected_key(selected_car_key), 
 		"player_stats" : save_player_stats(), "time" : time}
 		
-		print(save_dict)
 		var save_game = FileAccess.open(file_location, FileAccess.WRITE)
 		var json_string = JSON.stringify(save_dict)
 		save_game.store_line(json_string)
 	else:
 		"NULL SAVE"
+	
+	#Also save car market stats
+	CarMarket.save()
 
 func add_engine(): #for adding engines to the players inventory
 	#adds a engine to the dictionary

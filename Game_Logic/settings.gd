@@ -19,6 +19,9 @@ var music_volume : float # 0 - 1
 var ambient_volume : float # 0 - 1
 
 func _ready():
+	#Set script to "not pauseable"
+	process_mode = Node.PROCESS_MODE_ALWAYS
+	
 	#If file doesn't exist create new file
 	if FileAccess.file_exists(file_location) == false:
 		print("NEW SETTINGS FILE CREATED")

@@ -1,5 +1,8 @@
 extends Node2D
 
+func _ready():
+	#Set script to "not pauseable"
+	process_mode = Node.PROCESS_MODE_ALWAYS
 
 # ORPHAN NODE HANDLER, DELETE WHEN SCENE CHANGE
 func _init():
