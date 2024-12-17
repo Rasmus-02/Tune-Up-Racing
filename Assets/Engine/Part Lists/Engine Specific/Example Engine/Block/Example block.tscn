@@ -19,6 +19,7 @@ width = 9
 Part_Number = 1
 description = "The factory block for the 2S-16i Engine"
 weight = 60
+reliability = 0.95
 tq = 180
 max_tq = 550
 

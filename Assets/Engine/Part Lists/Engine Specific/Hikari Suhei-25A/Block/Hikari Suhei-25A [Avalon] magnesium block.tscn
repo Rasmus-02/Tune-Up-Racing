@@ -22,6 +22,7 @@ Part_Number = 4
 description = "A lvery ightweight and durable block for the Hikari Suhei-25A Engine, designed by Avalon"
 price = 9500
 weight = 48
+reliability = 0.85
 tq = 275
 max_tq = 1150
 

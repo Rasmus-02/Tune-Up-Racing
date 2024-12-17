@@ -22,6 +22,7 @@ Part_Number = 2
 description = "A light weight slightly less durable block for the Typhoon engine by Talon Motors"
 price = 4500
 weight = 85
+reliability = 0.95
 tq = 550
 max_tq = 650
 

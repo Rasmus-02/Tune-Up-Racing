@@ -11,6 +11,7 @@ var turbo_intake = true
 var supercharger_intake = true
 var hp_mod = 0.0
 var tq_mod = 0.0
+var tq_mod_exhaust = 1.0
 var supercharger = false
 var supercharer_spool_rate = 0.0
 var itb = false
@@ -70,6 +71,7 @@ var diameter = 0
 var max_tire_width = 0
 var fuel_type = "Gasoline"
 var gearbox_type = "No Gearbox"
+var reliability = 1.0
 
 
 

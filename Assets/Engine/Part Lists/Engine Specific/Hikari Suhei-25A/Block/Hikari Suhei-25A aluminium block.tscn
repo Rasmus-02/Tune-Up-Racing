@@ -22,6 +22,7 @@ Part_Number = 2
 description = "A lighter block for the Hikari Suhei-25A Engine"
 price = 3500
 weight = 55
+reliability = 0.8
 tq = 270
 max_tq = 400
 

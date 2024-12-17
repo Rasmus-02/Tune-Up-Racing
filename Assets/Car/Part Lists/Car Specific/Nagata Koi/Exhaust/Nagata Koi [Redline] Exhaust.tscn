@@ -21,7 +21,7 @@ Part_Number = 4
 description = "A high performance exhaust system designed by Redline, for the Nagata Koi."
 price = 800
 weight = 18
-tq_mod = 1.05
+tq_mod_exhaust = 1.07
 sound_dampening = 5
 pitch_tweak = 0.96
 

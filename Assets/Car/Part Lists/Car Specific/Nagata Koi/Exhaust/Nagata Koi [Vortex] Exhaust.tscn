@@ -21,6 +21,7 @@ Part_Number = 2
 description = "A performance exhaust system designed by Vortex, for the Nagata Koi."
 price = 350
 weight = 22
+tq_mod_exhaust = 0.99
 sound_dampening = 7
 pitch_tweak = 0.98
 

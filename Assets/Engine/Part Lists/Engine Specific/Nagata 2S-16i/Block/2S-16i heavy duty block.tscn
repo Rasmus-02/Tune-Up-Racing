@@ -22,6 +22,7 @@ Part_Number = 3
 description = "A more durable heavy duty block for the 2S-16i Engine which is able to withstand a lot more torque"
 price = 5000
 weight = 72
+reliability = 0.94
 tq = 175
 max_tq = 1150
 

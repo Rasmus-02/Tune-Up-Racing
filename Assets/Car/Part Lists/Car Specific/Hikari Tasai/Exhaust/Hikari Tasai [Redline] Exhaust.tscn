@@ -21,7 +21,7 @@ Part_Number = 5
 description = "A high performance aftermarket exhaust for the Hikari Tasai, designed by Redline"
 price = 2250
 weight = 25
-tq_mod = 1.1
+tq_mod_exhaust = 1.12
 sound_dampening = 7
 
 [node name="Sprite2D" type="Sprite2D" parent="."]

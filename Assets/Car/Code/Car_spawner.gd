@@ -4,22 +4,22 @@ var Nagata_Koi = [preload("res://Assets/Car/Cars/Nagata_Koi.tscn"), "Nagata Koi"
 var Talon_Motors_Barracuda = [preload("res://Assets/Car/Cars/Talon_Motors_Barracuda.tscn"), "Talon Motors Barracuda", "rare"] #1
 var Hikari_Tasai = [preload("res://Assets/Car/Cars/Hikari Tasai.tscn"), "Hikari Tasai", "uncommon"] #2
 var car_list = [Nagata_Koi, Talon_Motors_Barracuda, Hikari_Tasai]
-var current_car = car_list[0]
+var current_car = car_list[0] # [preload, name, rarity]
 
 var weight = 0.0
 var handling_bonus = 0.0
 var grip = 0.0
-var treadwear = 0.0 #durability loss per second of driving
+var treadwear = 0.0 # durability loss per second of driving
 var brake_force = 0.0
 var downforce = 0.0
 var drag = 0.0
-var drivetrain = 0 #0=RWD, 1=FWD, 2=AWD
+var drivetrain = 0 # 0=RWD, 1=FWD, 2=AWD
 var drivetrain_loss = 0.0
 var max_driveshaft_hp = 0
 var max_driveshaft_tq = 0
 var engine_cool_mod = 0.0
-var brake_cooling = 0.0 #Celcius per second (road: 1-3, race: 2-5)
-var brake_fade_limit = 0.0 #Degrees celcius (250-300 normal)
+var brake_cooling = 0.0 # Celcius per second (road: 1-3, race: 2-5)
+var brake_fade_limit = 0.0 # Degrees celcius (250-300 normal)
 var wheelbase = 0
 var engine_bay_size = [1,1]
 var gear_ratio = 1.0*100

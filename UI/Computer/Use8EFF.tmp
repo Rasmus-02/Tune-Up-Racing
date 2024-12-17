@@ -357,15 +357,13 @@ custom_minimum_size = Vector2(175, 0)
 layout_mode = 2
 text = "Clear"
 
-[node name="Car Detailed" type="Control" parent="." node_paths=PackedStringArray("car_list")]
+[node name="Car Detailed" type="Control" parent="."]
 anchors_preset = 0
 offset_left = 330.0
 offset_top = 233.0
 offset_right = 370.0
 offset_bottom = 273.0
 script = ExtResource("3_h1qgf")
-car_list = NodePath("../Cars/List Of Cars")
 
-[connection signal="pressed" from="Top Page Panel/ViewSelector/Car Finder" to="Car Detailed" method="_on_car_finder_pressed"]
 [connection signal="pressed" from="Cars/PageSelector/Previous" to="Cars/List Of Cars" method="_on_previous_pressed"]
 [connection signal="pressed" from="Cars/PageSelector/Next" to="Cars/List Of Cars" method="_on_next_pressed"]

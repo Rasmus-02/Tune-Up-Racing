@@ -2,7 +2,7 @@ extends Node2D
 
 @export var sun : Node2D
 @export_enum("Sun", "Lamp") var Type : String
-var sunrise = [0.8, Color(1, 0.98, 0.96), 0.4]
+var sunrise = [0.8, Color(1, 0.85, 0.7), 0.4]
 var day = [1, Color(1, 0.98, 0.96), 0.65]
 var sunset = [0.8, Color(0.93, 0.66, 0.39), 0.4]
 var night = [0.1, Color(0.6, 0.6, 0.6), 0.65]

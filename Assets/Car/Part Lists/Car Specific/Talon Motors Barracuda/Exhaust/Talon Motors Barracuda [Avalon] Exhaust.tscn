@@ -22,7 +22,7 @@ Part_Number = 5
 description = "A high performance exhaust system designed by Avalon for the Talon Motors Barracuda"
 price = 2200
 weight = 27
-tq_mod = 1.1
+tq_mod_exhaust = 1.15
 sound_dampening = 6
 pitch_tweak = 1.04
 

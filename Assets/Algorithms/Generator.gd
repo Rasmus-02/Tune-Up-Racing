@@ -60,7 +60,6 @@ func generate_car(rarity, weight, torque_estimate, grip, downforce, brake_force,
 		car_weight += hood.weight + r_bumper.weight
 		
 		var car_price = chassi.price + driveshaft.price + gearbox.price + fenders.price + wheels.price + tires.price + spoiler.price + f_bumper.price + headlight.price + taillights.price + mirrors.price + subframe.price + exhaust.price + brakes.price + suspension.price + radiator.price + hood.price + r_bumper.price
-		chassi.queue_free()
 		
 		var engine_position_offset = Vector2.ZERO
 		var engine_bay_size = [chassi.engine_bay_lenght - radiator.width, chassi.engine_bay_width]
@@ -73,6 +72,7 @@ func generate_car(rarity, weight, torque_estimate, grip, downforce, brake_force,
 		return{"Car_ID" : driveshaft.Car_ID,
 		"price" : car_price,
 		"weight" : car_weight,
+		"reliability" : chassi.reliability,
 		"position_offset" : engine_position_offset,
 		"engine_bay_size" : engine_bay_size,
 		"stock_engine" : car_model.stock_engine,
@@ -94,6 +94,7 @@ func generate_car(rarity, weight, torque_estimate, grip, downforce, brake_force,
 		"brakes" : brakes.Part_Number,
 		"suspension" : suspension.Part_Number,
 		"radiator" : radiator.Part_Number,}
+		chassi.queue_free()
 
 func generate_engine(rarity, weight, car_weight, torque, engine_bay_size, engine_offset, drivetrain, stock_engine, precision, race : bool):
 	#If generating AI and not purchaseable cars
@@ -239,6 +240,7 @@ func generate_engine(rarity, weight, car_weight, torque, engine_bay_size, engine
 		#If engine is within torque limits return engine
 		return {"Engine_ID" : block.Engine_ID,
 		"price" : engine_price,
+		"reliability" : block.reliability,
 		"max_boost" : boost_estimate_turbo,
 		"max_rpm" : top.max_hp_rpm * 1.2,
 		"Tq" : est_tq,
@@ -273,6 +275,8 @@ func _find_suitable_part(category ,category_array, stat1_range, stat2_range, sta
 				#Chanse if not AI CAR to be empty
 				if race_status == false and randi_range(0,10) > 8:
 					instance = category_array[0].instantiate()
+				elif race_status == false and randi_range(0,10) < 8:
+					instance = category_array[1].instantiate()
 				else:
 					instance = category_array[i+1].instantiate()
 				stat_2 = instance.max_tire_width * 5
@@ -285,7 +289,7 @@ func _find_suitable_part(category ,category_array, stat1_range, stat2_range, sta
 				stat_2 = instance.width
 			"spoiler", "f_bumper":
 				#Chanse if not AI CAR to be empty
-				if race_status == false and randi_range(0,10) > 8:
+				if race_status == false and randi_range(0,10) > 6:
 					instance = category_array[0].instantiate()
 				else:
 					instance = category_array[i+1].instantiate()
@@ -294,12 +298,16 @@ func _find_suitable_part(category ,category_array, stat1_range, stat2_range, sta
 				#Chanse if not AI CAR to be empty
 				if race_status == false and randi_range(0,10) > 8:
 					instance = category_array[0].instantiate()
+				elif race_status == false and randi_range(0,10) < 8:
+					instance = category_array[1].instantiate()
 				else:
 					instance = category_array[i+1].instantiate()
 			"hood", "r_bumper":
 				#Chanse if not AI CAR to be empty
 				if race_status == false and randi_range(0,10) > 8:
 					instance = category_array[0].instantiate()
+				elif race_status == false and randi_range(0,10) < 8:
+					instance = category_array[1].instantiate()
 				else:
 					instance = category_array[i+1].instantiate()
 				stat_1 = instance.weight
@@ -307,6 +315,8 @@ func _find_suitable_part(category ,category_array, stat1_range, stat2_range, sta
 				#Chanse if not AI CAR to be empty
 				if race_status == false and randi_range(0,10) > 8:
 					instance = category_array[0].instantiate()
+				elif race_status == false and randi_range(0,10) < 8:
+					instance = category_array[1].instantiate()
 				else:
 					instance = category_array[i+1].instantiate()
 				stat_1 = instance.brake_force
@@ -314,13 +324,21 @@ func _find_suitable_part(category ,category_array, stat1_range, stat2_range, sta
 				#Chanse if not AI CAR to be empty
 				if race_status == false and randi_range(0,10) > 8:
 					instance = category_array[0].instantiate()
+				elif race_status == false and randi_range(0,10) < 8:
+					instance = category_array[1].instantiate()
 				else:
 					instance = category_array[i+1].instantiate()
 			"block":
-				instance = category_array[i+1].instantiate()
+				if race_status == false and randi_range(0,10) < 8: # Reduce chance to be modified
+					instance = category_array[1].instantiate()
+				else:
+					instance = category_array[i+1].instantiate()
 				stat_1 = instance.max_tq
 			"intake_manifold":
-				instance = category_array[i+1].instantiate()
+				if race_status == false and randi_range(0,10) < 8: # Reduce chance to be modified
+					instance = category_array[1].instantiate()
+				else:
+					instance = category_array[i+1].instantiate()
 				if instance.supercharger == true:
 					stat_1 = stat_import * (instance.supercharer_displacement_capacity * 0.0004) #Estimate supercharger power
 					stat_1 *= instance.tq_mod
@@ -328,7 +346,10 @@ func _find_suitable_part(category ,category_array, stat1_range, stat2_range, sta
 					stat_1 = stat_import * instance.tq_mod
 				stat_2 = instance.width
 			"exhaust_manifold":
-				instance = category_array[i+1].instantiate()
+				if race_status == false and randi_range(0,10) < 8: # Reduce chance to be modified
+					instance = category_array[1].instantiate()
+				else:
+					instance = category_array[i+1].instantiate()
 				if instance.turbo == true:
 					#Estimate Boost Level
 					var max_boost_estimate = _estimate_boost(stat_import[0], stat_import[2], stat_import[1], instance.get_turbo_max_size(), instance.turbo_efficiency)
@@ -342,12 +363,19 @@ func _find_suitable_part(category ,category_array, stat1_range, stat2_range, sta
 				else:
 					stat_2 = instance.width
 			"internals":
-				instance = category_array[i+1].instantiate()
+				if race_status == false and randi_range(0,10) < 8: # Reduce chance to be modified
+					instance = category_array[1].instantiate()
+				else:
+					instance = category_array[i+1].instantiate()
 				stat_1 = instance.max_tq
 				var stock_internals = category_array[1].instantiate()
 				stat_2 = instance.compression + 2.5 - stock_internals.compression
 			"top":
-				instance = category_array[i+1].instantiate()
+				if race_status == false and randi_range(0,10) < 8: # Reduce chance to be modified
+					print("STOCK TOP")
+					instance = category_array[1].instantiate()
+				else:
+					instance = category_array[i+1].instantiate()
 				var stock_top = category_array[1].instantiate()
 				var rev_hp_boost = instance.max_hp_rpm / stock_top.max_hp_rpm
 				stat_1 = stat_import + instance.tq_mod * rev_hp_boost
@@ -368,7 +396,6 @@ func _find_suitable_part(category ,category_array, stat1_range, stat2_range, sta
 	#Backup array to prevent crash
 	if temp_array.size() == 0 and temp_backup_array.size() != 0:
 		rng = randi_range(0, temp_backup_array.size()-1)
-		#print("backup: ", temp_backup_array[rng])
 		return(temp_backup_array[rng])
 	
 	#Backup 2 just equips stock part

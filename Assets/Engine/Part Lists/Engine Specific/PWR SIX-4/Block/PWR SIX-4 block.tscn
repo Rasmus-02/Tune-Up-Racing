@@ -22,6 +22,7 @@ Part_Number = 1
 description = "The factory block for the PWR SIX-4 Engine"
 price = 2800
 weight = 85
+reliability = 0.75
 tq = 300
 max_tq = 950
 

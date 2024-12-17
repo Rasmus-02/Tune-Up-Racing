@@ -5,6 +5,7 @@ var Talon_Motors_Typhoon = [preload("res://Assets/Engine/Engines/Talon Motors Ty
 var Nagata_2S16i = [preload("res://Assets/Engine/Engines/Nagata 2S-16i.tscn").instantiate(), "Nagata 2S-16i", "uncommon"] #2
 var Hikari_Suhei_25A = [preload("res://Assets/Engine/Engines/Hikari Suhei-25A.tscn").instantiate(), "Hikari Suhei-25A", "uncommon"] #3
 var PWR_SIX_4 = [preload("res://Assets/Engine/Engines/PWR SIX-4.tscn").instantiate(), "PWR SIX-4", "rare"] #4
+#[preload, name, rarity]
 
 var engine_list = [No_Engine, Talon_Motors_Typhoon, Nagata_2S16i, Hikari_Suhei_25A, PWR_SIX_4]
 var current_engine = null

@@ -5,6 +5,8 @@ extends Control
 @export var price : Label
 @export var favorited : TextureButton
 @export var car_display : Node2D
+@export var car_rarity : Sprite2D
+@export var engine_rarity : Sprite2D
 var car_dict = null
 
 func update(car : CharacterBody2D, favorited_status : bool, picture_info : Array, price_info : int):
@@ -29,11 +31,14 @@ func update(car : CharacterBody2D, favorited_status : bool, picture_info : Array
 	if car.is_functional() and car.engine.is_functional():
 		roadworthy = "Functional"
 	car_stats.text = fuel_type + " | " + gearbox_type + " | " + drivetrain_type + " | " + roadworthy
+	car_rarity.modulate = FontColorSettings.get_color(car.get_node("Car_spawner").current_car[2])
+	engine_rarity.modulate = FontColorSettings.get_color(car.engine.rarity)
 
 func load_car(dict):
 	car_dict = dict
 	var car = dict.car
 	var engine = dict.engine
+	var photo = dict.photo_settings
 	var car_node = car_display.get_node("Car")
 	car_node.load_car_from_algorithm(car)
 	car_node.engine.load_car_from_algorithm(engine)
@@ -48,6 +53,21 @@ func load_car(dict):
 	car_node.spoiler_color = dict.colors.spoiler
 	car_node.mirrors_color = dict.colors.mirrors
 	car_node.update_car_parts()
+	
+	#Change the picture background
+	var bg = car_display.get_node("Background")
+	var filter = car_display.get_node("Filters")
+	var camera = car_display.get_node("View")
+	bg.get_child(photo.get(str(0)).scene).show()
+	bg.get_child(photo.get(str(0)).scene).show()
+	camera.zoom = Vector2(photo.get(str(0)).zoom, photo.get(str(0)).zoom)
+	camera.position.x = photo.get(str(0)).position[0]
+	camera.position.y = photo.get(str(0)).position[1]
+	camera.rotation = rad_to_deg(photo.get(str(0)).rotation)
+	
+	if photo.get(str(0)).filter != 999: #IF filter is selected show (999 is null) and every photo has same filter
+		filter.get_child(photo.get(str(0)).filter).show()
+	
 	update(car_node, dict.favorite_status, [0,0], car.price)
 
 func format_number(num: int) -> String:

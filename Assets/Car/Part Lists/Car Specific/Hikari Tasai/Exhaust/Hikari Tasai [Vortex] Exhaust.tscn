@@ -21,6 +21,7 @@ Part_Number = 3
 description = "An aftermarket performance exhaust for the Hikari Tasai, designed by Vortex"
 price = 750
 weight = 28
+tq_mod_exhaust = 1.02
 sound_dampening = 7
 pitch_tweak = 0.96
 

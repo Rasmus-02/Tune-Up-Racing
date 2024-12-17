@@ -22,6 +22,7 @@ Part_Number = 4
 description = "A durable, efficient and light weight block for the 2S-16i Engine, built for race cars"
 price = 6500
 weight = 48
+reliability = 0.92
 tq = 185
 max_tq = 900
 

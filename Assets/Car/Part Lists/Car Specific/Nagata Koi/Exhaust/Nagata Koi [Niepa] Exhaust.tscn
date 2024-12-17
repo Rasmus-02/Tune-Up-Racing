@@ -21,7 +21,6 @@ Part_Number = 3
 description = "A performance exhaust system designed by Niepa, for the Nagata Koi."
 price = 350
 weight = 30
-tq_mod = 1.02
 sound_dampening = 8
 pitch_tweak = 1.02
 

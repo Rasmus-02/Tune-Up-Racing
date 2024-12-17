@@ -21,7 +21,7 @@ Part_Number = 4
 description = "A high performance aftermarket exhaust for the Hikari Tasai, designed by KS-Racing"
 price = 1500
 weight = 22
-tq_mod = 1.06
+tq_mod_exhaust = 1.07
 sound_dampening = 6
 pitch_tweak = 1.04
 

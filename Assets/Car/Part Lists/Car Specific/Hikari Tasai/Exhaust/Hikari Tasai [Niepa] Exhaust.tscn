@@ -21,7 +21,7 @@ Part_Number = 2
 description = "An aftermarket performance exhaust for the Hikari Tasai, designed by Niepa"
 price = 750
 weight = 36
-tq_mod = 1.01
+tq_mod_exhaust = 1.03
 sound_dampening = 8
 pitch_tweak = 0.98
 

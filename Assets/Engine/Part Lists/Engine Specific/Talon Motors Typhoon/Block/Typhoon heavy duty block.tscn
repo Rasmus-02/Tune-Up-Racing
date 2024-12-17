@@ -22,6 +22,7 @@ Part_Number = 3
 description = "A more durable heavy duty block for the Typhoon engine by Talon Motors. This block is able to withstand a lot more torque than the factory block"
 price = 7500
 weight = 125
+reliability = 0.98
 tq = 480
 max_tq = 2000
 

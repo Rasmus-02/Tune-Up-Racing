@@ -22,7 +22,6 @@ Part_Number = 1
 description = "The Stock Exhaust for the Talon Motors Barracuda"
 price = 600
 weight = 34
-tq_mod = 0.97
 sound_dampening = 8
 pitch_tweak = 0.99
 

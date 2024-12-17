@@ -22,6 +22,7 @@ Part_Number = 3
 description = "A more durable but heavier block for the Hikari Suhei-25A Engine"
 price = 5500
 weight = 80
+reliability = 0.87
 tq = 245
 max_tq = 1250
 

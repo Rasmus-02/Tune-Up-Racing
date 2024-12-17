@@ -21,7 +21,7 @@ Part_Number = 1
 description = "The Stock Exhaust that comes with the Hikari Tasai"
 price = 350
 weight = 29
-tq_mod = 0.96
+tq_mod_exhaust = 0.98
 pitch_tweak = 0.99
 
 [node name="Sprite2D" type="Sprite2D" parent="."]

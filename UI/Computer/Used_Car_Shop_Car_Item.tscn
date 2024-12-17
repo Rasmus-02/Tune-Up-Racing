@@ -1,10 +1,12 @@
-[gd_scene load_steps=11 format=3 uid="uid://b5iw4oxi2wlwk"]
+[gd_scene load_steps=13 format=3 uid="uid://b5iw4oxi2wlwk"]
 
 [ext_resource type="Script" path="res://UI/Computer/Used_Car_Shop_Car_Item.gd" id="1_8gf5m"]
 [ext_resource type="Texture2D" uid="uid://t4hg1xatd0l1" path="res://Textures/UI/Computer/Favorite Icon.png" id="1_d18p7"]
 [ext_resource type="Texture2D" uid="uid://dj3a844uphtep" path="res://Textures/UI/Computer/Favorite Icon Highlighted.png" id="2_ud713"]
 [ext_resource type="Texture2D" uid="uid://crsakh0k3umfk" path="res://Textures/UI/Computer/Favorite Icon Hovered.png" id="3_ebwj2"]
 [ext_resource type="PackedScene" uid="uid://bnhdxvccxe6x4" path="res://UI/Computer/car_display.tscn" id="5_8to2d"]
+[ext_resource type="Texture2D" uid="uid://bs7rf3581uq76" path="res://Textures/UI/Computer/Rarity Indicator.png" id="6_rfgj7"]
+[ext_resource type="Texture2D" uid="uid://c2qqy5b2di6si" path="res://Textures/UI/Computer/Engine Rarity Indicator.png" id="7_4m2d4"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kkeol"]
 content_margin_left = 20.0
@@ -23,7 +25,7 @@ bg_color = Color(1, 1, 1, 0.219608)
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pigu8"]
 bg_color = Color(1, 1, 1, 0.34902)
 
-[node name="Car" type="Control" node_paths=PackedStringArray("car_name", "engine_name", "car_stats", "price", "favorited", "car_display")]
+[node name="Car" type="Control" node_paths=PackedStringArray("car_name", "engine_name", "car_stats", "price", "favorited", "car_display", "car_rarity", "engine_rarity")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -31,12 +33,14 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_8gf5m")
-car_name = NodePath("Car1/Car Name")
-engine_name = NodePath("Car1/Engine Name")
+car_name = NodePath("Car1/Car Name/Car Name")
+engine_name = NodePath("Car1/Engine Name2")
 car_stats = NodePath("Car1/Specs")
 price = NodePath("Car1/Price")
 favorited = NodePath("Car1/Favorite")
 car_display = NodePath("Car1/Image/Image Scene Display/Car Display")
+car_rarity = NodePath("Car1/Car Name/Rarity Marker/Car Rarity")
+engine_rarity = NodePath("Car1/Car Name/Rarity Marker/Engine Rarity")
 
 [node name="Car1" type="Panel" parent="."]
 custom_minimum_size = Vector2(1290, 200)
@@ -57,27 +61,43 @@ text = "25.000$"
 horizontal_alignment = 2
 vertical_alignment = 2
 
-[node name="Car Name" type="Label" parent="Car1"]
+[node name="Car Name" type="HBoxContainer" parent="Car1"]
+layout_mode = 0
+offset_left = 205.0
+offset_top = -4.0
+offset_right = 465.0
+offset_bottom = 80.0
+
+[node name="Car Name" type="Label" parent="Car1/Car Name"]
 custom_minimum_size = Vector2(0, 84.835)
 layout_mode = 2
-offset_left = 206.0
-offset_top = -8.0
-offset_right = 760.0
-offset_bottom = 77.0
-scale = Vector2(1.5, 1.5)
 theme_override_colors/font_color = Color(0.196078, 0.196078, 0.196078, 1)
 theme_override_styles/normal = SubResource("StyleBoxEmpty_l7bqo")
 text = "Hikari Tasai"
 
-[node name="Engine Name" type="Label" parent="Car1"]
+[node name="Rarity Marker" type="Label" parent="Car1/Car Name"]
+layout_mode = 2
+
+[node name="Car Rarity" type="Sprite2D" parent="Car1/Car Name/Rarity Marker"]
+modulate = Color(0.894118, 0.894118, 0.894118, 1)
+position = Vector2(23, 29)
+scale = Vector2(6, 6)
+texture = ExtResource("7_4m2d4")
+
+[node name="Engine Rarity" type="Sprite2D" parent="Car1/Car Name/Rarity Marker"]
+position = Vector2(23, 29)
+scale = Vector2(6, 6)
+texture = ExtResource("6_rfgj7")
+
+[node name="Engine Name2" type="Label" parent="Car1"]
 custom_minimum_size = Vector2(0, 84.835)
 layout_mode = 2
 offset_left = 206.0
-offset_top = 59.0
-offset_right = 760.0
-offset_bottom = 144.0
-scale = Vector2(0.75, 0.75)
+offset_top = 31.0
+offset_right = 383.0
+offset_bottom = 115.835
 theme_override_colors/font_color = Color(0.196078, 0.196078, 0.196078, 1)
+theme_override_font_sizes/font_size = 48
 theme_override_styles/normal = SubResource("StyleBoxEmpty_l7bqo")
 text = "Hikari Suhei-25A"
 vertical_alignment = 1
@@ -106,6 +126,8 @@ scale = Vector2(0.655, 0.655)
 transparent_bg = true
 handle_input_locally = false
 mesh_lod_threshold = 0.0
+canvas_item_default_texture_filter = 0
+canvas_item_default_texture_repeat = 1
 size = Vector2i(280, 280)
 render_target_update_mode = 4
 

@@ -1,0 +1,410 @@
+[gd_scene load_steps=22 format=3 uid="uid://kxvfaj14102v"]
+
+[ext_resource type="Script" path="res://UI/Computer/Car Detailed.gd" id="1_gs2hh"]
+[ext_resource type="PackedScene" uid="uid://bnhdxvccxe6x4" path="res://UI/Computer/car_display.tscn" id="2_x20so"]
+[ext_resource type="Texture2D" uid="uid://t4hg1xatd0l1" path="res://Textures/UI/Computer/Favorite Icon.png" id="3_j88no"]
+[ext_resource type="Texture2D" uid="uid://c2qqy5b2di6si" path="res://Textures/UI/Computer/Engine Rarity Indicator.png" id="3_srfim"]
+[ext_resource type="Texture2D" uid="uid://dj3a844uphtep" path="res://Textures/UI/Computer/Favorite Icon Highlighted.png" id="4_525w8"]
+[ext_resource type="Texture2D" uid="uid://bs7rf3581uq76" path="res://Textures/UI/Computer/Rarity Indicator.png" id="4_vmnkk"]
+[ext_resource type="Texture2D" uid="uid://crsakh0k3umfk" path="res://Textures/UI/Computer/Favorite Icon Hovered.png" id="5_ekfap"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_c88v1"]
+content_margin_left = 20.0
+content_margin_top = 10.0
+content_margin_right = 10.0
+content_margin_bottom = 10.0
+bg_color = Color(1, 0.960784, 0.952941, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wqr1o"]
+bg_color = Color(1, 0.901961, 0.882353, 1)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_gitug"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_dplo0"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_dot6d"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_1djb3"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_tky7b"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_t1lrj"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2ex1g"]
+bg_color = Color(1, 1, 1, 0.215686)
+corner_radius_top_left = 1
+corner_radius_top_right = 1
+corner_radius_bottom_right = 1
+corner_radius_bottom_left = 1
+anti_aliasing = false
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yx6h4"]
+bg_color = Color(1, 1, 1, 0.447059)
+corner_radius_top_left = 1
+corner_radius_top_right = 1
+corner_radius_bottom_right = 1
+corner_radius_bottom_left = 1
+anti_aliasing = false
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_j2xjw"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_i06ps"]
+bg_color = Color(1, 0.427451, 0.352941, 1)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+expand_margin_bottom = 16.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_exiig"]
+bg_color = Color(1, 0.54902, 0.482353, 1)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+expand_margin_bottom = 16.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4uii8"]
+bg_color = Color(1, 0.509804, 0.439216, 1)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+expand_margin_bottom = 16.0
+
+[node name="Car Detailed" type="Panel" node_paths=PackedStringArray("images", "car_name", "engine_name", "car_stats", "price", "favorited", "car_rarity", "engine_rarity", "milage", "power", "weight")]
+offset_right = 1900.0
+offset_bottom = 1197.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_c88v1")
+script = ExtResource("1_gs2hh")
+images = NodePath("Picture BG")
+car_name = NodePath("Title BG/Car Name/Car Name")
+engine_name = NodePath("Title BG/Engine Name")
+car_stats = NodePath("Title BG/Specs")
+price = NodePath("Title BG/Price")
+favorited = NodePath("Favorite")
+car_rarity = NodePath("Title BG/Car Name/Rarity Marker/Car Rarity")
+engine_rarity = NodePath("Title BG/Car Name/Rarity Marker/Engine Rarity")
+milage = NodePath("Title BG/Milage")
+power = NodePath("Title BG/Power")
+weight = NodePath("Title BG/Weight")
+
+[node name="Picture BG" type="Panel" parent="."]
+layout_mode = 2
+offset_left = 95.0
+offset_top = 25.0
+offset_right = 882.0
+offset_bottom = 663.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_wqr1o")
+
+[node name="Image" type="SubViewportContainer" parent="Picture BG"]
+layout_mode = 0
+offset_left = 18.0
+offset_top = 18.0
+offset_right = 318.0
+offset_bottom = 318.0
+scale = Vector2(2, 2)
+
+[node name="Image Scene Display" type="SubViewport" parent="Picture BG/Image"]
+transparent_bg = true
+handle_input_locally = false
+mesh_lod_threshold = 0.0
+canvas_item_default_texture_filter = 0
+canvas_item_default_texture_repeat = 1
+size = Vector2i(300, 300)
+render_target_update_mode = 4
+
+[node name="Car Display" parent="Picture BG/Image/Image Scene Display" instance=ExtResource("2_x20so")]
+
+[node name="Image2" type="SubViewportContainer" parent="Picture BG"]
+layout_mode = 2
+offset_left = 626.0
+offset_top = 18.0
+offset_right = 926.0
+offset_bottom = 318.0
+scale = Vector2(0.48, 0.48)
+
+[node name="Image Scene Display" type="SubViewport" parent="Picture BG/Image2"]
+transparent_bg = true
+handle_input_locally = false
+mesh_lod_threshold = 0.0
+canvas_item_default_texture_filter = 0
+canvas_item_default_texture_repeat = 1
+size = Vector2i(300, 300)
+render_target_update_mode = 4
+
+[node name="Car Display" parent="Picture BG/Image2/Image Scene Display" instance=ExtResource("2_x20so")]
+
+[node name="Image3" type="SubViewportContainer" parent="Picture BG"]
+layout_mode = 2
+offset_left = 626.0
+offset_top = 169.0
+offset_right = 926.0
+offset_bottom = 469.0
+scale = Vector2(0.48, 0.48)
+
+[node name="Image Scene Display" type="SubViewport" parent="Picture BG/Image3"]
+transparent_bg = true
+handle_input_locally = false
+mesh_lod_threshold = 0.0
+canvas_item_default_texture_filter = 0
+canvas_item_default_texture_repeat = 1
+size = Vector2i(300, 300)
+render_target_update_mode = 4
+
+[node name="Car Display" parent="Picture BG/Image3/Image Scene Display" instance=ExtResource("2_x20so")]
+
+[node name="Image4" type="SubViewportContainer" parent="Picture BG"]
+layout_mode = 2
+offset_left = 626.0
+offset_top = 321.0
+offset_right = 926.0
+offset_bottom = 621.0
+scale = Vector2(0.48, 0.48)
+
+[node name="Image Scene Display" type="SubViewport" parent="Picture BG/Image4"]
+transparent_bg = true
+handle_input_locally = false
+mesh_lod_threshold = 0.0
+canvas_item_default_texture_filter = 0
+canvas_item_default_texture_repeat = 1
+size = Vector2i(300, 300)
+render_target_update_mode = 4
+
+[node name="Car Display" parent="Picture BG/Image4/Image Scene Display" instance=ExtResource("2_x20so")]
+
+[node name="Image5" type="SubViewportContainer" parent="Picture BG"]
+layout_mode = 2
+offset_left = 626.0
+offset_top = 474.0
+offset_right = 926.0
+offset_bottom = 774.0
+scale = Vector2(0.48, 0.48)
+
+[node name="Image Scene Display" type="SubViewport" parent="Picture BG/Image5"]
+transparent_bg = true
+handle_input_locally = false
+mesh_lod_threshold = 0.0
+canvas_item_default_texture_filter = 0
+canvas_item_default_texture_repeat = 1
+size = Vector2i(300, 300)
+render_target_update_mode = 4
+
+[node name="Car Display" parent="Picture BG/Image5/Image Scene Display" instance=ExtResource("2_x20so")]
+
+[node name="Title BG" type="Panel" parent="."]
+layout_mode = 0
+offset_left = 903.0
+offset_top = 25.0
+offset_right = 1806.0
+offset_bottom = 664.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_wqr1o")
+
+[node name="Car Name" type="HBoxContainer" parent="Title BG"]
+layout_mode = 0
+offset_left = 19.0
+offset_top = -6.0
+offset_right = 404.0
+offset_bottom = 78.0
+scale = Vector2(1.5, 1.5)
+
+[node name="Car Name" type="Label" parent="Title BG/Car Name"]
+custom_minimum_size = Vector2(0, 84.835)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.196078, 0.196078, 0.196078, 1)
+theme_override_styles/normal = SubResource("StyleBoxEmpty_gitug")
+text = "Talon Mortors Barracuda"
+
+[node name="Rarity Marker" type="Label" parent="Title BG/Car Name"]
+layout_mode = 2
+
+[node name="Car Rarity" type="Sprite2D" parent="Title BG/Car Name/Rarity Marker"]
+modulate = Color(0.894118, 0.894118, 0.894118, 1)
+position = Vector2(23, 29)
+scale = Vector2(6, 6)
+texture = ExtResource("3_srfim")
+
+[node name="Engine Rarity" type="Sprite2D" parent="Title BG/Car Name/Rarity Marker"]
+position = Vector2(23, 29)
+scale = Vector2(6, 6)
+texture = ExtResource("4_vmnkk")
+
+[node name="Engine Name" type="Label" parent="Title BG"]
+custom_minimum_size = Vector2(0, 84.835)
+layout_mode = 0
+offset_left = 21.0
+offset_top = 88.0
+offset_right = 575.0
+offset_bottom = 173.0
+theme_override_colors/font_color = Color(0.196078, 0.196078, 0.196078, 1)
+theme_override_styles/normal = SubResource("StyleBoxEmpty_dplo0")
+text = "Hikari Suhei-25A"
+vertical_alignment = 1
+
+[node name="Specs" type="Label" parent="Title BG"]
+custom_minimum_size = Vector2(0, 84.835)
+layout_mode = 0
+offset_left = 21.0
+offset_top = 164.0
+offset_right = 726.0
+offset_bottom = 249.0
+theme_override_colors/font_color = Color(0.196078, 0.196078, 0.196078, 1)
+theme_override_styles/normal = SubResource("StyleBoxEmpty_dot6d")
+text = "Gasoline | Manual | AWD | Functional"
+
+[node name="Milage" type="Label" parent="Title BG"]
+custom_minimum_size = Vector2(0, 84.835)
+layout_mode = 0
+offset_left = 21.0
+offset_top = 236.0
+offset_right = 726.0
+offset_bottom = 321.0
+theme_override_colors/font_color = Color(0.196078, 0.196078, 0.196078, 1)
+theme_override_styles/normal = SubResource("StyleBoxEmpty_dot6d")
+text = "Milage: 200.000km"
+
+[node name="Power" type="Label" parent="Title BG"]
+custom_minimum_size = Vector2(0, 84.835)
+layout_mode = 0
+offset_left = 21.0
+offset_top = 310.0
+offset_right = 726.0
+offset_bottom = 395.0
+theme_override_colors/font_color = Color(0.196078, 0.196078, 0.196078, 1)
+theme_override_styles/normal = SubResource("StyleBoxEmpty_dot6d")
+text = "Power Estimate: 300nm"
+
+[node name="Price" type="Label" parent="Title BG"]
+custom_minimum_size = Vector2(0, 84.835)
+layout_mode = 0
+offset_left = 535.0
+offset_top = 502.0
+offset_right = 769.0
+offset_bottom = 587.0
+scale = Vector2(1.5, 1.5)
+theme_override_colors/font_color = Color(0.196078, 0.196078, 0.196078, 1)
+theme_override_styles/normal = SubResource("StyleBoxEmpty_1djb3")
+text = "22.000$"
+horizontal_alignment = 2
+vertical_alignment = 2
+
+[node name="Weight" type="Label" parent="Title BG"]
+custom_minimum_size = Vector2(0, 84.835)
+layout_mode = 0
+offset_left = 21.0
+offset_top = 384.0
+offset_right = 726.0
+offset_bottom = 469.0
+theme_override_colors/font_color = Color(0.196078, 0.196078, 0.196078, 1)
+theme_override_styles/normal = SubResource("StyleBoxEmpty_dot6d")
+text = "Weight: 1200kg"
+
+[node name="Text BG" type="Panel" parent="."]
+layout_mode = 0
+offset_left = 95.0
+offset_top = 680.0
+offset_right = 1805.0
+offset_bottom = 1171.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_wqr1o")
+
+[node name="Title" type="Label" parent="Text BG"]
+custom_minimum_size = Vector2(0, 84.835)
+layout_mode = 0
+offset_left = 21.0
+offset_top = -8.0
+offset_right = 226.0
+offset_bottom = 77.0
+scale = Vector2(1.5, 1.5)
+theme_override_colors/font_color = Color(0.196078, 0.196078, 0.196078, 1)
+theme_override_styles/normal = SubResource("StyleBoxEmpty_tky7b")
+text = "Description"
+
+[node name="Description" type="Label" parent="Text BG"]
+custom_minimum_size = Vector2(0, 84.835)
+layout_mode = 0
+offset_left = 21.0
+offset_top = 89.0
+offset_right = 1534.0
+offset_bottom = 474.0
+theme_override_colors/font_color = Color(0.196078, 0.196078, 0.196078, 1)
+theme_override_styles/normal = SubResource("StyleBoxEmpty_tky7b")
+text = "A fun little car to drive around, at a great price. Low milage and well taken care of."
+autowrap_mode = 2
+
+[node name="Button1" type="Button" parent="."]
+layout_mode = 0
+offset_left = 718.0
+offset_top = 40.0
+offset_right = 868.0
+offset_bottom = 190.0
+theme_override_styles/normal = SubResource("StyleBoxEmpty_t1lrj")
+theme_override_styles/hover = SubResource("StyleBoxFlat_2ex1g")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_yx6h4")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_j2xjw")
+toggle_mode = true
+
+[node name="Button2" type="Button" parent="."]
+layout_mode = 0
+offset_left = 718.0
+offset_top = 191.0
+offset_right = 868.0
+offset_bottom = 341.0
+theme_override_styles/normal = SubResource("StyleBoxEmpty_t1lrj")
+theme_override_styles/hover = SubResource("StyleBoxFlat_2ex1g")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_yx6h4")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_j2xjw")
+toggle_mode = true
+
+[node name="Button3" type="Button" parent="."]
+layout_mode = 0
+offset_left = 718.0
+offset_top = 343.0
+offset_right = 868.0
+offset_bottom = 493.0
+theme_override_styles/normal = SubResource("StyleBoxEmpty_t1lrj")
+theme_override_styles/hover = SubResource("StyleBoxFlat_2ex1g")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_yx6h4")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_j2xjw")
+toggle_mode = true
+
+[node name="Button4" type="Button" parent="."]
+layout_mode = 0
+offset_left = 718.0
+offset_top = 496.0
+offset_right = 868.0
+offset_bottom = 646.0
+theme_override_styles/normal = SubResource("StyleBoxEmpty_t1lrj")
+theme_override_styles/hover = SubResource("StyleBoxFlat_2ex1g")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_yx6h4")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_j2xjw")
+toggle_mode = true
+
+[node name="Favorite" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 1136.0
+offset_top = 556.0
+offset_right = 1151.0
+offset_bottom = 571.0
+scale = Vector2(6, 6)
+toggle_mode = true
+texture_normal = ExtResource("3_j88no")
+texture_pressed = ExtResource("4_525w8")
+texture_hover = ExtResource("5_ekfap")
+
+[node name="Buy" type="Button" parent="."]
+layout_mode = 0
+offset_left = 916.0
+offset_top = 552.0
+offset_right = 1111.0
+offset_bottom = 634.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_i06ps")
+theme_override_styles/hover = SubResource("StyleBoxFlat_exiig")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_i06ps")
+theme_override_styles/focus = SubResource("StyleBoxFlat_4uii8")
+text = "Buy"
+
+[connection signal="pressed" from="Button1" to="." method="_on_button_1_pressed"]
+[connection signal="pressed" from="Button2" to="." method="_on_button_2_pressed"]
+[connection signal="pressed" from="Button3" to="." method="_on_button_3_pressed"]
+[connection signal="pressed" from="Button4" to="." method="_on_button_4_pressed"]
+[connection signal="pressed" from="Favorite" to="." method="_on_favorite_pressed"]

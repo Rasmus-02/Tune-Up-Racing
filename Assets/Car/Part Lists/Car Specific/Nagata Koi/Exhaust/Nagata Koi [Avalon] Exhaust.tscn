@@ -21,7 +21,7 @@ Part_Number = 5
 description = "A race exhaust system designed by the racing team Avalon, for the Nagata Koi."
 price = 2000
 weight = 30
-tq_mod = 1.1
+tq_mod_exhaust = 1.15
 sound_dampening = 6
 pitch_tweak = 1.03
 

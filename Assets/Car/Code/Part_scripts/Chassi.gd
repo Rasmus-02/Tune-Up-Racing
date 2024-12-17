@@ -15,6 +15,7 @@ var id = [Car_ID,0,Part_Number,rarity] #Engine ID, Part type, Part number, rank
 @export var paintable = true
 @export_range(0 , 10000000) var price : int
 @export var weight = 0
+@export_range(0, 1, 0.01) var reliability : float
 @export var downforce = 0 #Kg @ 100kmh
 @export var drag = 0.0 #drag coeff
 @export var wheelbase = 0 #pixels

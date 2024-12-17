@@ -22,7 +22,7 @@ Part_Number = 4
 description = "A high performance exhaust system designed by Redline for the Talon Motors Barracuda"
 price = 1200
 weight = 22
-tq_mod = 1.07
+tq_mod_exhaust = 1.12
 sound_dampening = 5
 pitch_tweak = 0.97
 

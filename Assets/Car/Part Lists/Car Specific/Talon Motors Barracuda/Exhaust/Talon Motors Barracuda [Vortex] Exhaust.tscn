@@ -22,7 +22,6 @@ Part_Number = 2
 description = "A budget exhaust system designed by Vortex for the Talon Motors Barracuda"
 price = 400
 weight = 28
-tq_mod = 0.96
 sound_dampening = 4
 
 [node name="Sprite2D" type="Sprite2D" parent="."]

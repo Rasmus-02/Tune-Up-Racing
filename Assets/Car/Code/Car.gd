@@ -538,7 +538,7 @@ func update_stats():
 	shift_timer.set_wait_time(gearbox.shift_time)
 	engine_pitch = exhaust.pitch_tweak
 	engine_volume_dampening = exhaust.sound_dampening
-	exhaust_tq_mod = exhaust.tq_mod
+	exhaust_tq_mod = exhaust.tq_mod_exhaust
 	is_ready = true
 	
 	#If Saved gear ratio is missing gears, reset it to default

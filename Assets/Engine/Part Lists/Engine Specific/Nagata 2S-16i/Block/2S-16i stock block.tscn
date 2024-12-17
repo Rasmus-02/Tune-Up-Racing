@@ -22,6 +22,7 @@ Part_Number = 1
 description = "The factory block for the 2S-16i Engine"
 price = 1500
 weight = 60
+reliability = 0.92
 tq = 180
 max_tq = 550
 

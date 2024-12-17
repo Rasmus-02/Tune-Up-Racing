@@ -327,6 +327,8 @@ func is_functional():
 var last_engine_position = null #To check if gearbox position gets changed
 var last_drivetrain = null
 func  _physics_process(_delta):
+	if Input.is_action_just_pressed("Handbrake"):
+		estimate_torque()
 	if is_functional() and is_running == true and deleted == false:
 		rpm_calculator()
 		hp_tq_calculator()
@@ -617,11 +619,11 @@ func hp_tq_calculator():
 		torque = 0
 	#Horsepower and torque is based of rpm
 	else: 
-		var low_end_torque = max_torque / 8 #used for making tq higher in low rpm
+		var low_end_torque = max_torque / 8.0 #used for making tq higher in low rpm
 		torque = (max_torque * (rpm / max_horsepower_rpm)) + low_end_torque
 		torque = (torque + (torque * airflow_post))/2 #for boost
-		torque = ((torque * 2 - torque * (rpm / max_horsepower_rpm))/2) * 3.5 #powerloss due to friction
-		torque = torque * (compression / 10) #apply compression boost
+		torque = ((torque * 2 - torque * (rpm / max_horsepower_rpm))/2.0) * 3.5 #powerloss due to friction
+		torque = torque * (float(compression) / 10.0) #apply compression boost
 		if compression + boost > max_compression:
 			torque += (max_compression - (compression + boost)) * (50 * (1+boost)) #if over max compression start loosing power due to knock, lose more with more boost
 		if turbo == true: #losses due to turbo restriction
@@ -630,7 +632,7 @@ func hp_tq_calculator():
 			torque -= supercharer_displacement_capacity / 22.0
 		torque = clamp(torque, 0, 9999)
 		
-		horsepower = (torque * rpm) / 7127
+		horsepower = (torque * rpm) / 7127.0
 
 func knock():
 	if compression + boost > max_compression:
@@ -642,3 +644,57 @@ func _on_engine_dyno_dyno_status(dyno_status):
 	if dyno_status == 1:
 		is_running = true
 		dyno = 1
+
+func estimate_torque():
+	var temp_tq
+	var temp_hp
+	#Run twice, first time for hp, second time for tq
+	var run1_hp
+	var run1_tq
+	
+	for i in 1:
+		var temp_rpm = max_horsepower_rpm
+		if i == 1:
+			temp_rpm = max_horsepower_rpm * 0.77
+		var temp_boost = max_boost
+		var temp_airflow_post_turbo = 0
+		var temp_airflow_post_supercharger = 0
+		
+		#Turbo Calc
+		if turbo == true:
+			temp_airflow_post_turbo = (((turbo_size/60.0)**(0.8)) * temp_boost) * 0.8 * air_filter.tq_mod
+		
+		if supercharger == true:
+			var pulley_size = supercharger_pulley_size / 35.0
+			var loss_rate = 1.2
+			var supercharger_loss = ((((max_horsepower_rpm / pulley_size) - temp_rpm) * loss_rate) / (max_horsepower_rpm / pulley_size)) * (supercharer_displacement_capacity * 0.0004)
+			var temp_boost_supercharger = (temp_rpm / (max_horsepower_rpm / pulley_size)) * (supercharer_displacement_capacity * 0.0004) + supercharger_loss
+			temp_boost_supercharger = clamp(temp_boost_supercharger, 0, (max_horsepower_rpm / pulley_size))
+			temp_boost += temp_boost_supercharger
+			temp_airflow_post_supercharger = temp_boost_supercharger * 2 * air_filter.tq_mod
+		
+		var temp_airflow_post = temp_airflow_post_turbo + (temp_airflow_post_supercharger * turbo_efficiency)
+		
+		
+		temp_tq = max_torque * (float(temp_rpm) / float(max_horsepower_rpm)) + (max_torque / 8.0)
+		temp_tq = (temp_tq + (temp_tq * temp_airflow_post))/2
+		temp_tq = ((temp_tq * 2 - temp_tq * (temp_rpm / max_horsepower_rpm))/2.0) * 3.5 #powerloss due to friction
+		temp_tq = temp_tq * (float(compression) / 10.0) #apply compression boost
+		
+		if compression + temp_boost > max_compression:
+			temp_tq += (max_compression - (compression + temp_boost)) * (50 * (1+temp_boost)) #if over max compression start loosing power due to knock, lose more with more boost
+		if turbo == true: #losses due to turbo restriction
+			temp_tq -= (((turbo_size/50.0)**(2.0)) * 6) / turbo_efficiency #*10 is constant, efficiensy makes less power loss
+		if supercharger == true:
+			temp_tq -= supercharer_displacement_capacity / 22.0
+		temp_tq = clamp(temp_tq, 0, 9999)
+		temp_hp = (temp_tq * temp_rpm) / 7127.0
+		
+		if i == 0:
+			run1_tq = temp_tq
+			run1_hp = temp_hp
+	
+	## If test with max rpm went better, use that
+	temp_hp = run1_hp
+	
+	return {"tq" : int(temp_tq), "hp" : int(temp_hp)}
