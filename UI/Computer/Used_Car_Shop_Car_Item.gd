@@ -7,6 +7,7 @@ extends Control
 @export var car_display : Node2D
 @export var car_rarity : Sprite2D
 @export var engine_rarity : Sprite2D
+@export var milage : Label
 var car_dict = null
 
 func update(car : CharacterBody2D, favorited_status : bool, picture_info : Array, price_info : int):
@@ -33,6 +34,15 @@ func update(car : CharacterBody2D, favorited_status : bool, picture_info : Array
 	car_stats.text = fuel_type + " | " + gearbox_type + " | " + drivetrain_type + " | " + roadworthy
 	car_rarity.modulate = FontColorSettings.get_color(car.get_node("Car_spawner").current_car[2])
 	engine_rarity.modulate = FontColorSettings.get_color(car.engine.rarity)
+	
+	#Milage
+	var durability = car_dict.durability
+	var milage_modifier = 0
+	for part in durability.keys():
+		milage_modifier += int(durability.get(part))
+	milage_modifier = float(milage_modifier) / float(durability.size() * 100)
+	var milage_value = format_number(int(1500000 - 1500000 * milage_modifier)) #0 durability = 1.500.000km, 0.8 durability = 300.000km
+	milage.text = "Milage: " + milage_value + "km"
 
 func load_car(dict):
 	car_dict = dict

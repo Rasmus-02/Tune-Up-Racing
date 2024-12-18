@@ -153,19 +153,25 @@ func get_durability(reliability):
 	return random_durability
 
 func generate_camera_views():
+	var camera_settings_cover = {
+		"full_body" : {"position" : [148, 152], "zoom" : 1, "rotation" : 0, "filter" : 0, "scene" : 0},
+		"tilted_full" : {"position" : [148, 152], "zoom" : 1, "rotation" : 20, "filter" : 0, "scene" : 0},
+		"tilted_down_full" : {"position" : [142, 152], "zoom" : 1, "rotation" : 315, "filter" : 0, "scene" : 0},
+		"messy_tilt" : {"position" : [148, 152], "zoom" : 0.8, "rotation" : 190, "filter" : 0, "scene" : 0},
+		"messy_tilt2" : {"position" : [148, 152], "zoom" : 0.75, "rotation" : 20, "filter" : 0, "scene" : 0},
+		"messy_straight" : {"position" : [148, 152], "zoom" : 1, "rotation" : 345, "filter" : 0, "scene" : 0},
+		"offset_straight" : {"position" : [142, 110], "zoom" : 1.1, "rotation" : 0, "filter" : 0, "scene" : 0}
+		}
 	
-	var camera_settings = {"full_body" : {"position" : [148, 152], "zoom" : 1, "rotation" : 0, "filter" : 0, "scene" : 0},
+	var camera_settings = {
 	"hood_view" : {"position" : [218, 152], "zoom" : 2.5, "rotation" : 0, "filter" : 0, "scene" : 0},
 	"rear_view" : {"position" : [85, 152], "zoom" : 2, "rotation" : 225, "filter" : 0, "scene" : 0},
 	"front_view" : {"position" : [212, 152], "zoom" : 2, "rotation" : 225, "filter" : 0, "scene" : 0},
-	"tilted_full" : {"position" : [148, 152], "zoom" : 1, "rotation" : 20, "filter" : 0, "scene" : 0},
 	"tilted_hood" : {"position" : [210, 152], "zoom" : 2.5, "rotation" : 20, "filter" : 0, "scene" : 0},
-	"tilted_down_full" : {"position" : [142, 152], "zoom" : 1, "rotation" : 315, "filter" : 0, "scene" : 0},
 	"zoomed_downwards" : {"position" : [205, 152], "zoom" : 2, "rotation" : 270, "filter" : 0, "scene" : 0},
-	"messy_tilt" : {"position" : [148, 152], "zoom" : 0.8, "rotation" : 190, "filter" : 0, "scene" : 0},
-	"messy_tilt2" : {"position" : [148, 152], "zoom" : 0.75, "rotation" : 20, "filter" : 0, "scene" : 0},
 	"45_tilt" : {"position" : [148, 152], "zoom" : 1.3, "rotation" : 45, "filter" : 0, "scene" : 0},
-	"20_tilt_rear" : {"position" : [64, 152], "zoom" : 2.3, "rotation" : 20, "filter" : 0, "scene" : 0}}
+	"20_tilt_rear" : {"position" : [64, 152], "zoom" : 2.3, "rotation" : 20, "filter" : 0, "scene" : 0},
+	}
 	
 	var random_photo_setup = {}
 	var random_filter = randi_range(0, 15)
@@ -173,12 +179,16 @@ func generate_camera_views():
 	if random_filter >= 2:
 		random_filter = 999
 	for i in 4:
-		var size = camera_settings.size()
-		var key = camera_settings.keys()[randi() % size]
-		random_photo_setup[i] = camera_settings[key]
+		var photo_dict = camera_settings
+		if i == 0: #If cover image, use cover image dict
+			photo_dict = camera_settings_cover
+		
+		var size = photo_dict.size()
+		var key = photo_dict.keys()[randi() % size]
+		random_photo_setup[i] = photo_dict[key]
 		random_photo_setup[i].filter = random_filter
 		random_photo_setup[i].scene = randi_range(0, 9)
-		camera_settings.erase(key) #Remove so no same pictures
+		photo_dict.erase(key) #Remove so no same pictures
 	
 	return random_photo_setup
 

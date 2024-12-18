@@ -25,7 +25,7 @@ bg_color = Color(1, 1, 1, 0.219608)
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pigu8"]
 bg_color = Color(1, 1, 1, 0.34902)
 
-[node name="Car" type="Control" node_paths=PackedStringArray("car_name", "engine_name", "car_stats", "price", "favorited", "car_display", "car_rarity", "engine_rarity")]
+[node name="Car" type="Control" node_paths=PackedStringArray("car_name", "engine_name", "car_stats", "price", "favorited", "car_display", "car_rarity", "engine_rarity", "milage")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -34,13 +34,14 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_8gf5m")
 car_name = NodePath("Car1/Car Name/Car Name")
-engine_name = NodePath("Car1/Engine Name2")
+engine_name = NodePath("Car1/Engine Name")
 car_stats = NodePath("Car1/Specs")
 price = NodePath("Car1/Price")
 favorited = NodePath("Car1/Favorite")
 car_display = NodePath("Car1/Image/Image Scene Display/Car Display")
 car_rarity = NodePath("Car1/Car Name/Rarity Marker/Car Rarity")
 engine_rarity = NodePath("Car1/Car Name/Rarity Marker/Engine Rarity")
+milage = NodePath("Car1/Milage")
 
 [node name="Car1" type="Panel" parent="."]
 custom_minimum_size = Vector2(1290, 200)
@@ -89,7 +90,7 @@ position = Vector2(23, 29)
 scale = Vector2(6, 6)
 texture = ExtResource("6_rfgj7")
 
-[node name="Engine Name2" type="Label" parent="Car1"]
+[node name="Engine Name" type="Label" parent="Car1"]
 custom_minimum_size = Vector2(0, 84.835)
 layout_mode = 2
 offset_left = 206.0
@@ -100,6 +101,19 @@ theme_override_colors/font_color = Color(0.196078, 0.196078, 0.196078, 1)
 theme_override_font_sizes/font_size = 48
 theme_override_styles/normal = SubResource("StyleBoxEmpty_l7bqo")
 text = "Hikari Suhei-25A"
+vertical_alignment = 1
+
+[node name="Milage" type="Label" parent="Car1"]
+custom_minimum_size = Vector2(0, 84.835)
+layout_mode = 2
+offset_left = 206.0
+offset_top = 69.0
+offset_right = 383.0
+offset_bottom = 153.835
+theme_override_colors/font_color = Color(0.196078, 0.196078, 0.196078, 1)
+theme_override_font_sizes/font_size = 48
+theme_override_styles/normal = SubResource("StyleBoxEmpty_l7bqo")
+text = "Milage: "
 vertical_alignment = 1
 
 [node name="Specs" type="Label" parent="Car1"]

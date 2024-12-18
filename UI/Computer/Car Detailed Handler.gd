@@ -3,10 +3,6 @@ extends Control
 var display = preload("res://UI/Computer/car_detailed.tscn")
 @export var car_list : VBoxContainer
 
-func _input(event):
-	if Input.is_action_just_pressed("ui_cancel"):
-		close()
-
 func open(dict):
 	var new_display = display.instantiate()
 	add_child(new_display)

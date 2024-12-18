@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://kxvfaj14102v"]
+[gd_scene load_steps=26 format=3 uid="uid://kxvfaj14102v"]
 
 [ext_resource type="Script" path="res://UI/Computer/Car Detailed.gd" id="1_gs2hh"]
 [ext_resource type="PackedScene" uid="uid://bnhdxvccxe6x4" path="res://UI/Computer/car_display.tscn" id="2_x20so"]
@@ -7,6 +7,8 @@
 [ext_resource type="Texture2D" uid="uid://dj3a844uphtep" path="res://Textures/UI/Computer/Favorite Icon Highlighted.png" id="4_525w8"]
 [ext_resource type="Texture2D" uid="uid://bs7rf3581uq76" path="res://Textures/UI/Computer/Rarity Indicator.png" id="4_vmnkk"]
 [ext_resource type="Texture2D" uid="uid://crsakh0k3umfk" path="res://Textures/UI/Computer/Favorite Icon Hovered.png" id="5_ekfap"]
+[ext_resource type="Theme" uid="uid://c8y10g2llcfgl" path="res://UI/Computer/Used_Car_Shop.tres" id="8_6lr4f"]
+[ext_resource type="Script" path="res://UI/Computer/Buy_Car.gd" id="8_jmpvd"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_c88v1"]
 content_margin_left = 20.0
@@ -64,15 +66,33 @@ corner_radius_bottom_right = 3
 corner_radius_bottom_left = 3
 expand_margin_bottom = 16.0
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4uii8"]
-bg_color = Color(1, 0.509804, 0.439216, 1)
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jbl61"]
+bg_color = Color(1, 0.960784, 0.952941, 1)
 corner_radius_top_left = 3
 corner_radius_top_right = 3
 corner_radius_bottom_right = 3
 corner_radius_bottom_left = 3
 expand_margin_bottom = 16.0
 
-[node name="Car Detailed" type="Panel" node_paths=PackedStringArray("images", "car_name", "engine_name", "car_stats", "price", "favorited", "car_rarity", "engine_rarity", "milage", "power", "weight")]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_sigsr"]
+bg_color = Color(1, 1, 1, 0.27451)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+expand_margin_bottom = 16.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3b5xq"]
+bg_color = Color(1, 0.960784, 0.952941, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+shadow_color = Color(0, 0, 0, 0.211765)
+shadow_size = 100
+anti_aliasing = false
+
+[node name="Car Detailed" type="Panel" node_paths=PackedStringArray("images", "car_name", "engine_name", "car_stats", "price", "favorited", "car_rarity", "engine_rarity", "milage", "power", "weight", "buy_popup")]
 offset_right = 1900.0
 offset_bottom = 1197.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_c88v1")
@@ -88,6 +108,7 @@ engine_rarity = NodePath("Title BG/Car Name/Rarity Marker/Engine Rarity")
 milage = NodePath("Title BG/Milage")
 power = NodePath("Title BG/Power")
 weight = NodePath("Title BG/Weight")
+buy_popup = NodePath("Buy Popup")
 
 [node name="Picture BG" type="Panel" parent="."]
 layout_mode = 2
@@ -400,11 +421,57 @@ offset_bottom = 634.0
 theme_override_styles/normal = SubResource("StyleBoxFlat_i06ps")
 theme_override_styles/hover = SubResource("StyleBoxFlat_exiig")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_i06ps")
-theme_override_styles/focus = SubResource("StyleBoxFlat_4uii8")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_jbl61")
+theme_override_styles/focus = SubResource("StyleBoxFlat_sigsr")
 text = "Buy"
+
+[node name="Buy Popup" type="Panel" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 607.0
+offset_top = 358.0
+offset_right = 1386.0
+offset_bottom = 818.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_3b5xq")
+script = ExtResource("8_jmpvd")
+
+[node name="Title" type="Label" parent="Buy Popup"]
+custom_minimum_size = Vector2(0, 84.835)
+layout_mode = 0
+offset_left = 64.0
+offset_top = 55.0
+offset_right = 491.0
+offset_bottom = 160.0
+scale = Vector2(1.3, 1.3)
+theme_override_colors/font_color = Color(0.196078, 0.196078, 0.196078, 1)
+theme_override_styles/normal = SubResource("StyleBoxEmpty_tky7b")
+text = "Are you sure you want to
+purchase this car?"
+
+[node name="Button_Container" type="HBoxContainer" parent="Buy Popup"]
+layout_mode = 0
+offset_left = 91.0
+offset_top = 290.0
+offset_right = 689.0
+offset_bottom = 406.0
+theme = ExtResource("8_6lr4f")
+theme_override_constants/separation = 50
+
+[node name="YES" type="Button" parent="Buy Popup/Button_Container"]
+custom_minimum_size = Vector2(274.695, 0)
+layout_mode = 2
+text = "YES"
+
+[node name="NO" type="Button" parent="Buy Popup/Button_Container"]
+custom_minimum_size = Vector2(274.695, 0)
+layout_mode = 2
+text = "NO"
 
 [connection signal="pressed" from="Button1" to="." method="_on_button_1_pressed"]
 [connection signal="pressed" from="Button2" to="." method="_on_button_2_pressed"]
 [connection signal="pressed" from="Button3" to="." method="_on_button_3_pressed"]
 [connection signal="pressed" from="Button4" to="." method="_on_button_4_pressed"]
 [connection signal="pressed" from="Favorite" to="." method="_on_favorite_pressed"]
+[connection signal="pressed" from="Buy" to="." method="_on_buy_pressed"]
+[connection signal="pressed" from="Buy Popup/Button_Container/YES" to="." method="_on_yes_pressed"]
+[connection signal="pressed" from="Buy Popup/Button_Container/NO" to="." method="_on_no_pressed"]

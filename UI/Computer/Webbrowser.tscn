@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://cbj7bnjqlxc52"]
+[gd_scene load_steps=14 format=3 uid="uid://cbj7bnjqlxc52"]
 
 [ext_resource type="Theme" uid="uid://b7cej2d60vjv1" path="res://UI/Computer/Shop.tres" id="1_iqbph"]
 [ext_resource type="PackedScene" uid="uid://xetjn1k22kut" path="res://UI/Computer/Shop_UI.tscn" id="2_6pl0m"]
@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://7nb1nu4jwkr4" path="res://Textures/UI/Computer/websites/Difficulty Selector.png" id="6_1mjm5"]
 [ext_resource type="PackedScene" uid="uid://dyjfrdyxvu7x8" path="res://UI/Computer/Inventory_UI.tscn" id="7_151o6"]
 [ext_resource type="PackedScene" uid="uid://cq61hnxmnu2nk" path="res://UI/Computer/Difficulty.tscn" id="9_1567r"]
+[ext_resource type="PackedScene" uid="uid://de8jud5erkt8n" path="res://UI/Computer/Used_Car_Shop.tscn" id="10_gld2b"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_q6dxs"]
 bg_color = Color(0.658824, 0.654902, 0.615686, 1)
@@ -71,7 +72,7 @@ theme_override_colors/font_hover_pressed_color = Color(0.94902, 0.941176, 0.8941
 theme_override_styles/normal = SubResource("StyleBoxFlat_0fcxx")
 text = "<--"
 
-[node name="Page Selector" type="Control" parent="." node_paths=PackedStringArray("page_selector", "page_shop", "page_inventory", "page_difficulty", "pagename")]
+[node name="Page Selector" type="Control" parent="." node_paths=PackedStringArray("page_selector", "page_shop", "page_inventory", "page_difficulty", "page_used_car_shop", "pagename")]
 anchors_preset = 0
 offset_left = 330.0
 offset_top = 89.0
@@ -83,6 +84,7 @@ page_selector = NodePath("Selector")
 page_shop = NodePath("../Shop")
 page_inventory = NodePath("../Inventory")
 page_difficulty = NodePath("../Difficulty")
+page_used_car_shop = NodePath("../Used Car Shop")
 pagename = NodePath("../Website Name")
 
 [node name="Selector" type="Panel" parent="Page Selector"]
@@ -113,6 +115,10 @@ icon = ExtResource("4_0xncc")
 layout_mode = 2
 icon = ExtResource("6_1mjm5")
 
+[node name="Used Car Shop Button" type="Button" parent="Page Selector/Selector/GridContainer"]
+layout_mode = 2
+icon = ExtResource("6_1mjm5")
+
 [node name="Shop" parent="." instance=ExtResource("2_6pl0m")]
 visible = false
 layout_mode = 1
@@ -122,6 +128,10 @@ visible = false
 layout_mode = 1
 
 [node name="Difficulty" parent="." instance=ExtResource("9_1567r")]
+visible = false
+layout_mode = 1
+
+[node name="Used Car Shop" parent="." instance=ExtResource("10_gld2b")]
 visible = false
 layout_mode = 1
 
@@ -138,3 +148,4 @@ text = "https://gooble.com"
 [connection signal="pressed" from="Page Selector/Selector/GridContainer/Shop Button" to="Page Selector" method="_on_shop_button_pressed"]
 [connection signal="pressed" from="Page Selector/Selector/GridContainer/Inventory Button" to="Page Selector" method="_on_inventory_button_pressed"]
 [connection signal="pressed" from="Page Selector/Selector/GridContainer/Difficulty Button" to="Page Selector" method="_on_difficulty_button_pressed"]
+[connection signal="pressed" from="Page Selector/Selector/GridContainer/Used Car Shop Button" to="Page Selector" method="_on_used_car_shop_button_pressed"]

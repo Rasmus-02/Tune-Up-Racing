@@ -20,7 +20,7 @@ func _ready():
 		for n in Save_Load.load_file("cars"):
 			var car_to_check = Save_Load.load_file("cars").get(str(n))
 			if car_to_check != null: #look trough each car in dictionary
-				if car_to_check.in_garage > 0: #if the car is in the garage
+				if car_to_check.in_garage != null and car_to_check.in_garage > 0: #if the car is in the garage
 					#Spawns the car
 					car_spawn_position = spawn_positions.get_child(car_to_check.in_garage - 1).global_position #Set which marker the car spawns at
 					var new_car = car.instantiate()

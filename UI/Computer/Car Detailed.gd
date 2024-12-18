@@ -10,11 +10,23 @@ extends Panel
 @export var milage : Label
 @export var power : Label
 @export var weight : Label
+@export var buy_popup : Control
 var dict : Dictionary
+var car_node
+
+func _input(event):
+	if Input.is_action_just_pressed("ui_cancel"):
+		if buy_popup.visible == false:
+			get_parent().close()
+		else:
+			buy_popup.hide()
 
 func open(import_dict):
 	dict = import_dict
 	populate_view()
+	#if player doesn't have enough money to buy the car, disable buy button
+	if Save_Load.money < dict.car.price:
+		$Buy.disabled = true
 
 func update(car : CharacterBody2D, favorited_status : bool, picture_info : Array, price_info : int):
 	# Check if car is favorited, if favorited highlight favorite icon
@@ -70,12 +82,11 @@ func populate_view():
 		var car = dict.car
 		var engine = dict.engine
 		var photo = dict.photo_settings
-		var car_node = car_display.get_node("Car")
+		car_node = car_display.get_node("Car")
 		car_node.load_car_from_algorithm(car)
 		car_node.engine.load_car_from_algorithm(engine)
 		#Paint
-		if i > 2:
-			car_node.chassi_color = dict.colors.chassi
+		car_node.chassi_color = dict.colors.chassi
 		car_node.fenders_color = dict.colors.fenders
 		car_node.f_bumper_color = dict.colors.f_bumper
 		car_node.r_bumper_color = dict.colors.f_bumper
@@ -109,20 +120,43 @@ func populate_view():
 		
 		update(car_node, dict.favorite_status, [0,0], car.price)
 
+func change_view_image(index):
+		var car_display = images.get_child(0).get_child(0).get_child(0)
+		var photo = dict.photo_settings
+		var bg = car_display.get_node("Background")
+		var camera = car_display.get_node("View")
+		#Disable background
+		for background in bg.get_children():
+			background.hide()
+		#Enable new background
+		bg.get_child(photo.get(str(index)).scene).show()
+		bg.get_child(photo.get(str(index)).scene).show()
+		camera.zoom = Vector2(photo.get(str(index)).zoom, photo.get(str(index)).zoom)
+		camera.position.x = photo.get(str(index)).position[0]
+		camera.position.y = photo.get(str(index)).position[1]
+		camera.rotation = rad_to_deg(photo.get(str(index)).rotation)
 
 func _on_button_1_pressed():
+	change_view_image(0)
+	
 	deselect()
 	$Button1.button_pressed = true
 
 func _on_button_2_pressed():
+	change_view_image(1)
+	
 	deselect()
 	$Button2.button_pressed = true
 
 func _on_button_3_pressed():
+	change_view_image(2)
+	
 	deselect()
 	$Button3.button_pressed = true
 
 func _on_button_4_pressed():
+	change_view_image(3)
+	
 	deselect()
 	$Button4.button_pressed = true
 
@@ -155,3 +189,25 @@ func _on_favorite_pressed():
 		
 		CarMarket.car_list[str(dict.key)] = dict
 		CarMarket.save()
+
+
+## BUY BUTTON
+	
+#Show buy popup view
+func _on_buy_pressed():
+	#If player can afford it
+	if Save_Load.money >= dict.car.price:
+		buy_popup.show()
+
+#In buy popup view
+func _on_yes_pressed():
+	buy_popup.buy_car(car_node, dict.car.price)
+	CarMarket.car_list.erase(str(dict.key))
+	CarMarket.save()
+	get_parent().close()
+func _on_no_pressed():
+	buy_popup.hide()
+
+
+
+

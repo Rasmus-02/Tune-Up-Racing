@@ -32,7 +32,7 @@ anti_aliasing = false
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_fucll"]
 content_margin_top = 0.0
 
-[node name="Shop" type="Control"]
+[node name="Used Car Shop" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
