@@ -92,7 +92,7 @@ shadow_color = Color(0, 0, 0, 0.211765)
 shadow_size = 100
 anti_aliasing = false
 
-[node name="Car Detailed" type="Panel" node_paths=PackedStringArray("images", "car_name", "engine_name", "car_stats", "price", "favorited", "car_rarity", "engine_rarity", "milage", "power", "weight", "buy_popup")]
+[node name="Car Detailed" type="Panel" node_paths=PackedStringArray("images", "car_name", "engine_name", "car_stats", "price", "favorited", "car_rarity", "engine_rarity", "milage", "power", "weight", "buy_popup", "description_text")]
 offset_right = 1900.0
 offset_bottom = 1197.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_c88v1")
@@ -109,6 +109,7 @@ milage = NodePath("Title BG/Milage")
 power = NodePath("Title BG/Power")
 weight = NodePath("Title BG/Weight")
 buy_popup = NodePath("Buy Popup")
+description_text = NodePath("Text BG/Description")
 
 [node name="Picture BG" type="Panel" parent="."]
 layout_mode = 2

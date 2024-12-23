@@ -46,7 +46,9 @@ func populate_page(page):
 	
 	key_array.clear()
 
-
+func clear_page():
+	for listing in get_children():
+		listing.car_node.delete_car()
 
 func _on_next_pressed():
 	if on_last_page == false:

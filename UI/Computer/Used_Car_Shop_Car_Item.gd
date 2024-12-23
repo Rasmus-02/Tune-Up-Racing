@@ -9,6 +9,7 @@ extends Control
 @export var engine_rarity : Sprite2D
 @export var milage : Label
 var car_dict = null
+var car_node = null
 
 func update(car : CharacterBody2D, favorited_status : bool, picture_info : Array, price_info : int):
 	# Check if car is favorited, if favorited highlight favorite icon
@@ -49,7 +50,7 @@ func load_car(dict):
 	var car = dict.car
 	var engine = dict.engine
 	var photo = dict.photo_settings
-	var car_node = car_display.get_node("Car")
+	car_node = car_display.get_node("Car")
 	car_node.load_car_from_algorithm(car)
 	car_node.engine.load_car_from_algorithm(engine)
 	#Paint

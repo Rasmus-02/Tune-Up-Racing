@@ -571,6 +571,7 @@ func is_loaded():
 		engine.is_running = false
 
 func _physics_process(delta): 
+
 	export_signal()
 	if is_ready == false:
 			car_constructor()

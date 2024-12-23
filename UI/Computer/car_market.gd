@@ -122,6 +122,10 @@ func event_add():
 	var price_rng = randf_range(1.1, 1.4) # Can get good deal but can also get scammed
 	var price = int((car_price + engine_price) * price_rng)
 	
+	var personality_types = ["positive", "negative", "scammer", "lazy", "smart", "idiot"]
+	var personality_rng = randi_range(0, personality_types.size()-1)
+	var personality_type = personality_types[personality_rng]
+	
 	var temp = 0 #Find empty key in dict
 	for n in car_list.keys().size():
 		var sort_var = int(car_list.keys()[n])
@@ -130,7 +134,7 @@ func event_add():
 		n+=1
 	
 	car_list[temp + 1] = {"car" : car, "engine" : engine, "colors": colors, "durability" : durability, 
-	"key" : (temp + 1),"favorite_status" : false, "picture" : [0,0], "price" : price, "photo_settings" : generate_camera_views()}
+	"key" : (temp + 1),"favorite_status" : false, "picture" : [0,0], "price" : price, "photo_settings" : generate_camera_views(), "personality" : personality_type}
 	save()
 
 func event_remove():

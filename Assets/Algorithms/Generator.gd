@@ -68,8 +68,9 @@ func generate_car(rarity, weight, torque_estimate, grip, downforce, brake_force,
 		else: #RWD AWD
 			engine_position_offset = Vector2(gearbox.get_node("Engine").position.x + driveshaft.get_node("Gearbox").position.x - chassi.engine_bay_start_lenght, driveshaft.get_node("Gearbox").position.y - gearbox.get_node("Engine").position.y)
 		
+		var parts = [chassi, driveshaft, subframe, fenders, f_bumper, r_bumper, hood, headlight, taillights, spoiler, mirrors, gearbox, radiator,exhaust,brakes,suspension,tires,wheels]
 		
-		return{"Car_ID" : driveshaft.Car_ID,
+		var part_dict = {"Car_ID" : driveshaft.Car_ID,
 		"price" : car_price,
 		"weight" : car_weight,
 		"reliability" : chassi.reliability,
@@ -94,7 +95,12 @@ func generate_car(rarity, weight, torque_estimate, grip, downforce, brake_force,
 		"brakes" : brakes.Part_Number,
 		"suspension" : suspension.Part_Number,
 		"radiator" : radiator.Part_Number,}
-		chassi.queue_free()
+		
+		for part in parts:
+			part.queue_free()
+		parts.clear()
+		
+		return part_dict
 
 func generate_engine(rarity, weight, car_weight, torque, engine_bay_size, engine_offset, drivetrain, stock_engine, precision, race : bool):
 	#If generating AI and not purchaseable cars
@@ -185,60 +191,9 @@ func generate_engine(rarity, weight, car_weight, torque, engine_bay_size, engine
 			tq_sc_nb += est_tq_nb * (boost_estimate_turbo * (exhaust_manifold.get_turbo_max_size()/70)*exhaust_manifold.turbo_efficiency) #Estimate turbo power
 			est_tq = tq_sc_nb
 		
-		
-		#If any engine part is not within size limits, return null to generate new engine
-		#block
-		#print("length: ", max_lenght, "  right: ", max_width_r, "  left: ",max_width_l)
-		#print("exhaust width: ", block.width * 0.5 + exhaust_manifold.width)
-		if block.lenght > max_lenght: #check so part doesn't fits in engine bay
-			return(null)
-			#print("Block too long")
-		#V ENGINES
-		if block.layout == "V": #different calc for V engines 
-			#Exhaust Manifold
-			if block.width * 0.5 + exhaust_manifold.width > max_width_l or block.width * 0.5 + exhaust_manifold.width > max_width_r or block.lenght + exhaust_manifold.lenght > max_lenght: #check so part doesn't fits in engine bay
-				#print("exhaust manifold to large")
-				return(null)
-			#Intake Manifold
-			if block.lenght + intake_manifold.lenght + air_filter.lenght > max_lenght: #check so part doesn't fits in engine bay
-				#print("intake manifold to large  ", intake_manifold, "  ", engine_bay_size)
-				return(null)
-			#Air Filter
-			if block.lenght + air_filter.lenght + intake_manifold.lenght > max_lenght: #check so part doesn't fits in engine bay
-				#print("air to large")
-				return(null)
-		#Other Engines
-		else:
-			#Exhaust Manifold
-			if block.width * 0.5 + exhaust_manifold.width > max_width_r or block.lenght + exhaust_manifold.lenght > max_lenght: #check so part doesn't fits in engine bay
-				#print("exhaust manifold to large")
-				return(null)
-			#Intake Manifold
-			if block.width * 0.5 + intake_manifold.width > max_width_l or block.lenght + intake_manifold.lenght > max_lenght: #check so part doesn't fits in engine bay
-				#print("intake manifold to large")
-				return(null)
-		
-		#If engine is not within torque limits return NULL to generate new one
-		if est_tq < torque * precision or est_tq > torque / precision:
-			#print("Too much / too little torque:  ", est_tq, " ", torque)
-			return null
-		
-		#If engine is not withing weight limits return NULL to generate new one
-		var engine_weight = block.weight + exhaust_manifold.weight + intake_manifold.weight + internals.weight + air_filter.weight + top.weight
-		if engine_weight < max_weight * (precision * 0.8) or engine_weight > max_weight / (precision * 0.8):
-			#print("too heavy engine: ", engine_model, " ", exhaust_manifold, " ", weight, " ", engine_weight)
-			return null
-		
 		var engine_price = block.price + exhaust_manifold.price + intake_manifold.price + internals.price + air_filter.price + top.price
-		
-		#If engine is knocking return NULL to generate new one
-		if boost_estimate_total > top.max_compression:
-			#print("Too much boost / Compression:  ", boost_estimate_total)
-			return null
-		
-		
-		#If engine is within torque limits return engine
-		return {"Engine_ID" : block.Engine_ID,
+		var parts = [block, internals, top, intake_manifold, exhaust_manifold, air_filter]
+		var part_dict = {"Engine_ID" : block.Engine_ID,
 		"price" : engine_price,
 		"reliability" : block.reliability,
 		"max_boost" : boost_estimate_turbo,
@@ -250,9 +205,79 @@ func generate_engine(rarity, weight, car_weight, torque, engine_bay_size, engine
 		"internals" : internals.Part_Number,
 		"top" : top.Part_Number,
 		"air_filter" : air_filter.Part_Number,}
-	
-	else:
-		return(null)
+		
+		
+		#If any engine part is not within size limits, return null to generate new engine
+		#block
+		if block.lenght > max_lenght: #check so part doesn't fits in engine bay
+			for part in parts:
+				part.queue_free()
+			parts.clear()
+			return(null)
+		#V ENGINES
+		if block.layout == "V": #different calc for V engines 
+			#Exhaust Manifold
+			if block.width * 0.5 + exhaust_manifold.width > max_width_l or block.width * 0.5 + exhaust_manifold.width > max_width_r or block.lenght + exhaust_manifold.lenght > max_lenght: #check so part doesn't fits in engine bay
+				for part in parts:
+					part.queue_free()
+				parts.clear()
+				return(null)
+			#Intake Manifold
+			if block.lenght + intake_manifold.lenght + air_filter.lenght > max_lenght: #check so part doesn't fits in engine bay
+				for part in parts:
+					part.queue_free()
+				parts.clear()
+				return(null)
+			#Air Filter
+			if block.lenght + air_filter.lenght + intake_manifold.lenght > max_lenght: #check so part doesn't fits in engine bay
+				for part in parts:
+					part.queue_free()
+				parts.clear()
+				return(null)
+		#Other Engines
+		else:
+			#Exhaust Manifold
+			if block.width * 0.5 + exhaust_manifold.width > max_width_r or block.lenght + exhaust_manifold.lenght > max_lenght: #check so part doesn't fits in engine bay
+				for part in parts:
+					part.queue_free()
+				parts.clear()
+				return(null)
+			#Intake Manifold
+			if block.width * 0.5 + intake_manifold.width > max_width_l or block.lenght + intake_manifold.lenght > max_lenght: #check so part doesn't fits in engine bay
+				for part in parts:
+					part.queue_free()
+				parts.clear()
+				return(null)
+		
+		#If engine is not within torque limits return NULL to generate new one
+		if est_tq < torque * precision or est_tq > torque / precision:
+			for part in parts:
+				part.queue_free()
+			parts.clear()
+			return null
+		
+		#If engine is not withing weight limits return NULL to generate new one
+		var engine_weight = block.weight + exhaust_manifold.weight + intake_manifold.weight + internals.weight + air_filter.weight + top.weight
+		if engine_weight < max_weight * (precision * 0.8) or engine_weight > max_weight / (precision * 0.8):
+			for part in parts:
+				part.queue_free()
+			parts.clear()
+			return null
+		
+		
+		#If engine is knocking return NULL to generate new one
+		if boost_estimate_total > top.max_compression:
+			for part in parts:
+				part.queue_free()
+			parts.clear()
+			return null
+		
+		#If engine fufills requirements
+		for part in parts:
+			part.queue_free()
+		parts.clear()
+		return part_dict
+
 
 
 #Side functions used by main
@@ -396,16 +421,25 @@ func _find_suitable_part(category ,category_array, stat1_range, stat2_range, sta
 	#Backup array to prevent crash
 	if temp_array.size() == 0 and temp_backup_array.size() != 0:
 		rng = randi_range(0, temp_backup_array.size()-1)
+		clear_instances(category_array ,temp_backup_array[rng])
 		return(temp_backup_array[rng])
 	
 	#Backup 2 just equips stock part
 	if temp_array.size() == 0:
 		if category_array.size() > 1:
+			clear_instances(category_array ,category_array[1])
 			return(category_array[1].instantiate())
 		else:
+			clear_instances(category_array ,category_array[0])
 			return(category_array[0].instantiate())
 	
+	clear_instances(category_array ,temp_array[rng])
 	return(temp_array[rng])
+
+func clear_instances(list, ignore):
+	for i in list:
+		if i != ignore and not (i is PackedScene):
+			i.queue_free()
 
 func _estimate_boost(tq_boost, tq, goal_tq, turbo_size, turbo_efficiency):
 	var max_boost_estimate = 0
