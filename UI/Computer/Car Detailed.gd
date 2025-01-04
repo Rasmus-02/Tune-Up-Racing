@@ -87,6 +87,8 @@ func populate_view():
 		var engine = dict.engine
 		var photo = dict.photo_settings
 		car_node = car_display.get_node("Car")
+		car_node.player = false
+		car_node.engine.player = false
 		car_node.load_car_from_algorithm(car)
 		car_node.engine.load_car_from_algorithm(engine)
 		#Paint

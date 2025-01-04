@@ -212,10 +212,11 @@ func inv_add(item_to_add): #for adding parts to the players inventory (works dif
 
 
 func remove_engine(INDEX):
-	if engines == null:
-		engines = load_file("engines")
-	engines.erase(str(INDEX))
-	save()
+	if INDEX != "0": #Can't remove empty engine form inva
+		if engines == null:
+			engines = load_file("engines")
+		engines.erase(str(INDEX))
+		save()
 func remove_car(INDEX):
 	cars = load_file("cars")
 	cars.erase(str(INDEX))

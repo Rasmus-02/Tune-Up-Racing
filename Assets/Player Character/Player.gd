@@ -134,6 +134,7 @@ func show_ui():
 		#select what menues should be visible
 		$"../Interact_Menu_Garage/Drive_Car_button".show()
 		$"../Interact_Menu_Garage/Move_Car_button".show()
+		$"../Interact_Menu_Garage/Sell_Car_button".show()
 		$"../Interact_Menu_Garage/Info_Car_button".hide() #NOT YET IMPLEMENTED
 		if selected_car.in_garage == 1:
 			$"../Interact_Menu_Garage/Edit_Car_button".show()
@@ -191,6 +192,12 @@ func _on_move_car_button_pressed():
 		ui_visible = true
 		car_garage_ui.hide()
 		$"../Move_Menu_Garage/VBoxContainer/Move_To_Lift".grab_focus()
+
+func _on_sell_car_button_pressed():
+	if selected_car != null:
+		main.get_node("Sell_Menu").open(selected_car)
+		ui_visible = false
+		car_garage_ui.hide()
 
 
 func check_if_movable(place):
@@ -251,4 +258,4 @@ func move_car():
 	car_garage_ui.hide()
 	$"../Move_Menu_Garage".hide()
 	ui_visible = false
-	
+

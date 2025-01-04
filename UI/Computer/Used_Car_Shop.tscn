@@ -1,7 +1,8 @@
-[gd_scene load_steps=8 format=3 uid="uid://de8jud5erkt8n"]
+[gd_scene load_steps=9 format=3 uid="uid://de8jud5erkt8n"]
 
 [ext_resource type="Theme" uid="uid://c8y10g2llcfgl" path="res://UI/Computer/Used_Car_Shop.tres" id="1_3duv1"]
 [ext_resource type="Script" path="res://UI/Computer/Car List.gd" id="2_5x86r"]
+[ext_resource type="Texture2D" uid="uid://btgfy446eqe7w" path="res://Textures/UI/Computer/websites/Used Cars (Shop Logo).png" id="2_6qvbk"]
 [ext_resource type="Script" path="res://UI/Computer/Car Detailed Handler.gd" id="3_h1qgf"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lekva"]
@@ -48,18 +49,14 @@ offset_top = 100.0
 offset_right = 2230.0
 offset_bottom = 233.0
 
-[node name="SiteName" type="Label" parent="Top Page Panel"]
+[node name="Logo" type="TextureRect" parent="Top Page Panel"]
 layout_mode = 0
-offset_left = 31.0
-offset_top = -8.0
-offset_right = 327.0
-offset_bottom = 94.0
+offset_left = 101.0
+offset_top = 7.0
+offset_right = 397.0
+offset_bottom = 109.0
 scale = Vector2(1.2, 1.2)
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_constants/outline_size = 13
-theme_override_font_sizes/font_size = 128
-text = "USED CARS"
+texture = ExtResource("2_6qvbk")
 
 [node name="ViewSelector" type="HBoxContainer" parent="Top Page Panel"]
 layout_mode = 0
@@ -87,7 +84,7 @@ offset_right = 2230.0
 offset_bottom = 1430.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_lekva")
 
-[node name="List Of Cars" type="VBoxContainer" parent="Cars" node_paths=PackedStringArray("page_number_label")]
+[node name="List Of Cars" type="VBoxContainer" parent="Cars" node_paths=PackedStringArray("page_number_label", "brand", "fuel_type", "gearing", "drive_type", "min_price", "max_price", "min_weight", "max_weight", "min_hp", "max_hp")]
 layout_mode = 0
 offset_left = 2.0
 offset_top = 2.0
@@ -96,6 +93,16 @@ offset_bottom = 1059.0
 theme_override_constants/separation = 209
 script = ExtResource("2_5x86r")
 page_number_label = NodePath("../PageSelector/PageNumber")
+brand = NodePath("../../Filters/Drop Downs/Options/Brand")
+fuel_type = NodePath("../../Filters/Drop Downs/Options/Fuel Type")
+gearing = NodePath("../../Filters/Drop Downs/Options/Gearing")
+drive_type = NodePath("../../Filters/Drop Downs/Options/Drive Type")
+min_price = NodePath("../../Filters/Range/Price MinMax/Labels/Min")
+max_price = NodePath("../../Filters/Range/Price MinMax/Options/Max")
+min_weight = NodePath("../../Filters/Range/Weight MinMax/Labels/Min")
+max_weight = NodePath("../../Filters/Range/Weight MinMax/Options/Max")
+min_hp = NodePath("../../Filters/Range/Horsepower MinMax/Labels/Min")
+max_hp = NodePath("../../Filters/Range/Horsepower MinMax/Options/Max")
 
 [node name="PageSelector" type="HBoxContainer" parent="Cars"]
 layout_mode = 0

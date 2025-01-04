@@ -53,6 +53,7 @@ func initiate():
 
 
 func populate_list():
+	print(car.selected_car_key)
 	temp_stat_array.clear()
 	$"../Tune_Gearbox".hide() #Hide gearbox_tab
 	#for engines
@@ -60,32 +61,32 @@ func populate_list():
 		list.clear()
 		engine_list = Save_Load.load_file("engines")
 		list.clear()
-		var n = 0
-		var i = 0
 		var temp_delte_list = [] #list of engines to delete
 		temp_delte_list.clear()
 		if engine_list == null:
 			print("null temp dict")
 		else:
-			while i < engine_list.size():
-				if engine_list.has(str(n)):
-					temp_part = engine_list.get(str(n))
-					if temp_part.in_car == null or temp_part.in_car == car.selected_car_key or temp_part.name == "No Engine": #If engine is unequipped or in current car Show it
-						list.add_item(temp_part.name)
-						if temp_part.in_car == car.selected_car_key:
-							list.set_background_color(list.get_item_count()-1) #Change Background Color of selected part
-						list.set_item_custom_fg_color(list.get_item_count()-1,FontColorSettings.get_color(temp_part.rarity)) #set color based on rarity
-						size_check(list.get_item_count()-1)
-					else:
-						temp_delte_list.append(temp_part.key) #engines that are equipped won't show upp, so they get removed from back end too
-					i += 1
-				n+=1
+			print(engine_list.keys())
+			for i in engine_list.keys():
+				temp_part = engine_list.get(i)
+				print ("¤ " + temp_part.name)
+				if temp_part.in_car == null or temp_part.in_car == car.selected_car_key or temp_part.name == "No Engine": #If engine is unequipped or in current car Show it
+					list.add_item(temp_part.name)
+					print ("+ " + temp_part.name)
+					if temp_part.in_car == car.selected_car_key:
+						list.set_background_color(list.get_item_count()-1) #Change Background Color of selected part
+					list.set_item_custom_fg_color(list.get_item_count()-1,FontColorSettings.get_color(temp_part.rarity)) #set color based on rarity
+					size_check(list.get_item_count()-1)
+				else:
+					temp_delte_list.append(temp_part.key) #engines that are equipped won't show upp, so they get removed from back end too
 			list.add_item("[Create Engine]")
 			#Remove engines that aren't avalible to equip from list
 			engine_list_inventory = engine_list.duplicate() #duplicate to remove dependencies
+			
 			for keys in temp_delte_list.size():
 				engine_list_inventory.erase(temp_delte_list[keys])
-	
+
+
 	#if "Create Engine" tab selected
 	if selected_tab == -1:
 		list.clear()
@@ -191,6 +192,7 @@ func _physics_process(_delta):
 
 
 func _on_item_selected(index): #when a part in the item list is clicked (node signal)
+	print(index)
 	button_sound.play()
 	#if statement for finding the correct engine
 	if selected_tab == 0 and index < engine_list_inventory.size(): #update engine if (CREATE ENGINE) Not pressed
@@ -200,6 +202,7 @@ func _on_item_selected(index): #when a part in the item list is clicked (node si
 		Save_Load.edit_engine(engine)
 		#update list of engines
 		selected_key = engine_list_inventory.keys()[index] #the key for the engine that got selected
+		print(engine_list_inventory.keys(),"  ",selected_key,"    ", engine_list_inventory.get(str(selected_key)))
 		temp_part_select_part = engine_list_inventory.get(str(selected_key))
 	
 	elif selected_tab == 0: #If "Create Engine" clicked

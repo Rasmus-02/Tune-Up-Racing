@@ -250,7 +250,7 @@ func get_stats(part, id : int, type : int):
 					update_display(stats[4], part.weight, "Weight", "Kg")
 					update_display(stats[5], part.durability, "Durability", "%")
 				17: #exhaust
-					update_display(stats[0], (part.tq_mod * 100), "Efficiency", "%")
+					update_display(stats[0], (part.tq_mod_exhaust * 100), "Efficiency", "%")
 					update_display(stats[1], part.sound_dampening, "Dampening", "dB")
 					update_display(stats[2], null, "", "")
 					update_display(stats[3], null, "", "")

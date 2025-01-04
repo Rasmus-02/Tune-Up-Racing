@@ -106,4 +106,4 @@ func _on_favorite_pressed():
 		CarMarket.save()
 
 func _on_selector_pressed():
-	print(get_parent().get_parent().get_parent().get_node("Car Detailed").open(car_dict))
+	get_parent().get_parent().get_parent().get_node("Car Detailed").open(car_dict)
