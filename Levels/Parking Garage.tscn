@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=3 uid="uid://blo6bmdaemycj"]
+[gd_scene load_steps=31 format=3 uid="uid://blo6bmdaemycj"]
 
 [ext_resource type="Script" path="res://Levels/Parking Garage.gd" id="1_cpepb"]
 [ext_resource type="PackedScene" uid="uid://c2temcei51jwy" path="res://Assets/Player Character/player.tscn" id="2_0dvo2"]
@@ -12,6 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://b024611gnf6gp" path="res://Textures/Tracks/Asphalt/Bridge_edge.tres" id="11_fifwh"]
 [ext_resource type="Texture2D" uid="uid://calycmhophto" path="res://Shaders/light beam.png" id="11_nkpij"]
 [ext_resource type="Script" path="res://addons/rmsmartshape/materials/shape_material.gd" id="12_vn2uj"]
+[ext_resource type="AudioStream" uid="uid://cnkj4yciykgi8" path="res://Sound/Parking Garage Ambiance.mp3" id="13_efm1j"]
 
 [sub_resource type="Gradient" id="Gradient_ui4o6"]
 colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 1)
@@ -62,7 +63,7 @@ point_in = Vector2(0, 0)
 point_out = Vector2(0, 0)
 properties = SubResource("Resource_27bo6")
 
-[sub_resource type="Resource" id="Resource_rkowq"]
+[sub_resource type="Resource" id="Resource_a8mlk"]
 script = ExtResource("3_hw8ny")
 texture_idx = 0
 flip = false
@@ -73,9 +74,9 @@ script = ExtResource("4_k1go5")
 position = Vector2(1258.8, 116.28)
 point_in = Vector2(0, 0)
 point_out = Vector2(0, 0)
-properties = SubResource("Resource_rkowq")
+properties = SubResource("Resource_a8mlk")
 
-[sub_resource type="Resource" id="Resource_2lqs8"]
+[sub_resource type="Resource" id="Resource_1bwi2"]
 script = ExtResource("3_hw8ny")
 texture_idx = 0
 flip = false
@@ -86,7 +87,7 @@ script = ExtResource("4_k1go5")
 position = Vector2(419.499, 115.642)
 point_in = Vector2(0, 0)
 point_out = Vector2(0, 0)
-properties = SubResource("Resource_2lqs8")
+properties = SubResource("Resource_1bwi2")
 
 [sub_resource type="Resource" id="Resource_h8fnb"]
 script = ExtResource("4_k1go5")
@@ -147,7 +148,7 @@ rotation = 2.77622
 scale = Vector2(10000, 10000)
 color = Color(1, 0.94902, 0.882353, 1)
 range_z_min = -4096
-range_z_max = 4096
+range_z_max = 1002
 shadow_filter_smooth = 0.5
 shadow_item_cull_mask = 2
 texture = SubResource("GradientTexture1D_letos")
@@ -264,6 +265,14 @@ position = Vector2(-3.5, 366)
 shape = SubResource("RectangleShape2D_8u24v")
 
 [node name="Player" parent="." instance=ExtResource("2_0dvo2")]
+z_index = 998
 position = Vector2(687, 154)
+
+[node name="Sound" type="Node" parent="."]
+
+[node name="Ambiance" type="AudioStreamPlayer" parent="Sound"]
+stream = ExtResource("13_efm1j")
+autoplay = true
+bus = &"Ambient Volume"
 
 [connection signal="body_entered" from="Gate" to="." method="_on_gate_body_entered"]

@@ -12,6 +12,7 @@ extends Panel
 @export var weight : Label
 @export var buy_popup : Control
 @export var description_text : Label
+@export var parking_garage_full_popup : Control
 var dict : Dictionary
 var car_node
 

@@ -51,10 +51,13 @@ func load_new_scene(scene):
 		match scene:
 			"costal_circuit":
 				scene = costal_circuit
+				Engine.max_fps = 200
 			"garage":
 				scene = garage
+				Engine.max_fps = 100
 			"parking_garage":
 				scene = parking_garage
+				Engine.max_fps = 100
 	Utils.free_orphaned_nodes()
 	var scene_instance = scene.instantiate()
 	add_child(scene_instance) #add scene

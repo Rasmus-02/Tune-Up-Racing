@@ -427,7 +427,6 @@ theme_override_styles/focus = SubResource("StyleBoxFlat_sigsr")
 text = "Buy"
 
 [node name="Buy Popup" type="Panel" parent="."]
-visible = false
 layout_mode = 0
 offset_left = 607.0
 offset_top = 358.0
@@ -450,6 +449,7 @@ text = "Are you sure you want to
 purchase this car?"
 
 [node name="Button_Container" type="HBoxContainer" parent="Buy Popup"]
+visible = false
 layout_mode = 0
 offset_left = 91.0
 offset_top = 290.0

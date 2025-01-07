@@ -122,7 +122,7 @@ func stop_interacting():
 
 func hide_ui():
 	car_garage_ui.hide()
-	$"../Move_Menu_Garage".hide()
+	$"../Move_Menu".hide()
 	ui_visible = false
 
 func show_ui():
@@ -186,13 +186,23 @@ func _on_info_car_button_pressed():
 	pass # Replace with function body.
 
 func _on_move_car_button_pressed():
+	var move_menu = $"../Move_Menu"
 	if selected_car != null:
 		selected_car.loaded = false
-		$"../Move_Menu_Garage".show()
-		$"../Move_Menu_Garage".global_position = selected_car.global_position +Vector2(-100,55)
+		move_menu.show()
+		move_menu.global_position = selected_car.global_position +Vector2(-100,55)
+		##Set which menus should be visible in what scenese
+		if SelectedScene.scene == "garage":
+			move_menu.get_node("Move_Menu_Garage").show()
+			move_menu.get_node("To Parking Garage").show()
+			move_menu.get_node("From Parking Garage").hide()
+		elif SelectedScene.scene == "parking_garage":
+			move_menu.get_node("Move_Menu_Garage").hide()
+			move_menu.get_node("To Parking Garage").hide()
+			move_menu.get_node("From Parking Garage").show()
 		ui_visible = true
 		car_garage_ui.hide()
-		$"../Move_Menu_Garage/VBoxContainer/Move_To_Lift".grab_focus()
+		$"../Move_Menu/Move_Menu_Garage/Left/Move_To_Lift".grab_focus()
 
 func _on_sell_car_button_pressed():
 	if selected_car != null:
@@ -204,9 +214,7 @@ func _on_sell_car_button_pressed():
 func check_if_movable(place):
 	car_list = Save_Load.load_file("cars")
 	var car_list_array = car_list.keys()
-	print("\n")
 	for i in car_list.size():
-		print("CAR CHECKED: ", car_list.get(car_list_array[i]).get("key"),"      PLACE TO CHECK IF EMPTY: ",place)
 		if place == car_list.get(car_list_array[i]).get("in_garage"):
 			return false
 
@@ -249,7 +257,6 @@ func _on_move_to_garage_parking_3_pressed():
 
 func save():
 	var key = selected_car.selected_car_key
-	print("KEY : ",key)
 	Save_Load.temp_key_car = key #car key
 	Save_Load.edit_car(selected_car)
 	Save_Load.save()
@@ -257,6 +264,35 @@ func save():
 func move_car():
 	get_parent().get_parent().get_node("Car_Spawner_Global").move_car(selected_car)
 	car_garage_ui.hide()
-	$"../Move_Menu_Garage".hide()
+	$"../Move_Menu".hide()
 	ui_visible = false
 
+func get_empty_garage_slot():
+	var free_spawn_positions = {"1" : 1, "2" : 2, "3" : 3, "4" : 4, "5" : 5, "6" : 6}
+	if Save_Load.load_file("cars") != null:
+		for n in Save_Load.load_file("cars"):
+			var car_to_check = Save_Load.load_file("cars").get(str(n))
+			if car_to_check != null and car_to_check.in_garage != null and car_to_check.in_garage > 0: #look trough each car in dictionary
+				free_spawn_positions.erase(str(car_to_check.in_garage))
+	
+	if free_spawn_positions.keys().size() > 0:
+		return(free_spawn_positions.get(free_spawn_positions.keys()[0]))
+	else:
+		return null
+
+func _on_from_parking_garage_pressed():
+	if selected_car != null:
+		if get_empty_garage_slot() != null:
+			selected_car.in_garage = get_empty_garage_slot()
+			save()
+			selected_car.queue_free()
+			$"../Move_Menu".hide()
+			ui_visible = false
+
+func _on_to_parking_garage_pressed():
+		if selected_car != null:
+			selected_car.in_garage = null
+			save()
+			selected_car.queue_free()
+			$"../Move_Menu".hide()
+			ui_visible = false

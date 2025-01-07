@@ -21,9 +21,8 @@ func _ready():
 					new_car.spawn_override_key = car_to_check.key #overrides so car does not spawn form selected car key
 					self.add_child(new_car) #adds a new car
 					new_car.global_position = car_spawn_position
-					
-					##TODO IN CAR SCRIPT AT is_loaded this gets called try to fix so cars spawn rotated when loaded
-					if spawn_pos > 0:
+					#Set spawn rotation (if on right side of parking garage, rotate 180 degrees)
+					if spawn_pos > 4:
 						new_car.spawn_rotation = 180
 					spawn_pos += 1
 					

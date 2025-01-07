@@ -310,43 +310,62 @@ icon = ExtResource("6_cxgng")
 icon_alignment = 1
 expand_icon = true
 
-[node name="Move_Menu_Garage" type="HBoxContainer" parent="."]
+[node name="Move_Menu" type="VBoxContainer" parent="."]
 visible = false
-z_index = 1
-offset_right = 40.0
-offset_bottom = 40.0
+z_index = 3
+offset_left = 193.0
+offset_right = 818.0
+offset_bottom = 412.0
 scale = Vector2(0.3, 0.3)
+theme_override_constants/separation = 16
+
+[node name="Move_Menu_Garage" type="HBoxContainer" parent="Move_Menu"]
+z_index = 1
+layout_mode = 2
 theme_override_constants/separation = 19
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Move_Menu_Garage"]
+[node name="Left" type="VBoxContainer" parent="Move_Menu/Move_Menu_Garage"]
 layout_mode = 2
+theme_override_constants/separation = 16
 
-[node name="Move_To_Lift" type="Button" parent="Move_Menu_Garage/VBoxContainer"]
+[node name="Move_To_Lift" type="Button" parent="Move_Menu/Move_Menu_Garage/Left"]
 layout_mode = 2
 text = "Move to Lift"
 
-[node name="Move_To_Dyno" type="Button" parent="Move_Menu_Garage/VBoxContainer"]
+[node name="Move_To_Dyno" type="Button" parent="Move_Menu/Move_Menu_Garage/Left"]
 layout_mode = 2
 text = "Move to Dyno"
 
-[node name="Move_To_Paint" type="Button" parent="Move_Menu_Garage/VBoxContainer"]
+[node name="Move_To_Paint" type="Button" parent="Move_Menu/Move_Menu_Garage/Left"]
 layout_mode = 2
 text = "Move to Paint Booth"
 
-[node name="VBoxContainer2" type="VBoxContainer" parent="Move_Menu_Garage"]
+[node name="Right" type="VBoxContainer" parent="Move_Menu/Move_Menu_Garage"]
 layout_mode = 2
+theme_override_constants/separation = 16
 
-[node name="Move_To_Garage_Parking_1" type="Button" parent="Move_Menu_Garage/VBoxContainer2"]
+[node name="Move_To_Garage_Parking_1" type="Button" parent="Move_Menu/Move_Menu_Garage/Right"]
 layout_mode = 2
 text = "Move to Parking 1"
 
-[node name="Move_To_Garage_Parking_2" type="Button" parent="Move_Menu_Garage/VBoxContainer2"]
+[node name="Move_To_Garage_Parking_2" type="Button" parent="Move_Menu/Move_Menu_Garage/Right"]
 layout_mode = 2
 text = "Move to Parking 2"
 
-[node name="Move_To_Garage_Parking_3" type="Button" parent="Move_Menu_Garage/VBoxContainer2"]
+[node name="Move_To_Garage_Parking_3" type="Button" parent="Move_Menu/Move_Menu_Garage/Right"]
 layout_mode = 2
 text = "Move to Parking 3"
+
+[node name="To Parking Garage" type="Button" parent="Move_Menu"]
+z_index = 1
+layout_mode = 2
+text = "Move to Parking Garage"
+
+[node name="From Parking Garage" type="Button" parent="Move_Menu"]
+visible = false
+z_index = 1
+layout_mode = 2
+text = "Move to Garage"
 
 [connection signal="area_entered" from="Character/AnimatedSprite2D/Selector" to="Character" method="_on_selector_area_entered"]
 [connection signal="area_exited" from="Character/AnimatedSprite2D/Selector" to="Character" method="_on_selector_area_exited"]
@@ -359,9 +378,11 @@ text = "Move to Parking 3"
 [connection signal="pressed" from="Interact_Menu_Garage/Info_Car_button" to="Character" method="_on_sell_car_button_pressed"]
 [connection signal="pressed" from="Interact_Menu_Garage/Sell_Car_button" to="Character" method="_on_sell_car_button_pressed"]
 [connection signal="pressed" from="Interact_Menu_Garage/Move_Car_button" to="Character" method="_on_move_car_button_pressed"]
-[connection signal="pressed" from="Move_Menu_Garage/VBoxContainer/Move_To_Lift" to="Character" method="_on_move_to_lift_pressed"]
-[connection signal="pressed" from="Move_Menu_Garage/VBoxContainer/Move_To_Dyno" to="Character" method="_on_move_to_dyno_pressed"]
-[connection signal="pressed" from="Move_Menu_Garage/VBoxContainer/Move_To_Paint" to="Character" method="_on_move_to_paint_pressed"]
-[connection signal="pressed" from="Move_Menu_Garage/VBoxContainer2/Move_To_Garage_Parking_1" to="Character" method="_on_move_to_garage_parking_1_pressed"]
-[connection signal="pressed" from="Move_Menu_Garage/VBoxContainer2/Move_To_Garage_Parking_2" to="Character" method="_on_move_to_garage_parking_2_pressed"]
-[connection signal="pressed" from="Move_Menu_Garage/VBoxContainer2/Move_To_Garage_Parking_3" to="Character" method="_on_move_to_garage_parking_3_pressed"]
+[connection signal="pressed" from="Move_Menu/Move_Menu_Garage/Left/Move_To_Lift" to="Character" method="_on_move_to_lift_pressed"]
+[connection signal="pressed" from="Move_Menu/Move_Menu_Garage/Left/Move_To_Dyno" to="Character" method="_on_move_to_dyno_pressed"]
+[connection signal="pressed" from="Move_Menu/Move_Menu_Garage/Left/Move_To_Paint" to="Character" method="_on_move_to_paint_pressed"]
+[connection signal="pressed" from="Move_Menu/Move_Menu_Garage/Right/Move_To_Garage_Parking_1" to="Character" method="_on_move_to_garage_parking_1_pressed"]
+[connection signal="pressed" from="Move_Menu/Move_Menu_Garage/Right/Move_To_Garage_Parking_2" to="Character" method="_on_move_to_garage_parking_2_pressed"]
+[connection signal="pressed" from="Move_Menu/Move_Menu_Garage/Right/Move_To_Garage_Parking_3" to="Character" method="_on_move_to_garage_parking_3_pressed"]
+[connection signal="pressed" from="Move_Menu/To Parking Garage" to="Character" method="_on_to_parking_garage_pressed"]
+[connection signal="pressed" from="Move_Menu/From Parking Garage" to="Character" method="_on_from_parking_garage_pressed"]

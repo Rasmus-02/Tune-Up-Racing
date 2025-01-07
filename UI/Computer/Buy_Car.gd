@@ -2,7 +2,6 @@ extends Panel
 
 #When "Yes" is pressed in buy popup
 func buy_car(car, price):
-	print("BUY CAR")
 	##Remove money from account
 	Save_Load.money -= price
 	
