@@ -129,9 +129,9 @@ shader = ExtResource("10_u8o4i")
 shader_parameter/progress = 0.0
 shader_parameter/diamondPixelSize = 15.0
 
-[node name="Player" type="Node2D"]
+[node name="Player" type="Node2D" groups=["Player"]]
 
-[node name="Character" type="CharacterBody2D" parent="."]
+[node name="Character" type="CharacterBody2D" parent="." groups=["Player"]]
 script = ExtResource("1_bbvfw")
 movement_speed = 170
 
@@ -142,11 +142,13 @@ range_z_max = 2998
 texture = ExtResource("2_sien1")
 texture_scale = 50.0
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Character"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Character" groups=["Player"]]
 rotation = 1.5708
 shape = SubResource("CapsuleShape2D_vyxlc")
 
 [node name="Camera2D" type="Camera2D" parent="Character"]
+process_priority = 1
+process_physics_priority = 1
 zoom = Vector2(3, 3)
 
 [node name="Statcard" parent="Character/Camera2D" instance=ExtResource("12_tht3q")]
@@ -164,6 +166,7 @@ libraries = {
 }
 
 [node name="AnimatedSprite2D" type="Sprite2D" parent="Character"]
+rotation = 3.14159
 texture = SubResource("CanvasTexture_7eaoa")
 vframes = 6
 

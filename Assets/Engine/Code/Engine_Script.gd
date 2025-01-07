@@ -341,7 +341,7 @@ func  _physics_process(_delta):
 		temp_rpm = 0
 		temperature = 0
 		gear = 0
-	if engine_position != Vector2(0,0) and (position_loaded == false or engine_position != last_engine_position or drivetrain != last_drivetrain) and deleted == false:
+	if engine_position != Vector2.ZERO and (position_loaded == false or engine_position != last_engine_position or drivetrain != last_drivetrain) and deleted == false:
 		last_engine_position = engine_position
 		last_drivetrain = drivetrain
 		set_engine_position()

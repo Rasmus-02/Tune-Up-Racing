@@ -1,0 +1,269 @@
+[gd_scene load_steps=30 format=3 uid="uid://blo6bmdaemycj"]
+
+[ext_resource type="Script" path="res://Levels/Parking Garage.gd" id="1_cpepb"]
+[ext_resource type="PackedScene" uid="uid://c2temcei51jwy" path="res://Assets/Player Character/player.tscn" id="2_0dvo2"]
+[ext_resource type="Script" path="res://addons/rmsmartshape/shapes/shape.gd" id="2_b6ecn"]
+[ext_resource type="Texture2D" uid="uid://ctppy5o7ayapw" path="res://Textures/Garage/Parking Garage/Parking Square Tilemap.png" id="2_ocg4y"]
+[ext_resource type="Texture2D" uid="uid://n1e3htp7u6xo" path="res://Textures/Garage/Parking Garage/Parking Square Tilemap NM.png" id="3_hp3kn"]
+[ext_resource type="Script" path="res://addons/rmsmartshape/vertex_properties.gd" id="3_hw8ny"]
+[ext_resource type="Script" path="res://addons/rmsmartshape/shapes/point.gd" id="4_k1go5"]
+[ext_resource type="Texture2D" uid="uid://1mqpdcult317" path="res://Textures/Garage/Parking Garage/Parking Square Tilemap SPEC.png" id="4_rddqq"]
+[ext_resource type="Script" path="res://addons/rmsmartshape/shapes/point_array.gd" id="5_gly3f"]
+[ext_resource type="Texture2D" uid="uid://b024611gnf6gp" path="res://Textures/Tracks/Asphalt/Bridge_edge.tres" id="11_fifwh"]
+[ext_resource type="Texture2D" uid="uid://calycmhophto" path="res://Shaders/light beam.png" id="11_nkpij"]
+[ext_resource type="Script" path="res://addons/rmsmartshape/materials/shape_material.gd" id="12_vn2uj"]
+
+[sub_resource type="Gradient" id="Gradient_ui4o6"]
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_letos"]
+gradient = SubResource("Gradient_ui4o6")
+width = 1
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_vtr2k"]
+diffuse_texture = ExtResource("2_ocg4y")
+normal_texture = ExtResource("3_hp3kn")
+specular_texture = ExtResource("4_rddqq")
+specular_shininess = 0.25
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_s7ib4"]
+texture = SubResource("CanvasTexture_vtr2k")
+texture_region_size = Vector2i(272, 128)
+0:0/0 = 0
+0:1/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_3nfcj"]
+tile_size = Vector2i(272, 128)
+sources/0 = SubResource("TileSetAtlasSource_s7ib4")
+
+[sub_resource type="Resource" id="Resource_w6qrn"]
+script = ExtResource("3_hw8ny")
+texture_idx = 4
+flip = false
+width = 1.0
+
+[sub_resource type="Resource" id="Resource_auatc"]
+script = ExtResource("4_k1go5")
+position = Vector2(418.717, 780.191)
+point_in = Vector2(0, 0)
+point_out = Vector2(0, 0)
+properties = SubResource("Resource_w6qrn")
+
+[sub_resource type="Resource" id="Resource_27bo6"]
+script = ExtResource("3_hw8ny")
+texture_idx = -12
+flip = false
+width = 1.0
+
+[sub_resource type="Resource" id="Resource_wl4m0"]
+script = ExtResource("4_k1go5")
+position = Vector2(1258.46, 779.388)
+point_in = Vector2(0, 0)
+point_out = Vector2(0, 0)
+properties = SubResource("Resource_27bo6")
+
+[sub_resource type="Resource" id="Resource_rkowq"]
+script = ExtResource("3_hw8ny")
+texture_idx = 0
+flip = false
+width = 1.0
+
+[sub_resource type="Resource" id="Resource_on6y8"]
+script = ExtResource("4_k1go5")
+position = Vector2(1258.8, 116.28)
+point_in = Vector2(0, 0)
+point_out = Vector2(0, 0)
+properties = SubResource("Resource_rkowq")
+
+[sub_resource type="Resource" id="Resource_2lqs8"]
+script = ExtResource("3_hw8ny")
+texture_idx = 0
+flip = false
+width = 1.0
+
+[sub_resource type="Resource" id="Resource_8qi28"]
+script = ExtResource("4_k1go5")
+position = Vector2(419.499, 115.642)
+point_in = Vector2(0, 0)
+point_out = Vector2(0, 0)
+properties = SubResource("Resource_2lqs8")
+
+[sub_resource type="Resource" id="Resource_h8fnb"]
+script = ExtResource("4_k1go5")
+position = Vector2(418.717, 780.191)
+point_in = Vector2(0, 0)
+point_out = Vector2(0, 0)
+properties = SubResource("Resource_w6qrn")
+
+[sub_resource type="Resource" id="Resource_xgj0j"]
+script = ExtResource("5_gly3f")
+_points = {
+0: SubResource("Resource_auatc"),
+1: SubResource("Resource_wl4m0"),
+2: SubResource("Resource_on6y8"),
+3: SubResource("Resource_8qi28"),
+4: SubResource("Resource_h8fnb")
+}
+_point_order = PackedInt32Array(4, 3, 2, 1, 0)
+_constraints = {
+Vector2i(0, 4): 15
+}
+_next_key = 5
+_material_overrides = {}
+tessellation_stages = 3
+tessellation_tolerance = 6.0
+curve_bake_interval = 20.0
+
+[sub_resource type="Resource" id="Resource_sxari"]
+resource_local_to_scene = true
+script = ExtResource("12_vn2uj")
+_edge_meta_materials = Array[Resource("res://addons/rmsmartshape/materials/edge_material_metadata.gd")]([])
+fill_textures = Array[Texture2D]([ExtResource("11_fifwh")])
+fill_texture_z_index = -1
+fill_texture_show_behind_parent = false
+fill_texture_scale = 1.0
+fill_texture_absolute_position = false
+fill_texture_absolute_rotation = false
+fill_texture_offset = Vector2(0, 0)
+fill_texture_angle_offset = 0.0
+fill_mesh_offset = 0.0
+render_offset = 0.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8u24v"]
+size = Vector2(275, 84)
+
+[node name="ParkingGarage" type="Node2D"]
+script = ExtResource("1_cpepb")
+
+[node name="Level visibility" type="CanvasModulate" parent="."]
+position = Vector2(-115.445, 353.001)
+scale = Vector2(4.88201, 1.13008)
+skew = 1.26391
+color = Color(0.0392157, 0.113725, 0.172549, 1)
+
+[node name="Lamps" type="PointLight2D" parent="Level visibility"]
+position = Vector2(240.261, 348.574)
+rotation = 2.77622
+scale = Vector2(10000, 10000)
+color = Color(1, 0.94902, 0.882353, 1)
+range_z_min = -4096
+range_z_max = 4096
+shadow_filter_smooth = 0.5
+shadow_item_cull_mask = 2
+texture = SubResource("GradientTexture1D_letos")
+texture_scale = 50.0
+height = 285.0
+
+[node name="Parking Lines" type="TileMap" parent="."]
+tile_set = SubResource("TileSet_3nfcj")
+format = 2
+layer_0/tile_data = PackedInt32Array(327683, 0, 0, 262147, 0, 0, 196611, 0, 0, 131075, 0, 0, 65539, 0, 0, 327681, 0, 1, 262145, 0, 1, 196609, 0, 1, 131073, 0, 1, 65537, 0, 1)
+
+[node name="Floor" type="Node2D" parent="."]
+texture_repeat = 2
+position = Vector2(-159, 0)
+script = ExtResource("2_b6ecn")
+_points = SubResource("Resource_xgj0j")
+shape_material = SubResource("Resource_sxari")
+
+[node name="Top Shadow" type="PointLight2D" parent="Floor"]
+position = Vector2(836.626, 11.5012)
+rotation = 1.5708
+scale = Vector2(3.075, 13.345)
+color = Color(1, 0.968627, 0.752941, 1)
+energy = 0.2
+shadow_enabled = true
+texture = ExtResource("11_nkpij")
+texture_scale = 0.1
+height = 145.0
+
+[node name="Top Light" type="PointLight2D" parent="Floor"]
+position = Vector2(836.626, 11.5012)
+rotation = 1.5708
+scale = Vector2(3.075, 13.345)
+color = Color(1, 0.968627, 0.752941, 1)
+energy = 0.2
+texture = ExtResource("11_nkpij")
+texture_scale = 0.1
+height = 145.0
+
+[node name="Bottom Shadow" type="PointLight2D" parent="Floor"]
+position = Vector2(836.625, 883.5)
+rotation = -1.5708
+scale = Vector2(3.075, 13.345)
+color = Color(1, 0.968627, 0.752941, 1)
+energy = 0.2
+shadow_enabled = true
+texture = ExtResource("11_nkpij")
+texture_scale = 0.1
+height = 145.0
+
+[node name="Bottom Light" type="PointLight2D" parent="Floor"]
+position = Vector2(836.625, 883.5)
+rotation = -1.5708
+scale = Vector2(3.075, 13.345)
+color = Color(1, 0.968627, 0.752941, 1)
+energy = 0.2
+texture = ExtResource("11_nkpij")
+texture_scale = 0.1
+height = 145.0
+
+[node name="Car Spawn Positions" type="Node2D" parent="."]
+position = Vector2(397.352, 945.113)
+
+[node name="Spawn 1" type="Marker2D" parent="Car Spawn Positions"]
+position = Vector2(15.648, -753.113)
+
+[node name="Spawn 2" type="Marker2D" parent="Car Spawn Positions"]
+position = Vector2(15.648, -625.113)
+
+[node name="Spawn 3" type="Marker2D" parent="Car Spawn Positions"]
+position = Vector2(15.648, -497.113)
+
+[node name="Spawn 4" type="Marker2D" parent="Car Spawn Positions"]
+position = Vector2(15.648, -369.113)
+
+[node name="Spawn 5" type="Marker2D" parent="Car Spawn Positions"]
+position = Vector2(15.648, -241.113)
+
+[node name="Spawn 6" type="Marker2D" parent="Car Spawn Positions"]
+position = Vector2(559.648, -753.113)
+
+[node name="Spawn 7" type="Marker2D" parent="Car Spawn Positions"]
+position = Vector2(559.648, -625.113)
+
+[node name="Spawn 8" type="Marker2D" parent="Car Spawn Positions"]
+position = Vector2(559.648, -497.113)
+
+[node name="Spawn 9" type="Marker2D" parent="Car Spawn Positions"]
+position = Vector2(559.648, -369.113)
+
+[node name="Spawn 10" type="Marker2D" parent="Car Spawn Positions"]
+position = Vector2(559.648, -241.113)
+
+[node name="Walls" type="StaticBody2D" parent="."]
+position = Vector2(-159, 0)
+
+[node name="Wall L" type="CollisionPolygon2D" parent="Walls"]
+polygon = PackedVector2Array(702, 116, 420, 116, 419, 780, 702, 780, 702, 852, 350, 856, 354, 33, 703, 34)
+
+[node name="Wall R" type="CollisionPolygon2D" parent="Walls"]
+position = Vector2(1678, 896)
+rotation = 3.14159
+polygon = PackedVector2Array(702, 116, 420, 116, 419, 780, 702, 780, 702, 852, 350, 856, 354, 33, 703, 34)
+
+[node name="Gate" type="Area2D" parent="."]
+position = Vector2(684, 455)
+
+[node name="Top Gate" type="CollisionShape2D" parent="Gate"]
+position = Vector2(-3.5, -380)
+shape = SubResource("RectangleShape2D_8u24v")
+
+[node name="Bottom Gate" type="CollisionShape2D" parent="Gate"]
+position = Vector2(-3.5, 366)
+shape = SubResource("RectangleShape2D_8u24v")
+
+[node name="Player" parent="." instance=ExtResource("2_0dvo2")]
+position = Vector2(687, 154)
+
+[connection signal="body_entered" from="Gate" to="." method="_on_gate_body_entered"]

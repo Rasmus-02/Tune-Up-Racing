@@ -21,7 +21,7 @@ func buy_car(car, price):
 	Save_Load.set_engine(car.engine)
 	Save_Load.add_engine()
 	#Add car
-	car.in_garage = 1 #Set car to parking lot
+	car.in_garage = null #Set car to parking lot
 	Save_Load.set_car(car)
 	Save_Load.add_car()
 

@@ -15,6 +15,7 @@ var car_list
 var main = null
 
 func _ready():
+	$Camera2D.make_current()
 	main = get_tree().get_root().get_node("Main")
 	garage = get_parent().get_parent()
 
@@ -77,7 +78,7 @@ func animation_handler():
 
 
 func disable_enable(): #For disabling movement input
-	if SelectedScene.scene == "garage" and ui_visible == false:
+	if (SelectedScene.scene == "garage" or SelectedScene.scene == "parking_garage") and ui_visible == false:
 		in_controll = true
 	else:
 		in_controll = false
@@ -125,7 +126,7 @@ func hide_ui():
 	ui_visible = false
 
 func show_ui():
-	if get_parent().get_parent().get_node("Car Edit UI").get_node("Car Edit Controller").active == false and get_parent().get_parent().get_node("Car Edit UI").get_node("Engine Edit Controller").active == false and get_parent().get_parent().get_node("Props").get_node("Paint Booth").active == false:
+	if SelectedScene.scene != "garage" or (get_parent().get_parent().get_node("Car Edit UI").get_node("Car Edit Controller").active == false and get_parent().get_parent().get_node("Car Edit UI").get_node("Engine Edit Controller").active == false and get_parent().get_parent().get_node("Props").get_node("Paint Booth").active == false):
 		#set position where the us should spawn
 		$"../Interact_Menu_Garage".global_position = selected_car.global_position +Vector2(-75,55)
 		#reset which buttons are visible

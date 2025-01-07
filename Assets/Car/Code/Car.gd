@@ -151,6 +151,7 @@ var parts = [chassi, driveshaft, subframe, fenders, f_bumper, r_bumper, hood, he
 var tiresmoke = preload("res://Assets/Effects/TireSmoke.tscn")
 var tiremark = preload("res://Assets/Effects/tiremark.tscn")
 var collision = preload("res://Assets/Effects/Collision.tscn")
+var spawn_rotation = 0
 #endregion
 
 #region Import Export
@@ -564,14 +565,20 @@ func car_constructor():
 
 var loaded = false
 func is_loaded():
-	if loaded == true or (tire_list.size() != 0 and tire_list[3] != null and SelectedScene.scene == "Track"):
+	#Rotate the car according to how it should be spawned in garage or scrapyard
+	if spawn_rotation > 0 and engine.position_loaded == true:
+			print("rotate")
+			self.rotation = deg_to_rad(spawn_rotation)
+			spawn_rotation = 0
+	
+	#For making the car function on track
+	if tire_list.size() != 0 and tire_list[3] != null and SelectedScene.scene == "Track":
 		loaded = true
 		return true
 	else:
 		engine.is_running = false
 
 func _physics_process(delta): 
-
 	export_signal()
 	if is_ready == false:
 			car_constructor()

@@ -13,3 +13,9 @@ func _ready():
 
 func drive():
 	get_parent().change_scene("costal_circuit")
+
+
+func _on_gate_body_entered(body):
+	if body.is_in_group("Player"):
+		SelectedScene.scene = "changing"
+		get_parent().change_scene("parking_garage")
