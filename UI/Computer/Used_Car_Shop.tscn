@@ -72,6 +72,7 @@ offset_bottom = 128.0
 custom_minimum_size = Vector2(647.22, 0)
 layout_mode = 2
 toggle_mode = true
+button_pressed = true
 text = "Find Cars"
 
 [node name="Favorites" type="Button" parent="Top Page Panel/ViewSelector"]

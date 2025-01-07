@@ -111,7 +111,7 @@ func filter_list(list):
 		if filters[6][1] > 0 and (filters[6][0] > engine.Tq * car.drivetrain_loss or filters[6][1] < engine.Tq * car.drivetrain_loss -1):
 			list.erase(key)
 		#Favorited
-		if list.get(str(key)).favorite_status == false and favorites == true:
+		if favorites == true and list.get(str(key)).favorite_status == false:
 			list.erase(key)
 	return list
 
