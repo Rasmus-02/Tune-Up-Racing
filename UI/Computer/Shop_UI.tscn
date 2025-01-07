@@ -1,7 +1,8 @@
-[gd_scene load_steps=19 format=3 uid="uid://xetjn1k22kut"]
+[gd_scene load_steps=20 format=3 uid="uid://xetjn1k22kut"]
 
 [ext_resource type="Theme" uid="uid://b7cej2d60vjv1" path="res://UI/Computer/Shop.tres" id="1_ttnr5"]
 [ext_resource type="Script" path="res://UI/Computer/shop_list_handler.gd" id="2_tk8gg"]
+[ext_resource type="Script" path="res://UI/Computer/Page_Handler_Addon.gd" id="2_xm6p6"]
 [ext_resource type="StyleBox" uid="uid://dle3as3q1srn4" path="res://UI/Computer/Highlighted_item_shop.tres" id="3_48bvi"]
 [ext_resource type="Script" path="res://UI/Computer/Part_Categories_Shop.gd" id="3_hty7b"]
 [ext_resource type="Theme" uid="uid://djwkn1r8xu4oo" path="res://UI/Computer/Shop_stats.tres" id="4_1l0pp"]
@@ -45,7 +46,7 @@ corner_radius_bottom_left = 15
 shadow_color = Color(0, 0, 0, 0.176471)
 shadow_size = 15
 
-[node name="Shop" type="Control"]
+[node name="Shop" type="Control" node_paths=PackedStringArray("extra_tab")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -53,6 +54,8 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("1_ttnr5")
+script = ExtResource("2_xm6p6")
+extra_tab = NodePath("Control/Part Stats")
 
 [node name="Top Page Panel" type="Panel" parent="."]
 layout_mode = 2

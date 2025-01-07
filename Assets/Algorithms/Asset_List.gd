@@ -9,10 +9,6 @@ extends Node
 @export var engine_list : Node #List of all engines
 
 
-#func savefile_to_part():
-#	print (Save_Load.part_inventory.get("car").get("Front Bumper"))
-	
-
 var part_list = [] #List where all the parts meeting the filters will go
 func get_parts(category, rarity, id, search_word, save_or_not): #Can sort by category, engine/car or all, specific engine or car (id) and limit max rarity
 	#savefile_to_part()

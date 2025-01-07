@@ -79,7 +79,7 @@ func load_car(dict):
 	if photo.get(str(0)).filter != 999: #IF filter is selected show (999 is null) and every photo has same filter
 		filter.get_child(photo.get(str(0)).filter).show()
 	
-	update(car_node, dict.favorite_status, [0,0], car.price)
+	update(car_node, dict.favorite_status, [0,0], dict.price)
 
 func format_number(num: int) -> String:
 	var num_str = str(num)

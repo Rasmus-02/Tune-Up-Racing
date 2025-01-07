@@ -652,8 +652,10 @@ func estimate_torque():
 	var run1_hp
 	var run1_tq
 	
+	
 	for i in 1:
 		var temp_rpm = max_horsepower_rpm
+		var temp_turbo_size = exhaust_manifold.get_turbo_max_size()
 		if i == 1:
 			temp_rpm = max_horsepower_rpm * 0.77
 		var temp_boost = max_boost
@@ -662,7 +664,7 @@ func estimate_torque():
 		
 		#Turbo Calc
 		if turbo == true:
-			temp_airflow_post_turbo = (((turbo_size/60.0)**(0.8)) * temp_boost) * 0.8 * air_filter.tq_mod
+			temp_airflow_post_turbo = (((temp_turbo_size/60.0)**(0.8)) * temp_boost) * 0.8 * air_filter.tq_mod
 		
 		if supercharger == true:
 			var pulley_size = supercharger_pulley_size / 35.0
@@ -673,8 +675,7 @@ func estimate_torque():
 			temp_boost += temp_boost_supercharger
 			temp_airflow_post_supercharger = temp_boost_supercharger * 2 * air_filter.tq_mod
 		
-		var temp_airflow_post = temp_airflow_post_turbo + (temp_airflow_post_supercharger * turbo_efficiency)
-		
+		var temp_airflow_post = temp_airflow_post_supercharger + (temp_airflow_post_turbo * turbo_efficiency)
 		
 		temp_tq = max_torque * (float(temp_rpm) / float(max_horsepower_rpm)) + (max_torque / 8.0)
 		temp_tq = (temp_tq + (temp_tq * temp_airflow_post))/2
@@ -684,7 +685,7 @@ func estimate_torque():
 		if compression + temp_boost > max_compression:
 			temp_tq += (max_compression - (compression + temp_boost)) * (50 * (1+temp_boost)) #if over max compression start loosing power due to knock, lose more with more boost
 		if turbo == true: #losses due to turbo restriction
-			temp_tq -= (((turbo_size/50.0)**(2.0)) * 6) / turbo_efficiency #*10 is constant, efficiensy makes less power loss
+			temp_tq -= (((temp_turbo_size/50.0)**(2.0)) * 6) / turbo_efficiency #*10 is constant, efficiensy makes less power loss
 		if supercharger == true:
 			temp_tq -= supercharer_displacement_capacity / 22.0
 		temp_tq = clamp(temp_tq, 0, 9999)

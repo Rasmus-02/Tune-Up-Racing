@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=3 uid="uid://c2temcei51jwy"]
+[gd_scene load_steps=31 format=3 uid="uid://c2temcei51jwy"]
 
 [ext_resource type="Script" path="res://Assets/Player Character/Player.gd" id="1_bbvfw"]
 [ext_resource type="Texture2D" uid="uid://b350jwt2tgchl" path="res://addons/rmsmartshape/assets/light1-1.png" id="2_sien1"]
@@ -129,6 +129,12 @@ shader = ExtResource("10_u8o4i")
 shader_parameter/progress = 0.0
 shader_parameter/diamondPixelSize = 15.0
 
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_sixnp"]
+light_mode = 1
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_xn4bu"]
+light_mode = 1
+
 [node name="Player" type="Node2D" groups=["Player"]]
 
 [node name="Character" type="CharacterBody2D" parent="." groups=["Player"]]
@@ -252,6 +258,7 @@ text = "Car is missing parts"
 
 [node name="Edit_Car_button" type="Button" parent="Interact_Menu_Garage"]
 visible = false
+material = SubResource("CanvasItemMaterial_sixnp")
 layout_mode = 2
 theme_override_constants/icon_max_width = 55
 theme_override_font_sizes/font_size = 56
@@ -262,6 +269,7 @@ expand_icon = true
 
 [node name="Dyno_button" type="Button" parent="Interact_Menu_Garage"]
 visible = false
+material = SubResource("CanvasItemMaterial_sixnp")
 layout_mode = 2
 theme_override_constants/icon_max_width = 55
 theme_override_font_sizes/font_size = 56
@@ -272,6 +280,7 @@ expand_icon = true
 
 [node name="Paint_Car_button" type="Button" parent="Interact_Menu_Garage"]
 visible = false
+material = SubResource("CanvasItemMaterial_sixnp")
 layout_mode = 2
 theme_override_constants/icon_max_width = 55
 theme_override_font_sizes/font_size = 56
@@ -282,6 +291,7 @@ expand_icon = true
 
 [node name="Info_Car_button" type="Button" parent="Interact_Menu_Garage"]
 visible = false
+material = SubResource("CanvasItemMaterial_sixnp")
 layout_mode = 2
 theme_override_constants/icon_max_width = 55
 theme_override_font_sizes/font_size = 56
@@ -292,6 +302,7 @@ expand_icon = true
 
 [node name="Sell_Car_button" type="Button" parent="Interact_Menu_Garage"]
 visible = false
+material = SubResource("CanvasItemMaterial_sixnp")
 layout_mode = 2
 theme_override_constants/icon_max_width = 55
 theme_override_font_sizes/font_size = 56
@@ -302,6 +313,7 @@ expand_icon = true
 
 [node name="Move_Car_button" type="Button" parent="Interact_Menu_Garage"]
 visible = false
+material = SubResource("CanvasItemMaterial_sixnp")
 layout_mode = 2
 theme_override_constants/icon_max_width = 55
 theme_override_font_sizes/font_size = 56
@@ -321,49 +333,60 @@ theme_override_constants/separation = 16
 
 [node name="Move_Menu_Garage" type="HBoxContainer" parent="Move_Menu"]
 z_index = 1
+material = SubResource("CanvasItemMaterial_xn4bu")
 layout_mode = 2
 theme_override_constants/separation = 19
 
 [node name="Left" type="VBoxContainer" parent="Move_Menu/Move_Menu_Garage"]
+material = SubResource("CanvasItemMaterial_xn4bu")
 layout_mode = 2
 theme_override_constants/separation = 16
 
 [node name="Move_To_Lift" type="Button" parent="Move_Menu/Move_Menu_Garage/Left"]
+material = SubResource("CanvasItemMaterial_sixnp")
 layout_mode = 2
 text = "Move to Lift"
 
 [node name="Move_To_Dyno" type="Button" parent="Move_Menu/Move_Menu_Garage/Left"]
+material = SubResource("CanvasItemMaterial_sixnp")
 layout_mode = 2
 text = "Move to Dyno"
 
 [node name="Move_To_Paint" type="Button" parent="Move_Menu/Move_Menu_Garage/Left"]
+material = SubResource("CanvasItemMaterial_sixnp")
 layout_mode = 2
 text = "Move to Paint Booth"
 
 [node name="Right" type="VBoxContainer" parent="Move_Menu/Move_Menu_Garage"]
+material = SubResource("CanvasItemMaterial_xn4bu")
 layout_mode = 2
 theme_override_constants/separation = 16
 
 [node name="Move_To_Garage_Parking_1" type="Button" parent="Move_Menu/Move_Menu_Garage/Right"]
+material = SubResource("CanvasItemMaterial_sixnp")
 layout_mode = 2
 text = "Move to Parking 1"
 
 [node name="Move_To_Garage_Parking_2" type="Button" parent="Move_Menu/Move_Menu_Garage/Right"]
+material = SubResource("CanvasItemMaterial_sixnp")
 layout_mode = 2
 text = "Move to Parking 2"
 
 [node name="Move_To_Garage_Parking_3" type="Button" parent="Move_Menu/Move_Menu_Garage/Right"]
+material = SubResource("CanvasItemMaterial_sixnp")
 layout_mode = 2
 text = "Move to Parking 3"
 
 [node name="To Parking Garage" type="Button" parent="Move_Menu"]
 z_index = 1
+material = SubResource("CanvasItemMaterial_sixnp")
 layout_mode = 2
 text = "Move to Parking Garage"
 
 [node name="From Parking Garage" type="Button" parent="Move_Menu"]
 visible = false
 z_index = 1
+material = SubResource("CanvasItemMaterial_sixnp")
 layout_mode = 2
 text = "Move to Garage"
 

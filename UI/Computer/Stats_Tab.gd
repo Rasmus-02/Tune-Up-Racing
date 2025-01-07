@@ -19,12 +19,15 @@ func _input(_event): #Check only when a button is pressed
 		close()
 
 func open(): #open stats 
+	get_parent().get_parent().block_pause()
 	status = "open"
 	self.show()
+	popup.hide()
 	buy_sell_button.grab_focus()
 	update_stats()
 
 func close(): #close stats
+	get_parent().get_parent().unblock_pause()
 	status = "closed"
 	self.hide()
 	release_focus()

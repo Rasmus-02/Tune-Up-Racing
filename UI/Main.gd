@@ -27,10 +27,7 @@ func open_close_pause_menu():
 
 
 func update_pause_menu_position():
-	#Vector 2:s in the end to place them on correct location on screen (canvas layer i weird)
-	if SelectedScene.scene == "garage" or SelectedScene.scene == "parking_garage":
-		pause_menu.get_child(0).global_position = get_child(3).get_node("Player").global_position + Vector2(-428, -619) 
-	elif SelectedScene.scene == "Track":
+	if SelectedScene.scene == "Track":
 		pause_menu.get_child(0).global_position = get_child(3).get_node("Track").global_position
 
 

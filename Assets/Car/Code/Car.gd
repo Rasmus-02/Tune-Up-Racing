@@ -572,7 +572,7 @@ func car_constructor():
 var loaded = false
 func is_loaded():
 	#For making the car function on track
-	if tire_list.size() != 0 and tire_list[3] != null and SelectedScene.scene == "Track":
+	if tire_list.size() != 0 and tire_list[3] != null and (SelectedScene.scene == "Track" or running_dyno != 0):
 		loaded = true
 		return true
 	else:

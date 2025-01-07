@@ -92,7 +92,7 @@ shadow_color = Color(0, 0, 0, 0.211765)
 shadow_size = 100
 anti_aliasing = false
 
-[node name="Car Detailed" type="Panel" node_paths=PackedStringArray("images", "car_name", "engine_name", "car_stats", "price", "favorited", "car_rarity", "engine_rarity", "milage", "power", "weight", "buy_popup", "description_text")]
+[node name="Car Detailed" type="Panel" node_paths=PackedStringArray("images", "car_name", "engine_name", "car_stats", "price", "favorited", "car_rarity", "engine_rarity", "milage", "power", "weight", "buy_popup", "description_text", "parking_garage_full_popup")]
 offset_right = 1900.0
 offset_bottom = 1197.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_c88v1")
@@ -110,6 +110,7 @@ power = NodePath("Title BG/Power")
 weight = NodePath("Title BG/Weight")
 buy_popup = NodePath("Buy Popup")
 description_text = NodePath("Text BG/Description")
+parking_garage_full_popup = NodePath("Garage Full Popup")
 
 [node name="Picture BG" type="Panel" parent="."]
 layout_mode = 2
@@ -427,6 +428,7 @@ theme_override_styles/focus = SubResource("StyleBoxFlat_sigsr")
 text = "Buy"
 
 [node name="Buy Popup" type="Panel" parent="."]
+visible = false
 layout_mode = 0
 offset_left = 607.0
 offset_top = 358.0
@@ -439,9 +441,9 @@ script = ExtResource("8_jmpvd")
 custom_minimum_size = Vector2(0, 84.835)
 layout_mode = 0
 offset_left = 64.0
-offset_top = 55.0
+offset_top = 62.0
 offset_right = 491.0
-offset_bottom = 160.0
+offset_bottom = 167.0
 scale = Vector2(1.3, 1.3)
 theme_override_colors/font_color = Color(0.196078, 0.196078, 0.196078, 1)
 theme_override_styles/normal = SubResource("StyleBoxEmpty_tky7b")
@@ -449,7 +451,6 @@ text = "Are you sure you want to
 purchase this car?"
 
 [node name="Button_Container" type="HBoxContainer" parent="Buy Popup"]
-visible = false
 layout_mode = 0
 offset_left = 91.0
 offset_top = 290.0
@@ -468,6 +469,43 @@ custom_minimum_size = Vector2(274.695, 0)
 layout_mode = 2
 text = "NO"
 
+[node name="Garage Full Popup" type="Panel" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 607.0
+offset_top = 358.0
+offset_right = 1386.0
+offset_bottom = 818.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_3b5xq")
+
+[node name="Title" type="Label" parent="Garage Full Popup"]
+custom_minimum_size = Vector2(0, 84.835)
+layout_mode = 0
+offset_left = 54.0
+offset_top = 77.0
+offset_right = 574.0
+offset_bottom = 182.0
+scale = Vector2(1.3, 1.3)
+theme_override_colors/font_color = Color(0.196078, 0.196078, 0.196078, 1)
+theme_override_styles/normal = SubResource("StyleBoxEmpty_tky7b")
+text = "Parking Garage is full"
+horizontal_alignment = 1
+
+[node name="Button_Container" type="HBoxContainer" parent="Garage Full Popup"]
+layout_mode = 0
+offset_left = 91.0
+offset_top = 290.0
+offset_right = 689.0
+offset_bottom = 406.0
+theme = ExtResource("8_6lr4f")
+theme_override_constants/separation = 50
+alignment = 1
+
+[node name="OK" type="Button" parent="Garage Full Popup/Button_Container"]
+custom_minimum_size = Vector2(274.695, 0)
+layout_mode = 2
+text = "OK"
+
 [connection signal="pressed" from="Button1" to="." method="_on_button_1_pressed"]
 [connection signal="pressed" from="Button2" to="." method="_on_button_2_pressed"]
 [connection signal="pressed" from="Button3" to="." method="_on_button_3_pressed"]
@@ -476,3 +514,4 @@ text = "NO"
 [connection signal="pressed" from="Buy" to="." method="_on_buy_pressed"]
 [connection signal="pressed" from="Buy Popup/Button_Container/YES" to="." method="_on_yes_pressed"]
 [connection signal="pressed" from="Buy Popup/Button_Container/NO" to="." method="_on_no_pressed"]
+[connection signal="pressed" from="Garage Full Popup/Button_Container/OK" to="." method="_on_ok_pressed"]

@@ -38,14 +38,7 @@ func get_ai_car():
 	var grip = player.max_tire_limit
 	var downforce = player.downforce
 	var brake_force = player.brake_force
-	var tq = player.engine.max_torque * (player.engine.compression / 10)
-	#print("pre",tq)
-	#make the max limit account for boost
-	if player.engine.turbo == true:
-		tq += player.engine.max_torque * (player.engine.max_boost * (player.engine.turbo_size/70)*player.engine.turbo_efficiency)
-	if player.engine.supercharger == true:
-		tq += player.engine.max_torque * ((player.engine.supercharer_displacement_capacity * 0.0004))
-	#print("post",tq)
+	var tq = player.engine.estimate_torque().tq
 	var car = null
 	var engine = null
 	var step = 0 #TESTING TOOL TO BENCHMARK PERFORMANCE

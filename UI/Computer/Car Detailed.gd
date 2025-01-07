@@ -67,7 +67,6 @@ func update(car : CharacterBody2D, favorited_status : bool, picture_info : Array
 	
 	#Estimated Power
 	var engine_dyno_test = car.engine.estimate_torque()
-	print(car.exhaust_tq_mod)
 	var tq = int(engine_dyno_test.tq * (1 - car.drivetrain_loss) * car.exhaust_tq_mod)
 	var hp = int(engine_dyno_test.hp * (1 - car.drivetrain_loss) * car.exhaust_tq_mod)
 	power.text = "Power: " + str(hp) + "hp / " + str(tq) + "nm"
@@ -125,7 +124,7 @@ func populate_view():
 		if photo.get(str(0)).filter != 999: #IF filter is selected show (999 is null) and every photo has same filter
 			filter.get_child(photo.get(str(0)).filter).show()
 		
-		update(car_node, dict.favorite_status, [0,0], car.price)
+		update(car_node, dict.favorite_status, [0,0], dict.price)
 
 func change_view_image(index):
 		var car_display = images.get_child(0).get_child(0).get_child(0)
@@ -145,6 +144,7 @@ func change_view_image(index):
 
 
 func get_description(personality, car, hp, durability):
+	durability *= 100
 	#variables that each personality needs
 	var prompts : int #How many things they will talk about
 	var description : String
@@ -184,7 +184,7 @@ func get_description(personality, car, hp, durability):
 			if prompts > 0 and durability > 90:
 				description += "Both the car and engine are in really great condition. "
 				prompts -= 1
-			if prompts > 0 and durability < 70:
+			if prompts > 0 and durability < 80:
 				description += "The car is not in the best shape, however with some attention, this car could be a real gem. "
 				prompts -= 1
 		"negative":
@@ -222,8 +222,8 @@ func get_description(personality, car, hp, durability):
 			if prompts > 0 and durability > 90:
 				description += "The car has been barely driven, so you won't have to worry about fixing it up all that much. "
 				prompts -= 1
-			if prompts > 0 and durability < 70:
-				description += "The car is kind of a piece of crap, it needs a lot of work. "
+			if prompts > 0 and durability < 80:
+				description += "The car is in pretty rough condition, it needs a lot of work. "
 				prompts -= 1
 		"scammer":
 			prompts = 4
@@ -260,7 +260,7 @@ func get_description(personality, car, hp, durability):
 			if prompts > 0 and durability > 90:
 				description += "The car is pretty much straight out of the factory, it is in pristine condition. "
 				prompts -= 1
-			if prompts > 0 and durability < 70:
+			if prompts > 0 and durability < 80:
 				description += "It has a couple of scratches here and there, but honestly nothing that can't be polished out. "
 				prompts -= 1
 		"lazy":
@@ -283,7 +283,7 @@ func get_description(personality, car, hp, durability):
 			if prompts > 0 and durability > 90:
 				description += "Good condition. No lowballers I know what I have! "
 				prompts -= 1
-			if prompts > 0 and durability < 70:
+			if prompts > 0 and durability < 80:
 				description += "Needs work. No lowballers I know what I have! "
 				prompts -= 1
 		"smart":
@@ -321,7 +321,7 @@ func get_description(personality, car, hp, durability):
 			if prompts > 0 and durability > 90:
 				description += "The car and the engine is like new. "
 				prompts -= 1
-			if prompts > 0 and durability < 70:
+			if prompts > 0 and durability < 80:
 				description += "The car could use some work, I am quite busy at the moment therefore I am selling it. Great project car! "
 				prompts -= 1
 		"idiot":
@@ -353,7 +353,7 @@ func get_description(personality, car, hp, durability):
 			if prompts > 0 and durability > 90:
 				description += "This car is like new. Don't try to lowball me I know what I have! "
 				prompts -= 1
-			if prompts > 0 and durability < 70:
+			if prompts > 0 and durability < 80:
 				description += "The car started last winter, and I think it still should start. Don't try to lowball me I know what I have! "
 				prompts -= 1
 	
@@ -416,12 +416,19 @@ func _on_favorite_pressed():
 
 
 ## BUY BUTTON
-	
 #Show buy popup view
 func _on_buy_pressed():
+	#Check how many cars are in parking garage
+	var car_count : int
+	for key in Save_Load.cars.keys():
+		var car = Save_Load.cars.get(key)
+		if car != null and (car.in_garage == null or car.in_garage == 0):
+			car_count += 1
 	#If player can afford it
-	if Save_Load.money >= dict.car.price:
+	if Save_Load.money >= dict.car.price and car_count < 10:
 		buy_popup.show()
+	elif car_count >= 10:
+		parking_garage_full_popup.show()
 
 #In buy popup view
 func _on_yes_pressed():
@@ -433,6 +440,8 @@ func _on_yes_pressed():
 func _on_no_pressed():
 	buy_popup.hide()
 
+func _on_ok_pressed():
+	parking_garage_full_popup.hide()
 
 
 ##CLEANER
@@ -448,4 +457,3 @@ func _free_if_orphaned():
 		for child in get_children():
 			child.queue_free()
 		queue_free()
-

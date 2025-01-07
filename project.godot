@@ -33,6 +33,7 @@ Colors="*res://Libraries/colors.gd"
 Settings="*res://Game_Logic/settings.gd"
 Clock="*res://Game_Logic/clock.gd"
 CarMarket="*res://UI/Computer/car_market.gd"
+Sound="*res://Sound/Volume Control/Sound.tscn"
 
 [display]
 

@@ -1,0 +1,14 @@
+[gd_scene load_steps=4 format=3 uid="uid://duslkhxb83tbo"]
+
+[ext_resource type="AudioStream" uid="uid://c8f4tiw3oaya7" path="res://Sound/Buy.mp3" id="1_osig5"]
+[ext_resource type="Script" path="res://Sound/Volume Control/Sound.gd" id="1_x4qd6"]
+[ext_resource type="AudioStream" uid="uid://le4esdbxm4i2" path="res://Sound/Sell.mp3" id="2_jbiqu"]
+
+[node name="Sound" type="Node2D"]
+script = ExtResource("1_x4qd6")
+
+[node name="Buy" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("1_osig5")
+
+[node name="Sell" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_jbiqu")

@@ -1,8 +1,9 @@
-[gd_scene load_steps=9 format=3 uid="uid://de8jud5erkt8n"]
+[gd_scene load_steps=10 format=3 uid="uid://de8jud5erkt8n"]
 
 [ext_resource type="Theme" uid="uid://c8y10g2llcfgl" path="res://UI/Computer/Used_Car_Shop.tres" id="1_3duv1"]
 [ext_resource type="Script" path="res://UI/Computer/Car List.gd" id="2_5x86r"]
 [ext_resource type="Texture2D" uid="uid://btgfy446eqe7w" path="res://Textures/UI/Computer/websites/Used Cars (Shop Logo).png" id="2_6qvbk"]
+[ext_resource type="Script" path="res://UI/Computer/Page_Handler_Addon.gd" id="2_y5wus"]
 [ext_resource type="Script" path="res://UI/Computer/Car Detailed Handler.gd" id="3_h1qgf"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lekva"]
@@ -33,7 +34,7 @@ anti_aliasing = false
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_fucll"]
 content_margin_top = 0.0
 
-[node name="Used Car Shop" type="Control"]
+[node name="Used Car Shop" type="Control" node_paths=PackedStringArray("extra_tab")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -41,6 +42,8 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("1_3duv1")
+script = ExtResource("2_y5wus")
+extra_tab = NodePath("Car Detailed")
 
 [node name="Top Page Panel" type="Panel" parent="."]
 layout_mode = 2
@@ -68,11 +71,13 @@ offset_bottom = 128.0
 [node name="Car Finder" type="Button" parent="Top Page Panel/ViewSelector"]
 custom_minimum_size = Vector2(647.22, 0)
 layout_mode = 2
+toggle_mode = true
 text = "Find Cars"
 
 [node name="Favorites" type="Button" parent="Top Page Panel/ViewSelector"]
 custom_minimum_size = Vector2(647.22, 0)
 layout_mode = 2
+toggle_mode = true
 text = "Favorites
 "
 
@@ -84,7 +89,7 @@ offset_right = 2230.0
 offset_bottom = 1430.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_lekva")
 
-[node name="List Of Cars" type="VBoxContainer" parent="Cars" node_paths=PackedStringArray("page_number_label", "brand", "fuel_type", "gearing", "drive_type", "min_price", "max_price", "min_weight", "max_weight", "min_hp", "max_hp")]
+[node name="List Of Cars" type="VBoxContainer" parent="Cars" node_paths=PackedStringArray("page_number_label", "brand", "fuel_type", "gearing", "drive_type", "min_price", "max_price", "min_weight", "max_weight", "min_tq", "max_tq")]
 layout_mode = 0
 offset_left = 2.0
 offset_top = 2.0
@@ -101,8 +106,8 @@ min_price = NodePath("../../Filters/Range/Price MinMax/Labels/Min")
 max_price = NodePath("../../Filters/Range/Price MinMax/Options/Max")
 min_weight = NodePath("../../Filters/Range/Weight MinMax/Labels/Min")
 max_weight = NodePath("../../Filters/Range/Weight MinMax/Options/Max")
-min_hp = NodePath("../../Filters/Range/Horsepower MinMax/Labels/Min")
-max_hp = NodePath("../../Filters/Range/Horsepower MinMax/Options/Max")
+min_tq = NodePath("../../Filters/Range/Torque MinMax/Labels/Min")
+max_tq = NodePath("../../Filters/Range/Torque MinMax/Options/Max")
 
 [node name="PageSelector" type="HBoxContainer" parent="Cars"]
 layout_mode = 0
@@ -274,7 +279,6 @@ theme_override_constants/separation = 35
 [node name="Max" type="SpinBox" parent="Filters/Range/Price MinMax/Options"]
 layout_mode = 2
 max_value = 1e+07
-value = 10000.0
 alignment = 1
 prefix = "MAX:"
 
@@ -308,41 +312,39 @@ theme_override_constants/separation = 35
 [node name="Max" type="SpinBox" parent="Filters/Range/Weight MinMax/Options"]
 layout_mode = 2
 max_value = 10000.0
-value = 1250.0
 alignment = 1
 prefix = "MAX:"
 
-[node name="Horsepower" type="Label" parent="Filters/Range"]
+[node name="Torque" type="Label" parent="Filters/Range"]
 custom_minimum_size = Vector2(0, 100)
 layout_mode = 2
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_styles/normal = SubResource("StyleBoxEmpty_fucll")
-text = "Horsepower"
+text = "Torque"
 horizontal_alignment = 1
 
-[node name="Horsepower MinMax" type="HBoxContainer" parent="Filters/Range"]
+[node name="Torque MinMax" type="HBoxContainer" parent="Filters/Range"]
 layout_mode = 2
 
-[node name="Labels" type="VBoxContainer" parent="Filters/Range/Horsepower MinMax"]
+[node name="Labels" type="VBoxContainer" parent="Filters/Range/Torque MinMax"]
 custom_minimum_size = Vector2(274, 125)
 layout_mode = 2
 theme_override_constants/separation = 35
 
-[node name="Min" type="SpinBox" parent="Filters/Range/Horsepower MinMax/Labels"]
+[node name="Min" type="SpinBox" parent="Filters/Range/Torque MinMax/Labels"]
 layout_mode = 2
 max_value = 10000.0
 alignment = 1
 prefix = "MIN:"
 
-[node name="Options" type="VBoxContainer" parent="Filters/Range/Horsepower MinMax"]
+[node name="Options" type="VBoxContainer" parent="Filters/Range/Torque MinMax"]
 custom_minimum_size = Vector2(300, 125)
 layout_mode = 2
 theme_override_constants/separation = 35
 
-[node name="Max" type="SpinBox" parent="Filters/Range/Horsepower MinMax/Options"]
+[node name="Max" type="SpinBox" parent="Filters/Range/Torque MinMax/Options"]
 layout_mode = 2
 max_value = 10000.0
-value = 250.0
 alignment = 1
 prefix = "MAX:"
 
@@ -373,6 +375,9 @@ offset_bottom = 273.0
 script = ExtResource("3_h1qgf")
 car_list = NodePath("../Cars/List Of Cars")
 
+[connection signal="pressed" from="Top Page Panel/ViewSelector/Car Finder" to="Cars/List Of Cars" method="_on_car_finder_pressed"]
 [connection signal="pressed" from="Top Page Panel/ViewSelector/Car Finder" to="Car Detailed" method="_on_car_finder_pressed"]
+[connection signal="pressed" from="Top Page Panel/ViewSelector/Favorites" to="Cars/List Of Cars" method="_on_favorites_pressed"]
 [connection signal="pressed" from="Cars/PageSelector/Previous" to="Cars/List Of Cars" method="_on_previous_pressed"]
 [connection signal="pressed" from="Cars/PageSelector/Next" to="Cars/List Of Cars" method="_on_next_pressed"]
+[connection signal="pressed" from="Filters/Buttons/Apply" to="Cars/List Of Cars" method="_on_apply_pressed"]

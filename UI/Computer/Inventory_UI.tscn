@@ -1,7 +1,8 @@
-[gd_scene load_steps=18 format=3 uid="uid://dyjfrdyxvu7x8"]
+[gd_scene load_steps=19 format=3 uid="uid://dyjfrdyxvu7x8"]
 
 [ext_resource type="Theme" uid="uid://clrwm0elgwsqr" path="res://UI/Computer/Inventory.tres" id="1_7jwjh"]
 [ext_resource type="Script" path="res://UI/Computer/shop_list_handler.gd" id="2_ngcte"]
+[ext_resource type="Script" path="res://UI/Computer/Page_Handler_Addon.gd" id="2_q3qkj"]
 [ext_resource type="StyleBox" uid="uid://dle3as3q1srn4" path="res://UI/Computer/Highlighted_item_shop.tres" id="3_7gul5"]
 [ext_resource type="Script" path="res://UI/Computer/Part_Categories_Shop.gd" id="4_tb4i2"]
 [ext_resource type="Script" path="res://UI/Computer/Search Bar.gd" id="5_3y5vf"]
@@ -45,7 +46,7 @@ corner_radius_bottom_left = 15
 shadow_color = Color(0, 0, 0, 0.176471)
 shadow_size = 15
 
-[node name="Inventory" type="Control"]
+[node name="Inventory" type="Control" node_paths=PackedStringArray("extra_tab")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -53,6 +54,8 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("1_7jwjh")
+script = ExtResource("2_q3qkj")
+extra_tab = NodePath("Control/Part Stats")
 
 [node name="Top Page Panel" type="Panel" parent="."]
 layout_mode = 2

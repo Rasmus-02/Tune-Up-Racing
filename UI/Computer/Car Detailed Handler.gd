@@ -4,12 +4,14 @@ var display = preload("res://UI/Computer/car_detailed.tscn")
 @export var car_list : VBoxContainer
 
 func open(dict):
+	get_parent().block_pause() #Block the back button from entering home screen
 	car_list.clear_page()
 	var new_display = display.instantiate()
 	add_child(new_display)
 	get_child(0).open(dict)
 
 func close():
+	get_parent().unblock_pause()
 	for view in get_children():
 		view.car_node.delete_car()
 		view.queue_free()

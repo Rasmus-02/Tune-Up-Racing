@@ -10,7 +10,7 @@ func buy_car(car, price):
 	var car_key = Save_Load.largest_key("car", null) + 1
 	#Setup car keys
 	car.selected_engine = str(engine_key)
-	car.selected_car_key = car_key
+	car.selected_car_key = str(car_key)
 	#Setup engine keys
 	car.engine.selected_engine_key = engine_key
 	car.engine.in_car = car_key
@@ -23,4 +23,7 @@ func buy_car(car, price):
 	car.in_garage = null #Set car to parking lot
 	Save_Load.set_car(car)
 	Save_Load.add_car()
+	
+	##Play sound
+	Sound.buy.play()
 

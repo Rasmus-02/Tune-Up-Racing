@@ -26,7 +26,7 @@ func _ready():
 						new_car.spawn_rotation = 180
 					spawn_pos += 1
 					
-					if spawn_pos == 9: #Stop spawning cars if 10 cars spawned
+					if spawn_pos == 10: #Stop spawning cars if 10 cars spawned
 						break
 
 

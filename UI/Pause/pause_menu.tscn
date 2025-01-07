@@ -60,6 +60,7 @@ offset_right = 2560.0
 offset_bottom = 1440.0
 
 [node name="SettingsMenu" type="Sprite2D" parent="Control/MarginContainer" node_paths=PackedStringArray("general_settings", "audio_settings", "pause_menu")]
+visible = false
 z_index = 1
 position = Vector2(1171.88, 687.891)
 scale = Vector2(8.5, 8.5)

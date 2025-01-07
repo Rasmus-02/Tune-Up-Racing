@@ -61,6 +61,7 @@ func generate_car(rarity, weight, torque_estimate, grip, downforce, brake_force,
 		
 		var car_price = chassi.price + driveshaft.price + gearbox.price + fenders.price + wheels.price + tires.price + spoiler.price + f_bumper.price + headlight.price + taillights.price + mirrors.price + subframe.price + exhaust.price + brakes.price + suspension.price + radiator.price + hood.price + r_bumper.price
 		
+		var drivetrain_loss = (1 - driveshaft.drivetrain_loss) * exhaust.tq_mod_exhaust
 		var engine_position_offset = Vector2.ZERO
 		var engine_bay_size = [chassi.engine_bay_lenght - radiator.width, chassi.engine_bay_width]
 		if driveshaft.drivetrain == 1: #FWD 
@@ -74,9 +75,11 @@ func generate_car(rarity, weight, torque_estimate, grip, downforce, brake_force,
 		"price" : car_price,
 		"weight" : car_weight,
 		"reliability" : chassi.reliability,
+		"gearbox_type" : gearbox.gearbox_type,
 		"position_offset" : engine_position_offset,
 		"engine_bay_size" : engine_bay_size,
 		"stock_engine" : car_model.stock_engine,
+		"drivetrain_loss" : drivetrain_loss,
 		"drivetrain" : driveshaft.drivetrain,
 		"driveshaft" : driveshaft.Part_Number,
 		"gearbox" : gearbox.Part_Number,
@@ -191,14 +194,20 @@ func generate_engine(rarity, weight, car_weight, torque, engine_bay_size, engine
 			tq_sc_nb += est_tq_nb * (boost_estimate_turbo * (exhaust_manifold.get_turbo_max_size()/70)*exhaust_manifold.turbo_efficiency) #Estimate turbo power
 			est_tq = tq_sc_nb
 		
+		var est_power = estimate_torque(block, air_filter, exhaust_manifold, intake_manifold, internals, top, boost_estimate_turbo)
+		
 		var engine_price = block.price + exhaust_manifold.price + intake_manifold.price + internals.price + air_filter.price + top.price
+		var engine_weight = block.weight + exhaust_manifold.weight + intake_manifold.weight + internals.weight + air_filter.weight + top.weight
 		var parts = [block, internals, top, intake_manifold, exhaust_manifold, air_filter]
 		var part_dict = {"Engine_ID" : block.Engine_ID,
 		"price" : engine_price,
 		"reliability" : block.reliability,
+		"weight" : engine_weight,
+		"fuel_type" : top.fuel_type,
 		"max_boost" : boost_estimate_turbo,
 		"max_rpm" : top.max_hp_rpm * 1.2,
-		"Tq" : est_tq,
+		"Tq" : est_power.tq,
+		"Hp" : est_power.hp,
 		"block" : block.Part_Number,
 		"intake_manifold" : intake_manifold.Part_Number,
 		"exhaust_manifold" : exhaust_manifold.Part_Number,
@@ -257,7 +266,6 @@ func generate_engine(rarity, weight, car_weight, torque, engine_bay_size, engine
 			return null
 		
 		#If engine is not withing weight limits return NULL to generate new one
-		var engine_weight = block.weight + exhaust_manifold.weight + intake_manifold.weight + internals.weight + air_filter.weight + top.weight
 		if engine_weight < max_weight * (precision * 0.8) or engine_weight > max_weight / (precision * 0.8):
 			for part in parts:
 				part.queue_free()
@@ -454,6 +462,73 @@ func _estimate_boost(tq_boost, tq, goal_tq, turbo_size, turbo_efficiency):
 			max_boost_estimate = temp_max_boost
 			return max_boost_estimate
 			break
+
+func estimate_torque(block, airfilter, exhaust_manifold, intake_manifold, internals, top, boost):
+	var max_horsepower_rpm = top.max_hp_rpm / 1.2
+	var air_filter = airfilter
+	var turbo = exhaust_manifold.turbo
+	var supercharger = intake_manifold.supercharger
+	var compression = internals.compression
+	var max_compression = top.max_compression * intake_manifold.max_compression_modifier
+	var max_boost = boost
+	var turbo_size = exhaust_manifold.get_turbo_max_size()
+	var supercharger_pulley_size = 70.0
+	var supercharer_displacement_capacity = intake_manifold.supercharer_displacement_capacity
+	var turbo_efficiency = exhaust_manifold.turbo_efficiency
+	var max_torque = block.tq * intake_manifold.tq_mod * exhaust_manifold.tq_mod * top.tq_mod * air_filter.tq_mod
+	
+	var temp_tq
+	var temp_hp
+	#Run twice, first time for hp, second time for tq
+	var run1_hp
+	var run1_tq
+	
+	for i in 1:
+		var temp_rpm = max_horsepower_rpm
+		if i == 1:
+			temp_rpm = max_horsepower_rpm * 0.77
+		var temp_boost = max_boost
+		var temp_airflow_post_turbo = 0
+		var temp_airflow_post_supercharger = 0
+		
+		#Turbo Calc
+		if turbo == true:
+			temp_airflow_post_turbo = (((turbo_size/60.0)**(0.8)) * temp_boost) * 0.8 * air_filter.tq_mod
+		
+		if supercharger == true:
+			var pulley_size = supercharger_pulley_size / 35.0
+			var loss_rate = 1.2
+			var supercharger_loss = ((((max_horsepower_rpm / pulley_size) - temp_rpm) * loss_rate) / (max_horsepower_rpm / pulley_size)) * (supercharer_displacement_capacity * 0.0004)
+			var temp_boost_supercharger = (temp_rpm / (max_horsepower_rpm / pulley_size)) * (supercharer_displacement_capacity * 0.0004) + supercharger_loss
+			temp_boost_supercharger = clamp(temp_boost_supercharger, 0, (max_horsepower_rpm / pulley_size))
+			temp_boost += temp_boost_supercharger
+			temp_airflow_post_supercharger = temp_boost_supercharger * 2 * air_filter.tq_mod
+		
+		var temp_airflow_post = temp_airflow_post_supercharger + (temp_airflow_post_turbo * turbo_efficiency)
+		
+		
+		temp_tq = max_torque * (float(temp_rpm) / float(max_horsepower_rpm)) + (max_torque / 8.0)
+		temp_tq = (temp_tq + (temp_tq * temp_airflow_post))/2
+		temp_tq = ((temp_tq * 2 - temp_tq * (temp_rpm / max_horsepower_rpm))/2.0) * 3.5 #powerloss due to friction
+		temp_tq = temp_tq * (float(compression) / 10.0) #apply compression boost
+		
+		if compression + temp_boost > max_compression:
+			temp_tq += (max_compression - (compression + temp_boost)) * (50 * (1+temp_boost)) #if over max compression start loosing power due to knock, lose more with more boost
+		if turbo == true: #losses due to turbo restriction
+			temp_tq -= (((turbo_size/50.0)**(2.0)) * 6) / turbo_efficiency #*10 is constant, efficiensy makes less power loss
+		if supercharger == true:
+			temp_tq -= supercharer_displacement_capacity / 22.0
+		temp_tq = clamp(temp_tq, 0, 9999)
+		temp_hp = (temp_tq * temp_rpm) / 7127.0
+		
+		if i == 0:
+			run1_tq = temp_tq
+			run1_hp = temp_hp
+	
+	## If test with max rpm went better, use that
+	temp_hp = run1_hp
+	
+	return {"tq" : int(temp_tq), "hp" : int(temp_hp)}
 
 func rarity_to_int(rarity):
 	match rarity:

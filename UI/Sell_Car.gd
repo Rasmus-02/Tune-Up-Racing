@@ -3,10 +3,11 @@ extends Node
 var car : CharacterBody2D
 
 func _on_yes_pressed():
-	Save_Load.money += car.get_value() * 0.8
+	Save_Load.money += car.get_value()
 	Save_Load.remove_car(car.selected_car_key)
 	if car.selected_engine != "0":
 		Save_Load.remove_engine(car.selected_engine)
+	Sound.sell.play()
 	car.queue_free()
 	close()
 
@@ -17,7 +18,7 @@ func _on_no_pressed():
 func open(import_car):
 	get_parent().pause_blocked = true
 	car = import_car
-	$"Sell Car/Label".text = "Do you want to sell this car for: " + format_number(car.get_value() * 0.8) + "$"
+	$"Sell Car/Label".text = "Do you want to sell this car for: " + format_number(car.get_value()) + "$"
 	self.visible = true
 
 func close():
