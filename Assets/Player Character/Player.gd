@@ -11,7 +11,7 @@ var garage = null
 var car_list
 @onready var sprite = $AnimatedSprite2D
 @onready var animation = $AnimationPlayer
-@onready var not_functional = $"../Interact_Menu_Garage/Drive_Car_button/Not Functional Animation"
+@export var not_functional : AnimationPlayer
 var main = null
 
 func _ready():
@@ -156,7 +156,7 @@ func _on_edit_car_button_pressed():
 	car_garage_ui.hide()
 
 func _on_dyno_button_pressed():
-	if selected_car != null:
+	if selected_car != null and selected_car.is_functional() and selected_car.engine.is_functional():
 		Save_Load.selected_car_key = selected_car.selected_car_key
 		Save_Load.save()
 		get_parent().get_parent().get_node("Props").get_node("Dyno").update()
@@ -164,6 +164,8 @@ func _on_dyno_button_pressed():
 		selected_car.run_dyno()
 		ui_visible = false
 		car_garage_ui.hide()
+	else:
+		not_functional.play("play")
 
 func _on_paint_car_button_pressed():
 	if selected_car != null:
@@ -175,7 +177,7 @@ func _on_paint_car_button_pressed():
 
 
 func _on_drive_car_button_pressed():
-	if selected_car.is_functional() and selected_car.engine.is_functional():
+	if selected_car != null and selected_car.is_functional() and selected_car.engine.is_functional():
 		Save_Load.selected_car_key = selected_car.selected_car_key
 		Save_Load.save()
 		garage.drive()
@@ -262,10 +264,12 @@ func save():
 	Save_Load.save()
 
 func move_car():
-	get_parent().get_parent().get_node("Car_Spawner_Global").move_car(selected_car)
-	car_garage_ui.hide()
-	$"../Move_Menu".hide()
-	ui_visible = false
+	if selected_car != null:
+		get_parent().get_parent().get_node("Car_Spawner_Global").move_car(selected_car)
+		selected_car.running_dyno = 0
+		car_garage_ui.hide()
+		$"../Move_Menu".hide()
+		ui_visible = false
 
 func get_empty_garage_slot():
 	var free_spawn_positions = {"1" : 1, "2" : 2, "3" : 3, "4" : 4, "5" : 5, "6" : 6}

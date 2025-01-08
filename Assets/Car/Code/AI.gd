@@ -46,6 +46,7 @@ func speed_controller():
 		relative_velocity =  car.velocity.length() - car_in_front.velocity.length()
 	#Brake if going to fast
 	var velocity_difference = car.speed_kmh - get_max_speed()
+	velocity_difference = clamp(velocity_difference, 0, 9999)
 	if (global_position.distance_to(racing_line.get_point_position(line_index)) <= (get_brake_distance(velocity_difference) * 1.2)) and (car.velocity.length() >= 1 and sensor.forward != 0):
 		forward = 0
 		temp_backward = 1

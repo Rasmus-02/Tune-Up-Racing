@@ -11,7 +11,7 @@ normal_texture = ExtResource("3_3fml4")
 specular_texture = ExtResource("4_uw4sr")
 specular_shininess = 0.5
 
-[node name="[Avalon] Track Suspension" type="Node2D"]
+[node name="[Vortex] Sport Suspension" type="Node2D"]
 z_index = 101
 script = ExtResource("1_gktri")
 rarity = "rare"

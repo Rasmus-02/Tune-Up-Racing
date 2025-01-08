@@ -137,9 +137,10 @@ light_mode = 1
 
 [node name="Player" type="Node2D" groups=["Player"]]
 
-[node name="Character" type="CharacterBody2D" parent="." groups=["Player"]]
+[node name="Character" type="CharacterBody2D" parent="." node_paths=PackedStringArray("not_functional") groups=["Player"]]
 script = ExtResource("1_bbvfw")
 movement_speed = 170
+not_functional = NodePath("../Interact_Menu_Garage/Drive_Car_button/Not Functional Animation")
 
 [node name="PointLight2D" type="PointLight2D" parent="Character"]
 energy = 0.8
@@ -245,12 +246,11 @@ libraries = {
 
 [node name="Not Functional" type="Label" parent="Interact_Menu_Garage/Drive_Car_button"]
 material = SubResource("ShaderMaterial_foq85")
-layout_mode = 0
+layout_mode = 2
 offset_left = -2.56468
 offset_top = -175.113
 offset_right = 313.435
 offset_bottom = -124.113
-scale = Vector2(1.2, 1.2)
 theme_override_colors/font_color = Color(0.92549, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(0.403922, 0, 0, 1)
 theme_override_constants/outline_size = 8

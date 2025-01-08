@@ -139,8 +139,8 @@ horizontal_alignment = 1
 [node name="Earned" type="Control" parent="Race Resluts/Level Up" node_paths=PackedStringArray("xp_label", "money_label", "label", "description")]
 layout_mode = 2
 script = ExtResource("3_dol5u")
-xp_label = NodePath("../../Race Resluts/Earned/XP")
-money_label = NodePath("../../Race Resluts/Earned/Money")
+xp_label = NodePath("XP")
+money_label = NodePath("Money")
 label = NodePath("../Level")
 description = NodePath("../Level description")
 

@@ -32,11 +32,10 @@ func update():
 
 
 func _process(_delta):
-	if car != null:
+	if car != null and car.is_functional() and car.engine.is_functional():
 		spin_rollers()
 		plot_graphs_and_figures()
 		display_peak_figures()
-		
 
 
 var temp_rpm = 0
@@ -48,13 +47,10 @@ func plot_graphs_and_figures():
 		temp_rpm=car.engine_rpm
 		tq = car.max_engine_power
 		hp = (car.max_engine_power * car.engine_rpm) / 7127
-		var max_tq = car.engine.max_torque * (car.engine.compression / 10)
-		#make the max limit account for boost
-		max_tq += car.engine.max_torque * (car.engine.max_boost * (car.engine.turbo_size/70)*car.engine.turbo_efficiency)
-		max_tq += car.engine.max_torque * (car.engine.supercharer_displacement_capacity * 0.0004)
+		var max_tq = car.engine.estimate_torque().tq * (1 - car.drivetrain_loss) * car.exhaust_tq_mod
 		var x_mod = (float(car.engine_rpm - 2000) / float(car.max_engine_rpm))*125 -28
-		var hp_y_mod = (float(hp) / float(max_tq)) * 70 -20
-		var tq_y_mod = (float(tq) / float(max_tq)) * 70 -20
+		var hp_y_mod = (float(hp) / float(max_tq)) * 60 -20
+		var tq_y_mod = (float(tq) / float(max_tq)) * 60 -20
 		if tq > max_tq *0.01 and car.engine_rpm >= 2000:
 			hp_line.add_point(Vector2(get_parent().global_position.x + x_mod, get_parent().global_position.y - hp_y_mod))
 			tq_line.add_point(Vector2(get_parent().global_position.x + x_mod, get_parent().global_position.y - tq_y_mod))

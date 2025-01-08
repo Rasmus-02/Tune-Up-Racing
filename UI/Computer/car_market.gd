@@ -133,7 +133,7 @@ func event_add():
 			temp = sort_var
 		n+=1
 	
-	car_list[temp + 1] = {"car" : car, "engine" : engine, "colors": colors, "durability" : durability, 
+	car_list[str(temp + 1)] = {"car" : car, "engine" : engine, "colors": colors, "durability" : durability, 
 	"key" : (temp + 1),"favorite_status" : false, "picture" : [0,0], "price" : price, "photo_settings" : generate_camera_views(), "personality" : personality_type}
 	save()
 
@@ -189,9 +189,9 @@ func generate_camera_views():
 		
 		var size = photo_dict.size()
 		var key = photo_dict.keys()[randi() % size]
-		random_photo_setup[i] = photo_dict[key]
-		random_photo_setup[i].filter = random_filter
-		random_photo_setup[i].scene = randi_range(0, 9)
+		random_photo_setup[str(i)] = photo_dict[key]
+		random_photo_setup[str(i)].filter = random_filter
+		random_photo_setup[str(i)].scene = randi_range(0, 9)
 		photo_dict.erase(key) #Remove so no same pictures
 	
 	return random_photo_setup

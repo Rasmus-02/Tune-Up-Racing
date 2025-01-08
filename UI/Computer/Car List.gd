@@ -29,6 +29,7 @@ func populate_page(page):
 	
 	## Update the car list
 	var car_list = CarMarket.car_list.duplicate() #duplicate to prevent the original list from getting changed
+	print("Car list ",car_list)
 	car_list = filter_list(car_list)
 	
 	## GET MAX CARS THAT FIT ON THE PAGE
@@ -84,35 +85,36 @@ func update_filters():
 
 func filter_list(list):
 	for key in list.keys():
-		var car = list.get(str(key)).car
-		var engine = list.get(str(key)).engine
-		#If statements for each filter (REMOVE CARS THAT DON'T MEET FILTER REQUIREMENTS)
-		
-		#Brand
-		var car_name = AssetList.car_list.get_child(car.Car_ID + 1).name
-		if filters[0] != "Any" and not car_name.contains(filters[0]):
-			list.erase(key)
-		#Fuel type
-		if filters[1] != "Any" and not engine.fuel_type.contains(filters[1]):
-			list.erase(key)
-		#Gearbox type
-		if filters[2] != "Any" and not car.gearbox_type.contains(filters[2]):
-			list.erase(key)
-		#Drivetrain type
-		if filters[3] != "Any" and not str(car.drivetrain).contains(filters[3]):
-			list.erase(key)
-		#Price
-		if filters[4][1] > 0 and (filters[4][0] > list.get(str(key)).price or filters[4][1] < list.get(str(key)).price):
-			list.erase(key)
-		#Weight
-		if filters[5][1] > 0 and (filters[5][0] > car.weight + engine.weight or filters[5][1] < car.weight + engine.weight):
-			list.erase(key)
-		#Torque
-		if filters[6][1] > 0 and (filters[6][0] > engine.Tq * car.drivetrain_loss or filters[6][1] < engine.Tq * car.drivetrain_loss -1):
-			list.erase(key)
-		#Favorited
-		if favorites == true and list.get(str(key)).favorite_status == false:
-			list.erase(key)
+		if list.get(str(key)) != null:
+			var car = list.get(str(key)).car
+			var engine = list.get(str(key)).engine
+			#If statements for each filter (REMOVE CARS THAT DON'T MEET FILTER REQUIREMENTS)
+			
+			#Brand
+			var car_name = AssetList.car_list.get_child(car.Car_ID + 1).name
+			if filters[0] != "Any" and not car_name.contains(filters[0]):
+				list.erase(key)
+			#Fuel type
+			elif filters[1] != "Any" and not engine.fuel_type.contains(filters[1]):
+				list.erase(key)
+			#Gearbox type
+			elif filters[2] != "Any" and not car.gearbox_type.contains(filters[2]):
+				list.erase(key)
+			#Drivetrain type
+			elif filters[3] != "Any" and not str(car.drivetrain).contains(filters[3]):
+				list.erase(key)
+			#Price
+			elif filters[4][1] > 0 and (filters[4][0] > list.get(str(key)).price or filters[4][1] < list.get(str(key)).price):
+				list.erase(key)
+			#Weight
+			elif filters[5][1] > 0 and (filters[5][0] > car.weight + engine.weight or filters[5][1] < car.weight + engine.weight):
+				list.erase(key)
+			#Torque
+			elif filters[6][1] > 0 and (filters[6][0] > engine.Tq * car.drivetrain_loss or filters[6][1] < engine.Tq * car.drivetrain_loss -1):
+				list.erase(key)
+			#Favorited
+			elif favorites == true and list.get(str(key)).favorite_status == false:
+				list.erase(key)
 	return list
 
 

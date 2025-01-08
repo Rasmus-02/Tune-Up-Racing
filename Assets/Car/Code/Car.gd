@@ -575,7 +575,7 @@ func is_loaded():
 	if tire_list.size() != 0 and tire_list[3] != null and (SelectedScene.scene == "Track" or running_dyno != 0):
 		loaded = true
 		return true
-	else:
+	elif engine != null:
 		engine.is_running = false
 
 func _physics_process(delta): 

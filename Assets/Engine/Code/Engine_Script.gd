@@ -621,7 +621,7 @@ func hp_tq_calculator():
 	else: 
 		var low_end_torque = max_torque / 8.0 #used for making tq higher in low rpm
 		torque = (max_torque * (rpm / max_horsepower_rpm)) + low_end_torque
-		torque = (torque + (torque * airflow_post))/2 #for boost
+		torque = (torque + (torque * airflow_post))/2.0 #for boost
 		torque = ((torque * 2 - torque * (rpm / max_horsepower_rpm))/2.0) * 3.5 #powerloss due to friction
 		torque = torque * (float(compression) / 10.0) #apply compression boost
 		if compression + boost > max_compression:
@@ -631,6 +631,7 @@ func hp_tq_calculator():
 		if supercharger == true:
 			torque -= supercharer_displacement_capacity / 22.0
 		torque = clamp(torque, 0, 9999)
+		print("Actual: ", torque)
 		
 		horsepower = (torque * rpm) / 7127.0
 
@@ -665,6 +666,8 @@ func estimate_torque():
 		#Turbo Calc
 		if turbo == true:
 			temp_airflow_post_turbo = (((temp_turbo_size/60.0)**(0.8)) * temp_boost) * 0.8 * air_filter.tq_mod
+		else:
+			temp_boost = 0.0
 		
 		if supercharger == true:
 			var pulley_size = supercharger_pulley_size / 35.0
@@ -677,17 +680,18 @@ func estimate_torque():
 		
 		var temp_airflow_post = temp_airflow_post_supercharger + (temp_airflow_post_turbo * turbo_efficiency)
 		
+		
 		temp_tq = max_torque * (float(temp_rpm) / float(max_horsepower_rpm)) + (max_torque / 8.0)
-		temp_tq = (temp_tq + (temp_tq * temp_airflow_post))/2
+		temp_tq = (temp_tq + (temp_tq * temp_airflow_post))/2.0
 		temp_tq = ((temp_tq * 2 - temp_tq * (temp_rpm / max_horsepower_rpm))/2.0) * 3.5 #powerloss due to friction
 		temp_tq = temp_tq * (float(compression) / 10.0) #apply compression boost
-		
 		if compression + temp_boost > max_compression:
 			temp_tq += (max_compression - (compression + temp_boost)) * (50 * (1+temp_boost)) #if over max compression start loosing power due to knock, lose more with more boost
 		if turbo == true: #losses due to turbo restriction
 			temp_tq -= (((temp_turbo_size/50.0)**(2.0)) * 6) / turbo_efficiency #*10 is constant, efficiensy makes less power loss
 		if supercharger == true:
 			temp_tq -= supercharer_displacement_capacity / 22.0
+		
 		temp_tq = clamp(temp_tq, 0, 9999)
 		temp_hp = (temp_tq * temp_rpm) / 7127.0
 		
@@ -697,5 +701,4 @@ func estimate_torque():
 	
 	## If test with max rpm went better, use that
 	temp_hp = run1_hp
-	
 	return {"tq" : int(temp_tq), "hp" : int(temp_hp)}
