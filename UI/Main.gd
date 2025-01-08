@@ -33,6 +33,9 @@ func update_pause_menu_position():
 
 var new_scene
 func change_scene(scene):
+	#Update Car market
+	CarMarket.update_events()
+	
 	new_scene = scene
 	RaceStatus.started = false
 	RaceStatus.finished = false

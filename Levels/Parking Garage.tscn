@@ -62,7 +62,7 @@ point_in = Vector2(0, 0)
 point_out = Vector2(0, 0)
 properties = SubResource("Resource_27bo6")
 
-[sub_resource type="Resource" id="Resource_a8mlk"]
+[sub_resource type="Resource" id="Resource_rq74a"]
 script = ExtResource("3_hw8ny")
 texture_idx = 0
 flip = false
@@ -73,9 +73,9 @@ script = ExtResource("4_k1go5")
 position = Vector2(1258.8, 116.28)
 point_in = Vector2(0, 0)
 point_out = Vector2(0, 0)
-properties = SubResource("Resource_a8mlk")
+properties = SubResource("Resource_rq74a")
 
-[sub_resource type="Resource" id="Resource_1bwi2"]
+[sub_resource type="Resource" id="Resource_6roi7"]
 script = ExtResource("3_hw8ny")
 texture_idx = 0
 flip = false
@@ -86,7 +86,7 @@ script = ExtResource("4_k1go5")
 position = Vector2(419.499, 115.642)
 point_in = Vector2(0, 0)
 point_out = Vector2(0, 0)
-properties = SubResource("Resource_1bwi2")
+properties = SubResource("Resource_6roi7")
 
 [sub_resource type="Resource" id="Resource_h8fnb"]
 script = ExtResource("4_k1go5")
@@ -133,6 +133,7 @@ render_offset = 0.0
 size = Vector2(275, 84)
 
 [node name="ParkingGarage" type="Node2D"]
+process_mode = 1
 script = ExtResource("1_cpepb")
 
 [node name="Level visibility" type="CanvasModulate" parent="."]

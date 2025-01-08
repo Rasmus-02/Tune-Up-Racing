@@ -309,7 +309,8 @@ func _on_car_export_variables(speed, ratio, gear_number, cooldown, e_position, d
 	clutch = c
 
 func _ready():
-	if player == true and Save_Load.temp_key != null:
+	var car = get_parent()
+	if player == true and Save_Load.temp_key != null and (car.is_in_group("Car") and car.player == true):
 		load_engine(Save_Load.temp_key)
 	else:
 		update_engine_parts()
@@ -631,7 +632,6 @@ func hp_tq_calculator():
 		if supercharger == true:
 			torque -= supercharer_displacement_capacity / 22.0
 		torque = clamp(torque, 0, 9999)
-		print("Actual: ", torque)
 		
 		horsepower = (torque * rpm) / 7127.0
 

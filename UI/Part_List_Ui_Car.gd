@@ -53,7 +53,7 @@ func initiate():
 
 
 func populate_list():
-	print(car.selected_car_key)
+	stats.change_part(equipped_part, str(selected_tab))
 	temp_stat_array.clear()
 	$"../Tune_Gearbox".hide() #Hide gearbox_tab
 	#for engines
@@ -226,7 +226,6 @@ func _on_item_selected(index): #when a part in the item list is clicked (node si
 		#Update Stat Tab
 		temp_part_select_part.durability = temp_stat_array[index][0]
 		temp_part_select_part.color = temp_stat_array[index][1]
-		stats.change_part(temp_part_select_part, str(selected_tab))
 	#sends update to engine that parts have changed
 	match selected_tab:
 		0:

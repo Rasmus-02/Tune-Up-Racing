@@ -388,22 +388,25 @@ func engine_key():
 
 func select_engine(KEY):
 	var sc = load_file("engines").get(str(KEY)) #selected car
-	var part_dict = {
-		"name" : sc.name,
-		"engine_id" : sc.engine_id,
-		"key" : sc.key,
-		"size" : sc.size,
-		"block" : [sc.block[0], sc.block[1]],
-		"internals" : [sc.internals[0], sc.internals[1]],
-		"top" : [sc.top[0], sc.top[1]],
-		"exhaust_manifold" : [sc.exhaust_manifold[0], sc.exhaust_manifold[1]],
-		"intake_manifold" : [sc.intake_manifold[0], sc.intake_manifold[1]],
-		"air_filter" : [sc.air_filter[0], sc.air_filter[1]],
-		"tune" : [sc.tune[0], sc.tune[1]],
-		"in_car": sc.in_car,
-		"rarity": sc.rarity
-	}
-	return part_dict
+	if sc != null:
+		var part_dict = {
+			"name" : sc.name,
+			"engine_id" : sc.engine_id,
+			"key" : sc.key,
+			"size" : sc.size,
+			"block" : [sc.block[0], sc.block[1]],
+			"internals" : [sc.internals[0], sc.internals[1]],
+			"top" : [sc.top[0], sc.top[1]],
+			"exhaust_manifold" : [sc.exhaust_manifold[0], sc.exhaust_manifold[1]],
+			"intake_manifold" : [sc.intake_manifold[0], sc.intake_manifold[1]],
+			"air_filter" : [sc.air_filter[0], sc.air_filter[1]],
+			"tune" : [sc.tune[0], sc.tune[1]],
+			"in_car": sc.in_car,
+			"rarity": sc.rarity
+		}
+		return part_dict
+	else:
+		print("Select Engine Dictionary problem")
 
 
 #Takes in directory of item stats (same type as inv add) and returns an array: 

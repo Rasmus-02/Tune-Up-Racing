@@ -103,7 +103,7 @@ func apply_settings():
 	
 	#Volume --------------------------------------------------------------------
 	AudioServer.set_bus_volume_db(0, linear_to_db(general_volume))
-	AudioServer.set_bus_volume_db(1, linear_to_db(car_volume))
+	AudioServer.set_bus_volume_db(1, linear_to_db(car_volume) - 8)
 	AudioServer.set_bus_volume_db(2, linear_to_db(ambient_volume))
 	AudioServer.set_bus_volume_db(3, linear_to_db(music_volume))
 

@@ -405,7 +405,6 @@ func _find_suitable_part(category ,category_array, stat1_range, stat2_range, sta
 				stat_2 = instance.compression + 2.5 - stock_internals.compression
 			"top":
 				if race_status == false and randi_range(0,10) < 8: # Reduce chance to be modified
-					print("STOCK TOP")
 					instance = category_array[1].instantiate()
 				else:
 					instance = category_array[i+1].instantiate()

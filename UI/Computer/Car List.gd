@@ -18,6 +18,7 @@ var on_last_page = false
 var car_display = preload("res://UI/Computer/Used_Car_Shop_Car_Item.tscn")
 
 func open():
+	CarMarket.update_events()
 	populate_page(1)
 
 #Populate a page with as many cars as are on that page
@@ -29,7 +30,6 @@ func populate_page(page):
 	
 	## Update the car list
 	var car_list = CarMarket.car_list.duplicate() #duplicate to prevent the original list from getting changed
-	print("Car list ",car_list)
 	car_list = filter_list(car_list)
 	
 	## GET MAX CARS THAT FIT ON THE PAGE
@@ -80,7 +80,6 @@ func update_filters():
 	
 	filters = [brand_filter, fuel_type_filter, gearing_filter, drive_type_filter,
 	price_filter, weight_filter, tq_filter]
-	print("Filter: ",filters)
 
 
 func filter_list(list):

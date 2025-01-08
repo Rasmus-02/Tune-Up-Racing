@@ -53,6 +53,7 @@ func instantiate():
 	instantiated = true
 
 func populate_list():
+	stats.change_part(equipped_part, part_category)
 	temp_stat_array.clear()
 	list.clear()
 	var list_index = 0
@@ -196,7 +197,6 @@ func _on_item_selected(index): #when a part in the item list is clicked (node si
 		#Updates stat tv
 		temp_part_select_part.durability = temp_stat_array[index][0]
 		temp_part_select_part.color = temp_stat_array[index][1]
-		stats.change_part(temp_part_select_part, part_category)
 		
 		#sends update to engine that parts have changed
 		match selected_tab:

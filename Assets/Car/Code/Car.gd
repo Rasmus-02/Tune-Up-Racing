@@ -1090,19 +1090,30 @@ var bridge_overwrite = false
 var z_index_applied = false
 func bridge_process():
 	if is_loaded() == true:
-		if bellow_bridge == false and above_bridge == true and z_index_applied == false: #Above bridge
+		##Above bridge
+		if bellow_bridge == false and above_bridge == true and z_index_applied == false: 
 			self.z_index += 200
 			light_controll("light_z",true, 1)
 			bridge_overwrite = true
 			z_index_applied = true
+			set_collision_mask_value(1,false) #Don't Collide with Cars underneath
+			set_collision_layer_value(1, false) #Is Collidable for other cars on bridge
+			set_collision_layer_value(2, true) #Is Collidable for other cars on bridge
 			set_collision_mask_value(2,true) #Collide with Guardrails
+			
 			set_collision_mask_value(3,false) #Don't Collide with Bridge Pillars
-		elif bridge_overwrite == false and z_index_applied == true: #Bellow bridge
+		##Bellow bridge
+		elif bridge_overwrite == false and z_index_applied == true:
 			self.z_index -= 200
 			light_controll("light_z",false, 1)
 			z_index_applied = false
+			set_collision_mask_value(1,true) #Collide with Cars underneath
+			set_collision_layer_value(1, true) #Is Collidable for other cars on bridge
+			set_collision_layer_value(2, false) #Is not Collidable for other cars on bridge
 			set_collision_mask_value(2,false) #Don't Collide with Guardrails
+			
 			set_collision_mask_value(3,true) #Don't Collide with Bridge Pillars
+			
 
 
 #These get imported from "Bridge Detector" in the race track

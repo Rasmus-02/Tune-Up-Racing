@@ -16,10 +16,6 @@ func _ready():
 	load_file()
 
 func _physics_process(_delta):
-	if Input.is_action_just_pressed("Handbrake"):
-		update_events()
-		save()
-	
 	if countdown <= 0:
 		generate_event()
 
@@ -62,6 +58,7 @@ func update_events():
 	
 	#Clear queue after finnished
 	event_queue.clear()
+	save()
 
 func event_add():
 	var car = null

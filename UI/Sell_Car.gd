@@ -16,12 +16,14 @@ func _on_no_pressed():
 
 
 func open(import_car):
+	get_tree().paused = true #pauses
 	get_parent().pause_blocked = true
 	car = import_car
 	$"Sell Car/Label".text = "Do you want to sell this car for: " + format_number(car.get_value()) + "$"
 	self.visible = true
 
 func close():
+	get_tree().paused = false #unpauses
 	get_parent().pause_blocked = false
 	self.visible = false
 

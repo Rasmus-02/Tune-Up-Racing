@@ -9,7 +9,6 @@ var next_scene = null
 func change_scene(scene):
 	var rng = randi_range(0, tips.size()-1)
 	if next_scene != null: #Will be Null at splashscreen
-		print("Set TEXT",next_scene)
 		tip.text = tips[rng]
 	next_scene = scene
 	loading = true
