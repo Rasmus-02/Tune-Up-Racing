@@ -10,9 +10,12 @@ script = ExtResource("1_h0pbv")
 
 [node name="Turbo_charge" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("2_2evv7")
+bus = &"Car Volume"
 
 [node name="Turbo_flutter" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("3_ky2hm")
+bus = &"Car Volume"
 
 [node name="Supercharger" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("4_6oj16")
+bus = &"Car Volume"

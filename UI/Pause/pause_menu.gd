@@ -16,7 +16,8 @@ func _ready():
 	get_tree().paused = false #unpauses
 
 func open():
-	AudioServer.set_bus_volume_db(0, -80)
+	AudioServer.set_bus_volume_db(1, -80)
+	AudioServer.set_bus_volume_db(2, -80)
 	#hide restart in garage
 	if SelectedScene.scene != "Track":
 		restart.hide()
@@ -26,7 +27,8 @@ func open():
 	pause_menu.show()
 
 func close():
-	AudioServer.set_bus_volume_db(0, linear_to_db(Settings.general_volume))
+	AudioServer.set_bus_volume_db(1, linear_to_db(Settings.car_volume))
+	AudioServer.set_bus_volume_db(2, linear_to_db(Settings.ambient_volume))
 	get_tree().paused = false #unpauses
 	pause_menu.hide()
 

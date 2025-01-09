@@ -88,7 +88,6 @@ render_target_update_mode = 4
 [node name="Costal_circuit" parent="Track/Track_View" instance=ExtResource("2_1evb1")]
 
 [node name="UI" type="Control" parent="."]
-visible = false
 layout_mode = 3
 anchors_preset = 0
 offset_left = 2277.29
@@ -184,7 +183,7 @@ text = "[Press Enter To Continue]"
 
 [node name="Start_Sound" type="AudioStreamPlayer" parent="UI/AspectRatioContainer/Start Lights"]
 stream = ExtResource("12_qq8mv")
-volume_db = -2.0
+volume_db = -5.0
 
 [node name="Post Race" parent="UI" instance=ExtResource("3_6mm13")]
 layout_mode = 2

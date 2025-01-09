@@ -43,7 +43,7 @@ var stock_taillights = preload("res://Assets/Car/Part Lists/Car Specific/Nagata 
 var taillights = [empty, stock_taillights]
 
 #Windows
-var roof_spoiler = preload("res://Assets/Car/Part Lists/Car Specific/Nagata Koi/Spoiler/Factory Roof Spoiler.tscn")
+var roof_spoiler = preload("res://Assets/Car/Part Lists/Car Specific/Nagata Koi/Spoiler/Nagata Koi Factory Roof Spoiler.tscn")
 var spoiler = [empty, roof_spoiler]
 
 #Exhaust

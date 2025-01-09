@@ -52,9 +52,12 @@ func load_new_scene(scene):
 			"costal_circuit":
 				scene = costal_circuit
 				Engine.max_fps = 200
+				Sound.music.stop()
+				Sound.music.play()
 			"garage":
 				scene = garage
 				Engine.max_fps = 100
+				Sound.music.stop()
 			"parking_garage":
 				scene = parking_garage
 				Engine.max_fps = 100

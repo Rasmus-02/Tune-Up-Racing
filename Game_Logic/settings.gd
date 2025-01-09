@@ -106,6 +106,9 @@ func apply_settings():
 	AudioServer.set_bus_volume_db(1, linear_to_db(car_volume) - 8)
 	AudioServer.set_bus_volume_db(2, linear_to_db(ambient_volume))
 	AudioServer.set_bus_volume_db(3, linear_to_db(music_volume))
+	
+	AudioServer.set_bus_volume_db(1, -80)
+	AudioServer.set_bus_volume_db(2, -80)
 
 func get_difficulty_bonus(type : String):
 	var level = Save_Load.level

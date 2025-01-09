@@ -25,6 +25,7 @@ radius = 201.0
 height = 760.0
 
 [node name="Car" type="CharacterBody2D" groups=["Car"]]
+collision_layer = 1537
 collision_mask = 13
 motion_mode = 1
 wall_min_slide_angle = 1.72264
@@ -67,6 +68,7 @@ rotation = -1.5708
 [node name="Area2D" type="Area2D" parent="."]
 visible = false
 rotation = 1.5708
+collision_mask = 513
 
 [node name="Area hitbox" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource("CapsuleShape2D_vh7d5")
@@ -153,7 +155,7 @@ collide_with_bodies = false
 [node name="Forward_Car_Detector" type="RayCast2D" parent="AI/Sensor"]
 position = Vector2(90, 0)
 target_position = Vector2(1500, 0)
-collision_mask = 8
+collision_mask = 1024
 
 [node name="Left" type="RayCast2D" parent="AI/Sensor"]
 rotation = -1.5708

@@ -7,7 +7,7 @@ extends Sprite2D
 func _ready():
 	update_stats()
 
-func _input(event):
+func _input(_event):
 	if visible and (Input.is_action_just_pressed("Pause") or Input.is_action_just_pressed("ui_cancel")):
 		close()
 

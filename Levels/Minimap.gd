@@ -28,7 +28,7 @@ func _ready():
 		icon_array.append(new_icon) #Add to array of all nodes
 
 
-func _process(delta):
+func _process(_delta):
 	if car != null and Placing.car_list != []:
 		correction_vector  = Vector2(63, -164)
 		map_scale = 0.0122

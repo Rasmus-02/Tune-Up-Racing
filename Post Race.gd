@@ -33,21 +33,21 @@ func race_reward():
 	#Bonus for doing good
 	var max_position = Placing.placing_list.size()
 	var penalty = 1.0 - (float(RaceStatus.player_position) / float(max_position))
-	money * penalty
-	xp * penalty
+	money *= penalty
+	xp *= penalty
 	#Bonus for lap count and race track
 	var lenght_bonus = ((float(Placing.max_lap) * float(Placing.map_bonus)) / 3) ** 0.8 #Baseline laps is 3, **0.8 to reduce effect of difference
-	money * lenght_bonus
-	xp * lenght_bonus
+	money *= lenght_bonus
+	xp *= lenght_bonus
 	#Bonus for Difficulty
-	money * Settings.get_difficulty_bonus("Money Bonus") 
-	xp * Settings.get_difficulty_bonus("Xp Bonus") 
+	money *= Settings.get_difficulty_bonus("Money Bonus") 
+	xp *= Settings.get_difficulty_bonus("Xp Bonus") 
 	#Set the rewards
 	money_reward = int(money)
 	xp_reward = int(xp)
 
 
-func _process(delta):
+func _process(_delta):
 	if paused == false:
 		queue_handler()
 		level_handler()
@@ -112,7 +112,7 @@ func queue_handler(): #Starts queue items
 		var main = get_tree().get_root().get_node("Main")
 		main.change_scene("garage")
 
-func _input(event):
+func _input(_event):
 	if Input.is_action_just_pressed("ui_accept"):
 		match selected_panel:
 			#Reward

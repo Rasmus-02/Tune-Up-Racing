@@ -3,8 +3,6 @@ extends Panel
 @export var part_list : ItemList
 @onready var stat_text = $Stat_text
 @onready var title = $Name
-@onready var part = $"Display/Nagata Koi Stock Front Bumper"
-@onready var part_position = $"Part Location"
 @onready var price_label = $Price
 @onready var popup = $"Part Confirmation Popup"
 @export var not_enough_money_popup : Panel

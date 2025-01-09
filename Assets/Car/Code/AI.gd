@@ -43,7 +43,8 @@ func speed_controller():
 	#Get car distance
 	if sensor.forward_car_detector.is_colliding() == true:
 		car_in_front = sensor.forward_car_detector.get_collider()
-		relative_velocity =  car.velocity.length() - car_in_front.velocity.length()
+		if car_in_front.is_in_group("Car"):
+			relative_velocity =  car.velocity.length() - car_in_front.velocity.length()
 	#Brake if going to fast
 	var velocity_difference = car.speed_kmh - get_max_speed()
 	#velocity_difference = clamp(velocity_difference, -9999, 9999)
@@ -52,7 +53,8 @@ func speed_controller():
 		temp_backward = 1
 		temp_backward = clamp(temp_backward, 0, 1)
 	#Brake for other cars
-	if (sensor.car_in_front <= get_brake_distance(relative_velocity * 2)  * (brake_padding + 1.5) and relative_velocity != 0 and relative_velocity > 0):
+	if car_in_front != null and car_in_front.is_in_group("Car") and (sensor.car_in_front <= get_brake_distance(relative_velocity * 2)  * (brake_padding + 1.5) and relative_velocity != 0 and relative_velocity > 0):
+		print("BRAKE")
 		forward = 0
 		temp_backward = 1
 		temp_backward = clamp(temp_backward, 0, 1)
