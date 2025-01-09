@@ -90,7 +90,7 @@ func queue_handler(): #Starts queue items
 				event_finnished = false
 				race_reward() # UPDATE REWARDS GIVEN FOR COMPLETING RACE
 				var label = str(RaceStatus.player_position)
-				var description = "You came: " + str(RaceStatus.player_position)
+				var description = "You got " + get_position_title(RaceStatus.player_position)
 				reward_1(race_results, panels.RACEREWARD_1, label, description)
 			#Level Up
 			panels.LEVELUP_1:
@@ -152,3 +152,22 @@ func add_money_and_xp(xp , money):
 	xp_to_add = xp_reward #Adds the xp and money to the player
 	money_to_add = money_reward #Adds the xp and money to the player
 	Save_Load.money += int(money_reward)
+
+func get_position_title(pos):
+	match pos:
+		1:
+			return "1st place"
+		2:
+			return "2nd place"
+		3:
+			return "3rd place"
+		4:
+			return "4th place"
+		5:
+			return "5th place"
+		6:
+			return "6th place"
+		7:
+			return "7th place"
+		8:
+			return "last place"

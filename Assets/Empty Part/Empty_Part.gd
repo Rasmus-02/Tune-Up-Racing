@@ -72,7 +72,8 @@ var max_tire_width = 0
 var fuel_type = "Gasoline"
 var gearbox_type = "No Gearbox"
 var reliability = 1.0
-
+func get_turbo_max_size():
+	return 0
 
 
 

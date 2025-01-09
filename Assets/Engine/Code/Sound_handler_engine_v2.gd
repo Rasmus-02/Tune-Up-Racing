@@ -130,7 +130,6 @@ func get_child_index():
 func lin_to_db(value: float) -> float:
 	if value <= 0.01:  # Set a small threshold to avoid -80dB jumps
 		return -80  # Minimum volume for smoother transition
-	print("true value")
 	return 20 * log(value) / log(10)
 
 

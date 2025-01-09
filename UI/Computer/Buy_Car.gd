@@ -12,7 +12,7 @@ func buy_car(car, price):
 	car.selected_engine = str(engine_key)
 	car.selected_car_key = str(car_key)
 	#Setup engine keys
-	car.engine.selected_engine_key = engine_key
+	car.engine.selected_engine_key = str(engine_key)
 	car.engine.in_car = car_key
 	
 	##Add engine for the car

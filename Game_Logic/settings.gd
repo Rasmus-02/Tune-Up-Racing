@@ -7,16 +7,16 @@ var file_location = "user://settings.save"
 var difficulty : int # 0 - 4
 
 #General
-var camera_mode : int # 0 = static || 1 = dynamic
+var camera_mode : int = 1 # 0 = static || 1 = dynamic
 var display_mode : int # 0 = fullscreen || 1 = windowed
 #var resolution = 0 # the index in resolution settings
-var vsync : int # 0 = off || 1 = on
+var vsync : int = 1 # 0 = off || 1 = on
 
 #Audio
-var general_volume : float # 0 - 1
-var car_volume : float # 0 - 1
-var music_volume : float # 0 - 1
-var ambient_volume : float # 0 - 1
+var general_volume : float = 1.0 # 0 - 1
+var car_volume : float = 1.0 # 0 - 1
+var music_volume : float = 1.0 # 0 - 1
+var ambient_volume : float = 1.0 # 0 - 1
 
 func _ready():
 	#Set script to "not pauseable"
@@ -33,7 +33,6 @@ func _ready():
 
 func save_settings():
 	if FileAccess.file_exists(file_location):
-		print("CAMERA:  ",camera_mode)
 		var save_dict = {"difficulty" : difficulty,"camera_mode" : camera_mode, "display_mode" : display_mode,
 		"vsync" : vsync, "general_volume" : general_volume, "car_volume" : car_volume, 
 		"music_volume" : music_volume, "ambient_volume" : ambient_volume}

@@ -33,7 +33,6 @@ func _ready():
 	
 func _process(delta):
 	if (current_color == null or color != current_color) and paintable == true:
-		print("repaint")
 		if car != null and car.is_in_group("Car"):
 			paint_part(car.chassi_color)
 		elif get_parent().is_in_group("Computer"):

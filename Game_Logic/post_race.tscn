@@ -24,10 +24,11 @@ offset_right = 191.0
 offset_bottom = 136.0
 
 [node name="Race Resluts" type="VBoxContainer" parent="Race Resluts"]
+visible = false
 layout_mode = 0
 offset_left = 26.9391
 offset_right = 354.939
-offset_bottom = 157.0
+offset_bottom = 161.0
 
 [node name="Position" type="Label" parent="Race Resluts/Race Resluts"]
 layout_mode = 2
@@ -38,7 +39,7 @@ horizontal_alignment = 1
 [node name="Position description" type="Label" parent="Race Resluts/Race Resluts"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 64
-text = "Well Done, 2:nd place"
+text = "You got 2nd place"
 horizontal_alignment = 1
 
 [node name="Earned" type="Control" parent="Race Resluts/Race Resluts" node_paths=PackedStringArray("xp_label", "money_label", "label", "description")]

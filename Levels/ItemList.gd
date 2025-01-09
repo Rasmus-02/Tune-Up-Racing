@@ -35,8 +35,17 @@ func _on_item_selected(index):
 		description_animation.play("Update")
 		if car_editor.active == true:
 			car_editor._on_item_selected(index)
+			if car_editor.selected_tab > 0:
+				if index > 0:
+					select(1)
+				else:
+					select(0)
 		elif engine_editor.active == true:
 			engine_editor._on_item_selected(index)
+			if index > 0:
+				select(1)
+			else:
+				select(0)
 		temp_click_index = index
 
 func set_background_color(index):

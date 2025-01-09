@@ -1,4 +1,4 @@
-[gd_scene load_steps=161 format=3 uid="uid://bpjbw8pi8ej12"]
+[gd_scene load_steps=162 format=3 uid="uid://bpjbw8pi8ej12"]
 
 [ext_resource type="Script" path="res://Levels/Garage.gd" id="1_mx11h"]
 [ext_resource type="Script" path="res://Levels/Lighting.gd" id="2_rdy8t"]
@@ -1100,6 +1100,9 @@ bg_color = Color(1, 1, 1, 0.54902)
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_jf3ea"]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1is8i"]
+size = Vector2(74.1222, 231.755)
+
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_4xp8d"]
 light_mode = 1
 
@@ -1825,6 +1828,12 @@ bus = &"Ambient Volume"
 stream = ExtResource("67_7lio0")
 pitch_scale = 1.03
 bus = &"Ambient Volume"
+
+[node name="Hitbox" type="StaticBody2D" parent="Props/Paint Booth"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Props/Paint Booth/Hitbox"]
+position = Vector2(12.8881, -0.825562)
+shape = SubResource("RectangleShape2D_1is8i")
 
 [node name="Car Edit UI" type="Control" parent="."]
 layout_mode = 3

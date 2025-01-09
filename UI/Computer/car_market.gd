@@ -4,12 +4,14 @@ var car_list = {}
 enum EVENT {ADD, REMOVE}
 var event_queue = [] #ADD or REMOVE events to/from queue
 var countdown : int = 0 #When reach 0 add or remove a car from car market
-var market_size : int = 0
+var market_size : int
 
 func _ready():
 	#If file doesn't exist create new file
 	if FileAccess.file_exists(file_location) == false:
 		print("NEW CAR MARKET FILE CREATED")
+		event_queue = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
+		market_size = 1
 		var file = FileAccess.open(file_location, FileAccess.WRITE)
 		save()
 	#Load the file

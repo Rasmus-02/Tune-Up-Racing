@@ -36,6 +36,8 @@ func change_scene(scene):
 	#Update Car market
 	CarMarket.update_events()
 	
+	AudioServer.set_bus_volume_db(1, linear_to_db(Settings.car_volume))
+	AudioServer.set_bus_volume_db(2, linear_to_db(Settings.ambient_volume))
 	new_scene = scene
 	RaceStatus.started = false
 	RaceStatus.finished = false

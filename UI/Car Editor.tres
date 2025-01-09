@@ -118,5 +118,6 @@ TextEdit/font_sizes/font_size = 16
 TextEdit/styles/focus = SubResource("StyleBoxEmpty_6b54q")
 TextEdit/styles/normal = SubResource("StyleBoxEmpty_4gwml")
 TextEdit/styles/read_only = SubResource("StyleBoxEmpty_sgqml")
+TooltipLabel/font_sizes/font_size = 32
 VScrollBar/styles/grabber = SubResource("StyleBoxTexture_fgl5c")
 VScrollBar/styles/scroll = SubResource("StyleBoxFlat_5nxue")

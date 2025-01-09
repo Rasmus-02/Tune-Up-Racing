@@ -10,7 +10,6 @@ func _input(_event):
 func open():
 	grid.populate_grid()
 	self.global_position = get_parent().selected_car.global_position - Vector2(center.position.x, center.position.y)
-	print(Vector2(center.position.x, center.position.y))
 	self.show()
 
 func close():
