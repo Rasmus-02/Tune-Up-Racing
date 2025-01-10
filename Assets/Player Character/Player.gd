@@ -12,6 +12,7 @@ var car_list
 @onready var sprite = $AnimatedSprite2D
 @onready var animation = $AnimationPlayer
 @export var not_functional : AnimationPlayer
+@export var interact_tooltip : Label
 var main = null
 
 func _ready():
@@ -101,6 +102,12 @@ func _on_selector_area_exited(area): #Deselect Object when not in range
 
 #Interaction with car from player character
 func interact():
+	#Show Tooltip
+	if selected_car != null or interaction_object != null:
+		interact_tooltip.rotation = rad_to_deg(0) - sprite.rotation
+		interact_tooltip.show()
+	else:
+		interact_tooltip.hide()
 	#Make Car Edit options appear 
 	if selected_car != null and Input.is_action_just_pressed("Interact"):
 		#If UI is already open close it

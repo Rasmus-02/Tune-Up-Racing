@@ -172,14 +172,15 @@ sprite_frames = SubResource("SpriteFrames_5r1yl")
 animation = &"Start"
 
 [node name="Press Button Text" type="Label" parent="UI/AspectRatioContainer/Start Lights"]
-offset_left = -145.763
-offset_top = 66.36
-offset_right = 250.237
-offset_bottom = 117.36
+offset_left = -164.0
+offset_top = 66.0
+offset_right = 276.0
+offset_bottom = 117.0
 scale = Vector2(0.745, 0.745)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 6
-text = "[Press Enter To Continue]"
+text = "[Press Any Key To Continue]"
+horizontal_alignment = 1
 
 [node name="Start_Sound" type="AudioStreamPlayer" parent="UI/AspectRatioContainer/Start Lights"]
 stream = ExtResource("12_qq8mv")

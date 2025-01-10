@@ -13,11 +13,12 @@ config_version=5
 config/name="Tune-Up Racing"
 run/main_scene="res://Levels/Main.tscn"
 config/use_custom_user_dir=true
-config/custom_user_dir_name="Racing Game"
+config/custom_user_dir_name="Tune-Up Racing"
 config/features=PackedStringArray("4.2", "Forward Plus")
 boot_splash/bg_color=Color(0.105882, 0.105882, 0.105882, 1)
 boot_splash/show_image=false
-config/icon="res://Textures/Testing/Godot_ICON.svg"
+config/icon="res://Textures/OS/Icon.png"
+config/windows_native_icon="res://Textures/OS/Icon.ico"
 
 [autoload]
 

@@ -137,11 +137,12 @@ light_mode = 1
 
 [node name="Player" type="Node2D" groups=["Player"]]
 
-[node name="Character" type="CharacterBody2D" parent="." node_paths=PackedStringArray("not_functional") groups=["Player"]]
+[node name="Character" type="CharacterBody2D" parent="." node_paths=PackedStringArray("not_functional", "interact_tooltip") groups=["Player"]]
 motion_mode = 1
 script = ExtResource("1_bbvfw")
 movement_speed = 170
 not_functional = NodePath("../Interact_Menu_Garage/Drive_Car_button/Not Functional Animation")
+interact_tooltip = NodePath("AnimatedSprite2D/Interact Tooltip")
 
 [node name="PointLight2D" type="PointLight2D" parent="Character"]
 energy = 0.8
@@ -190,6 +191,21 @@ shape = SubResource("CapsuleShape2D_xicv1")
 
 [node name="LightOccluder2D" type="LightOccluder2D" parent="Character/AnimatedSprite2D"]
 occluder = SubResource("OccluderPolygon2D_df70x")
+
+[node name="Interact Tooltip" type="Label" parent="Character/AnimatedSprite2D"]
+visible = false
+offset_left = -9.99991
+offset_top = -35.0
+offset_right = 10.0001
+offset_bottom = -9.00003
+rotation = 3.14159
+scale = Vector2(0.8, 0.8)
+pivot_offset = Vector2(10, 16)
+theme_override_colors/font_outline_color = Color(0.235294, 0.235294, 0.235294, 1)
+theme_override_constants/outline_size = 3
+theme_override_font_sizes/font_size = 32
+text = "[E]"
+horizontal_alignment = 1
 
 [node name="Computer" parent="Character" node_paths=PackedStringArray("player") instance=ExtResource("3_82x7n")]
 visible = false

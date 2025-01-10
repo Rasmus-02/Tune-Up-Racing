@@ -2,8 +2,8 @@ extends Sprite2D
 var started = false
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _input(_event):
-	if Input.is_action_just_pressed("ui_accept"):
+func _input(event):
+	if(event is InputEventKey or event is InputEventJoypadButton):
 		if started == false:
 			started = true
 			start()
@@ -19,4 +19,5 @@ func _on_timer_timeout():
 	hide()
 
 func _on_start_sound_finished():
-	queue_free()
+	if Placing.car_list != null and Placing.car_list.size() > 0: #If restart button is pressed
+		queue_free()

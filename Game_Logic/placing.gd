@@ -40,5 +40,6 @@ func update_car_placings():
 		car.get_node("Placing").car_placing = i+1
 
 func update_player_lap():
-	player_lap = int(car_list[0].get_node("AI").lap)
-	player_lap = clamp(player_lap, 1, max_lap)
+	if car_list.size() > 0:
+		player_lap = int(car_list[0].get_node("AI").lap)
+		player_lap = clamp(player_lap, 1, max_lap)
