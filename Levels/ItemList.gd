@@ -6,7 +6,6 @@ var clicked = false
 var temptab
 @onready var car_editor = $"../Car Edit Controller"
 @onready var engine_editor = $"../Engine Edit Controller"
-@onready var description_animation = $"../../Props/Editor UI Description"
 
 func _process(_delta):
 	if Input.is_action_just_pressed("ui_accept") or Input.is_action_just_pressed("Interact"):
@@ -32,7 +31,6 @@ func _on_item_clicked(index, _at_position, mouse_button_index):
 func _on_item_selected(index):
 	if clicked == true and has_focus():
 		clicked = false
-		description_animation.play("Update")
 		if car_editor.active == true:
 			car_editor._on_item_selected(index)
 			if car_editor.selected_tab > 0:

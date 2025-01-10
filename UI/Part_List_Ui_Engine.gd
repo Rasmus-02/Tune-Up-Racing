@@ -26,6 +26,7 @@ var engine_name : String
 @onready var boost_text = $"../Tune/Stats/Boost_Text"
 @onready var rpm_text = $"../Tune/Stats/RPM_Text"
 @onready var stats = $"../../Props/Editor UI Stats/Editor Ui Stats"
+@onready var description_animation = $"../../Props/Editor UI Description"
 
 
 
@@ -54,6 +55,9 @@ func instantiate():
 
 func populate_list():
 	stats.change_part(equipped_part, part_category)
+	if temp_tab != 6 and equipped_part != null:
+		$"../Description".text = equipped_part.description
+		description_animation.play("Update")
 	temp_stat_array.clear()
 	list.clear()
 	var list_index = 0
@@ -281,8 +285,6 @@ func slider_controller():
 func update_engine():
 	engine.update_engine_parts()
 	Save_Load.edit_engine(engine)
-	if temp_tab != 6 and temp_part_select_part != null:
-		$"../Description".text = temp_part_select_part.description
 
 
 func _on_return_button_pressed():

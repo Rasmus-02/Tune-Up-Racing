@@ -23,6 +23,7 @@ var car_name : String
 var active = false
 @onready var button_sound = $"../Button_Click"
 @onready var stats = $"../../Props/Editor UI Stats/Editor Ui Stats"
+@onready var description_animation = $"../../Props/Editor UI Description"
 var main = null
 
 func _ready():
@@ -54,6 +55,9 @@ func initiate():
 
 func populate_list():
 	stats.change_part(equipped_part, str(selected_tab))
+	if selected_tab > 0 and selected_tab != 18:
+		$"../Description".text = equipped_part.description
+		description_animation.play("Update")
 	temp_stat_array.clear()
 	$"../Tune_Gearbox".hide() #Hide gearbox_tab
 	#for engines
@@ -219,10 +223,9 @@ func _on_item_selected(index): #when a part in the item list is clicked (node si
 				break
 			temp_part_select_part.queue_free()
 			i += 1
-		#Update Stat Tab
+		#Update durability and color (Stats tab used to be here)
 		temp_part_select_part.durability = temp_stat_array[index][0]
 		temp_part_select_part.color = temp_stat_array[index][1]
-	#sends update to engine that parts have changed
 	match selected_tab:
 		0:
 			car.selected_engine = selected_key
@@ -458,12 +461,9 @@ func _on_item_selected(index): #when a part in the item list is clicked (node si
 func update_car():
 	car.update_car_parts()
 	_on_save_pressed()
-	if selected_tab > 0 and selected_tab != 18:
-		$"../Description".text = temp_part_select_part.description
 
 func update_engine():
 	engine.update_engine_parts()
-	#_on_save_pressed()
 	engine.load_engine(selected_key)
 
 func open_engine_editor():

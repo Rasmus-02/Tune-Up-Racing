@@ -128,7 +128,7 @@ func hide_ui():
 func show_ui():
 	if SelectedScene.scene != "garage" and SelectedScene.scene != "edit" or (get_parent().get_parent().get_node("Car Edit UI").get_node("Car Edit Controller").active == false and get_parent().get_parent().get_node("Car Edit UI").get_node("Engine Edit Controller").active == false and get_parent().get_parent().get_node("Props").get_node("Paint Booth").active == false):
 		#set position where the us should spawn
-		$"../Interact_Menu_Garage".global_position = selected_car.global_position +Vector2(-75,55)
+		$"../Interact_Menu_Garage".global_position = selected_car.global_position + Vector2(-75,55)
 		#reset which buttons are visible
 		for n in car_garage_ui.get_child_count():
 			car_garage_ui.get_child(n).hide()
@@ -225,36 +225,48 @@ func _on_move_to_lift_pressed():
 		selected_car.in_garage = 1
 		save()
 		move_car()
+	else:
+		ui_visible = false
 
 func _on_move_to_dyno_pressed():
 	if check_if_movable(2) != false and selected_car.selected_car_key != null:
 		selected_car.in_garage = 2
 		save()
 		move_car()
+	else:
+		ui_visible = false
 
 func _on_move_to_paint_pressed():
 	if check_if_movable(3) != false and selected_car.selected_car_key != null:
 		selected_car.in_garage = 3
 		save()
 		move_car()
+	else:
+		ui_visible = false
 
 func _on_move_to_garage_parking_1_pressed():
 	if check_if_movable(4) != false and selected_car.selected_car_key != null:
 		selected_car.in_garage = 4
 		save()
 		move_car()
+	else:
+		ui_visible = false
 
 func _on_move_to_garage_parking_2_pressed():
 	if check_if_movable(5) != false and selected_car.selected_car_key != null:
 		selected_car.in_garage = 5
 		save()
 		move_car()
+	else:
+		ui_visible = false
 
 func _on_move_to_garage_parking_3_pressed():
 	if check_if_movable(6) != false and selected_car.selected_car_key != null:
 		selected_car.in_garage = 6
 		save()
 		move_car()
+	else:
+		ui_visible = false
 
 
 func save():
@@ -269,6 +281,8 @@ func move_car():
 		selected_car.running_dyno = 0
 		car_garage_ui.hide()
 		$"../Move_Menu".hide()
+		ui_visible = false
+	else:
 		ui_visible = false
 
 func get_empty_garage_slot():
@@ -300,3 +314,6 @@ func _on_to_parking_garage_pressed():
 			selected_car.queue_free()
 			$"../Move_Menu".hide()
 			ui_visible = false
+
+func _on_move_car_delay_timeout():
+	set_collision_mask_value(1, true)

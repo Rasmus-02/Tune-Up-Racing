@@ -15,11 +15,11 @@ func _ready():
 func _physics_process(delta):
 	second += delta * 60
 	
-	if second > 60:
+	if second >= 60:
 		CarMarket.countdown -= 1
 		second = 0
 		minute += 1
-	if minute > 60:
+	if minute >= 60:
 		minute = 0
 		hour += 1
 	if hour >= 24:

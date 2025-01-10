@@ -138,6 +138,7 @@ light_mode = 1
 [node name="Player" type="Node2D" groups=["Player"]]
 
 [node name="Character" type="CharacterBody2D" parent="." node_paths=PackedStringArray("not_functional") groups=["Player"]]
+motion_mode = 1
 script = ExtResource("1_bbvfw")
 movement_speed = 170
 not_functional = NodePath("../Interact_Menu_Garage/Drive_Car_button/Not Functional Animation")
@@ -152,6 +153,10 @@ texture_scale = 50.0
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Character" groups=["Player"]]
 rotation = 1.5708
 shape = SubResource("CapsuleShape2D_vyxlc")
+
+[node name="Move Car Delay" type="Timer" parent="Character/CollisionShape2D"]
+wait_time = 0.1
+one_shot = true
 
 [node name="Camera2D" type="Camera2D" parent="Character"]
 process_priority = 1
@@ -390,6 +395,7 @@ material = SubResource("CanvasItemMaterial_sixnp")
 layout_mode = 2
 text = "Move to Garage"
 
+[connection signal="timeout" from="Character/CollisionShape2D/Move Car Delay" to="Character" method="_on_move_car_delay_timeout"]
 [connection signal="area_entered" from="Character/AnimatedSprite2D/Selector" to="Character" method="_on_selector_area_entered"]
 [connection signal="area_exited" from="Character/AnimatedSprite2D/Selector" to="Character" method="_on_selector_area_exited"]
 [connection signal="body_entered" from="Character/AnimatedSprite2D/Selector" to="Character" method="_on_selector_body_entered"]
