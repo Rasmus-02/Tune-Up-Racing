@@ -389,24 +389,45 @@ func load_car_from_algorithm(dictionary):
 	mirrors_color = 0
 	
 	#Damage stats
-	chassi_durability = 100
-	f_bumper_durability = 100
-	r_bumper_durability = 100
-	fenders_durability = 100
-	hood_durability = 100
-	mirrors_durability = 100
-	headlights_durability = 100
-	taillights_durability = 100
-	spoiler_durability = 100
-	suspension_durability = 100
-	wheels_durability = 100
-	tires_durability = 100
-	brakes_durability = 100
-	subframe_durability = 100
-	driveshaft_durability = 100
-	gearbox_durability = 100
-	radiator_durability = 100
-	exhaust_durability = 100
+	if dictionary.get("durability") != null:
+		chassi_durability = dictionary.durability.get("chassi")
+		print(chassi_durability)
+		f_bumper_durability = dictionary.durability.get("f_bumper")
+		r_bumper_durability = dictionary.durability.get("r_bumper")
+		fenders_durability = dictionary.durability.get("fenders")
+		hood_durability = dictionary.durability.get("hood")
+		mirrors_durability = dictionary.durability.get("mirrors")
+		headlights_durability = dictionary.durability.get("headlights")
+		taillights_durability = dictionary.durability.get("taillights")
+		spoiler_durability = dictionary.durability.get("spoiler")
+		suspension_durability = dictionary.durability.get("suspension")
+		wheels_durability = dictionary.durability.get("wheels")
+		tires_durability = dictionary.durability.get("tires")
+		brakes_durability = dictionary.durability.get("brakes")
+		subframe_durability = dictionary.durability.get("subframe")
+		driveshaft_durability = dictionary.durability.get("driveshaft")
+		gearbox_durability = dictionary.durability.get("gearbox")
+		radiator_durability = dictionary.durability.get("radiator")
+		exhaust_durability = dictionary.durability.get("exhaust")
+	else:
+		chassi_durability = 100
+		f_bumper_durability = 100
+		r_bumper_durability = 100
+		fenders_durability = 100
+		hood_durability = 100
+		mirrors_durability = 100
+		headlights_durability = 100
+		taillights_durability = 100
+		spoiler_durability = 100
+		suspension_durability = 100
+		wheels_durability = 100
+		tires_durability = 100
+		brakes_durability = 100
+		subframe_durability = 100
+		driveshaft_durability = 100
+		gearbox_durability = 100
+		radiator_durability = 100
+		exhaust_durability = 100
 	get_node("Car_spawner").reload_car()
 	update_car_parts()
 

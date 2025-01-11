@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://Assets/Car/Code/Part_scripts/Spoiler.gd" id="1_v8k6m"]
 [ext_resource type="Texture2D" uid="uid://pr4s3any4ynx" path="res://Textures/Cars/Talon Motors Barracuda/Spoiler/Talon Motors Barracuda [Satetsu] Spoiler.png" id="2_0hh20"]
-[ext_resource type="Shader" path="res://Shaders/Test/ColorSelector.gdshader" id="2_5nna4"]
+[ext_resource type="Shader" path="res://Shaders/ColorSelector.gdshader" id="2_5nna4"]
 [ext_resource type="Texture2D" uid="uid://sd6wyytg5w28" path="res://Textures/Cars/Talon Motors Barracuda/Spoiler/Talon Motors Barracuda [Satetsu] Spoiler NM.png" id="3_3ypnn"]
 [ext_resource type="Texture2D" uid="uid://c6aqg2q2x1jhh" path="res://Textures/Cars/Talon Motors Barracuda/Spoiler/Talon Motors Barracuda [Satetsu] Spoiler Spec.png" id="4_hjiww"]
 

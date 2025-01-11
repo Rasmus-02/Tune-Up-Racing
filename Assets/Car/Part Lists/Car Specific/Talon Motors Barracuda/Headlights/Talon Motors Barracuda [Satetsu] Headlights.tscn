@@ -1,7 +1,7 @@
 [gd_scene load_steps=11 format=3 uid="uid://dkkw8yqip52bx"]
 
 [ext_resource type="Script" path="res://Assets/Car/Code/Part_scripts/Headlights.gd" id="1_pm3mo"]
-[ext_resource type="Shader" path="res://Shaders/Test/ColorSelector.gdshader" id="2_vu80e"]
+[ext_resource type="Shader" path="res://Shaders/ColorSelector.gdshader" id="2_vu80e"]
 [ext_resource type="Texture2D" uid="uid://di5icq3qtn3jb" path="res://Textures/Cars/Talon Motors Barracuda/Headlights/Talon Motors Barracuda [Satetsu] Headlights.png" id="3_dsfbm"]
 [ext_resource type="Texture2D" uid="uid://dukdnsv1dippa" path="res://Textures/Cars/Talon Motors Barracuda/Headlights/Talon Motors Barracuda [Satetsu] Headlights NM.png" id="4_h75lu"]
 [ext_resource type="Texture2D" uid="uid://bn4thli7yrl2d" path="res://Textures/Cars/Talon Motors Barracuda/Headlights/Talon Motors Barracuda [Satetsu] Headlights Spec.png" id="5_qpk0f"]

@@ -1,7 +1,7 @@
 [gd_scene load_steps=10 format=3 uid="uid://cmhs2rn4cogkp"]
 
 [ext_resource type="Script" path="res://Assets/Car/Code/Part_scripts/Fenders.gd" id="1_ocmn7"]
-[ext_resource type="Shader" path="res://Shaders/Test/ColorSelector.gdshader" id="2_5gyou"]
+[ext_resource type="Shader" path="res://Shaders/ColorSelector.gdshader" id="2_5gyou"]
 [ext_resource type="Texture2D" uid="uid://b57m3aaywcv6s" path="res://Textures/Cars/Talon Motors Barracuda/Fenders/Talon Motors Barracuda [Redline] Widebody Fenders.png" id="3_y6544"]
 [ext_resource type="Texture2D" uid="uid://2n6sh12ix2nx" path="res://Textures/Cars/Talon Motors Barracuda/Fenders/Talon Motors Barracuda [Redline] Widebody Fenders NM.png" id="4_8svil"]
 [ext_resource type="Texture2D" uid="uid://qxrin0my0hwj" path="res://Textures/Cars/Talon Motors Barracuda/Fenders/Talon Motors Barracuda [Redline] Widebody Fenders Spec.png" id="5_yg86n"]

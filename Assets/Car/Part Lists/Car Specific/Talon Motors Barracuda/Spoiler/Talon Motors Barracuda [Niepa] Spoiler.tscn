@@ -1,7 +1,7 @@
 [gd_scene load_steps=8 format=3 uid="uid://bphv6nmxf76u4"]
 
 [ext_resource type="Script" path="res://Assets/Car/Code/Part_scripts/Spoiler.gd" id="1_3qpbc"]
-[ext_resource type="Shader" path="res://Shaders/Test/ColorSelector.gdshader" id="2_5xijt"]
+[ext_resource type="Shader" path="res://Shaders/ColorSelector.gdshader" id="2_5xijt"]
 [ext_resource type="Texture2D" uid="uid://cq5hg6so1a42b" path="res://Textures/Cars/Talon Motors Barracuda/Spoiler/Talon Motors Barracuda [Niepa] Spoiler.png" id="3_mxn6j"]
 [ext_resource type="Texture2D" uid="uid://djiaowbjqfuyc" path="res://Textures/Cars/Talon Motors Barracuda/Spoiler/Talon Motors Barracuda [Niepa] Spoiler NM.png" id="4_j3syw"]
 [ext_resource type="Texture2D" uid="uid://cqld2kxiqemtl" path="res://Textures/Cars/Talon Motors Barracuda/Spoiler/Talon Motors Barracuda [Niepa] Spoiler Spec.png" id="5_ichye"]

@@ -1,7 +1,7 @@
 [gd_scene load_steps=8 format=3 uid="uid://dlhjuuk3243gt"]
 
 [ext_resource type="Script" path="res://Assets/Car/Code/Part_scripts/Mirrors.gd" id="1_sqwra"]
-[ext_resource type="Shader" path="res://Shaders/Test/ColorSelector.gdshader" id="2_beut2"]
+[ext_resource type="Shader" path="res://Shaders/ColorSelector.gdshader" id="2_beut2"]
 [ext_resource type="Texture2D" uid="uid://bdwrotuq5uw5j" path="res://Textures/Cars/Hikari Tasai/Mirrors/Hikari Tasai Stock Mirrors.png" id="2_kxiuh"]
 [ext_resource type="Texture2D" uid="uid://bendb1w4872mb" path="res://Textures/Cars/Hikari Tasai/Mirrors/Hikari Tasai Stock Mirrors HM NM.png" id="3_3ahpn"]
 [ext_resource type="Texture2D" uid="uid://duhxjnki8wi3b" path="res://Textures/Cars/Hikari Tasai/Mirrors/Hikari Tasai Stock Mirrors Spec.png" id="4_5a7ws"]

@@ -1,7 +1,7 @@
 [gd_scene load_steps=11 format=3 uid="uid://cparch1bev7pm"]
 
 [ext_resource type="Script" path="res://Assets/Car/Code/Part_scripts/Headlights.gd" id="1_tyasp"]
-[ext_resource type="Shader" path="res://Shaders/Test/ColorSelector.gdshader" id="2_8hkya"]
+[ext_resource type="Shader" path="res://Shaders/ColorSelector.gdshader" id="2_8hkya"]
 [ext_resource type="Texture2D" uid="uid://d1cumodsmrxgl" path="res://Textures/Cars/Nagata Koi/Headlights/Nagata Koi Stock Headlights.png" id="2_e0erx"]
 [ext_resource type="Texture2D" uid="uid://cikhlvpxivh1d" path="res://Textures/Cars/Nagata Koi/Headlights/Nagata Koi Stock Headlights NM.png" id="3_hevsg"]
 [ext_resource type="Texture2D" uid="uid://ck4yt03ulukdx" path="res://Textures/Cars/Nagata Koi/Headlights/Nagata Koi Stock Headlights Spec.png" id="4_ut1ro"]

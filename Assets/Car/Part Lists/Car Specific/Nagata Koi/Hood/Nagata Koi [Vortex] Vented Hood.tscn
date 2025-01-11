@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://Assets/Car/Code/Part_scripts/Hood.gd" id="1_5ssmk"]
 [ext_resource type="Texture2D" uid="uid://sm04tesbfsui" path="res://Textures/Cars/Nagata Koi/Hood/Nagata Koi [Vortex] Vented Hood.png" id="2_5c735"]
-[ext_resource type="Shader" path="res://Shaders/Test/ColorSelector.gdshader" id="2_madsc"]
+[ext_resource type="Shader" path="res://Shaders/ColorSelector.gdshader" id="2_madsc"]
 [ext_resource type="Texture2D" uid="uid://l5lh1sotr86i" path="res://Textures/Cars/Nagata Koi/Hood/Nagata Koi [Vortex] Vented Hood NM.png" id="3_14fyp"]
 [ext_resource type="Texture2D" uid="uid://cko7mvquyh5jx" path="res://Textures/Cars/Nagata Koi/Hood/Nagata Koi [Vortex] Vented Hood Spec.png" id="4_w6cmf"]
 

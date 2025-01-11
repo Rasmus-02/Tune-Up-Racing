@@ -1,7 +1,7 @@
 [gd_scene load_steps=12 format=3 uid="uid://dtrjcilvf61b2"]
 
 [ext_resource type="Script" path="res://Assets/Car/Code/Part_scripts/F_Bumper.gd" id="1_caqdx"]
-[ext_resource type="Shader" path="res://Shaders/Test/ColorSelector.gdshader" id="2_w3as3"]
+[ext_resource type="Shader" path="res://Shaders/ColorSelector.gdshader" id="2_w3as3"]
 [ext_resource type="Texture2D" uid="uid://cbea4grblek52" path="res://Textures/Cars/Nagata Koi/Front Bumper/Nagata Koi [KS-Racing] Timeattack Front Bumper NM.png" id="3_8ojyu"]
 [ext_resource type="Texture2D" uid="uid://bmwrnbhp2lcul" path="res://Textures/Cars/Nagata Koi/Front Bumper/Nagata Koi [KS-Racing] Timeattack Front Bumper 1.png" id="3_y24q5"]
 [ext_resource type="Texture2D" uid="uid://s5kw35dsupo6" path="res://Textures/Cars/Nagata Koi/Front Bumper/Nagata Koi [KS-Racing] Timeattack Front Bumper Spec.png" id="4_dkwx3"]

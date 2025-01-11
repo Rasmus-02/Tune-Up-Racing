@@ -1,7 +1,7 @@
 [gd_scene load_steps=10 format=3 uid="uid://cxndeyf6ulfcb"]
 
 [ext_resource type="Script" path="res://Assets/Car/Code/Part_scripts/Fenders.gd" id="1_5ayk5"]
-[ext_resource type="Shader" path="res://Shaders/Test/ColorSelector.gdshader" id="2_nr47g"]
+[ext_resource type="Shader" path="res://Shaders/ColorSelector.gdshader" id="2_nr47g"]
 [ext_resource type="Texture2D" uid="uid://cyd4xm4bkg68t" path="res://Textures/Cars/Nagata Koi/Fenders/Nagata Koi Stock Fenders.png" id="2_oml0d"]
 [ext_resource type="Texture2D" uid="uid://bncgx16kxctjs" path="res://Textures/Cars/Nagata Koi/Fenders/Nagata Koi Stock Fenders NM.png" id="3_087no"]
 [ext_resource type="Texture2D" uid="uid://bmdoejg2go4ip" path="res://Textures/Cars/Nagata Koi/Fenders/Nagata Koi Stock Fenders Spec.png" id="4_4juuq"]

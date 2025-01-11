@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://Assets/Car/Code/Part_scripts/Fenders.gd" id="1_8x6q1"]
 [ext_resource type="Texture2D" uid="uid://cu3tfmkmvmb8m" path="res://Textures/Cars/Talon Motors Barracuda/Fenders/Talon Motors Barracuda Satetsu Widebody Fenders.png" id="2_fpir4"]
-[ext_resource type="Shader" path="res://Shaders/Test/ColorSelector.gdshader" id="2_rxaxw"]
+[ext_resource type="Shader" path="res://Shaders/ColorSelector.gdshader" id="2_rxaxw"]
 [ext_resource type="Texture2D" uid="uid://mlp30itxv6f7" path="res://Textures/Cars/Talon Motors Barracuda/Fenders/Talon Motors Barracuda Satetsu Widebody Fenders NM.png" id="3_6m3kx"]
 [ext_resource type="Texture2D" uid="uid://be33tejooy7ka" path="res://Textures/Cars/Talon Motors Barracuda/Fenders/Talon Motors Barracuda Satetsu Widebody Fenders Spec.png" id="4_rjujr"]
 

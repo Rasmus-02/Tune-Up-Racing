@@ -10,6 +10,7 @@ extends Panel
 var status = "closed"
 var selected_item = null
 var selected_color : int
+var selected_durability : int
 
 #region Open / Close
 func _input(_event): #Check only when a button is pressed
@@ -71,8 +72,9 @@ func update_image(): #add the part to the scene as an image
 	selected_item.global_position = part_location.global_position
 	$"Display/Lighting/Light Axis".global_position = part_location.global_position
 	selected_item.z_index = 10
-	#Change color
+	#Change color and apply durability
 	selected_color = selected_item.color
+	selected_durability = selected_item.durability
 
 #Function for getting the CORRECT stats to display in CORRECT order
 #region Stat

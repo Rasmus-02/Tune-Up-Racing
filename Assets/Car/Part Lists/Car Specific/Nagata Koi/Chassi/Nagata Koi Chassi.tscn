@@ -1,14 +1,15 @@
-[gd_scene load_steps=11 format=3 uid="uid://dtm32ism4pjlr"]
+[gd_scene load_steps=13 format=3 uid="uid://dtm32ism4pjlr"]
 
 [ext_resource type="Script" path="res://Assets/Car/Code/Part_scripts/Chassi.gd" id="1_4ialf"]
 [ext_resource type="Texture2D" uid="uid://dlh5qaqombv3e" path="res://Textures/Cars/Nagata Koi/Chassi/Nagata Koi Chassi.png" id="2_4eyvq"]
-[ext_resource type="Shader" path="res://Shaders/Test/ColorSelector.gdshader" id="2_jf2ft"]
+[ext_resource type="Shader" path="res://Shaders/ColorSelector.gdshader" id="2_xe5jt"]
 [ext_resource type="Texture2D" uid="uid://cf3y8plo5n68s" path="res://Textures/Cars/Nagata Koi/Chassi/Nagata Koi Chassi NM2.png" id="3_4b3ba"]
 [ext_resource type="Texture2D" uid="uid://peas8menq8de" path="res://Textures/Cars/Nagata Koi/Chassi/Nagata Koi Chassi Spec.png" id="4_bvvri"]
 [ext_resource type="PackedScene" uid="uid://bdgi70ouxoi6w" path="res://Assets/Car/Part Lists/Car Specific/Nagata Koi/Windows/Nagata Koi Windows.tscn" id="6_al466"]
+[ext_resource type="Texture2D" uid="uid://d2jn483bfl1iu" path="res://Textures/Cars/Nagata Koi/Chassi/Nagata Koi Chassi non paintable.png" id="7_coyqo"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_36oji"]
-shader = ExtResource("2_jf2ft")
+shader = ExtResource("2_xe5jt")
 shader_parameter/import_new_color = Vector3(1, 0.35, 0.071)
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_jbiqp"]
@@ -22,6 +23,12 @@ blend_mode = 1
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_gac0f"]
 polygon = PackedVector2Array(-53.0884, -40.6985, -25.0884, -40.6985, -24.0884, -39.6985, 66.9116, -39.6985, 70.9116, -35.6985, 111.912, -35.6985, 114.912, -34.6985, 119.912, -32.6985, 121.912, -31.6985, 124.912, -27.6985, 126.912, -24.6985, 127.912, -13.6985, 127.912, 19.3015, 126.912, 28.3015, 124.912, 31.3015, 121.912, 35.3015, 119.912, 36.3015, 114.912, 38.3015, 111.912, 39.3015, 70.9116, 39.3015, 66.9116, 43.3015, -24.0884, 43.3015, -25.0884, 44.3015, -53.0884, 44.3015, -60.0884, 41.3015, -66.0884, 35.3015, -70.0884, 25.3015, -70.0884, -21.6985, -66.0884, -31.6985, -60.0884, -37.6985)
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_8wo30"]
+diffuse_texture = ExtResource("7_coyqo")
+normal_texture = ExtResource("3_4b3ba")
+specular_texture = ExtResource("4_bvvri")
+specular_shininess = 0.58
 
 [node name="Nagata Koi Chassi" type="Node2D"]
 script = ExtResource("1_4ialf")
@@ -48,6 +55,9 @@ position = Vector2(-29.9116, -2.30154)
 occluder = SubResource("OccluderPolygon2D_gac0f")
 
 [node name="Nagata Koi Windows" parent="Sprite2D" instance=ExtResource("6_al466")]
+
+[node name="Non Paintable" type="Sprite2D" parent="Sprite2D"]
+texture = SubResource("CanvasTexture_8wo30")
 
 [node name="FL" type="Marker2D" parent="."]
 position = Vector2(64, -31)

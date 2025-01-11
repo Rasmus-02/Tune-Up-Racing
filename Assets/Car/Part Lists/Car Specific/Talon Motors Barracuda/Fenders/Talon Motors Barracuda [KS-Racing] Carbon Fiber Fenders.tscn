@@ -1,7 +1,7 @@
 [gd_scene load_steps=10 format=3 uid="uid://bjxyky4qhwixa"]
 
 [ext_resource type="Script" path="res://Assets/Car/Code/Part_scripts/Fenders.gd" id="1_ejr0y"]
-[ext_resource type="Shader" path="res://Shaders/Test/ColorSelector.gdshader" id="2_152pu"]
+[ext_resource type="Shader" path="res://Shaders/ColorSelector.gdshader" id="2_152pu"]
 [ext_resource type="Texture2D" uid="uid://undyduix0itl" path="res://Textures/Cars/Talon Motors Barracuda/Fenders/Talon Motors Barracuda [KS-Racing] Carbon Fiber Fenders.png" id="3_sm8i2"]
 [ext_resource type="Texture2D" uid="uid://ldrnlx5ru637" path="res://Textures/Cars/Talon Motors Barracuda/Fenders/Talon Motors Barracuda Fenders NM.png" id="4_mvxde"]
 [ext_resource type="Texture2D" uid="uid://bi011daty0kol" path="res://Textures/Cars/Talon Motors Barracuda/Fenders/Talon Motors Barracuda [KS-Racing] Carbon Fiber Fenders Spec.png" id="5_rkig6"]

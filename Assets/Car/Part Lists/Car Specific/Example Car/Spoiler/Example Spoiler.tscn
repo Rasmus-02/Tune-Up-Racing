@@ -1,7 +1,7 @@
 [gd_scene load_steps=9 format=3 uid="uid://d1vl2l3qi62fh"]
 
 [ext_resource type="Script" path="res://Assets/Car/Code/Part_scripts/Spoiler.gd" id="1_8pbmb"]
-[ext_resource type="Shader" path="res://Shaders/Test/ColorSelector.gdshader" id="2_k4qa6"]
+[ext_resource type="Shader" path="res://Shaders/ColorSelector.gdshader" id="2_k4qa6"]
 [ext_resource type="Texture2D" uid="uid://cdi8ab1fncjr4" path="res://Textures/Cars/Nagata Koi/Spoiler/Factory Roof Spoiler.png" id="2_kakta"]
 [ext_resource type="Texture2D" uid="uid://b35ri3he7vd4o" path="res://Textures/Cars/Nagata Koi/Spoiler/Nagata Koi Spoiler NM.png" id="3_tcsbt"]
 [ext_resource type="Texture2D" uid="uid://b3r7guxoiudo0" path="res://Textures/Cars/Nagata Koi/Spoiler/Factory Roof Spoiler Spec.png" id="4_nk2qs"]

@@ -59,7 +59,7 @@
 [ext_resource type="Texture2D" uid="uid://ywj0j8shvtjv" path="res://Textures/Garage/Props/Computer Desk NM.png" id="51_dvwiy"]
 [ext_resource type="Texture2D" uid="uid://blla0sx3ysdat" path="res://Textures/Garage/Props/Computer Desk Spec.png" id="52_5te7o"]
 [ext_resource type="Texture2D" uid="uid://calycmhophto" path="res://Shaders/light beam.png" id="53_byfck"]
-[ext_resource type="Shader" path="res://Shaders/Test/ColorSelector.gdshader" id="54_5wuub"]
+[ext_resource type="Shader" path="res://Shaders/ColorSelector.gdshader" id="54_5wuub"]
 [ext_resource type="Texture2D" uid="uid://bsdj7fssrkoax" path="res://Textures/Garage/Props/Paint Booth.png" id="54_ftxr1"]
 [ext_resource type="Texture2D" uid="uid://b3yhq565ksxqd" path="res://Textures/UI/Painting/PaintCan Spritesheet.png" id="55_l3uhg"]
 [ext_resource type="Texture2D" uid="uid://cltac02eieehj" path="res://Textures/Garage/Props/Paint Booth NM.png" id="55_mlll3"]
@@ -74,11 +74,11 @@
 [ext_resource type="AudioStream" uid="uid://u082jj2fa5t1" path="res://Sound/paint4.mp3" id="66_nmus5"]
 [ext_resource type="AudioStream" uid="uid://cs2x0rbqr85ab" path="res://Sound/paint5.mp3" id="67_7lio0"]
 
-[sub_resource type="Gradient" id="Gradient_ragll"]
+[sub_resource type="Gradient" id="Gradient_5nhkv"]
 colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 1)
 
 [sub_resource type="GradientTexture1D" id="GradientTexture1D_qxju4"]
-gradient = SubResource("Gradient_ragll")
+gradient = SubResource("Gradient_5nhkv")
 width = 1
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_v35fn"]

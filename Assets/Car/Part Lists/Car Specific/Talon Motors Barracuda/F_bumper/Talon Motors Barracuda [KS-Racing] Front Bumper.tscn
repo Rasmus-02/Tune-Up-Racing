@@ -1,7 +1,7 @@
 [gd_scene load_steps=12 format=3 uid="uid://c3lay8i3jc7dm"]
 
 [ext_resource type="Script" path="res://Assets/Car/Code/Part_scripts/F_Bumper.gd" id="1_23s6f"]
-[ext_resource type="Shader" path="res://Shaders/Test/ColorSelector.gdshader" id="2_rugt0"]
+[ext_resource type="Shader" path="res://Shaders/ColorSelector.gdshader" id="2_rugt0"]
 [ext_resource type="Texture2D" uid="uid://rk5nnorscqvq" path="res://Textures/Cars/Talon Motors Barracuda/Front Bumper/Talon Motors Barracuda [KS-Racing] F_Bumper NM.png" id="3_42e6s"]
 [ext_resource type="Texture2D" uid="uid://c5d5lsduofvgd" path="res://Textures/Cars/Talon Motors Barracuda/Front Bumper/Talon Motors Barracuda [KS-Racing] F_Bumper Spec.png" id="4_2o350"]
 [ext_resource type="Texture2D" uid="uid://djagudwjjgru8" path="res://Textures/Cars/Talon Motors Barracuda/Front Bumper/Talon Motors Barracuda [KS-Racing] F_Bumper 2.png" id="5_ytd88"]

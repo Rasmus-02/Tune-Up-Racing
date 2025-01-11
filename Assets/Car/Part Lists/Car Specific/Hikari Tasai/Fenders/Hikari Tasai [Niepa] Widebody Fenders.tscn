@@ -1,7 +1,7 @@
 [gd_scene load_steps=10 format=3 uid="uid://1yjyroie15sa"]
 
 [ext_resource type="Script" path="res://Assets/Car/Code/Part_scripts/Fenders.gd" id="1_ealc1"]
-[ext_resource type="Shader" path="res://Shaders/Test/ColorSelector.gdshader" id="2_rkigi"]
+[ext_resource type="Shader" path="res://Shaders/ColorSelector.gdshader" id="2_rkigi"]
 [ext_resource type="Texture2D" uid="uid://dibcfp1v1q3rn" path="res://Textures/Cars/Hikari Tasai/Fenders/Hikari Tasai [Niepa] Widebody.png" id="3_sn2vu"]
 [ext_resource type="Texture2D" uid="uid://dsle6kp052a6g" path="res://Textures/Cars/Hikari Tasai/Fenders/Hikari Tasai [Niepa] Widebody NM.png" id="4_0jkqr"]
 [ext_resource type="Texture2D" uid="uid://wd8gt1pbj2p6" path="res://Textures/Cars/Hikari Tasai/Fenders/Hikari Tasai [Niepa] Widebody Spec.png" id="5_thm3c"]

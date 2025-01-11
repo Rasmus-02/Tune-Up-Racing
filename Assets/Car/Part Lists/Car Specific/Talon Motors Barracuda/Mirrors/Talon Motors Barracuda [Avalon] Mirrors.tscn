@@ -1,7 +1,7 @@
 [gd_scene load_steps=8 format=3 uid="uid://bbbcn8cwwgad1"]
 
 [ext_resource type="Script" path="res://Assets/Car/Code/Part_scripts/Mirrors.gd" id="1_myyav"]
-[ext_resource type="Shader" path="res://Shaders/Test/ColorSelector.gdshader" id="2_guowf"]
+[ext_resource type="Shader" path="res://Shaders/ColorSelector.gdshader" id="2_guowf"]
 [ext_resource type="Texture2D" uid="uid://cdyb4buavvb3u" path="res://Textures/Cars/Talon Motors Barracuda/Mirrors/Talon Motors Barracuda [Avalon] Mirrors.png" id="3_uugep"]
 [ext_resource type="Texture2D" uid="uid://cufd18rowlxjy" path="res://Textures/Cars/Talon Motors Barracuda/Mirrors/Talon Motors Barracuda [Avalon] Mirrors NM.png" id="4_augw0"]
 [ext_resource type="Texture2D" uid="uid://v11udrsqhlxk" path="res://Textures/Cars/Talon Motors Barracuda/Mirrors/Talon Motors Barracuda [Avalon] Mirrors Spec.png" id="5_pv8la"]

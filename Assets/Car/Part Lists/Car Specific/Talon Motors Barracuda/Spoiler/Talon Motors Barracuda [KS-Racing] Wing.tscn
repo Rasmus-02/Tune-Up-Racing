@@ -1,7 +1,7 @@
 [gd_scene load_steps=9 format=3 uid="uid://d34eeix0x18dr"]
 
 [ext_resource type="Script" path="res://Assets/Car/Code/Part_scripts/Spoiler.gd" id="1_sfjqy"]
-[ext_resource type="Shader" path="res://Shaders/Test/ColorSelector.gdshader" id="2_rnfb8"]
+[ext_resource type="Shader" path="res://Shaders/ColorSelector.gdshader" id="2_rnfb8"]
 [ext_resource type="Texture2D" uid="uid://dv6kqjc4tv1gb" path="res://Textures/Cars/Talon Motors Barracuda/Spoiler/Talon Motors Barracuda [KS-Racing] Wing.png" id="3_r41r3"]
 [ext_resource type="Texture2D" uid="uid://bcvtjojk1nrjr" path="res://Textures/Cars/Talon Motors Barracuda/Spoiler/Talon Motors Barracuda [KS-Racing] Wing NM.png" id="4_4hx4q"]
 [ext_resource type="Texture2D" uid="uid://ncrp6wqdfmsm" path="res://Textures/Cars/Talon Motors Barracuda/Spoiler/Talon Motors Barracuda [KS-Racing] Wing Spec.png" id="5_l2ysr"]

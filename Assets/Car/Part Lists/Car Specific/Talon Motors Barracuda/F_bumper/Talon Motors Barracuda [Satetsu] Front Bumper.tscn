@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://Assets/Car/Code/Part_scripts/F_Bumper.gd" id="1_aipiq"]
 [ext_resource type="Texture2D" uid="uid://udge13u4q1i2" path="res://Textures/Cars/Talon Motors Barracuda/Front Bumper/Talon Motors Barracuda Satetsu F_Bumper.png" id="2_kc721"]
-[ext_resource type="Shader" path="res://Shaders/Test/ColorSelector.gdshader" id="2_r7wvs"]
+[ext_resource type="Shader" path="res://Shaders/ColorSelector.gdshader" id="2_r7wvs"]
 [ext_resource type="Texture2D" uid="uid://c7bv2pdgelsyy" path="res://Textures/Cars/Talon Motors Barracuda/Front Bumper/Talon Motors Barracuda Satetsu F_Bumper NM.png" id="3_prkns"]
 [ext_resource type="Texture2D" uid="uid://d1dydbsqfqb4g" path="res://Textures/Cars/Talon Motors Barracuda/Front Bumper/Talon Motors Barracuda Satetsu F_Bumper Spec.png" id="4_46o1c"]
 

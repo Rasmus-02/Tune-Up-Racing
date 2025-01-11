@@ -2,6 +2,7 @@ extends Node2D
 
 @export_category("ID")
 @export_enum("common", "uncommon", "rare", "epic", "legendary") var rarity : String
+@export_enum("Iron", "Aluminium", "Magnesium", "Titanium", "Plasitc", "Carbon Fiber", "Rubber") var part_material : int
 @export_range(0, 80) var engine_bay_lenght : int
 @export_range(0, 80) var engine_bay_width : int
 @export_range(0, 120) var engine_bay_start_lenght : int
@@ -26,32 +27,45 @@ var color = 0
 
 
 #For Painting the part
+var seed = 1 #A Seed for the perlin noise of the durability shader
 var car
 func _ready():
 	if get_parent() != null and get_parent().get_parent() != null and get_parent().get_parent().get_parent() != null:
 		car = get_parent().get_parent().get_parent().get_parent()
 	
 func _process(delta):
-	if (current_color == null or color != current_color) and paintable == true:
+	if (current_color == null or color != current_color or durability != current_durability):
 		if car != null and car.is_in_group("Car"):
-			paint_part(car.chassi_color)
+			paint_part(car.chassi_color, car.chassi_durability)
 		elif get_parent().is_in_group("Computer"):
-				paint_part(get_parent().get_parent().get_parent().selected_color)
+			var selected_color = get_parent().get_parent().get_parent().selected_color
+			var selected_durability = get_parent().get_parent().get_parent().selected_durability
+			paint_part(selected_color, selected_durability)
 
 var current_color = null
-func paint_part(color_index):
+var current_durability = null
+func paint_part(color_index, durability):
 	color = color_index
 	var new_material = ShaderMaterial.new()
-	var shader = load("res://Shaders/Test/ColorSelector.gdshader")
+	var shader = load("res://Shaders/Test/Paint_Durability.gdshader")
 	new_material.shader = shader
 	if $Sprite2D:
 		$Sprite2D.material = new_material
 		var new_color = Colors.list[color_index][0]
 		current_color = color_index
+		current_durability = durability
+		#Color
 		$Sprite2D.material.set_shader_parameter("import_new_color", new_color)
+		#Durability
+		$Sprite2D.material.set_shader_parameter("sensitivity", 1 - (durability * 0.01))
+		$Sprite2D.material.set_shader_parameter("material_type", 0)
+		var noise = load("res://Shaders/Durability Noisemap.tres")
+		$Sprite2D.material.set_shader_parameter("noise_texture", noise)
+		$Sprite2D.material.get_shader_parameter("noise_texture").noise.seed = seed
 		
-		var new_specular = Colors.list[color_index][3]
-		get_node("Sprite2D").texture.set_specular_shininess(new_specular) #Set the shine level
+		if paintable == true:
+			var new_specular = Colors.list[color_index][3]
+			get_node("Sprite2D").texture.set_specular_shininess(new_specular) #Set the shine level
 
 
 

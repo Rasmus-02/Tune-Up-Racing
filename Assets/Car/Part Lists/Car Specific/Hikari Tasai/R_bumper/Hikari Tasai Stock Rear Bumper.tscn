@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://Assets/Car/Code/Part_scripts/R_bumper.gd" id="1_kesf3"]
 [ext_resource type="Texture2D" uid="uid://eig6xmke362h" path="res://Textures/Cars/Hikari Tasai/Rear bumper/Hikari Tasai Stock Rear Bumper.png" id="2_ol42t"]
-[ext_resource type="Shader" path="res://Shaders/Test/ColorSelector.gdshader" id="2_rkard"]
+[ext_resource type="Shader" path="res://Shaders/ColorSelector.gdshader" id="2_rkard"]
 [ext_resource type="Texture2D" uid="uid://ttpuwvghi26a" path="res://Textures/Cars/Hikari Tasai/Rear bumper/Hikari Tasai Stock Rear Bumper HM NM.png" id="3_h3uby"]
 [ext_resource type="Texture2D" uid="uid://6eu00nxqxahg" path="res://Textures/Cars/Hikari Tasai/Rear bumper/Hikari Tasai Stock Rear Bumper Spec.png" id="4_5xcgj"]
 

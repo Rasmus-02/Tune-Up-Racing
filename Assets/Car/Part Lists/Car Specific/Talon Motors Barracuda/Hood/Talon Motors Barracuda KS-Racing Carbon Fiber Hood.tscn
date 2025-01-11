@@ -1,7 +1,7 @@
 [gd_scene load_steps=8 format=3 uid="uid://buai1cmjf6u1x"]
 
 [ext_resource type="Script" path="res://Assets/Car/Code/Part_scripts/Hood.gd" id="1_5ylk4"]
-[ext_resource type="Shader" path="res://Shaders/Test/ColorSelector.gdshader" id="2_fc7m1"]
+[ext_resource type="Shader" path="res://Shaders/ColorSelector.gdshader" id="2_fc7m1"]
 [ext_resource type="Texture2D" uid="uid://0ytbbux5yqv7" path="res://Textures/Cars/Talon Motors Barracuda/Hood/Talon Motors Barracuda [KS-Racing] Carbon Fiber Hood.png" id="3_5djen"]
 [ext_resource type="Texture2D" uid="uid://bam11xcy6518x" path="res://Textures/Cars/Talon Motors Barracuda/Hood/Talon Motors Barracuda Hood NM.png" id="4_uavck"]
 [ext_resource type="Texture2D" uid="uid://ud5mv8bjw5ev" path="res://Textures/Cars/Talon Motors Barracuda/Hood/Talon Motors Barracuda [KS-Racing] Carbon Fiber Hood Spec.png" id="5_jlwdi"]

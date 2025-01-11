@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://Assets/Car/Code/Part_scripts/Hood.gd" id="1_640up"]
 [ext_resource type="Texture2D" uid="uid://bp1jgasusmjjl" path="res://Textures/Cars/Talon Motors Barracuda/Hood/Talon Motors Barracuda Vortex Hood.png" id="2_8d1u3"]
-[ext_resource type="Shader" path="res://Shaders/Test/ColorSelector.gdshader" id="2_fkrbg"]
+[ext_resource type="Shader" path="res://Shaders/ColorSelector.gdshader" id="2_fkrbg"]
 [ext_resource type="Texture2D" uid="uid://rbpp4k6ymvge" path="res://Textures/Cars/Talon Motors Barracuda/Hood/Talon Motors Barracuda Vortex Hood NM.png" id="3_8vxc7"]
 [ext_resource type="Texture2D" uid="uid://i5y3e5mpkg07" path="res://Textures/Cars/Talon Motors Barracuda/Hood/Talon Motors Barracuda Hood Spec.png" id="4_3auj7"]
 

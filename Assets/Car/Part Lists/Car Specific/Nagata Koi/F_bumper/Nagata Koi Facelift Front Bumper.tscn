@@ -1,7 +1,7 @@
 [gd_scene load_steps=10 format=3 uid="uid://djl6xrvfuu4r4"]
 
 [ext_resource type="Script" path="res://Assets/Car/Code/Part_scripts/F_Bumper.gd" id="1_navls"]
-[ext_resource type="Shader" path="res://Shaders/Test/ColorSelector.gdshader" id="2_flkgt"]
+[ext_resource type="Shader" path="res://Shaders/ColorSelector.gdshader" id="2_flkgt"]
 [ext_resource type="Texture2D" uid="uid://dkx7wv7j5gtvw" path="res://Textures/Cars/Nagata Koi/Front Bumper/Nagata Koi Facelift Front Bumper.png" id="3_tedsu"]
 [ext_resource type="Texture2D" uid="uid://d04t284wj7j3r" path="res://Textures/Cars/Nagata Koi/Front Bumper/Nagata Koi Facelift Front Bumper NM.png" id="4_j5hfw"]
 [ext_resource type="Texture2D" uid="uid://hikqqoq4nejj" path="res://Textures/Cars/Nagata Koi/Front Bumper/Nagata Koi Facelift Front Bumper Spec.png" id="5_sxfhr"]

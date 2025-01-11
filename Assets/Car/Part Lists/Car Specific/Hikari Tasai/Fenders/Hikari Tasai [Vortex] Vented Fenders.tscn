@@ -1,7 +1,7 @@
 [gd_scene load_steps=10 format=3 uid="uid://c5p1i1iav7jvl"]
 
 [ext_resource type="Script" path="res://Assets/Car/Code/Part_scripts/Fenders.gd" id="1_udmsx"]
-[ext_resource type="Shader" path="res://Shaders/Test/ColorSelector.gdshader" id="2_6wptw"]
+[ext_resource type="Shader" path="res://Shaders/ColorSelector.gdshader" id="2_6wptw"]
 [ext_resource type="Texture2D" uid="uid://ce0w8o42yv7k7" path="res://Textures/Cars/Hikari Tasai/Fenders/Hikari Tasai [Vortex] Vented Fenders.png" id="3_tyjnl"]
 [ext_resource type="Texture2D" uid="uid://bh18saf06o2yv" path="res://Textures/Cars/Hikari Tasai/Fenders/Hikari Tasai [Vortex] Vented Fenders NM.png" id="4_2q30s"]
 [ext_resource type="Texture2D" uid="uid://bh4xcuqmyy3qw" path="res://Textures/Cars/Hikari Tasai/Fenders/Hikari Tasai [Vortex] Vented Fenders Spec.png" id="5_0gnl8"]

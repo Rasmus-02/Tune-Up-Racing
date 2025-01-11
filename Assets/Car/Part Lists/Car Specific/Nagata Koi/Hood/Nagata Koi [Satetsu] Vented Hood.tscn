@@ -1,7 +1,7 @@
 [gd_scene load_steps=8 format=3 uid="uid://cw1lii7805xax"]
 
 [ext_resource type="Script" path="res://Assets/Car/Code/Part_scripts/Hood.gd" id="1_mvntj"]
-[ext_resource type="Shader" path="res://Shaders/Test/ColorSelector.gdshader" id="2_2n50m"]
+[ext_resource type="Shader" path="res://Shaders/ColorSelector.gdshader" id="2_2n50m"]
 [ext_resource type="Texture2D" uid="uid://c5jxrjirxnbye" path="res://Textures/Cars/Nagata Koi/Hood/Nagata Koi [Satetsu] Vented Hood.png" id="3_0c18u"]
 [ext_resource type="Texture2D" uid="uid://csp7ujyy8b72s" path="res://Textures/Cars/Nagata Koi/Hood/Nagata Koi [Satetsu] Vented Hood NM.png" id="4_mll3x"]
 [ext_resource type="Texture2D" uid="uid://drapoeydwo7t" path="res://Textures/Cars/Nagata Koi/Hood/Nagata Koi [Satetsu] Vented Hood Spec.png" id="5_1j2fj"]

@@ -1,14 +1,15 @@
-[gd_scene load_steps=10 format=3 uid="uid://beke6wo5xqhrh"]
+[gd_scene load_steps=12 format=3 uid="uid://beke6wo5xqhrh"]
 
 [ext_resource type="Script" path="res://Assets/Car/Code/Part_scripts/Chassi.gd" id="1_7k3hc"]
 [ext_resource type="Texture2D" uid="uid://c7ciifn2fk10b" path="res://Textures/Cars/Hikari Tasai/Chassi/Hikari Tasai Chassi.png" id="2_07d14"]
-[ext_resource type="Shader" path="res://Shaders/Test/ColorSelector.gdshader" id="2_34u44"]
+[ext_resource type="Shader" path="res://Shaders/ColorSelector.gdshader" id="2_gjtxi"]
 [ext_resource type="Texture2D" uid="uid://x5q1dljncttc" path="res://Textures/Cars/Hikari Tasai/Chassi/Hikari Tasai Chassi HM NM.png" id="3_hghf5"]
 [ext_resource type="PackedScene" uid="uid://df8db301x3awn" path="res://Assets/Car/Part Lists/Car Specific/Hikari Tasai/Windows/Hikari Tasai Windows.tscn" id="4_123jn"]
 [ext_resource type="Texture2D" uid="uid://chea4btj3tgqj" path="res://Textures/Cars/Hikari Tasai/Chassi/Hikari Tasai Chassi Spec.png" id="4_ktiim"]
+[ext_resource type="Texture2D" uid="uid://en4kny1emkih" path="res://Textures/Cars/Hikari Tasai/Chassi/Hikari Tasai Chassi Non Paintable.png" id="7_7big2"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_hor5o"]
-shader = ExtResource("2_34u44")
+shader = ExtResource("2_gjtxi")
 shader_parameter/import_new_color = Vector3(0.7, 0.05, 0.12)
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_uy0d4"]
@@ -19,6 +20,12 @@ specular_shininess = 0.5
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_eq7jf"]
 polygon = PackedVector2Array(35, -41, 40, -36, 95, -36, 98, -33, 100, -24, 101, -17, 101, 16, 100, 23.1, 98, 32, 95.6, 35, 40, 35, 35, 40, -94, 41, -107, 40, -112, 32, -113, 24, -113, -25, -112, -33, -107, -41, -94, -42)
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_h1vnt"]
+diffuse_texture = ExtResource("7_7big2")
+normal_texture = ExtResource("3_hghf5")
+specular_texture = ExtResource("4_ktiim")
+specular_shininess = 0.58
 
 [node name="Hikari Tasai Chassi" type="Node2D"]
 script = ExtResource("1_7k3hc")
@@ -45,6 +52,9 @@ visible = false
 occluder = SubResource("OccluderPolygon2D_eq7jf")
 
 [node name="Hikari Tasai Windows" parent="Sprite2D" instance=ExtResource("4_123jn")]
+
+[node name="Non Paintable" type="Sprite2D" parent="Sprite2D"]
+texture = SubResource("CanvasTexture_h1vnt")
 
 [node name="FL" type="Marker2D" parent="."]
 position = Vector2(65, -29)

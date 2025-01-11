@@ -1,7 +1,7 @@
 [gd_scene load_steps=10 format=3 uid="uid://dosvovbo7wn58"]
 
 [ext_resource type="Script" path="res://Assets/Car/Code/Part_scripts/F_Bumper.gd" id="1_84qgg"]
-[ext_resource type="Shader" path="res://Shaders/Test/ColorSelector.gdshader" id="2_cedji"]
+[ext_resource type="Shader" path="res://Shaders/ColorSelector.gdshader" id="2_cedji"]
 [ext_resource type="Texture2D" uid="uid://cpuqb2cmngpbs" path="res://Textures/Cars/Nagata Koi/Front Bumper/Nagata Koi Redline Front Bumper.png" id="3_1ao3n"]
 [ext_resource type="Texture2D" uid="uid://76xf6svqghun" path="res://Textures/Cars/Nagata Koi/Front Bumper/Nagata Koi Redline Front Bumper NM.png" id="4_15jhp"]
 [ext_resource type="Texture2D" uid="uid://purwja1lcmso" path="res://Textures/Cars/Nagata Koi/Front Bumper/Nagata Koi Redline Front Bumper Spec.png" id="5_vkgia"]

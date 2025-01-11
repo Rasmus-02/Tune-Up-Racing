@@ -1,7 +1,7 @@
 [gd_scene load_steps=9 format=3 uid="uid://sodv8kahop5s"]
 
 [ext_resource type="Script" path="res://Assets/Car/Code/Part_scripts/F_Bumper.gd" id="1_p0gns"]
-[ext_resource type="Shader" path="res://Shaders/Test/ColorSelector.gdshader" id="2_wb71y"]
+[ext_resource type="Shader" path="res://Shaders/ColorSelector.gdshader" id="2_wb71y"]
 [ext_resource type="Texture2D" uid="uid://cwn6gxrpmb88f" path="res://Textures/Cars/Hikari Tasai/Front Bumper/Hikari Tasai [Avalon] Front Bumper.png" id="3_5q6q6"]
 [ext_resource type="Texture2D" uid="uid://b48ywi3g0cdvb" path="res://Textures/Cars/Hikari Tasai/Front Bumper/Hikari Tasai [Avalon] Front Bumper NM.png" id="4_4t3no"]
 [ext_resource type="Texture2D" uid="uid://c8e2k1ps7dtvs" path="res://Textures/Cars/Hikari Tasai/Front Bumper/Hikari Tasai [Avalon] Front Bumper Spec.png" id="5_bk3i0"]

@@ -50,6 +50,7 @@ func load_car(dict):
 	var car = dict.car
 	var engine = dict.engine
 	var photo = dict.photo_settings
+	car["durability"] = dict.durability
 	car_node = car_display.get_node("Car")
 	car_node.load_car_from_algorithm(car)
 	car_node.engine.load_car_from_algorithm(engine)

@@ -1,7 +1,7 @@
 [gd_scene load_steps=10 format=3 uid="uid://delmmserwy3io"]
 
 [ext_resource type="Script" path="res://Assets/Car/Code/Part_scripts/R_bumper.gd" id="1_exc8w"]
-[ext_resource type="Shader" path="res://Shaders/Test/ColorSelector.gdshader" id="2_f05dp"]
+[ext_resource type="Shader" path="res://Shaders/ColorSelector.gdshader" id="2_f05dp"]
 [ext_resource type="Texture2D" uid="uid://daq4kuk31dvts" path="res://Textures/Cars/Nagata Koi/Rear Bumper/Nagata Koi [Avalon] Rear Bumper.png" id="3_jqytj"]
 [ext_resource type="Texture2D" uid="uid://dyq070wqcjx0m" path="res://Textures/Cars/Nagata Koi/Rear Bumper/Nagata Koi [Avalon] Rear Bumper NM.png" id="4_tct2x"]
 [ext_resource type="Texture2D" uid="uid://cg3y2w4kkhuu1" path="res://Textures/Cars/Nagata Koi/Rear Bumper/Nagata Koi [Avalon] Rear Bumper Spec.png" id="5_ql2l1"]

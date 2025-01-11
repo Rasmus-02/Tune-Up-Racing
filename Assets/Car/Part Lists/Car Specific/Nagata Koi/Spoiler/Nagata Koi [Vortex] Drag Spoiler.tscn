@@ -1,7 +1,7 @@
 [gd_scene load_steps=8 format=3 uid="uid://dt0g6ldaksda1"]
 
 [ext_resource type="Script" path="res://Assets/Car/Code/Part_scripts/Spoiler.gd" id="1_xwsnr"]
-[ext_resource type="Shader" path="res://Shaders/Test/ColorSelector.gdshader" id="2_ki407"]
+[ext_resource type="Shader" path="res://Shaders/ColorSelector.gdshader" id="2_ki407"]
 [ext_resource type="Texture2D" uid="uid://ctbkbuw5otsul" path="res://Textures/Cars/Nagata Koi/Spoiler/Nagata Koi [Vortex] Drag Spoiler.png" id="3_43wou"]
 [ext_resource type="Texture2D" uid="uid://bpfca6g4cgti8" path="res://Textures/Cars/Nagata Koi/Spoiler/Nagata Koi [Vortex] Drag Spoiler NM.png" id="4_12ivb"]
 [ext_resource type="Texture2D" uid="uid://cx1qd0lmcugpj" path="res://Textures/Cars/Nagata Koi/Spoiler/Nagata Koi [Vortex] Drag Spoiler Spec.png" id="5_3er2f"]

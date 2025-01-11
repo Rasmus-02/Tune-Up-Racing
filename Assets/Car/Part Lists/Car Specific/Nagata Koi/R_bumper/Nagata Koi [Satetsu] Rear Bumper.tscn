@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://Assets/Car/Code/Part_scripts/R_bumper.gd" id="1_olues"]
 [ext_resource type="Texture2D" uid="uid://bxn4r47w5vapb" path="res://Textures/Cars/Nagata Koi/Rear Bumper/Nagata Koi [Satetsu] Rear Bumper.png" id="2_74wyq"]
-[ext_resource type="Shader" path="res://Shaders/Test/ColorSelector.gdshader" id="2_np2hq"]
+[ext_resource type="Shader" path="res://Shaders/ColorSelector.gdshader" id="2_np2hq"]
 [ext_resource type="Texture2D" uid="uid://clwsx15att7rr" path="res://Textures/Cars/Nagata Koi/Rear Bumper/Nagata Koi [Satetsu] Rear Bumper NM.png" id="3_667s6"]
 [ext_resource type="Texture2D" uid="uid://cp8u16yba02p2" path="res://Textures/Cars/Nagata Koi/Rear Bumper/Nagata Koi [Satetsu] Rear Bumper Spec.png" id="4_iaf3y"]
 

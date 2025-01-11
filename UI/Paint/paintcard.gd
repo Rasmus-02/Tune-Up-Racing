@@ -12,7 +12,7 @@ func paint(paint_name, paint_color, requirement_text, color_index, unlocked):
 	
 	#Set Color
 	var new_material = ShaderMaterial.new()
-	var shader = load("res://Shaders/Test/ColorSelector.gdshader")
+	var shader = load("res://Shaders/Test/Paint_Durability.gdshader")
 	new_material.shader = shader
 	self.material = new_material
 	self.material.set_shader_parameter("import_new_color", paint_color)

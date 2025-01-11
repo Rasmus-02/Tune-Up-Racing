@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://Assets/Car/Code/Part_scripts/Hood.gd" id="1_a6vaq"]
 [ext_resource type="Texture2D" uid="uid://cgwjssuood78g" path="res://Textures/Cars/Hikari Tasai/Hood/Hikari Tasai Stock Hood.png" id="2_tpfdp"]
-[ext_resource type="Shader" path="res://Shaders/Test/ColorSelector.gdshader" id="2_ubeix"]
+[ext_resource type="Shader" path="res://Shaders/ColorSelector.gdshader" id="2_ubeix"]
 [ext_resource type="Texture2D" uid="uid://btdtaa5r0s1hr" path="res://Textures/Cars/Hikari Tasai/Hood/Hikari Tasai Stock Hood HM NM.png" id="3_c4p8o"]
 [ext_resource type="Texture2D" uid="uid://bp0ecsglo46p3" path="res://Textures/Cars/Hikari Tasai/Hood/Hikari Tasai Stock Hood Spec.png" id="4_8cl4h"]
 

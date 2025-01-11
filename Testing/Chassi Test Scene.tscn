@@ -1,0 +1,88 @@
+[gd_scene load_steps=18 format=3 uid="uid://bk04exbplhmm6"]
+
+[ext_resource type="Shader" path="res://Shaders/Test/Paint_Durability.gdshader" id="1_k18t5"]
+[ext_resource type="Texture2D" uid="uid://c7ciifn2fk10b" path="res://Textures/Cars/Hikari Tasai/Chassi/Hikari Tasai Chassi.png" id="2_lv6da"]
+[ext_resource type="Texture2D" uid="uid://ckxnrgjraorfa" path="res://Shaders/Durability Noisemap.tres" id="2_mjy3j"]
+[ext_resource type="Texture2D" uid="uid://x5q1dljncttc" path="res://Textures/Cars/Hikari Tasai/Chassi/Hikari Tasai Chassi HM NM.png" id="3_46a6g"]
+[ext_resource type="Texture2D" uid="uid://chea4btj3tgqj" path="res://Textures/Cars/Hikari Tasai/Chassi/Hikari Tasai Chassi Spec.png" id="4_s8evb"]
+[ext_resource type="Texture2D" uid="uid://en4kny1emkih" path="res://Textures/Cars/Hikari Tasai/Chassi/Hikari Tasai Chassi Non Paintable.png" id="5_el3rp"]
+[ext_resource type="Script" path="res://Levels/Lighting.gd" id="5_hb1vn"]
+[ext_resource type="Texture2D" uid="uid://bhoyfxjbxos8" path="res://Textures/Cars/Nagata Koi/Hood/Nagata Koi KS_Racing Carbon Fiber Hood.png" id="5_sojya"]
+[ext_resource type="Texture2D" uid="uid://cf1iawux7iwxv" path="res://Textures/Cars/Nagata Koi/Hood/Nagata Koi Stock Hood NM.png" id="6_jbggo"]
+[ext_resource type="Texture2D" uid="uid://ov8dndh4twha" path="res://Textures/Cars/Nagata Koi/Hood/Nagata Koi KS_Racing Carbon Fiber Hood Spec.png" id="7_2rom2"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_iycyy"]
+shader = ExtResource("1_k18t5")
+shader_parameter/sensitivity = 0.0
+shader_parameter/material_type = 0
+shader_parameter/import_new_color = Vector3(0.495, 0.56, 0.245)
+shader_parameter/noise_texture = ExtResource("2_mjy3j")
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_f6oju"]
+diffuse_texture = ExtResource("2_lv6da")
+normal_texture = ExtResource("3_46a6g")
+specular_texture = ExtResource("4_s8evb")
+specular_shininess = 0.3
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_qkvjj"]
+diffuse_texture = ExtResource("5_el3rp")
+normal_texture = ExtResource("3_46a6g")
+specular_texture = ExtResource("4_s8evb")
+specular_shininess = 0.58
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_lfjsy"]
+shader = ExtResource("1_k18t5")
+shader_parameter/sensitivity = 0.0
+shader_parameter/material_type = 5
+shader_parameter/import_new_color = null
+shader_parameter/noise_texture = ExtResource("2_mjy3j")
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_3f731"]
+diffuse_texture = ExtResource("5_sojya")
+normal_texture = ExtResource("6_jbggo")
+specular_texture = ExtResource("7_2rom2")
+specular_shininess = 0.54
+
+[sub_resource type="Gradient" id="Gradient_ragll"]
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_lxnn0"]
+gradient = SubResource("Gradient_ragll")
+width = 1
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Car" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_iycyy")
+texture = SubResource("CanvasTexture_f6oju")
+
+[node name="Non Paintable" type="Sprite2D" parent="Car"]
+texture = SubResource("CanvasTexture_qkvjj")
+
+[node name="Test" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_lfjsy")
+texture = SubResource("CanvasTexture_3f731")
+
+[node name="Lighting" type="Node2D" parent="."]
+position = Vector2(-19.6553, -13.5771)
+script = ExtResource("5_hb1vn")
+Type = "Lamp"
+
+[node name="Level visibility" type="CanvasModulate" parent="Lighting"]
+position = Vector2(-115.445, 353.001)
+scale = Vector2(4.88201, 1.13008)
+skew = 1.26391
+color = Color(0.0392157, 0.113725, 0.172549, 1)
+
+[node name="Sun" type="PointLight2D" parent="Lighting"]
+position = Vector2(89.6879, 849.566)
+rotation = 1.5708
+scale = Vector2(10000, 10000)
+color = Color(1, 0.984314, 0.964706, 1)
+range_z_min = -4096
+range_z_max = 4096
+shadow_filter_smooth = 0.5
+shadow_item_cull_mask = 2
+texture = SubResource("GradientTexture1D_lxnn0")
+texture_scale = 50.0
+height = 10000.0

@@ -1,7 +1,7 @@
 [gd_scene load_steps=8 format=3 uid="uid://dmcosgy1km3n6"]
 
 [ext_resource type="Script" path="res://Assets/Car/Code/Part_scripts/Spoiler.gd" id="1_vqn8e"]
-[ext_resource type="Shader" path="res://Shaders/Test/ColorSelector.gdshader" id="2_q14bm"]
+[ext_resource type="Shader" path="res://Shaders/ColorSelector.gdshader" id="2_q14bm"]
 [ext_resource type="Texture2D" uid="uid://dny21upshx47m" path="res://Textures/Cars/Hikari Tasai/Spoiler/Hikari Tasai [Satetsu] Spoiler.png" id="3_ah3d8"]
 [ext_resource type="Texture2D" uid="uid://dcpy4lbfi35ib" path="res://Textures/Cars/Hikari Tasai/Spoiler/Hikari Tasai [Satetsu] Spoiler NM.png" id="4_e3a6m"]
 [ext_resource type="Texture2D" uid="uid://b1dvb1qmj8bwx" path="res://Textures/Cars/Hikari Tasai/Spoiler/Hikari Tasai [Satetsu] Spoiler Spec.png" id="5_jiiiu"]

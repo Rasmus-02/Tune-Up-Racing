@@ -1,7 +1,7 @@
 [gd_scene load_steps=9 format=3 uid="uid://k2snucjplit6"]
 
 [ext_resource type="Script" path="res://Assets/Car/Code/Part_scripts/R_bumper.gd" id="1_baf1b"]
-[ext_resource type="Shader" path="res://Shaders/Test/ColorSelector.gdshader" id="2_v7ekg"]
+[ext_resource type="Shader" path="res://Shaders/ColorSelector.gdshader" id="2_v7ekg"]
 [ext_resource type="Texture2D" uid="uid://bcjfhlftspnv0" path="res://Textures/Cars/Hikari Tasai/Rear bumper/Hikari Tasai [Niepa] Rear Bumper.png" id="3_2k7d5"]
 [ext_resource type="Texture2D" uid="uid://b7dq336mk22om" path="res://Textures/Cars/Hikari Tasai/Rear bumper/Hikari Tasai [Niepa] Rear Bumper NM.png" id="4_3bglg"]
 [ext_resource type="Texture2D" uid="uid://ckc4xnmsvgwhv" path="res://Textures/Cars/Hikari Tasai/Rear bumper/Hikari Tasai [Niepa] Rear Bumper Spec.png" id="5_q8tjr"]

@@ -1,7 +1,7 @@
 [gd_scene load_steps=8 format=3 uid="uid://1gdyqcakn2tj"]
 
 [ext_resource type="Script" path="res://Assets/Car/Code/Part_scripts/Mirrors.gd" id="1_yfqgt"]
-[ext_resource type="Shader" path="res://Shaders/Test/ColorSelector.gdshader" id="2_11du1"]
+[ext_resource type="Shader" path="res://Shaders/ColorSelector.gdshader" id="2_11du1"]
 [ext_resource type="Texture2D" uid="uid://bpwbkpxo4fm7b" path="res://Textures/Cars/Talon Motors Barracuda/Mirrors/Talon Motors Barracuda [Niepa] Mirrors.png" id="3_hfwwm"]
 [ext_resource type="Texture2D" uid="uid://cq8as8hqrogq2" path="res://Textures/Cars/Talon Motors Barracuda/Mirrors/Talon Motors Barracuda [Niepa] Mirrors NM.png" id="4_40ysa"]
 [ext_resource type="Texture2D" uid="uid://bpcn71tc5016g" path="res://Textures/Cars/Talon Motors Barracuda/Mirrors/Talon Motors Barracuda [Niepa] Mirrors Spec.png" id="5_dlump"]

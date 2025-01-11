@@ -1,14 +1,15 @@
-[gd_scene load_steps=11 format=3 uid="uid://dt5qsqb2c2tl7"]
+[gd_scene load_steps=13 format=3 uid="uid://dt5qsqb2c2tl7"]
 
 [ext_resource type="Script" path="res://Assets/Car/Code/Part_scripts/Chassi.gd" id="1_ssgqi"]
 [ext_resource type="Texture2D" uid="uid://bm8fuf2c0k343" path="res://Textures/Cars/Talon Motors Barracuda/Chassi/Talon Motors Barracuda Chassi.png" id="2_2cimo"]
-[ext_resource type="Shader" path="res://Shaders/Test/ColorSelector.gdshader" id="2_l6sfr"]
+[ext_resource type="Shader" path="res://Shaders/ColorSelector.gdshader" id="2_8etj0"]
 [ext_resource type="Texture2D" uid="uid://bn4ed3nokt6p4" path="res://Textures/Cars/Talon Motors Barracuda/Chassi/Talon Motors Barracuda Chassi NM.png" id="3_yadfe"]
 [ext_resource type="Texture2D" uid="uid://btsdn4t2k4xw7" path="res://Textures/Cars/Talon Motors Barracuda/Chassi/Talon Motors Barracuda Chassi Spec.png" id="4_d7pcj"]
 [ext_resource type="PackedScene" uid="uid://dbv4vycepvlj2" path="res://Assets/Car/Part Lists/Car Specific/Talon Motors Barracuda/Windows/Talon Motors Barracuda Windows.tscn" id="6_jts23"]
+[ext_resource type="Texture2D" uid="uid://jb0u0atd0uc3" path="res://Textures/Cars/Talon Motors Barracuda/Chassi/Talon Motors Barracuda Chassi non paintable.png" id="7_qnkvt"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_ja0mo"]
-shader = ExtResource("2_l6sfr")
+shader = ExtResource("2_8etj0")
 shader_parameter/import_new_color = null
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_uy0d4"]
@@ -22,6 +23,12 @@ blend_mode = 1
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_wh2v0"]
 polygon = PackedVector2Array(-57.0884, -41.6985, -15.0884, -41.6985, 7.9116, -39.6985, 60.9116, -39.6985, 62.9116, -37.6985, 110.912, -37.6985, 118.912, -35.6985, 126.912, -28.6985, 126.912, -32.6985, 129.912, -32.6985, 132.912, -26.6985, 135.912, -18.6985, 136.912, -14.6985, 136.912, 18.3015, 135.912, 22.3015, 132.912, 30.3015, 129.912, 36.3015, 126.912, 36.3015, 126.912, 32.3015, 118.912, 39.3015, 110.912, 41.3015, 62.9116, 41.3015, 60.9116, 43.3015, 7.9116, 43.3015, -3.0884, 44.3015, -15.0884, 45.3015, -57.0884, 45.3015, -76.0884, 41.3015, -82.0884, 39.3015, -84.0884, 37.3015, -84.0884, 29.3015, -83.0884, 29.3015, -83.0884, -25.6985, -84.0884, -25.6985, -84.0884, -33.6985, -82.0884, -35.6985, -76.0884, -37.6985)
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_73age"]
+diffuse_texture = ExtResource("7_qnkvt")
+normal_texture = ExtResource("3_yadfe")
+specular_texture = ExtResource("4_d7pcj")
+specular_shininess = 0.58
 
 [node name="Talon Motors Barracuda Chassi" type="Node2D"]
 script = ExtResource("1_ssgqi")
@@ -49,6 +56,9 @@ position = Vector2(-29.9116, -2.30154)
 occluder = SubResource("OccluderPolygon2D_wh2v0")
 
 [node name="Talon Motors Barracuda Windows" parent="Sprite2D" instance=ExtResource("6_jts23")]
+
+[node name="Non Paintable" type="Sprite2D" parent="Sprite2D"]
+texture = SubResource("CanvasTexture_73age")
 
 [node name="FL" type="Marker2D" parent="."]
 position = Vector2(61, -30)
