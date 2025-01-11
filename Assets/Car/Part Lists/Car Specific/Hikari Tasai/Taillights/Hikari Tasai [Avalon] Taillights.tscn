@@ -20,6 +20,7 @@ light_mode = 1
 [node name="Hikari Tasai [Avalon] Taillights" type="Node2D"]
 script = ExtResource("1_6fphn")
 rarity = "rare"
+part_material = 4
 Car_ID = 2
 Part_Number = 3
 description = "Aftermarket taillights for the Hikari Tasai, designed by Avalon"

@@ -1,13 +1,13 @@
 [gd_scene load_steps=10 format=3 uid="uid://c5p1i1iav7jvl"]
 
 [ext_resource type="Script" path="res://Assets/Car/Code/Part_scripts/Fenders.gd" id="1_udmsx"]
-[ext_resource type="Shader" path="res://Shaders/ColorSelector.gdshader" id="2_6wptw"]
+[ext_resource type="Shader" path="res://Shaders/ColorSelector.gdshader" id="2_httkw"]
 [ext_resource type="Texture2D" uid="uid://ce0w8o42yv7k7" path="res://Textures/Cars/Hikari Tasai/Fenders/Hikari Tasai [Vortex] Vented Fenders.png" id="3_tyjnl"]
 [ext_resource type="Texture2D" uid="uid://bh18saf06o2yv" path="res://Textures/Cars/Hikari Tasai/Fenders/Hikari Tasai [Vortex] Vented Fenders NM.png" id="4_2q30s"]
 [ext_resource type="Texture2D" uid="uid://bh4xcuqmyy3qw" path="res://Textures/Cars/Hikari Tasai/Fenders/Hikari Tasai [Vortex] Vented Fenders Spec.png" id="5_0gnl8"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_7p8p5"]
-shader = ExtResource("2_6wptw")
+shader = ExtResource("2_httkw")
 shader_parameter/import_new_color = null
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_37acp"]
@@ -24,6 +24,7 @@ polygon = PackedVector2Array(101, 33, 101, 34, 99, 36, 93.3, 39, 79.1, 41, 51, 4
 [node name="Hikari Tasai [Vortex] Fenders" type="Node2D"]
 script = ExtResource("1_udmsx")
 rarity = "uncommon"
+part_material = 4
 Car_ID = 2
 Part_Number = 2
 description = "Aftermarket fenders for the Hikari Tasai. Designed by Vortex"

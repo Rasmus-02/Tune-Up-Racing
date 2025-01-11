@@ -17,6 +17,7 @@ specular_shininess = 0.65
 [node name="Nagata Koi [Redline] Exhaust" type="Node2D"]
 script = ExtResource("1_cn8ww")
 rarity = "rare"
+part_material = 1
 Part_Number = 4
 description = "A high performance exhaust system designed by Redline, for the Nagata Koi."
 price = 800

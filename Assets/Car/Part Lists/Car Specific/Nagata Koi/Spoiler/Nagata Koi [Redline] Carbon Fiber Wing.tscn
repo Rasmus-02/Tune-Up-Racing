@@ -14,6 +14,7 @@ specular_shininess = 0.5
 [node name="Nagata Koi [Redline] Wing" type="Node2D"]
 script = ExtResource("1_4482p")
 rarity = "epic"
+part_material = 5
 Part_Number = 4
 description = "A large carbon fiber wing by Redline for the Nagata Koi, designed to generate as much downforce as possible and keep the car firmly planted at all times, the downside is that it also generates a lot of drag"
 paintable = false

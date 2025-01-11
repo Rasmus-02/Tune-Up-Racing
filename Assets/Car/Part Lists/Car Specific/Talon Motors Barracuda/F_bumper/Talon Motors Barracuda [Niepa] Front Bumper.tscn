@@ -1,13 +1,13 @@
 [gd_scene load_steps=10 format=3 uid="uid://ce6njw66hj3l8"]
 
 [ext_resource type="Script" path="res://Assets/Car/Code/Part_scripts/F_Bumper.gd" id="1_kehle"]
-[ext_resource type="Shader" path="res://Shaders/ColorSelector.gdshader" id="2_nlksi"]
+[ext_resource type="Shader" path="res://Shaders/ColorSelector.gdshader" id="2_molui"]
 [ext_resource type="Texture2D" uid="uid://c67dv600kag3h" path="res://Textures/Cars/Talon Motors Barracuda/Front Bumper/Talon Motors Barracuda [Niepa] F_Bumper.png" id="3_e0hcd"]
 [ext_resource type="Texture2D" uid="uid://cscvj1x1wf305" path="res://Textures/Cars/Talon Motors Barracuda/Front Bumper/Talon Motors Barracuda [Niepa] F_Bumper HM2 NM.png" id="4_1qp2g"]
 [ext_resource type="Texture2D" uid="uid://b0ewf3g84k64h" path="res://Textures/Cars/Talon Motors Barracuda/Front Bumper/Talon Motors Barracuda [Niepa] F_Bumper Spec.png" id="5_m2k7w"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_yi46f"]
-shader = ExtResource("2_nlksi")
+shader = ExtResource("2_molui")
 shader_parameter/import_new_color = null
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_0hbqo"]
@@ -25,6 +25,7 @@ polygon = PackedVector2Array(143.912, 17.3015, 140.912, 24.3015, 141.912, 28.301
 [node name="Talon Motors Barracuda [Niepa] Front Bumper" type="Node2D"]
 script = ExtResource("1_kehle")
 rarity = "epic"
+part_material = 4
 Car_ID = 1
 Part_Number = 4
 description = "A Frontbumper and lip combo developed by Niepa for the Talon Motors Barracuda to improve high speed handling and cooling"

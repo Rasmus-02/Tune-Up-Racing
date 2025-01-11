@@ -1,13 +1,13 @@
 [gd_scene load_steps=11 format=3 uid="uid://ciwmf7xhix00e"]
 
 [ext_resource type="Script" path="res://Assets/Car/Code/Part_scripts/Fenders.gd" id="1_mrnyt"]
-[ext_resource type="Shader" path="res://Shaders/ColorSelector.gdshader" id="2_gnaqx"]
+[ext_resource type="Shader" path="res://Shaders/ColorSelector.gdshader" id="2_cm5x5"]
 [ext_resource type="Texture2D" uid="uid://dgv71k14dh0w1" path="res://Textures/Cars/Nagata Koi/Fenders/Nagata Koi [KS-Racing] Widebody Fenders.png" id="3_4fsgg"]
 [ext_resource type="Texture2D" uid="uid://bqovjyj8u1qsx" path="res://Textures/Cars/Nagata Koi/Fenders/Nagata Koi [KS-Racing] Widebody Fenders NM.png" id="4_wlswj"]
 [ext_resource type="Texture2D" uid="uid://b335ir3xqjkw8" path="res://Textures/Cars/Nagata Koi/Fenders/Nagata Koi [KS-Racing] Widebody Fenders Spec.png" id="5_ygodn"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_xkdlp"]
-shader = ExtResource("2_gnaqx")
+shader = ExtResource("2_cm5x5")
 shader_parameter/import_new_color = null
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_vufhm"]
@@ -28,6 +28,7 @@ polygon = PackedVector2Array(-56.0884, -41.6985, -55.0884, -42.6985, -24.0884, -
 [node name="Nagata Koi [KS-Racing] Carbon Fiber Widebody Fenders" type="Node2D"]
 script = ExtResource("1_mrnyt")
 rarity = "epic"
+part_material = 5
 Part_Number = 5
 description = "Lightweight carbon fiber widebody fenders for the Nagata Koi designed by KS-Racing
 "

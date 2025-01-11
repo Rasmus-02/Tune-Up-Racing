@@ -2,12 +2,12 @@
 
 [ext_resource type="Script" path="res://Assets/Car/Code/Part_scripts/Hood.gd" id="1_upur7"]
 [ext_resource type="Texture2D" uid="uid://o0cjdlsdrgkt" path="res://Textures/Cars/Nagata Koi/Hood/Nagata Koi Stock Hood.png" id="2_abyse"]
-[ext_resource type="Shader" path="res://Shaders/ColorSelector.gdshader" id="2_qdnvi"]
+[ext_resource type="Shader" path="res://Shaders/ColorSelector.gdshader" id="2_nvbq2"]
 [ext_resource type="Texture2D" uid="uid://cf1iawux7iwxv" path="res://Textures/Cars/Nagata Koi/Hood/Nagata Koi Stock Hood NM.png" id="3_xdam0"]
 [ext_resource type="Texture2D" uid="uid://bbnqwpq15xp52" path="res://Textures/Cars/Nagata Koi/Hood/Nagata Koi Stock Hood Spec.png" id="4_fot2e"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_pj7bn"]
-shader = ExtResource("2_qdnvi")
+shader = ExtResource("2_nvbq2")
 shader_parameter/import_new_color = null
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_hjvi5"]

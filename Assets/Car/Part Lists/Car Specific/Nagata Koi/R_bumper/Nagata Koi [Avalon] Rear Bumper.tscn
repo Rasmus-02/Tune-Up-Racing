@@ -1,13 +1,13 @@
 [gd_scene load_steps=10 format=3 uid="uid://delmmserwy3io"]
 
 [ext_resource type="Script" path="res://Assets/Car/Code/Part_scripts/R_bumper.gd" id="1_exc8w"]
-[ext_resource type="Shader" path="res://Shaders/ColorSelector.gdshader" id="2_f05dp"]
+[ext_resource type="Shader" path="res://Shaders/ColorSelector.gdshader" id="2_do8a6"]
 [ext_resource type="Texture2D" uid="uid://daq4kuk31dvts" path="res://Textures/Cars/Nagata Koi/Rear Bumper/Nagata Koi [Avalon] Rear Bumper.png" id="3_jqytj"]
 [ext_resource type="Texture2D" uid="uid://dyq070wqcjx0m" path="res://Textures/Cars/Nagata Koi/Rear Bumper/Nagata Koi [Avalon] Rear Bumper NM.png" id="4_tct2x"]
 [ext_resource type="Texture2D" uid="uid://cg3y2w4kkhuu1" path="res://Textures/Cars/Nagata Koi/Rear Bumper/Nagata Koi [Avalon] Rear Bumper Spec.png" id="5_ql2l1"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_a4wir"]
-shader = ExtResource("2_f05dp")
+shader = ExtResource("2_do8a6")
 shader_parameter/import_new_color = null
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_r5f60"]
@@ -25,6 +25,7 @@ polygon = PackedVector2Array(-56.0884, -39.6985, -68.0884, -39.6985, -72.0884, -
 [node name="Nagata Koi [Avalon] Rear Bumper" type="Node2D"]
 script = ExtResource("1_exc8w")
 rarity = "rare"
+part_material = 4
 Part_Number = 5
 description = "A rear bumper with a huge diffuser mounted to it for greatly improved downforce. Designed for the Nagata Koi by the British racing team Avalon"
 price = 950

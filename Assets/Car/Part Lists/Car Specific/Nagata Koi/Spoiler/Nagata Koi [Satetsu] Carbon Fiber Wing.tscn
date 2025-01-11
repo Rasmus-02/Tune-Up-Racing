@@ -14,6 +14,7 @@ specular_shininess = 0.5
 [node name="Nagata Koi [Satetsu] Wing" type="Node2D"]
 script = ExtResource("1_6gblc")
 rarity = "epic"
+part_material = 5
 Part_Number = 5
 description = "A double decker carbon fiber wing by Satetsu for the Nagata Koi, designed to generate as much downforce as possible without too much additional drag."
 paintable = false

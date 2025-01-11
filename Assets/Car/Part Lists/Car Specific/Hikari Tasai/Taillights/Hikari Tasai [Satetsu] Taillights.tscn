@@ -20,6 +20,7 @@ light_mode = 1
 [node name="Hikari Tasai [Satetsu] Taillights" type="Node2D"]
 script = ExtResource("1_duq5t")
 rarity = "epic"
+part_material = 4
 Car_ID = 2
 Part_Number = 5
 description = "Aftermarket taillights for the Hikari Tasai, designed by Satetsu"

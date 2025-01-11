@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://cwhnmm73teorw" path="res://Textures/Cars/Talon Motors Barracuda/Taillights/Talon Motors Barracuda Taillights.png" id="2_e62vs"]
 [ext_resource type="Texture2D" uid="uid://bm32wvyvjh4tw" path="res://Textures/Cars/Talon Motors Barracuda/Taillights/Talon Motors Barracuda Taillights NM.png" id="3_q2pi6"]
 [ext_resource type="Texture2D" uid="uid://d1i1ru4aa5eca" path="res://Textures/Cars/Talon Motors Barracuda/Taillights/Talon Motors Barracuda Taillights Spec.png" id="4_7e6tb"]
-[ext_resource type="Texture2D" uid="uid://do1rlhsyaf2sv" path="res://Textures/Cars/Talon Motors Barracuda/Taillights/mask/Talon Motors Barracuda Taillights Lightmask.png" id="5_eo80o"]
+[ext_resource type="Texture2D" uid="uid://gsvky3j0427b" path="res://Textures/Cars/Talon Motors Barracuda/Taillights/mask/Talon Motors Barracuda Taillights Lightmask.png" id="5_eo80o"]
 [ext_resource type="PackedScene" uid="uid://ceb752tulxcv" path="res://Shaders/taillights.tscn" id="6_vodyl"]
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_5na48"]
@@ -20,6 +20,7 @@ light_mode = 1
 [node name="Talon Motors Barracuda Stock Taillights" type="Node2D"]
 script = ExtResource("1_hcgab")
 rarity = "rare"
+part_material = 4
 Car_ID = 1
 Part_Number = 1
 description = "The factory taillights for the Talon Motors Barracuda"

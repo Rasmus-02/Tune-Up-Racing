@@ -1,16 +1,11 @@
-[gd_scene load_steps=11 format=3 uid="uid://dkkw8yqip52bx"]
+[gd_scene load_steps=9 format=3 uid="uid://dkkw8yqip52bx"]
 
 [ext_resource type="Script" path="res://Assets/Car/Code/Part_scripts/Headlights.gd" id="1_pm3mo"]
-[ext_resource type="Shader" path="res://Shaders/ColorSelector.gdshader" id="2_vu80e"]
 [ext_resource type="Texture2D" uid="uid://di5icq3qtn3jb" path="res://Textures/Cars/Talon Motors Barracuda/Headlights/Talon Motors Barracuda [Satetsu] Headlights.png" id="3_dsfbm"]
 [ext_resource type="Texture2D" uid="uid://dukdnsv1dippa" path="res://Textures/Cars/Talon Motors Barracuda/Headlights/Talon Motors Barracuda [Satetsu] Headlights NM.png" id="4_h75lu"]
 [ext_resource type="Texture2D" uid="uid://bn4thli7yrl2d" path="res://Textures/Cars/Talon Motors Barracuda/Headlights/Talon Motors Barracuda [Satetsu] Headlights Spec.png" id="5_qpk0f"]
 [ext_resource type="Texture2D" uid="uid://4e2qorprh423" path="res://Textures/Cars/Talon Motors Barracuda/Headlights/Talon Motors Barracuda [Satetsu] Headlights Lightmask.png" id="6_u4aex"]
 [ext_resource type="PackedScene" uid="uid://brbx33n7duy1v" path="res://Shaders/headlights.tscn" id="7_1v3m6"]
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_d2vgq"]
-shader = ExtResource("2_vu80e")
-shader_parameter/import_new_color = null
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_ma2ib"]
 diffuse_texture = ExtResource("3_dsfbm")
@@ -25,6 +20,7 @@ light_mode = 1
 [node name="Talon Motors Barracuda [Satetsu] Headlights" type="Node2D"]
 script = ExtResource("1_pm3mo")
 rarity = "epic"
+part_material = 4
 Car_ID = 1
 Part_Number = 4
 description = "Aftermarket headlights for the Talon Motors Barracuda, designed by Satetsu"
@@ -34,7 +30,6 @@ weight = 3
 drag = 0.02
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-material = SubResource("ShaderMaterial_d2vgq")
 texture = SubResource("CanvasTexture_ma2ib")
 
 [node name="Lightmask" type="Sprite2D" parent="Sprite2D"]

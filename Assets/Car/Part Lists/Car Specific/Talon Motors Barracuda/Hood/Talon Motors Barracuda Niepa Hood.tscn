@@ -1,13 +1,13 @@
 [gd_scene load_steps=8 format=3 uid="uid://dp58ikrovdb3s"]
 
 [ext_resource type="Script" path="res://Assets/Car/Code/Part_scripts/Hood.gd" id="1_djfh3"]
-[ext_resource type="Shader" path="res://Shaders/ColorSelector.gdshader" id="2_fp74o"]
+[ext_resource type="Shader" path="res://Shaders/ColorSelector.gdshader" id="2_jeg0l"]
 [ext_resource type="Texture2D" uid="uid://2f2ufxhc6sji" path="res://Textures/Cars/Talon Motors Barracuda/Hood/Talon Motors Barracuda Niepa Hood.png" id="3_uh8i0"]
 [ext_resource type="Texture2D" uid="uid://cv02hcdjrpc1h" path="res://Textures/Cars/Talon Motors Barracuda/Hood/Talon Motors Barracuda Niepa Hood NM.png" id="4_xs0ue"]
 [ext_resource type="Texture2D" uid="uid://dcp0yi2luu71g" path="res://Textures/Cars/Talon Motors Barracuda/Hood/Talon Motors Barracuda Niepa Hood Spec.png" id="5_kivhe"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_ouqxx"]
-shader = ExtResource("2_fp74o")
+shader = ExtResource("2_jeg0l")
 shader_parameter/import_new_color = null
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_hjvi5"]

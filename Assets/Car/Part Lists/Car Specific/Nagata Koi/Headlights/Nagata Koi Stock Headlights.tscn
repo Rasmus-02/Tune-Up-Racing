@@ -1,16 +1,11 @@
-[gd_scene load_steps=11 format=3 uid="uid://cparch1bev7pm"]
+[gd_scene load_steps=9 format=3 uid="uid://cparch1bev7pm"]
 
 [ext_resource type="Script" path="res://Assets/Car/Code/Part_scripts/Headlights.gd" id="1_tyasp"]
-[ext_resource type="Shader" path="res://Shaders/ColorSelector.gdshader" id="2_8hkya"]
 [ext_resource type="Texture2D" uid="uid://d1cumodsmrxgl" path="res://Textures/Cars/Nagata Koi/Headlights/Nagata Koi Stock Headlights.png" id="2_e0erx"]
 [ext_resource type="Texture2D" uid="uid://cikhlvpxivh1d" path="res://Textures/Cars/Nagata Koi/Headlights/Nagata Koi Stock Headlights NM.png" id="3_hevsg"]
 [ext_resource type="Texture2D" uid="uid://ck4yt03ulukdx" path="res://Textures/Cars/Nagata Koi/Headlights/Nagata Koi Stock Headlights Spec.png" id="4_ut1ro"]
 [ext_resource type="PackedScene" uid="uid://brbx33n7duy1v" path="res://Shaders/headlights.tscn" id="5_is3g1"]
 [ext_resource type="Texture2D" uid="uid://drwhjwv5wga5k" path="res://Textures/Cars/Nagata Koi/Headlights/Nagata Koi Stock Headlights Lightmask.png" id="6_jkjlf"]
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_7wf7g"]
-shader = ExtResource("2_8hkya")
-shader_parameter/import_new_color = null
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_ma2ib"]
 diffuse_texture = ExtResource("2_e0erx")
@@ -25,6 +20,7 @@ light_mode = 1
 [node name="Nagata Koi Stock Headlights" type="Node2D"]
 script = ExtResource("1_tyasp")
 rarity = "uncommon"
+part_material = 2
 Part_Number = 1
 description = "The factory headlights for the Nagata Koi"
 paintable = false
@@ -33,7 +29,6 @@ weight = 5
 drag = 0.01
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-material = SubResource("ShaderMaterial_7wf7g")
 texture = SubResource("CanvasTexture_ma2ib")
 vframes = 2
 

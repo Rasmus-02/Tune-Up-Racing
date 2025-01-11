@@ -20,6 +20,7 @@ light_mode = 1
 [node name="Hikari Tasai [Redline] Taillights" type="Node2D"]
 script = ExtResource("1_odf53")
 rarity = "rare"
+part_material = 4
 Car_ID = 2
 Part_Number = 4
 description = "Aftermarket taillights for the Hikari Tasai, designed by Redline"

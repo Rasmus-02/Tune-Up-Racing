@@ -1,13 +1,13 @@
 [gd_scene load_steps=10 format=3 uid="uid://bm3sv27gn2hc4"]
 
 [ext_resource type="Script" path="res://Assets/Car/Code/Part_scripts/F_Bumper.gd" id="1_j8t0d"]
-[ext_resource type="Shader" path="res://Shaders/ColorSelector.gdshader" id="2_dbvpf"]
+[ext_resource type="Shader" path="res://Shaders/ColorSelector.gdshader" id="2_5lifq"]
 [ext_resource type="Texture2D" uid="uid://pwvrlrsxhpak" path="res://Textures/Cars/Nagata Koi/Front Bumper/Nagata Koi Stock Front Bumper.png" id="2_qu2it"]
 [ext_resource type="Texture2D" uid="uid://d14d2boxivq23" path="res://Textures/Cars/Nagata Koi/Front Bumper/Nagata Koi Stock Front Bumper NM.png" id="3_ihron"]
 [ext_resource type="Texture2D" uid="uid://bem7aax7yv3n6" path="res://Textures/Cars/Nagata Koi/Front Bumper/Nagata Koi Stock Front Bumper Spec.png" id="4_3kbna"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_41cmf"]
-shader = ExtResource("2_dbvpf")
+shader = ExtResource("2_5lifq")
 shader_parameter/import_new_color = null
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_0hbqo"]
@@ -25,6 +25,7 @@ polygon = PackedVector2Array(132.912, 22.3015, 132.912, -18.6985, 129.912, -27.6
 [node name="Nagata Koi Stock Front Bumper" type="Node2D"]
 script = ExtResource("1_j8t0d")
 rarity = "uncommon"
+part_material = 4
 Part_Number = 1
 description = "The factory front bumper for the Nagata Koi"
 price = 250

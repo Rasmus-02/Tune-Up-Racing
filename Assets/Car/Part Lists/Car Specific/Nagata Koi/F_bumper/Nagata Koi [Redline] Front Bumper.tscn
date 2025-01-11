@@ -1,13 +1,13 @@
 [gd_scene load_steps=10 format=3 uid="uid://dosvovbo7wn58"]
 
 [ext_resource type="Script" path="res://Assets/Car/Code/Part_scripts/F_Bumper.gd" id="1_84qgg"]
-[ext_resource type="Shader" path="res://Shaders/ColorSelector.gdshader" id="2_cedji"]
+[ext_resource type="Shader" path="res://Shaders/ColorSelector.gdshader" id="2_ewm6h"]
 [ext_resource type="Texture2D" uid="uid://cpuqb2cmngpbs" path="res://Textures/Cars/Nagata Koi/Front Bumper/Nagata Koi Redline Front Bumper.png" id="3_1ao3n"]
 [ext_resource type="Texture2D" uid="uid://76xf6svqghun" path="res://Textures/Cars/Nagata Koi/Front Bumper/Nagata Koi Redline Front Bumper NM.png" id="4_15jhp"]
 [ext_resource type="Texture2D" uid="uid://purwja1lcmso" path="res://Textures/Cars/Nagata Koi/Front Bumper/Nagata Koi Redline Front Bumper Spec.png" id="5_vkgia"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_0k5i8"]
-shader = ExtResource("2_cedji")
+shader = ExtResource("2_ewm6h")
 shader_parameter/import_new_color = Vector3(0.8, 0.8, 0.8)
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_0hbqo"]
@@ -25,6 +25,7 @@ polygon = PackedVector2Array(135, 29, 135, -26, 133, -30, 126, -37, 114, -37, 11
 [node name="Nagata Koi [Redline] Front Bumper" type="Node2D"]
 script = ExtResource("1_84qgg")
 rarity = "rare"
+part_material = 4
 Part_Number = 5
 description = "A front bumper with a lip installed for improved downforce and cooling airflow for the Nagata Koi, designed by the high performance aftermarket parts manufacturer Redline"
 price = 850

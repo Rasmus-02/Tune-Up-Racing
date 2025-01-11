@@ -20,6 +20,7 @@ light_mode = 1
 [node name="Nagata Koi Facelift Taillights" type="Node2D"]
 script = ExtResource("1_87u0h")
 rarity = "uncommon"
+part_material = 4
 Part_Number = 2
 description = "The factory taillights featured on later models of the Nagata Koi"
 paintable = false

@@ -1,13 +1,13 @@
 [gd_scene load_steps=10 format=3 uid="uid://c7lndpbbe4vlr"]
 
 [ext_resource type="Script" path="res://Assets/Car/Code/Part_scripts/Fenders.gd" id="1_u33pp"]
-[ext_resource type="Shader" path="res://Shaders/ColorSelector.gdshader" id="2_bom6y"]
+[ext_resource type="Shader" path="res://Shaders/ColorSelector.gdshader" id="2_61e3b"]
 [ext_resource type="Texture2D" uid="uid://6rrrn1rjnxsd" path="res://Textures/Cars/Hikari Tasai/Fenders/Hikari Tasai Stock Fenders.png" id="2_t1dqq"]
 [ext_resource type="Texture2D" uid="uid://bsm0ucc13kjqw" path="res://Textures/Cars/Hikari Tasai/Fenders/Hikari Tasai Fenders HM NM.png" id="3_axgcr"]
 [ext_resource type="Texture2D" uid="uid://bi2s4204r6m" path="res://Textures/Cars/Hikari Tasai/Fenders/Hikari Tasai Stock Fenders Spec.png" id="4_688j1"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_7p8p5"]
-shader = ExtResource("2_bom6y")
+shader = ExtResource("2_61e3b")
 shader_parameter/import_new_color = null
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_37acp"]
@@ -24,6 +24,7 @@ polygon = PackedVector2Array(101, 33, 101, 34, 99, 36, 93.3, 39, 79.1, 41, 51, 4
 [node name="Hikari Tasai Stock Fenders" type="Node2D"]
 script = ExtResource("1_u33pp")
 rarity = "uncommon"
+part_material = 4
 Car_ID = 2
 Part_Number = 1
 description = "The factory fenders for the Hikari Tasai"

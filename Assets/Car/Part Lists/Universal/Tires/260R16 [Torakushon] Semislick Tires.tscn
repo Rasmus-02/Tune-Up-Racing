@@ -21,6 +21,7 @@ size = Vector2(26, 10)
 [node name="260R16 [Torakushon] Semislick Tires" type="Node2D"]
 script = ExtResource("1_58itq")
 rarity = "epic"
+part_material = 6
 Part_Number = 3
 description = "Soft and grippy semi slick tires made by Japanese tire company Torakushon"
 price = 1450

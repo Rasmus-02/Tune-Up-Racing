@@ -1,13 +1,13 @@
 [gd_scene load_steps=11 format=3 uid="uid://bc8oi2t3mju2o"]
 
 [ext_resource type="Script" path="res://Assets/Car/Code/Part_scripts/Fenders.gd" id="1_8exqf"]
-[ext_resource type="Shader" path="res://Shaders/ColorSelector.gdshader" id="2_gc6ib"]
+[ext_resource type="Shader" path="res://Shaders/ColorSelector.gdshader" id="2_6dapb"]
 [ext_resource type="Texture2D" uid="uid://duhnc6633eto8" path="res://Textures/Cars/Nagata Koi/Fenders/Nagata Koi [Vortex] Widebody Fenders.png" id="2_pn4p2"]
 [ext_resource type="Texture2D" uid="uid://bonvaj0uh8cmn" path="res://Textures/Cars/Nagata Koi/Fenders/Nagata Koi [Vortex] Widebody Fenders NM.png" id="3_5ojmp"]
 [ext_resource type="Texture2D" uid="uid://kndlqnhmixhn" path="res://Textures/Cars/Nagata Koi/Fenders/Nagata Koi [Vortex] Widebody Fenders Spec.png" id="4_2v6nw"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_k8477"]
-shader = ExtResource("2_gc6ib")
+shader = ExtResource("2_6dapb")
 shader_parameter/import_new_color = null
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_vufhm"]
@@ -28,6 +28,7 @@ polygon = PackedVector2Array(-56.0884, 44.3015, -56.0884, -40.6985, -54.0884, -4
 [node name="Nagata Koi [Vortex] Widebody Fenders" type="Node2D"]
 script = ExtResource("1_8exqf")
 rarity = "rare"
+part_material = 4
 Part_Number = 2
 description = "Widebody fenders for the Nagata Koi designed by Vortex"
 price = 650

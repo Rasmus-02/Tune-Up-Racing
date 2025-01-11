@@ -14,6 +14,7 @@ specular_shininess = 0.5
 [node name="Nagata Koi Stock Mirrors" type="Node2D"]
 script = ExtResource("1_elt4c")
 rarity = "uncommon"
+part_material = 4
 Part_Number = 1
 description = "The factory mirrors for the Nagata Koi"
 paintable = false

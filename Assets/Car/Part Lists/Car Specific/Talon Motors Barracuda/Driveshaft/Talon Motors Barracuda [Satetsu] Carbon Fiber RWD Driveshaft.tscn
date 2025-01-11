@@ -14,6 +14,7 @@ specular_shininess = 0.5
 [node name="Talon Motors Barracuda [Satetsu] RWD Driveshaft" type="Node2D"]
 script = ExtResource("1_ikf3l")
 rarity = "legendary"
+part_material = 5
 Car_ID = 1
 Part_Number = 3
 description = "A lightweight, super durable and very efficient rear wheel drive driveshaft for the Talon Motors Barracuda. Designed by Satetsu"

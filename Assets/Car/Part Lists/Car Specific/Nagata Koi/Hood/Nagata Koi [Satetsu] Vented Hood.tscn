@@ -1,13 +1,13 @@
 [gd_scene load_steps=8 format=3 uid="uid://cw1lii7805xax"]
 
 [ext_resource type="Script" path="res://Assets/Car/Code/Part_scripts/Hood.gd" id="1_mvntj"]
-[ext_resource type="Shader" path="res://Shaders/ColorSelector.gdshader" id="2_2n50m"]
+[ext_resource type="Shader" path="res://Shaders/ColorSelector.gdshader" id="2_kn487"]
 [ext_resource type="Texture2D" uid="uid://c5jxrjirxnbye" path="res://Textures/Cars/Nagata Koi/Hood/Nagata Koi [Satetsu] Vented Hood.png" id="3_0c18u"]
 [ext_resource type="Texture2D" uid="uid://csp7ujyy8b72s" path="res://Textures/Cars/Nagata Koi/Hood/Nagata Koi [Satetsu] Vented Hood NM.png" id="4_mll3x"]
 [ext_resource type="Texture2D" uid="uid://drapoeydwo7t" path="res://Textures/Cars/Nagata Koi/Hood/Nagata Koi [Satetsu] Vented Hood Spec.png" id="5_1j2fj"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_m3b8f"]
-shader = ExtResource("2_2n50m")
+shader = ExtResource("2_kn487")
 shader_parameter/import_new_color = null
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_hjvi5"]
@@ -19,10 +19,11 @@ specular_shininess = 0.5
 [node name="Nagata Koi [Satetsu] Vented Hood" type="Node2D"]
 script = ExtResource("1_mvntj")
 rarity = "rare"
+part_material = 1
 Part_Number = 4
 description = "A vented hood for the Nagata Koi, designed by the high performance aftermarket parts manufacturer Satetsu, designed for improved cooling airflow with as little additional drag as possible"
 price = 500
-weight = 12
+weight = 11
 downforce = 40
 drag = 0.04
 engine_cool_mod = 0.22

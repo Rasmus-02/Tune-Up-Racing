@@ -1,13 +1,13 @@
 [gd_scene load_steps=10 format=3 uid="uid://bcqdmiwkqv8tg"]
 
 [ext_resource type="Script" path="res://Assets/Car/Code/Part_scripts/R_bumper.gd" id="1_olues"]
+[ext_resource type="Shader" path="res://Shaders/ColorSelector.gdshader" id="2_7m2yo"]
 [ext_resource type="Texture2D" uid="uid://bxn4r47w5vapb" path="res://Textures/Cars/Nagata Koi/Rear Bumper/Nagata Koi [Satetsu] Rear Bumper.png" id="2_74wyq"]
-[ext_resource type="Shader" path="res://Shaders/ColorSelector.gdshader" id="2_np2hq"]
 [ext_resource type="Texture2D" uid="uid://clwsx15att7rr" path="res://Textures/Cars/Nagata Koi/Rear Bumper/Nagata Koi [Satetsu] Rear Bumper NM.png" id="3_667s6"]
 [ext_resource type="Texture2D" uid="uid://cp8u16yba02p2" path="res://Textures/Cars/Nagata Koi/Rear Bumper/Nagata Koi [Satetsu] Rear Bumper Spec.png" id="4_iaf3y"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_a4wir"]
-shader = ExtResource("2_np2hq")
+shader = ExtResource("2_7m2yo")
 shader_parameter/import_new_color = null
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_r5f60"]
@@ -25,6 +25,7 @@ polygon = PackedVector2Array(-56.0884, -39.6985, -62.0884, -38.6985, -68.0884, -
 [node name="Nagata Koi [Satetsu] Rear Bumper" type="Node2D"]
 script = ExtResource("1_olues")
 rarity = "rare"
+part_material = 4
 Part_Number = 4
 description = "A rear bumper with a diffuser installed for improved downforce for the Nagata Koi, designed by Satetsu"
 price = 500

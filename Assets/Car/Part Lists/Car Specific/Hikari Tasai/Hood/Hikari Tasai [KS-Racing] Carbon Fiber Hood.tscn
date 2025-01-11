@@ -14,6 +14,7 @@ specular_shininess = 0.55
 [node name="Hikari Tasai [KS-Racing] Carbon Fiber Hood" type="Node2D"]
 script = ExtResource("1_7cnq1")
 rarity = "rare"
+part_material = 5
 Car_ID = 2
 Part_Number = 4
 description = "A Carbon fiber hood designed for the Hikari Tasai by KS-Racing. This carbon fiber hood has been designed to improve cooling airflow while reducing weight"

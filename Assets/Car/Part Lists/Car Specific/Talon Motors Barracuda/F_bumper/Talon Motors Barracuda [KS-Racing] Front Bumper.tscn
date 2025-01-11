@@ -1,13 +1,13 @@
 [gd_scene load_steps=12 format=3 uid="uid://c3lay8i3jc7dm"]
 
 [ext_resource type="Script" path="res://Assets/Car/Code/Part_scripts/F_Bumper.gd" id="1_23s6f"]
-[ext_resource type="Shader" path="res://Shaders/ColorSelector.gdshader" id="2_rugt0"]
+[ext_resource type="Shader" path="res://Shaders/ColorSelector.gdshader" id="2_8wm40"]
 [ext_resource type="Texture2D" uid="uid://rk5nnorscqvq" path="res://Textures/Cars/Talon Motors Barracuda/Front Bumper/Talon Motors Barracuda [KS-Racing] F_Bumper NM.png" id="3_42e6s"]
 [ext_resource type="Texture2D" uid="uid://c5d5lsduofvgd" path="res://Textures/Cars/Talon Motors Barracuda/Front Bumper/Talon Motors Barracuda [KS-Racing] F_Bumper Spec.png" id="4_2o350"]
 [ext_resource type="Texture2D" uid="uid://djagudwjjgru8" path="res://Textures/Cars/Talon Motors Barracuda/Front Bumper/Talon Motors Barracuda [KS-Racing] F_Bumper 2.png" id="5_ytd88"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_yi46f"]
-shader = ExtResource("2_rugt0")
+shader = ExtResource("2_8wm40")
 shader_parameter/import_new_color = null
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_0y6nx"]
@@ -34,6 +34,7 @@ specular_shininess = 0.52
 [node name="Talon Motors Barracuda [KS-Racing] Front Bumper" type="Node2D"]
 script = ExtResource("1_23s6f")
 rarity = "epic"
+part_material = 4
 Car_ID = 1
 Part_Number = 6
 description = "A front bumper for the Talon Motors Barracuda with a KS-Racing carbon fiber lip bolted on to it for some extra downforce"

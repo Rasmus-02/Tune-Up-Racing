@@ -20,6 +20,7 @@ light_mode = 1
 [node name="Nagata Koi Stock Taillights" type="Node2D"]
 script = ExtResource("1_ifobb")
 rarity = "uncommon"
+part_material = 4
 Part_Number = 1
 paintable = false
 price = 150

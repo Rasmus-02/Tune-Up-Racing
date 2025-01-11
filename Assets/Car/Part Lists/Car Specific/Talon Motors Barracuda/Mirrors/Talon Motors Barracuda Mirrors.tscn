@@ -1,13 +1,13 @@
 [gd_scene load_steps=8 format=3 uid="uid://dyj3gtsiagl6r"]
 
 [ext_resource type="Script" path="res://Assets/Car/Code/Part_scripts/Mirrors.gd" id="1_h66we"]
-[ext_resource type="Shader" path="res://Shaders/ColorSelector.gdshader" id="2_arwnj"]
 [ext_resource type="Texture2D" uid="uid://vem8vseuoqtv" path="res://Textures/Cars/Talon Motors Barracuda/Mirrors/Talon Motors Barracuda Mirrors.png" id="2_lwpv2"]
+[ext_resource type="Shader" path="res://Shaders/ColorSelector.gdshader" id="2_td6dn"]
 [ext_resource type="Texture2D" uid="uid://b8xu6wyqmbqxv" path="res://Textures/Cars/Talon Motors Barracuda/Mirrors/Talon Motors Barracuda Mirrors NM.png" id="3_qxc5w"]
 [ext_resource type="Texture2D" uid="uid://dwk227gbqixo5" path="res://Textures/Cars/Talon Motors Barracuda/Mirrors/Talon Motors Barracuda Mirrors Spec.png" id="4_w52xu"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_mgxvb"]
-shader = ExtResource("2_arwnj")
+shader = ExtResource("2_td6dn")
 shader_parameter/import_new_color = null
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_e2ut5"]
@@ -19,6 +19,7 @@ specular_shininess = 0.5
 [node name="Talon Motors Barracuda Stock Mirrors" type="Node2D"]
 script = ExtResource("1_h66we")
 rarity = "rare"
+part_material = 4
 Car_ID = 1
 Part_Number = 1
 description = "The factory mirrors for the Talon Motors Barracuda"

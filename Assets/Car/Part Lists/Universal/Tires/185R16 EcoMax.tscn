@@ -21,6 +21,7 @@ size = Vector2(26, 7)
 [node name="185R16 [EcoMax] Tires" type="Node2D"]
 script = ExtResource("1_7kdfo")
 rarity = "uncommon"
+part_material = 6
 Part_Number = 1
 description = "Cheap Chinese tires, works well enough for the price and are long lasting, however they might not be something you would want to bring to a racetrack"
 price = 500

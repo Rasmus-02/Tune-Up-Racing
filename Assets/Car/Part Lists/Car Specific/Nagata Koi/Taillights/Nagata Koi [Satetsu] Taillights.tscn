@@ -20,6 +20,7 @@ light_mode = 1
 [node name="Nagata Koi [Satetsu] Taillights" type="Node2D"]
 script = ExtResource("1_if8qb")
 rarity = "rare"
+part_material = 4
 Part_Number = 4
 description = "Taillights designed by the tuning shop Satetsu for the Nagata Koi"
 paintable = false

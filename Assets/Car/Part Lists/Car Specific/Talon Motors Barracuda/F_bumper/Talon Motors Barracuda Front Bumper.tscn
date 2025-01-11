@@ -1,13 +1,13 @@
 [gd_scene load_steps=10 format=3 uid="uid://c7d8q36rjhq0w"]
 
 [ext_resource type="Script" path="res://Assets/Car/Code/Part_scripts/F_Bumper.gd" id="1_2jncy"]
-[ext_resource type="Shader" path="res://Shaders/ColorSelector.gdshader" id="2_ojvar"]
+[ext_resource type="Shader" path="res://Shaders/ColorSelector.gdshader" id="2_73hka"]
 [ext_resource type="Texture2D" uid="uid://boi3xtdg6dj2d" path="res://Textures/Cars/Talon Motors Barracuda/Front Bumper/Talon Motors Barracuda F_Bumper.png" id="2_qmm7x"]
 [ext_resource type="Texture2D" uid="uid://bqgorkpdvybbj" path="res://Textures/Cars/Talon Motors Barracuda/Front Bumper/Talon Motors Barracuda F_Bumper NM.png" id="3_cbj68"]
 [ext_resource type="Texture2D" uid="uid://ckjtefapw0plx" path="res://Textures/Cars/Talon Motors Barracuda/Front Bumper/Talon Motors Barracuda F_Bumper Spec.png" id="4_mm1as"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_relsq"]
-shader = ExtResource("2_ojvar")
+shader = ExtResource("2_73hka")
 shader_parameter/import_new_color = null
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_0hbqo"]
@@ -25,6 +25,7 @@ polygon = PackedVector2Array(141.912, 13.3015, 140.912, 21.3015, 135.912, 35.301
 [node name="Talon Motors Barracuda Stock Front Bumper" type="Node2D"]
 script = ExtResource("1_2jncy")
 rarity = "rare"
+part_material = 4
 Car_ID = 1
 Part_Number = 1
 description = "The factory front bumper for the Talon Motors Barracuda"

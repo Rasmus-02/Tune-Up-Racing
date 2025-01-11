@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://cuasbhmu1v62" path="res://Textures/Cars/Talon Motors Barracuda/Taillights/Talon Motors Barracuda [Niepa] Taillights.png" id="2_r5ngx"]
 [ext_resource type="Texture2D" uid="uid://b3mf7w1abusod" path="res://Textures/Cars/Talon Motors Barracuda/Taillights/Talon Motors Barracuda [Niepa] Taillights NM.png" id="3_vknkh"]
 [ext_resource type="Texture2D" uid="uid://ctwbton87bdrb" path="res://Textures/Cars/Talon Motors Barracuda/Taillights/Talon Motors Barracuda [Niepa] Taillights Spec.png" id="4_xjty0"]
-[ext_resource type="Texture2D" uid="uid://cepghawmogv3d" path="res://Textures/Cars/Talon Motors Barracuda/Taillights/mask/Talon Motors Barracuda [Niepa] Taillights Lightmask.png" id="5_v078p"]
+[ext_resource type="Texture2D" uid="uid://c3quxua0evdcb" path="res://Textures/Cars/Talon Motors Barracuda/Taillights/mask/Talon Motors Barracuda [Niepa] Taillights Lightmask.png" id="5_v078p"]
 [ext_resource type="PackedScene" uid="uid://ceb752tulxcv" path="res://Shaders/taillights.tscn" id="6_ej2ii"]
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_5na48"]
@@ -20,6 +20,7 @@ light_mode = 1
 [node name="Talon Motors Barracuda [Niepa] Taillights" type="Node2D"]
 script = ExtResource("1_jchc1")
 rarity = "rare"
+part_material = 4
 Car_ID = 1
 Part_Number = 3
 description = "Aftermarket taillights for the Talon Motors Barracuda, designed by Niepa"

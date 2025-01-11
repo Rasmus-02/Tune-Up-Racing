@@ -1,7 +1,7 @@
 [gd_scene load_steps=12 format=3 uid="uid://d15n3ratcgcio"]
 
 [ext_resource type="Script" path="res://Assets/Car/Code/Part_scripts/Headlights.gd" id="1_y4ngm"]
-[ext_resource type="Shader" path="res://Shaders/ColorSelector.gdshader" id="2_a6f74"]
+[ext_resource type="Shader" path="res://Shaders/ColorSelector.gdshader" id="2_i1nj7"]
 [ext_resource type="Texture2D" uid="uid://bnmgfh34oevl5" path="res://Textures/Cars/Hikari Tasai/Headlights/Hikari Tasai Stock Headlights.png" id="3_4bo85"]
 [ext_resource type="Texture2D" uid="uid://phq0qkeikdfj" path="res://Textures/Cars/Hikari Tasai/Headlights/Hikari Tasai Stock Headlights NM.png" id="4_wvwjx"]
 [ext_resource type="Texture2D" uid="uid://be5ll1sv8mcr1" path="res://Textures/Cars/Hikari Tasai/Headlights/Hikari Tasai Stock Headlights Spec.png" id="5_ugis4"]
@@ -9,7 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://brbx33n7duy1v" path="res://Shaders/headlights.tscn" id="7_6tx8c"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_k5tqf"]
-shader = ExtResource("2_a6f74")
+shader = ExtResource("2_i1nj7")
 shader_parameter/import_new_color = null
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_ma2ib"]
@@ -23,7 +23,7 @@ blend_mode = 1
 light_mode = 1
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_shjy8"]
-shader = ExtResource("2_a6f74")
+shader = ExtResource("2_i1nj7")
 shader_parameter/import_new_color = null
 
 [node name="Hikari Tasai Stock Headlights" type="Node2D"]

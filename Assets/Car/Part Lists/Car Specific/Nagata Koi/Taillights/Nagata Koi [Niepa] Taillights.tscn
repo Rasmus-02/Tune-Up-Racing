@@ -20,6 +20,7 @@ light_mode = 1
 [node name="Nagata Koi [Niepa] Taillights" type="Node2D"]
 script = ExtResource("1_0cav1")
 rarity = "uncommon"
+part_material = 4
 Part_Number = 3
 description = "Taillights designed by the aftermarket parts manufacturer Niepa for the Nagata Koi"
 paintable = false

@@ -2,12 +2,12 @@
 
 [ext_resource type="Script" path="res://Assets/Car/Code/Part_scripts/F_Bumper.gd" id="1_aipiq"]
 [ext_resource type="Texture2D" uid="uid://udge13u4q1i2" path="res://Textures/Cars/Talon Motors Barracuda/Front Bumper/Talon Motors Barracuda Satetsu F_Bumper.png" id="2_kc721"]
-[ext_resource type="Shader" path="res://Shaders/ColorSelector.gdshader" id="2_r7wvs"]
+[ext_resource type="Shader" path="res://Shaders/ColorSelector.gdshader" id="2_xixup"]
 [ext_resource type="Texture2D" uid="uid://c7bv2pdgelsyy" path="res://Textures/Cars/Talon Motors Barracuda/Front Bumper/Talon Motors Barracuda Satetsu F_Bumper NM.png" id="3_prkns"]
 [ext_resource type="Texture2D" uid="uid://d1dydbsqfqb4g" path="res://Textures/Cars/Talon Motors Barracuda/Front Bumper/Talon Motors Barracuda Satetsu F_Bumper Spec.png" id="4_46o1c"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_yi46f"]
-shader = ExtResource("2_r7wvs")
+shader = ExtResource("2_xixup")
 shader_parameter/import_new_color = null
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_0hbqo"]
@@ -25,6 +25,7 @@ polygon = PackedVector2Array(143.912, 17.3015, 140.912, 24.3015, 141.912, 28.301
 [node name="Talon Motors Barracuda [Satetsu] Front Bumper" type="Node2D"]
 script = ExtResource("1_aipiq")
 rarity = "epic"
+part_material = 4
 Car_ID = 1
 Part_Number = 5
 description = "A Frontbumper and lip combo developed by Satetsu Racing for the Talon Motors Barracuda to improve high speed handling"

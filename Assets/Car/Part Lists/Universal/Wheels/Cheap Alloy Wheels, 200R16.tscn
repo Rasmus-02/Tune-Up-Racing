@@ -17,6 +17,7 @@ polygon = PackedVector2Array(-11, -4, 11, -4, 11, -2, 10, -1, 10, 0, 11, 1, 11, 
 [node name="Cheap 200R16 Alloy Wheels" type="Node2D"]
 script = ExtResource("1_ro2rv")
 rarity = "uncommon"
+part_material = 1
 Part_Number = 1
 description = "Cheap alloy wheels, nothing special about them but they get the job done"
 price = 600
