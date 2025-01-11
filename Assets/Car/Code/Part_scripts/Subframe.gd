@@ -39,7 +39,7 @@ func apply_durability(durability):
 		$Sprite2D.material = new_material
 		current_durability = durability
 		$Sprite2D.material.set_shader_parameter("sensitivity", 1 - (durability * 0.01))
-		$Sprite2D.material.set_shader_parameter("material_type", 0)
+		$Sprite2D.material.set_shader_parameter("material_type", part_material)
 		var noise = load("res://Shaders/Durability Noisemap.tres")
 		$Sprite2D.material.set_shader_parameter("noise_texture", noise)
 		$Sprite2D.material.get_shader_parameter("noise_texture").noise.seed = seed
