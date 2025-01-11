@@ -35,7 +35,7 @@ var new_scene
 func change_scene(scene):
 	#Update Car market
 	CarMarket.update_events()
-	
+	Utils.blocked = false #Unblock free orphans
 	AudioServer.set_bus_volume_db(1, linear_to_db(Settings.car_volume))
 	AudioServer.set_bus_volume_db(2, linear_to_db(Settings.ambient_volume))
 	new_scene = scene

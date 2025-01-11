@@ -27,6 +27,7 @@ func populate_page(page):
 	page_number_label.text = str(page_number)
 	for child in get_children():
 		remove_child(child)
+	Utils.free_orphaned_nodes() #Free loaded orphan nodes
 	
 	## Update the car list
 	var car_list = CarMarket.car_list.duplicate() #duplicate to prevent the original list from getting changed

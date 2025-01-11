@@ -29,6 +29,7 @@ func close_pages():
 	#Clear all lists
 	page_shop.get_node("Parts").clear_list()
 	page_inventory.get_node("Parts").clear_list()
+	Utils.free_orphaned_nodes() #Free loaded orphan nodes
 
 func _on_shop_button_pressed():
 	close_pages()

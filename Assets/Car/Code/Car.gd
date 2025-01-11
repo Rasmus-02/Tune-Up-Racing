@@ -605,7 +605,7 @@ func _physics_process(delta):
 	if is_ready == false:
 			car_constructor()
 	if is_functional() and deleted == false:
-		if is_loaded():
+		if is_loaded() and chassi != null:
 			$Label.text = str(int(speed_kmh))
 			$Label/Label.text = str(int((tire_limit/max_tire_limit)*100))
 			speed_kmh = velocity.length()*.02*3.6
@@ -626,9 +626,11 @@ func _physics_process(delta):
 				sliding()
 				collision_handler()
 			if running_dyno == 1:
+				Utils.blocked = true
 				engine.is_running = true
 				dyno_controller()
 			elif running_dyno == 2:
+				Utils.blocked = false
 				end_dyno_run()
 			elif running_dyno == 0:
 				engine.is_running = true #Turns on the engine

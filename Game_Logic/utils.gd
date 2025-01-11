@@ -1,8 +1,10 @@
 extends Node
 signal freeing_orphans
+var blocked = false
 
 func free_orphaned_nodes():
-	emit_signal("freeing_orphans")
+	if blocked == false:
+		emit_signal("freeing_orphans")
 
 func _ready():
 	#Set script to "not pauseable"

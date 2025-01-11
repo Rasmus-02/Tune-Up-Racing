@@ -134,6 +134,8 @@ func hide_ui():
 
 func show_ui():
 	if SelectedScene.scene != "garage" and SelectedScene.scene != "edit" or (get_parent().get_parent().get_node("Car Edit UI").get_node("Car Edit Controller").active == false and get_parent().get_parent().get_node("Car Edit UI").get_node("Engine Edit Controller").active == false and get_parent().get_parent().get_node("Props").get_node("Paint Booth").active == false):
+		selected_car.update_stats() #Reload car stats after they have been cleaned up by orphan node cleaner
+		selected_car.engine.engine_stats()
 		#set position where the us should spawn
 		$"../Interact_Menu_Garage".global_position = selected_car.global_position + Vector2(-75,55)
 		#reset which buttons are visible

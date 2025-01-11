@@ -13,7 +13,7 @@
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_iycyy"]
 shader = ExtResource("1_k18t5")
-shader_parameter/sensitivity = 0.0
+shader_parameter/sensitivity = 0.806
 shader_parameter/material_type = 0
 shader_parameter/import_new_color = Vector3(0.495, 0.56, 0.245)
 shader_parameter/noise_texture = ExtResource("2_mjy3j")
@@ -32,7 +32,7 @@ specular_shininess = 0.58
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_lfjsy"]
 shader = ExtResource("1_k18t5")
-shader_parameter/sensitivity = 0.0
+shader_parameter/sensitivity = 0.752
 shader_parameter/material_type = 5
 shader_parameter/import_new_color = null
 shader_parameter/noise_texture = ExtResource("2_mjy3j")

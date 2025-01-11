@@ -38,6 +38,7 @@ var is_running = false
 
 var wheel_speed = 1
 var max_torque = 1 # * 1.3 to combat power losses
+var fuel_type = "Gasoline"
 var max_rpm = 1
 var max_horsepower_rpm = 1
 var max_compression = 0.0
@@ -210,6 +211,7 @@ func engine_stats():
 	exhaust_manifold = specific_parts.exhaust_manifold[selected_exhaust_manifold].instantiate()
 	air_filter = universal_parts.air_filter[selected_air_filter].instantiate()
 	max_torque = block.tq * intake_manifold.tq_mod * exhaust_manifold.tq_mod * top.tq_mod * air_filter.tq_mod
+	fuel_type = top.fuel_type
 	max_horsepower_rpm = top.max_hp_rpm / 1.2 #/1.2 to make peak power accurate with the rest of the calculations
 	max_compression = top.max_compression * intake_manifold.max_compression_modifier
 	compression = internals.compression
@@ -316,7 +318,7 @@ func _ready():
 		update_engine_parts()
 
 func send_update():
-	emit_signal("stats", horsepower, torque, max_torque, top.fuel_type)
+	emit_signal("stats", horsepower, torque, max_torque, fuel_type)
 	emit_signal("rpm_info", rpm, max_rpm)
 
 func is_functional():
@@ -328,8 +330,6 @@ func is_functional():
 var last_engine_position = null #To check if gearbox position gets changed
 var last_drivetrain = null
 func  _physics_process(_delta):
-	if Input.is_action_just_pressed("Handbrake"):
-		estimate_torque()
 	if is_functional() and is_running == true and deleted == false:
 		rpm_calculator()
 		hp_tq_calculator()

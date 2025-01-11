@@ -655,6 +655,7 @@ func _on_return_button_pressed():
 		current_animation = null
 		list.clear()
 		main.pause_blocked = false
+		Utils.free_orphaned_nodes() #Free loaded orphan nodes
 	elif engine_editor.selected_tab != 7: #Back To Main tab from sub-tabs
 		animation_controller("main")
 		$"../Main_Group/Engine_button".grab_focus()
@@ -664,7 +665,6 @@ func _on_return_button_pressed():
 			var engine_to_remove = engine.selected_engine_key #Memorize key
 			_on_item_selected(0) #Change engine to "Empty Engine"
 			Save_Load.remove_engine(engine_to_remove) #Remove empty engine from inventory
-			
 		populate_list()
 
 func initialise_gearbox_sliders():
