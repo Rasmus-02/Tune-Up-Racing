@@ -14,6 +14,7 @@ specular_shininess = 0.5
 [node name="Nagata 2S-16i Aluminium Block" type="Node2D"]
 script = ExtResource("1_fcjeo")
 rarity = "rare"
+part_material = 1
 layout = "Inline"
 lenght = 27
 width = 9

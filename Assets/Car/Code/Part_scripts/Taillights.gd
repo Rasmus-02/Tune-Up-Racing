@@ -38,7 +38,7 @@ var current_durability = null
 func paint_part(color_index, durability):
 	color = color_index
 	var new_material = ShaderMaterial.new()
-	var shader = load("res://Shaders/Test/Paint_Durability.gdshader")
+	var shader = preload("res://Shaders/Test/Paint_Durability.gdshader")
 	new_material.shader = shader
 	if $Sprite2D:
 		$Sprite2D.material = new_material
@@ -50,7 +50,7 @@ func paint_part(color_index, durability):
 		#Durability
 		$Sprite2D.material.set_shader_parameter("sensitivity", 1 - (durability * 0.01))
 		$Sprite2D.material.set_shader_parameter("material_type", part_material)
-		var noise = load("res://Shaders/Durability Noisemap.tres")
+		var noise = preload("res://Shaders/Durability Noisemap.tres")
 		$Sprite2D.material.set_shader_parameter("noise_texture", noise)
 		$Sprite2D.material.get_shader_parameter("noise_texture").noise.seed = seed
 		

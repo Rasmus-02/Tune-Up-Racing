@@ -20,7 +20,7 @@ Engine_ID = 3
 Part_Number = 4
 description = "A Performance intake manifold for the Hikari Suhei-25A Engine, designed by Avalon"
 price = 1250
-weight = 10
+weight = 9
 tq_mod = 1.15
 max_compression_modifier = 1.05
 

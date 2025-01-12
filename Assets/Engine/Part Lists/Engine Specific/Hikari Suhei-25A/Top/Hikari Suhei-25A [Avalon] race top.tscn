@@ -21,6 +21,7 @@ specular_shininess = 0.5
 [node name="Hikari Suhei-25A [Avalon] Race Top" type="Node2D"]
 script = ExtResource("1_4k4qo")
 rarity = "epic"
+part_material = 3
 lenght = 20
 width = 36
 Engine_ID = 3

@@ -14,13 +14,14 @@ specular_shininess = 0.5
 [node name="Hikari Suhei-25A [Satetsu] Intake Manifold" type="Node2D"]
 script = ExtResource("1_3o30i")
 rarity = "epic"
+part_material = 5
 layout = "front"
 lenght = 4
 Engine_ID = 3
 Part_Number = 6
 description = "A High Performance intake manifold for the Hikari Suhei-25A Engine, designed by Satetsu"
 price = 2800
-weight = 9
+weight = 8
 tq_mod = 1.2
 max_compression_modifier = 1.05
 

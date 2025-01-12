@@ -14,13 +14,14 @@ specular_shininess = 0.5
 [node name="Hikari Suhei-25A [KS-Racing] Intake Manifold" type="Node2D"]
 script = ExtResource("1_4huxx")
 rarity = "epic"
+part_material = 1
 layout = "front"
 lenght = 4
 Engine_ID = 3
 Part_Number = 5
 description = "A High Performance intake manifold for the Hikari Suhei-25A Engine, designed by KS-Racing"
 price = 2400
-weight = 16
+weight = 14
 tq_mod = 1.05
 max_compression_modifier = 1.2
 

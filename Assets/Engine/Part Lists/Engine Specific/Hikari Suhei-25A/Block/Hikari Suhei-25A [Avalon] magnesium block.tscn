@@ -14,6 +14,7 @@ specular_shininess = 0.5
 [node name="Hikari Suhei-25A [Avalon] Magnesium Block" type="Node2D"]
 script = ExtResource("1_0qrjp")
 rarity = "epic"
+part_material = 2
 layout = "Boxer"
 lenght = 19
 width = 25

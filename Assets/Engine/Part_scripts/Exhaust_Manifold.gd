@@ -1,6 +1,7 @@
 extends Node2D
 @export_category("ID")
 @export_enum("common", "uncommon", "rare", "epic", "legendary") var rarity : String
+@export_enum("Iron", "Aluminium", "Magnesium", "Titanium", "Plasitc", "Carbon Fiber", "Rubber") var part_material : int
 @export var Engine_ID : int
 @export var Part_Number : int
 @export_range(0, 80) var lenght : int
@@ -38,6 +39,34 @@ func get_turbo_max_size():
 			return turbo_1_size + turbo_2_size + turbo_3_size + turbo_4_size
 		"sequential_quad":
 			return turbo_1_size + turbo_2_size
+
+
+var seed = 1 #A Seed for the perlin noise of the durability shader
+var engine
+func _ready():
+	if get_parent() != null and get_parent().get_parent() != null and get_parent().get_parent().get_parent() != null:
+		engine = get_parent().get_parent().get_parent().get_parent()
+	
+func _process(delta):
+	if (current_durability == null or durability != current_durability):
+		if engine != null and engine.is_in_group("Engine"):
+			apply_durability(engine.exhaust_manifold_durability)
+		elif get_parent().is_in_group("Computer"):
+				apply_durability(get_parent().get_parent().get_parent().selected_durability)
+
+var current_durability = null
+func apply_durability(durability):
+	var new_material = ShaderMaterial.new()
+	var shader = preload("res://Shaders/Test/Paint_Durability.gdshader")
+	new_material.shader = shader
+	if $Sprite2D:
+		$Sprite2D.material = new_material
+		current_durability = durability
+		$Sprite2D.material.set_shader_parameter("sensitivity", 1 - (durability * 0.01))
+		$Sprite2D.material.set_shader_parameter("material_type", part_material)
+		var noise = preload("res://Shaders/Durability Noisemap.tres")
+		$Sprite2D.material.set_shader_parameter("noise_texture", noise)
+		$Sprite2D.material.get_shader_parameter("noise_texture").noise.seed = seed
 
 
 

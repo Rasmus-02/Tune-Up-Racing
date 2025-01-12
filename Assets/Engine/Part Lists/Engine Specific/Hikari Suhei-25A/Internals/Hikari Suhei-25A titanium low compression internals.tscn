@@ -14,7 +14,8 @@ specular_shininess = 0.42
 
 [node name="Hikari Suhei-25A Titanium Low Comp Internals" type="Node2D"]
 script = ExtResource("1_wqx64")
-rarity = "rare"
+rarity = "epic"
+part_material = 3
 Engine_ID = 3
 Part_Number = 12
 description = "Lower compression variant of the Titanium internals for the Hikari Suhei-25A Engine, designed for boosted engines"

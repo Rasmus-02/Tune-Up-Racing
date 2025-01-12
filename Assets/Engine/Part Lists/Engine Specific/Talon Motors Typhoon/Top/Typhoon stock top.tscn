@@ -20,13 +20,14 @@ specular_shininess = 0.35
 [node name="Talon Motors Typhoon Stock Top" type="Node2D"]
 script = ExtResource("1_o6gyt")
 rarity = "rare"
+part_material = 0
 lenght = 32
 width = 21
 Engine_ID = 1
 Part_Number = 1
 description = "The factory top end for the Typhoon engine"
 price = 800
-weight = 32.0
+weight = 34.0
 tq_mod = 0.9
 max_hp_rpm = 5000
 max_compression = 9.5

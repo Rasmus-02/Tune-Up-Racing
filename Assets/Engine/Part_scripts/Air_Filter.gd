@@ -2,6 +2,7 @@ extends Node2D
 
 @export_category("ID")
 @export_enum("common", "uncommon", "rare", "epic", "legendary") var rarity : String
+@export_enum("Iron", "Aluminium", "Magnesium", "Titanium", "Plasitc", "Carbon Fiber", "Rubber") var part_material : int = 4
 @export_enum("top", "front") var layout : String
 @export var Part_Number : int
 @export_range(0, 80) var lenght : int

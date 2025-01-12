@@ -15,6 +15,7 @@ specular_shininess = 0.42
 [node name="Nagata 2S-16i Titanium Internals" type="Node2D"]
 script = ExtResource("1_f08ii")
 rarity = "epic"
+part_material = 3
 lenght = 23
 width = 5
 Engine_ID = 2

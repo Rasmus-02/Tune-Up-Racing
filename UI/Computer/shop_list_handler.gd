@@ -123,9 +123,10 @@ func populate_list():
 
 func clear_list():
 	clear()
-	if part_list != null and part_list != []:
+	if part_list != null and part_list.size() > 0:
 		for i in part_list:
-			i.queue_free()
+			if i != null:
+				i.queue_free()
 		part_list.clear()
 		stat_list.clear()
 
