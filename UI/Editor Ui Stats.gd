@@ -25,21 +25,21 @@ func change_part(part, type : String):
 			update_display(stats[2], null, "", "")
 			update_display(stats[3], null, "", "")
 			update_display(stats[4], part.weight, "Weight", "Kg")
-			update_display(stats[5], part.durability, "Durability", "%")
+			update_display(stats[5], int(part.durability), "Durability", "%")
 		"internals":
 			update_display(stats[0], part.compression, "Compression", ":1")
 			update_display(stats[1], part.max_tq, "Max Torque", "Nm")
 			update_display(stats[2], part.max_rpm, "Max RPM", "RPM")
 			update_display(stats[3], null, "", "")
 			update_display(stats[4], part.weight, "Weight", "Kg")
-			update_display(stats[5], part.durability, "Durability", "%")
+			update_display(stats[5], int(part.durability), "Durability", "%")
 		"top":
 			update_display(stats[0], part.tq_mod * 100, "Efficiency", "%")
 			update_display(stats[1], part.max_hp_rpm, "Peak RPM", "RPM")
 			update_display(stats[2], part.max_compression, "Max Comp", ":1")
 			update_display(stats[3], null, "", "")
 			update_display(stats[4], part.weight, "Weight", "Kg")
-			update_display(stats[5], part.durability, "Durability", "%")
+			update_display(stats[5], int(part.durability), "Durability", "%")
 		"exhaust_manifold":
 			if part.turbo == true: #if turbo
 				#("single", "twin", "sequential twin", "quad", "sequential quad") var turbo_type 
@@ -69,7 +69,7 @@ func change_part(part, type : String):
 				update_display(stats[2], null, "", "")
 				update_display(stats[0], part.tq_mod * 100, "Efficiency", "%")
 			update_display(stats[4], part.weight, "Weight", "Kg")
-			update_display(stats[5], part.durability, "Durability", "%")
+			update_display(stats[5], int(part.durability), "Durability", "%")
 		"intake_manifold":
 			update_display(stats[0], part.tq_mod * 100, "Efficiency", "%")
 			update_display(stats[1], part.max_compression_modifier * 100, "Max Comp", "%")
@@ -86,14 +86,14 @@ func change_part(part, type : String):
 			else:
 				update_display(stats[3], null, "", "")
 			update_display(stats[4], part.weight, "Weight", "Kg")
-			update_display(stats[5], part.durability, "Durability", "%")
+			update_display(stats[5], int(part.durability), "Durability", "%")
 		"air_filter":
 			update_display(stats[0], part.tq_mod * 100, "Efficiency", "%")
 			update_display(stats[1], null, "", "")
 			update_display(stats[2], null, "", "")
 			update_display(stats[3], null, "", "")
 			update_display(stats[4], part.weight, "Weight", "Kg")
-			update_display(stats[5], part.durability, "Durability", "%")
+			update_display(stats[5], int(part.durability), "Durability", "%")
 		
 		#Car
 		"1", "4", "6": #front bumper, hood, headlights
@@ -102,49 +102,49 @@ func change_part(part, type : String):
 			update_display(stats[2], null, "", "")
 			update_display(stats[3], part.drag, "Drag", "")
 			update_display(stats[4], part.weight, "Weight", "Kg")
-			update_display(stats[5], part.durability, "Durability", "%")
+			update_display(stats[5], int(part.durability), "Durability", "%")
 		"2", "3", "5", "8": #rear bumper, fenders, mirrors, spoiler
 			update_display(stats[0], part.downforce, "Downforce", "Kg")
 			update_display(stats[1], null, "", "")
 			update_display(stats[2], null, "", "")
 			update_display(stats[3], part.drag, "Drag", "")
 			update_display(stats[4], part.weight, "Weight", "Kg")
-			update_display(stats[5], part.durability, "Durability", "%")
+			update_display(stats[5], int(part.durability), "Durability", "%")
 		"7": #taillights
 			update_display(stats[0], null, "", "")
 			update_display(stats[1], null, "", "")
 			update_display(stats[2], null, "", "")
 			update_display(stats[3], null, "", "")
 			update_display(stats[4], part.weight, "Weight", "Kg")
-			update_display(stats[5], part.durability, "Durability", "%")
+			update_display(stats[5], int(part.durability), "Durability", "%")
 		"9", "13": #suspension, subframe
 			update_display(stats[0], int(part.handling_bonus * 100), "Handling", "%")
 			update_display(stats[1], null, "", "")
 			update_display(stats[2], null, "", "")
 			update_display(stats[3], null, "", "")
 			update_display(stats[4], part.weight, "Weight", "Kg")
-			update_display(stats[5], part.durability, "Durability", "%")
+			update_display(stats[5], int(part.durability), "Durability", "%")
 		"10": #wheels
 			update_display(stats[0], part.brake_cooling, "Cooling", "C°/s")
 			update_display(stats[1], null, "", "")
 			update_display(stats[2], null, "", "")
 			update_display(stats[3], null, "", "")
 			update_display(stats[4], part.weight, "Weight", "Kg")
-			update_display(stats[5], part.durability, "Durability", "%")
+			update_display(stats[5], int(part.durability), "Durability", "%")
 		"11": #tires
 			update_display(stats[0], int(part.grip * 0.1), "Traction", "%")
 			update_display(stats[1], int(part.treadwear * 10000), "Treadwear", "")
 			update_display(stats[2], null, "", "")
 			update_display(stats[3], null, "", "")
 			update_display(stats[4], part.weight, "Weight", "Kg")
-			update_display(stats[5], part.durability, "Durability", "%")
+			update_display(stats[5], int(part.durability), "Durability", "%")
 		"12": #brakes
 			update_display(stats[0], int(part.brake_force * 14), "Braking", "N")
 			update_display(stats[1], part.brake_cooling, "Cooling", "C°/s")
 			update_display(stats[2], part.brake_fade_limit, "Fade @", "C°")
 			update_display(stats[3], null, "", "")
 			update_display(stats[4], part.weight, "Weight", "Kg")
-			update_display(stats[5], part.durability, "Durability", "%")
+			update_display(stats[5], int(part.durability), "Durability", "%")
 		"14": #driveshaft
 			match part.drivetrain:
 				0:
@@ -158,7 +158,7 @@ func change_part(part, type : String):
 			update_display(stats[2], part.drivetrain_loss, "Power Loss", "%")
 			update_display(stats[3], null, "", "")
 			update_display(stats[4], part.weight, "Weight", "Kg")
-			update_display(stats[5], part.durability, "Durability", "%")
+			update_display(stats[5], int(part.durability), "Durability", "%")
 		"15": #gearbox
 			match part.drivetrain:
 				0:
@@ -172,19 +172,19 @@ func change_part(part, type : String):
 			update_display(stats[2], part.gear_ratio.size() - 1, "Gears", "")
 			update_display(stats[3], part.shift_time, "Shift Speed", "s")
 			update_display(stats[4], part.weight, "Weight", "Kg")
-			update_display(stats[5], part.durability, "Durability", "%")
+			update_display(stats[5], int(part.durability), "Durability", "%")
 		"16": #radiator
 			update_display(stats[0], part.cooling, "Cooling", "C°/s")
 			update_display(stats[1], null, "", "")
 			update_display(stats[2], null, "", "")
 			update_display(stats[3], null, "", "")
 			update_display(stats[4], part.weight, "Weight", "Kg")
-			update_display(stats[5], part.durability, "Durability", "%")
+			update_display(stats[5], int(part.durability), "Durability", "%")
 		"17": #exhaust
 			update_display(stats[0], (part.tq_mod_exhaust * 100), "Efficiency", "%")
 			update_display(stats[1], part.sound_dampening, "Dampening", "dB")
 			update_display(stats[2], null, "", "")
 			update_display(stats[3], null, "", "")
 			update_display(stats[4], part.weight, "Weight", "Kg")
-			update_display(stats[5], part.durability, "Durability", "%")
+			update_display(stats[5], int(part.durability), "Durability", "%")
 

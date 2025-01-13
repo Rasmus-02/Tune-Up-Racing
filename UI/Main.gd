@@ -10,6 +10,7 @@ var current_scene_instance = null
 var current_scene
 var pause_blocked = false
 
+
 func _ready():
 	load_new_scene(splash_screen)
 
@@ -33,6 +34,8 @@ func update_pause_menu_position():
 
 var new_scene
 func change_scene(scene):
+	if SelectedScene.scene == "Track":
+		Utils.change_scene()
 	#Update Car market
 	CarMarket.update_events()
 	Utils.blocked = false #Unblock free orphans

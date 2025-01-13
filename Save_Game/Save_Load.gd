@@ -300,6 +300,7 @@ func inv_check(part_to_be_checked): #checks if a part exists in the inventory
 
  
 func edit_engine(engine_node): #For editing an engine in the dictionary
+	print("Engine: ", engine_node.selected_engine_key)
 	set_engine(engine_node)
 	engines = load_file("engines")
 	if engines != null:

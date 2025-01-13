@@ -102,6 +102,12 @@ func delete_engine():
 	universal_parts.queue_free()
 	self.queue_free()
 
+func _init():
+	Utils.connect("changing_scene", Callable(self, "_scene_changed"))
+func _scene_changed():
+	if get_parent().player == true:
+		print("Save", selected_engine_key, "   ",in_car)
+		Save_Load.edit_engine(self)
 
 
 var spawner = preload("res://Assets/Engine/Code/engine_spawner.tscn")
@@ -322,7 +328,8 @@ func send_update():
 	emit_signal("rpm_info", rpm, max_rpm)
 
 func is_functional():
-	if selected_internals != 0 and selected_top != 0 and selected_internals != 0 and selected_intake_manifold != 0 and selected_exhaust_manifold != 0:
+	if (selected_block != 0 and selected_top != 0 and selected_internals != 0 and selected_intake_manifold != 0 and selected_exhaust_manifold != 0 and selected_air_filter != 0 and 
+	block_durability > 0 and top_durability > 0 and internals_durability > 0 and intake_manifold_durability > 0 and exhaust_manifold_durability > 0 and air_filter_durability > 0):
 		return(true)
 	else:
 		return(false)
@@ -330,14 +337,18 @@ func is_functional():
 var last_engine_position = null #To check if gearbox position gets changed
 var last_drivetrain = null
 func  _physics_process(_delta):
+	send_update()
 	if is_functional() and is_running == true and deleted == false:
 		rpm_calculator()
 		hp_tq_calculator()
 		engine_temp()
 		boost_calculator()
-		send_update()
 		damage_calculator()
 	else:
+		is_running = false
+		torque = 0
+		horsepower = 0
+		boost = 0
 		rpm = 0
 		temp_rpm = 0
 		temperature = 0
@@ -484,10 +495,31 @@ func part_placeable(type, node):
 
 #region Engine Physics
 func damage_calculator():
-	pass
-	#if Input.is_action_pressed("Handbrake"):
-	#	block_durability -= 0.01
-	#	Save_Load.edit_engine(self)
+	var damage_speed_mod = 0.0002
+	##Block
+	if torque > block.max_tq:
+		block_durability -= (torque - block.max_tq) * damage_speed_mod
+	##Internals
+	if torque > internals.max_tq:
+		internals_durability -= (torque - internals.max_tq) * damage_speed_mod
+	if rpm > internals.max_rpm:
+		internals_durability -= (rpm - internals.max_rpm) * damage_speed_mod
+	##Knock
+	var knock_damage = knock() * 0.01
+	internals_durability -= knock_damage
+	top_durability -= knock_damage * 0.5
+	##Overheating (Temperature)
+	if temperature >= 120:
+		block_durability -= (temperature - 120) * damage_speed_mod
+		internals_durability -= (temperature - 120) * damage_speed_mod
+		top_durability -= (temperature - 120) * damage_speed_mod
+	
+	#Clamps
+	block_durability = clamp(block_durability, 0, 100)
+	internals_durability = clamp(internals_durability, 0, 100)
+	top_durability = clamp(top_durability, 0, 100)
+	
+	#Save_Load.edit_engine(self)
 
 var temp_rpm = 0 #Variasble to meassure differense between real rpm and clutch rpm
 var real_rpm = 0
