@@ -1093,7 +1093,7 @@ func get_value(): #Calculates how much car is worth by all parts combined
 		mirrors, gearbox, radiator,exhaust,brakes,suspension,tires,wheels]
 	var value : int
 	for part in combined_parts:
-		if part != null: #Null check
+		if part != null and part.price != null and part.durability != null: #Null check
 			value += int(part.price * 0.8 * (float(part.durability) / 100.0)) #Durability damage reduces value
 	
 	return value

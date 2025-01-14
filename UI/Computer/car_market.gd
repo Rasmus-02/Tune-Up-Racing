@@ -111,7 +111,7 @@ func event_add():
 	"headlights" : get_durability(car_reliability), "taillights" : get_durability(car_reliability), "spoiler" : get_durability(car_reliability), 
 	"mirrors" : get_durability(car_reliability), "driveshaft" : get_durability(car_reliability), "exhaust" : get_durability(car_reliability), 
 	"subframe" : get_durability(car_reliability), "brakes" : get_durability(car_reliability), "gearbox" : get_durability(car_reliability),
-	"suspension" : get_durability(car_reliability), "tires" : get_durability(car_reliability), "wheels" : get_durability(car_reliability),
+	"suspension" : get_durability(car_reliability), "tires" : get_durability(car_reliability), "wheels" : get_durability(car_reliability), "radiator" : get_durability(car_reliability),
 	"block" : get_durability(engine_reliability), "internals" : get_durability(engine_reliability), "top" : get_durability(engine_reliability), 
 	"intake_manifold" : get_durability(engine_reliability), "exhaust_manifold" : get_durability(engine_reliability), "air_filter" : get_durability(engine_reliability)}
 	

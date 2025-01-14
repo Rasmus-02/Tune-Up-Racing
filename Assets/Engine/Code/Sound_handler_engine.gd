@@ -38,7 +38,7 @@ func sound_controller():
 	if knock_delay > 50:
 		knock_delay = 0
 		knock = engine.knock()
-	if engine.is_running == true and engine.torque > 0:
+	if engine.is_running == true:
 		var knock_rng = randf_range(1-knock, 1)
 		airflow.pitch_scale = 0.25 + (rpm / 25000.0)
 		

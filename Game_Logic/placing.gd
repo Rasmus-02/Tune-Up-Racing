@@ -5,7 +5,7 @@ var car_list = [] #Index 0 will be the player thanks to the level structure
 var placing_list = []
 var player_placing : int
 var start = false
-var max_lap = 3 #Can set max lap count here
+var max_lap = 1 #Can set max lap count here
 var map_bonus = 1.0
 var player_lap = 0
 
