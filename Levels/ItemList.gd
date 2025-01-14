@@ -27,7 +27,6 @@ func _on_item_clicked(index, _at_position, mouse_button_index):
 			car_editor.open_engine_editor()
 		_on_item_selected(index)
 
-
 func _on_item_selected(index):
 	if clicked == true and has_focus():
 		clicked = false
@@ -51,4 +50,19 @@ func set_background_color(index):
 
 func _on_timer_timeout():
 	click_time = 0
+
+
+
+func _ready():
+	connect("gui_input", Callable(self, "_on_gui_input"))
+
+func _on_gui_input(event: InputEvent):
+	if event is InputEventMouseButton and event.is_pressed():
+		# Get the position of the mouse relative to the ItemList
+		var mouse_pos = event.position
+		# Find the index of the item at the mouse position
+		var clicked_index = get_item_at_position(mouse_pos)
+		if clicked_index != -1:  # Check if the click is on a valid item
+			if is_item_disabled(clicked_index):
+				car_editor.car.get_node("Incompatible Part").play("play")
 

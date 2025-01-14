@@ -1,19 +1,34 @@
-[gd_scene load_steps=18 format=3 uid="uid://bk04exbplhmm6"]
+[gd_scene load_steps=39 format=3 uid="uid://bk04exbplhmm6"]
 
 [ext_resource type="Shader" path="res://Shaders/Test/Paint_Durability.gdshader" id="1_k18t5"]
+[ext_resource type="Script" path="res://Testing/Chassi Test Scene.gd" id="1_ltwdh"]
 [ext_resource type="Texture2D" uid="uid://c7ciifn2fk10b" path="res://Textures/Cars/Hikari Tasai/Chassi/Hikari Tasai Chassi.png" id="2_lv6da"]
 [ext_resource type="Texture2D" uid="uid://ckxnrgjraorfa" path="res://Shaders/Durability Noisemap.tres" id="2_mjy3j"]
 [ext_resource type="Texture2D" uid="uid://x5q1dljncttc" path="res://Textures/Cars/Hikari Tasai/Chassi/Hikari Tasai Chassi HM NM.png" id="3_46a6g"]
 [ext_resource type="Texture2D" uid="uid://chea4btj3tgqj" path="res://Textures/Cars/Hikari Tasai/Chassi/Hikari Tasai Chassi Spec.png" id="4_s8evb"]
 [ext_resource type="Texture2D" uid="uid://en4kny1emkih" path="res://Textures/Cars/Hikari Tasai/Chassi/Hikari Tasai Chassi Non Paintable.png" id="5_el3rp"]
-[ext_resource type="Script" path="res://Levels/Lighting.gd" id="5_hb1vn"]
-[ext_resource type="Texture2D" uid="uid://bhoyfxjbxos8" path="res://Textures/Cars/Nagata Koi/Hood/Nagata Koi KS_Racing Carbon Fiber Hood.png" id="5_sojya"]
-[ext_resource type="Texture2D" uid="uid://cf1iawux7iwxv" path="res://Textures/Cars/Nagata Koi/Hood/Nagata Koi Stock Hood NM.png" id="6_jbggo"]
-[ext_resource type="Texture2D" uid="uid://ov8dndh4twha" path="res://Textures/Cars/Nagata Koi/Hood/Nagata Koi KS_Racing Carbon Fiber Hood Spec.png" id="7_2rom2"]
+[ext_resource type="Texture2D" uid="uid://dlrmfg55nqlqa" path="res://Textures/Cars/Hikari Tasai/Hood/Hikari Tasai [KS-Racing] Carbon Fiber Hood.png" id="7_h6owr"]
+[ext_resource type="Texture2D" uid="uid://cobgrw57n4ji4" path="res://Textures/Cars/Hikari Tasai/Hood/Hikari Tasai [KS-Racing] Carbon Fiber Hood NM.png" id="8_2tssh"]
+[ext_resource type="Texture2D" uid="uid://bnmgfh34oevl5" path="res://Textures/Cars/Hikari Tasai/Headlights/Hikari Tasai Stock Headlights.png" id="8_fgvrr"]
+[ext_resource type="Texture2D" uid="uid://phq0qkeikdfj" path="res://Textures/Cars/Hikari Tasai/Headlights/Hikari Tasai Stock Headlights NM.png" id="9_dxvx5"]
+[ext_resource type="Texture2D" uid="uid://20fyhd5wo2v1" path="res://Textures/Cars/Hikari Tasai/Hood/Hikari Tasai [KS-Racing] Carbon Fiber Hood Spec.png" id="9_rasmc"]
+[ext_resource type="Texture2D" uid="uid://6rrrn1rjnxsd" path="res://Textures/Cars/Hikari Tasai/Fenders/Hikari Tasai Stock Fenders.png" id="10_064n5"]
+[ext_resource type="Texture2D" uid="uid://be5ll1sv8mcr1" path="res://Textures/Cars/Hikari Tasai/Headlights/Hikari Tasai Stock Headlights Spec.png" id="10_v628x"]
+[ext_resource type="Texture2D" uid="uid://bsm0ucc13kjqw" path="res://Textures/Cars/Hikari Tasai/Fenders/Hikari Tasai Fenders HM NM.png" id="11_4bri2"]
+[ext_resource type="Texture2D" uid="uid://bi2s4204r6m" path="res://Textures/Cars/Hikari Tasai/Fenders/Hikari Tasai Stock Fenders Spec.png" id="12_iyp7s"]
+[ext_resource type="Texture2D" uid="uid://cgobmaijmvhvb" path="res://Textures/Cars/Hikari Tasai/Front Bumper/Hikari Tasai [Satetsu] Front Bumper.png" id="13_rxmb6"]
+[ext_resource type="Texture2D" uid="uid://vobjhttqumwa" path="res://Textures/Cars/Hikari Tasai/Front Bumper/Hikari Tasai [Satetsu] Front Bumper NM.png" id="14_u3752"]
+[ext_resource type="Texture2D" uid="uid://dbrcdiudhl0w3" path="res://Textures/Cars/Hikari Tasai/Front Bumper/Hikari Tasai [Satetsu] Front Bumper Spec.png" id="15_sf0c4"]
+[ext_resource type="Texture2D" uid="uid://cwrb8vbgkcm0d" path="res://Textures/Cars/Hikari Tasai/Rear bumper/Hikari Tasai Facelift Rear Bumper.png" id="16_lvq8b"]
+[ext_resource type="Texture2D" uid="uid://bskq85u0j4ky3" path="res://Textures/Cars/Hikari Tasai/Rear bumper/Hikari Tasai Facelift Rear Bumper NM.png" id="17_8f7x0"]
+[ext_resource type="Texture2D" uid="uid://c1bme3sg135vr" path="res://Textures/Cars/Hikari Tasai/Rear bumper/Hikari Tasai Facelift Rear Bumper Spec.png" id="18_jya5o"]
+[ext_resource type="Texture2D" uid="uid://dny21upshx47m" path="res://Textures/Cars/Hikari Tasai/Spoiler/Hikari Tasai [Satetsu] Spoiler.png" id="19_ku8pv"]
+[ext_resource type="Texture2D" uid="uid://dcpy4lbfi35ib" path="res://Textures/Cars/Hikari Tasai/Spoiler/Hikari Tasai [Satetsu] Spoiler NM.png" id="20_5aafb"]
+[ext_resource type="Texture2D" uid="uid://b1dvb1qmj8bwx" path="res://Textures/Cars/Hikari Tasai/Spoiler/Hikari Tasai [Satetsu] Spoiler Spec.png" id="21_l7x5f"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_iycyy"]
 shader = ExtResource("1_k18t5")
-shader_parameter/sensitivity = 0.806
+shader_parameter/sensitivity = 0.0
 shader_parameter/material_type = 0
 shader_parameter/import_new_color = Vector3(0.495, 0.56, 0.245)
 shader_parameter/noise_texture = ExtResource("2_mjy3j")
@@ -30,17 +45,54 @@ normal_texture = ExtResource("3_46a6g")
 specular_texture = ExtResource("4_s8evb")
 specular_shininess = 0.58
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_lfjsy"]
+[sub_resource type="CanvasTexture" id="CanvasTexture_66po8"]
+diffuse_texture = ExtResource("8_fgvrr")
+normal_texture = ExtResource("9_dxvx5")
+specular_texture = ExtResource("10_v628x")
+specular_shininess = 0.3
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_oov5m"]
 shader = ExtResource("1_k18t5")
-shader_parameter/sensitivity = 0.752
+shader_parameter/sensitivity = 1.0
 shader_parameter/material_type = 5
-shader_parameter/import_new_color = null
+shader_parameter/import_new_color = Vector3(0.495, 0.56, 0.245)
 shader_parameter/noise_texture = ExtResource("2_mjy3j")
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_3f731"]
-diffuse_texture = ExtResource("5_sojya")
-normal_texture = ExtResource("6_jbggo")
-specular_texture = ExtResource("7_2rom2")
+diffuse_texture = ExtResource("7_h6owr")
+normal_texture = ExtResource("8_2tssh")
+specular_texture = ExtResource("9_rasmc")
+specular_shininess = 0.54
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_lfjsy"]
+shader = ExtResource("1_k18t5")
+shader_parameter/sensitivity = 0.752
+shader_parameter/material_type = 4
+shader_parameter/import_new_color = Vector3(0.495, 0.56, 0.245)
+shader_parameter/noise_texture = ExtResource("2_mjy3j")
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_07vpv"]
+diffuse_texture = ExtResource("10_064n5")
+normal_texture = ExtResource("11_4bri2")
+specular_texture = ExtResource("12_iyp7s")
+specular_shininess = 0.54
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_n70u1"]
+diffuse_texture = ExtResource("13_rxmb6")
+normal_texture = ExtResource("14_u3752")
+specular_texture = ExtResource("15_sf0c4")
+specular_shininess = 0.54
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_r3bc2"]
+diffuse_texture = ExtResource("16_lvq8b")
+normal_texture = ExtResource("17_8f7x0")
+specular_texture = ExtResource("18_jya5o")
+specular_shininess = 0.54
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_woeoo"]
+diffuse_texture = ExtResource("19_ku8pv")
+normal_texture = ExtResource("20_5aafb")
+specular_texture = ExtResource("21_l7x5f")
 specular_shininess = 0.54
 
 [sub_resource type="Gradient" id="Gradient_ragll"]
@@ -51,6 +103,7 @@ gradient = SubResource("Gradient_ragll")
 width = 1
 
 [node name="Node2D" type="Node2D"]
+script = ExtResource("1_ltwdh")
 
 [node name="Car" type="Sprite2D" parent="."]
 material = SubResource("ShaderMaterial_iycyy")
@@ -59,14 +112,38 @@ texture = SubResource("CanvasTexture_f6oju")
 [node name="Non Paintable" type="Sprite2D" parent="Car"]
 texture = SubResource("CanvasTexture_qkvjj")
 
-[node name="Test" type="Sprite2D" parent="."]
-material = SubResource("ShaderMaterial_lfjsy")
+[node name="Camera2D" type="Camera2D" parent="Car"]
+zoom = Vector2(6, 6)
+
+[node name="Headlights" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_iycyy")
+texture = SubResource("CanvasTexture_66po8")
+vframes = 2
+
+[node name="Timer" type="Timer" parent="Headlights"]
+
+[node name="Hood" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_oov5m")
 texture = SubResource("CanvasTexture_3f731")
+
+[node name="Fenders" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_lfjsy")
+texture = SubResource("CanvasTexture_07vpv")
+
+[node name="Front B" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_lfjsy")
+texture = SubResource("CanvasTexture_n70u1")
+
+[node name="Rear B" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_lfjsy")
+texture = SubResource("CanvasTexture_r3bc2")
+
+[node name="Spoiler" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_lfjsy")
+texture = SubResource("CanvasTexture_woeoo")
 
 [node name="Lighting" type="Node2D" parent="."]
 position = Vector2(-19.6553, -13.5771)
-script = ExtResource("5_hb1vn")
-Type = "Lamp"
 
 [node name="Level visibility" type="CanvasModulate" parent="Lighting"]
 position = Vector2(-115.445, 353.001)
@@ -75,8 +152,8 @@ skew = 1.26391
 color = Color(0.0392157, 0.113725, 0.172549, 1)
 
 [node name="Sun" type="PointLight2D" parent="Lighting"]
-position = Vector2(89.6879, 849.566)
-rotation = 1.5708
+position = Vector2(688.655, -1258.42)
+rotation = 1.24313
 scale = Vector2(10000, 10000)
 color = Color(1, 0.984314, 0.964706, 1)
 range_z_min = -4096
@@ -85,4 +162,21 @@ shadow_filter_smooth = 0.5
 shadow_item_cull_mask = 2
 texture = SubResource("GradientTexture1D_lxnn0")
 texture_scale = 50.0
-height = 10000.0
+height = 4555.0
+
+[node name="Damage" type="ProgressBar" parent="."]
+offset_left = -63.0
+offset_top = 61.0
+offset_right = 400.0
+offset_bottom = 116.0
+scale = Vector2(0.35, 0.35)
+max_value = 1.0
+step = 0.001
+
+[node name="Label" type="Label" parent="Damage"]
+layout_mode = 0
+offset_left = -140.0
+offset_right = -28.0
+offset_bottom = 51.0
+text = "Damage:
+"

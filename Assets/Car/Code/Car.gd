@@ -606,8 +606,6 @@ func _physics_process(delta):
 			car_constructor()
 	if is_functional() and deleted == false:
 		if is_loaded() and chassi != null:
-			$Label.text = str(int(speed_kmh))
-			$Label/Label.text = str(int((tire_limit/max_tire_limit)*100))
 			speed_kmh = velocity.length()*.02*3.6
 			tire_limit = clamp(tire_limit, 0, max_tire_limit) #clamps the tirelimit
 			acceleration = Vector2.ZERO

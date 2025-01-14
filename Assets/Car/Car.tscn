@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://bnuwduemvo1ps"]
+[gd_scene load_steps=23 format=3 uid="uid://bnuwduemvo1ps"]
 
 [ext_resource type="Script" path="res://Assets/Car/Code/Car.gd" id="1_lh3tc"]
 [ext_resource type="Script" path="res://Assets/Car/Code/Car_spawner.gd" id="2_tuyxm"]
@@ -15,14 +15,57 @@
 [ext_resource type="Texture2D" uid="uid://dul48whe55m8a" path="res://Textures/Engines/Hikari Suhei-25A/Block/Hikai Suhei-25A Block Spec.png" id="12_liibd"]
 [ext_resource type="Script" path="res://Assets/Car/Car_Placing.gd" id="13_pvq3m"]
 [ext_resource type="PackedScene" uid="uid://bdtwk3l2aqqg7" path="res://Assets/Effects/Collision.tscn" id="14_2iard"]
+[ext_resource type="Shader" path="res://Levels/scene_transition.gdshader" id="16_ebibn"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_vh7d5"]
 radius = 44.0
 height = 216.0
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_mjo2j"]
+shader = ExtResource("16_ebibn")
+shader_parameter/progress = 0.0
+shader_parameter/diamondPixelSize = 15.0
+
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_30j61"]
 radius = 201.0
 height = 760.0
+
+[sub_resource type="Animation" id="Animation_pd7xm"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:material:shader_parameter/progress")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_vbfhu"]
+resource_name = "play"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:material:shader_parameter/progress")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [0.0, 1.0, 0.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ajiss"]
+_data = {
+"RESET": SubResource("Animation_pd7xm"),
+"play": SubResource("Animation_vbfhu")
+}
 
 [node name="Car" type="CharacterBody2D" groups=["Car"]]
 collision_layer = 1537
@@ -62,6 +105,21 @@ rotation = 1.5708
 shape = SubResource("CapsuleShape2D_vh7d5")
 debug_color = Color(0.65098, 0.521569, 0, 0.419608)
 
+[node name="Incompatible Part" type="Label" parent="Hitbox"]
+z_index = 100
+material = SubResource("ShaderMaterial_mjo2j")
+offset_left = -23.9997
+offset_top = 72.0001
+offset_right = 320.0
+offset_bottom = 177.0
+rotation = -1.5708
+scale = Vector2(0.4, 0.4)
+theme_override_colors/font_color = Color(0.92549, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0.403922, 0, 0, 1)
+theme_override_constants/outline_size = 8
+text = "Part does not fit or
+missing depending part"
+
 [node name="Engine" parent="." instance=ExtResource("5_dfga0")]
 rotation = -1.5708
 
@@ -72,26 +130,6 @@ collision_mask = 513
 
 [node name="Area hitbox" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource("CapsuleShape2D_vh7d5")
-
-[node name="Label" type="Label" parent="."]
-visible = false
-offset_left = -142.0
-offset_top = -124.0
-offset_right = 158.0
-offset_bottom = 69.0
-scale = Vector2(0.4, 0.4)
-text = "speed"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Label" type="Label" parent="Label"]
-layout_mode = 0
-offset_left = 427.5
-offset_top = 65.0
-offset_right = 637.5
-offset_bottom = 258.0
-text = "FPS"
-script = ExtResource("4_oh734")
 
 [node name="Sound effects" type="Node2D" parent="."]
 
@@ -207,6 +245,13 @@ car = NodePath("..")
 [node name="Effects" type="Node2D" parent="."]
 
 [node name="Collision" parent="Effects" instance=ExtResource("14_2iard")]
+
+[node name="Incompatible Part" type="AnimationPlayer" parent="."]
+root_node = NodePath("../Hitbox/Incompatible Part")
+libraries = {
+"": SubResource("AnimationLibrary_ajiss")
+}
+speed_scale = 0.7
 
 [connection signal="export_variables" from="." to="Engine" method="_on_car_export_variables"]
 [connection signal="rpm_info" from="Engine" to="." method="_on_engine_rpm_info"]

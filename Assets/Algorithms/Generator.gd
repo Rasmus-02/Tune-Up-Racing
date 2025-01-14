@@ -205,7 +205,7 @@ func generate_engine(rarity, weight, car_weight, torque, engine_bay_size, engine
 		"weight" : engine_weight,
 		"fuel_type" : top.fuel_type,
 		"max_boost" : boost_estimate_turbo,
-		"max_rpm" : top.max_hp_rpm * 1.2,
+		"max_rpm" : top.max_hp_rpm,
 		"Tq" : est_power.tq,
 		"Hp" : est_power.hp,
 		"block" : block.Part_Number,
@@ -463,18 +463,20 @@ func _estimate_boost(tq_boost, tq, goal_tq, turbo_size, turbo_efficiency):
 			break
 
 func estimate_torque(block, airfilter, exhaust_manifold, intake_manifold, internals, top, boost):
-	var max_horsepower_rpm = top.max_hp_rpm / 1.2
+	
+	var max_horsepower_rpm = durability_perfromance(top.max_hp_rpm / 1.2, top.durability)
 	var air_filter = airfilter
 	var turbo = exhaust_manifold.turbo
 	var supercharger = intake_manifold.supercharger
-	var compression = internals.compression
-	var max_compression = top.max_compression * intake_manifold.max_compression_modifier
+	var compression = durability_perfromance(internals.compression, internals.durability)
+	var max_compression = durability_perfromance(top.max_compression, top.durability) * durability_perfromance(intake_manifold.max_compression_modifier, intake_manifold.durability)
 	var max_boost = boost
 	var turbo_size = exhaust_manifold.get_turbo_max_size()
 	var supercharger_pulley_size = 70.0
 	var supercharer_displacement_capacity = intake_manifold.supercharer_displacement_capacity
 	var turbo_efficiency = exhaust_manifold.turbo_efficiency
-	var max_torque = block.tq * intake_manifold.tq_mod * exhaust_manifold.tq_mod * top.tq_mod * air_filter.tq_mod
+	var max_torque = (durability_perfromance(block.tq, block.durability) * durability_perfromance(intake_manifold.tq_mod, intake_manifold.durability) 
+	* durability_perfromance(exhaust_manifold.tq_mod, exhaust_manifold.durability) * durability_perfromance(top.tq_mod, top.durability) * durability_perfromance(air_filter.tq_mod, air_filter.durability))
 	
 	var temp_tq
 	var temp_hp
@@ -541,6 +543,9 @@ func rarity_to_int(rarity):
 			return 3
 		"legendary":
 			return 4
+
+func durability_perfromance(stat, durability):
+	return (stat + stat * (durability * 0.0025)) * 0.8
 
 func _generate_gear_ratio(gears, top_speed_estimate):
 	pass

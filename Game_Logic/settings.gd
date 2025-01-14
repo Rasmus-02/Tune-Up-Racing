@@ -4,10 +4,10 @@ var file_location = "user://settings.save"
 # var resolution_settings = {0 : Vector2(850, 480) ,1 : Vector2(1280, 720), 2 : Vector2(1920, 1080), 3 : Vector2(2560, 1440)}
 
 #Difficulty
-var difficulty : int # 0 - 4
+var difficulty : int = 0 # 0 - 4
 
 #General
-var camera_mode : int = 1 # 0 = static || 1 = dynamic
+var camera_mode : int = 0 # 0 = static || 1 = dynamic
 var display_mode : int # 0 = fullscreen || 1 = windowed
 #var resolution = 0 # the index in resolution settings
 var vsync : int = 1 # 0 = off || 1 = on

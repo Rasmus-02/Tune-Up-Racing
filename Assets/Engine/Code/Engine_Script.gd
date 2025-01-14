@@ -128,8 +128,8 @@ func load_engine(index):
 		block_durability = load_file.block[1]
 		internals_durability = load_file.internals[1]
 		top_durability = load_file.top[1]
-		intake_manifold_durability = load_file.exhaust_manifold[1]
-		exhaust_manifold_durability = load_file.intake_manifold[1]
+		intake_manifold_durability = load_file.intake_manifold[1]
+		exhaust_manifold_durability = load_file.exhaust_manifold[1]
 		air_filter_durability = load_file.air_filter[1]
 		max_boost = load_file.tune[0]
 		max_rpm = load_file.tune[1]
@@ -216,12 +216,13 @@ func engine_stats():
 	intake_manifold = specific_parts.intake_manifold[selected_intake_manifold].instantiate()
 	exhaust_manifold = specific_parts.exhaust_manifold[selected_exhaust_manifold].instantiate()
 	air_filter = universal_parts.air_filter[selected_air_filter].instantiate()
-	max_torque = block.tq * intake_manifold.tq_mod * exhaust_manifold.tq_mod * top.tq_mod * air_filter.tq_mod
 	fuel_type = top.fuel_type
-	max_horsepower_rpm = top.max_hp_rpm / 1.2 #/1.2 to make peak power accurate with the rest of the calculations
-	max_compression = top.max_compression * intake_manifold.max_compression_modifier
-	compression = internals.compression
-	smoothness = top.smoothness
+	max_torque = (durability_perfromance(block.tq, block_durability) * durability_perfromance(intake_manifold.tq_mod, intake_manifold_durability) 
+	* durability_perfromance(exhaust_manifold.tq_mod, exhaust_manifold_durability) * durability_perfromance(top.tq_mod, top_durability) * durability_perfromance(air_filter.tq_mod, air_filter_durability))
+	max_horsepower_rpm = durability_perfromance(top.max_hp_rpm / 1.2, top_durability) #/1.2 to make peak power accurate with the rest of the calculations
+	max_compression = durability_perfromance(top.max_compression, top_durability) * durability_perfromance(intake_manifold.max_compression_modifier, intake_manifold_durability)
+	compression = durability_perfromance(internals.compression, internals_durability)
+	smoothness = durability_perfromance(top.smoothness, top_durability)
 	turbo = exhaust_manifold.turbo
 	supercharger = intake_manifold.supercharger
 	turbo_1_size = exhaust_manifold.turbo_1_size
@@ -246,6 +247,9 @@ func engine_stats():
 		
 	check_engine_structure()
 	update_size()
+
+func durability_perfromance(stat, durability):
+	return (stat + stat * (durability * 0.0025)) * 0.8
 
 func check_engine_structure():
 	#Check so the engine structure is valid
@@ -508,18 +512,32 @@ func damage_calculator():
 	var knock_damage = knock() * 0.01
 	internals_durability -= knock_damage
 	top_durability -= knock_damage * 0.5
+	##Great Overpressure
+	if knock() > 1:
+		knock_damage * 1.5
 	##Overheating (Temperature)
-	if temperature >= 120:
-		block_durability -= (temperature - 120) * damage_speed_mod
-		internals_durability -= (temperature - 120) * damage_speed_mod
-		top_durability -= (temperature - 120) * damage_speed_mod
+	if get_parent().player == true:
+			print(temperature)
+	if temperature >= 110:
+		block_durability -= (temperature - 110) * damage_speed_mod * 10
+		internals_durability -= (temperature - 110) * damage_speed_mod * 10
+		top_durability -= (temperature - 110) * damage_speed_mod * 10
+		if turbo == true:
+			exhaust_manifold_durability -= (temperature - 110) * damage_speed_mod * 10
 	
 	#Clamps
 	block_durability = clamp(block_durability, 0, 100)
 	internals_durability = clamp(internals_durability, 0, 100)
 	top_durability = clamp(top_durability, 0, 100)
+	exhaust_manifold_durability = clamp(exhaust_manifold_durability, 0, 100)
 	
-	#Save_Load.edit_engine(self)
+	#Change stats based on durability
+	max_torque = (durability_perfromance(block.tq, block_durability) * durability_perfromance(intake_manifold.tq_mod, intake_manifold_durability) 
+	* durability_perfromance(exhaust_manifold.tq_mod, exhaust_manifold_durability) * durability_perfromance(top.tq_mod, top_durability) * durability_perfromance(air_filter.tq_mod, air_filter_durability))
+	max_horsepower_rpm = durability_perfromance(top.max_hp_rpm / 1.2, top_durability) #/1.2 to make peak power accurate with the rest of the calculations
+	max_compression = durability_perfromance(top.max_compression, top_durability) * durability_perfromance(intake_manifold.max_compression_modifier, intake_manifold_durability)
+	compression = durability_perfromance(internals.compression, internals_durability)
+	smoothness = durability_perfromance(top.smoothness, top_durability)
 
 var temp_rpm = 0 #Variasble to meassure differense between real rpm and clutch rpm
 var real_rpm = 0
@@ -684,8 +702,6 @@ func estimate_torque():
 	#Run twice, first time for hp, second time for tq
 	var run1_hp
 	var run1_tq
-	
-	
 	for i in 1:
 		var temp_rpm = max_horsepower_rpm
 		var temp_turbo_size = exhaust_manifold.get_turbo_max_size()
