@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://cway7ixk8700p"]
+[gd_scene load_steps=13 format=3 uid="uid://cway7ixk8700p"]
 
 [ext_resource type="Script" path="res://Game_Logic/Cleaner.gd" id="1_kfwuq"]
 [ext_resource type="PackedScene" uid="uid://cctyed3jxvgm6" path="res://Assets/Engine/Part Lists/Part Selector/Part Selector engine.tscn" id="2_k7a4v"]
@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://dmvbxx2hwer21" path="res://Textures/Engines/Talon Motors Typhoon/Radiator/Typhoon Radiator Piping Longitudinal.png" id="6_vogme"]
 [ext_resource type="Texture2D" uid="uid://cx30wl6lgfte3" path="res://Textures/Engines/Talon Motors Typhoon/Radiator/Typhoon Radiator Piping Longitudinal NM.png" id="7_gkn4s"]
 [ext_resource type="PackedScene" uid="uid://c8il6nkvjwonk" path="res://Sound/Turbo and Supercharge Sounds/Boost_Sound_Handler.tscn" id="8_8djia"]
+[ext_resource type="PackedScene" uid="uid://ca3px5nsyfcww" path="res://Assets/Effects/EngineSmoke.tscn" id="10_rkoot"]
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_cp7nc"]
 diffuse_texture = ExtResource("4_v1upi")
@@ -43,3 +44,5 @@ visible = false
 texture = SubResource("CanvasTexture_5rrsh")
 
 [node name="Boost_Sound_Handler" parent="." instance=ExtResource("8_8djia")]
+
+[node name="EngineSmoke" parent="." instance=ExtResource("10_rkoot")]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=39 format=3 uid="uid://bk04exbplhmm6"]
+[gd_scene load_steps=40 format=3 uid="uid://bk04exbplhmm6"]
 
 [ext_resource type="Shader" path="res://Shaders/Test/Paint_Durability.gdshader" id="1_k18t5"]
 [ext_resource type="Script" path="res://Testing/Chassi Test Scene.gd" id="1_ltwdh"]
@@ -25,6 +25,7 @@
 [ext_resource type="Texture2D" uid="uid://dny21upshx47m" path="res://Textures/Cars/Hikari Tasai/Spoiler/Hikari Tasai [Satetsu] Spoiler.png" id="19_ku8pv"]
 [ext_resource type="Texture2D" uid="uid://dcpy4lbfi35ib" path="res://Textures/Cars/Hikari Tasai/Spoiler/Hikari Tasai [Satetsu] Spoiler NM.png" id="20_5aafb"]
 [ext_resource type="Texture2D" uid="uid://b1dvb1qmj8bwx" path="res://Textures/Cars/Hikari Tasai/Spoiler/Hikari Tasai [Satetsu] Spoiler Spec.png" id="21_l7x5f"]
+[ext_resource type="PackedScene" uid="uid://ca3px5nsyfcww" path="res://Assets/Effects/EngineSmoke.tscn" id="26_ms2n6"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_iycyy"]
 shader = ExtResource("1_k18t5")
@@ -123,6 +124,7 @@ vframes = 2
 [node name="Timer" type="Timer" parent="Headlights"]
 
 [node name="Hood" type="Sprite2D" parent="."]
+z_index = 1
 material = SubResource("ShaderMaterial_oov5m")
 texture = SubResource("CanvasTexture_3f731")
 
@@ -166,9 +168,9 @@ height = 4555.0
 
 [node name="Damage" type="ProgressBar" parent="."]
 offset_left = -63.0
-offset_top = 61.0
+offset_top = 56.0
 offset_right = 400.0
-offset_bottom = 116.0
+offset_bottom = 111.0
 scale = Vector2(0.35, 0.35)
 max_value = 1.0
 step = 0.001
@@ -180,3 +182,7 @@ offset_right = -28.0
 offset_bottom = 51.0
 text = "Damage:
 "
+
+[node name="TireSmoke" parent="." instance=ExtResource("26_ms2n6")]
+z_index = 0
+position = Vector2(65, -2)

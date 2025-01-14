@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://bgw6l5t4kqq76"]
+[gd_scene load_steps=13 format=3 uid="uid://bgw6l5t4kqq76"]
 
 [ext_resource type="Script" path="res://Game_Logic/Cleaner.gd" id="1_4fowv"]
 [ext_resource type="PackedScene" uid="uid://cctyed3jxvgm6" path="res://Assets/Engine/Part Lists/Part Selector/Part Selector engine.tscn" id="1_12ogh"]
@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://dn58hvu4427p8" path="res://Textures/Engines/Hikari Suhei-25A/Radiator piping/Hikai Suhei-25A Longitudunal Radiator Piping.png" id="6_sxuy8"]
 [ext_resource type="Texture2D" uid="uid://cput16p857xwi" path="res://Textures/Engines/Hikari Suhei-25A/Radiator piping/Hikai Suhei-25A Longitudunal Radiator Piping NM.png" id="7_v3v2l"]
 [ext_resource type="PackedScene" uid="uid://c8il6nkvjwonk" path="res://Sound/Turbo and Supercharge Sounds/Boost_Sound_Handler.tscn" id="8_1mnl6"]
+[ext_resource type="PackedScene" uid="uid://ca3px5nsyfcww" path="res://Assets/Effects/EngineSmoke.tscn" id="10_3wqa8"]
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_8lf8t"]
 diffuse_texture = ExtResource("4_2f7po")
@@ -43,3 +44,5 @@ visible = false
 texture = SubResource("CanvasTexture_71le6")
 
 [node name="Boost_Sound_Handler" parent="." instance=ExtResource("8_1mnl6")]
+
+[node name="EngineSmoke" parent="." instance=ExtResource("10_3wqa8")]

@@ -335,7 +335,8 @@ func is_functional():
 	if (selected_block != 0 and selected_top != 0 and selected_internals != 0 and selected_intake_manifold != 0 and selected_exhaust_manifold != 0 and selected_air_filter != 0 and 
 	block_durability > 0 and top_durability > 0 and internals_durability > 0 and intake_manifold_durability > 0 and exhaust_manifold_durability > 0 and air_filter_durability > 0):
 		return(true)
-	else:
+	elif is_running == true:
+		get_child(0).get_child(0).get_node("EngineSmoke").get_child(0).emitting = true
 		return(false)
 
 var last_engine_position = null #To check if gearbox position gets changed

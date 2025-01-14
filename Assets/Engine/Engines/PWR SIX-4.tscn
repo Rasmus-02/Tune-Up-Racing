@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://pmq0qg4nqgmf"]
+[gd_scene load_steps=13 format=3 uid="uid://pmq0qg4nqgmf"]
 
 [ext_resource type="Script" path="res://Game_Logic/Cleaner.gd" id="1_nrdr6"]
 [ext_resource type="PackedScene" uid="uid://cctyed3jxvgm6" path="res://Assets/Engine/Part Lists/Part Selector/Part Selector engine.tscn" id="2_dal6w"]
@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://cyu5fxgtwaeas" path="res://Textures/Engines/PWR SIX-4/Radiator/PWR SIX-4.0 Radiator Long.png" id="7_2j20o"]
 [ext_resource type="Texture2D" uid="uid://dc6ynnrtlydqg" path="res://Textures/Engines/PWR SIX-4/Radiator/PWR SIX-4.0 Radiator Long NM.png" id="8_dgjrh"]
 [ext_resource type="PackedScene" uid="uid://c8il6nkvjwonk" path="res://Sound/Turbo and Supercharge Sounds/Boost_Sound_Handler.tscn" id="9_i8wxu"]
+[ext_resource type="PackedScene" uid="uid://ca3px5nsyfcww" path="res://Assets/Effects/EngineSmoke.tscn" id="10_bjmbl"]
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_cp7nc"]
 diffuse_texture = ExtResource("5_tm0k2")
@@ -43,3 +44,5 @@ visible = false
 texture = SubResource("CanvasTexture_5rrsh")
 
 [node name="Boost_Sound_Handler" parent="." instance=ExtResource("9_i8wxu")]
+
+[node name="EngineSmoke" parent="." instance=ExtResource("10_bjmbl")]
