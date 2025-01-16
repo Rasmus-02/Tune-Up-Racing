@@ -1,0 +1,36 @@
+[gd_scene load_steps=8 format=3 uid="uid://dcrgubedpkddh"]
+
+[ext_resource type="Script" path="res://Assets/Car/Code/Part_scripts/Mirrors.gd" id="1_c24cu"]
+[ext_resource type="Texture2D" uid="uid://coar6bh2sylbs" path="res://Textures/Cars/PWR Wyvern/Mirrors/PWR Wyvern Stock Mirrors.png" id="2_s065h"]
+[ext_resource type="Texture2D" uid="uid://bttegcwph3sao" path="res://Textures/Cars/PWR Wyvern/Mirrors/PWR Wyvern Stock Mirrors NM.png" id="3_scqbv"]
+[ext_resource type="Texture2D" uid="uid://t5qyaplkneyw" path="res://Textures/Cars/PWR Wyvern/Mirrors/PWR Wyvern Stock Mirrors Spec.png" id="4_2pwrr"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_e2ut5"]
+diffuse_texture = ExtResource("2_s065h")
+normal_texture = ExtResource("3_scqbv")
+specular_texture = ExtResource("4_2pwrr")
+specular_shininess = 0.5
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_blik5"]
+polygon = PackedVector2Array(10, -42, 10, -39, 14, -35, 8, -35, 5, -38, 5, -44, 8, -44)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_1fmw5"]
+polygon = PackedVector2Array(14, 34, 10, 38, 10, 41, 8, 43, 5, 43, 5, 37, 8, 34)
+
+[node name="PWR Wyvern Stock Mirrors" type="Node2D"]
+script = ExtResource("1_c24cu")
+rarity = "D"
+Part_Number = 1
+description = "The factory mirrors for the Nagata Koi"
+paintable = false
+weight = 2
+drag = 0.01
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = SubResource("CanvasTexture_e2ut5")
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="Sprite2D"]
+occluder = SubResource("OccluderPolygon2D_blik5")
+
+[node name="LightOccluder2D2" type="LightOccluder2D" parent="Sprite2D"]
+occluder = SubResource("OccluderPolygon2D_1fmw5")

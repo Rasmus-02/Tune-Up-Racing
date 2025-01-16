@@ -1,0 +1,37 @@
+[gd_scene load_steps=9 format=3 uid="uid://d0me1h3vph3g8"]
+
+[ext_resource type="Script" path="res://Assets/Car/Code/Part_scripts/Exhaust.gd" id="1_tejux"]
+[ext_resource type="Texture2D" uid="uid://cceqhuqey6vyh" path="res://Textures/Cars/PWR Wyvern/Exhaust/PWR Wyvern Stock Exhaust.png" id="2_q45wo"]
+[ext_resource type="Texture2D" uid="uid://bpccma45ilud4" path="res://Textures/Cars/PWR Wyvern/Exhaust/PWR Wyvern Stock Exhaust NM.png" id="3_b2mtq"]
+[ext_resource type="Texture2D" uid="uid://gr80ehyid57q" path="res://Textures/Cars/PWR Wyvern/Exhaust/PWR Wyvern Stock Exhaust Spec.png" id="4_1rscu"]
+[ext_resource type="Script" path="res://Assets/Effects/Backfire.gd" id="5_55ejv"]
+[ext_resource type="AudioStream" uid="uid://cfvwt4fi2efkr" path="res://Sound/Engine Sounds/Backfire.mp3" id="6_nrke4"]
+[ext_resource type="PackedScene" uid="uid://b1agqhrv0psca" path="res://Assets/Effects/Backfire.tscn" id="7_v43i4"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_lr5dr"]
+diffuse_texture = ExtResource("2_q45wo")
+normal_texture = ExtResource("3_b2mtq")
+specular_texture = ExtResource("4_1rscu")
+specular_shininess = 0.65
+
+[node name="PWR Wyvern Stock Exhaust" type="Node2D"]
+script = ExtResource("1_tejux")
+rarity = "D"
+Part_Number = 1
+description = "The Stock Exhaust that comes with the Nagata Koi"
+weight = 25
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = SubResource("CanvasTexture_lr5dr")
+
+[node name="Backfire" type="Node2D" parent="."]
+script = ExtResource("5_55ejv")
+
+[node name="Backfire_Sound" type="AudioStreamPlayer2D" parent="Backfire"]
+stream = ExtResource("6_nrke4")
+bus = &"Car Volume"
+
+[node name="Exhaust_1" type="Marker2D" parent="Backfire"]
+position = Vector2(-107, 27)
+
+[node name="Backfire" parent="Backfire/Exhaust_1" instance=ExtResource("7_v43i4")]

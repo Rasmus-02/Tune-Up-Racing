@@ -1,0 +1,28 @@
+[gd_scene load_steps=6 format=3 uid="uid://dd7kg5r6w32aa"]
+
+[ext_resource type="Script" path="res://Assets/Car/Code/Part_scripts/Driveshaft.gd" id="1_dvxss"]
+[ext_resource type="Texture2D" uid="uid://fdgpmra6uwrk" path="res://Textures/Cars/PWR Wyvern/Driveshaft/PWR Wyvern Stock Driveshaft.png" id="2_e32gt"]
+[ext_resource type="Texture2D" uid="uid://c1wn02nvy7gnu" path="res://Textures/Cars/PWR Wyvern/Driveshaft/PWR Wyvern Stock Driveshaft NM.png" id="3_g0if0"]
+[ext_resource type="Texture2D" uid="uid://cmt7x7x6kfbkh" path="res://Textures/Cars/PWR Wyvern/Driveshaft/PWR Wyvern Stock Driveshaft Spec.png" id="4_jbo4k"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_c5td7"]
+diffuse_texture = ExtResource("2_e32gt")
+normal_texture = ExtResource("3_g0if0")
+specular_texture = ExtResource("4_jbo4k")
+specular_shininess = 0.5
+
+[node name="PWR Wyvern Stock RWD Driveshaft" type="Node2D"]
+script = ExtResource("1_dvxss")
+rarity = "rare"
+Part_Number = 1
+description = "The factory rear wheel drive driveshaft that comes in the PWR Wyvern"
+price = 1000
+weight = 20
+max_torque = 450
+drivetrain_loss = 0.15
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = SubResource("CanvasTexture_c5td7")
+
+[node name="Gearbox" type="Marker2D" parent="."]
+position = Vector2(10, 0)

@@ -1,0 +1,23 @@
+[gd_scene load_steps=6 format=3 uid="uid://wl015148eey5"]
+
+[ext_resource type="Script" path="res://Assets/Car/Code/Part_scripts/Subframe.gd" id="1_6qi02"]
+[ext_resource type="Texture2D" uid="uid://jarp51addic7" path="res://Textures/Cars/PWR Wyvern/Subframe/PWR Wyvern Stock Subframe.png" id="2_0in56"]
+[ext_resource type="Texture2D" uid="uid://c4gexeldyrj0n" path="res://Textures/Cars/PWR Wyvern/Subframe/PWR Wyvern Stock Subframe NM.png" id="3_n80tm"]
+[ext_resource type="Texture2D" uid="uid://eghg8h5hcj36" path="res://Textures/Cars/PWR Wyvern/Subframe/PWR Wyvern Stock Subframe Spec.png" id="4_usajc"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_0jkfa"]
+diffuse_texture = ExtResource("2_0in56")
+normal_texture = ExtResource("3_n80tm")
+specular_texture = ExtResource("4_usajc")
+specular_shininess = 0.5
+
+[node name="PWR Wyvern Stock Subframe" type="Node2D"]
+script = ExtResource("1_6qi02")
+rarity = "D"
+Part_Number = 1
+description = "The factory subframe for the Nagata Koi"
+weight = 15
+handling_bonus = 1.0
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = SubResource("CanvasTexture_0jkfa")

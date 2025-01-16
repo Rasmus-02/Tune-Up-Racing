@@ -1,0 +1,15 @@
+[gd_scene load_steps=5 format=3 uid="uid://bm2cvltjr45vg"]
+
+[ext_resource type="Texture2D" uid="uid://lvnhqaimcscv" path="res://Textures/Cars/PWR Wyvern/Windows/PWR Wyvern Windows.png" id="1_bh8vg"]
+[ext_resource type="Texture2D" uid="uid://ba7ak27cdmlfm" path="res://Textures/Cars/PWR Wyvern/Windows/PWR Wyvern Windows NM.png" id="2_gq8jg"]
+[ext_resource type="Texture2D" uid="uid://6vghn8sfrt0d" path="res://Textures/Cars/PWR Wyvern/Windows/PWR Wyvern Windows Spec.png" id="3_3roi4"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_duf3e"]
+diffuse_texture = ExtResource("1_bh8vg")
+normal_texture = ExtResource("2_gq8jg")
+specular_texture = ExtResource("3_3roi4")
+
+[node name="PWR Wyvern Windows" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = SubResource("CanvasTexture_duf3e")

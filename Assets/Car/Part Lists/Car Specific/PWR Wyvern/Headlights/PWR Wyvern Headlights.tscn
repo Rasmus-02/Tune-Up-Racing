@@ -1,0 +1,45 @@
+[gd_scene load_steps=11 format=3 uid="uid://bcauojbas07jw"]
+
+[ext_resource type="Script" path="res://Assets/Car/Code/Part_scripts/Headlights.gd" id="1_b3c5b"]
+[ext_resource type="Shader" path="res://Shaders/ColorSelector.gdshader" id="2_231ad"]
+[ext_resource type="Texture2D" uid="uid://csdmawf2s4ad1" path="res://Textures/Cars/PWR Wyvern/Headlights/PWR Wyvern Stock Headlights.png" id="3_qiyu3"]
+[ext_resource type="Texture2D" uid="uid://t3y8irj775m1" path="res://Textures/Cars/PWR Wyvern/Headlights/PWR Wyvern Stock Headlights Lightmask.png" id="3_ytctu"]
+[ext_resource type="Texture2D" uid="uid://dgvcy2t0t5vqw" path="res://Textures/Cars/PWR Wyvern/Headlights/PWR Wyvern Stock Headlights NM.png" id="4_1aca2"]
+[ext_resource type="Texture2D" uid="uid://buyhidekw7i3y" path="res://Textures/Cars/PWR Wyvern/Headlights/PWR Wyvern Stock Headlights Spec.png" id="5_46r6w"]
+[ext_resource type="PackedScene" uid="uid://brbx33n7duy1v" path="res://Shaders/headlights.tscn" id="7_j8d5d"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_hdm5u"]
+shader = ExtResource("2_231ad")
+shader_parameter/import_new_color = null
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_ma2ib"]
+diffuse_texture = ExtResource("3_qiyu3")
+normal_texture = ExtResource("4_1aca2")
+specular_texture = ExtResource("5_46r6w")
+specular_shininess = 0.5
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_ke2me"]
+blend_mode = 1
+light_mode = 1
+
+[node name="PWR Wyvern Stock Headlights" type="Node2D"]
+script = ExtResource("1_b3c5b")
+rarity = "uncommon"
+Part_Number = 1
+description = "The factory headlights for the Nagata Koi"
+paintable = false
+weight = 5
+drag = 0.01
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_hdm5u")
+texture = SubResource("CanvasTexture_ma2ib")
+
+[node name="Lightmask" type="Sprite2D" parent="Sprite2D"]
+visible = false
+material = SubResource("CanvasItemMaterial_ke2me")
+texture = ExtResource("3_ytctu")
+
+[node name="Lights" parent="." instance=ExtResource("7_j8d5d")]
+light_mask = 1
+position = Vector2(-5, 0)

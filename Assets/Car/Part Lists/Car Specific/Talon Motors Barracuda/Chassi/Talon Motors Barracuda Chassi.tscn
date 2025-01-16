@@ -44,7 +44,7 @@ weight = 850
 reliability = 0.88
 downforce = 80
 drag = 0.24
-wheelbase = 135
+wheelbase = 132
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 material = SubResource("ShaderMaterial_ja0mo")

@@ -1,4 +1,4 @@
-[gd_scene load_steps=40 format=3 uid="uid://bk04exbplhmm6"]
+[gd_scene load_steps=41 format=3 uid="uid://bk04exbplhmm6"]
 
 [ext_resource type="Shader" path="res://Shaders/Test/Paint_Durability.gdshader" id="1_k18t5"]
 [ext_resource type="Script" path="res://Testing/Chassi Test Scene.gd" id="1_ltwdh"]
@@ -29,7 +29,7 @@
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_iycyy"]
 shader = ExtResource("1_k18t5")
-shader_parameter/sensitivity = 0.0
+shader_parameter/sensitivity = 0.519
 shader_parameter/material_type = 0
 shader_parameter/import_new_color = Vector3(0.495, 0.56, 0.245)
 shader_parameter/noise_texture = ExtResource("2_mjy3j")
@@ -52,12 +52,15 @@ normal_texture = ExtResource("9_dxvx5")
 specular_texture = ExtResource("10_v628x")
 specular_shininess = 0.3
 
+[sub_resource type="CanvasTexture" id="CanvasTexture_ipamy"]
+diffuse_texture = ExtResource("2_mjy3j")
+
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_oov5m"]
 shader = ExtResource("1_k18t5")
 shader_parameter/sensitivity = 1.0
 shader_parameter/material_type = 5
 shader_parameter/import_new_color = Vector3(0.495, 0.56, 0.245)
-shader_parameter/noise_texture = ExtResource("2_mjy3j")
+shader_parameter/noise_texture = SubResource("CanvasTexture_ipamy")
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_3f731"]
 diffuse_texture = ExtResource("7_h6owr")
@@ -145,7 +148,7 @@ material = SubResource("ShaderMaterial_lfjsy")
 texture = SubResource("CanvasTexture_woeoo")
 
 [node name="Lighting" type="Node2D" parent="."]
-position = Vector2(-19.6553, -13.5771)
+position = Vector2(-3, -43)
 
 [node name="Level visibility" type="CanvasModulate" parent="Lighting"]
 position = Vector2(-115.445, 353.001)

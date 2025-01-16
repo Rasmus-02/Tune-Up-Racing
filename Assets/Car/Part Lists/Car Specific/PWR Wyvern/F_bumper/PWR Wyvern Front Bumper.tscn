@@ -1,0 +1,42 @@
+[gd_scene load_steps=10 format=3 uid="uid://dbgw4b43xad3q"]
+
+[ext_resource type="Script" path="res://Assets/Car/Code/Part_scripts/F_Bumper.gd" id="1_d0qen"]
+[ext_resource type="Shader" path="res://Shaders/ColorSelector.gdshader" id="2_ufc2l"]
+[ext_resource type="Texture2D" uid="uid://c6pkkhfuwbw6q" path="res://Textures/Cars/PWR Wyvern/Front Bumper/PWR Wyvern Stock Front Bumper.png" id="3_fqxgh"]
+[ext_resource type="Texture2D" uid="uid://c3sw7n1cw16po" path="res://Textures/Cars/PWR Wyvern/Front Bumper/PWR Wyvern Stock Front Bumper NM.png" id="4_6i2so"]
+[ext_resource type="Texture2D" uid="uid://bnwvolaqwpl07" path="res://Textures/Cars/PWR Wyvern/Front Bumper/PWR Wyvern Stock Front Bumper Spec.png" id="5_f2saa"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_7yiga"]
+shader = ExtResource("2_ufc2l")
+shader_parameter/import_new_color = null
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_0hbqo"]
+diffuse_texture = ExtResource("3_fqxgh")
+normal_texture = ExtResource("4_6i2so")
+specular_texture = ExtResource("5_f2saa")
+specular_shininess = 0.5
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_nxqv5"]
+blend_mode = 1
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_rdfoq"]
+polygon = PackedVector2Array(119.912, -37.6985, 125.912, -37.6985, 131.912, -34.6985, 135.912, -30.6985, 138.912, -24.6985, 139.912, -21.6985, 139.912, 25.3015, 138.912, 28.3015, 135.912, 34.3015, 131.912, 38.3015, 125.912, 41.3015, 119.912, 41.3015)
+
+[node name="PWR Wyvern Stock Front Bumper" type="Node2D"]
+script = ExtResource("1_d0qen")
+rarity = "D"
+Part_Number = 1
+description = "The factory front bumper for the Nagata Koi"
+weight = 7
+downforce = 20
+drag = 0.04
+engine_cool_mod = 0.1
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_7yiga")
+texture = SubResource("CanvasTexture_0hbqo")
+
+[node name="LightOccluder2D2" type="LightOccluder2D" parent="Sprite2D"]
+material = SubResource("CanvasItemMaterial_nxqv5")
+position = Vector2(-29.9116, -2.30154)
+occluder = SubResource("OccluderPolygon2D_rdfoq")

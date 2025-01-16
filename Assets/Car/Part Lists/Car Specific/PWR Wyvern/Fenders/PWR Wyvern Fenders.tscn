@@ -1,0 +1,47 @@
+[gd_scene load_steps=10 format=3 uid="uid://ba4ptfc5p40nf"]
+
+[ext_resource type="Script" path="res://Assets/Car/Code/Part_scripts/Fenders.gd" id="1_3euy5"]
+[ext_resource type="Shader" path="res://Shaders/ColorSelector.gdshader" id="2_ydjbe"]
+[ext_resource type="Texture2D" uid="uid://bsd2ydcpgax3k" path="res://Textures/Cars/PWR Wyvern/Fenders/PWR Wyvern Stock Fenders.png" id="3_voduw"]
+[ext_resource type="Texture2D" uid="uid://lhe077nxakos" path="res://Textures/Cars/PWR Wyvern/Fenders/PWR Wyvern Stock Fenders NM.png" id="4_jimki"]
+[ext_resource type="Texture2D" uid="uid://cned8wyh07h8w" path="res://Textures/Cars/PWR Wyvern/Fenders/PWR Wyvern Stock Fenders Spec.png" id="5_7cxm6"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_kyisn"]
+shader = ExtResource("2_ydjbe")
+shader_parameter/import_new_color = null
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_vufhm"]
+diffuse_texture = ExtResource("3_voduw")
+normal_texture = ExtResource("4_jimki")
+specular_texture = ExtResource("5_7cxm6")
+specular_shininess = 0.5
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_ak8kv"]
+blend_mode = 1
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_naikx"]
+polygon = PackedVector2Array(45.9116, -28.6985, 45.9116, -35.6985, 47.9116, -39.6985, 69.9116, -39.6985, 69.9116, -40.6985, 102.912, -40.6985, 119.912, -37.6985, 119.912, -35.6985, 118.912, -28.6985)
+
+[node name="PWR Wyvern Stock Fenders" type="Node2D"]
+script = ExtResource("1_3euy5")
+rarity = "D"
+Part_Number = 1
+description = "The factory fenders for the Nagata Koi"
+weight = 12
+downforce = 15
+drag = 0.03
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_kyisn")
+texture = SubResource("CanvasTexture_vufhm")
+
+[node name="LightOccluder2D2" type="LightOccluder2D" parent="Sprite2D"]
+material = SubResource("CanvasItemMaterial_ak8kv")
+position = Vector2(-29.9116, -2.30154)
+occluder = SubResource("OccluderPolygon2D_naikx")
+
+[node name="LightOccluder2D3" type="LightOccluder2D" parent="Sprite2D"]
+material = SubResource("CanvasItemMaterial_ak8kv")
+position = Vector2(-29.9243, 1.29417)
+scale = Vector2(1, -1)
+occluder = SubResource("OccluderPolygon2D_naikx")

@@ -5,7 +5,7 @@ offsets = PackedFloat32Array(0.0841584, 0.524752)
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_3khm3"]
 noise_type = 3
-seed = 2
+seed = 3
 frequency = 0.1
 fractal_lacunarity = 3.0
 domain_warp_enabled = true

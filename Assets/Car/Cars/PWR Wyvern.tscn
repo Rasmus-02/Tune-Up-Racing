@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://8inmaeymmyqy"]
+
+[ext_resource type="PackedScene" uid="uid://fawbg2w0nh2c" path="res://Assets/Car/Part Lists/Part Selector/Part Selector car.tscn" id="1_wss0q"]
+[ext_resource type="PackedScene" uid="uid://c2xymwbt1avr7" path="res://Assets/Car/Part Lists/Car Specific/Hikari Tasai/Hikari Tasai Part List.tscn" id="2_gjtlb"]
+[ext_resource type="PackedScene" uid="uid://dmcwtlpp6q5tf" path="res://Assets/Car/Part Lists/Universal/Universal Part List.tscn" id="3_8bfib"]
+
+[node name="Hikari Tasai" type="Node2D"]
+
+[node name="Part Selector" parent="." instance=ExtResource("1_wss0q")]
+
+[node name="Hikari Tasai Part List" parent="Part Selector" instance=ExtResource("2_gjtlb")]
+position = Vector2(-106.718, -17.4166)
+
+[node name="Universal Part List" parent="Part Selector" instance=ExtResource("3_8bfib")]
+
+[node name="Gear_Change_Timer" type="Timer" parent="."]
+wait_time = 0.35
+one_shot = true
