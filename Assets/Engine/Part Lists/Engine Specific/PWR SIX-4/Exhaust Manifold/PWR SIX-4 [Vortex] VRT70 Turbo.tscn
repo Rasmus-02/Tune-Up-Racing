@@ -1,0 +1,64 @@
+[gd_scene load_steps=14 format=3 uid="uid://dca8jg77rhnkp"]
+
+[ext_resource type="Script" path="res://Assets/Engine/Part_scripts/Exhaust_Manifold.gd" id="1_6pua7"]
+[ext_resource type="Texture2D" uid="uid://60nyrax526wn" path="res://Textures/Engines/PWR SIX-4/Exhaust/PWR SIX-4.0 [Vortex] VRT70 Turbo.png" id="2_hphv6"]
+[ext_resource type="Texture2D" uid="uid://klnxp28l5sb0" path="res://Textures/Engines/PWR SIX-4/Exhaust/PWR SIX-4.0 [Vortex] VRT70 Turbo NM.png" id="3_emqch"]
+[ext_resource type="Texture2D" uid="uid://l83qsqruiaxi" path="res://Textures/Engines/PWR SIX-4/Exhaust/PWR SIX-4.0 [Vortex] VRT70 Turbo Spec.png" id="4_qyfe8"]
+[ext_resource type="Texture2D" uid="uid://t7e3fbsccuki" path="res://Textures/Engines/Nagata 2S-16I/Exhaust/Stock/Nagata 2S-16i Exhaust Manifold_T.png" id="5_io25h"]
+[ext_resource type="Texture2D" uid="uid://cyrgbxu7xvc8y" path="res://Textures/Engines/Nagata 2S-16I/Exhaust/Stock/Nagata 2S-16i Exhaust Manifold_T NM.png" id="6_s0ev3"]
+[ext_resource type="Texture2D" uid="uid://w0rlbkfsuc5t" path="res://Textures/Engines/Nagata 2S-16I/Exhaust/Stock/Nagata 2S-16i Exhaust Manifold_T Spec.png" id="7_4g7qd"]
+[ext_resource type="Texture2D" uid="uid://dm65u133nd2y0" path="res://Textures/Engines/Nagata 2S-16I/Exhaust/Stock/Nagata 2S-16i Exhaust Manifold_L.png" id="8_5mudq"]
+[ext_resource type="Texture2D" uid="uid://d1g38ro0boro5" path="res://Textures/Engines/Nagata 2S-16I/Exhaust/Stock/Nagata 2S-16i Exhaust Manifold_L NM.png" id="9_u8arb"]
+[ext_resource type="Texture2D" uid="uid://da2jf3l6ifcdr" path="res://Textures/Engines/Nagata 2S-16I/Exhaust/Stock/Nagata 2S-16i Exhaust Manifold_L Spec.png" id="10_ekrwv"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_23fjm"]
+diffuse_texture = ExtResource("2_hphv6")
+normal_texture = ExtResource("3_emqch")
+specular_texture = ExtResource("4_qyfe8")
+specular_shininess = 0.3
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_inuwe"]
+diffuse_texture = ExtResource("5_io25h")
+normal_texture = ExtResource("6_s0ev3")
+specular_texture = ExtResource("7_4g7qd")
+specular_shininess = 0.3
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_g6r2h"]
+diffuse_texture = ExtResource("8_5mudq")
+normal_texture = ExtResource("9_u8arb")
+specular_texture = ExtResource("10_ekrwv")
+specular_shininess = 0.3
+
+[node name="PWR SIX-4 [Vortex] VRT70 Turbo" type="Node2D"]
+script = ExtResource("1_6pua7")
+rarity = "epic"
+Engine_ID = 4
+Part_Number = 5
+lenght = 6
+width = 15
+description = "A 70mm aftermarket turbo designed for the SIX-4 Engine by the aftermarket parts manufacturer Vortex"
+price = 4200
+weight = 45
+tq_mod = 1.0
+turbo = true
+turbo_efficiency = 0.8
+turbo_type = "single"
+turbo_1_size = 70.0
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = SubResource("CanvasTexture_23fjm")
+
+[node name="Trans" type="Sprite2D" parent="."]
+visible = false
+z_index = -5
+position = Vector2(-8, -19)
+texture = SubResource("CanvasTexture_inuwe")
+
+[node name="Long" type="Sprite2D" parent="."]
+visible = false
+z_index = -5
+position = Vector2(-38, 2)
+texture = SubResource("CanvasTexture_g6r2h")
+
+[node name="Air filter location" type="Marker2D" parent="."]
+position = Vector2(6, 12)

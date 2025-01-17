@@ -1,0 +1,34 @@
+[gd_scene load_steps=6 format=3 uid="uid://df6318iha6kja"]
+
+[ext_resource type="Script" path="res://Assets/Engine/Part_scripts/Intake_Manifold.gd" id="1_q6kqo"]
+[ext_resource type="Texture2D" uid="uid://chq3w8v1fiqfd" path="res://Textures/Engines/PWR SIX-4/Intake/PWR SIX-4.0 [Avalon] ITB Intake Manifold.png" id="2_mryur"]
+[ext_resource type="Texture2D" uid="uid://bi0067uk6x3q4" path="res://Textures/Engines/PWR SIX-4/Intake/PWR SIX-4.0 [Avalon] ITB Intake Manifold NM.png" id="3_k1w7y"]
+[ext_resource type="Texture2D" uid="uid://cdx80ejaqtl5f" path="res://Textures/Engines/PWR SIX-4/Intake/PWR SIX-4.0 [Avalon] ITB Intake Manifold Spec.png" id="4_7da5r"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_oa52d"]
+diffuse_texture = ExtResource("2_mryur")
+normal_texture = ExtResource("3_k1w7y")
+specular_texture = ExtResource("4_7da5r")
+specular_shininess = 0.5
+
+[node name="PWR SIX-4 [Avalon] ITB Intake Manifold" type="Node2D"]
+script = ExtResource("1_q6kqo")
+rarity = "epic"
+part_material = 1
+layout = "front"
+lenght = 5
+width = 12
+Engine_ID = 4
+Part_Number = 4
+description = "A High Performance intake manifold, featuring individual throttle bodies. designed for the SIX-4 Engine by Avalon"
+price = 4500
+weight = 13
+tq_mod = 1.2
+max_compression_modifier = 1.1
+itb = true
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = SubResource("CanvasTexture_oa52d")
+
+[node name="Air filter location" type="Marker2D" parent="."]
+position = Vector2(26, -4)

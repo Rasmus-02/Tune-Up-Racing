@@ -102,6 +102,8 @@ func populate_list():
 	if selected_tab > 0 and selected_tab != 18:
 		list.clear()
 		for i in temp_array.size()+1:
+			if temp_array.size() <= list_index:
+				break
 			temp_part = temp_array[list_index].instantiate()
 			var checked_part = Save_Load.inv_check(temp_part)
 			if temp_part.Part_Number == 0: #EMPTY PART

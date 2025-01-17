@@ -1,0 +1,31 @@
+[gd_scene load_steps=6 format=3 uid="uid://bxr20sh82ngsw"]
+
+[ext_resource type="Script" path="res://Assets/Engine/Part_scripts/Block.gd" id="1_ddiey"]
+[ext_resource type="Texture2D" uid="uid://4ty87p8126d7" path="res://Textures/Engines/PWR SIX-4/Block/PWR SIX-4.0 [Avalon] Magnesium Block.png" id="2_hkct7"]
+[ext_resource type="Texture2D" uid="uid://caivpml6wj0lt" path="res://Textures/Engines/PWR SIX-4/Block/PWR SIX-4.0 Stock Block NM.png" id="3_grv8c"]
+[ext_resource type="Texture2D" uid="uid://cx6r3rxi2xxfy" path="res://Textures/Engines/PWR SIX-4/Block/PWR SIX-4.0 Stock Block Spec.png" id="4_xs8m3"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_8byoe"]
+diffuse_texture = ExtResource("2_hkct7")
+normal_texture = ExtResource("3_grv8c")
+specular_texture = ExtResource("4_xs8m3")
+specular_shininess = 0.5
+
+[node name="PWR SIX-4 [Avalon] Magnesium Block" type="Node2D"]
+script = ExtResource("1_ddiey")
+rarity = "epic"
+part_material = 2
+layout = "Inline"
+lenght = 41
+width = 9
+Engine_ID = 4
+Part_Number = 3
+description = "A very ightweight and durable block for the PWR SIX-4 Engine, designed by Avalon"
+price = 12500
+weight = 60
+reliability = 0.8
+tq = 315
+max_tq = 1800
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = SubResource("CanvasTexture_8byoe")

@@ -1,0 +1,56 @@
+[gd_scene load_steps=14 format=3 uid="uid://jau43jj83th"]
+
+[ext_resource type="Script" path="res://Assets/Engine/Part_scripts/Exhaust_Manifold.gd" id="1_83qfj"]
+[ext_resource type="Texture2D" uid="uid://457y0hrexknh" path="res://Textures/Engines/PWR SIX-4/Exhaust/PWR SIX-4.0 [Redlline] Exhaust Manifold.png" id="2_e7ynt"]
+[ext_resource type="Texture2D" uid="uid://dfi3ckvmofvjc" path="res://Textures/Engines/PWR SIX-4/Exhaust/PWR SIX-4.0 [Redlline] Exhaust Manifold NM.png" id="3_6w23s"]
+[ext_resource type="Texture2D" uid="uid://cvs562ot15ptt" path="res://Textures/Engines/PWR SIX-4/Exhaust/PWR SIX-4.0 [Redlline] Exhaust Manifold Spec.png" id="4_fs4p4"]
+[ext_resource type="Texture2D" uid="uid://t7e3fbsccuki" path="res://Textures/Engines/Nagata 2S-16I/Exhaust/Stock/Nagata 2S-16i Exhaust Manifold_T.png" id="5_sh3hr"]
+[ext_resource type="Texture2D" uid="uid://cyrgbxu7xvc8y" path="res://Textures/Engines/Nagata 2S-16I/Exhaust/Stock/Nagata 2S-16i Exhaust Manifold_T NM.png" id="6_mxrx1"]
+[ext_resource type="Texture2D" uid="uid://w0rlbkfsuc5t" path="res://Textures/Engines/Nagata 2S-16I/Exhaust/Stock/Nagata 2S-16i Exhaust Manifold_T Spec.png" id="7_rdg5n"]
+[ext_resource type="Texture2D" uid="uid://dm65u133nd2y0" path="res://Textures/Engines/Nagata 2S-16I/Exhaust/Stock/Nagata 2S-16i Exhaust Manifold_L.png" id="8_ms12o"]
+[ext_resource type="Texture2D" uid="uid://d1g38ro0boro5" path="res://Textures/Engines/Nagata 2S-16I/Exhaust/Stock/Nagata 2S-16i Exhaust Manifold_L NM.png" id="9_nt0n7"]
+[ext_resource type="Texture2D" uid="uid://da2jf3l6ifcdr" path="res://Textures/Engines/Nagata 2S-16I/Exhaust/Stock/Nagata 2S-16i Exhaust Manifold_L Spec.png" id="10_jbgre"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_23fjm"]
+diffuse_texture = ExtResource("2_e7ynt")
+normal_texture = ExtResource("3_6w23s")
+specular_texture = ExtResource("4_fs4p4")
+specular_shininess = 0.3
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_inuwe"]
+diffuse_texture = ExtResource("5_sh3hr")
+normal_texture = ExtResource("6_mxrx1")
+specular_texture = ExtResource("7_rdg5n")
+specular_shininess = 0.3
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_g6r2h"]
+diffuse_texture = ExtResource("8_ms12o")
+normal_texture = ExtResource("9_nt0n7")
+specular_texture = ExtResource("10_jbgre")
+specular_shininess = 0.3
+
+[node name="PWR SIX-4 [Redline] Exhaust Manifold" type="Node2D"]
+script = ExtResource("1_83qfj")
+rarity = "rare"
+Engine_ID = 4
+Part_Number = 3
+width = 8
+description = "An exhaust manifold with improved airflow for the SIX-4 Engine. Designed by Redline"
+price = 1500
+weight = 16
+tq_mod = 1.1
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = SubResource("CanvasTexture_23fjm")
+
+[node name="Trans" type="Sprite2D" parent="."]
+visible = false
+z_index = -5
+position = Vector2(-20, -20)
+texture = SubResource("CanvasTexture_inuwe")
+
+[node name="Long" type="Sprite2D" parent="."]
+visible = false
+z_index = -5
+position = Vector2(-47, 1)
+texture = SubResource("CanvasTexture_g6r2h")

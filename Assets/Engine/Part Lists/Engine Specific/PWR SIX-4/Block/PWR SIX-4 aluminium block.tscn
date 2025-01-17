@@ -1,0 +1,31 @@
+[gd_scene load_steps=6 format=3 uid="uid://ctfhp8ljkbu0g"]
+
+[ext_resource type="Script" path="res://Assets/Engine/Part_scripts/Block.gd" id="1_3yyqn"]
+[ext_resource type="Texture2D" uid="uid://bs2aiod4q8j7y" path="res://Textures/Engines/PWR SIX-4/Block/PWR SIX-4.0 Aluminium Block.png" id="2_igagy"]
+[ext_resource type="Texture2D" uid="uid://caivpml6wj0lt" path="res://Textures/Engines/PWR SIX-4/Block/PWR SIX-4.0 Stock Block NM.png" id="3_i6tj2"]
+[ext_resource type="Texture2D" uid="uid://cx6r3rxi2xxfy" path="res://Textures/Engines/PWR SIX-4/Block/PWR SIX-4.0 Stock Block Spec.png" id="4_64178"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_8byoe"]
+diffuse_texture = ExtResource("2_igagy")
+normal_texture = ExtResource("3_i6tj2")
+specular_texture = ExtResource("4_64178")
+specular_shininess = 0.5
+
+[node name="PWR SIX-4 Aluminium Block" type="Node2D"]
+script = ExtResource("1_3yyqn")
+rarity = "rare"
+part_material = 1
+layout = "Inline"
+lenght = 41
+width = 9
+Engine_ID = 4
+Part_Number = 2
+description = "A light weight slightly less durable block for the PWR SIX-4 Engine"
+price = 6000
+weight = 65
+reliability = 0.75
+tq = 310
+max_tq = 800
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = SubResource("CanvasTexture_8byoe")

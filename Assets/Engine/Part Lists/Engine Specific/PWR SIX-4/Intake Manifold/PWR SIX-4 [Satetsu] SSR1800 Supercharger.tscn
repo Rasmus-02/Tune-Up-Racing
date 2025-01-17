@@ -1,0 +1,34 @@
+[gd_scene load_steps=6 format=3 uid="uid://ccsnawiwy4qr4"]
+
+[ext_resource type="Script" path="res://Assets/Engine/Part_scripts/Intake_Manifold.gd" id="1_eadir"]
+[ext_resource type="Texture2D" uid="uid://cyl64g2wtkjjx" path="res://Textures/Engines/PWR SIX-4/Intake/PWR SIX-4.0 [Satetsu] SSR1800 Supercharger.png" id="2_da3vj"]
+[ext_resource type="Texture2D" uid="uid://cnf2f00biy6v5" path="res://Textures/Engines/PWR SIX-4/Intake/PWR SIX-4.0 [Satetsu] SSR1800 Supercharger NM.png" id="3_pu4in"]
+[ext_resource type="Texture2D" uid="uid://c32bvco4vjdud" path="res://Textures/Engines/PWR SIX-4/Intake/PWR SIX-4.0 [Satetsu] SSR1800 Supercharger Spec.png" id="4_s5ehk"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_oa52d"]
+diffuse_texture = ExtResource("2_da3vj")
+normal_texture = ExtResource("3_pu4in")
+specular_texture = ExtResource("4_s5ehk")
+specular_shininess = 0.5
+
+[node name="PWR SIX-4 [Satetsu] SSR1800 Supercharger" type="Node2D"]
+script = ExtResource("1_eadir")
+rarity = "epic"
+part_material = 1
+layout = "front"
+lenght = 5
+width = 14
+Engine_ID = 4
+Part_Number = 5
+description = "A Supercharger for the SIX-4 Engine, designed by the Japanese tuning shop Satetsu"
+price = 7000
+weight = 26
+tq_mod = 0.95
+supercharger = true
+supercharer_displacement_capacity = 1800.0
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = SubResource("CanvasTexture_oa52d")
+
+[node name="Air filter location" type="Marker2D" parent="."]
+position = Vector2(26, -4)

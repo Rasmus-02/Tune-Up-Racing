@@ -37,12 +37,12 @@ engine_bay_start_lenght = 29
 Car_ID = 3
 Part_Number = 1
 description = "A lightweight British sports car designed for the track"
-price = 15000
-weight = 640
+price = 20000
+weight = 625
 reliability = 0.75
 downforce = 75
 drag = 0.23
-wheelbase = 114
+wheelbase = 116
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 material = SubResource("ShaderMaterial_nscdw")

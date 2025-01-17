@@ -1,0 +1,32 @@
+[gd_scene load_steps=6 format=3 uid="uid://pox4n0iv10h"]
+
+[ext_resource type="Script" path="res://Assets/Engine/Part_scripts/Intake_Manifold.gd" id="1_pk06q"]
+[ext_resource type="Texture2D" uid="uid://dhc1h5b1yqk4y" path="res://Textures/Engines/PWR SIX-4/Intake/PWR SIX-4.0 [KS-Racing] Intake Manifold.png" id="2_fetb1"]
+[ext_resource type="Texture2D" uid="uid://cjnicupc6sinh" path="res://Textures/Engines/PWR SIX-4/Intake/PWR SIX-4.0 [KS-Racing] Intake Manifold NM.png" id="3_netqr"]
+[ext_resource type="Texture2D" uid="uid://hss2qhpifxhm" path="res://Textures/Engines/PWR SIX-4/Intake/PWR SIX-4.0 [KS-Racing] Intake Manifold Spec.png" id="4_dfnms"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_oa52d"]
+diffuse_texture = ExtResource("2_fetb1")
+normal_texture = ExtResource("3_netqr")
+specular_texture = ExtResource("4_dfnms")
+specular_shininess = 0.5
+
+[node name="PWR SIX-4 [KS-Racing] Intake Manifold" type="Node2D"]
+script = ExtResource("1_pk06q")
+rarity = "rare"
+layout = "front"
+lenght = 5
+width = 11
+Engine_ID = 4
+Part_Number = 3
+description = "A high performance intake manifold designed by KS-Racing for the SIX-4 Engine. A good choise for boosted and naturally aspirated cars alike"
+price = 1800
+weight = 11
+tq_mod = 1.1
+max_compression_modifier = 1.05
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = SubResource("CanvasTexture_oa52d")
+
+[node name="Air filter location" type="Marker2D" parent="."]
+position = Vector2(26, -4)

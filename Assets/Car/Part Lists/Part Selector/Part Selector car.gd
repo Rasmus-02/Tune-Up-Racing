@@ -170,12 +170,11 @@ func radiator_constructor():
 			extra_pipe_lenght = abs((piping_car - piping_engine).x)
 		else:
 			extra_pipe_lenght = piping_car.x - driveshaft.get_node("Gearbox").position.x - gearbox.get_node("Engine").position.y - (13+4)
-		
 		for i in radiator.get_node("Piping").get_child_count(): #Hide all other piping
 			radiator.get_node("Piping").get_child(i).visible = false
 		if int(extra_pipe_lenght)%2 == 1: #Make the piping even because it scales by 2
 			extra_pipe_lenght += 1
-		if extra_pipe_lenght > 1 and extra_pipe_lenght < 21:
+		if extra_pipe_lenght > 1 and extra_pipe_lenght * 0.5 <= radiator.get_node("Piping").get_child_count():
 			radiator.get_node("Piping").get_node(str(extra_pipe_lenght)).visible = true #Show the correct pipe lenght
 		
 		radiator.global_position = chassi.get_node("Radiator_Location").global_position
