@@ -24,11 +24,15 @@ light_mode = 1
 
 [node name="PWR Wyvern Stock Headlights" type="Node2D"]
 script = ExtResource("1_b3c5b")
-rarity = "uncommon"
+rarity = "rare"
+part_material = 4
+Car_ID = 3
 Part_Number = 1
-description = "The factory headlights for the Nagata Koi"
+description = "The factory headlights for the PWR Wyvern"
 paintable = false
-weight = 5
+price = 300
+weight = 4
+downforce = 10
 drag = 0.01
 
 [node name="Sprite2D" type="Sprite2D" parent="."]

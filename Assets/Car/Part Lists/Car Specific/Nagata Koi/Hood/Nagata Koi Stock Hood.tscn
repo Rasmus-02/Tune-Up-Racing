@@ -22,7 +22,7 @@ rarity = "uncommon"
 Part_Number = 1
 description = "The factory hood for the Nagata Koi"
 price = 250
-weight = 15
+weight = 16
 downforce = 30
 drag = 0.03
 

@@ -16,10 +16,13 @@ specular_shininess = 0.65
 
 [node name="PWR Wyvern Stock Exhaust" type="Node2D"]
 script = ExtResource("1_tejux")
-rarity = "D"
+rarity = "rare"
+Car_ID = 3
 Part_Number = 1
-description = "The Stock Exhaust that comes with the Nagata Koi"
+description = "The Stock Exhaust that comes with the PWR Wyvern"
+price = 450
 weight = 25
+sound_dampening = 7
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = SubResource("CanvasTexture_lr5dr")

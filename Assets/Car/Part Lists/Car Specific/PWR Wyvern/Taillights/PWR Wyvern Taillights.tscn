@@ -19,9 +19,13 @@ light_mode = 1
 
 [node name="PWR Wyvern Stock Taillights" type="Node2D"]
 script = ExtResource("1_x8fui")
-rarity = "D"
+rarity = "rare"
+part_material = 4
+Car_ID = 3
 Part_Number = 1
+description = "The factory taillights for the PWR Wyvern"
 paintable = false
+price = 400
 weight = 2
 
 [node name="Sprite2D" type="Sprite2D" parent="."]

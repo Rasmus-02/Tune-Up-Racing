@@ -24,13 +24,15 @@ polygon = PackedVector2Array(119.912, -37.6985, 125.912, -37.6985, 131.912, -34.
 
 [node name="PWR Wyvern Stock Front Bumper" type="Node2D"]
 script = ExtResource("1_d0qen")
-rarity = "D"
+rarity = "rare"
+part_material = 1
+Car_ID = 3
 Part_Number = 1
-description = "The factory front bumper for the Nagata Koi"
-weight = 7
-downforce = 20
-drag = 0.04
-engine_cool_mod = 0.1
+description = "The factory front bumper for the PWR Wyvern"
+price = 300
+weight = 6
+downforce = 15
+drag = 0.03
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 material = SubResource("ShaderMaterial_7yiga")

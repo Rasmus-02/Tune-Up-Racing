@@ -13,11 +13,14 @@ specular_shininess = 0.5
 
 [node name="PWR Wyvern Stock Subframe" type="Node2D"]
 script = ExtResource("1_6qi02")
-rarity = "D"
+rarity = "rare"
+part_material = 1
+Car_ID = 3
 Part_Number = 1
-description = "The factory subframe for the Nagata Koi"
-weight = 15
-handling_bonus = 1.0
+description = "The factory subframe for the PWR Wyvern"
+price = 1000
+weight = 40
+handling_bonus = 1.1
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = SubResource("CanvasTexture_0jkfa")
