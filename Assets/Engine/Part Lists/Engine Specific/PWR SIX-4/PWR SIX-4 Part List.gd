@@ -28,7 +28,11 @@ titanium_internals, titanium_high_comp_internals, titanium_low_comp_internals]
 
 #Top
 var stock_top = preload("res://Assets/Engine/Part Lists/Engine Specific/PWR SIX-4/Top/PWR SIX-4 top.tscn") #1
-var top = [empty, stock_top]
+var vortex_top = preload("res://Assets/Engine/Part Lists/Engine Specific/PWR SIX-4/Top/PWR SIX-4 [Vortex] top.tscn") #2
+var racing_top = preload("res://Assets/Engine/Part Lists/Engine Specific/PWR SIX-4/Top/PWR SIX-4 race top.tscn") #3
+var redline_top = preload("res://Assets/Engine/Part Lists/Engine Specific/PWR SIX-4/Top/PWR SIX-4 [Redline] top.tscn") #4
+var avalon_top = preload("res://Assets/Engine/Part Lists/Engine Specific/PWR SIX-4/Top/PWR SIX-4 [Avalon] top.tscn") #5
+var top = [empty, stock_top, vortex_top, racing_top, redline_top, avalon_top]
 
 
 #Intake manifold

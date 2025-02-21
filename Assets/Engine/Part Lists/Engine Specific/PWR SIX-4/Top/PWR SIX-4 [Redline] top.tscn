@@ -1,0 +1,60 @@
+[gd_scene load_steps=12 format=3 uid="uid://ctkh8oa7xcv7s"]
+
+[ext_resource type="Script" path="res://Assets/Engine/Part_scripts/Top.gd" id="1_7cgql"]
+[ext_resource type="Texture2D" uid="uid://c52doqywhmjja" path="res://Textures/Engines/PWR SIX-4/Top/PWR SIX-4.0 [Redline] Top.png" id="2_267pg"]
+[ext_resource type="Texture2D" uid="uid://qv6gtix7otm2" path="res://Textures/Engines/PWR SIX-4/Top/PWR SIX-4.0 Stock Top NM.png" id="3_oawi3"]
+[ext_resource type="Texture2D" uid="uid://cuuvu3l25ngfk" path="res://Textures/Engines/PWR SIX-4/Top/PWR SIX-4.0 Stock Top Spec.png" id="4_ls55r"]
+[ext_resource type="Script" path="res://Assets/Engine/Code/Sound_handler_engine.gd" id="5_ousnb"]
+[ext_resource type="AudioStream" uid="uid://dmiu3aaebindu" path="res://Sound/Engine Sounds/Suhei-25A/PWR_SIX-4_Stock_t1.mp3" id="6_05auh"]
+[ext_resource type="AudioStream" uid="uid://bovhfget58pa5" path="res://Sound/Engine Sounds/Suhei-25A/PWR_SIX-4_Stock_nt1.mp3" id="7_88nmb"]
+[ext_resource type="AudioStream" uid="uid://dosweyjmrga18" path="res://Sound/Engine Sounds/Suhei-25A/PWR_SIX-4_Stock_nt4.mp3" id="8_mjjo2"]
+[ext_resource type="AudioStream" uid="uid://qhufhchyoyk5" path="res://Sound/Engine Sounds/Suhei-25A/PWR_SIX-4_Stock_t4.mp3" id="9_5c48l"]
+[ext_resource type="AudioStream" uid="uid://bumo62fftckdb" path="res://Sound/AirFlow Sound.mp3" id="10_lqxj7"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_kt11d"]
+diffuse_texture = ExtResource("2_267pg")
+normal_texture = ExtResource("3_oawi3")
+specular_texture = ExtResource("4_ls55r")
+specular_color = Color(1, 1, 0.701961, 1)
+specular_shininess = 0.3
+
+[node name="PWR SIX-4 [Redline] Top" type="Node2D"]
+script = ExtResource("1_7cgql")
+rarity = "epic"
+lenght = 41
+width = 9
+Engine_ID = 4
+Part_Number = 4
+description = "A high performance top end for the SIX-4 engine, designed with boosted engines in mind by Redline"
+price = 5500
+weight = 26.0
+tq_mod = 1.1
+max_hp_rpm = 7400
+max_compression = 12.5
+smoothness = 0.86
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = SubResource("CanvasTexture_kt11d")
+
+[node name="Sound_handler" type="Node2D" parent="."]
+script = ExtResource("5_ousnb")
+
+[node name="engine_sound_throttle_1000rpm" type="AudioStreamPlayer2D" parent="Sound_handler"]
+stream = ExtResource("6_05auh")
+bus = &"Car Volume"
+
+[node name="engine_sound_no_throttle_1000rpm" type="AudioStreamPlayer2D" parent="Sound_handler"]
+stream = ExtResource("7_88nmb")
+bus = &"Car Volume"
+
+[node name="engine_sound_no_throttle_4000rpm" type="AudioStreamPlayer2D" parent="Sound_handler"]
+stream = ExtResource("8_mjjo2")
+bus = &"Car Volume"
+
+[node name="engine_sound_throttle_4000rpm" type="AudioStreamPlayer2D" parent="Sound_handler"]
+stream = ExtResource("9_5c48l")
+bus = &"Car Volume"
+
+[node name="Airflow" type="AudioStreamPlayer2D" parent="Sound_handler"]
+stream = ExtResource("10_lqxj7")
+bus = &"Car Volume"

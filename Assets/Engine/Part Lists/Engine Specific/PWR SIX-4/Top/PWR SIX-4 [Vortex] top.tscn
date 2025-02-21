@@ -1,0 +1,60 @@
+[gd_scene load_steps=12 format=3 uid="uid://cqyrcgvufp874"]
+
+[ext_resource type="Script" path="res://Assets/Engine/Part_scripts/Top.gd" id="1_ikltu"]
+[ext_resource type="Texture2D" uid="uid://l3fr5vtvutyq" path="res://Textures/Engines/PWR SIX-4/Top/PWR SIX-4.0 [Vortex] Top.png" id="2_vrhmm"]
+[ext_resource type="Texture2D" uid="uid://qv6gtix7otm2" path="res://Textures/Engines/PWR SIX-4/Top/PWR SIX-4.0 Stock Top NM.png" id="3_iry5o"]
+[ext_resource type="Texture2D" uid="uid://cuuvu3l25ngfk" path="res://Textures/Engines/PWR SIX-4/Top/PWR SIX-4.0 Stock Top Spec.png" id="4_fw827"]
+[ext_resource type="Script" path="res://Assets/Engine/Code/Sound_handler_engine.gd" id="5_uqlst"]
+[ext_resource type="AudioStream" uid="uid://dmiu3aaebindu" path="res://Sound/Engine Sounds/Suhei-25A/PWR_SIX-4_Stock_t1.mp3" id="6_8htw7"]
+[ext_resource type="AudioStream" uid="uid://bovhfget58pa5" path="res://Sound/Engine Sounds/Suhei-25A/PWR_SIX-4_Stock_nt1.mp3" id="7_tovcw"]
+[ext_resource type="AudioStream" uid="uid://dosweyjmrga18" path="res://Sound/Engine Sounds/Suhei-25A/PWR_SIX-4_Stock_nt4.mp3" id="8_f7qtf"]
+[ext_resource type="AudioStream" uid="uid://qhufhchyoyk5" path="res://Sound/Engine Sounds/Suhei-25A/PWR_SIX-4_Stock_t4.mp3" id="9_55o84"]
+[ext_resource type="AudioStream" uid="uid://bumo62fftckdb" path="res://Sound/AirFlow Sound.mp3" id="10_fgepm"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_kt11d"]
+diffuse_texture = ExtResource("2_vrhmm")
+normal_texture = ExtResource("3_iry5o")
+specular_texture = ExtResource("4_fw827")
+specular_color = Color(1, 1, 0.701961, 1)
+specular_shininess = 0.3
+
+[node name="PWR SIX-4 [Vortex] Top" type="Node2D"]
+script = ExtResource("1_ikltu")
+rarity = "rare"
+lenght = 41
+width = 9
+Engine_ID = 4
+Part_Number = 2
+description = "A sportier top end for the SIX-4 Engine, with improved airflow and reduced weight. Designed by Vortex"
+price = 3200
+weight = 26.0
+tq_mod = 1.0
+max_hp_rpm = 7600
+max_compression = 12.0
+smoothness = 0.84
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = SubResource("CanvasTexture_kt11d")
+
+[node name="Sound_handler" type="Node2D" parent="."]
+script = ExtResource("5_uqlst")
+
+[node name="engine_sound_throttle_1000rpm" type="AudioStreamPlayer2D" parent="Sound_handler"]
+stream = ExtResource("6_8htw7")
+bus = &"Car Volume"
+
+[node name="engine_sound_no_throttle_1000rpm" type="AudioStreamPlayer2D" parent="Sound_handler"]
+stream = ExtResource("7_tovcw")
+bus = &"Car Volume"
+
+[node name="engine_sound_no_throttle_4000rpm" type="AudioStreamPlayer2D" parent="Sound_handler"]
+stream = ExtResource("8_f7qtf")
+bus = &"Car Volume"
+
+[node name="engine_sound_throttle_4000rpm" type="AudioStreamPlayer2D" parent="Sound_handler"]
+stream = ExtResource("9_55o84")
+bus = &"Car Volume"
+
+[node name="Airflow" type="AudioStreamPlayer2D" parent="Sound_handler"]
+stream = ExtResource("10_fgepm")
+bus = &"Car Volume"
