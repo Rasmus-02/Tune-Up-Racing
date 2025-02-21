@@ -14,7 +14,16 @@ var block = [empty, stock_block, aluminium_block, magnesium_block]
 
 #Internals
 var stock_internals = preload("res://Assets/Engine/Part Lists/Engine Specific/PWR SIX-4/Internals/PWR SIX-4 internals.tscn") #1
-var internals = [empty, stock_internals]
+var high_comp_internals = preload("res://Assets/Engine/Part Lists/Engine Specific/PWR SIX-4/Internals/PWR SIX-4 High Comp internals.tscn") #2
+var low_comp_internals = preload("res://Assets/Engine/Part Lists/Engine Specific/PWR SIX-4/Internals/PWR SIX-4 Low Comp Internals.tscn") #3
+var forged_internals = preload("res://Assets/Engine/Part Lists/Engine Specific/PWR SIX-4/Internals/PWR SIX-4 Forged internals.tscn") #4
+var forged_high_comp_internals = preload("res://Assets/Engine/Part Lists/Engine Specific/PWR SIX-4/Internals/PWR SIX-4 Forged High Comp internals.tscn") #5
+var forged_low_comp_internals = preload("res://Assets/Engine/Part Lists/Engine Specific/PWR SIX-4/Internals/PWR SIX-4 Forged Low Comp Internals.tscn") #6
+var titanium_internals = preload("res://Assets/Engine/Part Lists/Engine Specific/PWR SIX-4/Internals/PWR SIX-4 Titanium internals.tscn") #7
+var titanium_high_comp_internals = preload("res://Assets/Engine/Part Lists/Engine Specific/PWR SIX-4/Internals/PWR SIX-4 High Comp Titanium internals.tscn") #8
+var titanium_low_comp_internals = preload("res://Assets/Engine/Part Lists/Engine Specific/PWR SIX-4/Internals/PWR SIX-4 Low Comp Titanium internals.tscn") #9
+var internals = [empty, stock_internals, high_comp_internals, low_comp_internals, forged_internals, forged_high_comp_internals, forged_low_comp_internals,
+titanium_internals, titanium_high_comp_internals, titanium_low_comp_internals]
 
 
 #Top

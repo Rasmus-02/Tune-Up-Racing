@@ -1,0 +1,29 @@
+[gd_scene load_steps=6 format=3 uid="uid://cccu1kgviso5s"]
+
+[ext_resource type="Script" path="res://Assets/Engine/Part_scripts/Internals.gd" id="1_o7vm3"]
+[ext_resource type="Texture2D" uid="uid://ckn4rtxxrpt8t" path="res://Textures/Engines/PWR SIX-4/Internals/PWR SIX-4.0 Forged Internals.png" id="2_wxwqe"]
+[ext_resource type="Texture2D" uid="uid://cvx4e1mmbkpdi" path="res://Textures/Engines/PWR SIX-4/Internals/PWR SIX-4.0 Stock Internals NM.png" id="3_628n1"]
+[ext_resource type="Texture2D" uid="uid://bqibu8dla6v1a" path="res://Textures/Engines/PWR SIX-4/Internals/PWR SIX-4.0 Stock Internals Spec.png" id="4_h680e"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_8i2ga"]
+diffuse_texture = ExtResource("2_wxwqe")
+normal_texture = ExtResource("3_628n1")
+specular_texture = ExtResource("4_h680e")
+specular_shininess = 0.5
+
+[node name="PWR SIX-4 Forged Low Comp Internals" type="Node2D"]
+script = ExtResource("1_o7vm3")
+rarity = "epic"
+lenght = 41
+width = 5
+Engine_ID = 4
+Part_Number = 6
+description = "Lower compression variant of the forged internals for the SIX-4 Engine, designed for boosted engines"
+price = 3000
+weight = 30
+compression = 9.5
+max_rpm = 9500
+max_tq = 900
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = SubResource("CanvasTexture_8i2ga")

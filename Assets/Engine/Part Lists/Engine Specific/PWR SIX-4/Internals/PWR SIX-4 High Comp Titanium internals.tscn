@@ -1,0 +1,31 @@
+[gd_scene load_steps=6 format=3 uid="uid://camhjl5ebm1ag"]
+
+[ext_resource type="Script" path="res://Assets/Engine/Part_scripts/Internals.gd" id="1_rjs0a"]
+[ext_resource type="Texture2D" uid="uid://cv5yg263ylavb" path="res://Textures/Engines/PWR SIX-4/Internals/PWR SIX-4.0 Titanium Internals.png" id="2_1mulu"]
+[ext_resource type="Texture2D" uid="uid://cvx4e1mmbkpdi" path="res://Textures/Engines/PWR SIX-4/Internals/PWR SIX-4.0 Stock Internals NM.png" id="3_py81r"]
+[ext_resource type="Texture2D" uid="uid://bqibu8dla6v1a" path="res://Textures/Engines/PWR SIX-4/Internals/PWR SIX-4.0 Stock Internals Spec.png" id="4_3cbg6"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_p1hge"]
+diffuse_texture = ExtResource("2_1mulu")
+normal_texture = ExtResource("3_py81r")
+specular_texture = ExtResource("4_3cbg6")
+specular_color = Color(0.603922, 0.521569, 1, 1)
+specular_shininess = 0.42
+
+[node name="PWR SIX-4 Titanium High Comp Internals" type="Node2D"]
+script = ExtResource("1_rjs0a")
+rarity = "legendary"
+part_material = 3
+lenght = 41
+width = 5
+Engine_ID = 4
+Part_Number = 8
+description = "Higher compression variant of the titanium internals for the SIX-4 Engine, designed for naturally aspirated and low boost engines"
+price = 6500
+weight = 30
+compression = 12.5
+max_rpm = 9500
+max_tq = 900
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = SubResource("CanvasTexture_p1hge")

@@ -1,0 +1,29 @@
+[gd_scene load_steps=6 format=3 uid="uid://dwbiwmd2jtmuy"]
+
+[ext_resource type="Script" path="res://Assets/Engine/Part_scripts/Internals.gd" id="1_48rfp"]
+[ext_resource type="Texture2D" uid="uid://b2qlj4hot2hpo" path="res://Textures/Engines/PWR SIX-4/Internals/PWR SIX-4.0 Stock Internals.png" id="2_ejjul"]
+[ext_resource type="Texture2D" uid="uid://cvx4e1mmbkpdi" path="res://Textures/Engines/PWR SIX-4/Internals/PWR SIX-4.0 Stock Internals NM.png" id="3_572e1"]
+[ext_resource type="Texture2D" uid="uid://bqibu8dla6v1a" path="res://Textures/Engines/PWR SIX-4/Internals/PWR SIX-4.0 Stock Internals Spec.png" id="4_bches"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_8qrlk"]
+diffuse_texture = ExtResource("2_ejjul")
+normal_texture = ExtResource("3_572e1")
+specular_texture = ExtResource("4_bches")
+specular_shininess = 0.5
+
+[node name="PWR SIX-4 High Comp Internals" type="Node2D"]
+script = ExtResource("1_48rfp")
+rarity = "rare"
+lenght = 41
+width = 5
+Engine_ID = 4
+Part_Number = 2
+description = "Higher compression variant of the factory internals for the SIX-4 Engine, designed for naturally aspirtaed and low boost engines"
+price = 1750
+weight = 35
+compression = 12.5
+max_rpm = 8000
+max_tq = 550
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = SubResource("CanvasTexture_8qrlk")
