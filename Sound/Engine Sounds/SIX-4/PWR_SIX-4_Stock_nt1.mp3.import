@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bovhfget58pa5"
+path="res://.godot/imported/PWR_SIX-4_Stock_nt1.mp3-29ad5374ed800d59cc2dec1503bbd9c7.mp3str"
+
+[deps]
+
+source_file="res://Sound/Engine Sounds/SIX-4/PWR_SIX-4_Stock_nt1.mp3"
+dest_files=["res://.godot/imported/PWR_SIX-4_Stock_nt1.mp3-29ad5374ed800d59cc2dec1503bbd9c7.mp3str"]
+
+[params]
+
+loop=true
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://dmtu0bqe2vyq1"
+path="res://.godot/imported/PWR_SIX-4_Vortex_nt1.mp3-4f4ea2864ec1e9b5d7a9dd73b5d9cddd.mp3str"
+
+[deps]
+
+source_file="res://Sound/Engine Sounds/SIX-4/PWR_SIX-4_Vortex_nt1.mp3"
+dest_files=["res://.godot/imported/PWR_SIX-4_Vortex_nt1.mp3-4f4ea2864ec1e9b5d7a9dd73b5d9cddd.mp3str"]
+
+[params]
+
+loop=true
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

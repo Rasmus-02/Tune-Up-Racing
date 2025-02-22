@@ -5,10 +5,10 @@
 [ext_resource type="Texture2D" uid="uid://qv6gtix7otm2" path="res://Textures/Engines/PWR SIX-4/Top/PWR SIX-4.0 Stock Top NM.png" id="3_oawi3"]
 [ext_resource type="Texture2D" uid="uid://cuuvu3l25ngfk" path="res://Textures/Engines/PWR SIX-4/Top/PWR SIX-4.0 Stock Top Spec.png" id="4_ls55r"]
 [ext_resource type="Script" path="res://Assets/Engine/Code/Sound_handler_engine.gd" id="5_ousnb"]
-[ext_resource type="AudioStream" uid="uid://dmiu3aaebindu" path="res://Sound/Engine Sounds/Suhei-25A/PWR_SIX-4_Stock_t1.mp3" id="6_05auh"]
-[ext_resource type="AudioStream" uid="uid://bovhfget58pa5" path="res://Sound/Engine Sounds/Suhei-25A/PWR_SIX-4_Stock_nt1.mp3" id="7_88nmb"]
-[ext_resource type="AudioStream" uid="uid://dosweyjmrga18" path="res://Sound/Engine Sounds/Suhei-25A/PWR_SIX-4_Stock_nt4.mp3" id="8_mjjo2"]
-[ext_resource type="AudioStream" uid="uid://qhufhchyoyk5" path="res://Sound/Engine Sounds/Suhei-25A/PWR_SIX-4_Stock_t4.mp3" id="9_5c48l"]
+[ext_resource type="AudioStream" uid="uid://bbix62l7nwjxs" path="res://Sound/Engine Sounds/SIX-4/PWR_SIX-4_Redline_t1.mp3" id="6_who73"]
+[ext_resource type="AudioStream" uid="uid://dpswj5lqfqap2" path="res://Sound/Engine Sounds/SIX-4/PWR_SIX-4_Redline_nt1.mp3" id="7_h1664"]
+[ext_resource type="AudioStream" uid="uid://281egtjuy1ur" path="res://Sound/Engine Sounds/SIX-4/PWR_SIX-4_Redline_nt4.mp3" id="8_cmq33"]
+[ext_resource type="AudioStream" uid="uid://cqbo0mxt3sl3p" path="res://Sound/Engine Sounds/SIX-4/PWR_SIX-4_Redline_t4.mp3" id="9_gw7mj"]
 [ext_resource type="AudioStream" uid="uid://bumo62fftckdb" path="res://Sound/AirFlow Sound.mp3" id="10_lqxj7"]
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_kt11d"]
@@ -40,19 +40,19 @@ texture = SubResource("CanvasTexture_kt11d")
 script = ExtResource("5_ousnb")
 
 [node name="engine_sound_throttle_1000rpm" type="AudioStreamPlayer2D" parent="Sound_handler"]
-stream = ExtResource("6_05auh")
+stream = ExtResource("6_who73")
 bus = &"Car Volume"
 
 [node name="engine_sound_no_throttle_1000rpm" type="AudioStreamPlayer2D" parent="Sound_handler"]
-stream = ExtResource("7_88nmb")
+stream = ExtResource("7_h1664")
 bus = &"Car Volume"
 
 [node name="engine_sound_no_throttle_4000rpm" type="AudioStreamPlayer2D" parent="Sound_handler"]
-stream = ExtResource("8_mjjo2")
+stream = ExtResource("8_cmq33")
 bus = &"Car Volume"
 
 [node name="engine_sound_throttle_4000rpm" type="AudioStreamPlayer2D" parent="Sound_handler"]
-stream = ExtResource("9_5c48l")
+stream = ExtResource("9_gw7mj")
 bus = &"Car Volume"
 
 [node name="Airflow" type="AudioStreamPlayer2D" parent="Sound_handler"]
