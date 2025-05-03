@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://bxei516mvsvwr"]
+[gd_scene load_steps=23 format=3 uid="uid://bxei516mvsvwr"]
 
 [ext_resource type="Script" path="res://UI/Pause/pause_menu.gd" id="1_gxb3s"]
 [ext_resource type="Shader" path="res://Shaders/Blur.gdshader" id="2_46dlv"]
@@ -19,6 +19,7 @@
 [ext_resource type="Texture2D" uid="uid://ccrhl4qst2g0g" path="res://Textures/UI/Pause/Settings Menu Apply Button Hovered.png" id="13_y7k70"]
 [ext_resource type="Texture2D" uid="uid://chasr5og4uy85" path="res://Textures/UI/Pause/Settings Menu Cancel Button.png" id="14_j2aid"]
 [ext_resource type="Texture2D" uid="uid://qvmny0vc4tw5" path="res://Textures/UI/Pause/Settings Menu Cancel Button Hovered.png" id="15_hygvn"]
+[ext_resource type="Script" path="res://UI/Pause/Quit_Webbuild.gd" id="20_wfmi7"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_fukf4"]
 shader = ExtResource("2_46dlv")
@@ -468,16 +469,17 @@ texture_normal = ExtResource("7_61kuj")
 texture_pressed = ExtResource("8_2oqh3")
 texture_hover = ExtResource("8_2oqh3")
 texture_focused = ExtResource("8_2oqh3")
+script = ExtResource("20_wfmi7")
 
 [node name="Label" type="Label" parent="Control/MarginContainer/PauseMenu/Buttons/Quit"]
 layout_mode = 0
-offset_left = 17.75
-offset_top = 0.625
-offset_right = 167.75
-offset_bottom = 64.625
+offset_top = 1.0
+offset_right = 211.0
+offset_bottom = 65.0
 scale = Vector2(0.25, 0.25)
 theme_override_colors/font_color = Color(0.733333, 0.231373, 0.231373, 1)
-text = "Quit"
+text = "Garage"
+horizontal_alignment = 1
 
 [node name="Scene_change_timer" type="Timer" parent="Control"]
 wait_time = 0.05

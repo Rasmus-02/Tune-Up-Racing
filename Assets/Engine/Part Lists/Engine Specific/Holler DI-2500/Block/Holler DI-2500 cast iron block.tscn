@@ -1,0 +1,30 @@
+[gd_scene load_steps=6 format=3 uid="uid://dclkt6io1b8a2"]
+
+[ext_resource type="Script" path="res://Assets/Engine/Part_scripts/Block.gd" id="1_v7tbg"]
+[ext_resource type="Texture2D" uid="uid://drwaphugyr4ii" path="res://Textures/Engines/Holler DI-2500/Block/Höller DI-2500 Stock Block.png" id="2_0viss"]
+[ext_resource type="Texture2D" uid="uid://dp21qhoenitdd" path="res://Textures/Engines/Holler DI-2500/Block/Höller DI-2500 Stock Block NM.png" id="3_bpydc"]
+[ext_resource type="Texture2D" uid="uid://c4wninod5ayde" path="res://Textures/Engines/Holler DI-2500/Block/Höller DI-2500 Stock Block Spec.png" id="4_2kq11"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_8byoe"]
+diffuse_texture = ExtResource("2_0viss")
+normal_texture = ExtResource("3_bpydc")
+specular_texture = ExtResource("4_2kq11")
+specular_shininess = 0.5
+
+[node name="Holler DI-2500 Cast Iron Block" type="Node2D"]
+script = ExtResource("1_v7tbg")
+rarity = "common"
+layout = "Inline"
+lenght = 35
+width = 9
+Engine_ID = 5
+Part_Number = 1
+description = "The factory cast iron block for the Holler DI-2500 Engine"
+price = 800
+weight = 80
+reliability = 1.0
+tq = 135
+max_tq = 400
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = SubResource("CanvasTexture_8byoe")

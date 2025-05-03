@@ -1,0 +1,29 @@
+[gd_scene load_steps=6 format=3 uid="uid://b4ee8j56xbptv"]
+
+[ext_resource type="Script" path="res://Assets/Engine/Part_scripts/Internals.gd" id="1_31lm8"]
+[ext_resource type="Texture2D" uid="uid://djx38hnr7rc41" path="res://Textures/Engines/Holler DI-2500/Internals/Höller DI-2500 Stock Internals.png" id="2_rfc0l"]
+[ext_resource type="Texture2D" uid="uid://cc4hg5jgbeka" path="res://Textures/Engines/Holler DI-2500/Internals/Höller DI-2500 Stock Internals NM.png" id="3_0y26j"]
+[ext_resource type="Texture2D" uid="uid://dab8pkw2ov2wl" path="res://Textures/Engines/Holler DI-2500/Internals/Höller DI-2500 Stock Internals Spec.png" id="4_mf13l"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_8qrlk"]
+diffuse_texture = ExtResource("2_rfc0l")
+normal_texture = ExtResource("3_0y26j")
+specular_texture = ExtResource("4_mf13l")
+specular_shininess = 0.5
+
+[node name="Holler DI-2500 Stock Internals" type="Node2D"]
+script = ExtResource("1_31lm8")
+rarity = "common"
+lenght = 23
+width = 5
+Engine_ID = 5
+Part_Number = 1
+description = "The factory internals for the Holler DI-2500 Engine"
+price = 750
+weight = 35
+compression = 18.0
+max_rpm = 5000
+max_tq = 350
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = SubResource("CanvasTexture_8qrlk")

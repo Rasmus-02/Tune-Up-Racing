@@ -1,0 +1,47 @@
+[gd_scene load_steps=9 format=3 uid="uid://3uh7oehxs88g"]
+
+[ext_resource type="Script" path="res://Assets/Car/Code/Part_scripts/Exhaust.gd" id="1_44sfj"]
+[ext_resource type="Texture2D" uid="uid://b6niegfcfudqq" path="res://Textures/Cars/PWR Wyvern/Exhaust/PWR Wyvern [Vortex] Exhaust.png" id="2_wojbh"]
+[ext_resource type="Texture2D" uid="uid://dgmjclwb8gooi" path="res://Textures/Cars/PWR Wyvern/Exhaust/PWR Wyvern [Vortex] Exhaust NM.png" id="3_vs08i"]
+[ext_resource type="Texture2D" uid="uid://c380huw6sjjeo" path="res://Textures/Cars/PWR Wyvern/Exhaust/PWR Wyvern [Vortex] Exhaust Spec.png" id="4_p3da4"]
+[ext_resource type="Script" path="res://Assets/Effects/Backfire.gd" id="5_fqbjw"]
+[ext_resource type="AudioStream" uid="uid://cfvwt4fi2efkr" path="res://Sound/Engine Sounds/Backfire.mp3" id="6_pmckj"]
+[ext_resource type="PackedScene" uid="uid://b1agqhrv0psca" path="res://Assets/Effects/Backfire.tscn" id="7_vmb25"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_lr5dr"]
+diffuse_texture = ExtResource("2_wojbh")
+normal_texture = ExtResource("3_vs08i")
+specular_texture = ExtResource("4_p3da4")
+specular_shininess = 0.65
+
+[node name="PWR Wyvern [Vortex] Exhaust" type="Node2D"]
+script = ExtResource("1_44sfj")
+rarity = "rare"
+Car_ID = 3
+Part_Number = 2
+description = "A performance exhaust for the PWR Wyvern, designed by Vortex"
+price = 600
+weight = 28
+tq_mod_exhaust = 1.05
+sound_dampening = 7
+pitch_tweak = 0.98
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = SubResource("CanvasTexture_lr5dr")
+
+[node name="Backfire" type="Node2D" parent="."]
+script = ExtResource("5_fqbjw")
+
+[node name="Backfire_Sound" type="AudioStreamPlayer2D" parent="Backfire"]
+stream = ExtResource("6_pmckj")
+bus = &"Car Volume"
+
+[node name="Exhaust_1" type="Marker2D" parent="Backfire"]
+position = Vector2(-108, 27)
+
+[node name="Backfire" parent="Backfire/Exhaust_1" instance=ExtResource("7_vmb25")]
+
+[node name="Exhaust_2" type="Marker2D" parent="Backfire"]
+position = Vector2(-108, 22)
+
+[node name="Backfire" parent="Backfire/Exhaust_2" instance=ExtResource("7_vmb25")]

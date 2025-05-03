@@ -1,0 +1,41 @@
+[gd_scene load_steps=10 format=3 uid="uid://bf8ls2j2mn76y"]
+
+[ext_resource type="Script" path="res://Assets/Car/Code/Part_scripts/Spoiler.gd" id="1_re5vy"]
+[ext_resource type="Shader" path="res://Shaders/ColorSelector.gdshader" id="2_stap4"]
+[ext_resource type="Texture2D" uid="uid://crjfx7qx5bmk" path="res://Textures/Cars/PWR Wyvern/Spoiler/PWR Wyvern [Satetsu] Wing.png" id="3_2vp3y"]
+[ext_resource type="Texture2D" uid="uid://baq26vw0tqmr7" path="res://Textures/Cars/PWR Wyvern/Spoiler/PWR Wyvern [Satetsu] Wing NM.png" id="4_abrht"]
+[ext_resource type="Texture2D" uid="uid://cyq1rdgfo4bef" path="res://Textures/Cars/PWR Wyvern/Spoiler/PWR Wyvern [Satetsu] Wing Spec.png" id="5_6vhod"]
+[ext_resource type="Script" path="res://Textures/Cars/Color_selector.gd" id="6_l465n"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_el0pr"]
+shader = ExtResource("2_stap4")
+shader_parameter/import_new_color = null
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_swaqy"]
+diffuse_texture = ExtResource("3_2vp3y")
+normal_texture = ExtResource("4_abrht")
+specular_texture = ExtResource("5_6vhod")
+specular_shininess = 0.5
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_hja5u"]
+polygon = PackedVector2Array(-100, 34, -100, 26, -97, 8, -97, -9, -100, -27, -100, -35, -93, -35, -87, -24, -87, 23, -93, 34)
+
+[node name="PWR Wyvern [Satetsu] Wing" type="Node2D"]
+script = ExtResource("1_re5vy")
+rarity = "epic"
+part_material = 4
+Car_ID = 3
+Part_Number = 2
+description = "A wing designed by Satetsu providing a good amount of downforce while not adding too much drag to the PWR Wyvern"
+price = 1800
+weight = 5
+drag = 0.04
+downforce = 150
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_el0pr")
+texture = SubResource("CanvasTexture_swaqy")
+script = ExtResource("6_l465n")
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="Sprite2D"]
+occluder = SubResource("OccluderPolygon2D_hja5u")

@@ -26,7 +26,7 @@ description = "A spoiler by the tuning shop Satetsu providing a good amount of d
 price = 650
 weight = 5
 drag = 0.04
-downforce = 95
+downforce = 90
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 material = SubResource("ShaderMaterial_gibfk")

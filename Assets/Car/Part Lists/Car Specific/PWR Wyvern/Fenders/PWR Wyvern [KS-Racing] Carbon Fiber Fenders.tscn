@@ -1,0 +1,52 @@
+[gd_scene load_steps=10 format=3 uid="uid://do6gignrvo2ax"]
+
+[ext_resource type="Script" path="res://Assets/Car/Code/Part_scripts/Fenders.gd" id="1_ai0fk"]
+[ext_resource type="Shader" path="res://Shaders/ColorSelector.gdshader" id="2_tivc7"]
+[ext_resource type="Texture2D" uid="uid://bsls8843iy3sl" path="res://Textures/Cars/PWR Wyvern/Fenders/PWR Wyvern [KS-Racing] Carbon Fiber Fenders.png" id="3_88bwp"]
+[ext_resource type="Texture2D" uid="uid://lhe077nxakos" path="res://Textures/Cars/PWR Wyvern/Fenders/PWR Wyvern Stock Fenders NM.png" id="4_ugudp"]
+[ext_resource type="Texture2D" uid="uid://bmjkq3ow6midw" path="res://Textures/Cars/PWR Wyvern/Fenders/PWR Wyvern [KS-Racing] Carbon Fiber Fenders Spec.png" id="5_1hxsg"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_kyisn"]
+shader = ExtResource("2_tivc7")
+shader_parameter/import_new_color = null
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_vufhm"]
+diffuse_texture = ExtResource("3_88bwp")
+normal_texture = ExtResource("4_ugudp")
+specular_texture = ExtResource("5_1hxsg")
+specular_shininess = 0.5
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_ak8kv"]
+blend_mode = 1
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_naikx"]
+polygon = PackedVector2Array(45.9116, -28.6985, 45.9116, -35.6985, 47.9116, -39.6985, 69.9116, -39.6985, 69.9116, -40.6985, 102.912, -40.6985, 119.912, -37.6985, 119.912, -35.6985, 118.912, -28.6985)
+
+[node name="PWR Wyvern [KS-Racing] Carbon Fiber Fenders" type="Node2D"]
+script = ExtResource("1_ai0fk")
+rarity = "rare"
+part_material = 5
+Car_ID = 3
+Part_Number = 2
+description = "Lightweight carbon fiber fenders for the PWR Wyvern, designed by KS-Racing"
+paintable = false
+price = 900
+weight = 12
+downforce = 10
+drag = 0.02
+max_tire_width = 240
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_kyisn")
+texture = SubResource("CanvasTexture_vufhm")
+
+[node name="LightOccluder2D2" type="LightOccluder2D" parent="Sprite2D"]
+material = SubResource("CanvasItemMaterial_ak8kv")
+position = Vector2(-29.9116, -2.30154)
+occluder = SubResource("OccluderPolygon2D_naikx")
+
+[node name="LightOccluder2D3" type="LightOccluder2D" parent="Sprite2D"]
+material = SubResource("CanvasItemMaterial_ak8kv")
+position = Vector2(-29.9243, 1.29417)
+scale = Vector2(1, -1)
+occluder = SubResource("OccluderPolygon2D_naikx")

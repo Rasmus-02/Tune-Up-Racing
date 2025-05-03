@@ -24,7 +24,7 @@ description = "A light weight slightly less durable block for the PWR SIX-4 Engi
 price = 6000
 weight = 65
 reliability = 0.75
-tq = 310
+tq = 280
 max_tq = 800
 
 [node name="Sprite2D" type="Sprite2D" parent="."]

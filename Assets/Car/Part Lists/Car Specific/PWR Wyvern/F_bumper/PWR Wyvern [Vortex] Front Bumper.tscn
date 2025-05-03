@@ -1,0 +1,44 @@
+[gd_scene load_steps=10 format=3 uid="uid://caqa5tsuneijc"]
+
+[ext_resource type="Script" path="res://Assets/Car/Code/Part_scripts/F_Bumper.gd" id="1_tbur4"]
+[ext_resource type="Shader" path="res://Shaders/ColorSelector.gdshader" id="2_ilcvl"]
+[ext_resource type="Texture2D" uid="uid://dtpfw7rfab1n6" path="res://Textures/Cars/PWR Wyvern/Front Bumper/PWR Wyvern [Vortex] Front Bumper.png" id="3_y0tw4"]
+[ext_resource type="Texture2D" uid="uid://baqbkf7r7ue8q" path="res://Textures/Cars/PWR Wyvern/Front Bumper/PWR Wyvern [Vortex] Front Bumper NM.png" id="4_qxlbs"]
+[ext_resource type="Texture2D" uid="uid://5pddqbw4qfsh" path="res://Textures/Cars/PWR Wyvern/Front Bumper/PWR Wyvern [Vortex] Front Bumper Spec.png" id="5_cqprb"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_7yiga"]
+shader = ExtResource("2_ilcvl")
+shader_parameter/import_new_color = null
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_0hbqo"]
+diffuse_texture = ExtResource("3_y0tw4")
+normal_texture = ExtResource("4_qxlbs")
+specular_texture = ExtResource("5_cqprb")
+specular_shininess = 0.5
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_nxqv5"]
+blend_mode = 1
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_rdfoq"]
+polygon = PackedVector2Array(119.912, -37.6985, 128.912, -37.6985, 132.912, -35.6985, 137.912, -30.6985, 141.912, -21.6985, 141.912, 25.3015, 137.912, 34.3015, 132.912, 39.3015, 128.912, 41.3015, 119.912, 41.3015)
+
+[node name="PWR Wyvern [Vortex] Front Bumper" type="Node2D"]
+script = ExtResource("1_tbur4")
+rarity = "rare"
+part_material = 4
+Car_ID = 3
+Part_Number = 2
+description = "An aftermarket front bumper for the PWR Wyvern, designed by Vortex for improved downforce"
+price = 500
+weight = 5
+downforce = 40
+drag = 0.04
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_7yiga")
+texture = SubResource("CanvasTexture_0hbqo")
+
+[node name="LightOccluder2D2" type="LightOccluder2D" parent="Sprite2D"]
+material = SubResource("CanvasItemMaterial_nxqv5")
+position = Vector2(-29.9116, -2.30154)
+occluder = SubResource("OccluderPolygon2D_rdfoq")

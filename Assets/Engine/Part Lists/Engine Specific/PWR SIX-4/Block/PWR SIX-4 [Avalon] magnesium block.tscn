@@ -24,7 +24,7 @@ description = "A very ightweight and durable block for the PWR SIX-4 Engine, des
 price = 12500
 weight = 60
 reliability = 0.8
-tq = 315
+tq = 285
 max_tq = 1800
 
 [node name="Sprite2D" type="Sprite2D" parent="."]

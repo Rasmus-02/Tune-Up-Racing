@@ -42,7 +42,7 @@ func _on_engine_rpm_info(rpm, max_rpm):
 	engine_rpm = rpm
 	max_engine_rpm = max_rpm
 
-func _on_engine_stats(horsepower, torque, max_torque):
+func _on_engine_stats(horsepower, torque, max_torque, _fuel_type):
 	hp = horsepower
 	tq = torque
 	max_tq = max_torque

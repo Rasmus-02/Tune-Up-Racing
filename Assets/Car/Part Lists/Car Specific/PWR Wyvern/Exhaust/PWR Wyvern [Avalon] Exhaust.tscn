@@ -1,0 +1,48 @@
+[gd_scene load_steps=9 format=3 uid="uid://cq6hu8275yocw"]
+
+[ext_resource type="Script" path="res://Assets/Car/Code/Part_scripts/Exhaust.gd" id="1_ek8iq"]
+[ext_resource type="Texture2D" uid="uid://i7dt2pc8d1lk" path="res://Textures/Cars/PWR Wyvern/Exhaust/PWR Wyvern [Avalon] Exhaust.png" id="2_uhtky"]
+[ext_resource type="Texture2D" uid="uid://brqga42qdl00k" path="res://Textures/Cars/PWR Wyvern/Exhaust/PWR Wyvern [Avalon] Exhaust NM.png" id="3_iarfl"]
+[ext_resource type="Texture2D" uid="uid://ckist0rh8k84q" path="res://Textures/Cars/PWR Wyvern/Exhaust/PWR Wyvern [Avalon] Exhaust Spec.png" id="4_x7vo3"]
+[ext_resource type="Script" path="res://Assets/Effects/Backfire.gd" id="5_nommr"]
+[ext_resource type="AudioStream" uid="uid://cfvwt4fi2efkr" path="res://Sound/Engine Sounds/Backfire.mp3" id="6_am2uv"]
+[ext_resource type="PackedScene" uid="uid://b1agqhrv0psca" path="res://Assets/Effects/Backfire.tscn" id="7_yiond"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_lr5dr"]
+diffuse_texture = ExtResource("2_uhtky")
+normal_texture = ExtResource("3_iarfl")
+specular_texture = ExtResource("4_x7vo3")
+specular_shininess = 0.65
+
+[node name="PWR Wyvern [Avalon] Exhaust" type="Node2D"]
+script = ExtResource("1_ek8iq")
+rarity = "epic"
+part_material = 1
+Car_ID = 3
+Part_Number = 4
+description = "A high performance exhaust for the PWR Wyvern, designed by Avalon"
+price = 2000
+weight = 22
+tq_mod_exhaust = 1.15
+sound_dampening = 5
+pitch_tweak = 1.05
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = SubResource("CanvasTexture_lr5dr")
+
+[node name="Backfire" type="Node2D" parent="."]
+script = ExtResource("5_nommr")
+
+[node name="Backfire_Sound" type="AudioStreamPlayer2D" parent="Backfire"]
+stream = ExtResource("6_am2uv")
+bus = &"Car Volume"
+
+[node name="Exhaust_1" type="Marker2D" parent="Backfire"]
+position = Vector2(-108, 3)
+
+[node name="Backfire" parent="Backfire/Exhaust_1" instance=ExtResource("7_yiond")]
+
+[node name="Exhaust_2" type="Marker2D" parent="Backfire"]
+position = Vector2(-108, -4)
+
+[node name="Backfire" parent="Backfire/Exhaust_2" instance=ExtResource("7_yiond")]

@@ -1,0 +1,48 @@
+[gd_scene load_steps=13 format=3 uid="uid://bk2r04olyyy68"]
+
+[ext_resource type="Script" path="res://Game_Logic/Cleaner.gd" id="1_mivsa"]
+[ext_resource type="PackedScene" uid="uid://cctyed3jxvgm6" path="res://Assets/Engine/Part Lists/Part Selector/Part Selector engine.tscn" id="2_pm5aa"]
+[ext_resource type="PackedScene" uid="uid://dakjrep5k5m7g" path="res://Assets/Engine/Part Lists/Engine Specific/Holler DI-2500/Holler DI-2500 part list.tscn" id="3_hmo4k"]
+[ext_resource type="PackedScene" uid="uid://0lggp6gpn8xa" path="res://Assets/Engine/Part Lists/Universal/Universal part list.tscn" id="4_i3c1x"]
+[ext_resource type="Texture2D" uid="uid://oi3pdy1j483n" path="res://Textures/Engines/Holler DI-2500/Radiator Piping/Höller DI-2500 Transverse Piping.png" id="5_hc37h"]
+[ext_resource type="Texture2D" uid="uid://cobinvn5wy1y" path="res://Textures/Engines/Holler DI-2500/Radiator Piping/Höller DI-2500 Transverse Piping NM.png" id="6_7t1ex"]
+[ext_resource type="Texture2D" uid="uid://6g0d63c0m2f2" path="res://Textures/Engines/Holler DI-2500/Radiator Piping/Höller DI-2500 Longitudunal Piping.png" id="7_g6akt"]
+[ext_resource type="Texture2D" uid="uid://cp4v5vtr6df3h" path="res://Textures/Engines/Holler DI-2500/Radiator Piping/Höller DI-2500 Longitudunal Piping NM.png" id="8_jcimu"]
+[ext_resource type="PackedScene" uid="uid://c8il6nkvjwonk" path="res://Sound/Turbo and Supercharge Sounds/Boost_Sound_Handler.tscn" id="9_55cff"]
+[ext_resource type="PackedScene" uid="uid://ca3px5nsyfcww" path="res://Assets/Effects/EngineSmoke.tscn" id="10_7afjg"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_8lf8t"]
+diffuse_texture = ExtResource("5_hc37h")
+normal_texture = ExtResource("6_7t1ex")
+specular_texture = ExtResource("5_hc37h")
+specular_shininess = 0.5
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_71le6"]
+diffuse_texture = ExtResource("7_g6akt")
+normal_texture = ExtResource("8_jcimu")
+specular_texture = ExtResource("7_g6akt")
+specular_shininess = 0.5
+
+[node name="Holler DI-2500" type="Node2D"]
+script = ExtResource("1_mivsa")
+
+[node name="Part Selector" parent="." instance=ExtResource("2_pm5aa")]
+
+[node name="Holler DI-2500 Part List" parent="Part Selector" instance=ExtResource("3_hmo4k")]
+
+[node name="Universal Part List" parent="Part Selector" instance=ExtResource("4_i3c1x")]
+
+[node name="Gearbox" type="Marker2D" parent="."]
+position = Vector2(-12, 0)
+
+[node name="Radiator_Piping_Transverse" type="Sprite2D" parent="."]
+visible = false
+texture = SubResource("CanvasTexture_8lf8t")
+
+[node name="Radiator_Piping_Longitudinal" type="Sprite2D" parent="."]
+visible = false
+texture = SubResource("CanvasTexture_71le6")
+
+[node name="Boost_Sound_Handler" parent="." instance=ExtResource("9_55cff")]
+
+[node name="EngineSmoke" parent="." instance=ExtResource("10_7afjg")]

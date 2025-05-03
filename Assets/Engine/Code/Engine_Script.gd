@@ -1,7 +1,7 @@
 #region Import Export Modular Constructors etc.
 extends Node2D
 #Export var
-signal stats(horsepower, torque, max_horsepower, max_torque, top_end_fuel_type)
+signal stats(horsepower, torque, max_torque, top_end_fuel_type)
 signal rpm_info(rpm, max_rpm)
 var loaded = false
 
@@ -348,7 +348,8 @@ func  _physics_process(_delta):
 		hp_tq_calculator()
 		engine_temp()
 		boost_calculator()
-		damage_calculator()
+		if dyno != 1:
+			damage_calculator()
 	else:
 		is_running = false
 		torque = 0
@@ -567,7 +568,7 @@ func rpm_calculator():
 		is_running = true
 		if Input.is_action_pressed("Forward"):
 			forward = 1
-			max_rpm = 7000
+			max_rpm = 4000
 			max_boost = 2
 			rpm += 15
 		if Input.is_action_pressed("Backward"):

@@ -1,0 +1,29 @@
+[gd_scene load_steps=6 format=3 uid="uid://b3r0vg67yojwp"]
+
+[ext_resource type="Script" path="res://Assets/Car/Code/Part_scripts/Driveshaft.gd" id="1_hmbln"]
+[ext_resource type="Texture2D" uid="uid://dyj5k5wtwd6am" path="res://Textures/Cars/PWR Wyvern/Driveshaft/PWR Wyvern [Redline] Reinforced Driveshaft.png" id="2_av0eu"]
+[ext_resource type="Texture2D" uid="uid://c1cnwig2j3c18" path="res://Textures/Cars/PWR Wyvern/Driveshaft/PWR Wyvern [Redline] Reinforced Driveshaft NM.png" id="3_ofvqi"]
+[ext_resource type="Texture2D" uid="uid://caoif6h8ue5ch" path="res://Textures/Cars/PWR Wyvern/Driveshaft/PWR Wyvern [Redline] Reinforced Driveshaft Spec.png" id="4_d0vqm"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_c5td7"]
+diffuse_texture = ExtResource("2_av0eu")
+normal_texture = ExtResource("3_ofvqi")
+specular_texture = ExtResource("4_d0vqm")
+specular_shininess = 0.5
+
+[node name="PWR Wyvern [Redline] Reinforced Driveshaft" type="Node2D"]
+script = ExtResource("1_hmbln")
+rarity = "epic"
+Car_ID = 3
+Part_Number = 2
+description = "A very durable and robust rear wheel drive driveshaft for the PWR Wyvern. Designed by Redline"
+price = 1750
+weight = 32
+max_torque = 850
+drivetrain_loss = 0.2
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = SubResource("CanvasTexture_c5td7")
+
+[node name="Gearbox" type="Marker2D" parent="."]
+position = Vector2(10, 0)

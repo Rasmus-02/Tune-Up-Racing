@@ -1,0 +1,32 @@
+[gd_scene load_steps=6 format=3 uid="uid://dt53ig0b50hm2"]
+
+[ext_resource type="Script" path="res://Assets/Engine/Part_scripts/Intake_Manifold.gd" id="1_ywych"]
+[ext_resource type="Texture2D" uid="uid://of27l0cdmo0b" path="res://Textures/Engines/Holler DI-2500/Intake/Höller DI-2500 Stock Intake Manifold.png" id="2_cdoru"]
+[ext_resource type="Texture2D" uid="uid://fafnlnjrl5c4" path="res://Textures/Engines/Holler DI-2500/Intake/Höller DI-2500 Stock Intake Manifold NM.png" id="3_f42uu"]
+[ext_resource type="Texture2D" uid="uid://noj1oio2u74s" path="res://Textures/Engines/Holler DI-2500/Intake/Höller DI-2500 Stock Intake Manifold Spec.png" id="4_3res3"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_oa52d"]
+diffuse_texture = ExtResource("2_cdoru")
+normal_texture = ExtResource("3_f42uu")
+specular_texture = ExtResource("4_3res3")
+specular_shininess = 0.5
+
+[node name="Holler DI-2500 Stock Intake Manifold" type="Node2D"]
+script = ExtResource("1_ywych")
+rarity = "common"
+layout = "front"
+lenght = 4
+width = 4
+Engine_ID = 5
+Part_Number = 1
+description = "The factory intake manifold for the Holler DI-2500 Engine"
+price = 200
+weight = 12
+tq_mod = 0.95
+max_compression_modifier = 0.95
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = SubResource("CanvasTexture_oa52d")
+
+[node name="Air filter location" type="Marker2D" parent="."]
+position = Vector2(26, 0)

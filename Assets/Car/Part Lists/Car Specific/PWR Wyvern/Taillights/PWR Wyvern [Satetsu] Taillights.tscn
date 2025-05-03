@@ -1,0 +1,40 @@
+[gd_scene load_steps=9 format=3 uid="uid://csnwtor3gogwm"]
+
+[ext_resource type="Script" path="res://Assets/Car/Code/Part_scripts/Taillights.gd" id="1_1u2uv"]
+[ext_resource type="Texture2D" uid="uid://4oqmt0wws348" path="res://Textures/Cars/PWR Wyvern/Taillights/PWR Wyvern [Satetsu] Taillights.png" id="2_47mux"]
+[ext_resource type="Texture2D" uid="uid://bomcensofursf" path="res://Textures/Cars/PWR Wyvern/Taillights/PWR Wyvern Stock Taillights NM.png" id="3_0anrj"]
+[ext_resource type="Texture2D" uid="uid://0tvno22ul44u" path="res://Textures/Cars/PWR Wyvern/Taillights/PWR Wyvern Stock Taillights Spec.png" id="4_a0nky"]
+[ext_resource type="Texture2D" uid="uid://c3vhg38r3hsls" path="res://Textures/Cars/PWR Wyvern/Taillights/PWR Wyvern [Satetsu] Taillights Lightmask.png" id="5_7hrte"]
+[ext_resource type="PackedScene" uid="uid://ceb752tulxcv" path="res://Shaders/taillights.tscn" id="6_bhags"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_5na48"]
+diffuse_texture = ExtResource("2_47mux")
+normal_texture = ExtResource("3_0anrj")
+specular_texture = ExtResource("4_a0nky")
+specular_shininess = 0.5
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_wl26h"]
+blend_mode = 1
+light_mode = 1
+
+[node name="PWR Wyvern [Satetsu] Taillights" type="Node2D"]
+script = ExtResource("1_1u2uv")
+rarity = "rare"
+part_material = 4
+Car_ID = 3
+Part_Number = 2
+description = "Aftermarket taillights for the PWR Wyvern, designed by Satetsu for a cleaner look"
+paintable = false
+price = 650
+weight = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = SubResource("CanvasTexture_5na48")
+
+[node name="Lightmask" type="Sprite2D" parent="Sprite2D"]
+modulate = Color(0, 0, 0, 1)
+material = SubResource("CanvasItemMaterial_wl26h")
+texture = ExtResource("5_7hrte")
+
+[node name="Taillights" parent="." instance=ExtResource("6_bhags")]
+position = Vector2(-96, 0)

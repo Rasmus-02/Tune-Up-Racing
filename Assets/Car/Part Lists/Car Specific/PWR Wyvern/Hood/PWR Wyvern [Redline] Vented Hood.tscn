@@ -1,0 +1,36 @@
+[gd_scene load_steps=9 format=3 uid="uid://b3fea4cyoimga"]
+
+[ext_resource type="Script" path="res://Assets/Car/Code/Part_scripts/Hood.gd" id="1_so7qm"]
+[ext_resource type="Shader" path="res://Shaders/ColorSelector.gdshader" id="2_nyway"]
+[ext_resource type="Texture2D" uid="uid://beeg7jr2n65lg" path="res://Textures/Cars/PWR Wyvern/Hood/PWR Wyvern [Redline] Vented Hood.png" id="3_enrcf"]
+[ext_resource type="Texture2D" uid="uid://dciv1o5nwv3aw" path="res://Textures/Cars/PWR Wyvern/Hood/PWR Wyvern [Redline] Vented Hood NM.png" id="4_j4p7o"]
+[ext_resource type="Texture2D" uid="uid://h0kmnnxfdlhi" path="res://Textures/Cars/PWR Wyvern/Hood/PWR Wyvern [Redline] Vented Hood Spec.png" id="5_e37xa"]
+[ext_resource type="Script" path="res://Textures/Cars/Color_selector.gd" id="6_eh0w7"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_n52vx"]
+shader = ExtResource("2_nyway")
+shader_parameter/import_new_color = null
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_hjvi5"]
+diffuse_texture = ExtResource("3_enrcf")
+normal_texture = ExtResource("4_j4p7o")
+specular_texture = ExtResource("5_e37xa")
+specular_shininess = 0.5
+
+[node name="PWR Wyvern [Redline] Vented Hood" type="Node2D"]
+script = ExtResource("1_so7qm")
+rarity = "epic"
+part_material = 1
+Car_ID = 3
+Part_Number = 4
+description = "An aftermarket vented hood for the PWR Wyvern, designed by Redline"
+price = 2000
+weight = 11
+downforce = 60
+drag = 0.04
+engine_cool_mod = 0.5
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_n52vx")
+texture = SubResource("CanvasTexture_hjvi5")
+script = ExtResource("6_eh0w7")

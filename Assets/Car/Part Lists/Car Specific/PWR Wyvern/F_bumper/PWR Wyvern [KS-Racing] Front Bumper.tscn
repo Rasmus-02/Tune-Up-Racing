@@ -1,0 +1,55 @@
+[gd_scene load_steps=12 format=3 uid="uid://c7ut01o6ioa1u"]
+
+[ext_resource type="Script" path="res://Assets/Car/Code/Part_scripts/F_Bumper.gd" id="1_6gdwn"]
+[ext_resource type="Shader" path="res://Shaders/ColorSelector.gdshader" id="2_0r00w"]
+[ext_resource type="Texture2D" uid="uid://doh8eorshp2ta" path="res://Textures/Cars/PWR Wyvern/Front Bumper/PWR Wyvern [KS-Racing] Front Bumper.png" id="3_igep8"]
+[ext_resource type="Texture2D" uid="uid://4j6uj52wc5d" path="res://Textures/Cars/PWR Wyvern/Front Bumper/PWR Wyvern [KS-Racing] Front Bumper NM.png" id="4_jmyk7"]
+[ext_resource type="Texture2D" uid="uid://p6iyhq7ph35" path="res://Textures/Cars/PWR Wyvern/Front Bumper/PWR Wyvern [KS-Racing] Front Bumper Spec.png" id="5_vsbs1"]
+[ext_resource type="Texture2D" uid="uid://bb4g1uo3cyk30" path="res://Textures/Cars/PWR Wyvern/Front Bumper/PWR Wyvern [KS-Racing] Front Bumper non paintable.png" id="6_llv38"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_7yiga"]
+shader = ExtResource("2_0r00w")
+shader_parameter/import_new_color = Vector3(0.825, 0.61, 0.44)
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_0hbqo"]
+diffuse_texture = ExtResource("3_igep8")
+normal_texture = ExtResource("4_jmyk7")
+specular_texture = ExtResource("5_vsbs1")
+specular_shininess = 0.5
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_nl80t"]
+diffuse_texture = ExtResource("6_llv38")
+normal_texture = ExtResource("4_jmyk7")
+specular_texture = ExtResource("5_vsbs1")
+specular_shininess = 0.5
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_nxqv5"]
+blend_mode = 1
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_rdfoq"]
+polygon = PackedVector2Array(119.912, -37.6985, 130.912, -37.6985, 132.912, -36.6985, 137.912, -31.6985, 142.912, -22.6985, 142.912, 26.3015, 137.912, 35.3015, 132.912, 40.3015, 130.912, 41.3015, 119.912, 41.3015)
+
+[node name="PWR Wyvern [KS-Racing] Front Bumper" type="Node2D"]
+script = ExtResource("1_6gdwn")
+rarity = "epic"
+part_material = 4
+Car_ID = 3
+Part_Number = 4
+description = "An aftermarket front bumper for the PWR Wyvern, designed by KS-Racing for greatly improved downforce"
+price = 2000
+weight = 8
+downforce = 100
+drag = 0.05
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_7yiga")
+texture = SubResource("CanvasTexture_0hbqo")
+
+[node name="Sprite2D2" type="Sprite2D" parent="Sprite2D"]
+material = SubResource("ShaderMaterial_7yiga")
+texture = SubResource("CanvasTexture_nl80t")
+
+[node name="LightOccluder2D2" type="LightOccluder2D" parent="Sprite2D"]
+material = SubResource("CanvasItemMaterial_nxqv5")
+position = Vector2(-29.9116, -2.30154)
+occluder = SubResource("OccluderPolygon2D_rdfoq")

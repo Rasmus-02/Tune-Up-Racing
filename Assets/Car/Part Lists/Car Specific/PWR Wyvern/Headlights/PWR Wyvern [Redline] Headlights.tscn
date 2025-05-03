@@ -1,0 +1,49 @@
+[gd_scene load_steps=11 format=3 uid="uid://clg84hkl8y0r8"]
+
+[ext_resource type="Script" path="res://Assets/Car/Code/Part_scripts/Headlights.gd" id="1_cr1yo"]
+[ext_resource type="Shader" path="res://Shaders/ColorSelector.gdshader" id="2_jow12"]
+[ext_resource type="Texture2D" uid="uid://csdxd712axave" path="res://Textures/Cars/PWR Wyvern/Headlights/PWR Wyvern [Redline] Headlights.png" id="3_h10f0"]
+[ext_resource type="Texture2D" uid="uid://cqg3pnqlducmx" path="res://Textures/Cars/PWR Wyvern/Headlights/PWR Wyvern [Redline] Headlights NM.png" id="4_f6lim"]
+[ext_resource type="Texture2D" uid="uid://cx7f8lpvr2hbc" path="res://Textures/Cars/PWR Wyvern/Headlights/PWR Wyvern [Redline] Headlights Spec.png" id="5_2gh67"]
+[ext_resource type="Texture2D" uid="uid://cgdcencwsuf0f" path="res://Textures/Cars/PWR Wyvern/Headlights/PWR Wyvern [Redline] Headlights Lightmask.png" id="6_25e4c"]
+[ext_resource type="PackedScene" uid="uid://brbx33n7duy1v" path="res://Shaders/headlights.tscn" id="7_8516r"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_hdm5u"]
+shader = ExtResource("2_jow12")
+shader_parameter/import_new_color = null
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_ma2ib"]
+diffuse_texture = ExtResource("3_h10f0")
+normal_texture = ExtResource("4_f6lim")
+specular_texture = ExtResource("5_2gh67")
+specular_shininess = 0.5
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_ke2me"]
+blend_mode = 1
+light_mode = 1
+
+[node name="PWR Wyvern [Redline] Headlights" type="Node2D"]
+script = ExtResource("1_cr1yo")
+rarity = "rare"
+part_material = 4
+Car_ID = 3
+Part_Number = 3
+description = "Aftermarket headlights for the PWR Wyvern, designed by Redline"
+paintable = false
+price = 600
+weight = 4
+downforce = 10
+drag = 0.01
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_hdm5u")
+texture = SubResource("CanvasTexture_ma2ib")
+
+[node name="Lightmask" type="Sprite2D" parent="Sprite2D"]
+visible = false
+material = SubResource("CanvasItemMaterial_ke2me")
+texture = ExtResource("6_25e4c")
+
+[node name="Lights" parent="." instance=ExtResource("7_8516r")]
+light_mask = 1
+position = Vector2(-5, 0)

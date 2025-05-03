@@ -30,7 +30,7 @@ Car_ID = 3
 Part_Number = 1
 description = "The factory front bumper for the PWR Wyvern"
 price = 300
-weight = 6
+weight = 8
 downforce = 15
 drag = 0.03
 

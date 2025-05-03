@@ -1,0 +1,35 @@
+[gd_scene load_steps=9 format=3 uid="uid://cst7bippm7hwa"]
+
+[ext_resource type="Script" path="res://Assets/Car/Code/Part_scripts/Hood.gd" id="1_48bns"]
+[ext_resource type="Shader" path="res://Shaders/ColorSelector.gdshader" id="2_vrswh"]
+[ext_resource type="Texture2D" uid="uid://d3pasn0gmxvuj" path="res://Textures/Cars/PWR Wyvern/Hood/PWR Wyvern [KS-Racing] Carbon Fiber Hood.png" id="3_g2n63"]
+[ext_resource type="Texture2D" uid="uid://d0t0fhpnmo87s" path="res://Textures/Cars/PWR Wyvern/Hood/PWR Wyvern Stock Hood NM.png" id="4_ypknf"]
+[ext_resource type="Texture2D" uid="uid://sjyfwp35vlih" path="res://Textures/Cars/PWR Wyvern/Hood/PWR Wyvern [KS-Racing] Carbon Fiber Hood Spec.png" id="5_36c2h"]
+[ext_resource type="Script" path="res://Textures/Cars/Color_selector.gd" id="6_koiob"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_n52vx"]
+shader = ExtResource("2_vrswh")
+shader_parameter/import_new_color = null
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_hjvi5"]
+diffuse_texture = ExtResource("3_g2n63")
+normal_texture = ExtResource("4_ypknf")
+specular_texture = ExtResource("5_36c2h")
+specular_shininess = 0.5
+
+[node name="PWR Wyvern [KS-Racing] Carbon Fiber Hood" type="Node2D"]
+script = ExtResource("1_48bns")
+rarity = "rare"
+part_material = 5
+Car_ID = 3
+Part_Number = 3
+description = "A lightweight carbonfiber hood for the PWR Wyvern, designed by KS-Racing"
+price = 1250
+weight = 9
+downforce = 40
+drag = 0.02
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_n52vx")
+texture = SubResource("CanvasTexture_hjvi5")
+script = ExtResource("6_koiob")
