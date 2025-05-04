@@ -17,7 +17,6 @@ var id = [0,15,Part_Number,rarity] #Engine ID, Part type, Part number, rank
 @export_enum("Manual", "Automatic", "Sequential") var gearbox_type : String = "Manual"
 @export var weight = 0
 @export var shift_time = 0.0
-@export var max_hp = 0
 @export var max_tq = 0
 @export var gear_ratio = [4.0, 3.5, 2.0, 1.5, 1.0, 0.8, 0.65] #Index 0 = final drive
 

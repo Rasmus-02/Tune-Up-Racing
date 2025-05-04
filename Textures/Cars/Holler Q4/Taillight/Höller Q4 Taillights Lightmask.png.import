@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b7jj765dvtmm6"
-path="res://.godot/imported/Höller Q4 Taillights HM.png-a7e8acac7439f6ce01df270df365aff8.ctex"
+uid="uid://bcb6lpd0s8rks"
+path="res://.godot/imported/Höller Q4 Taillights Lightmask.png-252ba88b2392f0125b9b48e13f76ae8b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Textures/Cars/Holler Q4/Taillight/Höller Q4 Taillights HM.png"
-dest_files=["res://.godot/imported/Höller Q4 Taillights HM.png-a7e8acac7439f6ce01df270df365aff8.ctex"]
+source_file="res://Textures/Cars/Holler Q4/Taillight/Höller Q4 Taillights Lightmask.png"
+dest_files=["res://.godot/imported/Höller Q4 Taillights Lightmask.png-252ba88b2392f0125b9b48e13f76ae8b.ctex"]
 
 [params]
 

@@ -1,0 +1,40 @@
+[gd_scene load_steps=9 format=3 uid="uid://bn17p7ut4g1pt"]
+
+[ext_resource type="Script" path="res://Assets/Car/Code/Part_scripts/Taillights.gd" id="1_602tg"]
+[ext_resource type="Texture2D" uid="uid://ck8874g7ro0nd" path="res://Textures/Cars/Holler Q4/Taillight/Höller Q4 Taillights.png" id="2_j4fob"]
+[ext_resource type="Texture2D" uid="uid://nhcmwvbxkeww" path="res://Textures/Cars/Holler Q4/Taillight/Höller Q4 Taillights NM.png" id="3_1etpl"]
+[ext_resource type="Texture2D" uid="uid://vnp6ew2bmlio" path="res://Textures/Cars/Holler Q4/Taillight/Höller Q4 Taillights Spec.png" id="4_2cy5a"]
+[ext_resource type="Texture2D" uid="uid://bcb6lpd0s8rks" path="res://Textures/Cars/Holler Q4/Taillight/Höller Q4 Taillights Lightmask.png" id="5_2tq6w"]
+[ext_resource type="PackedScene" uid="uid://ceb752tulxcv" path="res://Shaders/taillights.tscn" id="6_dpbh0"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_5na48"]
+diffuse_texture = ExtResource("2_j4fob")
+normal_texture = ExtResource("3_1etpl")
+specular_texture = ExtResource("4_2cy5a")
+specular_shininess = 0.5
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_5r5ok"]
+blend_mode = 1
+light_mode = 1
+
+[node name="Holler Q4 Stock Taillights" type="Node2D"]
+script = ExtResource("1_602tg")
+rarity = "common"
+part_material = 4
+Car_ID = 4
+Part_Number = 1
+description = "The factory taillights for the Holler Q4"
+paintable = false
+price = 125
+weight = 6
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = SubResource("CanvasTexture_5na48")
+
+[node name="Lightmask" type="Sprite2D" parent="Sprite2D"]
+modulate = Color(0, 0, 0, 1)
+material = SubResource("CanvasItemMaterial_5r5ok")
+texture = ExtResource("5_2tq6w")
+
+[node name="Taillights" parent="." instance=ExtResource("6_dpbh0")]
+position = Vector2(-96, 0)

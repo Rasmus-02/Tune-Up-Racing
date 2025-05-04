@@ -1,0 +1,25 @@
+[gd_scene load_steps=6 format=3 uid="uid://cfadhpeev5tbd"]
+
+[ext_resource type="Script" path="res://Assets/Car/Code/Part_scripts/Subframe.gd" id="1_wbnkc"]
+[ext_resource type="Texture2D" uid="uid://vwk2jtx70r1o" path="res://Textures/Cars/Holler Q4/Subframe/Höller Q4 Subframe.png" id="2_hqscd"]
+[ext_resource type="Texture2D" uid="uid://bkemvnu5x18e1" path="res://Textures/Cars/Holler Q4/Subframe/Höller Q4 Subframe NM.png" id="3_o5alt"]
+[ext_resource type="Texture2D" uid="uid://cejwsm12em3k2" path="res://Textures/Cars/Holler Q4/Subframe/Höller Q4 Subframe Spec.png" id="4_llxt0"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_0jkfa"]
+diffuse_texture = ExtResource("2_hqscd")
+normal_texture = ExtResource("3_o5alt")
+specular_texture = ExtResource("4_llxt0")
+specular_shininess = 0.5
+
+[node name="Holler Q4 Stock Subframe" type="Node2D"]
+script = ExtResource("1_wbnkc")
+rarity = "common"
+Car_ID = 4
+Part_Number = 1
+description = "The factory subframe for the Holler Q4"
+price = 150
+weight = 35
+handling_bonus = 0.85
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = SubResource("CanvasTexture_0jkfa")

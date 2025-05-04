@@ -77,10 +77,12 @@ func event_add():
 		var grip = randi_range(600, 2000)
 		var downforce = randi_range(0, 250)
 		var brake_force = randi_range(500, 2000)
-		var tq = randf_range(100, 35 * Save_Load.level)
+		var tq = randf_range(50, 20 * Save_Load.level)
+		
+		print("Rarity", rarity)
 		
 		if step > 5:
-			precision -= 0.02
+			precision -= 0.01
 		precision = clamp(precision, 0.25, 0.8)
 		car = generate_car(rarity, int(weight), tq, grip, downforce, brake_force, precision, false)
 		if car != null:

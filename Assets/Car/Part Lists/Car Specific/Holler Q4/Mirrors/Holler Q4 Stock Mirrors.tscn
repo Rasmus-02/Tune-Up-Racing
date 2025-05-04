@@ -1,0 +1,26 @@
+[gd_scene load_steps=6 format=3 uid="uid://hbpu1gl0mej0"]
+
+[ext_resource type="Script" path="res://Assets/Car/Code/Part_scripts/Mirrors.gd" id="1_t4pqc"]
+[ext_resource type="Texture2D" uid="uid://6loe4iup30a4" path="res://Textures/Cars/Holler Q4/Mirrors/Höller Q4 Stock Mirrors.png" id="2_8f7wc"]
+[ext_resource type="Texture2D" uid="uid://b8ylj23s8ljgq" path="res://Textures/Cars/Holler Q4/Mirrors/Höller Q4 Stock Mirrors NM.png" id="3_r1h8o"]
+[ext_resource type="Texture2D" uid="uid://bd0pesmf4gjo" path="res://Textures/Cars/Holler Q4/Mirrors/Höller Q4 Stock Mirrors Spec.png" id="4_b6dod"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_e2ut5"]
+diffuse_texture = ExtResource("2_8f7wc")
+normal_texture = ExtResource("3_r1h8o")
+specular_texture = ExtResource("4_b6dod")
+specular_shininess = 0.5
+
+[node name="Holler Q4 Stock Mirrors" type="Node2D"]
+script = ExtResource("1_t4pqc")
+rarity = "common"
+part_material = 4
+Car_ID = 4
+Part_Number = 1
+description = "The factory mirrors for the Holler Q4"
+price = 50
+weight = 3
+drag = 0.01
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = SubResource("CanvasTexture_e2ut5")

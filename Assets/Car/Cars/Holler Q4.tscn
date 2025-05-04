@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://mggv8fjf3glb"]
+
+[ext_resource type="PackedScene" uid="uid://fawbg2w0nh2c" path="res://Assets/Car/Part Lists/Part Selector/Part Selector car.tscn" id="1_7awes"]
+[ext_resource type="PackedScene" uid="uid://ln5v3rs6tjgx" path="res://Assets/Car/Part Lists/Car Specific/Holler Q4/Holler Q4 Part List.tscn" id="2_5gotd"]
+[ext_resource type="PackedScene" uid="uid://dmcwtlpp6q5tf" path="res://Assets/Car/Part Lists/Universal/Universal Part List.tscn" id="3_cd3or"]
+
+[node name="Holler Q4" type="Node2D"]
+
+[node name="Part Selector" parent="." instance=ExtResource("1_7awes")]
+
+[node name="Holler Q4 Part List" parent="Part Selector" instance=ExtResource("2_5gotd")]
+position = Vector2(-94.75, 39.8125)
+
+[node name="Universal Part List" parent="Part Selector" instance=ExtResource("3_cd3or")]
+
+[node name="Gear_Change_Timer" type="Timer" parent="."]
+wait_time = 0.35
+one_shot = true

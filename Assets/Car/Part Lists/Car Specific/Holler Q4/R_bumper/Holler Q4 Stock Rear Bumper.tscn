@@ -1,0 +1,45 @@
+[gd_scene load_steps=10 format=3 uid="uid://b05mstfmhaql4"]
+
+[ext_resource type="Script" path="res://Assets/Car/Code/Part_scripts/R_bumper.gd" id="1_xoxn7"]
+[ext_resource type="Shader" path="res://Shaders/ColorSelector.gdshader" id="2_2ptuv"]
+[ext_resource type="Texture2D" uid="uid://c4qkw1srqjpes" path="res://Textures/Cars/Holler Q4/Rear bumper/Höller Q4 Rear Bumper.png" id="3_xnog2"]
+[ext_resource type="Texture2D" uid="uid://doaby684w7bi" path="res://Textures/Cars/Holler Q4/Rear bumper/Höller Q4 Rear Bumper NM.png" id="4_xtf6c"]
+[ext_resource type="Texture2D" uid="uid://r6k0org1nu1c" path="res://Textures/Cars/Holler Q4/Rear bumper/Höller Q4 Rear Bumper Spec.png" id="5_5kq5q"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_3gfj6"]
+shader = ExtResource("2_2ptuv")
+shader_parameter/import_new_color = null
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_r5f60"]
+diffuse_texture = ExtResource("3_xnog2")
+normal_texture = ExtResource("4_xtf6c")
+specular_texture = ExtResource("5_5kq5q")
+specular_shininess = 0.5
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_pappr"]
+blend_mode = 1
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_p4p8y"]
+polygon = PackedVector2Array(-71.0884, 43.3015, -74.0884, 40.3015, -74.0884, -36.6985, -71.0884, -39.6985, -65.0884, -39.6985, -65.0884, 43.3015)
+
+[node name="Holler Q4 Stock Rear Bumper" type="Node2D"]
+script = ExtResource("1_xoxn7")
+rarity = "common"
+part_material = 4
+Car_ID = 4
+Part_Number = 1
+description = "The factory rear bumper for the Holler Q4"
+paintable = false
+price = 100
+weight = 5
+downforce = 5
+drag = 0.02
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_3gfj6")
+texture = SubResource("CanvasTexture_r5f60")
+
+[node name="LightOccluder2D2" type="LightOccluder2D" parent="Sprite2D"]
+material = SubResource("CanvasItemMaterial_pappr")
+position = Vector2(-29.9116, -2.30154)
+occluder = SubResource("OccluderPolygon2D_p4p8y")

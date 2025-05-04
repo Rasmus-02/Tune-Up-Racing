@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d1y0maukid323"
-path="res://.godot/imported/Höller Q4 Stock Mirrors HM.png-60687e4f868c2dbd60710f81aa3b6ba3.ctex"
+uid="uid://hyww7gpk7c5u"
+path="res://.godot/imported/4 Speed AWD Gearbox.png-666a9efc9e902c687e0c347a0e9ada45.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Textures/Cars/Holler Q4/Mirrors/Höller Q4 Stock Mirrors HM.png"
-dest_files=["res://.godot/imported/Höller Q4 Stock Mirrors HM.png-60687e4f868c2dbd60710f81aa3b6ba3.ctex"]
+source_file="res://Textures/Cars/Universal/Gearbox/4 Speed AWD Gearbox.png"
+dest_files=["res://.godot/imported/4 Speed AWD Gearbox.png-666a9efc9e902c687e0c347a0e9ada45.ctex"]
 
 [params]
 

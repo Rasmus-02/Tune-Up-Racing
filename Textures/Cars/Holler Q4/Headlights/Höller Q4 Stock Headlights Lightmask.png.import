@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bpb5foaui6lpc"
-path="res://.godot/imported/Höller Q4 Stock Front Bumper HM.png-02c463b8e18503b0b99ab65f30c28d13.ctex"
+uid="uid://vw2px3c35adr"
+path="res://.godot/imported/Höller Q4 Stock Headlights Lightmask.png-6faa0ba7710fcb096f9c319786e97e17.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Textures/Cars/Holler Q4/Front Bumper/Höller Q4 Stock Front Bumper HM.png"
-dest_files=["res://.godot/imported/Höller Q4 Stock Front Bumper HM.png-02c463b8e18503b0b99ab65f30c28d13.ctex"]
+source_file="res://Textures/Cars/Holler Q4/Headlights/Höller Q4 Stock Headlights Lightmask.png"
+dest_files=["res://.godot/imported/Höller Q4 Stock Headlights Lightmask.png-6faa0ba7710fcb096f9c319786e97e17.ctex"]
 
 [params]
 

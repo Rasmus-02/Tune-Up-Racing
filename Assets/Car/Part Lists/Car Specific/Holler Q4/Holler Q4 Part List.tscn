@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://ln5v3rs6tjgx"]
+
+[ext_resource type="Script" path="res://Assets/Car/Part Lists/Car Specific/Holler Q4/Holler Q4 Part List.gd" id="1_r6wn7"]
+
+[node name="Holler Q4 Part List" type="Node2D"]
+script = ExtResource("1_r6wn7")
+rarity = "common"

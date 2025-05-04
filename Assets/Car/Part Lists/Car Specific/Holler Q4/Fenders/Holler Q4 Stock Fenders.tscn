@@ -1,0 +1,51 @@
+[gd_scene load_steps=10 format=3 uid="uid://b107w7hd61tsr"]
+
+[ext_resource type="Script" path="res://Assets/Car/Code/Part_scripts/Fenders.gd" id="1_4toc4"]
+[ext_resource type="Shader" path="res://Shaders/ColorSelector.gdshader" id="2_bha5a"]
+[ext_resource type="Texture2D" uid="uid://djqs21wes4glk" path="res://Textures/Cars/Holler Q4/Fenders/Höller Q4 Stock Fenders.png" id="3_6a2af"]
+[ext_resource type="Texture2D" uid="uid://bpixmlt8u0wlv" path="res://Textures/Cars/Holler Q4/Fenders/Höller Q4 Stock Fenders NM.png" id="4_55sy3"]
+[ext_resource type="Texture2D" uid="uid://c2pscxilxqi3v" path="res://Textures/Cars/Holler Q4/Fenders/Höller Q4 Stock Fenders Spec.png" id="5_ojdgb"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_kyisn"]
+shader = ExtResource("2_bha5a")
+shader_parameter/import_new_color = null
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_vufhm"]
+diffuse_texture = ExtResource("3_6a2af")
+normal_texture = ExtResource("4_55sy3")
+specular_texture = ExtResource("5_ojdgb")
+specular_shininess = 0.5
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_ak8kv"]
+blend_mode = 1
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_naikx"]
+polygon = PackedVector2Array(77.9116, -33.6985, 71.9116, -39.6985, 82.9116, -39.6985, 82.9116, -40.6985, 110.912, -40.6985, 110.912, -39.6985, 122.912, -39.6985, 125.912, -37.6985, 125.912, -33.6985)
+
+[node name="Holler Q4 Stock Fenders" type="Node2D"]
+script = ExtResource("1_4toc4")
+rarity = "common"
+part_material = 1
+Car_ID = 4
+Part_Number = 1
+description = "The factory fenders for the Holler Q4"
+price = 200
+weight = 15
+downforce = 10
+drag = 0.02
+max_tire_width = 180
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_kyisn")
+texture = SubResource("CanvasTexture_vufhm")
+
+[node name="LightOccluder2D2" type="LightOccluder2D" parent="Sprite2D"]
+material = SubResource("CanvasItemMaterial_ak8kv")
+position = Vector2(-29.9116, -2.30154)
+occluder = SubResource("OccluderPolygon2D_naikx")
+
+[node name="LightOccluder2D3" type="LightOccluder2D" parent="Sprite2D"]
+material = SubResource("CanvasItemMaterial_ak8kv")
+position = Vector2(-29.915, 1.3)
+scale = Vector2(1, -1)
+occluder = SubResource("OccluderPolygon2D_naikx")

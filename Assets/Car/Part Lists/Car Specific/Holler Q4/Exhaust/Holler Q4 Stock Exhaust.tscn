@@ -1,0 +1,40 @@
+[gd_scene load_steps=9 format=3 uid="uid://dfuma760nesr"]
+
+[ext_resource type="Script" path="res://Assets/Car/Code/Part_scripts/Exhaust.gd" id="1_0yrwg"]
+[ext_resource type="Texture2D" uid="uid://cqigv3qnqcnjk" path="res://Textures/Cars/Holler Q4/Exhaust/Höller Q4 Stock Exhaust.png" id="2_fqx3c"]
+[ext_resource type="Texture2D" uid="uid://c3nncw8vxlhfk" path="res://Textures/Cars/Holler Q4/Exhaust/Höller Q4 Stock Exhaust NM.png" id="3_gjwtf"]
+[ext_resource type="Script" path="res://Assets/Effects/Backfire.gd" id="4_io480"]
+[ext_resource type="Texture2D" uid="uid://3t7vd4l8mf8k" path="res://Textures/Cars/Holler Q4/Exhaust/Höller Q4 Stock Exhaust Spec.png" id="4_ofd27"]
+[ext_resource type="AudioStream" uid="uid://cfvwt4fi2efkr" path="res://Sound/Engine Sounds/Backfire.mp3" id="5_xfcbe"]
+[ext_resource type="PackedScene" uid="uid://b1agqhrv0psca" path="res://Assets/Effects/Backfire.tscn" id="6_gjhjd"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_lr5dr"]
+diffuse_texture = ExtResource("2_fqx3c")
+normal_texture = ExtResource("3_gjwtf")
+specular_texture = ExtResource("4_ofd27")
+specular_shininess = 0.65
+
+[node name="Holler Q4 Stock Exhaust" type="Node2D"]
+script = ExtResource("1_0yrwg")
+rarity = "common"
+Car_ID = 4
+Part_Number = 1
+description = "The Stock Exhaust that comes with the Holler Q4"
+price = 175
+weight = 30
+tq_mod_exhaust = 0.92
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = SubResource("CanvasTexture_lr5dr")
+
+[node name="Backfire" type="Node2D" parent="."]
+script = ExtResource("4_io480")
+
+[node name="Backfire_Sound" type="AudioStreamPlayer2D" parent="Backfire"]
+stream = ExtResource("5_xfcbe")
+bus = &"Car Volume"
+
+[node name="Exhaust_1" type="Marker2D" parent="Backfire"]
+position = Vector2(-105, 28)
+
+[node name="Backfire" parent="Backfire/Exhaust_1" instance=ExtResource("6_gjhjd")]

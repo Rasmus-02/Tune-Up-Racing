@@ -24,8 +24,11 @@ func generate_car(rarity, weight, torque_estimate, grip, downforce, brake_force,
 		#Make sure chassi in range for rarity and weight (75% is the estimated chassi weight of the total car)
 		var car = AssetList.car_list.get_child(i+1)
 		var instance = car.chassi[0].instantiate()
-		if instance.weight > (weight * precision) * 0.70 and instance.weight < (weight / precision) * 0.75 and rarity_to_int(instance.rarity) <= rarity:
-			car_array.append(car)
+		# If in race +-1 rarity, if in shop, max unlocked rarity
+		var instance_rarity = rarity_to_int(instance.rarity)
+		if (race_status == true and instance_rarity <= max_rarity + 1 and instance_rarity >= max_rarity - 1) or (instance_rarity <= max_rarity and race_status == false):
+			if instance.weight > (weight * precision) * 0.70 and instance.weight < (weight / precision) * 0.75:
+				car_array.append(car)
 		instance.queue_free()
 	if car_array.size() != 0:
 		randomize()
@@ -141,8 +144,11 @@ func generate_engine(rarity, weight, car_weight, torque, engine_bay_size, engine
 			#Make sure engine in range weight (15% is the estimated chassi weight of the total car), and that there is a block that can handle the torque
 			var engine = AssetList.engine_list.get_child(i+1)
 			var instance = engine.block[1].instantiate()
-			if instance.lenght < max_lenght and instance.width * 0.5 < max_width_l and instance.width * 0.5 < max_width_r:
-				engine_array.append(engine)
+			# If in race +-1 rarity, if in shop, max unlocked rarity
+			var instance_rarity = rarity_to_int(instance.rarity)
+			if (race_status == true and instance_rarity <= max_rarity + 1 and instance_rarity >= max_rarity - 1) or (instance_rarity <= max_rarity and race_status == false):
+				if instance.lenght < max_lenght and instance.width * 0.5 < max_width_l and instance.width * 0.5 < max_width_r:
+					engine_array.append(engine)
 			instance.queue_free()
 	if engine_array.size() != 0:
 		var rng = randi_range(0, engine_array.size() - 1) #Pick A Random Chassi from the array
@@ -293,7 +299,6 @@ func _find_suitable_part(category ,category_array, stat1_range, stat2_range, sta
 	randomize()
 	var temp_array = []
 	var temp_backup_array = []
-	var max_rarity_offset = 1
 	var stat_1
 	var stat_2
 	var instance
@@ -415,7 +420,6 @@ func _find_suitable_part(category ,category_array, stat1_range, stat2_range, sta
 			"air_filter":
 				instance = category_array[i+1].instantiate()
 				stat_2 = instance.layout
-		
 		if (stat1_range == null or stat_1 >= stat1_range[0] and stat_1 <= stat1_range[1]) and (stat2_range == null or stat_2 >= stat2_range[0] and stat_2 <= stat2_range[1]):
 			if race_status == true or rarity_to_int(instance.rarity) <= max_rarity: #IF generating car for shop, account for rarity
 				temp_array.append(instance)

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cfwyuy0hdeclv"
-path="res://.godot/imported/Höller Q4 Windows HM.png-4b3977669f99c31caf858ad7d75582f5.ctex"
+uid="uid://bmm20cpx1d323"
+path="res://.godot/imported/4 Speed AWD Gearbox NM.png-64f3929717f151410a277c50161304c0.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Textures/Cars/Holler Q4/Window/Höller Q4 Windows HM.png"
-dest_files=["res://.godot/imported/Höller Q4 Windows HM.png-4b3977669f99c31caf858ad7d75582f5.ctex"]
+source_file="res://Textures/Cars/Universal/Gearbox/4 Speed AWD Gearbox NM.png"
+dest_files=["res://.godot/imported/4 Speed AWD Gearbox NM.png-64f3929717f151410a277c50161304c0.ctex"]
 
 [params]
 

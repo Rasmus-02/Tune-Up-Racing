@@ -1,0 +1,30 @@
+[gd_scene load_steps=6 format=3 uid="uid://d2hf4rg3i8vet"]
+
+[ext_resource type="Script" path="res://Assets/Car/Code/Part_scripts/Driveshaft.gd" id="1_bdn1g"]
+[ext_resource type="Texture2D" uid="uid://bxomic25jeiyu" path="res://Textures/Cars/Holler Q4/Driveshaft/Höller Q4 AWD Driveshaft.png" id="2_ursuk"]
+[ext_resource type="Texture2D" uid="uid://b1brmc2gsdmq8" path="res://Textures/Cars/Holler Q4/Driveshaft/Höller Q4 AWD Driveshaft NM.png" id="3_j681b"]
+[ext_resource type="Texture2D" uid="uid://duhl461kbuiev" path="res://Textures/Cars/Holler Q4/Driveshaft/Höller Q4 AWD Driveshaft Spec.png" id="4_gfad4"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_c5td7"]
+diffuse_texture = ExtResource("2_ursuk")
+normal_texture = ExtResource("3_j681b")
+specular_texture = ExtResource("4_gfad4")
+specular_shininess = 0.5
+
+[node name="Holler Q4 AWD Driveshaft" type="Node2D"]
+script = ExtResource("1_bdn1g")
+rarity = "common"
+Car_ID = 4
+Part_Number = 1
+description = "The factory all wheel drive driveshaft that comes with the Holler Q4"
+price = 1500
+weight = 45
+drivetrain = 2
+max_torque = 350
+drivetrain_loss = 0.22
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = SubResource("CanvasTexture_c5td7")
+
+[node name="Gearbox" type="Marker2D" parent="."]
+position = Vector2(37, 0)

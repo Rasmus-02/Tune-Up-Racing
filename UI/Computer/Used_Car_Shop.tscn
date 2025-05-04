@@ -190,7 +190,7 @@ theme_override_constants/separation = 35
 
 [node name="Brand" type="OptionButton" parent="Filters/Drop Downs/Options"]
 layout_mode = 2
-item_count = 5
+item_count = 6
 selected = 0
 popup/item_0/text = "Any"
 popup/item_0/id = 0
@@ -202,6 +202,8 @@ popup/item_3/text = "Hikari"
 popup/item_3/id = 3
 popup/item_4/text = "PWR"
 popup/item_4/id = 4
+popup/item_5/text = "Holler"
+popup/item_5/id = 5
 
 [node name="Fuel Type" type="OptionButton" parent="Filters/Drop Downs/Options"]
 layout_mode = 2

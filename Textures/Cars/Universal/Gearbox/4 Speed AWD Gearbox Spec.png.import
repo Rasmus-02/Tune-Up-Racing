@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cughpvua0badi"
-path="res://.godot/imported/Höller Q4 Stock Hood HM.png-127630c6d57b18fb06468a90baf12a41.ctex"
+uid="uid://nygu5j5pt38y"
+path="res://.godot/imported/4 Speed AWD Gearbox Spec.png-eff0acb6809ba0a2195aa377126d7303.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Textures/Cars/Holler Q4/Hood/Höller Q4 Stock Hood HM.png"
-dest_files=["res://.godot/imported/Höller Q4 Stock Hood HM.png-127630c6d57b18fb06468a90baf12a41.ctex"]
+source_file="res://Textures/Cars/Universal/Gearbox/4 Speed AWD Gearbox Spec.png"
+dest_files=["res://.godot/imported/4 Speed AWD Gearbox Spec.png-eff0acb6809ba0a2195aa377126d7303.ctex"]
 
 [params]
 

@@ -30,7 +30,8 @@ var wheels = [empty, cheap_alloy_wheels_180_200_R16, fritz_lightweight_forged_20
 var FWD_5speed_manual = preload("res://Assets/Car/Part Lists/Universal/Gearbox/FWD 5 speed manual.tscn") #1
 var RWD_6speed_manual = preload("res://Assets/Car/Part Lists/Universal/Gearbox/RWD 6 speed manual.tscn") #2
 var AWD_5speed_manual = preload("res://Assets/Car/Part Lists/Universal/Gearbox/AWD 5 speed manual.tscn") #3
-var gearbox = [empty, FWD_5speed_manual, RWD_6speed_manual, AWD_5speed_manual]
+var AWD_4speed_manual = preload("res://Assets/Car/Part Lists/Universal/Gearbox/AWD 4 speed manual.tscn") #4
+var gearbox = [empty, FWD_5speed_manual, RWD_6speed_manual, AWD_5speed_manual, AWD_4speed_manual]
 
 #Radiator
 var small_radiator = preload("res://Assets/Car/Part Lists/Universal/Radiator/Small radiator.tscn")#1

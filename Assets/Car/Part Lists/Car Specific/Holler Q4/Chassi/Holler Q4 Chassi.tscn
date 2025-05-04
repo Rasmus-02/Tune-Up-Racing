@@ -1,0 +1,76 @@
+[gd_scene load_steps=13 format=3 uid="uid://gf4smbr3pd3l"]
+
+[ext_resource type="Script" path="res://Assets/Car/Code/Part_scripts/Chassi.gd" id="1_r3n2h"]
+[ext_resource type="Shader" path="res://Shaders/ColorSelector.gdshader" id="2_1rlgc"]
+[ext_resource type="Texture2D" uid="uid://w2s02xomsrpc" path="res://Textures/Cars/Holler Q4/Chassi/Höller Q4 Chassi.png" id="3_85q02"]
+[ext_resource type="Texture2D" uid="uid://cpvompf73qhow" path="res://Textures/Cars/Holler Q4/Chassi/Höller Q4 Chassi NM.png" id="4_hq0pk"]
+[ext_resource type="Texture2D" uid="uid://yjxc0ipxk4ia" path="res://Textures/Cars/Holler Q4/Chassi/Höller Q4 Chassi Spec.png" id="5_fvjmn"]
+[ext_resource type="Texture2D" uid="uid://wqwlk0n34cj" path="res://Textures/Cars/Holler Q4/Chassi/Höller Q4 Chassi non paintable.png" id="6_54sjl"]
+[ext_resource type="PackedScene" uid="uid://dps4f57hpre62" path="res://Assets/Car/Part Lists/Car Specific/Holler Q4/Windows/Holler Q4 Stock Windows.tscn" id="7_swijp"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_nscdw"]
+shader = ExtResource("2_1rlgc")
+shader_parameter/import_new_color = null
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_uy0d4"]
+diffuse_texture = ExtResource("3_85q02")
+normal_texture = ExtResource("4_hq0pk")
+specular_texture = ExtResource("5_fvjmn")
+specular_shininess = 0.5
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_taee6"]
+blend_mode = 1
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_ahy8q"]
+polygon = PackedVector2Array(128.912, -36.6985, 131.912, -31.6985, 134.912, -19.6985, 135.912, -7.69846, 135.912, 11.3015, 134.912, 23.3015, 131.912, 35.3015, 128.912, 40.3015, 76.9116, 40.3015, 73.9116, 43.3015, -24.0884, 43.3015, -24.0884, 44.3015, -52.0884, 44.3015, -52.0884, 43.3015, -65.0884, 43.3015, -68.0884, 40.3015, -68.0884, -36.6985, -65.0884, -39.6985, -52.0884, -39.6985, -52.0884, -40.6985, -24.0884, -40.6985, -24.0884, -39.6985, 73.9116, -39.6985, 76.9116, -36.6985)
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_cr4oj"]
+diffuse_texture = ExtResource("6_54sjl")
+normal_texture = ExtResource("4_hq0pk")
+specular_texture = ExtResource("5_fvjmn")
+specular_shininess = 0.5
+
+[node name="Holler Q4 Chassi" type="Node2D"]
+script = ExtResource("1_r3n2h")
+rarity = "common"
+engine_bay_lenght = 46
+engine_bay_width = 53
+engine_bay_start_lenght = 55
+Car_ID = 4
+Part_Number = 1
+description = "A budget-friendly German AWD wagon offering good grip on rough terrain and tight corners"
+price = 4000
+weight = 850
+reliability = 0.95
+drag = 0.28
+wheelbase = 135
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_nscdw")
+texture = SubResource("CanvasTexture_uy0d4")
+
+[node name="LightOccluder2D2" type="LightOccluder2D" parent="Sprite2D"]
+material = SubResource("CanvasItemMaterial_taee6")
+position = Vector2(-29.9116, -2.30154)
+occluder = SubResource("OccluderPolygon2D_ahy8q")
+
+[node name="Non Paintable" type="Sprite2D" parent="Sprite2D"]
+material = SubResource("ShaderMaterial_nscdw")
+texture = SubResource("CanvasTexture_cr4oj")
+
+[node name="Holler Q4 Windows" parent="." instance=ExtResource("7_swijp")]
+
+[node name="FL" type="Marker2D" parent="."]
+position = Vector2(67, -32)
+
+[node name="RL" type="Marker2D" parent="."]
+position = Vector2(-68, -32)
+
+[node name="RR" type="Marker2D" parent="."]
+position = Vector2(-68, 31)
+
+[node name="FR" type="Marker2D" parent="."]
+position = Vector2(67, 31)
+
+[node name="Radiator_Location" type="Marker2D" parent="."]
+position = Vector2(99, 0)

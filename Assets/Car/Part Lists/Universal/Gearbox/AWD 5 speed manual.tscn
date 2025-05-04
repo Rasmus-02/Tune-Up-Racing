@@ -24,7 +24,6 @@ price = 4000
 drivetrain = 2
 weight = 70
 shift_time = 0.5
-max_hp = 400
 max_tq = 650
 gear_ratio = [4.0, 3.5, 2.0, 1.5, 1.0, 0.8]
 

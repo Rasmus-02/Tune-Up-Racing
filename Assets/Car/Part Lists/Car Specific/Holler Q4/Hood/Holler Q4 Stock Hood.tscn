@@ -1,0 +1,34 @@
+[gd_scene load_steps=9 format=3 uid="uid://cuakmdx1f3pjd"]
+
+[ext_resource type="Script" path="res://Assets/Car/Code/Part_scripts/Hood.gd" id="1_sadsm"]
+[ext_resource type="Shader" path="res://Shaders/ColorSelector.gdshader" id="2_p607b"]
+[ext_resource type="Texture2D" uid="uid://c5qm6thj70r0p" path="res://Textures/Cars/Holler Q4/Hood/Höller Q4 Stock Hood.png" id="3_buj1g"]
+[ext_resource type="Texture2D" uid="uid://c5eawvy0de0vf" path="res://Textures/Cars/Holler Q4/Hood/Höller Q4 Stock Hood NM.png" id="4_htpmk"]
+[ext_resource type="Texture2D" uid="uid://ctcmu5ec2ok07" path="res://Textures/Cars/Holler Q4/Hood/Höller Q4 Stock Hood Spec.png" id="5_ioc5e"]
+[ext_resource type="Script" path="res://Textures/Cars/Color_selector.gd" id="6_1dn1h"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_n52vx"]
+shader = ExtResource("2_p607b")
+shader_parameter/import_new_color = null
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_hjvi5"]
+diffuse_texture = ExtResource("3_buj1g")
+normal_texture = ExtResource("4_htpmk")
+specular_texture = ExtResource("5_ioc5e")
+specular_shininess = 0.5
+
+[node name="Holler Q4 Stock Hood" type="Node2D"]
+script = ExtResource("1_sadsm")
+rarity = "common"
+Car_ID = 4
+Part_Number = 1
+description = "The factory hood for the Holler Q4"
+price = 150
+weight = 18
+downforce = 15
+drag = 0.02
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_n52vx")
+texture = SubResource("CanvasTexture_hjvi5")
+script = ExtResource("6_1dn1h")
