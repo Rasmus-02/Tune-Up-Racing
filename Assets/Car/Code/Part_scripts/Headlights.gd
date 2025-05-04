@@ -27,7 +27,7 @@ func _ready():
 	if get_parent() != null and get_parent().get_parent() != null and get_parent().get_parent().get_parent() != null:
 		car = get_parent().get_parent().get_parent().get_parent()
 	
-func _process(delta):
+func _process(_delta):
 	if (current_color == null or color != current_color or durability != current_durability):
 		if car != null and car.is_in_group("Car"):
 			paint_part(car.headlights_color, car.headlights_durability)

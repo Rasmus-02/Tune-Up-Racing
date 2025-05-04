@@ -23,7 +23,7 @@ description = "The factory cast iron block for the Holler DI-2500 Engine"
 price = 800
 weight = 80
 reliability = 1.0
-tq = 135
+tq = 145
 max_tq = 400
 
 [node name="Sprite2D" type="Sprite2D" parent="."]

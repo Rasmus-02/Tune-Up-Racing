@@ -460,10 +460,8 @@ func _estimate_boost(tq_boost, tq, goal_tq, turbo_size, turbo_efficiency):
 		if temp_power >= goal_tq or temp_max_boost >= 3:
 			max_boost_estimate = temp_max_boost
 			return max_boost_estimate
-			break
 
 func estimate_torque(block, airfilter, exhaust_manifold, intake_manifold, internals, top, boost):
-	
 	var max_horsepower_rpm = durability_perfromance(top.max_hp_rpm / 1.2, top.durability)
 	var air_filter = airfilter
 	var turbo = exhaust_manifold.turbo

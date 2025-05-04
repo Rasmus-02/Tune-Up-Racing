@@ -150,7 +150,6 @@ var parts = [chassi, driveshaft, subframe, fenders, f_bumper, r_bumper, hood, he
 
 var tiresmoke = preload("res://Assets/Effects/TireSmoke.tscn")
 var tiremark = preload("res://Assets/Effects/tiremark.tscn")
-var collision = preload("res://Assets/Effects/Collision.tscn")
 var spawn_rotation = 0
 #endregion
 
@@ -161,7 +160,7 @@ func _on_engine_rpm_info(rpm, import_max_rpm):
 	engine_rpm = rpm
 	max_engine_rpm = import_max_rpm
 
-func _on_engine_stats(_horsepower, torque, max_torque, top_end_fuel_type):
+func _on_engine_stats(_horsepower, torque, _max_torque, top_end_fuel_type):
 	max_engine_power = (torque) * (1-drivetrain_loss) * exhaust_tq_mod
 	engine_power = (max_engine_power * 150) * rubberbanding
 	fuel_type = top_end_fuel_type
@@ -620,7 +619,7 @@ func _physics_process(delta):
 				calculate_steering(delta)
 				move_and_slide()
 				wheel_controller()
-				traction()
+				traction_controller()
 				sliding()
 				collision_handler()
 			if running_dyno == 1:
@@ -838,11 +837,11 @@ func light_controll(light_type,on_off, strenght):
 			var index = 0
 			for i in 2: #Set the actual light coming of
 				index = i
-				var headlights = self.get_child(0).get_child(0).get_child(0).headlights.get_node("Lights").get_child(index)
+				var headlights_node = self.get_child(0).get_child(0).get_child(0).headlights.get_node("Lights").get_child(index)
 				if i <= 1:
-					headlights.energy = headlight_strenght * 2
+					headlights_node.energy = headlight_strenght * 2
 				else:
-					headlights.energy = headlight_strenght
+					headlights_node.energy = headlight_strenght
 				i+=1
 		if light_type == "light_z": # change culling layers of headlights
 			var height = 1
@@ -853,13 +852,13 @@ func light_controll(light_type,on_off, strenght):
 			var index = 0
 			for i in 1:
 				index = i
-				var taillights = self.get_child(0).get_child(0).get_child(0).taillights.get_node("Taillights").get_child(index)
-				taillights.set_item_cull_mask(height) #Sets the lights to act on both layer 1 (track) and layer 2 (bridge)
+				var taillights_node = self.get_child(0).get_child(0).get_child(0).taillights.get_node("Taillights").get_child(index)
+				taillights_node.set_item_cull_mask(height) #Sets the lights to act on both layer 1 (track) and layer 2 (bridge)
 				i+=1
 			for n in 2:
 				index = n
-				var headlights = self.get_child(0).get_child(0).get_child(0).headlights.get_node("Lights").get_child(index)
-				headlights.set_item_cull_mask(height)
+				var headlights_node = self.get_child(0).get_child(0).get_child(0).headlights.get_node("Lights").get_child(index)
+				headlights_node.set_item_cull_mask(height)
 				n+=1
 
 var running_dyno = 0
@@ -1013,7 +1012,7 @@ func calculate_steering(delta):
 	rotation = new_heading.angle()
 
 
-func traction():
+func traction_controller():
 	#understeer when not accelerating
 	var understeer_mod = abs((tire_limit/max_tire_limit)-1)/((4.5+4.5/handling_bonus)/2)+1
 	var understeer_mod_fwd = abs((tire_limit/max_tire_limit)-1)/((3.5+3.5/handling_bonus)/2)+1

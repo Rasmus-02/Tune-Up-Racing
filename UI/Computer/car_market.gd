@@ -12,7 +12,7 @@ func _ready():
 		print("NEW CAR MARKET FILE CREATED")
 		event_queue = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
 		market_size = 1
-		var file = FileAccess.open(file_location, FileAccess.WRITE)
+		var _file = FileAccess.open(file_location, FileAccess.WRITE)
 		save()
 	#Load the file
 	load_file()
@@ -37,17 +37,17 @@ func generate_event():
 #Generate new Countdown time
 func refresh_countdown():
 	var rng_time : int
-	var min = 30
-	var max = 120
+	var min_time = 30
+	var max_time = 120
 	#This if else statement makes it so the car market is more busy during the day, and extra busy during the weekend
 	if Clock.hour < 8 or Clock.hour >= 20: #If at night (double cooldown delay)
-		min *= 2
-		max *= 2
+		min_time *= 2
+		max_time *= 2
 	if Clock.day >= 6: #If weekend make day cooldown 1/2 min --> 2 min
-		min -= 15
-		max -= 60
+		min_time -= 15
+		max_time -= 60
 	
-	rng_time = randi_range(min, max) #Seconds
+	rng_time = randi_range(min_time, max_time) #Seconds
 	countdown = rng_time
 
 #Empty event queue and add / remove all the cars that are queued upp 
@@ -179,7 +179,6 @@ func generate_camera_views():
 	
 	var random_photo_setup = {}
 	var random_filter = randi_range(0, 15)
-	var random_scene = 0
 	if random_filter >= 2:
 		random_filter = 999
 	for i in 4:

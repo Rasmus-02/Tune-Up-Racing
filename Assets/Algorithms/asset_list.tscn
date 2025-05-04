@@ -11,7 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://562gipqro1ak" path="res://Assets/Engine/Part Lists/Engine Specific/Nagata 2S-16i/nagata_2s_16i part list.tscn" id="7_rslnb"]
 [ext_resource type="PackedScene" uid="uid://8p8g1ahw0qts" path="res://Assets/Engine/Part Lists/Engine Specific/Talon Motors Typhoon/talon_motors_typhoon part list.tscn" id="8_2u6r4"]
 [ext_resource type="PackedScene" uid="uid://dgycrig5er4w1" path="res://Assets/Engine/Part Lists/Engine Specific/PWR SIX-4/PWR SIX-4 part list.tscn" id="10_054cr"]
-[ext_resource type="PackedScene" uid="uid://bk2r04olyyy68" path="res://Assets/Engine/Engines/Holler DI-2500.tscn" id="12_rnx4l"]
+[ext_resource type="PackedScene" uid="uid://dakjrep5k5m7g" path="res://Assets/Engine/Part Lists/Engine Specific/Holler DI-2500/Holler DI-2500 part list.tscn" id="12_pseyg"]
 
 [node name="Asset_List" type="Node" node_paths=PackedStringArray("car_list", "engine_list")]
 script = ExtResource("1_7h7kb")
@@ -53,4 +53,4 @@ rarity = "uncommon"
 
 [node name="PWR SIX-4 Part List" parent="Engine" instance=ExtResource("10_054cr")]
 
-[node name="Holler DI-2500" parent="Engine" instance=ExtResource("12_rnx4l")]
+[node name="Holler DI-2500 Part List" parent="Engine" instance=ExtResource("12_pseyg")]

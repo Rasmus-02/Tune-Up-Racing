@@ -29,7 +29,7 @@ func _ready():
 	if get_parent() != null and get_parent().get_parent() != null and get_parent().get_parent().get_parent() != null:
 		engine = get_parent().get_parent().get_parent().get_parent()
 	
-func _process(delta):
+func _process(_delta):
 	if (current_durability == null or durability != current_durability):
 		if engine != null and engine.is_in_group("Engine"):
 			apply_durability(engine.block_durability)

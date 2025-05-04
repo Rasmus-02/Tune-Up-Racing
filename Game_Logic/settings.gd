@@ -25,7 +25,7 @@ func _ready():
 	#If file doesn't exist create new file
 	if FileAccess.file_exists(file_location) == false:
 		print("NEW SETTINGS FILE CREATED")
-		var file = FileAccess.open(file_location, FileAccess.WRITE)
+		var _file = FileAccess.open(file_location, FileAccess.WRITE)
 		save_settings()
 	#Load the file
 	load_file()
@@ -110,7 +110,6 @@ func apply_settings():
 	AudioServer.set_bus_volume_db(2, -80)
 
 func get_difficulty_bonus(type : String):
-	var level = Save_Load.level
 	match type:
 		"Money Bonus":
 			match difficulty:
