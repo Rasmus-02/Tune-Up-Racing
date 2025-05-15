@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://6wevijnlj1bm"
+path="res://.godot/imported/Holler DI-2500 vortex NT1.mp3-4571f4d64ef6c79cbc80b840d3cca4f2.mp3str"
+
+[deps]
+
+source_file="res://Sound/Engine Sounds/Holler DI-2500/Holler DI-2500 vortex NT1.mp3"
+dest_files=["res://.godot/imported/Holler DI-2500 vortex NT1.mp3-4571f4d64ef6c79cbc80b840d3cca4f2.mp3str"]
+
+[params]
+
+loop=true
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

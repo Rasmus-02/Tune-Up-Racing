@@ -1,0 +1,29 @@
+[gd_scene load_steps=6 format=3 uid="uid://dxlfdlqx440r1"]
+
+[ext_resource type="Script" path="res://Assets/Engine/Part_scripts/Internals.gd" id="1_oegh0"]
+[ext_resource type="Texture2D" uid="uid://ceb5tgaeg8r11" path="res://Textures/Engines/Holler DI-2500/Internals/Höller DI-2500 Forged Internals.png" id="2_owdrq"]
+[ext_resource type="Texture2D" uid="uid://cc4hg5jgbeka" path="res://Textures/Engines/Holler DI-2500/Internals/Höller DI-2500 Stock Internals NM.png" id="3_mlih1"]
+[ext_resource type="Texture2D" uid="uid://dab8pkw2ov2wl" path="res://Textures/Engines/Holler DI-2500/Internals/Höller DI-2500 Stock Internals Spec.png" id="4_15ac6"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_8qrlk"]
+diffuse_texture = ExtResource("2_owdrq")
+normal_texture = ExtResource("3_mlih1")
+specular_texture = ExtResource("4_15ac6")
+specular_shininess = 0.5
+
+[node name="Holler DI-2500 Forged Low Compression Internals" type="Node2D"]
+script = ExtResource("1_oegh0")
+rarity = "common"
+lenght = 23
+width = 5
+Engine_ID = 5
+Part_Number = 6
+description = "Low compression variant of the forged internals for the Holler DI-2500 Engine, designed with boosted engines in mind"
+price = 2000
+weight = 32
+compression = 17.0
+max_rpm = 6000
+max_tq = 600
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = SubResource("CanvasTexture_8qrlk")

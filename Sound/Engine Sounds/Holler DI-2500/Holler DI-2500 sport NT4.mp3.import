@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://b7a8sjngpxn8y"
+path="res://.godot/imported/Holler DI-2500 sport NT4.mp3-72f63c61cc5bfec9383b5d67d5d248ce.mp3str"
+
+[deps]
+
+source_file="res://Sound/Engine Sounds/Holler DI-2500/Holler DI-2500 sport NT4.mp3"
+dest_files=["res://.godot/imported/Holler DI-2500 sport NT4.mp3-72f63c61cc5bfec9383b5d67d5d248ce.mp3str"]
+
+[params]
+
+loop=true
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

@@ -1,0 +1,32 @@
+[gd_scene load_steps=6 format=3 uid="uid://du3gvm5yhs5gh"]
+
+[ext_resource type="Script" path="res://Assets/Engine/Part_scripts/Intake_Manifold.gd" id="1_7c7lh"]
+[ext_resource type="Texture2D" uid="uid://ssrns6xnlk5e" path="res://Textures/Engines/Holler DI-2500/Intake/Höller DI-2500 [Vortex] Intake Manifold.png" id="2_0jcqi"]
+[ext_resource type="Texture2D" uid="uid://bgl7thlqdr7s7" path="res://Textures/Engines/Holler DI-2500/Intake/Höller DI-2500 [Vortex] Intake Manifold NM.png" id="3_ypdvr"]
+[ext_resource type="Texture2D" uid="uid://cjwph3bgswkqr" path="res://Textures/Engines/Holler DI-2500/Intake/Höller DI-2500 [Vortex] Intake Manifold Spec.png" id="4_gtrfy"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_oa52d"]
+diffuse_texture = ExtResource("2_0jcqi")
+normal_texture = ExtResource("3_ypdvr")
+specular_texture = ExtResource("4_gtrfy")
+specular_shininess = 0.5
+
+[node name="Holler DI-2500 Stock Intake Manifold" type="Node2D"]
+script = ExtResource("1_7c7lh")
+rarity = "uncommon"
+layout = "front"
+lenght = 4
+width = 8
+Engine_ID = 5
+Part_Number = 4
+description = "A performance intake manifold for the Holler DI-2500 Engine designed by Vortex"
+price = 800
+weight = 11
+tq_mod = 1.05
+max_compression_modifier = 1.1
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = SubResource("CanvasTexture_oa52d")
+
+[node name="Air filter location" type="Marker2D" parent="."]
+position = Vector2(26, 0)

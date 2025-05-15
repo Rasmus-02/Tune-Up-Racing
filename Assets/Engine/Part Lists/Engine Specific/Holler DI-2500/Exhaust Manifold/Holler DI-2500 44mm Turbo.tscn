@@ -1,0 +1,64 @@
+[gd_scene load_steps=14 format=3 uid="uid://b1l3l8wpyi7ui"]
+
+[ext_resource type="Script" path="res://Assets/Engine/Part_scripts/Exhaust_Manifold.gd" id="1_tkbqx"]
+[ext_resource type="Texture2D" uid="uid://b13h8jfbx26qf" path="res://Textures/Engines/Holler DI-2500/Exhaust/Höller DI-2500 44mm Turbo.png" id="2_60k4g"]
+[ext_resource type="Texture2D" uid="uid://bkoma3lltse6l" path="res://Textures/Engines/Holler DI-2500/Exhaust/Höller DI-2500 44mm Turbo NM.png" id="3_awfrh"]
+[ext_resource type="Texture2D" uid="uid://wwmfggfxux7j" path="res://Textures/Engines/Holler DI-2500/Exhaust/Höller DI-2500 44mm Turbo Spec.png" id="4_k5w71"]
+[ext_resource type="Texture2D" uid="uid://t7e3fbsccuki" path="res://Textures/Engines/Nagata 2S-16I/Exhaust/Stock/Nagata 2S-16i Exhaust Manifold_T.png" id="5_g1ueu"]
+[ext_resource type="Texture2D" uid="uid://cyrgbxu7xvc8y" path="res://Textures/Engines/Nagata 2S-16I/Exhaust/Stock/Nagata 2S-16i Exhaust Manifold_T NM.png" id="6_247vb"]
+[ext_resource type="Texture2D" uid="uid://w0rlbkfsuc5t" path="res://Textures/Engines/Nagata 2S-16I/Exhaust/Stock/Nagata 2S-16i Exhaust Manifold_T Spec.png" id="7_lox43"]
+[ext_resource type="Texture2D" uid="uid://dm65u133nd2y0" path="res://Textures/Engines/Nagata 2S-16I/Exhaust/Stock/Nagata 2S-16i Exhaust Manifold_L.png" id="8_4daiy"]
+[ext_resource type="Texture2D" uid="uid://d1g38ro0boro5" path="res://Textures/Engines/Nagata 2S-16I/Exhaust/Stock/Nagata 2S-16i Exhaust Manifold_L NM.png" id="9_xhgo8"]
+[ext_resource type="Texture2D" uid="uid://da2jf3l6ifcdr" path="res://Textures/Engines/Nagata 2S-16I/Exhaust/Stock/Nagata 2S-16i Exhaust Manifold_L Spec.png" id="10_0yxor"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_23fjm"]
+diffuse_texture = ExtResource("2_60k4g")
+normal_texture = ExtResource("3_awfrh")
+specular_texture = ExtResource("4_k5w71")
+specular_shininess = 0.3
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_inuwe"]
+diffuse_texture = ExtResource("5_g1ueu")
+normal_texture = ExtResource("6_247vb")
+specular_texture = ExtResource("7_lox43")
+specular_shininess = 0.3
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_g6r2h"]
+diffuse_texture = ExtResource("8_4daiy")
+normal_texture = ExtResource("9_xhgo8")
+specular_texture = ExtResource("10_0yxor")
+specular_shininess = 0.3
+
+[node name="Holler DI-2500 44mm Turbo Manifold" type="Node2D"]
+script = ExtResource("1_tkbqx")
+rarity = "common"
+Engine_ID = 5
+Part_Number = 3
+lenght = 4
+width = 13
+description = "The factory exhaust manifold for the Holler DI-2500 Engine"
+price = 750
+weight = 45
+tq_mod = 0.95
+turbo = true
+turbo_efficiency = 0.65
+turbo_type = "single"
+turbo_1_size = 44.0
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = SubResource("CanvasTexture_23fjm")
+
+[node name="Trans" type="Sprite2D" parent="."]
+visible = false
+z_index = -5
+position = Vector2(-1, -19)
+texture = SubResource("CanvasTexture_inuwe")
+
+[node name="Long" type="Sprite2D" parent="."]
+visible = false
+z_index = -5
+position = Vector2(-31, 2)
+texture = SubResource("CanvasTexture_g6r2h")
+
+[node name="Air filter location" type="Marker2D" parent="."]
+position = Vector2(8, 11)

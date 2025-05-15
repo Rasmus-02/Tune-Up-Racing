@@ -1,0 +1,62 @@
+[gd_scene load_steps=12 format=3 uid="uid://5fpmwwyh758l"]
+
+[ext_resource type="Script" path="res://Assets/Engine/Part_scripts/Top.gd" id="1_ekm8y"]
+[ext_resource type="Texture2D" uid="uid://cqmdy6btptdfs" path="res://Textures/Engines/Holler DI-2500/Top/Höller DI-2500 Stroker Top.png" id="2_y8h6x"]
+[ext_resource type="Texture2D" uid="uid://bcoolc0m3wo17" path="res://Textures/Engines/Holler DI-2500/Top/Höller DI-2500 Stock Top NM.png" id="3_5plx2"]
+[ext_resource type="Texture2D" uid="uid://by2enevpkxn35" path="res://Textures/Engines/Holler DI-2500/Top/Höller DI-2500 Stock Top Spec.png" id="4_wqs3g"]
+[ext_resource type="Script" path="res://Assets/Engine/Code/Sound_handler_engine.gd" id="5_25p84"]
+[ext_resource type="AudioStream" uid="uid://bwtqgm2xbk6ei" path="res://Sound/Engine Sounds/Holler DI-2500/Holler DI-2500 stroker T1.mp3" id="6_jvp0l"]
+[ext_resource type="AudioStream" uid="uid://bmyk00ljdnab3" path="res://Sound/Engine Sounds/Holler DI-2500/Holler DI-2500 stroker NT1.mp3" id="7_8w3dq"]
+[ext_resource type="AudioStream" uid="uid://c5v1n14o1sj8o" path="res://Sound/Engine Sounds/Holler DI-2500/Holler DI-2500 stroker NT4.mp3" id="8_y5uw2"]
+[ext_resource type="AudioStream" uid="uid://bwhasyvtg7dda" path="res://Sound/Engine Sounds/Holler DI-2500/Holler DI-2500 stroker T4.mp3" id="9_snyyv"]
+[ext_resource type="AudioStream" uid="uid://bumo62fftckdb" path="res://Sound/AirFlow Sound.mp3" id="10_781ud"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_kt11d"]
+diffuse_texture = ExtResource("2_y8h6x")
+normal_texture = ExtResource("3_5plx2")
+specular_texture = ExtResource("4_wqs3g")
+specular_color = Color(1, 1, 0.701961, 1)
+specular_shininess = 0.3
+
+[node name="Holler DI-2500 Stroker Top" type="Node2D"]
+script = ExtResource("1_ekm8y")
+rarity = "common"
+part_material = 0
+lenght = 37
+width = 9
+Engine_ID = 5
+Part_Number = 2
+description = "A lower reving top end with a higher stroke to allow for higher compressions, designed for the Holler DI-2500 Engine"
+price = 400
+weight = 28.0
+tq_mod = 0.75
+max_hp_rpm = 2900
+max_compression = 20.5
+smoothness = 0.7
+fuel_type = "Diesel"
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = SubResource("CanvasTexture_kt11d")
+
+[node name="Sound_handler" type="Node2D" parent="."]
+script = ExtResource("5_25p84")
+
+[node name="engine_sound_throttle_1000rpm" type="AudioStreamPlayer2D" parent="Sound_handler"]
+stream = ExtResource("6_jvp0l")
+bus = &"Car Volume"
+
+[node name="engine_sound_no_throttle_1000rpm" type="AudioStreamPlayer2D" parent="Sound_handler"]
+stream = ExtResource("7_8w3dq")
+bus = &"Car Volume"
+
+[node name="engine_sound_no_throttle_4000rpm" type="AudioStreamPlayer2D" parent="Sound_handler"]
+stream = ExtResource("8_y5uw2")
+bus = &"Car Volume"
+
+[node name="engine_sound_throttle_4000rpm" type="AudioStreamPlayer2D" parent="Sound_handler"]
+stream = ExtResource("9_snyyv")
+bus = &"Car Volume"
+
+[node name="Airflow" type="AudioStreamPlayer2D" parent="Sound_handler"]
+stream = ExtResource("10_781ud")
+bus = &"Car Volume"

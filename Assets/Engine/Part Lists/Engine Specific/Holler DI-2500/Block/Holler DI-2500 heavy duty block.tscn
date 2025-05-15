@@ -1,0 +1,30 @@
+[gd_scene load_steps=6 format=3 uid="uid://dua5acmayrrq2"]
+
+[ext_resource type="Script" path="res://Assets/Engine/Part_scripts/Block.gd" id="1_mwcjr"]
+[ext_resource type="Texture2D" uid="uid://donj8xif7eye1" path="res://Textures/Engines/Holler DI-2500/Block/Höller DI-2500 Heavy Duty Block.png" id="2_jtf30"]
+[ext_resource type="Texture2D" uid="uid://mvs2s2r1p6he" path="res://Textures/Engines/Holler DI-2500/Block/Höller DI-2500 Heavy Duty Block NM.png" id="3_ucu80"]
+[ext_resource type="Texture2D" uid="uid://c4wninod5ayde" path="res://Textures/Engines/Holler DI-2500/Block/Höller DI-2500 Stock Block Spec.png" id="4_w5w45"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_8byoe"]
+diffuse_texture = ExtResource("2_jtf30")
+normal_texture = ExtResource("3_ucu80")
+specular_texture = ExtResource("4_w5w45")
+specular_shininess = 0.5
+
+[node name="Holler DI-2500 Heavy Duty Block" type="Node2D"]
+script = ExtResource("1_mwcjr")
+rarity = "uncommon"
+layout = "Inline"
+lenght = 35
+width = 9
+Engine_ID = 5
+Part_Number = 3
+description = "A heavty duty cast iron block for the Holler DI-2500 Engine, designed to whitstand more torque"
+price = 2500
+weight = 95
+reliability = 1.0
+tq = 140
+max_tq = 750
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = SubResource("CanvasTexture_8byoe")

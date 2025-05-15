@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://dvl1gumsy0alp"]
+[gd_scene load_steps=12 format=3 uid="uid://bg2ysu3y0lph0"]
 
 [ext_resource type="Script" path="res://Assets/Engine/Part_scripts/Top.gd" id="1_ul1px"]
 [ext_resource type="Texture2D" uid="uid://dxapjujfkh2oy" path="res://Textures/Engines/Holler DI-2500/Top/Höller DI-2500 Stock Top.png" id="2_lh1pe"]
@@ -26,7 +26,7 @@ lenght = 37
 width = 9
 Engine_ID = 5
 Part_Number = 1
-description = "A higher reving top end with better airflow for the Holler DI-2500 Engine"
+description = "The stock top end for the Holler DI-2500 Engine"
 price = 250
 weight = 25.0
 tq_mod = 0.8
