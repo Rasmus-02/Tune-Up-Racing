@@ -30,7 +30,7 @@ normal_texture = ExtResource("4_hq0pk")
 specular_texture = ExtResource("5_fvjmn")
 specular_shininess = 0.5
 
-[node name="Holler Q4 Chassi" type="Node2D"]
+[node name="Holler Q4 Chassi" type="Node2D" node_paths=PackedStringArray("hitbox")]
 script = ExtResource("1_r3n2h")
 rarity = "common"
 engine_bay_lenght = 46
@@ -44,6 +44,7 @@ weight = 800
 reliability = 0.95
 drag = 0.28
 wheelbase = 135
+hitbox = NodePath("Chassi Hitbox")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 material = SubResource("ShaderMaterial_nscdw")
@@ -74,3 +75,6 @@ position = Vector2(67, 31)
 
 [node name="Radiator_Location" type="Marker2D" parent="."]
 position = Vector2(99, 0)
+
+[node name="Chassi Hitbox" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(105, 33, 109, 17, 109, -18, 105, -34, 102, -34, 99, -39, 47, -39, 44, -42, -53, -42, -54, -43, -82, -43, -83, -42, -95, -42, -98, -39, -102, -37, -102, 36, -98, 38, -95, 41, -83, 41, -82, 42, -54, 42, -53, 41, 44, 41, 47, 38, 99, 38, 102, 33)

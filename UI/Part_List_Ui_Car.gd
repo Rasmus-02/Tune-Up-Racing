@@ -86,7 +86,6 @@ func populate_list():
 			
 			for keys in temp_delte_list.size():
 				engine_list_inventory.erase(temp_delte_list[keys])
-			print(engine_list_inventory.keys())
 
 
 	#if "Create Engine" tab selected

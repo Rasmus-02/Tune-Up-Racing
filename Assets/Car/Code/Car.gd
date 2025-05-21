@@ -390,7 +390,6 @@ func load_car_from_algorithm(dictionary):
 	#Damage stats
 	if dictionary.get("durability") != null:
 		chassi_durability = dictionary.durability.get("chassi")
-		print(chassi_durability)
 		f_bumper_durability = dictionary.durability.get("f_bumper")
 		r_bumper_durability = dictionary.durability.get("r_bumper")
 		fenders_durability = dictionary.durability.get("fenders")
@@ -430,7 +429,14 @@ func load_car_from_algorithm(dictionary):
 	get_node("Car_spawner").reload_car()
 	update_car_parts()
 
+# Remove all hitboxes from car, the parts will automatically add a new correct hitbox
+func reload_hitboxes():
+	for child in get_children():
+		if child is CollisionPolygon2D or child is CollisionShape2D:
+			child.queue_free()
+
 func update_car_parts(): 
+	reload_hitboxes()
 	#selects the car
 	self.get_child(0).current_car = self.get_child(0).car_list[selected_car]
 	#sends signal to part list to update car
@@ -457,7 +463,6 @@ func update_car_parts():
 	self.get_child(0).get_child(0).get_child(0).selected_radiator = selected_radiator
 	self.get_child(0).get_child(0).get_child(0).selected_exhaust = selected_exhaust
 	self.get_child(0).get_child(0).get_child(0).in_garage = in_garage
-	
 	update_stats()
 
 #updates the stats from car_spawner
@@ -784,9 +789,16 @@ func wheel_controller():
 
 func collision_handler(): #If car crashes into something or gets crashed into
 	if get_slide_collision_count() != 0 and effects.get_node("Collision").emitting == false:
+		var collision_index = get_slide_collision(get_slide_collision_count() - 1)
+		
+		# Damage
+		var collision_shape = collision_index.get_local_shape()
+		print(collision_shape.name)
+		
+		# Particle Effect
 		var collision = effects.get_node("Collision")
-		var collision_velocity = get_slide_collision(get_slide_collision_count()-1).get_collider_velocity() #VELOCITY
-		var collision_position = get_slide_collision(get_slide_collision_count()-1).get_position() #POSITION
+		var collision_velocity = collision_index.get_collider_velocity() #VELOCITY
+		var collision_position = collision_index.get_position() #POSITION
 		collision.z_index = self.z_index + 100
 		collision.global_position = collision_position
 		if (collision_velocity - get_real_velocity()).length() > 500 or (collision_velocity - get_real_velocity()).length() < -500:
@@ -795,7 +807,6 @@ func collision_handler(): #If car crashes into something or gets crashed into
 
 
 func out_of_bounds():
-	print("Out of Bounds")
 	global_position = last_on_road_position
 	velocity = Vector2.ZERO
 

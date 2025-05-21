@@ -45,15 +45,3 @@ func update_stats():
 	var exhaust = node.exhaust
 	var radiator = node.radiator
 	#DONE=========================================================
-
-
-
-func _process(_delta):
-	pass
-	#if update == true:
-		#update_stats()
-		#Gives signal that the refresh is done in engine builder
-		#if get_tree().get_current_scene().get_name() == "Car Builder":
-		#	get_parent().get_parent().get_parent().get_node("Control").get_node("ItemList").updated = true
-		#get_parent().update()
-		#update = false

@@ -179,7 +179,6 @@ func add_car(): #for adding cars to the players inventory
 		i = largest_key("car", null) + 1 #+1 to set the next car
 		temp_key_car = i
 	cars[i] = save_car_stats()
-	print("CAR ",cars[i])
 	save()#saves the car to a JSON file
 func inv_add(item_to_add): #for adding parts to the players inventory (works differently from car and engine)
 	#adds a part to the dictionary 

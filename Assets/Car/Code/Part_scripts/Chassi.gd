@@ -1,4 +1,4 @@
-extends Node2D
+extends collidable_part
 
 @export_category("ID")
 @export_enum("common", "uncommon", "rare", "epic", "legendary") var rarity : String
@@ -32,6 +32,7 @@ var car
 func _ready():
 	if get_parent() != null and get_parent().get_parent() != null and get_parent().get_parent().get_parent() != null:
 		car = get_parent().get_parent().get_parent().get_parent()
+	update_hitbox(car)
 	
 func _process(_delta):
 	if (current_color == null or color != current_color or durability != current_durability):

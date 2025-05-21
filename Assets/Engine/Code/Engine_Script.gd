@@ -519,7 +519,8 @@ func damage_calculator():
 		knock_damage * 1.5
 	##Overheating (Temperature)
 	if get_parent().player == true:
-			print(temperature)
+		pass
+		#print(temperature)
 	if temperature >= 110:
 		block_durability -= (temperature - 110) * damage_speed_mod * 10
 		internals_durability -= (temperature - 110) * damage_speed_mod * 10

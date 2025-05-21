@@ -17,14 +17,14 @@
 [ext_resource type="PackedScene" uid="uid://bdtwk3l2aqqg7" path="res://Assets/Effects/Collision.tscn" id="14_2iard"]
 [ext_resource type="Shader" path="res://Levels/scene_transition.gdshader" id="16_ebibn"]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_vh7d5"]
-radius = 44.0
-height = 216.0
-
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_mjo2j"]
 shader = ExtResource("16_ebibn")
 shader_parameter/progress = 0.0
 shader_parameter/diamondPixelSize = 15.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_vh7d5"]
+radius = 44.0
+height = 216.0
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_30j61"]
 radius = 201.0
@@ -100,25 +100,24 @@ text = "FPS
 "
 script = ExtResource("4_oh734")
 
-[node name="Hitbox" type="CollisionShape2D" parent="."]
-rotation = 1.5708
-shape = SubResource("CapsuleShape2D_vh7d5")
-debug_color = Color(0.65098, 0.521569, 0, 0.419608)
-
-[node name="Incompatible Part" type="Label" parent="Hitbox"]
+[node name="Incompatible Part Label" type="Label" parent="."]
 z_index = 100
 material = SubResource("ShaderMaterial_mjo2j")
-offset_left = -23.9997
-offset_top = 72.0001
-offset_right = 320.0
-offset_bottom = 177.0
-rotation = -1.5708
+offset_left = -72.0
+offset_top = -24.0
+offset_right = 272.0
+offset_bottom = 81.0
 scale = Vector2(0.4, 0.4)
 theme_override_colors/font_color = Color(0.92549, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(0.403922, 0, 0, 1)
 theme_override_constants/outline_size = 8
 text = "Part does not fit or
 missing depending part"
+
+[node name="Hitbox" type="CollisionShape2D" parent="."]
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_vh7d5")
+debug_color = Color(0.65098, 0.521569, 0, 0.419608)
 
 [node name="Engine" parent="." instance=ExtResource("5_dfga0")]
 rotation = -1.5708
@@ -247,7 +246,7 @@ car = NodePath("..")
 [node name="Collision" parent="Effects" instance=ExtResource("14_2iard")]
 
 [node name="Incompatible Part" type="AnimationPlayer" parent="."]
-root_node = NodePath("../Hitbox/Incompatible Part")
+root_node = NodePath("../Incompatible Part Label")
 libraries = {
 "": SubResource("AnimationLibrary_ajiss")
 }

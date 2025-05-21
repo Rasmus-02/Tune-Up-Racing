@@ -48,4 +48,3 @@ func update():
 	if current_car != null:
 		current_car = car_list[get_parent().selected_car]
 		get_parent().update_stats() 
-	#===============================================================================================

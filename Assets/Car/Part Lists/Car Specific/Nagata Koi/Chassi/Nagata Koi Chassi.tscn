@@ -30,7 +30,7 @@ normal_texture = ExtResource("3_4b3ba")
 specular_texture = ExtResource("4_bvvri")
 specular_shininess = 0.58
 
-[node name="Nagata Koi Chassi" type="Node2D"]
+[node name="Nagata Koi Chassi" type="Node2D" node_paths=PackedStringArray("hitbox")]
 script = ExtResource("1_4ialf")
 rarity = "uncommon"
 engine_bay_lenght = 37
@@ -44,6 +44,7 @@ reliability = 0.95
 downforce = 25
 drag = 0.25
 wheelbase = 133
+hitbox = NodePath("Chassi Hitbox")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 material = SubResource("ShaderMaterial_36oji")
@@ -74,18 +75,5 @@ position = Vector2(64, 30)
 [node name="Radiator_Location" type="Marker2D" parent="."]
 position = Vector2(89, 0)
 
-[node name="Hitbox Chassi" type="CollisionPolygon2D" parent="."]
-visible = false
-polygon = PackedVector2Array(82, 37, 92, 33, 97, 26, 99, 26, 100, 20, 100, -21, 99, -27, 97, -27, 92, -34, 81, -38, 41, -38, 37, -42, -55, -42, -55, -43, -83, -43, -90, -40, -96, -34, -99, -27, -103, -26, -103, 25, -99, 26, -96, 33, -90, 39, -83, 42, -55, 42, -55, 41, 37, 41, 41, 37)
-
-[node name="Hitbox Front Bumper" type="CollisionPolygon2D" parent="."]
-visible = false
-polygon = PackedVector2Array(84, -38, 91, -38, 100, -31, 103, -21, 103, 20, 101, 29, 91, 37, 84, 37)
-
-[node name="Hitbox Rear Bumper" type="CollisionPolygon2D" parent="."]
-visible = false
-polygon = PackedVector2Array(-86, -42, -91, -42, -100, -37, -105, -27, -105, 26, -100, 36, -91, 41, -86, 41)
-
-[node name="Hitbox Fenders" type="CollisionPolygon2D" parent="."]
-visible = false
-polygon = PackedVector2Array(93, 36, 95, 34, 95, -34, 93, -37, 78, -43, 50, -43, 37, -42, 37, 41, 50, 42, 78, 42)
+[node name="Chassi Hitbox" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(82, 37, 92, 33, 97, 26, 99, 26, 100, 20, 100, -21, 99, -27, 97, -27, 92, -34, 81, -38, 41, -38, 37, -42, -54, -42, -55, -43, -83, -43, -90, -40, -96, -34, -99, -27, -103, -26, -103, 25, -99, 26, -96, 33, -90, 39, -83, 42, -55, 42, -54, 41, 37, 41, 41, 37)

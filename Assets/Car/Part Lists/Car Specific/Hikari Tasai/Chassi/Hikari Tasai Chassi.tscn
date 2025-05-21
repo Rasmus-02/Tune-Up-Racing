@@ -27,7 +27,7 @@ normal_texture = ExtResource("3_hghf5")
 specular_texture = ExtResource("4_ktiim")
 specular_shininess = 0.58
 
-[node name="Hikari Tasai Chassi" type="Node2D"]
+[node name="Hikari Tasai Chassi" type="Node2D" node_paths=PackedStringArray("hitbox")]
 script = ExtResource("1_7k3hc")
 rarity = "uncommon"
 engine_bay_lenght = 38
@@ -42,6 +42,7 @@ reliability = 0.85
 downforce = 35
 drag = 0.25
 wheelbase = 138
+hitbox = NodePath("Chassi Hitbox")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 material = SubResource("ShaderMaterial_hor5o")
@@ -70,3 +71,6 @@ position = Vector2(65, 28)
 
 [node name="Radiator_Location" type="Marker2D" parent="."]
 position = Vector2(89, 0)
+
+[node name="Chassi Hitbox" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(103, 28, 105, 17, 105, -18, 102, -32, 100, -33, 95, -36, 40, -36, 35, -41, -53, -41, -54, -42, -82, -42, -94, -42, -107, -41, -114, -32, -116, -28, -116, 27, -114, 31, -107, 40, -94, 41, -54, 41, -53, 40, 35, 40, 40, 35, 95, 35, 100, 32)

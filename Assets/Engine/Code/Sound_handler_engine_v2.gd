@@ -56,8 +56,6 @@ func sound_controller():
 		var fade_out = 1.0 - slider_value  # Fade out for 1000rpm
 		var fade_in = slider_value  # Fade in for 5000rpm
 		
-		print(no_throttle_low.playing," ", throttle_low.playing," ", no_throttle_high.playing," ", throttle_high.playing,"  ", get_rpm(),"    fade in: ",fade_in," ", linear_to_db(fade_in), "    fade out: ", fade_out, " ", linear_to_db(fade_out))
-		
 		#engine.forward > 0 or 
 		if (engine.dyno == 2 or engine.dyno == 3) and engine.shift_cooldown != true:
 			airflow.volume_db = aiflow_db

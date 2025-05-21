@@ -16,7 +16,7 @@ extends Panel
 var dict : Dictionary
 var car_node
 
-func _input(event):
+func _input(_event):
 	if Input.is_action_just_pressed("ui_cancel"):
 		if buy_popup.visible == false:
 			get_parent().close()
@@ -30,7 +30,7 @@ func open(import_dict):
 	if Save_Load.money < dict.car.price:
 		$Buy.disabled = true
 
-func update(car : CharacterBody2D, favorited_status : bool, picture_info : Array, price_info : int):
+func update(car : CharacterBody2D, favorited_status : bool, _picture_info : Array, price_info : int):
 	# Check if car is favorited, if favorited highlight favorite icon
 	favorited.button_pressed = favorited_status
 	# Update the displayed stats
@@ -148,7 +148,7 @@ func get_description(personality, car, hp, durability):
 	durability *= 100
 	#variables that each personality needs
 	var prompts : int #How many things they will talk about
-	var description : String
+	var description : String = ""
 	match personality:
 		"positive":
 			prompts = 4
@@ -420,7 +420,7 @@ func _on_favorite_pressed():
 #Show buy popup view
 func _on_buy_pressed():
 	#Check how many cars are in parking garage
-	var car_count : int
+	var car_count : int = 0
 	for key in Save_Load.cars.keys():
 		var car = Save_Load.cars.get(key)
 		if car != null and (car.in_garage == null or car.in_garage == 0):
