@@ -74,3 +74,18 @@ position = Vector2(61, 29)
 
 [node name="Radiator_Location" type="Marker2D" parent="."]
 position = Vector2(94, 0)
+
+[node name="Hitbox Chassi" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(84, 39, 92, 35, 100, 34, 105, 23, 107, 16, 107, -17, 105, -24, 100, -35, 92, -36, 84, -40, 33, -40, 31, -42, -24, -42, -45, -44, -87, -44, -110, -39, -114, -36, -114, -28, -113, -28, -113, 27, -114, 27, -114, 35, -110, 38, -87, 43, -45, 43, -24, 41, 31, 41, 33, 39)
+
+[node name="Hitbox Front Bumper" type="CollisionPolygon2D" parent="."]
+visible = false
+polygon = PackedVector2Array(84, -38, 91, -38, 100, -31, 103, -21, 103, 20, 101, 29, 91, 37, 84, 37)
+
+[node name="Hitbox Rear Bumper" type="CollisionPolygon2D" parent="."]
+visible = false
+polygon = PackedVector2Array(-86, -42, -91, -42, -100, -37, -105, -27, -105, 26, -100, 36, -91, 41, -86, 41)
+
+[node name="Hitbox Fenders" type="CollisionPolygon2D" parent="."]
+visible = false
+polygon = PackedVector2Array(93, 36, 95, 34, 95, -34, 93, -37, 78, -43, 50, -43, 37, -42, 37, 41, 50, 42, 78, 42)

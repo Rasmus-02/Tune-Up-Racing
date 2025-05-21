@@ -37,15 +37,15 @@ func generate_event():
 #Generate new Countdown time
 func refresh_countdown():
 	var rng_time : int
-	var min_time = 30
-	var max_time = 120
+	var min_time = 15
+	var max_time = 60
 	#This if else statement makes it so the car market is more busy during the day, and extra busy during the weekend
 	if Clock.hour < 8 or Clock.hour >= 20: #If at night (double cooldown delay)
 		min_time *= 2
 		max_time *= 2
 	if Clock.day >= 6: #If weekend make day cooldown 1/2 min --> 2 min
-		min_time -= 15
-		max_time -= 60
+		min_time *= 0.5
+		max_time *= 0.5
 	
 	rng_time = randi_range(min_time, max_time) #Seconds
 	countdown = rng_time

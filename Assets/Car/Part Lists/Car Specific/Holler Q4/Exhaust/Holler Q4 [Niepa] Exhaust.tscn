@@ -1,0 +1,45 @@
+[gd_scene load_steps=9 format=3 uid="uid://duu7rpx1r0ovp"]
+
+[ext_resource type="Script" path="res://Assets/Car/Code/Part_scripts/Exhaust.gd" id="1_fk27u"]
+[ext_resource type="Texture2D" uid="uid://22th8vispyqh" path="res://Textures/Cars/Holler Q4/Exhaust/Höller Q4 [Niepa] Exhaust.png" id="2_pkkdn"]
+[ext_resource type="Texture2D" uid="uid://dkha2q51kdik2" path="res://Textures/Cars/Holler Q4/Exhaust/Höller Q4 [Niepa] Exhaust NM.png" id="3_ednrd"]
+[ext_resource type="Texture2D" uid="uid://c14wcyyyebshn" path="res://Textures/Cars/Holler Q4/Exhaust/Höller Q4 [Niepa] Exhaust Spec.png" id="4_m8ad6"]
+[ext_resource type="Script" path="res://Assets/Effects/Backfire.gd" id="5_u32ft"]
+[ext_resource type="AudioStream" uid="uid://cfvwt4fi2efkr" path="res://Sound/Engine Sounds/Backfire.mp3" id="6_7nhgn"]
+[ext_resource type="PackedScene" uid="uid://b1agqhrv0psca" path="res://Assets/Effects/Backfire.tscn" id="7_4avhd"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_lr5dr"]
+diffuse_texture = ExtResource("2_pkkdn")
+normal_texture = ExtResource("3_ednrd")
+specular_texture = ExtResource("4_m8ad6")
+specular_shininess = 0.65
+
+[node name="Holler Q4 [Niepa] Exhaust" type="Node2D"]
+script = ExtResource("1_fk27u")
+rarity = "common"
+Car_ID = 4
+Part_Number = 3
+description = "An aftermarket performance exhaust for the Holler Q4, designed by Niepa"
+price = 400
+weight = 30
+sound_dampening = 9
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = SubResource("CanvasTexture_lr5dr")
+
+[node name="Backfire" type="Node2D" parent="."]
+script = ExtResource("5_u32ft")
+
+[node name="Backfire_Sound" type="AudioStreamPlayer2D" parent="Backfire"]
+stream = ExtResource("6_7nhgn")
+bus = &"Car Volume"
+
+[node name="Exhaust_1" type="Marker2D" parent="Backfire"]
+position = Vector2(-106, 26)
+
+[node name="Backfire" parent="Backfire/Exhaust_1" instance=ExtResource("7_4avhd")]
+
+[node name="Exhaust_2" type="Marker2D" parent="Backfire"]
+position = Vector2(-106, 30)
+
+[node name="Backfire" parent="Backfire/Exhaust_2" instance=ExtResource("7_4avhd")]

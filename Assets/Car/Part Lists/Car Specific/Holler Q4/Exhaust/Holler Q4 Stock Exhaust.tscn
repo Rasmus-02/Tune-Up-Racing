@@ -23,6 +23,7 @@ description = "The Stock Exhaust that comes with the Holler Q4"
 price = 175
 weight = 30
 tq_mod_exhaust = 0.92
+sound_dampening = 9
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = SubResource("CanvasTexture_lr5dr")

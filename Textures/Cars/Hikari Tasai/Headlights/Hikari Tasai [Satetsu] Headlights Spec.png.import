@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cgvdh77gv2pgw"
-path="res://.godot/imported/Höller Q4 [Vortex] Headlights Lightmask.png-89269a10f64b6ad791f74a411efdedf4.ctex"
+uid="uid://b5q1qmgcjykeb"
+path="res://.godot/imported/Hikari Tasai [Satetsu] Headlights Spec.png-72ffa2fa9734b1c95ac87ebfa1908ac9.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Textures/Cars/Holler Q4/Headlights/Höller Q4 [Vortex] Headlights Lightmask.png"
-dest_files=["res://.godot/imported/Höller Q4 [Vortex] Headlights Lightmask.png-89269a10f64b6ad791f74a411efdedf4.ctex"]
+source_file="res://Textures/Cars/Hikari Tasai/Headlights/Hikari Tasai [Satetsu] Headlights Spec.png"
+dest_files=["res://.godot/imported/Hikari Tasai [Satetsu] Headlights Spec.png-72ffa2fa9734b1c95ac87ebfa1908ac9.ctex"]
 
 [params]
 

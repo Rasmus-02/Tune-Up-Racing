@@ -1,0 +1,44 @@
+[gd_scene load_steps=10 format=3 uid="uid://dm5ojthrk7c5l"]
+
+[ext_resource type="Script" path="res://Assets/Car/Code/Part_scripts/R_bumper.gd" id="1_lr8mu"]
+[ext_resource type="Shader" path="res://Shaders/ColorSelector.gdshader" id="2_dwpst"]
+[ext_resource type="Texture2D" uid="uid://bn3rlcpjwlehl" path="res://Textures/Cars/Holler Q4/Rear bumper/Höller Q4 [Niepa] Rear Bumper.png" id="3_3uidn"]
+[ext_resource type="Texture2D" uid="uid://cfjl2oq74rv6m" path="res://Textures/Cars/Holler Q4/Rear bumper/Höller Q4 [Niepa] Rear Bumper NM.png" id="4_bu3v0"]
+[ext_resource type="Texture2D" uid="uid://bnx77j2c1atgo" path="res://Textures/Cars/Holler Q4/Rear bumper/Höller Q4 [Niepa] Rear Bumper Spec.png" id="5_2bjl0"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_3gfj6"]
+shader = ExtResource("2_dwpst")
+shader_parameter/import_new_color = null
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_r5f60"]
+diffuse_texture = ExtResource("3_3uidn")
+normal_texture = ExtResource("4_bu3v0")
+specular_texture = ExtResource("5_2bjl0")
+specular_shininess = 0.5
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_pappr"]
+blend_mode = 1
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_p4p8y"]
+polygon = PackedVector2Array(-69.0884, 43.3015, -72.0884, 41.3015, -74.0884, 38.3015, -74.0884, -34.6985, -72.0884, -37.6985, -69.0884, -39.6985, -65.0884, -39.6985, -65.0884, 43.3015)
+
+[node name="Holler Q4 [Niepa] Rear Bumper" type="Node2D"]
+script = ExtResource("1_lr8mu")
+rarity = "common"
+part_material = 4
+Car_ID = 4
+Part_Number = 3
+description = "A lightweight aftermarket rear bumper for the Holler Q4, designed by Niepa"
+price = 250
+weight = 3
+downforce = 5
+drag = 0.03
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_3gfj6")
+texture = SubResource("CanvasTexture_r5f60")
+
+[node name="LightOccluder2D2" type="LightOccluder2D" parent="Sprite2D"]
+material = SubResource("CanvasItemMaterial_pappr")
+position = Vector2(-29.9116, -2.30154)
+occluder = SubResource("OccluderPolygon2D_p4p8y")

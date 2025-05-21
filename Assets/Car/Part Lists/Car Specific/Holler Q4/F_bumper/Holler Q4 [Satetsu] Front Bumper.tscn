@@ -1,0 +1,45 @@
+[gd_scene load_steps=10 format=3 uid="uid://i07sr0nqn8ol"]
+
+[ext_resource type="Script" path="res://Assets/Car/Code/Part_scripts/F_Bumper.gd" id="1_7fkqc"]
+[ext_resource type="Shader" path="res://Shaders/ColorSelector.gdshader" id="2_u85y3"]
+[ext_resource type="Texture2D" uid="uid://cmxw6m8csoo7x" path="res://Textures/Cars/Holler Q4/Front Bumper/Höller Q4 [Satetsu] Front Bumper.png" id="3_4isc8"]
+[ext_resource type="Texture2D" uid="uid://dkdjb6n341kr4" path="res://Textures/Cars/Holler Q4/Front Bumper/Höller Q4 [Satetsu] Front Bumper NM.png" id="4_hu638"]
+[ext_resource type="Texture2D" uid="uid://b5holtjo6lpyq" path="res://Textures/Cars/Holler Q4/Front Bumper/Höller Q4 [Satetsu] Front Bumper Spec.png" id="5_yogtd"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_7yiga"]
+shader = ExtResource("2_u85y3")
+shader_parameter/import_new_color = null
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_0hbqo"]
+diffuse_texture = ExtResource("3_4isc8")
+normal_texture = ExtResource("4_hu638")
+specular_texture = ExtResource("5_yogtd")
+specular_shininess = 0.5
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_nxqv5"]
+blend_mode = 1
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_fkdak"]
+polygon = PackedVector2Array(131.912, -39.6985, 136.912, -36.6985, 139.912, -31.6985, 143.912, -17.6985, 143.912, -8.69846, 142.912, -8.69846, 142.912, 12.3015, 143.912, 12.3015, 143.912, 21.3015, 139.912, 35.3015, 136.912, 40.3015, 131.912, 43.3015, 122.912, 43.3015, 122.912, -39.6985)
+
+[node name="Holler Q4 [Satetsu] Front Bumper" type="Node2D"]
+script = ExtResource("1_7fkqc")
+rarity = "uncommon"
+part_material = 4
+Car_ID = 4
+Part_Number = 5
+description = "An aftermarket front bumper with a lip for improved downforce, designed by Satetsu for the Holler Q4"
+price = 700
+weight = 7
+downforce = 60
+drag = 0.05
+engine_cool_mod = 0.16
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_7yiga")
+texture = SubResource("CanvasTexture_0hbqo")
+
+[node name="LightOccluder2D2" type="LightOccluder2D" parent="Sprite2D"]
+material = SubResource("CanvasItemMaterial_nxqv5")
+position = Vector2(-29.9116, -2.30154)
+occluder = SubResource("OccluderPolygon2D_fkdak")

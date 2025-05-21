@@ -31,7 +31,7 @@ Part_Number = 1
 description = "The factory rear bumper for the Holler Q4"
 paintable = false
 price = 100
-weight = 5
+weight = 6
 downforce = 5
 drag = 0.02
 

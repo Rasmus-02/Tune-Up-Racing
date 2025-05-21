@@ -1,0 +1,34 @@
+[gd_scene load_steps=8 format=3 uid="uid://dk5q13wkxmixq"]
+
+[ext_resource type="Script" path="res://Assets/Car/Code/Part_scripts/Spoiler.gd" id="1_hw3yr"]
+[ext_resource type="Shader" path="res://Shaders/ColorSelector.gdshader" id="2_476ty"]
+[ext_resource type="Texture2D" uid="uid://bdybfwi4rq346" path="res://Textures/Cars/Holler Q4/Spoiler/Höller Q4 makeshift Spoiler.png" id="3_v5cyc"]
+[ext_resource type="Texture2D" uid="uid://cd34uem23q85e" path="res://Textures/Cars/Holler Q4/Spoiler/Höller Q4 makeshift Spoiler NM.png" id="4_g5bpu"]
+[ext_resource type="Texture2D" uid="uid://b7im7ldabehkf" path="res://Textures/Cars/Holler Q4/Spoiler/Höller Q4 makeshift Spoiler Spec.png" id="5_l3y4t"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_gibfk"]
+shader = ExtResource("2_476ty")
+shader_parameter/import_new_color = null
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_swaqy"]
+diffuse_texture = ExtResource("3_v5cyc")
+normal_texture = ExtResource("4_g5bpu")
+specular_texture = ExtResource("5_l3y4t")
+specular_shininess = 0.5
+
+[node name="Holler Q4 Makeshift Spoiler" type="Node2D"]
+script = ExtResource("1_hw3yr")
+rarity = "common"
+part_material = 4
+Car_ID = 4
+Part_Number = 1
+description = "A makeshift spoiler made by providing a bit of downforce for the Holler Q4"
+paintable = false
+price = 50
+weight = 1
+drag = 0.02
+downforce = 25
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_gibfk")
+texture = SubResource("CanvasTexture_swaqy")

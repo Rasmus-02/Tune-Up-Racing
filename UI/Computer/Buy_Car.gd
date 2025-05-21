@@ -16,7 +16,6 @@ func buy_car(car, price):
 	car.engine.in_car = car_key
 	
 	##Add engine for the car
-	car.engine
 	Save_Load.set_engine(car.engine)
 	Save_Load.add_engine()
 	#Add car

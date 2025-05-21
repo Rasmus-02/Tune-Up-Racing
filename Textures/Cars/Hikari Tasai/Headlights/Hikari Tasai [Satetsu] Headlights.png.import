@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cr4b7nec1vg6s"
-path="res://.godot/imported/Hikari Tasai [Vortex] Headlights NM.png-8ec3be4823b5ac40942cdb1eb1023b60.ctex"
+uid="uid://cnrxl8kxdsiik"
+path="res://.godot/imported/Hikari Tasai [Satetsu] Headlights.png-06b25b9be77a216a10d1166f79195e57.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Textures/Cars/Hikari Tasai/Headlights/Hikari Tasai [Vortex] Headlights NM.png"
-dest_files=["res://.godot/imported/Hikari Tasai [Vortex] Headlights NM.png-8ec3be4823b5ac40942cdb1eb1023b60.ctex"]
+source_file="res://Textures/Cars/Hikari Tasai/Headlights/Hikari Tasai [Satetsu] Headlights.png"
+dest_files=["res://.godot/imported/Hikari Tasai [Satetsu] Headlights.png-06b25b9be77a216a10d1166f79195e57.ctex"]
 
 [params]
 

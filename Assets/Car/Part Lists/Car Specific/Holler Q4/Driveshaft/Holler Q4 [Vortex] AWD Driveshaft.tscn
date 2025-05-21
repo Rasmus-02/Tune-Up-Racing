@@ -1,0 +1,30 @@
+[gd_scene load_steps=6 format=3 uid="uid://dslfy3qia4bsv"]
+
+[ext_resource type="Script" path="res://Assets/Car/Code/Part_scripts/Driveshaft.gd" id="1_w80tr"]
+[ext_resource type="Texture2D" uid="uid://dunial68fv84l" path="res://Textures/Cars/Holler Q4/Driveshaft/Höller Q4 [Vortex] Reinforced AWD Driveshaft.png" id="2_fmr78"]
+[ext_resource type="Texture2D" uid="uid://duqti1ved02nj" path="res://Textures/Cars/Holler Q4/Driveshaft/Höller Q4 [Vortex] Reinforced AWD Driveshaft NM.png" id="3_cvakd"]
+[ext_resource type="Texture2D" uid="uid://v438ekurhyju" path="res://Textures/Cars/Holler Q4/Driveshaft/Höller Q4 [Vortex] Reinforced AWD Driveshaft Spec.png" id="4_eej57"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_c5td7"]
+diffuse_texture = ExtResource("2_fmr78")
+normal_texture = ExtResource("3_cvakd")
+specular_texture = ExtResource("4_eej57")
+specular_shininess = 0.5
+
+[node name="Holler Q4 [Vortex] Reinforced AWD Driveshaft" type="Node2D"]
+script = ExtResource("1_w80tr")
+rarity = "uncommon"
+Car_ID = 4
+Part_Number = 2
+description = "A reinforced all wheel drive driveshaft that for the Holler Q4, designed by the aftermarket parts manufacturer Vortex"
+price = 2500
+weight = 55
+drivetrain = 2
+max_torque = 800
+drivetrain_loss = 0.25
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = SubResource("CanvasTexture_c5td7")
+
+[node name="Gearbox" type="Marker2D" parent="."]
+position = Vector2(37, 0)

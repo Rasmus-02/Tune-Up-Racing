@@ -1,0 +1,46 @@
+[gd_scene load_steps=9 format=3 uid="uid://isw4xefkwipx"]
+
+[ext_resource type="Script" path="res://Assets/Car/Code/Part_scripts/Exhaust.gd" id="1_hj6a2"]
+[ext_resource type="Texture2D" uid="uid://esi2qhamaji1" path="res://Textures/Cars/Holler Q4/Exhaust/Höller Q4 Facelift Exhaust.png" id="2_2i6ib"]
+[ext_resource type="Texture2D" uid="uid://bjk54ggq2165h" path="res://Textures/Cars/Holler Q4/Exhaust/Höller Q4 Facelift Exhaust NM.png" id="3_mjoee"]
+[ext_resource type="Texture2D" uid="uid://cobcc3cotjkv3" path="res://Textures/Cars/Holler Q4/Exhaust/Höller Q4 Facelift Exhaust Spec.png" id="4_up18b"]
+[ext_resource type="Script" path="res://Assets/Effects/Backfire.gd" id="5_4c6rv"]
+[ext_resource type="AudioStream" uid="uid://cfvwt4fi2efkr" path="res://Sound/Engine Sounds/Backfire.mp3" id="6_2kndt"]
+[ext_resource type="PackedScene" uid="uid://b1agqhrv0psca" path="res://Assets/Effects/Backfire.tscn" id="7_745mt"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_lr5dr"]
+diffuse_texture = ExtResource("2_2i6ib")
+normal_texture = ExtResource("3_mjoee")
+specular_texture = ExtResource("4_up18b")
+specular_shininess = 0.65
+
+[node name="Holler Q4 Facelift Exhaust" type="Node2D"]
+script = ExtResource("1_hj6a2")
+rarity = "common"
+Car_ID = 4
+Part_Number = 2
+description = "The Stock Exhaust that comes with later models of the Holler Q4"
+price = 250
+weight = 34
+tq_mod_exhaust = 0.98
+pitch_tweak = 0.98
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = SubResource("CanvasTexture_lr5dr")
+
+[node name="Backfire" type="Node2D" parent="."]
+script = ExtResource("5_4c6rv")
+
+[node name="Backfire_Sound" type="AudioStreamPlayer2D" parent="Backfire"]
+stream = ExtResource("6_2kndt")
+bus = &"Car Volume"
+
+[node name="Exhaust_1" type="Marker2D" parent="Backfire"]
+position = Vector2(-105, 26)
+
+[node name="Backfire" parent="Backfire/Exhaust_1" instance=ExtResource("7_745mt")]
+
+[node name="Exhaust_2" type="Marker2D" parent="Backfire"]
+position = Vector2(-105, 30)
+
+[node name="Backfire" parent="Backfire/Exhaust_2" instance=ExtResource("7_745mt")]

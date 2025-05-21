@@ -48,11 +48,11 @@ wheelbase = 118
 material = SubResource("ShaderMaterial_nscdw")
 texture = SubResource("CanvasTexture_uy0d4")
 
-[node name="PWR Wyvern Windows" parent="Sprite2D" instance=ExtResource("6_ffmw4")]
-
 [node name="Sprite2D2" type="Sprite2D" parent="Sprite2D"]
 material = SubResource("ShaderMaterial_nscdw")
 texture = SubResource("CanvasTexture_iyeql")
+
+[node name="PWR Wyvern Windows" parent="Sprite2D" instance=ExtResource("6_ffmw4")]
 
 [node name="LightOccluder2D" type="LightOccluder2D" parent="Sprite2D"]
 occluder = SubResource("OccluderPolygon2D_yodq7")

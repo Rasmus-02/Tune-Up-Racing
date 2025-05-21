@@ -1,0 +1,42 @@
+[gd_scene load_steps=9 format=3 uid="uid://fg7yj3rjpwjx"]
+
+[ext_resource type="Script" path="res://Assets/Car/Code/Part_scripts/Exhaust.gd" id="1_6afti"]
+[ext_resource type="Texture2D" uid="uid://ddygsanmj24l2" path="res://Textures/Cars/Holler Q4/Exhaust/Höller Q4 [KS-Racing] Exhaust.png" id="2_k5g7w"]
+[ext_resource type="Texture2D" uid="uid://baot63jthkvjt" path="res://Textures/Cars/Holler Q4/Exhaust/Höller Q4 [KS-Racing] Exhaust NM.png" id="3_g3vfd"]
+[ext_resource type="Texture2D" uid="uid://drx5mi3kjioxx" path="res://Textures/Cars/Holler Q4/Exhaust/Höller Q4 [KS-Racing] Exhaust Spec.png" id="4_c7x7m"]
+[ext_resource type="Script" path="res://Assets/Effects/Backfire.gd" id="5_g1hk0"]
+[ext_resource type="AudioStream" uid="uid://cfvwt4fi2efkr" path="res://Sound/Engine Sounds/Backfire.mp3" id="6_ixi8b"]
+[ext_resource type="PackedScene" uid="uid://b1agqhrv0psca" path="res://Assets/Effects/Backfire.tscn" id="7_tfm2p"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_lr5dr"]
+diffuse_texture = ExtResource("2_k5g7w")
+normal_texture = ExtResource("3_g3vfd")
+specular_texture = ExtResource("4_c7x7m")
+specular_shininess = 0.65
+
+[node name="Holler Q4 [KS-Racing] Exhaust" type="Node2D"]
+script = ExtResource("1_6afti")
+rarity = "uncommon"
+Car_ID = 4
+Part_Number = 5
+description = "A high quality aftermarket performance exhaust for the Holler Q4, designed by KS-Racing"
+price = 1000
+weight = 28
+tq_mod_exhaust = 1.1
+sound_dampening = 7
+pitch_tweak = 1.1
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = SubResource("CanvasTexture_lr5dr")
+
+[node name="Backfire" type="Node2D" parent="."]
+script = ExtResource("5_g1hk0")
+
+[node name="Backfire_Sound" type="AudioStreamPlayer2D" parent="Backfire"]
+stream = ExtResource("6_ixi8b")
+bus = &"Car Volume"
+
+[node name="Exhaust_1" type="Marker2D" parent="Backfire"]
+position = Vector2(-105, 28)
+
+[node name="Backfire" parent="Backfire/Exhaust_1" instance=ExtResource("7_tfm2p")]

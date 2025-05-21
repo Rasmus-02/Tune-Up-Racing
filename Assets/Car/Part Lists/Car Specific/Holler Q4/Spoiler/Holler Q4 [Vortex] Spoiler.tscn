@@ -1,0 +1,33 @@
+[gd_scene load_steps=8 format=3 uid="uid://cnq4lstu07uc8"]
+
+[ext_resource type="Script" path="res://Assets/Car/Code/Part_scripts/Spoiler.gd" id="1_s62bx"]
+[ext_resource type="Shader" path="res://Shaders/ColorSelector.gdshader" id="2_jhcy3"]
+[ext_resource type="Texture2D" uid="uid://dnlgo1bt2sd71" path="res://Textures/Cars/Holler Q4/Spoiler/Höller Q4 [Vortex] Spoiler.png" id="3_dgoxh"]
+[ext_resource type="Texture2D" uid="uid://ddlenybnawcd7" path="res://Textures/Cars/Holler Q4/Spoiler/Höller Q4 [Vortex] Spoiler NM.png" id="4_wojg5"]
+[ext_resource type="Texture2D" uid="uid://blqiklobi2iuu" path="res://Textures/Cars/Holler Q4/Spoiler/Höller Q4 [Vortex] Spoiler Spec.png" id="5_sw0d6"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_gibfk"]
+shader = ExtResource("2_jhcy3")
+shader_parameter/import_new_color = null
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_swaqy"]
+diffuse_texture = ExtResource("3_dgoxh")
+normal_texture = ExtResource("4_wojg5")
+specular_texture = ExtResource("5_sw0d6")
+specular_shininess = 0.5
+
+[node name="Holler Q4 [Vortex] Spoiler" type="Node2D"]
+script = ExtResource("1_s62bx")
+rarity = "uncommon"
+part_material = 4
+Car_ID = 4
+Part_Number = 2
+description = "A spoiler by the aftermarket parts manufacturer Vortex providing a decent amount of downforce for the Holler Q4"
+price = 300
+weight = 3
+drag = 0.02
+downforce = 45
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_gibfk")
+texture = SubResource("CanvasTexture_swaqy")

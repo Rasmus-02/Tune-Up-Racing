@@ -51,10 +51,10 @@ texture = SubResource("CanvasTexture_uy0d4")
 visible = false
 occluder = SubResource("OccluderPolygon2D_eq7jf")
 
-[node name="Hikari Tasai Windows" parent="Sprite2D" instance=ExtResource("4_123jn")]
-
 [node name="Non Paintable" type="Sprite2D" parent="Sprite2D"]
 texture = SubResource("CanvasTexture_h1vnt")
+
+[node name="Hikari Tasai Windows" parent="Sprite2D" instance=ExtResource("4_123jn")]
 
 [node name="FL" type="Marker2D" parent="."]
 position = Vector2(65, -29)

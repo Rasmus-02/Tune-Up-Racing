@@ -1,0 +1,44 @@
+[gd_scene load_steps=10 format=3 uid="uid://dllrm50ukk537"]
+
+[ext_resource type="Script" path="res://Assets/Car/Code/Part_scripts/R_bumper.gd" id="1_7ehu6"]
+[ext_resource type="Shader" path="res://Shaders/ColorSelector.gdshader" id="2_iud1c"]
+[ext_resource type="Texture2D" uid="uid://5vjgvvpgxma5" path="res://Textures/Cars/Holler Q4/Rear bumper/Höller Q4 [Vortex] Rear Bumper.png" id="3_u77et"]
+[ext_resource type="Texture2D" uid="uid://jp7wwtohw03p" path="res://Textures/Cars/Holler Q4/Rear bumper/Höller Q4 [Vortex] Rear Bumper NM.png" id="4_4pjmg"]
+[ext_resource type="Texture2D" uid="uid://cckvso3rch4ug" path="res://Textures/Cars/Holler Q4/Rear bumper/Höller Q4 [Vortex] Rear Bumper Spec.png" id="5_8obxn"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_3gfj6"]
+shader = ExtResource("2_iud1c")
+shader_parameter/import_new_color = null
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_r5f60"]
+diffuse_texture = ExtResource("3_u77et")
+normal_texture = ExtResource("4_4pjmg")
+specular_texture = ExtResource("5_8obxn")
+specular_shininess = 0.5
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_pappr"]
+blend_mode = 1
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_p4p8y"]
+polygon = PackedVector2Array(-74.0884, 43.3015, -76.0884, 41.3015, -76.0884, 27.3015, -74.0884, 24.3015, -74.0884, 21.3015, -75.0884, 21.3015, -75.0884, 18.3015, -74.0884, 18.3015, -74.0884, 15.3015, -75.0884, 15.3015, -75.0884, 12.3015, -74.0884, 12.3015, -74.0884, 9.30154, -75.0884, 9.30154, -75.0884, 6.30154, -74.0884, 6.30154, -74.0884, 3.30154, -75.0884, 3.30154, -75.0884, 0.30154, -74.0884, 0.30154, -74.0884, -2.69846, -75.0884, -2.69846, -75.0884, -5.69846, -74.0884, -5.69846, -74.0884, -8.69846, -75.0884, -8.69846, -75.0884, -11.6985, -74.0884, -11.6985, -74.0884, -14.6985, -75.0884, -14.6985, -75.0884, -17.6985, -74.0884, -17.6985, -74.0884, -20.6985, -76.0884, -23.6985, -76.0884, -37.6985, -74.0884, -39.6985, -65.0884, -39.6985, -65.0884, 43.3015)
+
+[node name="Holler Q4 [Vortex] Rear Bumper" type="Node2D"]
+script = ExtResource("1_7ehu6")
+rarity = "uncommon"
+part_material = 4
+Car_ID = 4
+Part_Number = 4
+description = "An aftermarket rear bumper with a diffuser and canards for improved downforce. Designed by Niepa for the Holler Q4"
+price = 500
+weight = 7
+downforce = 35
+drag = 0.03
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_3gfj6")
+texture = SubResource("CanvasTexture_r5f60")
+
+[node name="LightOccluder2D2" type="LightOccluder2D" parent="Sprite2D"]
+material = SubResource("CanvasItemMaterial_pappr")
+position = Vector2(-29.9116, -2.30154)
+occluder = SubResource("OccluderPolygon2D_p4p8y")

@@ -6,7 +6,7 @@ var loaded = false
 func _ready():
 	player = get_parent().get_node("Player").get_child(0)
 
-func _process(delta):
+func _process(_delta):
 	if loaded == false and player.loaded == true:
 		for i in get_child_count():
 			var car = get_ai_car().car

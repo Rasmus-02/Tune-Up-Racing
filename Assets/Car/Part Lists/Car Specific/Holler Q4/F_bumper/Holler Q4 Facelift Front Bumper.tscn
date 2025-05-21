@@ -1,0 +1,45 @@
+[gd_scene load_steps=10 format=3 uid="uid://gy73e3wailce"]
+
+[ext_resource type="Script" path="res://Assets/Car/Code/Part_scripts/F_Bumper.gd" id="1_ww0go"]
+[ext_resource type="Shader" path="res://Shaders/ColorSelector.gdshader" id="2_3ujn2"]
+[ext_resource type="Texture2D" uid="uid://boapyoj8t24cr" path="res://Textures/Cars/Holler Q4/Front Bumper/Höller Q4 Facelift Front Bumper.png" id="3_016av"]
+[ext_resource type="Texture2D" uid="uid://2a511qlfmugu" path="res://Textures/Cars/Holler Q4/Front Bumper/Höller Q4 Stock Front Bumper NM.png" id="4_5hul2"]
+[ext_resource type="Texture2D" uid="uid://rkryoxe8hom4" path="res://Textures/Cars/Holler Q4/Front Bumper/Höller Q4 Facelift Front Bumper Spec.png" id="5_h17a1"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_7yiga"]
+shader = ExtResource("2_3ujn2")
+shader_parameter/import_new_color = null
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_0hbqo"]
+diffuse_texture = ExtResource("3_016av")
+normal_texture = ExtResource("4_5hul2")
+specular_texture = ExtResource("5_h17a1")
+specular_shininess = 0.5
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_nxqv5"]
+blend_mode = 1
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_fkdak"]
+polygon = PackedVector2Array(129.912, -38.6985, 131.912, -37.6985, 134.912, -34.6985, 136.912, -30.6985, 139.912, -17.6985, 140.912, -10.6985, 140.912, 14.3015, 139.912, 21.3015, 136.912, 35.3015, 131.912, 41.3015, 129.912, 42.3015, 122.912, 42.3015, 122.912, -38.6985)
+
+[node name="Holler Q4 Stock Front Bumper" type="Node2D"]
+script = ExtResource("1_ww0go")
+rarity = "common"
+part_material = 4
+Car_ID = 4
+Part_Number = 3
+description = "The factory front bumper for later models of the Holler Q4"
+price = 200
+weight = 6
+downforce = 15
+drag = 0.04
+engine_cool_mod = 0.15
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_7yiga")
+texture = SubResource("CanvasTexture_0hbqo")
+
+[node name="LightOccluder2D2" type="LightOccluder2D" parent="Sprite2D"]
+material = SubResource("CanvasItemMaterial_nxqv5")
+position = Vector2(-29.9116, -2.30154)
+occluder = SubResource("OccluderPolygon2D_fkdak")

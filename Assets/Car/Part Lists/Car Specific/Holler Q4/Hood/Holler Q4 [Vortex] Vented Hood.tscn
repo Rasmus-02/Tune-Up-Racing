@@ -1,0 +1,35 @@
+[gd_scene load_steps=9 format=3 uid="uid://bv1p231nsactx"]
+
+[ext_resource type="Script" path="res://Assets/Car/Code/Part_scripts/Hood.gd" id="1_rbb6n"]
+[ext_resource type="Shader" path="res://Shaders/ColorSelector.gdshader" id="2_ct33b"]
+[ext_resource type="Texture2D" uid="uid://bf8865rrjcbye" path="res://Textures/Cars/Holler Q4/Hood/Höller Q4 [Vortex] Vented Hood.png" id="3_gy7x0"]
+[ext_resource type="Texture2D" uid="uid://cmcsvqb6ugksp" path="res://Textures/Cars/Holler Q4/Hood/Höller Q4 [Vortex] Vented Hood NM.png" id="4_es5at"]
+[ext_resource type="Texture2D" uid="uid://ctcmu5ec2ok07" path="res://Textures/Cars/Holler Q4/Hood/Höller Q4 Stock Hood Spec.png" id="5_t31cf"]
+[ext_resource type="Script" path="res://Textures/Cars/Color_selector.gd" id="6_5ap77"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_n52vx"]
+shader = ExtResource("2_ct33b")
+shader_parameter/import_new_color = null
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_hjvi5"]
+diffuse_texture = ExtResource("3_gy7x0")
+normal_texture = ExtResource("4_es5at")
+specular_texture = ExtResource("5_t31cf")
+specular_shininess = 0.5
+
+[node name="Holler Q4 [Vortex] Vented Hood" type="Node2D"]
+script = ExtResource("1_rbb6n")
+rarity = "common"
+Car_ID = 4
+Part_Number = 2
+description = "A vented hood with improved cooling for the engine. Designed by the aftermarket parts manufacturer Vortex for the Holler Q4"
+price = 350
+weight = 16
+downforce = 10
+drag = 0.03
+engine_cool_mod = 0.2
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_n52vx")
+texture = SubResource("CanvasTexture_hjvi5")
+script = ExtResource("6_5ap77")

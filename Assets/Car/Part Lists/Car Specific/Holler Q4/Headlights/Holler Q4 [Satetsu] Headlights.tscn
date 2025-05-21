@@ -1,0 +1,45 @@
+[gd_scene load_steps=11 format=3 uid="uid://bnuda4bngrc21"]
+
+[ext_resource type="Script" path="res://Assets/Car/Code/Part_scripts/Headlights.gd" id="1_0j2jr"]
+[ext_resource type="Shader" path="res://Shaders/ColorSelector.gdshader" id="2_fyc5e"]
+[ext_resource type="Texture2D" uid="uid://ddv63msuv0ax6" path="res://Textures/Cars/Holler Q4/Headlights/Höller Q4 [Satetsu] Headlights.png" id="3_qnaic"]
+[ext_resource type="Texture2D" uid="uid://bqclem1swqx52" path="res://Textures/Cars/Holler Q4/Headlights/Höller Q4 Stock Headlights NM.png" id="4_sbxtt"]
+[ext_resource type="Texture2D" uid="uid://bh3akf5e0hbhu" path="res://Textures/Cars/Holler Q4/Headlights/Höller Q4 [Satetsu] Headlights Spec.png" id="5_486j6"]
+[ext_resource type="Texture2D" uid="uid://cgvdh77gv2pgw" path="res://Textures/Cars/Holler Q4/Headlights/Höller Q4 [Satetsu] Headlights Lightmask.png" id="6_n6307"]
+[ext_resource type="PackedScene" uid="uid://brbx33n7duy1v" path="res://Shaders/headlights.tscn" id="7_7jhco"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_hdm5u"]
+shader = ExtResource("2_fyc5e")
+shader_parameter/import_new_color = null
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_ma2ib"]
+diffuse_texture = ExtResource("3_qnaic")
+normal_texture = ExtResource("4_sbxtt")
+specular_texture = ExtResource("5_486j6")
+specular_shininess = 0.5
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_ke2me"]
+blend_mode = 1
+light_mode = 1
+
+[node name="Holler Q4 [Satetsu] Headlights" type="Node2D"]
+script = ExtResource("1_0j2jr")
+rarity = "uncommon"
+part_material = 2
+Car_ID = 4
+Part_Number = 4
+description = "Aftermarket headlights for the Holler Q4, designed by Satetsu"
+price = 325
+weight = 7
+drag = 0.01
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_hdm5u")
+texture = SubResource("CanvasTexture_ma2ib")
+
+[node name="Lightmask" type="Sprite2D" parent="Sprite2D"]
+material = SubResource("CanvasItemMaterial_ke2me")
+texture = ExtResource("6_n6307")
+
+[node name="Lights" parent="." instance=ExtResource("7_7jhco")]
+light_mask = 1
