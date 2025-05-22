@@ -21,7 +21,7 @@ polygon = PackedVector2Array(93, -40, 99, -37, 100, -36, 101, -35, 101, -34, 39.
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_l4i7v"]
 polygon = PackedVector2Array(101, 33, 101, 34, 99, 36, 93.3, 39, 79.1, 41, 51, 41, 50, 40, 34, 40, 34, 39, 40, 33)
 
-[node name="Hikari Tasai Stock Fenders" type="Node2D"]
+[node name="Hikari Tasai Stock Fenders" type="Node2D" node_paths=PackedStringArray("hitbox")]
 script = ExtResource("1_u33pp")
 rarity = "uncommon"
 part_material = 4
@@ -33,6 +33,7 @@ weight = 14
 downforce = 15
 drag = 0.03
 max_tire_width = 220
+hitbox = NodePath("Fenders Hitbox")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 material = SubResource("ShaderMaterial_7p8p5")
@@ -43,3 +44,6 @@ occluder = SubResource("OccluderPolygon2D_s6a5m")
 
 [node name="LightOccluder2D2" type="LightOccluder2D" parent="."]
 occluder = SubResource("OccluderPolygon2D_l4i7v")
+
+[node name="Fenders Hitbox" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(34, -41, 51, -42, 79, -42, 93, -40, 99, -37, 101, -35, 101, 34, 99, 36, 93, 39, 79, 41, 51, 41, 34, 40)

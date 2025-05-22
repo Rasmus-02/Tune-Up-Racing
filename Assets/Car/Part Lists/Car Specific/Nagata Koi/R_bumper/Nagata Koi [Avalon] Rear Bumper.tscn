@@ -22,7 +22,7 @@ blend_mode = 1
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_gxeul"]
 polygon = PackedVector2Array(-56.0884, -39.6985, -68.0884, -39.6985, -72.0884, -37.6985, -77.0884, -32.6985, -77.0884, -27.6985, -75.0884, -27.6985, -75.0884, -24.6985, -81.0884, -24.6985, -81.0884, -22.6985, -80.0884, -22.6985, -80.0884, -8.69846, -79.0884, -8.69846, -79.0884, 12.3015, -80.0884, 12.3015, -80.0884, 26.3015, -81.0884, 26.3015, -81.0884, 28.3015, -75.0884, 28.3015, -75.0884, 31.3015, -77.0884, 31.3015, -77.0884, 36.3015, -72.0884, 41.3015, -68.0884, 43.3015, -56.0884, 43.3015)
 
-[node name="Nagata Koi [Avalon] Rear Bumper" type="Node2D"]
+[node name="Nagata Koi [Avalon] Rear Bumper" type="Node2D" node_paths=PackedStringArray("hitbox")]
 script = ExtResource("1_exc8w")
 rarity = "rare"
 part_material = 4
@@ -32,6 +32,7 @@ price = 950
 weight = 12
 downforce = 80
 drag = 0.05
+hitbox = NodePath("Rear Bumper Hitbox")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 material = SubResource("ShaderMaterial_a4wir")
@@ -41,3 +42,6 @@ texture = SubResource("CanvasTexture_r5f60")
 material = SubResource("CanvasItemMaterial_pappr")
 position = Vector2(-29.9116, -2.30154)
 occluder = SubResource("OccluderPolygon2D_gxeul")
+
+[node name="Rear Bumper Hitbox" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(-86, -42, -98, -42, -102, -40, -107, -35, -106, -27, -111, -27, -110, -11, -110, 10, -111, 26, -106, 26, -107, 34, -102, 39, -98, 41, -86, 41)

@@ -28,7 +28,7 @@ specular_shininess = 0.5
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_aqj35"]
 polygon = PackedVector2Array(108, -35, 110, -31, 112, -24, 112, 23, 110, 30, 108, 34, 104, 38, 100, 40, 86, 40, 85, 37, 85, -38, 86, -41, 100, -41, 104, -39)
 
-[node name="Hikari Tasai [Redline] Front Bumper" type="Node2D"]
+[node name="Hikari Tasai [Redline] Front Bumper" type="Node2D" node_paths=PackedStringArray("hitbox")]
 script = ExtResource("1_5o2js")
 rarity = "epic"
 part_material = 4
@@ -40,6 +40,7 @@ weight = 14
 downforce = 100
 drag = 0.06
 engine_cool_mod = 0.4
+hitbox = NodePath("Front Bumper Hitbox")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 material = SubResource("ShaderMaterial_tkprq")
@@ -50,3 +51,6 @@ texture = SubResource("CanvasTexture_o43sn")
 
 [node name="LightOccluder2D" type="LightOccluder2D" parent="."]
 occluder = SubResource("OccluderPolygon2D_aqj35")
+
+[node name="Front Bumper Hitbox" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(86, 40, 101, 40, 108, 34, 112, 24, 112, -25, 108, -35, 101, -41, 86, -41, 85, -38, 85, 37)

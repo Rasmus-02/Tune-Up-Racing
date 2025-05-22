@@ -22,7 +22,7 @@ blend_mode = 1
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_fkdak"]
 polygon = PackedVector2Array(134.912, -38.6985, 138.912, -34.6985, 141.912, -26.6985, 143.912, -17.6985, 143.912, -8.69846, 142.912, -8.69846, 142.912, -6.69846, 141.912, -6.69846, 141.912, -5.69846, 142.912, -5.69846, 144.912, -3.69846, 144.912, 18.3015, 141.912, 30.3015, 138.912, 38.3015, 134.912, 42.3015, 122.912, 42.3015, 122.912, -38.6985)
 
-[node name="Holler Q4 Makeshift Front Bumper" type="Node2D"]
+[node name="Holler Q4 Makeshift Front Bumper" type="Node2D" node_paths=PackedStringArray("hitbox")]
 script = ExtResource("1_uuxgm")
 rarity = "common"
 part_material = 4
@@ -35,6 +35,7 @@ weight = 7
 downforce = 25
 drag = 0.06
 engine_cool_mod = 0.2
+hitbox = NodePath("Front Bumper Hitbox")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 material = SubResource("ShaderMaterial_7yiga")
@@ -44,3 +45,6 @@ texture = SubResource("CanvasTexture_0hbqo")
 material = SubResource("CanvasItemMaterial_nxqv5")
 position = Vector2(-29.9116, -2.30154)
 occluder = SubResource("OccluderPolygon2D_fkdak")
+
+[node name="Front Bumper Hitbox" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(93, -41, 105, -41, 110, -35, 114, -20, 114, -11, 112, -8, 115, -6, 115, 16, 110, 34, 105, 40, 93, 40)

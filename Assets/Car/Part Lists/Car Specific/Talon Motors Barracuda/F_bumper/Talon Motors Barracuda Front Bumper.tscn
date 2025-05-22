@@ -22,7 +22,7 @@ blend_mode = 1
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_x7pue"]
 polygon = PackedVector2Array(141.912, 13.3015, 140.912, 21.3015, 135.912, 35.3015, 128.912, 41.3015, 110.912, 41.3015, 110.912, -37.6985, 128.912, -37.6985, 135.912, -31.6985, 140.912, -17.6985, 141.912, -9.69846)
 
-[node name="Talon Motors Barracuda Stock Front Bumper" type="Node2D"]
+[node name="Talon Motors Barracuda Stock Front Bumper" type="Node2D" node_paths=PackedStringArray("hitbox")]
 script = ExtResource("1_2jncy")
 rarity = "rare"
 part_material = 4
@@ -34,6 +34,7 @@ weight = 8
 downforce = 35
 drag = 0.04
 engine_cool_mod = 0.05
+hitbox = NodePath("Front Bumper Hitbox")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 material = SubResource("ShaderMaterial_relsq")
@@ -43,3 +44,6 @@ texture = SubResource("CanvasTexture_0hbqo")
 material = SubResource("CanvasItemMaterial_nxqv5")
 position = Vector2(-29.9116, -2.30154)
 occluder = SubResource("OccluderPolygon2D_x7pue")
+
+[node name="Front Bumper Hitbox" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(81, 39, 99, 39, 106, 33, 111, 19, 112, 14, 112, -15, 111, -20, 106, -34, 99, -40, 81, -40)

@@ -22,7 +22,7 @@ blend_mode = 1
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_p4p8y"]
 polygon = PackedVector2Array(-71.0884, 43.3015, -74.0884, 40.3015, -74.0884, -36.6985, -71.0884, -39.6985, -65.0884, -39.6985, -65.0884, 43.3015)
 
-[node name="Holler Q4 Stock Rear Bumper" type="Node2D"]
+[node name="Holler Q4 Stock Rear Bumper" type="Node2D" node_paths=PackedStringArray("hitbox")]
 script = ExtResource("1_xoxn7")
 rarity = "common"
 part_material = 4
@@ -34,6 +34,7 @@ price = 100
 weight = 6
 downforce = 5
 drag = 0.02
+hitbox = NodePath("Rear Bumper Hitbox")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 material = SubResource("ShaderMaterial_3gfj6")
@@ -43,3 +44,6 @@ texture = SubResource("CanvasTexture_r5f60")
 material = SubResource("CanvasItemMaterial_pappr")
 position = Vector2(-29.9116, -2.30154)
 occluder = SubResource("OccluderPolygon2D_p4p8y")
+
+[node name="Rear Bumper Hitbox" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(-95, -42, -101, -42, -104, -39, -104, 38, -101, 41, -95, 41)

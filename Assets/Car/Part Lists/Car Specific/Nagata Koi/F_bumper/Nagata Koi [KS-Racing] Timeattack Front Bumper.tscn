@@ -29,7 +29,7 @@ normal_texture = ExtResource("3_8ojyu")
 specular_texture = ExtResource("4_dkwx3")
 specular_shininess = 0.5
 
-[node name="Nagata Koi [KS-Racing] Timeattack Front Bumper" type="Node2D"]
+[node name="Nagata Koi [KS-Racing] Timeattack Front Bumper" type="Node2D" node_paths=PackedStringArray("hitbox")]
 script = ExtResource("1_caqdx")
 rarity = "rare"
 part_material = 4
@@ -40,6 +40,7 @@ weight = 10
 downforce = 95
 drag = 0.06
 engine_cool_mod = 0.05
+hitbox = NodePath("Front Bumper Hitbox")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 material = SubResource("ShaderMaterial_djwft")
@@ -53,3 +54,6 @@ occluder = SubResource("OccluderPolygon2D_j57wh")
 [node name="Unpaintable" type="Sprite2D" parent="."]
 material = SubResource("ShaderMaterial_djwft")
 texture = SubResource("CanvasTexture_26hn5")
+
+[node name="Front Bumper Hitbox" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(82, -41, 92, -41, 106, -28, 108, -22, 108, 21, 106, 27, 92, 40, 82, 40)

@@ -19,7 +19,7 @@ specular_shininess = 0.5
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_t85q0"]
 polygon = PackedVector2Array(-101, 40, -104, 40, -108, 38, -111, 35, -112, 33, -112, -34, -111, -36, -108, -39, -104, -41, -101, -41)
 
-[node name="Hikari Tasai Facelift Rear Bumper" type="Node2D"]
+[node name="Hikari Tasai Facelift Rear Bumper" type="Node2D" node_paths=PackedStringArray("hitbox")]
 script = ExtResource("1_a0vsc")
 rarity = "uncommon"
 part_material = 4
@@ -30,6 +30,7 @@ price = 250
 weight = 7
 downforce = 5
 drag = 0.02
+hitbox = NodePath("Rear Bumper Hitbox")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 material = SubResource("ShaderMaterial_oursw")
@@ -38,3 +39,6 @@ texture = SubResource("CanvasTexture_r5f60")
 [node name="LightOccluder2D" type="LightOccluder2D" parent="."]
 position = Vector2(-6, 0)
 occluder = SubResource("OccluderPolygon2D_t85q0")
+
+[node name="Rear Bumper Hitbox" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(-107, 40, -110, 40, -114, 38, -118, 34, -118, -35, -114, -39, -110, -41, -107, -41)

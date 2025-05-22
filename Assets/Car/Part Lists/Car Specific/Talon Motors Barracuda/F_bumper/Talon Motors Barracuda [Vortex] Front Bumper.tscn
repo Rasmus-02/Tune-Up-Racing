@@ -22,7 +22,7 @@ blend_mode = 1
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_x7pue"]
 polygon = PackedVector2Array(142.912, 17.3015, 139.912, 28.3015, 135.912, 37.3015, 130.912, 41.3015, 110.912, 41.3015, 110.912, -37.6985, 130.912, -37.6985, 135.912, -33.6985, 139.912, -24.6985, 142.912, -13.6985)
 
-[node name="Talon Motors Barracuda [Vortex] Front Bumper" type="Node2D"]
+[node name="Talon Motors Barracuda [Vortex] Front Bumper" type="Node2D" node_paths=PackedStringArray("hitbox")]
 script = ExtResource("1_olcf6")
 rarity = "rare"
 part_material = 4
@@ -34,6 +34,7 @@ weight = 7
 downforce = 25
 drag = 0.04
 engine_cool_mod = 0.25
+hitbox = NodePath("Front Bumper Hitbox")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 material = SubResource("ShaderMaterial_k0hce")
@@ -43,3 +44,6 @@ texture = SubResource("CanvasTexture_0hbqo")
 material = SubResource("CanvasItemMaterial_nxqv5")
 position = Vector2(-29.9116, -2.30154)
 occluder = SubResource("OccluderPolygon2D_x7pue")
+
+[node name="Front Bumper Hitbox" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(81, 39, 89, 42, 96, 42, 102, 39, 107, 33, 113, 16, 113, -17, 107, -34, 102, -40, 96, -43, 89, -43, 81, -40)

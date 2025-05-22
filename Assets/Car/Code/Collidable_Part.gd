@@ -5,7 +5,5 @@ class_name collidable_part
 
 # Reparent hitbox to car so the characterBody2d can be in charge of physics
 func update_hitbox(car):
-	if car != null and car.is_in_group("Car") and hitbox != null:
+	if car != null and car.is_in_group("Car") and hitbox != null and hitbox is CollisionPolygon2D:
 		hitbox.reparent(car)
-	else:
-		print("NULL HITBOX")

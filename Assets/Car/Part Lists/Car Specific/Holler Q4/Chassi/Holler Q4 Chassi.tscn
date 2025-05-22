@@ -59,7 +59,7 @@ occluder = SubResource("OccluderPolygon2D_ahy8q")
 material = SubResource("ShaderMaterial_nscdw")
 texture = SubResource("CanvasTexture_cr4oj")
 
-[node name="Holler Q4 Windows" parent="." instance=ExtResource("7_swijp")]
+[node name="Holler Q4 Windows" parent="Sprite2D" instance=ExtResource("7_swijp")]
 
 [node name="FL" type="Marker2D" parent="."]
 position = Vector2(67, -32)

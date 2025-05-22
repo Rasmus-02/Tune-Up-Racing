@@ -20,7 +20,7 @@ specular_shininess = 0.5
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_hja5u"]
 polygon = PackedVector2Array(-100, 34, -100, 26, -97, 8, -97, -9, -100, -27, -100, -35, -93, -35, -87, -24, -87, 23, -93, 34)
 
-[node name="PWR Wyvern [Satetsu] Wing" type="Node2D"]
+[node name="PWR Wyvern [Satetsu] Wing" type="Node2D" node_paths=PackedStringArray("hitbox")]
 script = ExtResource("1_re5vy")
 rarity = "epic"
 part_material = 4
@@ -31,6 +31,7 @@ price = 1800
 weight = 5
 drag = 0.04
 downforce = 150
+hitbox = NodePath("Spoiler Hitbox")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 material = SubResource("ShaderMaterial_el0pr")
@@ -39,3 +40,6 @@ script = ExtResource("6_l465n")
 
 [node name="LightOccluder2D" type="LightOccluder2D" parent="Sprite2D"]
 occluder = SubResource("OccluderPolygon2D_hja5u")
+
+[node name="Spoiler Hitbox" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(-100, -35, -100, -27, -97, -10, -97, 8, -100, 26, -100, 34, -93, 34, -87, 23, -87, -24, -93, -35)

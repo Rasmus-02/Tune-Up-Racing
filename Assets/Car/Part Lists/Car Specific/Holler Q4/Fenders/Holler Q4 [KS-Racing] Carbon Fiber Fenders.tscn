@@ -22,7 +22,7 @@ blend_mode = 1
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_naikx"]
 polygon = PackedVector2Array(77.9116, -33.6985, 71.9116, -39.6985, 82.9116, -39.6985, 82.9116, -40.6985, 110.912, -40.6985, 110.912, -39.6985, 122.912, -39.6985, 125.912, -37.6985, 125.912, -33.6985)
 
-[node name="Holler Q4 [KS-Racing] Carbon Fiber Fenders" type="Node2D"]
+[node name="Holler Q4 [KS-Racing] Carbon Fiber Fenders" type="Node2D" node_paths=PackedStringArray("hitbox")]
 script = ExtResource("1_frttt")
 rarity = "common"
 part_material = 5
@@ -34,6 +34,7 @@ weight = 15
 downforce = 10
 drag = 0.02
 max_tire_width = 180
+hitbox = NodePath("Fenders Hitbox")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 material = SubResource("ShaderMaterial_kyisn")
@@ -49,3 +50,6 @@ material = SubResource("CanvasItemMaterial_ak8kv")
 position = Vector2(-29.915, 1.3)
 scale = Vector2(1, -1)
 occluder = SubResource("OccluderPolygon2D_naikx")
+
+[node name="Fenders Hitbox" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(96, -40, 93, -42, 81, -43, 53, -43, 43, -42, 43, 41, 53, 42, 81, 42, 93, 41, 96, 39)

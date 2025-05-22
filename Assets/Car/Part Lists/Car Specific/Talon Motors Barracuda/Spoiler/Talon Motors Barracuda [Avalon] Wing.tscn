@@ -19,7 +19,7 @@ specular_shininess = 0.5
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_1v1h7"]
 polygon = PackedVector2Array(-128, -46, -128, -44, -127, -44, -127, 43, -128, 43, -128, 45, -111, 45, -111, 43, -112, 43, -112, 24, -106, 24, -106, 19, -112, 19.0632, -112, -19.9816, -104, -20, -104, -25, -112, -25.0306, -112, -44, -111, -44, -111, -46)
 
-[node name="Talon Motors Barracuda [Avalon] Wing" type="Node2D"]
+[node name="Talon Motors Barracuda [Avalon] Wing" type="Node2D" node_paths=PackedStringArray("hitbox")]
 script = ExtResource("1_6l7hf")
 rarity = "legendary"
 part_material = 5
@@ -31,6 +31,7 @@ price = 3200
 weight = 10
 drag = 0.045
 downforce = 225
+hitbox = NodePath("Spoiler Hitbox")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 material = SubResource("ShaderMaterial_vnc73")
@@ -38,3 +39,6 @@ texture = SubResource("CanvasTexture_swaqy")
 
 [node name="LightOccluder2D" type="LightOccluder2D" parent="Sprite2D"]
 occluder = SubResource("OccluderPolygon2D_1v1h7")
+
+[node name="Spoiler Hitbox" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(-111, -46, -128, -46, -128, -44, -127, -44, -127, 43, -128, 43, -128, 45, -111, 45, -111, 43, -112, 43, -112, -44, -111, -44)

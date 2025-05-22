@@ -106,7 +106,6 @@ func _init():
 	Utils.connect("changing_scene", Callable(self, "_scene_changed"))
 func _scene_changed():
 	if get_parent().player == true:
-		print("Save", selected_engine_key, "   ",in_car)
 		Save_Load.edit_engine(self)
 
 

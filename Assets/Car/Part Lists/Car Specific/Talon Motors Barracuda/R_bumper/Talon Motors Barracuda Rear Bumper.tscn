@@ -29,7 +29,7 @@ normal_texture = ExtResource("3_6jxu2")
 specular_texture = ExtResource("4_umg64")
 specular_shininess = 0.5
 
-[node name="Talon Motors Barracuda Stock Rear Bumper" type="Node2D"]
+[node name="Talon Motors Barracuda Stock Rear Bumper" type="Node2D" node_paths=PackedStringArray("hitbox")]
 script = ExtResource("1_xcu5r")
 rarity = "rare"
 part_material = 1
@@ -40,6 +40,7 @@ price = 150
 weight = 2
 downforce = 7
 drag = 0.01
+hitbox = NodePath("Rear Bumper Hitbox")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 material = SubResource("ShaderMaterial_ip5rf")
@@ -53,3 +54,6 @@ occluder = SubResource("OccluderPolygon2D_2i07l")
 [node name="Unpaintable" type="Sprite2D" parent="."]
 material = SubResource("ShaderMaterial_ip5rf")
 texture = SubResource("CanvasTexture_r5f60")
+
+[node name="Rear Bumper Hitbox" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(-114, -33, -109, -33, -109, 32, -114, 32)

@@ -10,6 +10,7 @@ var event_finnished = true
 var queue_position = 0
 @export var race_results : Control
 @export var level_up : Control
+@export var map_viewport : Viewport
 enum panels {RACEREWARD_1, RACEREWARD_2, LEVELUP_1, LEVELUP_2}
 var selected_panel = 0
 var paused = true
@@ -109,6 +110,9 @@ func queue_handler(): #Starts queue items
 	#If at end of queue change scene to garage
 	if queue_position == event_queue.size():
 		event_queue.clear()
+		# Before changing to garage, make car player to save damage to car properly in car.gd
+		map_viewport.get_child(0).get_node("Player").get_child(0).player = true
+		# Change scene to garage
 		var main = get_tree().get_root().get_node("Main")
 		main.change_scene("garage")
 

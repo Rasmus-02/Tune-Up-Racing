@@ -22,7 +22,7 @@ blend_mode = 1
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_j57wh"]
 polygon = PackedVector2Array(133, 26, 133, 17, 132, 17, 132, -14, 133, -14, 133, -23, 130, -30, 125, -35, 123, -36, 114, -36, 114, 39, 123, 39, 125, 38, 130, 33)
 
-[node name="Nagata Koi [Vortex] Front Bumper" type="Node2D"]
+[node name="Nagata Koi [Vortex] Front Bumper" type="Node2D" node_paths=PackedStringArray("hitbox")]
 script = ExtResource("1_6y7pb")
 rarity = "uncommon"
 part_material = 4
@@ -33,6 +33,7 @@ weight = 8
 downforce = 20
 drag = 0.045
 engine_cool_mod = 0.35
+hitbox = NodePath("Front Bumper Hitbox")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 material = SubResource("ShaderMaterial_0k5i8")
@@ -42,3 +43,6 @@ texture = SubResource("CanvasTexture_0hbqo")
 material = SubResource("CanvasItemMaterial_nxqv5")
 position = Vector2(-30, -2)
 occluder = SubResource("OccluderPolygon2D_j57wh")
+
+[node name="Front Bumper Hitbox" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(84, -38, 93, -38, 100, -32, 103, -25, 103, -16, 102, -15, 102, 14, 103, 15, 103, 24, 100, 31, 93, 37, 84, 37)

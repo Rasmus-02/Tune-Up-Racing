@@ -29,7 +29,7 @@ blend_mode = 1
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_rdfoq"]
 polygon = PackedVector2Array(119.912, -37.6985, 130.912, -37.6985, 132.912, -36.6985, 137.912, -31.6985, 142.912, -22.6985, 142.912, 26.3015, 137.912, 35.3015, 132.912, 40.3015, 130.912, 41.3015, 119.912, 41.3015)
 
-[node name="PWR Wyvern [KS-Racing] Front Bumper" type="Node2D"]
+[node name="PWR Wyvern [KS-Racing] Front Bumper" type="Node2D" node_paths=PackedStringArray("hitbox")]
 script = ExtResource("1_6gdwn")
 rarity = "epic"
 part_material = 4
@@ -40,6 +40,7 @@ price = 2000
 weight = 8
 downforce = 100
 drag = 0.05
+hitbox = NodePath("Front Bumper Hitbox")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 material = SubResource("ShaderMaterial_7yiga")
@@ -53,3 +54,6 @@ texture = SubResource("CanvasTexture_nl80t")
 material = SubResource("CanvasItemMaterial_nxqv5")
 position = Vector2(-29.9116, -2.30154)
 occluder = SubResource("OccluderPolygon2D_rdfoq")
+
+[node name="Front Bumper Hitbox" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(90, -40, 101, -40, 108, -34, 113, -25, 113, 24, 108, 33, 101, 39, 90, 39)

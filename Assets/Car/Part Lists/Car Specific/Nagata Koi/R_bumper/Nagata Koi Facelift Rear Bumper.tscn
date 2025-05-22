@@ -22,7 +22,7 @@ blend_mode = 1
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_gxeul"]
 polygon = PackedVector2Array(-56.0884, -39.6985, -61.0884, -39.6985, -68.0884, -36.6985, -73.0884, -31.6985, -76.0884, -24.6985, -76.0884, 28.3015, -73.0884, 35.3015, -68.0884, 40.3015, -61.0884, 43.3015, -56.0884, 43.3015)
 
-[node name="Nagata Koi Facelift Rear Bumper" type="Node2D"]
+[node name="Nagata Koi Facelift Rear Bumper" type="Node2D" node_paths=PackedStringArray("hitbox")]
 script = ExtResource("1_8r6oj")
 rarity = "uncommon"
 part_material = 4
@@ -32,6 +32,7 @@ price = 250
 weight = 5
 downforce = 10
 drag = 0.02
+hitbox = NodePath("Rear Bumper Hitbox")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 material = SubResource("ShaderMaterial_a4wir")
@@ -41,3 +42,6 @@ texture = SubResource("CanvasTexture_r5f60")
 material = SubResource("CanvasItemMaterial_pappr")
 position = Vector2(-29.9116, -2.30154)
 occluder = SubResource("OccluderPolygon2D_gxeul")
+
+[node name="Rear Bumper Hitbox" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(-86, -42, -91, -42, -98, -39, -103, -34, -106, -27, -106, 26, -103, 33, -98, 38, -91, 41, -86, 41)

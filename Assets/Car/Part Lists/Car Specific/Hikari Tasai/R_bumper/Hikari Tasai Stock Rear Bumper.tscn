@@ -19,7 +19,7 @@ specular_shininess = 0.5
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_t85q0"]
 polygon = PackedVector2Array(-102, -39, -103, -37, -105, -33, -105, 32, -102, 38, -102, 39, -104, 39, -106, 38, -109, 35, -111, 31, -111, -32, -109, -36, -106, -39, -104, -40, -102, -40)
 
-[node name="Hikari Tasai Stock Rear Bumper" type="Node2D"]
+[node name="Hikari Tasai Stock Rear Bumper" type="Node2D" node_paths=PackedStringArray("hitbox")]
 script = ExtResource("1_kesf3")
 rarity = "uncommon"
 part_material = 4
@@ -30,6 +30,7 @@ price = 200
 weight = 5
 downforce = 5
 drag = 0.02
+hitbox = NodePath("Rear Bumper Hitbox")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 material = SubResource("ShaderMaterial_oursw")
@@ -38,3 +39,6 @@ texture = SubResource("CanvasTexture_r5f60")
 [node name="LightOccluder2D" type="LightOccluder2D" parent="."]
 position = Vector2(-6, 0)
 occluder = SubResource("OccluderPolygon2D_t85q0")
+
+[node name="Rear Bumper Hitbox" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(-108, -40, -110, -40, -115, -36, -117, -32, -117, 31, -115, 35, -110, 39, -108, 39)

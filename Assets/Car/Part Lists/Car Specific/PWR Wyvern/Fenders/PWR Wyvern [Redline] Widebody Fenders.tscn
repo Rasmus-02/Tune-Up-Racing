@@ -25,7 +25,7 @@ polygon = PackedVector2Array(45.9116, -28.6985, 45.9116, -35.6985, 47.9116, -39.
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_8hdta"]
 polygon = PackedVector2Array(-42, 44, -37, 41, -37, -42, -42, -45, -75, -45, -76, -44, -76, 43, -75, 44)
 
-[node name="PWR Wyvern [Redline] Widebody Fenders" type="Node2D"]
+[node name="PWR Wyvern [Redline] Widebody Fenders" type="Node2D" node_paths=PackedStringArray("hitbox")]
 script = ExtResource("1_ftd4w")
 rarity = "epic"
 part_material = 4
@@ -37,6 +37,7 @@ weight = 18
 downforce = 20
 drag = 0.04
 max_tire_width = 280
+hitbox = NodePath("Fenders Hitbox")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 material = SubResource("ShaderMaterial_kyisn")
@@ -55,3 +56,6 @@ occluder = SubResource("OccluderPolygon2D_naikx")
 
 [node name="LightOccluder2D" type="LightOccluder2D" parent="Sprite2D"]
 occluder = SubResource("OccluderPolygon2D_8hdta")
+
+[node name="Fenders Hitbox" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(90, -40, 80, -42, 75, -45, 35, -45, 33, -42, 18, -42, 16, -38, 16, -1, -37, -1, -37, -42, -42, -45, -75, -45, -76, -44, -76, 43, -75, 44, -42, 44, -37, 41, -37, 1, 16, 1, 16, 37, 18, 41, 33, 41, 35, 44, 75, 44, 80, 41, 90, 39)

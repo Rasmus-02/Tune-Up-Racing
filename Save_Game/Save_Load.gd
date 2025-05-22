@@ -47,8 +47,10 @@ var startup_save = preload("res://Save_Game/startup_save.tscn")
 
 func set_engine(NODE):
 	engine = NODE
+	temp_key = engine.selected_engine_key
 func set_car(NODE):
 	car = NODE
+	temp_key_car = car.selected_car_key
 
 
 func _ready():
@@ -299,7 +301,6 @@ func inv_check(part_to_be_checked): #checks if a part exists in the inventory
 
  
 func edit_engine(engine_node): #For editing an engine in the dictionary
-	print("Engine: ", engine_node.selected_engine_key)
 	set_engine(engine_node)
 	engines = load_file("engines")
 	if engines != null:
@@ -350,41 +351,37 @@ func load_file(filetype):
 
 
 func select_car(KEY):
-	var sc = load_file("cars").get(str(KEY)) #selected car
-	var part_dict = {
-		"key" : sc.key,
-		"engine" : sc.engine,
-		"name" : sc.name,
-		"car_id" : sc.car_id,
-		"chassi" : [sc.chassi[0],sc.chassi[1],sc.chassi[2]],
-		"driveshaft" : [sc.driveshaft[0],sc.driveshaft[1]],
-		"subframe" : [sc.subframe[0],sc.subframe[1]],
-		"fenders" : [sc.fenders[0],sc.fenders[1],sc.fenders[2]],
-		"f_bumper" : [sc.f_bumper[0],sc.f_bumper[1],sc.f_bumper[2]],
-		"r_bumper" : [sc.r_bumper[0],sc.r_bumper[1],sc.r_bumper[2]],
-		"hood" : [sc.hood[0],sc.hood[1],sc.hood[2]],
-		"headlights" : [sc.headlights[0],sc.headlights[1],sc.headlights[2]],
-		"taillights" : [sc.taillights[0],sc.taillights[1],sc.taillights[2]],
-		"spoiler": [sc.spoiler[0],sc.spoiler[1],sc.spoiler[2]],
-		"mirrors" : [sc.mirrors[0],sc.mirrors[1],sc.mirrors[2]],
-		"brakes" : [sc.brakes[0],sc.brakes[1]],
-		"suspension" : [sc.suspension[0],sc.suspension[1]],
-		"tires" : [sc.tires[0],sc.tires[1]],
-		"wheels" : [sc.wheels[0],sc.wheels[1]],
-		"gearbox" : [sc.gearbox[0], sc.gearbox[1]],
-		"radiator" : [sc.radiator[0], sc.radiator[1]],
-		"exhaust" : [sc.exhaust[0], sc.exhaust[1]],
-		"color" : sc.color,
-		"in_garage" : sc.in_garage,
-		"gear_ratio" : sc.gear_ratio
-	}
-	return part_dict
+	if KEY != null:
+		var sc = load_file("cars").get(str(KEY)) #selected car
+		var part_dict = {
+			"key" : sc.key,
+			"engine" : sc.engine,
+			"name" : sc.name,
+			"car_id" : sc.car_id,
+			"chassi" : [sc.chassi[0],sc.chassi[1],sc.chassi[2]],
+			"driveshaft" : [sc.driveshaft[0],sc.driveshaft[1]],
+			"subframe" : [sc.subframe[0],sc.subframe[1]],
+			"fenders" : [sc.fenders[0],sc.fenders[1],sc.fenders[2]],
+			"f_bumper" : [sc.f_bumper[0],sc.f_bumper[1],sc.f_bumper[2]],
+			"r_bumper" : [sc.r_bumper[0],sc.r_bumper[1],sc.r_bumper[2]],
+			"hood" : [sc.hood[0],sc.hood[1],sc.hood[2]],
+			"headlights" : [sc.headlights[0],sc.headlights[1],sc.headlights[2]],
+			"taillights" : [sc.taillights[0],sc.taillights[1],sc.taillights[2]],
+			"spoiler": [sc.spoiler[0],sc.spoiler[1],sc.spoiler[2]],
+			"mirrors" : [sc.mirrors[0],sc.mirrors[1],sc.mirrors[2]],
+			"brakes" : [sc.brakes[0],sc.brakes[1]],
+			"suspension" : [sc.suspension[0],sc.suspension[1]],
+			"tires" : [sc.tires[0],sc.tires[1]],
+			"wheels" : [sc.wheels[0],sc.wheels[1]],
+			"gearbox" : [sc.gearbox[0], sc.gearbox[1]],
+			"radiator" : [sc.radiator[0], sc.radiator[1]],
+			"exhaust" : [sc.exhaust[0], sc.exhaust[1]],
+			"color" : sc.color,
+			"in_garage" : sc.in_garage,
+			"gear_ratio" : sc.gear_ratio
+		}
+		return part_dict
 
-func engine_key():
-	var engine_index = 0
-	if temp_key_car != null:
-		engine_index = select_car(temp_key_car).engine
-	return engine_index
 
 func select_engine(KEY):
 	var sc = load_file("engines").get(str(KEY)) #selected car

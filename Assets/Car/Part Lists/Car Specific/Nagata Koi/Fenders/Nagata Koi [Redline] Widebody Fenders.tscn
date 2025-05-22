@@ -25,7 +25,7 @@ polygon = PackedVector2Array(69.9116, -33.6985, 66.9116, -37.6985, 66.9116, -39.
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_knfek"]
 polygon = PackedVector2Array(-56.0884, -41.6985, -55.0884, -42.6985, -24.0884, -42.6985, -22.0884, -40.6985, -22.0884, 44.3015, -24.0884, 46.3015, -55.0884, 46.3015, -56.0884, 45.3015)
 
-[node name="Nagata Koi [Redline] Widebody Fenders" type="Node2D"]
+[node name="Nagata Koi [Redline] Widebody Fenders" type="Node2D" node_paths=PackedStringArray("hitbox")]
 script = ExtResource("1_duor7")
 rarity = "rare"
 part_material = 4
@@ -37,6 +37,7 @@ weight = 20
 downforce = 15
 drag = 0.03
 max_tire_width = 240
+hitbox = NodePath("Fenders Hitbox")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 material = SubResource("ShaderMaterial_xkdlp")
@@ -57,3 +58,6 @@ occluder = SubResource("OccluderPolygon2D_naikx")
 material = SubResource("CanvasItemMaterial_ak8kv")
 position = Vector2(-29.9116, -2.30154)
 occluder = SubResource("OccluderPolygon2D_knfek")
+
+[node name="Fenders Hitbox" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(95, -35, 93, -37, 76, -45, 48, -45, 45, -42, 37, -42, 37, -1, -52, -1, -52, -43, -54, -45, -85, -45, -86, -44, -86, 43, -85, 44, -54, 44, -52, 42, -52, 1, 37, 1, 37, 41, 45, 41, 48, 44, 76, 44, 93, 36, 95, 34)

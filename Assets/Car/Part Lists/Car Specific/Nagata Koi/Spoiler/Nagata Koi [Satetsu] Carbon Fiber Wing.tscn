@@ -11,7 +11,7 @@ normal_texture = ExtResource("3_xayb8")
 specular_texture = ExtResource("4_57nuj")
 specular_shininess = 0.5
 
-[node name="Nagata Koi [Satetsu] Wing" type="Node2D"]
+[node name="Nagata Koi [Satetsu] Wing" type="Node2D" node_paths=PackedStringArray("hitbox")]
 script = ExtResource("1_6gblc")
 rarity = "epic"
 part_material = 5
@@ -22,6 +22,10 @@ price = 1450
 weight = 7
 drag = 0.06
 downforce = 260
+hitbox = NodePath("Spoiler Hitbox")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = SubResource("CanvasTexture_swaqy")
+
+[node name="Spoiler Hitbox" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(-86, -41, -84, -41, -84, -42, -85, -43, -93, -44, -103, -44, -103, -42, -102, -42, -102, 41, -103, 41, -103, 43, -93, 43, -85, 42, -84, 41, -84, 40, -86, 40)

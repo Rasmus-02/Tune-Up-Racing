@@ -22,7 +22,7 @@ polygon = PackedVector2Array(98, 39, 81, 45, 39, 45, 39, 42, 34, 42, 29, 40, 28,
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_1h2bm"]
 polygon = PackedVector2Array(-39, 42, -42, 44, -45, 45, -87, 45, -90, 44, -93, 42, -93, -43, -90, -45, -87, -46, -45, -46, -42, -45, -39, -43)
 
-[node name="Talon Motors Barracuda [Satetsu] Widebody Fenders" type="Node2D"]
+[node name="Talon Motors Barracuda [Satetsu] Widebody Fenders" type="Node2D" node_paths=PackedStringArray("hitbox")]
 script = ExtResource("1_8x6q1")
 rarity = "epic"
 part_material = 4
@@ -34,6 +34,7 @@ weight = 18
 downforce = 30
 drag = 0.04
 max_tire_width = 300
+hitbox = NodePath("Fenders Hitbox")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 material = SubResource("ShaderMaterial_akfhv")
@@ -44,3 +45,6 @@ occluder = SubResource("OccluderPolygon2D_3wvub")
 
 [node name="LightOccluder2D4" type="LightOccluder2D" parent="."]
 occluder = SubResource("OccluderPolygon2D_1h2bm")
+
+[node name="Fenders Hitbox" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(98, -40, 81, -46, 39, -46, 39, -43, 34, -43, 28, -40, 28, -1, -39, -1, -39, -43, -45, -46, -87, -46, -93, -43, -93, 42, -87, 45, -45, 45, -39, 42, -39, 1, 28, 1, 28, 39, 34, 42, 39, 42, 39, 45, 81, 45, 98, 39)

@@ -22,7 +22,7 @@ blend_mode = 1
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_p4p8y"]
 polygon = PackedVector2Array(-74.0884, 43.3015, -76.0884, 41.3015, -76.0884, 27.3015, -74.0884, 24.3015, -74.0884, 21.3015, -75.0884, 21.3015, -75.0884, 18.3015, -74.0884, 18.3015, -74.0884, 15.3015, -75.0884, 15.3015, -75.0884, 12.3015, -74.0884, 12.3015, -74.0884, 9.30154, -75.0884, 9.30154, -75.0884, 6.30154, -74.0884, 6.30154, -74.0884, 3.30154, -75.0884, 3.30154, -75.0884, 0.30154, -74.0884, 0.30154, -74.0884, -2.69846, -75.0884, -2.69846, -75.0884, -5.69846, -74.0884, -5.69846, -74.0884, -8.69846, -75.0884, -8.69846, -75.0884, -11.6985, -74.0884, -11.6985, -74.0884, -14.6985, -75.0884, -14.6985, -75.0884, -17.6985, -74.0884, -17.6985, -74.0884, -20.6985, -76.0884, -23.6985, -76.0884, -37.6985, -74.0884, -39.6985, -65.0884, -39.6985, -65.0884, 43.3015)
 
-[node name="Holler Q4 [Vortex] Rear Bumper" type="Node2D"]
+[node name="Holler Q4 [Vortex] Rear Bumper" type="Node2D" node_paths=PackedStringArray("hitbox")]
 script = ExtResource("1_7ehu6")
 rarity = "uncommon"
 part_material = 4
@@ -33,6 +33,7 @@ price = 500
 weight = 7
 downforce = 35
 drag = 0.03
+hitbox = NodePath("Rear Bumper Hitbox")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 material = SubResource("ShaderMaterial_3gfj6")
@@ -42,3 +43,6 @@ texture = SubResource("CanvasTexture_r5f60")
 material = SubResource("CanvasItemMaterial_pappr")
 position = Vector2(-29.9116, -2.30154)
 occluder = SubResource("OccluderPolygon2D_p4p8y")
+
+[node name="Rear Bumper Hitbox" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(-95, -42, -104, -42, -106, -40, -106, -26, -105, -24, -105, 23, -106, 25, -106, 39, -104, 41, -95, 41)

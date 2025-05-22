@@ -25,8 +25,9 @@ func _ready():
 		car = get_parent().get_parent().get_parent().get_parent()
 	
 func _process(_delta):
-	if (current_durability == null or durability != current_durability):
+	if (current_durability == null or durability != current_durability or (car != null and car.is_in_group("Car") and current_durability != car.suspension_durability)):
 		if car != null and car.is_in_group("Car"):
+			durability = car.suspension_durability
 			apply_durability(car.suspension_durability)
 		elif get_parent().is_in_group("Computer"):
 				apply_durability(get_parent().get_parent().get_parent().selected_durability)

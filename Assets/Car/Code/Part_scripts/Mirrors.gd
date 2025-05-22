@@ -27,8 +27,9 @@ func _ready():
 		car = get_parent().get_parent().get_parent().get_parent()
 	
 func _process(_delta):
-	if (current_color == null or color != current_color or durability != current_durability):
+	if (current_color == null or color != current_color or durability != current_durability or (car != null and car.is_in_group("Car") and current_durability != car.mirrors_durability)):
 		if car != null and car.is_in_group("Car"):
+			durability = car.mirrors_durability
 			paint_part(car.mirrors_color, car.mirrors_durability)
 		elif get_parent().is_in_group("Computer"):
 			var selected_color = get_parent().get_parent().get_parent().selected_color

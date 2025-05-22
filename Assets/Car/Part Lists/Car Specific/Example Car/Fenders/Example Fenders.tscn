@@ -22,7 +22,7 @@ blend_mode = 1
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_naikx"]
 polygon = PackedVector2Array(69.9116, -33.6985, 66.9116, -37.6985, 66.9116, -39.6985, 79.9116, -40.6985, 107.912, -40.6985, 118.912, -36.6985, 122.912, -34.6985, 124.912, -32.6985, 124.912, -31.6985, 117.912, -31.6985, 112.912, -33.6985)
 
-[node name="Nagata Koi Stock Fenders" type="Node2D"]
+[node name="Nagata Koi Stock Fenders" type="Node2D" node_paths=PackedStringArray("hitbox")]
 script = ExtResource("1_khmey")
 rarity = "D"
 Part_Number = 1
@@ -30,6 +30,7 @@ description = "The factory fenders for the Nagata Koi"
 weight = 12
 downforce = 15
 drag = 0.03
+hitbox = NodePath("Fenders Hitbox")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 material = SubResource("ShaderMaterial_kyisn")
@@ -45,3 +46,6 @@ material = SubResource("CanvasItemMaterial_ak8kv")
 position = Vector2(-29.915, 2.3)
 scale = Vector2(1, -1)
 occluder = SubResource("OccluderPolygon2D_naikx")
+
+[node name="Fenders Hitbox" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(37, -42, 50, -43, 78, -43, 93, -37, 95, -35, 95, 34, 93, 36, 78, 42, 50, 42, 37, 41)

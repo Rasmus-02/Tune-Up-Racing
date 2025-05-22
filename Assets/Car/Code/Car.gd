@@ -216,6 +216,12 @@ func delete_car():
 	universal_parts.queue_free()
 	self.queue_free()
 
+func _init():
+	Utils.connect("changing_scene", Callable(self, "_scene_changed"))
+func _scene_changed():
+	if player == true:
+		Save_Load.edit_car(self)
+
 func load_car(index):
 	var load_file = Save_Load.select_car(index)
 	if load_file != null:
@@ -497,7 +503,46 @@ func update_stats():
 	tires = universal_parts.tires[selected_tires].instantiate()
 	wheels = universal_parts.wheels[selected_wheels].instantiate()
 	
-	#!!! THIS UPDATES THE STATS IN THE ACTUAL PARTS !!! important because couldn't be changed from other scripts directly
+	chassi.color = chassi_color
+	fenders.color = fenders_color
+	f_bumper.color = f_bumper_color
+	r_bumper.color = r_bumper_color
+	hood.color = hood_color
+	headlights.color = headlights_color
+	taillights.color = taillights_color
+	spoiler.color = spoiler_color
+	mirrors.color = mirrors_color
+	
+	# Stats not affected by damage
+	weight = chassi.weight + driveshaft.weight + subframe.weight + fenders.weight + f_bumper.weight + r_bumper.weight + hood.weight + headlights.weight + taillights.weight + spoiler.weight + mirrors.weight + brakes.weight + suspension.weight + tires.weight + wheels.weight  + gearbox.weight + radiator.weight + exhaust.weight + engine.weight
+	treadwear = tires.treadwear
+	drive_train_type = driveshaft.drivetrain
+	brake_cooling = brakes.brake_cooling + wheels.brake_cooling
+	brake_fade_limit = brakes.brake_fade_limit
+	max_driveshaft_tq = driveshaft.max_torque
+	wheelbase = chassi.wheelbase
+	engine_bay_size = [chassi.engine_bay_lenght - radiator.width, chassi.engine_bay_width]
+	max_gear = gearbox.gear_ratio.size()
+	shift_timer = get_child(0).get_child(0).get_node("Gear_Change_Timer")#node.shift_timer
+	engine_position = part_selector.engine_position
+	#Engine position offset used in size calculations
+	if drive_train_type == 1: #FWD 
+		engine_position_offset = Vector2(gearbox.get_node("Engine").position.y + driveshaft.get_node("Gearbox").position.x - chassi.engine_bay_start_lenght, driveshaft.get_node("Gearbox").position.y - gearbox.get_node("Engine").position.x)
+	else: #RWD AWD
+		engine_position_offset = Vector2(gearbox.get_node("Engine").position.x + driveshaft.get_node("Gearbox").position.x - chassi.engine_bay_start_lenght, driveshaft.get_node("Gearbox").position.y - gearbox.get_node("Engine").position.y)
+	engine_pitch = exhaust.pitch_tweak
+	engine_volume_dampening = exhaust.sound_dampening
+	
+	# Stats affected by damage
+	damage_calculator_collision("None", 0) # Update the damage stats when loading in
+	
+	is_ready = true
+	
+	#If Saved gear ratio is missing gears, reset it to default
+	if gear_ratio == null or gear_ratio.size() < gearbox.gear_ratio.size():
+		gear_ratio = gearbox.gear_ratio
+
+func update_durability():
 	chassi.durability = chassi_durability
 	f_bumper.durability = f_bumper_durability
 	r_bumper.durability = r_bumper_durability
@@ -516,61 +561,6 @@ func update_stats():
 	gearbox.durability = gearbox_durability
 	radiator.durability = radiator_durability
 	exhaust.durability = exhaust_durability
-	
-	chassi.color = chassi_color
-	fenders.color = fenders_color
-	f_bumper.color = f_bumper_color
-	r_bumper.color = r_bumper_color
-	hood.color = hood_color
-	headlights.color = headlights_color
-	taillights.color = taillights_color
-	spoiler.color = spoiler_color
-	mirrors.color = mirrors_color
-	
-	weight = chassi.weight + driveshaft.weight + subframe.weight + fenders.weight + f_bumper.weight + r_bumper.weight + hood.weight + headlights.weight + taillights.weight + spoiler.weight + mirrors.weight + brakes.weight + suspension.weight + tires.weight + wheels.weight  + gearbox.weight + radiator.weight + exhaust.weight + engine.weight
-	handling_bonus = (1+((suspension.handling_bonus + subframe.handling_bonus) * 0.5)/((1+(weight/1000.0))/2.0))/2 #weight to make heavier cars handle worse
-	max_tire_limit = tires.grip
-	treadwear = tires.treadwear
-	brake_force = (brakes.brake_force / (weight/1000.0)) *-1
-	downforce = chassi.downforce + hood.downforce + f_bumper.downforce + r_bumper.downforce + fenders.downforce + spoiler.downforce
-	var drag_mod = chassi.drag + hood.drag + f_bumper.drag + r_bumper.drag + fenders.drag + spoiler.drag + mirrors.drag
-	if selected_hood == 0:
-		drag_mod += 0.08
-	if selected_f_bumper == 0:
-		drag_mod += 0.06
-	if selected_r_bumper == 0:
-		drag_mod += 0.04
-	if selected_fenders == 0:
-		drag_mod += 0.05
-	if selected_headlights == 0:
-		drag_mod += 0.04
-	drag = -0.00008 * drag_mod
-	drive_train_type = driveshaft.drivetrain
-	drivetrain_loss = driveshaft.drivetrain_loss
-	engine_cool_mod = hood.engine_cool_mod + f_bumper.engine_cool_mod + radiator.cooling
-	brake_cooling = brakes.brake_cooling + wheels.brake_cooling
-	brake_fade_limit = brakes.brake_fade_limit
-	max_driveshaft_tq = driveshaft.max_torque
-	wheelbase = chassi.wheelbase
-	engine_bay_size = [chassi.engine_bay_lenght - radiator.width, chassi.engine_bay_width]
-	max_gear = gearbox.gear_ratio.size()
-	shift_timer = get_child(0).get_child(0).get_node("Gear_Change_Timer")#node.shift_timer
-	engine_position = part_selector.engine_position
-	#Engine position offset used in size calculations
-	if drive_train_type == 1: #FWD 
-		engine_position_offset = Vector2(gearbox.get_node("Engine").position.y + driveshaft.get_node("Gearbox").position.x - chassi.engine_bay_start_lenght, driveshaft.get_node("Gearbox").position.y - gearbox.get_node("Engine").position.x)
-	else: #RWD AWD
-		engine_position_offset = Vector2(gearbox.get_node("Engine").position.x + driveshaft.get_node("Gearbox").position.x - chassi.engine_bay_start_lenght, driveshaft.get_node("Gearbox").position.y - gearbox.get_node("Engine").position.y)
-	shift_timer.set_wait_time(gearbox.shift_time)
-	engine_pitch = exhaust.pitch_tweak
-	engine_volume_dampening = exhaust.sound_dampening
-	exhaust_tq_mod = exhaust.tq_mod_exhaust
-	is_ready = true
-	
-	#If Saved gear ratio is missing gears, reset it to default
-	if gear_ratio == null or gear_ratio.size() < gearbox.gear_ratio.size():
-		gear_ratio = gearbox.gear_ratio
-
 
 func is_functional():
 	if selected_driveshaft != 0 and selected_subframe != 0 and selected_suspension != 0 and selected_tires != 0 and selected_wheels != 0 and selected_gearbox != 0 and selected_radiator != 0:
@@ -627,6 +617,7 @@ func _physics_process(delta):
 				traction_controller()
 				sliding()
 				collision_handler()
+				damage_calculator_tick()
 			if running_dyno == 1:
 				Utils.blocked = true
 				engine.is_running = true
@@ -790,25 +781,125 @@ func wheel_controller():
 func collision_handler(): #If car crashes into something or gets crashed into
 	if get_slide_collision_count() != 0 and effects.get_node("Collision").emitting == false:
 		var collision_index = get_slide_collision(get_slide_collision_count() - 1)
-		
-		# Damage
-		var collision_shape = collision_index.get_local_shape()
-		print(collision_shape.name)
-		
+		var collision_velocity = abs((collision_index.get_collider_velocity() - get_real_velocity()).length()) #VELOCITY
 		# Particle Effect
 		var collision = effects.get_node("Collision")
-		var collision_velocity = collision_index.get_collider_velocity() #VELOCITY
 		var collision_position = collision_index.get_position() #POSITION
 		collision.z_index = self.z_index + 100
 		collision.global_position = collision_position
-		if (collision_velocity - get_real_velocity()).length() > 500 or (collision_velocity - get_real_velocity()).length() < -500:
+		
+		if collision_velocity > 500:
 			collision.emitting = true
 			$"Sound effects/AudioStreamPlayer2D".play()
+			
+			# Damage
+		var collision_shape = collision_index.get_local_shape()
+		damage_calculator_collision(collision_shape.name, collision_velocity)
+
+# Called every tick
+func damage_calculator_tick():
+	if player == true: # no damage for AI
+		
+		# Driveshaft damage if above torque
+		if engine.torque > driveshaft.max_torque:
+			var damage = (engine.torque - driveshaft.max_torque) * 0.005
+			driveshaft_durability -= damage
+		
+		# Gearbox damage if above torque
+		if engine.torque > gearbox.max_tq:
+			var damage = (engine.torque - gearbox.max_tq) * 0.005
+			gearbox_durability -= damage
+		
+		# Tire damage when driving (extra damage if drifting)
+		var slide_damage = (1 - (tire_limit / max_tire_limit)) * (treadwear * 0.01)
+		var tire_wear = (treadwear / 60.0) * (float(speed_kmh) / 100.0) # treadwear is dps || More speed == more wear
+		tires_durability -= slide_damage + tire_wear
+
+# Called during collision
+func damage_calculator_collision(part : String, speed):
+	var damage = speed * 0.01
+	
+	match part:
+		"Chassi Hitbox":
+			chassi_durability -= damage
+			chassi_durability = clamp(chassi_durability, 0, 100)
+		"Front Bumper Hitbox":
+			f_bumper_durability -= damage
+			f_bumper_durability = clamp(f_bumper_durability, 0, 100)
+		"Rear Bumper Hitbox":
+			r_bumper_durability -= damage
+			r_bumper_durability = clamp(r_bumper_durability, 0, 100)
+		"Fenders Hitbox":
+			fenders_durability -= damage
+			fenders_durability = clamp(fenders_durability, 0, 100)
+		"Spoiler Hitbox":
+			spoiler_durability -= damage
+			spoiler_durability = clamp(spoiler_durability, 0, 100)
+	
+	
+	## Calculate new stats depending on durability
+	
+	# Drag
+	var drag_mod = (durability_perfromance(chassi.drag, chassi_durability, "+") + durability_perfromance(hood.drag, hood_durability, "+") + 
+	durability_perfromance(f_bumper.drag, f_bumper_durability, "+") + durability_perfromance(r_bumper.drag, r_bumper_durability, "+") + 
+	durability_perfromance(fenders.drag, fenders_durability, "+") + durability_perfromance(spoiler.drag, spoiler_durability, "+") + 
+	durability_perfromance(mirrors.drag, mirrors_durability, "+") + durability_perfromance(headlights.drag, headlights_durability, "+"))
+	if selected_hood == 0:
+		drag_mod += 0.08
+	if selected_f_bumper == 0:
+		drag_mod += 0.06
+	if selected_r_bumper == 0:
+		drag_mod += 0.04
+	if selected_fenders == 0:
+		drag_mod += 0.05
+	if selected_headlights == 0:
+		drag_mod += 0.04
+	drag = -0.00008 * drag_mod
+	
+	# Downforce
+	downforce = (durability_perfromance(chassi.downforce, chassi_durability, "-") + durability_perfromance(hood.downforce, hood_durability, "-") + 
+	durability_perfromance(f_bumper.downforce, f_bumper_durability, "-") + durability_perfromance(r_bumper.downforce, r_bumper_durability, "-") + 
+	durability_perfromance(fenders.downforce, fenders_durability, "-") + durability_perfromance(spoiler.downforce, spoiler_durability, "-") +
+	durability_perfromance(mirrors.downforce, mirrors_durability, "-"))
+	
+	# Handling
+	handling_bonus = ((1+((durability_perfromance(suspension.handling_bonus, suspension_durability, "-") + 
+	durability_perfromance(subframe.handling_bonus, subframe_durability, "-")) * 0.5)/((1+(weight/1000.0))/2.0))/2)
+	
+	# Grip
+	max_tire_limit = durability_perfromance(tires.grip, tires_durability, "-")
+	
+	# Brake force
+	brake_force = (durability_perfromance(brakes.brake_force, brakes_durability, "-") / (weight/1000.0)) *-1
+	
+	# Power loss
+	drivetrain_loss = (driveshaft.drivetrain_loss + durability_perfromance(driveshaft.drivetrain_loss, driveshaft_durability, "+")) * 0.5
+	exhaust_tq_mod = (exhaust.tq_mod_exhaust + durability_perfromance(exhaust.tq_mod_exhaust, exhaust_durability, "-")) * 0.5
+	
+	# Shift time
+	shift_timer.set_wait_time(durability_perfromance(gearbox.shift_time, gearbox_durability, "+"))
+	
+	# Cooling
+	engine_cool_mod = (durability_perfromance(hood.engine_cool_mod, hood_durability, "-") + 
+	durability_perfromance(f_bumper.engine_cool_mod, f_bumper_durability, "-") + durability_perfromance(radiator.cooling, radiator_durability, "-"))
+	
+	update_durability()
+
+
+func durability_perfromance(stat, durability, type):
+	# + / - == If stat increase or decrease when damaged
+	match type:
+		"+":
+			return stat + (stat * 0.01  * (100 - durability))
+		"-":
+			return stat * ((float(durability + 1.0)  / 100)) ** 0.5
+
 
 
 func out_of_bounds():
 	global_position = last_on_road_position
 	velocity = Vector2.ZERO
+
 
 
 func light_controll(light_type,on_off, strenght):

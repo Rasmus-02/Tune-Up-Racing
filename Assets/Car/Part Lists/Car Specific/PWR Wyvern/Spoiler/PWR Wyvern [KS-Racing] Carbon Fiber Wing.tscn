@@ -33,7 +33,7 @@ specular_shininess = 0.5
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_y1bro"]
 polygon = PackedVector2Array(-110, -46, -110, -43, -109, -43, -109, 42, -110, 42, -110, 45, -91, 45, -91, 42, -92, 42, -92, -43, -91, -43, -91, -46)
 
-[node name="PWR Wyvern [KS-Racing] Carbon Fiber Wing" type="Node2D"]
+[node name="PWR Wyvern [KS-Racing] Carbon Fiber Wing" type="Node2D" node_paths=PackedStringArray("hitbox")]
 script = ExtResource("1_3ivai")
 rarity = "epic"
 part_material = 5
@@ -44,6 +44,7 @@ price = 2500
 weight = 4
 drag = 0.06
 downforce = 250
+hitbox = NodePath("Spoiler Hitbox")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 material = SubResource("ShaderMaterial_el0pr")
@@ -57,3 +58,6 @@ script = ExtResource("6_j8q3u")
 
 [node name="LightOccluder2D" type="LightOccluder2D" parent="Sprite2D2"]
 occluder = SubResource("OccluderPolygon2D_y1bro")
+
+[node name="Spoiler Hitbox" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(-92, -43, -91, -43, -91, -46, -110, -46, -110, -43, -109, -43, -109, 42, -110, 42, -110, 45, -91, 45, -91, 42, -92, 42)

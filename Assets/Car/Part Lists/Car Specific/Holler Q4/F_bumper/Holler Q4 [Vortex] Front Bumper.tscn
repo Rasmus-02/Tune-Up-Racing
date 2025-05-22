@@ -22,7 +22,7 @@ blend_mode = 1
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_fkdak"]
 polygon = PackedVector2Array(129.912, -38.6985, 131.912, -37.6985, 134.912, -34.6985, 136.912, -30.6985, 139.912, -17.6985, 140.912, -10.6985, 140.912, 14.3015, 139.912, 21.3015, 136.912, 35.3015, 131.912, 41.3015, 129.912, 42.3015, 122.912, 42.3015, 122.912, -38.6985)
 
-[node name="Holler Q4 [Vortex] Front Bumper" type="Node2D"]
+[node name="Holler Q4 [Vortex] Front Bumper" type="Node2D" node_paths=PackedStringArray("hitbox")]
 script = ExtResource("1_o7gap")
 rarity = "uncommon"
 part_material = 4
@@ -34,6 +34,7 @@ weight = 8
 downforce = 50
 drag = 0.06
 engine_cool_mod = 0.2
+hitbox = NodePath("Front Bumper Hitbox")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 material = SubResource("ShaderMaterial_7yiga")
@@ -43,3 +44,6 @@ texture = SubResource("CanvasTexture_0hbqo")
 material = SubResource("CanvasItemMaterial_nxqv5")
 position = Vector2(-29.9116, -2.30154)
 occluder = SubResource("OccluderPolygon2D_fkdak")
+
+[node name="Front Bumper Hitbox" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(93, -42, 102, -42, 108, -37, 113, -22, 113, 21, 108, 36, 102, 41, 93, 41)

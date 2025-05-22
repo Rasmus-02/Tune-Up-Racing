@@ -34,8 +34,7 @@ func update_pause_menu_position():
 
 var new_scene
 func change_scene(scene):
-	if SelectedScene.scene == "Track":
-		Utils.change_scene()
+	Utils.change_scene()
 	#Update Car market
 	CarMarket.update_events()
 	Utils.blocked = false #Unblock free orphans

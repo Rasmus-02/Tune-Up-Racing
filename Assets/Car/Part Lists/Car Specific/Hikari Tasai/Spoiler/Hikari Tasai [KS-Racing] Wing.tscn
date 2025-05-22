@@ -16,7 +16,7 @@ normal_texture = ExtResource("4_s8k7d")
 specular_texture = ExtResource("5_3gc7d")
 specular_shininess = 0.5
 
-[node name="Hikari Tasai [KS-Racing] Wing" type="Node2D"]
+[node name="Hikari Tasai [KS-Racing] Wing" type="Node2D" node_paths=PackedStringArray("hitbox")]
 script = ExtResource("1_fpnjh")
 rarity = "epic"
 part_material = 5
@@ -28,7 +28,11 @@ price = 1250
 weight = 4
 drag = 0.055
 downforce = 225
+hitbox = NodePath("Spoiler Hitbox")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 material = SubResource("ShaderMaterial_gibfk")
 texture = SubResource("CanvasTexture_swaqy")
+
+[node name="Spoiler Hitbox" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(-91, 47, -100, 48, -111, 48, -111, 46, -110, 46, -110, -47, -111, -47, -111, -49, -100, -49, -91, -48, -91.0217, -45.9869, -92, -46, -92, 45, -91, 45.0155)

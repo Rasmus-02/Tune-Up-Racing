@@ -1,4 +1,4 @@
-extends Node2D
+extends collidable_part
 
 @export_category("ID")
 @export_enum("common", "uncommon", "rare", "epic", "legendary") var rarity : String
@@ -26,10 +26,12 @@ var car
 func _ready():
 	if get_parent() != null and get_parent().get_parent() != null and get_parent().get_parent().get_parent() != null:
 		car = get_parent().get_parent().get_parent().get_parent()
+	update_hitbox(car)
 	
 func _process(_delta):
-	if (current_color == null or color != current_color or durability != current_durability):
+	if (current_color == null or color != current_color or durability != current_durability or (car != null and car.is_in_group("Car") and current_durability != car.f_bumper_durability)):
 		if car != null and car.is_in_group("Car"):
+			durability = car.f_bumper_durability
 			paint_part(car.f_bumper_color, car.f_bumper_durability)
 		elif get_parent().is_in_group("Computer"):
 			var selected_color = get_parent().get_parent().get_parent().selected_color

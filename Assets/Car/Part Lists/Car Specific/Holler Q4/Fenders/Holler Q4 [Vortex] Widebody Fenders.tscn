@@ -25,7 +25,7 @@ polygon = PackedVector2Array(77.9116, -33.6985, 71.9116, -39.6985, 80.9116, -39.
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_1lb82"]
 polygon = PackedVector2Array(-23.0884, -40.6985, -24.0884, -41.6985, -52.0884, -41.6985, -53.0884, -40.6985, -53.0884, 44.3015, -52.0884, 45.3015, -24.0884, 45.3015, -23.0884, 44.3015)
 
-[node name="Holler Q4 [Vortex] Widebody Fenders" type="Node2D"]
+[node name="Holler Q4 [Vortex] Widebody Fenders" type="Node2D" node_paths=PackedStringArray("hitbox")]
 script = ExtResource("1_re6vr")
 rarity = "common"
 part_material = 1
@@ -36,6 +36,7 @@ price = 850
 weight = 20
 downforce = 10
 drag = 0.03
+hitbox = NodePath("Fenders Hitbox")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 material = SubResource("ShaderMaterial_kyisn")
@@ -56,3 +57,6 @@ occluder = SubResource("OccluderPolygon2D_naikx")
 material = SubResource("CanvasItemMaterial_ak8kv")
 position = Vector2(-29.9116, -2.30154)
 occluder = SubResource("OccluderPolygon2D_1lb82")
+
+[node name="Fenders Hitbox" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(96, -40, 93, -42, 83, -42, 81, -44, 53, -44, 51, -42, 43, -42, 43, -1, -53, -1, -53, -43, -54, -44, -82, -44, -83, -43, -83, 42, -82, 43, -54, 43, -53, 42, -53, 1, 43, 1, 43, 41, 51, 41, 53, 43, 81, 43, 83, 41, 93, 41, 96, 39)

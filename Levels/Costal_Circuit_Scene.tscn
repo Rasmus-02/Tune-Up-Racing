@@ -186,13 +186,14 @@ horizontal_alignment = 1
 stream = ExtResource("12_qq8mv")
 volume_db = -5.0
 
-[node name="Post Race" parent="UI" instance=ExtResource("3_6mm13")]
+[node name="Post Race" parent="UI" node_paths=PackedStringArray("map_viewport") instance=ExtResource("3_6mm13")]
 layout_mode = 2
 offset_left = -997.29
 offset_top = -515.92
 offset_right = -997.29
 offset_bottom = -515.92
 scale = Vector2(3, 3)
+map_viewport = NodePath("../../Track/Track_View")
 
 [node name="Current Time" type="Label" parent="UI"]
 visible = false
