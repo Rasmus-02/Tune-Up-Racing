@@ -813,26 +813,29 @@ func damage_calculator_tick():
 		# Tire damage when driving (extra damage if drifting)
 		var slide_damage = (1 - (tire_limit / max_tire_limit)) * (treadwear * 0.01)
 		var tire_wear = (treadwear / 60.0) * (float(speed_kmh) / 100.0) # treadwear is dps || More speed == more wear
-		tires_durability -= slide_damage + tire_wear
+		tires_durability -= (slide_damage + tire_wear) * 0.5
 
 # Called during collision
 func damage_calculator_collision(part : String, speed):
-	var damage = speed * 0.01
-	
 	match part:
 		"Chassi Hitbox":
+			var damage = speed * 0.0001
 			chassi_durability -= damage
 			chassi_durability = clamp(chassi_durability, 0, 100)
 		"Front Bumper Hitbox":
+			var damage = speed * 0.0003
 			f_bumper_durability -= damage
 			f_bumper_durability = clamp(f_bumper_durability, 0, 100)
 		"Rear Bumper Hitbox":
+			var damage = speed * 0.0003
 			r_bumper_durability -= damage
 			r_bumper_durability = clamp(r_bumper_durability, 0, 100)
 		"Fenders Hitbox":
+			var damage = speed * 0.0003
 			fenders_durability -= damage
 			fenders_durability = clamp(fenders_durability, 0, 100)
 		"Spoiler Hitbox":
+			var damage = speed * 0.001
 			spoiler_durability -= damage
 			spoiler_durability = clamp(spoiler_durability, 0, 100)
 	
@@ -873,7 +876,7 @@ func damage_calculator_collision(part : String, speed):
 	brake_force = (durability_perfromance(brakes.brake_force, brakes_durability, "-") / (weight/1000.0)) *-1
 	
 	# Power loss
-	drivetrain_loss = (driveshaft.drivetrain_loss + durability_perfromance(driveshaft.drivetrain_loss, driveshaft_durability, "+")) * 0.5
+	drivetrain_loss = durability_perfromance(driveshaft.drivetrain_loss, driveshaft_durability, "+")
 	exhaust_tq_mod = (exhaust.tq_mod_exhaust + durability_perfromance(exhaust.tq_mod_exhaust, exhaust_durability, "-")) * 0.5
 	
 	# Shift time
