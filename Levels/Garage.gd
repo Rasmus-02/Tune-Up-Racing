@@ -11,9 +11,6 @@ func _ready():
 	main.scene_changed()
 
 
-func drive():
-	get_parent().change_scene("costal_circuit")
-
 
 func _on_gate_body_entered(body):
 	if body.is_in_group("Player"):

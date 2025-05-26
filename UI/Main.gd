@@ -6,6 +6,7 @@ var splash_screen = preload("res://UI/Loading/splash_screen.tscn")
 @export var pause_menu : CanvasLayer
 @export var load_screen : Node2D
 @export var sell_menu : CanvasLayer
+@export var worldmap : CanvasLayer
 var current_scene_instance = null
 var current_scene
 var pause_blocked = false
@@ -29,7 +30,7 @@ func open_close_pause_menu():
 
 func update_pause_menu_position():
 	if SelectedScene.scene == "Track":
-		pause_menu.get_child(0).global_position = get_child(3).get_node("Track").global_position
+		pause_menu.get_child(0).global_position = get_child(4).get_node("Track").global_position
 
 
 var new_scene

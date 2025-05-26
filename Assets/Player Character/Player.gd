@@ -189,7 +189,10 @@ func _on_drive_car_button_pressed():
 	if selected_car != null and selected_car.is_functional() and selected_car.engine.is_functional():
 		Save_Load.selected_car_key = selected_car.selected_car_key
 		Save_Load.save()
-		garage.drive()
+		main.worldmap.open()
+		ui_visible = false
+		car_garage_ui.hide()
+		#garage.drive()
 	else:
 		not_functional.play("play")
 

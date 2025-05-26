@@ -9,7 +9,6 @@ var main = null
 func _ready():
 	main = get_tree().get_root().get_node("Main")
 	select_color(0)
-	close()
 
 func _input(_event):
 	if Input.is_action_just_released("ui_cancel") and active == true:
