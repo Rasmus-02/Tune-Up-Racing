@@ -151,10 +151,10 @@ text = "No"
 horizontal_alignment = 1
 
 [node name="Map" type="CanvasLayer" parent="."]
-visible = false
 script = ExtResource("8_a7208")
 
 [node name="Map" type="TextureRect" parent="Map"]
+visible = false
 offset_left = 561.0
 offset_right = 2001.0
 offset_bottom = 1440.0
@@ -248,6 +248,7 @@ text = "Map Name"
 horizontal_alignment = 1
 
 [node name="Bottom Info" type="HBoxContainer" parent="Map/Map Info/Labels"]
+layout_mode = 0
 offset_left = 356.0
 offset_top = 940.0
 offset_right = 1085.0
@@ -325,6 +326,7 @@ text = "Play"
 
 [node name="TextureRect" type="TextureRect" parent="Map/Map Info/Labels"]
 modulate = Color(0.627451, 0.576471, 0.478431, 1)
+layout_mode = 0
 offset_left = 748.0
 offset_top = 460.0
 offset_right = 1248.0
