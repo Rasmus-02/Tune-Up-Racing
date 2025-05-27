@@ -1,4 +1,4 @@
-[gd_scene load_steps=499 format=3 uid="uid://c5kimmpxxa56r"]
+[gd_scene load_steps=364 format=3 uid="uid://c5kimmpxxa56r"]
 
 [ext_resource type="Script" path="res://Levels/level_status.gd" id="1_grd14"]
 [ext_resource type="Script" path="res://Levels/Lighting.gd" id="2_5ods4"]
@@ -145,15 +145,15 @@ tile_size = Vector2i(32, 32)
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_w0n5g")
 
-[sub_resource type="Resource" id="Resource_qn54r"]
+[sub_resource type="Resource" id="Resource_gqd56"]
 script = ExtResource("16_sgrsv")
 begin = 0.0
 distance = 360.0
 edgeRendering = Vector2(0, 0)
 
-[sub_resource type="Resource" id="Resource_nv0pj"]
+[sub_resource type="Resource" id="Resource_c8eli"]
 script = ExtResource("17_pstga")
-normal_range = SubResource("Resource_qn54r")
+normal_range = SubResource("Resource_gqd56")
 weld = true
 taper_sharp_corners = false
 render = true
@@ -161,15 +161,15 @@ z_index = 0
 z_as_relative = true
 offset = 0.0
 
-[sub_resource type="Resource" id="Resource_1lw0h"]
+[sub_resource type="Resource" id="Resource_mamam"]
 script = ExtResource("16_sgrsv")
 begin = 0.0
 distance = 360.0
 edgeRendering = Vector2(0, 0)
 
-[sub_resource type="Resource" id="Resource_slk63"]
+[sub_resource type="Resource" id="Resource_13yod"]
 script = ExtResource("17_pstga")
-normal_range = SubResource("Resource_1lw0h")
+normal_range = SubResource("Resource_mamam")
 weld = true
 taper_sharp_corners = false
 render = true
@@ -177,15 +177,15 @@ z_index = 0
 z_as_relative = true
 offset = 0.0
 
-[sub_resource type="Resource" id="Resource_da2ci"]
+[sub_resource type="Resource" id="Resource_b1vc0"]
 script = ExtResource("16_sgrsv")
 begin = 0.0
 distance = 360.0
 edgeRendering = Vector2(0, 0)
 
-[sub_resource type="Resource" id="Resource_3js2o"]
+[sub_resource type="Resource" id="Resource_lpsgc"]
 script = ExtResource("17_pstga")
-normal_range = SubResource("Resource_da2ci")
+normal_range = SubResource("Resource_b1vc0")
 weld = true
 taper_sharp_corners = false
 render = true
@@ -193,15 +193,15 @@ z_index = 0
 z_as_relative = true
 offset = 0.0
 
-[sub_resource type="Resource" id="Resource_iqnnl"]
+[sub_resource type="Resource" id="Resource_kjp4m"]
 script = ExtResource("16_sgrsv")
 begin = 0.0
 distance = 360.0
 edgeRendering = Vector2(0, 0)
 
-[sub_resource type="Resource" id="Resource_16sn2"]
+[sub_resource type="Resource" id="Resource_4ficd"]
 script = ExtResource("17_pstga")
-normal_range = SubResource("Resource_iqnnl")
+normal_range = SubResource("Resource_kjp4m")
 weld = true
 taper_sharp_corners = false
 render = true
@@ -209,15 +209,15 @@ z_index = 0
 z_as_relative = true
 offset = 0.0
 
-[sub_resource type="Resource" id="Resource_ixfmn"]
+[sub_resource type="Resource" id="Resource_53p82"]
 script = ExtResource("16_sgrsv")
 begin = 0.0
 distance = 360.0
 edgeRendering = Vector2(0, 0)
 
-[sub_resource type="Resource" id="Resource_ki74s"]
+[sub_resource type="Resource" id="Resource_re4im"]
 script = ExtResource("17_pstga")
-normal_range = SubResource("Resource_ixfmn")
+normal_range = SubResource("Resource_53p82")
 weld = true
 taper_sharp_corners = false
 render = true
@@ -225,15 +225,63 @@ z_index = 0
 z_as_relative = true
 offset = 0.0
 
-[sub_resource type="Resource" id="Resource_37bqc"]
+[sub_resource type="Resource" id="Resource_7nk5y"]
 script = ExtResource("16_sgrsv")
 begin = 0.0
 distance = 360.0
 edgeRendering = Vector2(0, 0)
 
-[sub_resource type="Resource" id="Resource_dfwlx"]
+[sub_resource type="Resource" id="Resource_4d0d6"]
 script = ExtResource("17_pstga")
-normal_range = SubResource("Resource_37bqc")
+normal_range = SubResource("Resource_7nk5y")
+weld = true
+taper_sharp_corners = false
+render = true
+z_index = 0
+z_as_relative = true
+offset = 0.0
+
+[sub_resource type="Resource" id="Resource_hhkpg"]
+script = ExtResource("16_sgrsv")
+begin = 0.0
+distance = 360.0
+edgeRendering = Vector2(0, 0)
+
+[sub_resource type="Resource" id="Resource_6inwb"]
+script = ExtResource("17_pstga")
+normal_range = SubResource("Resource_hhkpg")
+weld = true
+taper_sharp_corners = false
+render = true
+z_index = 0
+z_as_relative = true
+offset = 0.0
+
+[sub_resource type="Resource" id="Resource_anj5v"]
+script = ExtResource("16_sgrsv")
+begin = 0.0
+distance = 360.0
+edgeRendering = Vector2(0, 0)
+
+[sub_resource type="Resource" id="Resource_yh3ew"]
+script = ExtResource("17_pstga")
+normal_range = SubResource("Resource_anj5v")
+weld = true
+taper_sharp_corners = false
+render = true
+z_index = 0
+z_as_relative = true
+offset = 0.0
+
+[sub_resource type="Resource" id="Resource_a6ydg"]
+script = ExtResource("16_sgrsv")
+begin = 0.0
+distance = 360.0
+edgeRendering = Vector2(0, 0)
+
+[sub_resource type="Resource" id="Resource_4iuh6"]
+script = ExtResource("17_pstga")
+normal_range = SubResource("Resource_a6ydg")
 weld = true
 taper_sharp_corners = false
 render = true
@@ -393,16 +441,68 @@ properties = SubResource("Resource_hdo70")
 
 [sub_resource type="Resource" id="Resource_5g0oc"]
 script = ExtResource("10_6xiyj")
-texture_idx = 0
+texture_idx = 24
 flip = false
 width = 1.0
 
 [sub_resource type="Resource" id="Resource_xn0ue"]
 script = ExtResource("11_hexod")
-position = Vector2(-1986.37, 5368.4)
+position = Vector2(-3517.47, 5920.03)
 point_in = Vector2(0, 0)
 point_out = Vector2(0, 0)
 properties = SubResource("Resource_5g0oc")
+
+[sub_resource type="Resource" id="Resource_47gnx"]
+script = ExtResource("10_6xiyj")
+texture_idx = 4
+flip = false
+width = 1.0
+
+[sub_resource type="Resource" id="Resource_34gkx"]
+script = ExtResource("11_hexod")
+position = Vector2(-4540.74, 7584.01)
+point_in = Vector2(0, 0)
+point_out = Vector2(0, 0)
+properties = SubResource("Resource_47gnx")
+
+[sub_resource type="Resource" id="Resource_yvrcn"]
+script = ExtResource("10_6xiyj")
+texture_idx = 11
+flip = false
+width = 1.0
+
+[sub_resource type="Resource" id="Resource_6tjwc"]
+script = ExtResource("11_hexod")
+position = Vector2(-4380.41, 6621.32)
+point_in = Vector2(-264.804, 415.417)
+point_out = Vector2(230.863, -432.387)
+properties = SubResource("Resource_yvrcn")
+
+[sub_resource type="Resource" id="Resource_irjim"]
+script = ExtResource("10_6xiyj")
+texture_idx = 8
+flip = false
+width = 1.0
+
+[sub_resource type="Resource" id="Resource_jv2ih"]
+script = ExtResource("11_hexod")
+position = Vector2(-4336.66, 8288.44)
+point_in = Vector2(0, 0)
+point_out = Vector2(0, 0)
+properties = SubResource("Resource_irjim")
+
+[sub_resource type="Resource" id="Resource_ytst4"]
+script = ExtResource("10_6xiyj")
+texture_idx = -22
+flip = false
+width = 1.0
+
+[sub_resource type="Resource" id="Resource_mr2p0"]
+script = ExtResource("11_hexod")
+position = Vector2(-3781.89, 6691.93)
+point_in = Vector2(533.052, -567.638)
+point_out = Vector2(-578.409, 487.003)
+properties = SubResource("Resource_ytst4")
 
 [sub_resource type="Resource" id="Resource_27s2w"]
 script = ExtResource("12_lq6dg")
@@ -419,20 +519,27 @@ _points = {
 10: SubResource("Resource_4a4ow"),
 16: SubResource("Resource_soog5"),
 20: SubResource("Resource_bmmqf"),
-21: SubResource("Resource_xn0ue")
+21: SubResource("Resource_xn0ue"),
+22: SubResource("Resource_34gkx"),
+23: SubResource("Resource_6tjwc"),
+24: SubResource("Resource_jv2ih"),
+25: SubResource("Resource_mr2p0")
 }
-_point_order = PackedInt32Array(0, 16, 1, 2, 3, 20, 21, 4, 10, 5, 6, 7, 8)
+_point_order = PackedInt32Array(0, 16, 1, 2, 3, 20, 25, 24, 22, 23, 21, 4, 10, 5, 6, 7, 8)
 _constraints = {
 Vector2i(0, 8): 15
 }
-_next_key = 22
+_next_key = 26
 _material_overrides = {
-Vector2i(4, 10): SubResource("Resource_nv0pj"),
-Vector2i(5, 6): SubResource("Resource_16sn2"),
-Vector2i(6, 7): SubResource("Resource_3js2o"),
-Vector2i(7, 8): SubResource("Resource_slk63"),
-Vector2i(10, 5): SubResource("Resource_ki74s"),
-Vector2i(21, 4): SubResource("Resource_dfwlx")
+Vector2i(4, 10): SubResource("Resource_re4im"),
+Vector2i(5, 6): SubResource("Resource_lpsgc"),
+Vector2i(6, 7): SubResource("Resource_13yod"),
+Vector2i(7, 8): SubResource("Resource_c8eli"),
+Vector2i(10, 5): SubResource("Resource_4ficd"),
+Vector2i(21, 4): SubResource("Resource_4d0d6"),
+Vector2i(22, 23): SubResource("Resource_yh3ew"),
+Vector2i(23, 21): SubResource("Resource_6inwb"),
+Vector2i(24, 22): SubResource("Resource_4iuh6")
 }
 tessellation_stages = 3
 tessellation_tolerance = 6.0
@@ -487,6 +594,506 @@ fill_texture_offset = Vector2(0, 0)
 fill_texture_angle_offset = 0.0
 fill_mesh_offset = 0.0
 render_offset = 0.0
+
+[sub_resource type="Resource" id="Resource_ebnb0"]
+script = ExtResource("16_sgrsv")
+begin = 0.0
+distance = 360.0
+edgeRendering = Vector2(0, 0)
+
+[sub_resource type="Resource" id="Resource_4ipc0"]
+script = ExtResource("17_pstga")
+normal_range = SubResource("Resource_ebnb0")
+weld = true
+taper_sharp_corners = false
+render = true
+z_index = 0
+z_as_relative = true
+offset = 0.0
+
+[sub_resource type="Resource" id="Resource_3phui"]
+script = ExtResource("16_sgrsv")
+begin = 0.0
+distance = 360.0
+edgeRendering = Vector2(0, 0)
+
+[sub_resource type="Resource" id="Resource_hxwdr"]
+script = ExtResource("17_pstga")
+normal_range = SubResource("Resource_3phui")
+weld = true
+taper_sharp_corners = false
+render = true
+z_index = 0
+z_as_relative = true
+offset = 0.0
+
+[sub_resource type="Resource" id="Resource_1vsm3"]
+script = ExtResource("16_sgrsv")
+begin = 0.0
+distance = 360.0
+edgeRendering = Vector2(0, 0)
+
+[sub_resource type="Resource" id="Resource_fyy06"]
+script = ExtResource("17_pstga")
+normal_range = SubResource("Resource_1vsm3")
+weld = true
+taper_sharp_corners = false
+render = true
+z_index = 0
+z_as_relative = true
+offset = 0.0
+
+[sub_resource type="Resource" id="Resource_4ukww"]
+script = ExtResource("16_sgrsv")
+begin = 0.0
+distance = 360.0
+edgeRendering = Vector2(0, 0)
+
+[sub_resource type="Resource" id="Resource_ltkro"]
+script = ExtResource("17_pstga")
+normal_range = SubResource("Resource_4ukww")
+weld = true
+taper_sharp_corners = false
+render = true
+z_index = 0
+z_as_relative = true
+offset = 0.0
+
+[sub_resource type="Resource" id="Resource_1kfsg"]
+script = ExtResource("16_sgrsv")
+begin = 0.0
+distance = 360.0
+edgeRendering = Vector2(0, 0)
+
+[sub_resource type="Resource" id="Resource_idcof"]
+script = ExtResource("17_pstga")
+normal_range = SubResource("Resource_1kfsg")
+weld = true
+taper_sharp_corners = false
+render = true
+z_index = 0
+z_as_relative = true
+offset = 0.0
+
+[sub_resource type="Resource" id="Resource_lpsgk"]
+script = ExtResource("10_6xiyj")
+texture_idx = -2
+flip = false
+width = 1.0
+
+[sub_resource type="Resource" id="Resource_7gosn"]
+script = ExtResource("11_hexod")
+position = Vector2(-4561.59, 9639.13)
+point_in = Vector2(0, 0)
+point_out = Vector2(0, 0)
+properties = SubResource("Resource_lpsgk")
+
+[sub_resource type="Resource" id="Resource_js5fv"]
+script = ExtResource("10_6xiyj")
+texture_idx = -1
+flip = false
+width = 1.0
+
+[sub_resource type="Resource" id="Resource_ffpkw"]
+script = ExtResource("11_hexod")
+position = Vector2(-2485.78, 12429.7)
+point_in = Vector2(-737.419, -1051.53)
+point_out = Vector2(356.781, 444.86)
+properties = SubResource("Resource_js5fv")
+
+[sub_resource type="Resource" id="Resource_064ss"]
+script = ExtResource("10_6xiyj")
+texture_idx = -3
+flip = false
+width = 1.0
+
+[sub_resource type="Resource" id="Resource_qe21s"]
+script = ExtResource("11_hexod")
+position = Vector2(-2779.94, 14694.7)
+point_in = Vector2(973.141, -890.821)
+point_out = Vector2(-870, 676)
+properties = SubResource("Resource_064ss")
+
+[sub_resource type="Resource" id="Resource_0dylu"]
+script = ExtResource("10_6xiyj")
+texture_idx = 0
+flip = false
+width = 1.0
+
+[sub_resource type="Resource" id="Resource_1ula3"]
+script = ExtResource("11_hexod")
+position = Vector2(-5605.12, 14791.2)
+point_in = Vector2(923.345, 610.218)
+point_out = Vector2(-428.898, -461.879)
+properties = SubResource("Resource_0dylu")
+
+[sub_resource type="Resource" id="Resource_rrf20"]
+script = ExtResource("10_6xiyj")
+texture_idx = 0
+flip = false
+width = 1.0
+
+[sub_resource type="Resource" id="Resource_7udmr"]
+script = ExtResource("11_hexod")
+position = Vector2(-7612.35, 11942.3)
+point_in = Vector2(0, 0)
+point_out = Vector2(0, 0)
+properties = SubResource("Resource_rrf20")
+
+[sub_resource type="Resource" id="Resource_akk36"]
+script = ExtResource("10_6xiyj")
+texture_idx = 0
+flip = false
+width = 1.0
+
+[sub_resource type="Resource" id="Resource_77jy8"]
+script = ExtResource("11_hexod")
+position = Vector2(-7612.35, 11942.3)
+point_in = Vector2(0, 0)
+point_out = Vector2(0, 0)
+properties = SubResource("Resource_akk36")
+
+[sub_resource type="Resource" id="Resource_tva05"]
+script = ExtResource("10_6xiyj")
+texture_idx = 0
+flip = false
+width = 1.0
+
+[sub_resource type="Resource" id="Resource_xj76w"]
+script = ExtResource("11_hexod")
+position = Vector2(-6910.68, 13347.9)
+point_in = Vector2(516.67, 761.688)
+point_out = Vector2(-741.804, -887.854)
+properties = SubResource("Resource_tva05")
+
+[sub_resource type="Resource" id="Resource_kih38"]
+script = ExtResource("10_6xiyj")
+texture_idx = 0
+flip = false
+width = 1.0
+
+[sub_resource type="Resource" id="Resource_16wjf"]
+script = ExtResource("11_hexod")
+position = Vector2(-3413.58, 11192.6)
+point_in = Vector2(-679.576, -706.385)
+point_out = Vector2(788.6, 995.271)
+properties = SubResource("Resource_kih38")
+
+[sub_resource type="Resource" id="Resource_b8v3r"]
+script = ExtResource("10_6xiyj")
+texture_idx = 0
+flip = false
+width = 1.0
+
+[sub_resource type="Resource" id="Resource_e6m31"]
+script = ExtResource("11_hexod")
+position = Vector2(-5255.12, 11748.1)
+point_in = Vector2(-687.14, 604.08)
+point_out = Vector2(687.14, -604.08)
+properties = SubResource("Resource_b8v3r")
+
+[sub_resource type="Resource" id="Resource_motlq"]
+script = ExtResource("12_lq6dg")
+_points = {
+0: SubResource("Resource_77jy8"),
+1: SubResource("Resource_7gosn"),
+2: SubResource("Resource_ffpkw"),
+3: SubResource("Resource_qe21s"),
+4: SubResource("Resource_1ula3"),
+5: SubResource("Resource_7udmr"),
+6: SubResource("Resource_xj76w"),
+8: SubResource("Resource_16wjf"),
+9: SubResource("Resource_e6m31")
+}
+_point_order = PackedInt32Array(0, 9, 1, 8, 2, 3, 4, 6, 5)
+_constraints = {
+Vector2i(0, 5): 15
+}
+_next_key = 10
+_material_overrides = {
+Vector2i(2, 3): SubResource("Resource_hxwdr"),
+Vector2i(3, 4): SubResource("Resource_fyy06"),
+Vector2i(4, 6): SubResource("Resource_ltkro"),
+Vector2i(6, 5): SubResource("Resource_idcof"),
+Vector2i(8, 2): SubResource("Resource_4ipc0")
+}
+tessellation_stages = 3
+tessellation_tolerance = 6.0
+curve_bake_interval = 20.0
+
+[sub_resource type="Resource" id="Resource_t1w47"]
+script = ExtResource("16_sgrsv")
+begin = 0.0
+distance = 360.0
+edgeRendering = Vector2(0, 0)
+
+[sub_resource type="Resource" id="Resource_klf2e"]
+script = ExtResource("17_pstga")
+normal_range = SubResource("Resource_t1w47")
+weld = true
+taper_sharp_corners = false
+render = true
+z_index = 0
+z_as_relative = true
+offset = 0.0
+
+[sub_resource type="Resource" id="Resource_5uoiy"]
+script = ExtResource("16_sgrsv")
+begin = 0.0
+distance = 360.0
+edgeRendering = Vector2(0, 0)
+
+[sub_resource type="Resource" id="Resource_0maqy"]
+script = ExtResource("17_pstga")
+normal_range = SubResource("Resource_5uoiy")
+weld = true
+taper_sharp_corners = false
+render = true
+z_index = 0
+z_as_relative = true
+offset = 0.0
+
+[sub_resource type="Resource" id="Resource_psire"]
+script = ExtResource("16_sgrsv")
+begin = 0.0
+distance = 360.0
+edgeRendering = Vector2(0, 0)
+
+[sub_resource type="Resource" id="Resource_i3qnm"]
+script = ExtResource("17_pstga")
+normal_range = SubResource("Resource_psire")
+weld = true
+taper_sharp_corners = false
+render = true
+z_index = 0
+z_as_relative = true
+offset = 0.0
+
+[sub_resource type="Resource" id="Resource_406x2"]
+script = ExtResource("16_sgrsv")
+begin = 0.0
+distance = 360.0
+edgeRendering = Vector2(0, 0)
+
+[sub_resource type="Resource" id="Resource_uukme"]
+script = ExtResource("17_pstga")
+normal_range = SubResource("Resource_406x2")
+weld = true
+taper_sharp_corners = false
+render = true
+z_index = 0
+z_as_relative = true
+offset = 0.0
+
+[sub_resource type="Resource" id="Resource_mi54j"]
+script = ExtResource("10_6xiyj")
+texture_idx = 0
+flip = false
+width = 1.0
+
+[sub_resource type="Resource" id="Resource_022a8"]
+script = ExtResource("11_hexod")
+position = Vector2(-8443.57, 6200.74)
+point_in = Vector2(4, -632)
+point_out = Vector2(-120, -24)
+properties = SubResource("Resource_mi54j")
+
+[sub_resource type="Resource" id="Resource_jidve"]
+script = ExtResource("10_6xiyj")
+texture_idx = 2
+flip = false
+width = 1.0
+
+[sub_resource type="Resource" id="Resource_ssjvf"]
+script = ExtResource("11_hexod")
+position = Vector2(-9836.18, 3778.94)
+point_in = Vector2(-836.149, -227.783)
+point_out = Vector2(1166, 454)
+properties = SubResource("Resource_jidve")
+
+[sub_resource type="Resource" id="Resource_6fddj"]
+script = ExtResource("10_6xiyj")
+texture_idx = -7
+flip = false
+width = 1.0
+
+[sub_resource type="Resource" id="Resource_lr3ec"]
+script = ExtResource("11_hexod")
+position = Vector2(-12390.4, 4451.33)
+point_in = Vector2(77.3477, 13.2505)
+point_out = Vector2(379.131, -138.33)
+properties = SubResource("Resource_6fddj")
+
+[sub_resource type="Resource" id="Resource_esaur"]
+script = ExtResource("11_hexod")
+position = Vector2(-12390.4, 4451.33)
+point_in = Vector2(77.3477, 13.2505)
+point_out = Vector2(379.131, -138.33)
+properties = SubResource("Resource_6fddj")
+
+[sub_resource type="Resource" id="Resource_fmsyy"]
+script = ExtResource("10_6xiyj")
+texture_idx = -7
+flip = false
+width = 1.0
+
+[sub_resource type="Resource" id="Resource_wm3ed"]
+script = ExtResource("11_hexod")
+position = Vector2(-10127.2, 4609.98)
+point_in = Vector2(767.628, 285.735)
+point_out = Vector2(-767.628, -285.735)
+properties = SubResource("Resource_fmsyy")
+
+[sub_resource type="Resource" id="Resource_h3up7"]
+script = ExtResource("10_6xiyj")
+texture_idx = 0
+flip = false
+width = 1.0
+
+[sub_resource type="Resource" id="Resource_dlc0k"]
+script = ExtResource("11_hexod")
+position = Vector2(-11329.3, 3854.33)
+point_in = Vector2(-333.522, 92.4951)
+point_out = Vector2(158.343, -44.9949)
+properties = SubResource("Resource_h3up7")
+
+[sub_resource type="Resource" id="Resource_5iweo"]
+script = ExtResource("12_lq6dg")
+_points = {
+0: SubResource("Resource_esaur"),
+1: SubResource("Resource_022a8"),
+2: SubResource("Resource_ssjvf"),
+3: SubResource("Resource_lr3ec"),
+6: SubResource("Resource_wm3ed"),
+7: SubResource("Resource_dlc0k")
+}
+_point_order = PackedInt32Array(3, 7, 2, 1, 6, 0)
+_constraints = {
+Vector2i(3, 0): 15
+}
+_next_key = 8
+_material_overrides = {
+Vector2i(2, 1): SubResource("Resource_0maqy"),
+Vector2i(3, 2): SubResource("Resource_klf2e"),
+Vector2i(3, 7): SubResource("Resource_i3qnm"),
+Vector2i(7, 2): SubResource("Resource_uukme")
+}
+tessellation_stages = 3
+tessellation_tolerance = 6.0
+curve_bake_interval = 20.0
+
+[sub_resource type="Resource" id="Resource_duyrw"]
+script = ExtResource("16_sgrsv")
+begin = 0.0
+distance = 360.0
+edgeRendering = Vector2(0, 0)
+
+[sub_resource type="Resource" id="Resource_kaj3i"]
+script = ExtResource("17_pstga")
+normal_range = SubResource("Resource_duyrw")
+weld = true
+taper_sharp_corners = false
+render = true
+z_index = 0
+z_as_relative = true
+offset = 0.0
+
+[sub_resource type="Resource" id="Resource_lniof"]
+script = ExtResource("16_sgrsv")
+begin = 0.0
+distance = 360.0
+edgeRendering = Vector2(0, 0)
+
+[sub_resource type="Resource" id="Resource_pmhjs"]
+script = ExtResource("17_pstga")
+normal_range = SubResource("Resource_lniof")
+weld = true
+taper_sharp_corners = false
+render = true
+z_index = 0
+z_as_relative = true
+offset = 0.0
+
+[sub_resource type="Resource" id="Resource_pjx4l"]
+script = ExtResource("10_6xiyj")
+texture_idx = 11
+flip = false
+width = 1.0
+
+[sub_resource type="Resource" id="Resource_5ra6a"]
+script = ExtResource("11_hexod")
+position = Vector2(-18002.9, -3.97382)
+point_in = Vector2(179.869, -6.47647)
+point_out = Vector2(-191.324, 9.61035)
+properties = SubResource("Resource_pjx4l")
+
+[sub_resource type="Resource" id="Resource_8rwmg"]
+script = ExtResource("10_6xiyj")
+texture_idx = 0
+flip = false
+width = 1.0
+
+[sub_resource type="Resource" id="Resource_7iugf"]
+script = ExtResource("11_hexod")
+position = Vector2(-20715, 2232.25)
+point_in = Vector2(-56.7461, 2696.89)
+point_out = Vector2(56.7461, -2696.89)
+properties = SubResource("Resource_8rwmg")
+
+[sub_resource type="Resource" id="Resource_qj2iq"]
+script = ExtResource("10_6xiyj")
+texture_idx = -1
+flip = false
+width = 1.0
+
+[sub_resource type="Resource" id="Resource_jm3e3"]
+script = ExtResource("11_hexod")
+position = Vector2(-17936.9, 4565.96)
+point_in = Vector2(-202.508, 44.7188)
+point_out = Vector2(117.988, 26.7563)
+properties = SubResource("Resource_qj2iq")
+
+[sub_resource type="Resource" id="Resource_g6mhf"]
+script = ExtResource("10_6xiyj")
+texture_idx = 0
+flip = false
+width = 1.0
+
+[sub_resource type="Resource" id="Resource_xoaj2"]
+script = ExtResource("11_hexod")
+position = Vector2(-19885.4, 2238.49)
+point_in = Vector2(105.549, -1952.94)
+point_out = Vector2(76.1387, 1912.7)
+properties = SubResource("Resource_g6mhf")
+
+[sub_resource type="Resource" id="Resource_lysax"]
+script = ExtResource("11_hexod")
+position = Vector2(-18002.9, -3.97382)
+point_in = Vector2(179.869, -6.47647)
+point_out = Vector2(-191.324, 9.61035)
+properties = SubResource("Resource_pjx4l")
+
+[sub_resource type="Resource" id="Resource_f5eid"]
+script = ExtResource("12_lq6dg")
+_points = {
+0: SubResource("Resource_5ra6a"),
+1: SubResource("Resource_7iugf"),
+2: SubResource("Resource_jm3e3"),
+3: SubResource("Resource_xoaj2"),
+4: SubResource("Resource_lysax")
+}
+_point_order = PackedInt32Array(4, 3, 2, 1, 0)
+_constraints = {
+Vector2i(0, 4): 15
+}
+_next_key = 5
+_material_overrides = {
+Vector2i(3, 2): SubResource("Resource_kaj3i"),
+Vector2i(4, 3): SubResource("Resource_pmhjs")
+}
+tessellation_stages = 3
+tessellation_tolerance = 6.0
+curve_bake_interval = 20.0
 
 [sub_resource type="Resource" id="Resource_m4fko"]
 script = ExtResource("10_6xiyj")
@@ -555,7 +1162,7 @@ properties = SubResource("Resource_cvhpo")
 
 [sub_resource type="Resource" id="Resource_cnn5c"]
 script = ExtResource("10_6xiyj")
-texture_idx = 32
+texture_idx = 35
 flip = false
 width = 1.0
 
@@ -574,14 +1181,14 @@ width = 0.8
 
 [sub_resource type="Resource" id="Resource_uh2rl"]
 script = ExtResource("11_hexod")
-position = Vector2(-4922.65, 2554.75)
+position = Vector2(-4954.4, 2618.25)
 point_in = Vector2(-2822.7, 1224.28)
 point_out = Vector2(718.735, -252.741)
 properties = SubResource("Resource_70i6l")
 
 [sub_resource type="Resource" id="Resource_hg1ju"]
 script = ExtResource("10_6xiyj")
-texture_idx = -11
+texture_idx = -9
 flip = false
 width = 1.0
 
@@ -589,7 +1196,7 @@ width = 1.0
 script = ExtResource("11_hexod")
 position = Vector2(-4655.47, 3381.61)
 point_in = Vector2(1063.6, -333.045)
-point_out = Vector2(-1544.18, 470.887)
+point_out = Vector2(-1563.23, 578.831)
 properties = SubResource("Resource_hg1ju")
 
 [sub_resource type="Resource" id="Resource_c3g3q"]
@@ -607,7 +1214,7 @@ properties = SubResource("Resource_c3g3q")
 
 [sub_resource type="Resource" id="Resource_cpuih"]
 script = ExtResource("10_6xiyj")
-texture_idx = -4
+texture_idx = 7
 flip = false
 width = 1.0
 
@@ -620,7 +1227,7 @@ properties = SubResource("Resource_cpuih")
 
 [sub_resource type="Resource" id="Resource_qkl76"]
 script = ExtResource("10_6xiyj")
-texture_idx = 2
+texture_idx = 3
 flip = false
 width = 1.0
 
@@ -633,7 +1240,7 @@ properties = SubResource("Resource_qkl76")
 
 [sub_resource type="Resource" id="Resource_qig5f"]
 script = ExtResource("10_6xiyj")
-texture_idx = -5
+texture_idx = -1
 flip = false
 width = 1.0
 
@@ -980,7 +1587,7 @@ _point_order = PackedInt32Array(243, 102, 105, 107, 109, 227, 231, 235, 236, 263
 _constraints = {
 Vector2i(243, 0): 15
 }
-_next_key = 273
+_next_key = 274
 _material_overrides = {}
 tessellation_stages = 3
 tessellation_tolerance = 4.0
@@ -988,42 +1595,16 @@ curve_bake_interval = 20.0
 
 [sub_resource type="Resource" id="Resource_kkplq"]
 script = ExtResource("10_6xiyj")
-texture_idx = 11
+texture_idx = 16
 flip = false
 width = 1.0
 
 [sub_resource type="Resource" id="Resource_etx4c"]
 script = ExtResource("11_hexod")
-position = Vector2(-2081.95, 1984.43)
+position = Vector2(-6144.94, 4495.08)
 point_in = Vector2(-2088.79, 57.1812)
-point_out = Vector2(1804.8, 17.9419)
+point_out = Vector2(430.395, -961.908)
 properties = SubResource("Resource_kkplq")
-
-[sub_resource type="Resource" id="Resource_c0pit"]
-script = ExtResource("10_6xiyj")
-texture_idx = 6
-flip = false
-width = 1.0
-
-[sub_resource type="Resource" id="Resource_e0few"]
-script = ExtResource("11_hexod")
-position = Vector2(1142.98, -333.417)
-point_in = Vector2(0, 0)
-point_out = Vector2(0, 0)
-properties = SubResource("Resource_c0pit")
-
-[sub_resource type="Resource" id="Resource_6yl8v"]
-script = ExtResource("10_6xiyj")
-texture_idx = -5
-flip = false
-width = 1.0
-
-[sub_resource type="Resource" id="Resource_7jh2h"]
-script = ExtResource("11_hexod")
-position = Vector2(-2072.59, -2537.08)
-point_in = Vector2(1023.46, 24.1213)
-point_out = Vector2(-734.967, -44.4473)
-properties = SubResource("Resource_6yl8v")
 
 [sub_resource type="Resource" id="Resource_ixcdu"]
 script = ExtResource("10_6xiyj")
@@ -1033,36 +1614,90 @@ width = 1.0
 
 [sub_resource type="Resource" id="Resource_c6s2i"]
 script = ExtResource("11_hexod")
-position = Vector2(114.835, -2194.24)
-point_in = Vector2(1107.22, 768.276)
-point_out = Vector2(-551.213, -403.032)
+position = Vector2(-237.423, -2343.57)
+point_in = Vector2(903.154, 444.999)
+point_out = Vector2(-658.11, -331.362)
 properties = SubResource("Resource_ixcdu")
 
 [sub_resource type="Resource" id="Resource_sn345"]
 script = ExtResource("10_6xiyj")
-texture_idx = 52
+texture_idx = 54
 flip = false
 width = 1.0
 
 [sub_resource type="Resource" id="Resource_i01q5"]
 script = ExtResource("11_hexod")
-position = Vector2(263.099, 1506.98)
-point_in = Vector2(-571.562, 409.705)
-point_out = Vector2(842.558, -658.516)
+position = Vector2(-398.753, 1863.36)
+point_in = Vector2(-580.038, 333.424)
+point_out = Vector2(1610.11, -853.651)
 properties = SubResource("Resource_sn345")
+
+[sub_resource type="Resource" id="Resource_u40rr"]
+script = ExtResource("10_6xiyj")
+texture_idx = -1
+flip = false
+width = 1.0
+
+[sub_resource type="Resource" id="Resource_3jucj"]
+script = ExtResource("11_hexod")
+position = Vector2(826.627, -919.935)
+point_in = Vector2(0, 0)
+point_out = Vector2(0, 0)
+properties = SubResource("Resource_u40rr")
+
+[sub_resource type="Resource" id="Resource_f2dut"]
+script = ExtResource("10_6xiyj")
+texture_idx = 27
+flip = false
+width = 1.0
+
+[sub_resource type="Resource" id="Resource_w6cul"]
+script = ExtResource("11_hexod")
+position = Vector2(-2872.75, -2739.64)
+point_in = Vector2(410.341, 128.545)
+point_out = Vector2(-333.754, -172.534)
+properties = SubResource("Resource_f2dut")
+
+[sub_resource type="Resource" id="Resource_hb3k1"]
+script = ExtResource("10_6xiyj")
+texture_idx = 0
+flip = false
+width = 1.0
+
+[sub_resource type="Resource" id="Resource_u2ygd"]
+script = ExtResource("11_hexod")
+position = Vector2(-1433.41, -2640.39)
+point_in = Vector2(0, 0)
+point_out = Vector2(0, 0)
+properties = SubResource("Resource_hb3k1")
+
+[sub_resource type="Resource" id="Resource_vqaa8"]
+script = ExtResource("10_6xiyj")
+texture_idx = 0
+flip = false
+width = 1.0
+
+[sub_resource type="Resource" id="Resource_jmmbk"]
+script = ExtResource("11_hexod")
+position = Vector2(-3197.28, 2900.05)
+point_in = Vector2(-477.873, 253.62)
+point_out = Vector2(475.203, -189.547)
+properties = SubResource("Resource_vqaa8")
 
 [sub_resource type="Resource" id="Resource_oe8m4"]
 script = ExtResource("12_lq6dg")
 _points = {
 1: SubResource("Resource_etx4c"),
-2: SubResource("Resource_e0few"),
-3: SubResource("Resource_7jh2h"),
 4: SubResource("Resource_c6s2i"),
-5: SubResource("Resource_i01q5")
+5: SubResource("Resource_i01q5"),
+6: SubResource("Resource_3jucj"),
+8: SubResource("Resource_w6cul"),
+10: SubResource("Resource_u2ygd"),
+11: SubResource("Resource_jmmbk")
 }
-_point_order = PackedInt32Array(1, 5, 2, 4, 3)
+_point_order = PackedInt32Array(1, 11, 5, 6, 4, 10, 8)
 _constraints = {}
-_next_key = 6
+_next_key = 12
 _material_overrides = {}
 tessellation_stages = 3
 tessellation_tolerance = 6.0
@@ -1119,315 +1754,137 @@ fill_texture_angle_offset = 0.0
 fill_mesh_offset = 0.0
 render_offset = 0.0
 
-[sub_resource type="Resource" id="Resource_28ulb"]
+[sub_resource type="Resource" id="Resource_hoojw"]
 script = ExtResource("10_6xiyj")
-texture_idx = 0
+texture_idx = 12
 flip = false
 width = 1.0
 
-[sub_resource type="Resource" id="Resource_tcfhs"]
+[sub_resource type="Resource" id="Resource_w7you"]
 script = ExtResource("11_hexod")
-position = Vector2(1566.39, -759.61)
-point_in = Vector2(372.148, -146.661)
-point_out = Vector2(0, 0)
-properties = SubResource("Resource_28ulb")
+position = Vector2(-8735.25, 414.013)
+point_in = Vector2(-32.1733, -1.06055)
+point_out = Vector2(32.1733, 1.06055)
+properties = SubResource("Resource_hoojw")
 
-[sub_resource type="Resource" id="Resource_mfwa8"]
-script = ExtResource("10_6xiyj")
-texture_idx = -1
-flip = false
-width = 1.0
-
-[sub_resource type="Resource" id="Resource_0u12v"]
-script = ExtResource("11_hexod")
-position = Vector2(-41.7627, -229.659)
-point_in = Vector2(44.0908, -29.9551)
-point_out = Vector2(-44.0908, 29.9546)
-properties = SubResource("Resource_mfwa8")
-
-[sub_resource type="Resource" id="Resource_2b6t5"]
+[sub_resource type="Resource" id="Resource_i5bha"]
 script = ExtResource("10_6xiyj")
 texture_idx = 1
 flip = false
 width = 1.0
 
-[sub_resource type="Resource" id="Resource_irarl"]
+[sub_resource type="Resource" id="Resource_bploc"]
 script = ExtResource("11_hexod")
-position = Vector2(-925.313, 188.194)
-point_in = Vector2(54.4287, -28.6099)
-point_out = Vector2(-386.717, 243.298)
-properties = SubResource("Resource_2b6t5")
+position = Vector2(-8381.72, 4775.22)
+point_in = Vector2(-81.72, -1024.78)
+point_out = Vector2(218.28, 1375.22)
+properties = SubResource("Resource_i5bha")
 
-[sub_resource type="Resource" id="Resource_28vi3"]
-script = ExtResource("10_6xiyj")
-texture_idx = -4
-flip = false
-width = 1.0
-
-[sub_resource type="Resource" id="Resource_hxfvb"]
-script = ExtResource("11_hexod")
-position = Vector2(-1531.9, 828.641)
-point_in = Vector2(347.119, -450.05)
-point_out = Vector2(-400.544, 411.979)
-properties = SubResource("Resource_28vi3")
-
-[sub_resource type="Resource" id="Resource_n2kgs"]
-script = ExtResource("10_6xiyj")
-texture_idx = 7
-flip = false
-width = 1.0
-
-[sub_resource type="Resource" id="Resource_qg37i"]
-script = ExtResource("11_hexod")
-position = Vector2(1051.04, -648.381)
-point_in = Vector2(98.3291, -28.5522)
-point_out = Vector2(0, 0)
-properties = SubResource("Resource_n2kgs")
-
-[sub_resource type="Resource" id="Resource_1igma"]
+[sub_resource type="Resource" id="Resource_gfqcm"]
 script = ExtResource("10_6xiyj")
 texture_idx = 0
 flip = false
 width = 1.0
 
-[sub_resource type="Resource" id="Resource_wmjy5"]
+[sub_resource type="Resource" id="Resource_b24n0"]
 script = ExtResource("11_hexod")
-position = Vector2(274.604, -357.614)
-point_in = Vector2(0, 0)
-point_out = Vector2(0, 0)
-properties = SubResource("Resource_1igma")
+position = Vector2(-5281.72, 11675.2)
+point_in = Vector2(1118.28, -1024.78)
+point_out = Vector2(-1181.72, 975.22)
+properties = SubResource("Resource_gfqcm")
 
-[sub_resource type="Resource" id="Resource_hihm6"]
-script = ExtResource("12_lq6dg")
-_points = {
-0: SubResource("Resource_tcfhs"),
-1: SubResource("Resource_0u12v"),
-2: SubResource("Resource_irarl"),
-3: SubResource("Resource_hxfvb"),
-4: SubResource("Resource_qg37i"),
-6: SubResource("Resource_wmjy5")
-}
-_point_order = PackedInt32Array(0, 4, 6, 1, 2, 3)
-_constraints = {}
-_next_key = 7
-_material_overrides = {}
-tessellation_stages = 3
-tessellation_tolerance = 6.0
-curve_bake_interval = 20.0
-
-[sub_resource type="Resource" id="Resource_yju7f"]
-script = ExtResource("10_6xiyj")
-texture_idx = 53
-flip = false
-width = 1.0
-
-[sub_resource type="Resource" id="Resource_ho1rc"]
-script = ExtResource("11_hexod")
-position = Vector2(-340.199, 1079.54)
-point_in = Vector2(76.4795, -244.725)
-point_out = Vector2(-180.555, 332.582)
-properties = SubResource("Resource_yju7f")
-
-[sub_resource type="Resource" id="Resource_txlwo"]
-script = ExtResource("10_6xiyj")
-texture_idx = 1
-flip = false
-width = 1.0
-
-[sub_resource type="Resource" id="Resource_jqoju"]
-script = ExtResource("11_hexod")
-position = Vector2(22.7266, -251.115)
-point_in = Vector2(55.3105, -387.077)
-point_out = Vector2(-11.7012, 454.725)
-properties = SubResource("Resource_txlwo")
-
-[sub_resource type="Resource" id="Resource_rreha"]
-script = ExtResource("10_6xiyj")
-texture_idx = 26
-flip = false
-width = 1.0
-
-[sub_resource type="Resource" id="Resource_kbqv0"]
-script = ExtResource("11_hexod")
-position = Vector2(-625.357, -1671.36)
-point_in = Vector2(-551.213, -403.032)
-point_out = Vector2(148.136, 82.9189)
-properties = SubResource("Resource_rreha")
-
-[sub_resource type="Resource" id="Resource_awrfu"]
+[sub_resource type="Resource" id="Resource_430no"]
 script = ExtResource("10_6xiyj")
 texture_idx = 0
 flip = false
 width = 1.0
 
-[sub_resource type="Resource" id="Resource_ta7qn"]
+[sub_resource type="Resource" id="Resource_8shua"]
 script = ExtResource("11_hexod")
-position = Vector2(-369.662, -1489.05)
-point_in = Vector2(-36.498, -57.5303)
-point_out = Vector2(165.132, 166.338)
-properties = SubResource("Resource_awrfu")
+position = Vector2(-7981.72, 10875.2)
+point_in = Vector2(418.28, 475.22)
+point_out = Vector2(-481.72, -524.78)
+properties = SubResource("Resource_430no")
 
-[sub_resource type="Resource" id="Resource_a8q1r"]
+[sub_resource type="Resource" id="Resource_rge2n"]
 script = ExtResource("10_6xiyj")
-texture_idx = -9
+texture_idx = 18
 flip = false
 width = 1.0
 
-[sub_resource type="Resource" id="Resource_4kdg2"]
+[sub_resource type="Resource" id="Resource_jkdqg"]
 script = ExtResource("11_hexod")
-position = Vector2(-984.841, 1663.96)
-point_in = Vector2(382.67, -584.742)
-point_out = Vector2(-434.521, 420.015)
-properties = SubResource("Resource_a8q1r")
+position = Vector2(-8981.72, 8775.22)
+point_in = Vector2(18.28, 975.22)
+point_out = Vector2(18.28, -424.78)
+properties = SubResource("Resource_rge2n")
 
-[sub_resource type="Resource" id="Resource_s1g4x"]
+[sub_resource type="Resource" id="Resource_sbjdw"]
 script = ExtResource("10_6xiyj")
-texture_idx = -2
+texture_idx = 0
 flip = false
 width = 1.0
 
-[sub_resource type="Resource" id="Resource_k7lxe"]
+[sub_resource type="Resource" id="Resource_6ni6a"]
 script = ExtResource("11_hexod")
-position = Vector2(-1701.39, 2366.74)
-point_in = Vector2(36.4512, -31.9385)
-point_out = Vector2(-218.66, 178.2)
-properties = SubResource("Resource_s1g4x")
+position = Vector2(-8981.72, 775.22)
+point_in = Vector2(18.28, 275.22)
+point_out = Vector2(18.28, -324.78)
+properties = SubResource("Resource_sbjdw")
 
-[sub_resource type="Resource" id="Resource_46ly8"]
+[sub_resource type="Resource" id="Resource_psu8i"]
 script = ExtResource("10_6xiyj")
-texture_idx = -2
+texture_idx = 8
 flip = false
 width = 1.0
 
-[sub_resource type="Resource" id="Resource_hraf3"]
+[sub_resource type="Resource" id="Resource_7xmkt"]
 script = ExtResource("11_hexod")
-position = Vector2(-2668.76, 3247.99)
-point_in = Vector2(215.288, -181.924)
-point_out = Vector2(-103.334, 84.0908)
-properties = SubResource("Resource_46ly8")
+position = Vector2(-8733.43, 414.401)
+point_in = Vector2(-36.0815, -0.890869)
+point_out = Vector2(36.0815, 0.890869)
+properties = SubResource("Resource_psu8i")
 
-[sub_resource type="Resource" id="Resource_2eprf"]
+[sub_resource type="Resource" id="Resource_hmciq"]
 script = ExtResource("10_6xiyj")
-texture_idx = 3
+texture_idx = -3
 flip = false
 width = 1.0
 
-[sub_resource type="Resource" id="Resource_c58sx"]
+[sub_resource type="Resource" id="Resource_0yswl"]
 script = ExtResource("11_hexod")
-position = Vector2(-3009.56, 3577.29)
-point_in = Vector2(344.93, -217.927)
-point_out = Vector2(-275.34, 230.831)
-properties = SubResource("Resource_2eprf")
+position = Vector2(-8481.72, 775.22)
+point_in = Vector2(18.28, -324.78)
+point_out = Vector2(18.28, 275.22)
+properties = SubResource("Resource_hmciq")
 
-[sub_resource type="Resource" id="Resource_pxcyc"]
+[sub_resource type="Resource" id="Resource_57jv7"]
 script = ExtResource("10_6xiyj")
-texture_idx = -25
+texture_idx = 0
 flip = false
 width = 1.0
 
-[sub_resource type="Resource" id="Resource_rqgph"]
+[sub_resource type="Resource" id="Resource_hdr7u"]
 script = ExtResource("11_hexod")
-position = Vector2(-2016.73, 2639.36)
-point_in = Vector2(0, 0)
-point_out = Vector2(0, 0)
-properties = SubResource("Resource_pxcyc")
+position = Vector2(-6281.72, 8575.22)
+point_in = Vector2(-381.72, -524.78)
+point_out = Vector2(418.28, 475.22)
+properties = SubResource("Resource_57jv7")
 
-[sub_resource type="Resource" id="Resource_3sk0d"]
+[sub_resource type="Resource" id="Resource_xxoqh"]
 script = ExtResource("12_lq6dg")
 _points = {
-0: SubResource("Resource_ho1rc"),
-2: SubResource("Resource_jqoju"),
-4: SubResource("Resource_kbqv0"),
-6: SubResource("Resource_ta7qn"),
-12: SubResource("Resource_4kdg2"),
-13: SubResource("Resource_k7lxe"),
-14: SubResource("Resource_hraf3"),
-15: SubResource("Resource_c58sx"),
-16: SubResource("Resource_rqgph")
+0: SubResource("Resource_w7you"),
+1: SubResource("Resource_bploc"),
+2: SubResource("Resource_hdr7u"),
+3: SubResource("Resource_b24n0"),
+4: SubResource("Resource_8shua"),
+5: SubResource("Resource_jkdqg"),
+6: SubResource("Resource_6ni6a"),
+7: SubResource("Resource_7xmkt"),
+8: SubResource("Resource_0yswl")
 }
-_point_order = PackedInt32Array(4, 6, 2, 0, 12, 13, 16, 14, 15)
-_constraints = {}
-_next_key = 17
-_material_overrides = {}
-tessellation_stages = 3
-tessellation_tolerance = 6.0
-curve_bake_interval = 20.0
-
-[sub_resource type="Resource" id="Resource_krasr"]
-script = ExtResource("10_6xiyj")
-texture_idx = 2
-flip = false
-width = 1.0
-
-[sub_resource type="Resource" id="Resource_vkaow"]
-script = ExtResource("11_hexod")
-position = Vector2(20.7578, -336.688)
-point_in = Vector2(-41.8125, 391.97)
-point_out = Vector2(9.10742, -401.866)
-properties = SubResource("Resource_krasr")
-
-[sub_resource type="Resource" id="Resource_kkvm8"]
-script = ExtResource("10_6xiyj")
-texture_idx = 63
-flip = false
-width = 1.0
-
-[sub_resource type="Resource" id="Resource_7wj8c"]
-script = ExtResource("11_hexod")
-position = Vector2(1086.35, 1261.94)
-point_in = Vector2(-502.608, 345.797)
-point_out = Vector2(-158.006, -97.6611)
-properties = SubResource("Resource_kkvm8")
-
-[sub_resource type="Resource" id="Resource_hefhc"]
-script = ExtResource("10_6xiyj")
-texture_idx = 49
-flip = false
-width = 1.0
-
-[sub_resource type="Resource" id="Resource_h1hxr"]
-script = ExtResource("11_hexod")
-position = Vector2(1332.3, -2078.06)
-point_in = Vector2(-73.002, 208.708)
-point_out = Vector2(57.0137, -42.2441)
-properties = SubResource("Resource_hefhc")
-
-[sub_resource type="Resource" id="Resource_tb4fb"]
-script = ExtResource("10_6xiyj")
-texture_idx = 9
-flip = false
-width = 1.0
-
-[sub_resource type="Resource" id="Resource_nhr2w"]
-script = ExtResource("11_hexod")
-position = Vector2(299.441, 504.046)
-point_in = Vector2(383.039, 414.577)
-point_out = Vector2(-93.168, -130.646)
-properties = SubResource("Resource_tb4fb")
-
-[sub_resource type="Resource" id="Resource_5nsjr"]
-script = ExtResource("10_6xiyj")
-texture_idx = 1
-flip = false
-width = 1.0
-
-[sub_resource type="Resource" id="Resource_npb66"]
-script = ExtResource("11_hexod")
-position = Vector2(1095.68, -1771.54)
-point_in = Vector2(-550.055, 411.81)
-point_out = Vector2(175.971, -137.018)
-properties = SubResource("Resource_5nsjr")
-
-[sub_resource type="Resource" id="Resource_fkevr"]
-script = ExtResource("12_lq6dg")
-_points = {
-2: SubResource("Resource_vkaow"),
-5: SubResource("Resource_7wj8c"),
-6: SubResource("Resource_h1hxr"),
-8: SubResource("Resource_nhr2w"),
-10: SubResource("Resource_npb66")
-}
-_point_order = PackedInt32Array(5, 8, 2, 10, 6)
+_point_order = PackedInt32Array(0, 8, 1, 2, 3, 4, 5, 6, 7)
 _constraints = {}
 _next_key = 11
 _material_overrides = {}
@@ -1435,163 +1892,67 @@ tessellation_stages = 3
 tessellation_tolerance = 6.0
 curve_bake_interval = 20.0
 
-[sub_resource type="Resource" id="Resource_xpe5l"]
+[sub_resource type="Resource" id="Resource_vnplh"]
 script = ExtResource("10_6xiyj")
-texture_idx = -19
+texture_idx = 46
 flip = false
 width = 1.0
 
-[sub_resource type="Resource" id="Resource_1wdoj"]
+[sub_resource type="Resource" id="Resource_nf5x0"]
 script = ExtResource("11_hexod")
-position = Vector2(12063.7, -3687.91)
-point_in = Vector2(0, 0)
-point_out = Vector2(0, 0)
-properties = SubResource("Resource_xpe5l")
+position = Vector2(-9001.65, 2558.75)
+point_in = Vector2(149.216, 511.143)
+point_out = Vector2(-17.0732, -25.9917)
+properties = SubResource("Resource_vnplh")
 
-[sub_resource type="Resource" id="Resource_waudp"]
+[sub_resource type="Resource" id="Resource_vgj0p"]
 script = ExtResource("10_6xiyj")
-texture_idx = -12
+texture_idx = 1
 flip = false
 width = 1.0
 
-[sub_resource type="Resource" id="Resource_1w003"]
+[sub_resource type="Resource" id="Resource_le5en"]
 script = ExtResource("11_hexod")
-position = Vector2(11939.6, -1593.3)
-point_in = Vector2(13.9766, -251.609)
-point_out = Vector2(-2.88281, 11.061)
-properties = SubResource("Resource_waudp")
+position = Vector2(-12212.6, 143.609)
+point_in = Vector2(1417.4, 164.814)
+point_out = Vector2(-1495.07, -192.432)
+properties = SubResource("Resource_vgj0p")
 
-[sub_resource type="Resource" id="Resource_3tyth"]
+[sub_resource type="Resource" id="Resource_s2hjt"]
 script = ExtResource("10_6xiyj")
-texture_idx = -24
+texture_idx = 1
 flip = false
 width = 1.0
 
-[sub_resource type="Resource" id="Resource_nuryt"]
+[sub_resource type="Resource" id="Resource_avk11"]
 script = ExtResource("11_hexod")
-position = Vector2(11971.8, -1070.36)
-point_in = Vector2(11.1875, -311.461)
-point_out = Vector2(-18.1875, 300.643)
-properties = SubResource("Resource_3tyth")
+position = Vector2(-14921.3, 1021.73)
+point_in = Vector2(338.291, 13.9885)
+point_out = Vector2(-335.621, -11.9863)
+properties = SubResource("Resource_s2hjt")
 
-[sub_resource type="Resource" id="Resource_fjgvb"]
-script = ExtResource("10_6xiyj")
-texture_idx = 2
-flip = false
-width = 1.0
-
-[sub_resource type="Resource" id="Resource_u820l"]
-script = ExtResource("11_hexod")
-position = Vector2(11999, -3165.79)
-point_in = Vector2(65.5273, -288.645)
-point_out = Vector2(-1.04688, 178.328)
-properties = SubResource("Resource_fjgvb")
-
-[sub_resource type="Resource" id="Resource_gv48s"]
-script = ExtResource("12_lq6dg")
-_points = {
-0: SubResource("Resource_1wdoj"),
-1: SubResource("Resource_1w003"),
-2: SubResource("Resource_nuryt"),
-3: SubResource("Resource_u820l")
-}
-_point_order = PackedInt32Array(0, 3, 1, 2)
-_constraints = {}
-_next_key = 4
-_material_overrides = {}
-tessellation_stages = 3
-tessellation_tolerance = 6.0
-curve_bake_interval = 20.0
-
-[sub_resource type="Resource" id="Resource_3uwi7"]
-script = ExtResource("10_6xiyj")
-texture_idx = 36
-flip = false
-width = 1.0
-
-[sub_resource type="Resource" id="Resource_841m3"]
-script = ExtResource("11_hexod")
-position = Vector2(2996.15, 150.834)
-point_in = Vector2(0, 0)
-point_out = Vector2(0, 0)
-properties = SubResource("Resource_3uwi7")
-
-[sub_resource type="Resource" id="Resource_bno7q"]
-script = ExtResource("10_6xiyj")
-texture_idx = -41
-flip = false
-width = 1.0
-
-[sub_resource type="Resource" id="Resource_e8ar0"]
-script = ExtResource("11_hexod")
-position = Vector2(827.69, 296.229)
-point_in = Vector2(326.183, -61.4531)
-point_out = Vector2(-540.658, 9.17383)
-properties = SubResource("Resource_bno7q")
-
-[sub_resource type="Resource" id="Resource_56npg"]
-script = ExtResource("10_6xiyj")
-texture_idx = 10
-flip = false
-width = 1.0
-
-[sub_resource type="Resource" id="Resource_n88n6"]
-script = ExtResource("11_hexod")
-position = Vector2(-711.569, 325.678)
-point_in = Vector2(149.828, -4.8418)
-point_out = Vector2(-368.465, -61.668)
-properties = SubResource("Resource_56npg")
-
-[sub_resource type="Resource" id="Resource_noegm"]
+[sub_resource type="Resource" id="Resource_unm2t"]
 script = ExtResource("10_6xiyj")
 texture_idx = 0
 flip = false
 width = 1.0
 
-[sub_resource type="Resource" id="Resource_7tbxh"]
+[sub_resource type="Resource" id="Resource_lgiag"]
 script = ExtResource("11_hexod")
-position = Vector2(-1346.45, 278.34)
-point_in = Vector2(0, 0)
-point_out = Vector2(0, 0)
-properties = SubResource("Resource_noegm")
+position = Vector2(-10034.4, 1701.5)
+point_in = Vector2(160.459, 456.835)
+point_out = Vector2(-158.571, -451.172)
+properties = SubResource("Resource_unm2t")
 
-[sub_resource type="Resource" id="Resource_l1blv"]
-script = ExtResource("10_6xiyj")
-texture_idx = 7
-flip = false
-width = 1.0
-
-[sub_resource type="Resource" id="Resource_jwedu"]
-script = ExtResource("11_hexod")
-position = Vector2(1326.71, 236.055)
-point_in = Vector2(0, 0)
-point_out = Vector2(0, 0)
-properties = SubResource("Resource_l1blv")
-
-[sub_resource type="Resource" id="Resource_3rcld"]
-script = ExtResource("10_6xiyj")
-texture_idx = -10
-flip = false
-width = 1.0
-
-[sub_resource type="Resource" id="Resource_iimdq"]
-script = ExtResource("11_hexod")
-position = Vector2(2295.66, 211.836)
-point_in = Vector2(0, 0)
-point_out = Vector2(0, 0)
-properties = SubResource("Resource_3rcld")
-
-[sub_resource type="Resource" id="Resource_wk60p"]
+[sub_resource type="Resource" id="Resource_5lad1"]
 script = ExtResource("12_lq6dg")
 _points = {
-0: SubResource("Resource_841m3"),
-1: SubResource("Resource_e8ar0"),
-2: SubResource("Resource_n88n6"),
-3: SubResource("Resource_7tbxh"),
-4: SubResource("Resource_jwedu"),
-5: SubResource("Resource_iimdq")
+0: SubResource("Resource_nf5x0"),
+4: SubResource("Resource_le5en"),
+5: SubResource("Resource_avk11"),
+6: SubResource("Resource_lgiag")
 }
-_point_order = PackedInt32Array(0, 5, 4, 1, 2, 3)
+_point_order = PackedInt32Array(0, 6, 4, 5)
 _constraints = {}
 _next_key = 7
 _material_overrides = {}
@@ -1599,365 +1960,81 @@ tessellation_stages = 3
 tessellation_tolerance = 6.0
 curve_bake_interval = 20.0
 
-[sub_resource type="Resource" id="Resource_gl46v"]
-script = ExtResource("10_6xiyj")
-texture_idx = -34
-flip = false
-width = 1.1
-
-[sub_resource type="Resource" id="Resource_7728x"]
-script = ExtResource("11_hexod")
-position = Vector2(17363.4, -5646.99)
-point_in = Vector2(1430.21, 6.77344)
-point_out = Vector2(-1368.79, 51.0898)
-properties = SubResource("Resource_gl46v")
-
-[sub_resource type="Resource" id="Resource_4bj0p"]
-script = ExtResource("10_6xiyj")
-texture_idx = -23
-flip = false
-width = 1.0
-
-[sub_resource type="Resource" id="Resource_dg4tg"]
-script = ExtResource("11_hexod")
-position = Vector2(12635.9, -580.033)
-point_in = Vector2(-925.953, -1070.8)
-point_out = Vector2(874.98, 1039.81)
-properties = SubResource("Resource_4bj0p")
-
-[sub_resource type="Resource" id="Resource_bq7rl"]
-script = ExtResource("10_6xiyj")
-texture_idx = -3
-flip = false
-width = 1.0
-
-[sub_resource type="Resource" id="Resource_10eov"]
-script = ExtResource("11_hexod")
-position = Vector2(16734.6, 1466.02)
-point_in = Vector2(-1260.1, -249.159)
-point_out = Vector2(2009.55, 260.487)
-properties = SubResource("Resource_bq7rl")
-
-[sub_resource type="Resource" id="Resource_8lkq2"]
-script = ExtResource("10_6xiyj")
-texture_idx = 2
-flip = false
-width = 1.0
-
-[sub_resource type="Resource" id="Resource_hmghr"]
-script = ExtResource("11_hexod")
-position = Vector2(12980.9, -4252.46)
-point_in = Vector2(951.604, -829.06)
-point_out = Vector2(-1310.39, 1042.07)
-properties = SubResource("Resource_8lkq2")
-
-[sub_resource type="Resource" id="Resource_qhhn5"]
-script = ExtResource("12_lq6dg")
-_points = {
-0: SubResource("Resource_7728x"),
-1: SubResource("Resource_dg4tg"),
-2: SubResource("Resource_10eov"),
-3: SubResource("Resource_hmghr")
-}
-_point_order = PackedInt32Array(0, 3, 1, 2)
-_constraints = {}
-_next_key = 6
-_material_overrides = {}
-tessellation_stages = 3
-tessellation_tolerance = 6.0
-curve_bake_interval = 20.0
-
-[sub_resource type="Resource" id="Resource_7x2ln"]
-script = ExtResource("10_6xiyj")
-texture_idx = 1
-flip = false
-width = 1.0
-
-[sub_resource type="Resource" id="Resource_ivkjv"]
-script = ExtResource("11_hexod")
-position = Vector2(12044, -4196.01)
-point_in = Vector2(-8.21289, -169.003)
-point_out = Vector2(-0.158203, 26.9561)
-properties = SubResource("Resource_7x2ln")
-
-[sub_resource type="Resource" id="Resource_qb7tf"]
-script = ExtResource("10_6xiyj")
-texture_idx = -53
-flip = false
-width = 1.0
-
-[sub_resource type="Resource" id="Resource_7omov"]
-script = ExtResource("11_hexod")
-position = Vector2(11935.1, -1689.16)
-point_in = Vector2(13.9766, -251.609)
-point_out = Vector2(43.7402, 315.226)
-properties = SubResource("Resource_qb7tf")
-
-[sub_resource type="Resource" id="Resource_88b5e"]
-script = ExtResource("10_6xiyj")
-texture_idx = -6
-flip = false
-width = 1.0
-
-[sub_resource type="Resource" id="Resource_6nxyk"]
-script = ExtResource("11_hexod")
-position = Vector2(11960.9, -1036.61)
-point_in = Vector2(0, 0)
-point_out = Vector2(0, 0)
-properties = SubResource("Resource_88b5e")
-
-[sub_resource type="Resource" id="Resource_20u6r"]
-script = ExtResource("10_6xiyj")
-texture_idx = -18
-flip = false
-width = 1.0
-
-[sub_resource type="Resource" id="Resource_bq2i8"]
-script = ExtResource("11_hexod")
-position = Vector2(12025.1, -3563.51)
-point_in = Vector2(0, 0)
-point_out = Vector2(0, 0)
-properties = SubResource("Resource_20u6r")
-
-[sub_resource type="Resource" id="Resource_qus1s"]
-script = ExtResource("12_lq6dg")
-_points = {
-0: SubResource("Resource_ivkjv"),
-1: SubResource("Resource_7omov"),
-2: SubResource("Resource_6nxyk"),
-5: SubResource("Resource_bq2i8")
-}
-_point_order = PackedInt32Array(0, 5, 1, 2)
-_constraints = {}
-_next_key = 6
-_material_overrides = {}
-tessellation_stages = 3
-tessellation_tolerance = 6.0
-curve_bake_interval = 20.0
-
-[sub_resource type="Resource" id="Resource_flgay"]
-script = ExtResource("10_6xiyj")
-texture_idx = 46
-flip = false
-width = 1.0
-
-[sub_resource type="Resource" id="Resource_2utv1"]
-script = ExtResource("11_hexod")
-position = Vector2(1764.31, 222.491)
-point_in = Vector2(0, 0)
-point_out = Vector2(0, 0)
-properties = SubResource("Resource_flgay")
-
-[sub_resource type="Resource" id="Resource_0dx2x"]
-script = ExtResource("10_6xiyj")
-texture_idx = 3
-flip = false
-width = 1.0
-
-[sub_resource type="Resource" id="Resource_3wkvj"]
-script = ExtResource("11_hexod")
-position = Vector2(1104.37, 217.905)
-point_in = Vector2(332.146, -39.9658)
-point_out = Vector2(-131.475, 6.62402)
-properties = SubResource("Resource_0dx2x")
-
-[sub_resource type="Resource" id="Resource_iuvbp"]
-script = ExtResource("10_6xiyj")
-texture_idx = -15
-flip = false
-width = 1.0
-
-[sub_resource type="Resource" id="Resource_760jh"]
-script = ExtResource("11_hexod")
-position = Vector2(-869.533, 353.512)
-point_in = Vector2(149.828, -4.8418)
-point_out = Vector2(-349.649, -52.1807)
-properties = SubResource("Resource_iuvbp")
-
-[sub_resource type="Resource" id="Resource_hoprp"]
-script = ExtResource("12_lq6dg")
-_points = {
-0: SubResource("Resource_2utv1"),
-1: SubResource("Resource_3wkvj"),
-2: SubResource("Resource_760jh")
-}
-_point_order = PackedInt32Array(0, 1, 2)
-_constraints = {}
-_next_key = 8
-_material_overrides = {}
-tessellation_stages = 3
-tessellation_tolerance = 6.0
-curve_bake_interval = 20.0
-
-[sub_resource type="Resource" id="Resource_jelpg"]
-script = ExtResource("10_6xiyj")
-texture_idx = 1
-flip = false
-width = 1.0
-
-[sub_resource type="Resource" id="Resource_p8eiv"]
-script = ExtResource("11_hexod")
-position = Vector2(11991.3, -4120.97)
-point_in = Vector2(-8.21289, -169.003)
-point_out = Vector2(-0.158203, 26.9561)
-properties = SubResource("Resource_jelpg")
-
-[sub_resource type="Resource" id="Resource_sqihw"]
-script = ExtResource("10_6xiyj")
-texture_idx = -33
-flip = false
-width = 1.0
-
-[sub_resource type="Resource" id="Resource_hhv4y"]
-script = ExtResource("11_hexod")
-position = Vector2(12039, -1485.44)
-point_in = Vector2(13.9766, -251.609)
-point_out = Vector2(43.7402, 315.226)
-properties = SubResource("Resource_sqihw")
-
-[sub_resource type="Resource" id="Resource_kb5ru"]
-script = ExtResource("10_6xiyj")
-texture_idx = -11
-flip = false
-width = 1.0
-
-[sub_resource type="Resource" id="Resource_j768t"]
-script = ExtResource("11_hexod")
-position = Vector2(12050.7, -3465.58)
-point_in = Vector2(18.1995, -414.16)
-point_out = Vector2(-1.08325, 82.0166)
-properties = SubResource("Resource_kb5ru")
-
-[sub_resource type="Resource" id="Resource_hbkyk"]
-script = ExtResource("12_lq6dg")
-_points = {
-0: SubResource("Resource_p8eiv"),
-1: SubResource("Resource_hhv4y"),
-5: SubResource("Resource_j768t")
-}
-_point_order = PackedInt32Array(0, 5, 1)
-_constraints = {}
-_next_key = 6
-_material_overrides = {}
-tessellation_stages = 3
-tessellation_tolerance = 6.0
-curve_bake_interval = 20.0
-
-[sub_resource type="Resource" id="Resource_vjh22"]
-script = ExtResource("10_6xiyj")
-texture_idx = 29
-flip = false
-width = 1.0
-
-[sub_resource type="Resource" id="Resource_i2nbd"]
-script = ExtResource("11_hexod")
-position = Vector2(1864.24, 270.27)
-point_in = Vector2(0, 0)
-point_out = Vector2(0, 0)
-properties = SubResource("Resource_vjh22")
-
-[sub_resource type="Resource" id="Resource_rd6mk"]
-script = ExtResource("10_6xiyj")
-texture_idx = -7
-flip = false
-width = 1.0
-
-[sub_resource type="Resource" id="Resource_46acr"]
-script = ExtResource("11_hexod")
-position = Vector2(1087.94, 298.434)
-point_in = Vector2(313.35, -20.7119)
-point_out = Vector2(-590.327, 8.25586)
-properties = SubResource("Resource_rd6mk")
-
-[sub_resource type="Resource" id="Resource_36vv5"]
-script = ExtResource("10_6xiyj")
-texture_idx = -6
-flip = false
-width = 1.0
-
-[sub_resource type="Resource" id="Resource_syklr"]
-script = ExtResource("11_hexod")
-position = Vector2(-881.178, 352.61)
-point_in = Vector2(149.828, -4.8418)
-point_out = Vector2(-349.649, -52.1807)
-properties = SubResource("Resource_36vv5")
-
-[sub_resource type="Resource" id="Resource_r8uoq"]
-script = ExtResource("10_6xiyj")
-texture_idx = 16
-flip = false
-width = 1.0
-
-[sub_resource type="Resource" id="Resource_6rlwr"]
-script = ExtResource("11_hexod")
-position = Vector2(-1417.08, 307.173)
-point_in = Vector2(0, 0)
-point_out = Vector2(0, 0)
-properties = SubResource("Resource_r8uoq")
-
-[sub_resource type="Resource" id="Resource_pmq8k"]
-script = ExtResource("12_lq6dg")
-_points = {
-0: SubResource("Resource_i2nbd"),
-1: SubResource("Resource_46acr"),
-2: SubResource("Resource_syklr"),
-3: SubResource("Resource_6rlwr")
-}
-_point_order = PackedInt32Array(0, 1, 2, 3)
-_constraints = {}
-_next_key = 8
-_material_overrides = {}
-tessellation_stages = 3
-tessellation_tolerance = 6.0
-curve_bake_interval = 20.0
-
-[sub_resource type="Resource" id="Resource_1n16p"]
-script = ExtResource("10_6xiyj")
-texture_idx = -7
-flip = false
-width = 1.0
-
-[sub_resource type="Resource" id="Resource_2m8wf"]
-script = ExtResource("11_hexod")
-position = Vector2(127.346, 2765.44)
-point_in = Vector2(-60.2598, 197.079)
-point_out = Vector2(60.2617, -197.078)
-properties = SubResource("Resource_1n16p")
-
-[sub_resource type="Resource" id="Resource_18buj"]
-script = ExtResource("10_6xiyj")
-texture_idx = 0
-flip = false
-width = 1.0
-
-[sub_resource type="Resource" id="Resource_w2q0c"]
-script = ExtResource("11_hexod")
-position = Vector2(319.453, 813.624)
-point_in = Vector2(340.088, 1273.75)
-point_out = Vector2(-464.5, -1384.21)
-properties = SubResource("Resource_18buj")
-
-[sub_resource type="Resource" id="Resource_3vbyv"]
+[sub_resource type="Resource" id="Resource_vs5sr"]
 script = ExtResource("10_6xiyj")
 texture_idx = 7
 flip = false
 width = 1.0
 
-[sub_resource type="Resource" id="Resource_po4cj"]
+[sub_resource type="Resource" id="Resource_x0xk5"]
 script = ExtResource("11_hexod")
-position = Vector2(-2361.22, -740.267)
-point_in = Vector2(647.916, -25.1797)
-point_out = Vector2(-647.916, 25.1807)
-properties = SubResource("Resource_3vbyv")
+position = Vector2(-20183.5, -2797.83)
+point_in = Vector2(144.326, -90.8716)
+point_out = Vector2(-202.596, 99.3474)
+properties = SubResource("Resource_vs5sr")
 
-[sub_resource type="Resource" id="Resource_ndpnd"]
+[sub_resource type="Resource" id="Resource_r6ddg"]
+script = ExtResource("10_6xiyj")
+texture_idx = -5
+flip = false
+width = 1.0
+
+[sub_resource type="Resource" id="Resource_l1tjb"]
+script = ExtResource("11_hexod")
+position = Vector2(-20886.8, -2647.98)
+point_in = Vector2(119.614, -34.1238)
+point_out = Vector2(-188.72, 26.22)
+properties = SubResource("Resource_r6ddg")
+
+[sub_resource type="Resource" id="Resource_bmyvh"]
+script = ExtResource("10_6xiyj")
+texture_idx = 0
+flip = false
+width = 1.0
+
+[sub_resource type="Resource" id="Resource_nj1qp"]
+script = ExtResource("11_hexod")
+position = Vector2(-22827.8, -424.78)
+point_in = Vector2(18.28, -2024.78)
+point_out = Vector2(-81.72, 2010.86)
+properties = SubResource("Resource_bmyvh")
+
+[sub_resource type="Resource" id="Resource_r7i6w"]
+script = ExtResource("10_6xiyj")
+texture_idx = 0
+flip = false
+width = 1.0
+
+[sub_resource type="Resource" id="Resource_o1b8m"]
+script = ExtResource("11_hexod")
+position = Vector2(-20889.3, 1958.84)
+point_in = Vector2(-281.72, -24.78)
+point_out = Vector2(338.438, 14.2776)
+properties = SubResource("Resource_r7i6w")
+
+[sub_resource type="Resource" id="Resource_230fu"]
+script = ExtResource("10_6xiyj")
+texture_idx = -3
+flip = false
+width = 1.0
+
+[sub_resource type="Resource" id="Resource_yy4qc"]
+script = ExtResource("11_hexod")
+position = Vector2(-20208.1, 2097.49)
+point_in = Vector2(0, 0)
+point_out = Vector2(0, 0)
+properties = SubResource("Resource_230fu")
+
+[sub_resource type="Resource" id="Resource_r20sp"]
 script = ExtResource("12_lq6dg")
 _points = {
-7: SubResource("Resource_2m8wf"),
-8: SubResource("Resource_w2q0c"),
-9: SubResource("Resource_po4cj")
+5: SubResource("Resource_x0xk5"),
+6: SubResource("Resource_l1tjb"),
+7: SubResource("Resource_nj1qp"),
+8: SubResource("Resource_o1b8m"),
+9: SubResource("Resource_yy4qc")
 }
-_point_order = PackedInt32Array(7, 8, 9)
+_point_order = PackedInt32Array(5, 6, 7, 8, 9)
 _constraints = {}
 _next_key = 10
 _material_overrides = {}
@@ -1965,355 +2042,83 @@ tessellation_stages = 3
 tessellation_tolerance = 6.0
 curve_bake_interval = 20.0
 
-[sub_resource type="Resource" id="Resource_qnia4"]
-script = ExtResource("10_6xiyj")
-texture_idx = -7
-flip = false
-width = 1.0
-
-[sub_resource type="Resource" id="Resource_36ajm"]
-script = ExtResource("11_hexod")
-position = Vector2(-2260.61, 3772.87)
-point_in = Vector2(-60.2598, 197.079)
-point_out = Vector2(289.898, -7.11902)
-properties = SubResource("Resource_qnia4")
-
-[sub_resource type="Resource" id="Resource_8b6n5"]
-script = ExtResource("10_6xiyj")
-texture_idx = 1
-flip = false
-width = 1.0
-
-[sub_resource type="Resource" id="Resource_bkc48"]
-script = ExtResource("11_hexod")
-position = Vector2(-728.014, 228.658)
-point_in = Vector2(-152.477, 787.17)
-point_out = Vector2(310.656, -879.455)
-properties = SubResource("Resource_8b6n5")
-
-[sub_resource type="Resource" id="Resource_am0dg"]
-script = ExtResource("10_6xiyj")
-texture_idx = -7
-flip = false
-width = 1.0
-
-[sub_resource type="Resource" id="Resource_tn56i"]
-script = ExtResource("11_hexod")
-position = Vector2(2083.52, -1671.61)
-point_in = Vector2(-839.563, 1136.59)
-point_out = Vector2(-647.916, 25.1807)
-properties = SubResource("Resource_am0dg")
-
-[sub_resource type="Resource" id="Resource_v1x6q"]
-script = ExtResource("10_6xiyj")
-texture_idx = 0
-flip = false
-width = 1.0
-
-[sub_resource type="Resource" id="Resource_xrg34"]
-script = ExtResource("11_hexod")
-position = Vector2(137.42, 2085.94)
-point_in = Vector2(13.7715, 426.146)
-point_out = Vector2(-19.1758, -790.252)
-properties = SubResource("Resource_v1x6q")
-
-[sub_resource type="Resource" id="Resource_0q5yr"]
-script = ExtResource("10_6xiyj")
-texture_idx = 0
-flip = false
-width = 1.0
-
-[sub_resource type="Resource" id="Resource_ihqfm"]
-script = ExtResource("11_hexod")
-position = Vector2(-473.684, 3258.12)
-point_in = Vector2(-467.373, 360.503)
-point_out = Vector2(482.48, -360.992)
-properties = SubResource("Resource_0q5yr")
-
-[sub_resource type="Resource" id="Resource_xj2ry"]
-script = ExtResource("12_lq6dg")
-_points = {
-7: SubResource("Resource_36ajm"),
-8: SubResource("Resource_bkc48"),
-9: SubResource("Resource_tn56i"),
-10: SubResource("Resource_xrg34"),
-11: SubResource("Resource_ihqfm")
-}
-_point_order = PackedInt32Array(7, 11, 10, 8, 9)
-_constraints = {}
-_next_key = 12
-_material_overrides = {}
-tessellation_stages = 3
-tessellation_tolerance = 6.0
-curve_bake_interval = 20.0
-
-[sub_resource type="Resource" id="Resource_cc5xq"]
-script = ExtResource("10_6xiyj")
-texture_idx = -1
-flip = false
-width = 1.0
-
-[sub_resource type="Resource" id="Resource_nm20u"]
-script = ExtResource("11_hexod")
-position = Vector2(-2474.06, -130.395)
-point_in = Vector2(47.9814, 122.514)
-point_out = Vector2(652.039, 239.519)
-properties = SubResource("Resource_cc5xq")
-
-[sub_resource type="Resource" id="Resource_oky8f"]
-script = ExtResource("10_6xiyj")
-texture_idx = 17
-flip = false
-width = 1.0
-
-[sub_resource type="Resource" id="Resource_7hkna"]
-script = ExtResource("11_hexod")
-position = Vector2(-381.664, -2413.29)
-point_in = Vector2(55.0273, 49.84)
-point_out = Vector2(-563.602, -833.268)
-properties = SubResource("Resource_oky8f")
-
-[sub_resource type="Resource" id="Resource_t87xi"]
-script = ExtResource("10_6xiyj")
-texture_idx = -2
-flip = false
-width = 1.0
-
-[sub_resource type="Resource" id="Resource_c7641"]
-script = ExtResource("11_hexod")
-position = Vector2(568.869, -1043.48)
-point_in = Vector2(299.318, 340.132)
-point_out = Vector2(-311.375, -301.908)
-properties = SubResource("Resource_t87xi")
-
-[sub_resource type="Resource" id="Resource_1utmf"]
-script = ExtResource("10_6xiyj")
-texture_idx = 0
-flip = false
-width = 1.0
-
-[sub_resource type="Resource" id="Resource_mrsbr"]
-script = ExtResource("11_hexod")
-position = Vector2(-102.564, -173.547)
-point_in = Vector2(-700.148, 240.708)
-point_out = Vector2(841.572, -249.393)
-properties = SubResource("Resource_1utmf")
-
-[sub_resource type="Resource" id="Resource_y5bh7"]
-script = ExtResource("12_lq6dg")
-_points = {
-2: SubResource("Resource_nm20u"),
-3: SubResource("Resource_7hkna"),
-4: SubResource("Resource_c7641"),
-5: SubResource("Resource_mrsbr")
-}
-_point_order = PackedInt32Array(2, 5, 4, 3)
-_constraints = {}
-_next_key = 6
-_material_overrides = {}
-tessellation_stages = 3
-tessellation_tolerance = 6.0
-curve_bake_interval = 20.0
-
-[sub_resource type="Resource" id="Resource_dcmud"]
-script = ExtResource("10_6xiyj")
-texture_idx = 0
-flip = false
-width = 1.0
-
-[sub_resource type="Resource" id="Resource_uvsti"]
-script = ExtResource("11_hexod")
-position = Vector2(771.096, 758.551)
-point_in = Vector2(269.745, -10.6064)
-point_out = Vector2(-217.862, -47.6682)
-properties = SubResource("Resource_dcmud")
-
-[sub_resource type="Resource" id="Resource_2ldaf"]
-script = ExtResource("10_6xiyj")
-texture_idx = -1
-flip = false
-width = 1.0
-
-[sub_resource type="Resource" id="Resource_5ecpn"]
-script = ExtResource("11_hexod")
-position = Vector2(379.794, 631.892)
-point_in = Vector2(65.0566, 38.3551)
-point_out = Vector2(-322.77, -190.713)
-properties = SubResource("Resource_2ldaf")
-
-[sub_resource type="Resource" id="Resource_ibqnd"]
-script = ExtResource("10_6xiyj")
-texture_idx = 0
-flip = false
-width = 1.0
-
-[sub_resource type="Resource" id="Resource_p35y0"]
-script = ExtResource("11_hexod")
-position = Vector2(-418.623, -469.133)
-point_in = Vector2(47.9814, 122.514)
-point_out = Vector2(-35.1738, -139.864)
-properties = SubResource("Resource_ibqnd")
-
-[sub_resource type="Resource" id="Resource_ufvt1"]
-script = ExtResource("10_6xiyj")
-texture_idx = -5
-flip = false
-width = 1.0
-
-[sub_resource type="Resource" id="Resource_icndp"]
-script = ExtResource("11_hexod")
-position = Vector2(-484.121, -743.003)
-point_in = Vector2(0, 0)
-point_out = Vector2(0, 0)
-properties = SubResource("Resource_ufvt1")
-
-[sub_resource type="Resource" id="Resource_c2j2e"]
-script = ExtResource("12_lq6dg")
-_points = {
-0: SubResource("Resource_uvsti"),
-1: SubResource("Resource_5ecpn"),
-2: SubResource("Resource_p35y0"),
-3: SubResource("Resource_icndp")
-}
-_point_order = PackedInt32Array(0, 1, 2, 3)
-_constraints = {}
-_next_key = 4
-_material_overrides = {}
-tessellation_stages = 3
-tessellation_tolerance = 6.0
-curve_bake_interval = 20.0
-
-[sub_resource type="Resource" id="Resource_80euc"]
-script = ExtResource("10_6xiyj")
-texture_idx = -6
-flip = false
-width = 1.0
-
-[sub_resource type="Resource" id="Resource_lc43m"]
-script = ExtResource("11_hexod")
-position = Vector2(517.354, 592.095)
-point_in = Vector2(0, 0)
-point_out = Vector2(0, 0)
-properties = SubResource("Resource_80euc")
-
-[sub_resource type="Resource" id="Resource_jscny"]
-script = ExtResource("10_6xiyj")
-texture_idx = 1
-flip = false
-width = 1.0
-
-[sub_resource type="Resource" id="Resource_xvc07"]
-script = ExtResource("11_hexod")
-position = Vector2(42.7327, 87.6244)
-point_in = Vector2(275.361, 215.041)
-point_out = Vector2(-275.361, -215.041)
-properties = SubResource("Resource_jscny")
-
-[sub_resource type="Resource" id="Resource_33wyr"]
-script = ExtResource("10_6xiyj")
-texture_idx = -3
-flip = false
-width = 1.0
-
-[sub_resource type="Resource" id="Resource_l7uwp"]
-script = ExtResource("11_hexod")
-position = Vector2(-613.195, -251.497)
-point_in = Vector2(0, 0)
-point_out = Vector2(0, 0)
-properties = SubResource("Resource_33wyr")
-
-[sub_resource type="Resource" id="Resource_07l7r"]
-script = ExtResource("12_lq6dg")
-_points = {
-0: SubResource("Resource_lc43m"),
-1: SubResource("Resource_xvc07"),
-2: SubResource("Resource_l7uwp")
-}
-_point_order = PackedInt32Array(0, 1, 2)
-_constraints = {}
-_next_key = 3
-_material_overrides = {}
-tessellation_stages = 3
-tessellation_tolerance = 6.0
-curve_bake_interval = 20.0
-
-[sub_resource type="Resource" id="Resource_xrotv"]
-script = ExtResource("10_6xiyj")
-texture_idx = -5
-flip = false
-width = 1.0
-
-[sub_resource type="Resource" id="Resource_bhruw"]
-script = ExtResource("11_hexod")
-position = Vector2(-914.842, -1405.11)
-point_in = Vector2(-278.371, -148.165)
-point_out = Vector2(5.59729, 3.65332)
-properties = SubResource("Resource_xrotv")
-
 [sub_resource type="Resource" id="Resource_h6ke8"]
 script = ExtResource("10_6xiyj")
-texture_idx = 36
+texture_idx = 33
 flip = false
 width = 1.0
 
 [sub_resource type="Resource" id="Resource_gvsw5"]
 script = ExtResource("11_hexod")
-position = Vector2(30.0494, -4.11646)
-point_in = Vector2(45.498, -758.988)
-point_out = Vector2(24.2433, 755.005)
+position = Vector2(-324.072, -51.4539)
+point_in = Vector2(-108.434, -944.045)
+point_out = Vector2(32.974, 718.495)
 properties = SubResource("Resource_h6ke8")
-
-[sub_resource type="Resource" id="Resource_6ysnx"]
-script = ExtResource("10_6xiyj")
-texture_idx = 8
-flip = false
-width = 1.0
-
-[sub_resource type="Resource" id="Resource_lmj8e"]
-script = ExtResource("11_hexod")
-position = Vector2(-952.072, 1366.48)
-point_in = Vector2(4.02258, -1.85742)
-point_out = Vector2(-273.881, 125.716)
-properties = SubResource("Resource_6ysnx")
 
 [sub_resource type="Resource" id="Resource_ypmyr"]
 script = ExtResource("10_6xiyj")
-texture_idx = -11
+texture_idx = 5
 flip = false
 width = 1.0
 
 [sub_resource type="Resource" id="Resource_4hf07"]
 script = ExtResource("11_hexod")
-position = Vector2(-859.462, 1333.07)
-point_in = Vector2(324.995, -136.917)
+position = Vector2(-1208.26, 1498.83)
+point_in = Vector2(49.7915, -31.6162)
 point_out = Vector2(-13.1328, 8.23828)
 properties = SubResource("Resource_ypmyr")
 
 [sub_resource type="Resource" id="Resource_og2j1"]
 script = ExtResource("10_6xiyj")
-texture_idx = -19
+texture_idx = -29
 flip = false
 width = 1.0
 
 [sub_resource type="Resource" id="Resource_ahcec"]
 script = ExtResource("11_hexod")
-position = Vector2(-814.009, -1362.92)
+position = Vector2(-1641.78, -1568.09)
 point_in = Vector2(-20.0002, -13.0259)
-point_out = Vector2(288.592, 137.635)
+point_out = Vector2(448.134, 5.06006)
 properties = SubResource("Resource_og2j1")
+
+[sub_resource type="Resource" id="Resource_veqqb"]
+script = ExtResource("10_6xiyj")
+texture_idx = 0
+flip = false
+width = 1.0
+
+[sub_resource type="Resource" id="Resource_lums5"]
+script = ExtResource("11_hexod")
+position = Vector2(-864.153, 1259.93)
+point_in = Vector2(258.652, -193.325)
+point_out = Vector2(-22.6963, 32.1877)
+properties = SubResource("Resource_veqqb")
+
+[sub_resource type="Resource" id="Resource_eqfrd"]
+script = ExtResource("10_6xiyj")
+texture_idx = 1
+flip = false
+width = 1.0
+
+[sub_resource type="Resource" id="Resource_yl6g3"]
+script = ExtResource("11_hexod")
+position = Vector2(-1118.24, 1445.88)
+point_in = Vector2(0, 0)
+point_out = Vector2(0, 0)
+properties = SubResource("Resource_eqfrd")
 
 [sub_resource type="Resource" id="Resource_ufcbu"]
 script = ExtResource("12_lq6dg")
 _points = {
-0: SubResource("Resource_bhruw"),
 1: SubResource("Resource_gvsw5"),
-2: SubResource("Resource_lmj8e"),
 4: SubResource("Resource_4hf07"),
-5: SubResource("Resource_ahcec")
+5: SubResource("Resource_ahcec"),
+6: SubResource("Resource_lums5"),
+8: SubResource("Resource_yl6g3")
 }
-_point_order = PackedInt32Array(0, 5, 1, 4, 2)
+_point_order = PackedInt32Array(5, 1, 6, 8, 4)
 _constraints = {}
-_next_key = 6
+_next_key = 9
 _material_overrides = {}
 tessellation_stages = 3
 tessellation_tolerance = 6.0
@@ -2379,81 +2184,81 @@ fill_texture_angle_offset = 0.0
 fill_mesh_offset = 0.0
 render_offset = 0.0
 
-[sub_resource type="Resource" id="Resource_0wrbm"]
+[sub_resource type="Resource" id="Resource_tn8vp"]
+script = ExtResource("10_6xiyj")
+texture_idx = 0
+flip = false
+width = 1.0
+
+[sub_resource type="Resource" id="Resource_82qy4"]
+script = ExtResource("11_hexod")
+position = Vector2(-5298.53, 4708.18)
+point_in = Vector2(0, 0)
+point_out = Vector2(0, 0)
+properties = SubResource("Resource_tn8vp")
+
+[sub_resource type="Resource" id="Resource_s0qs8"]
+script = ExtResource("10_6xiyj")
+texture_idx = 0
+flip = false
+width = 1.0
+
+[sub_resource type="Resource" id="Resource_u2tln"]
+script = ExtResource("11_hexod")
+position = Vector2(-5092.34, 4176.67)
+point_in = Vector2(-148.16, 213.227)
+point_out = Vector2(135.47, -187.626)
+properties = SubResource("Resource_s0qs8")
+
+[sub_resource type="Resource" id="Resource_7fl3p"]
 script = ExtResource("10_6xiyj")
 texture_idx = -5
 flip = false
 width = 1.0
 
-[sub_resource type="Resource" id="Resource_62li8"]
+[sub_resource type="Resource" id="Resource_x04bh"]
 script = ExtResource("11_hexod")
-position = Vector2(907.613, -329.018)
+position = Vector2(-4617.65, 3761.11)
 point_in = Vector2(0, 0)
 point_out = Vector2(0, 0)
-properties = SubResource("Resource_0wrbm")
+properties = SubResource("Resource_7fl3p")
 
-[sub_resource type="Resource" id="Resource_3kqan"]
+[sub_resource type="Resource" id="Resource_uryon"]
 script = ExtResource("10_6xiyj")
-texture_idx = 5
+texture_idx = 0
 flip = false
 width = 1.0
 
-[sub_resource type="Resource" id="Resource_sjbxx"]
+[sub_resource type="Resource" id="Resource_fdrs3"]
 script = ExtResource("11_hexod")
-position = Vector2(800.999, -333.882)
-point_in = Vector2(2.98584, 0.994629)
-point_out = Vector2(-134.821, -5.8833)
-properties = SubResource("Resource_3kqan")
-
-[sub_resource type="Resource" id="Resource_6p5na"]
-script = ExtResource("10_6xiyj")
-texture_idx = -1
-flip = false
-width = 1.0
-
-[sub_resource type="Resource" id="Resource_igprt"]
-script = ExtResource("11_hexod")
-position = Vector2(215.683, -214.916)
-point_in = Vector2(166.836, -72.2319)
-point_out = Vector2(-202.874, 63.6855)
-properties = SubResource("Resource_6p5na")
-
-[sub_resource type="Resource" id="Resource_dbv5c"]
-script = ExtResource("10_6xiyj")
-texture_idx = -1
-flip = false
-width = 1.0
-
-[sub_resource type="Resource" id="Resource_vur2v"]
-script = ExtResource("11_hexod")
-position = Vector2(-225.535, 10.9287)
+position = Vector2(-5293.73, 4623.61)
 point_in = Vector2(0, 0)
 point_out = Vector2(0, 0)
-properties = SubResource("Resource_dbv5c")
+properties = SubResource("Resource_uryon")
 
-[sub_resource type="Resource" id="Resource_bagqv"]
+[sub_resource type="Resource" id="Resource_8lv5l"]
 script = ExtResource("10_6xiyj")
-texture_idx = 4
+texture_idx = 0
 flip = false
 width = 1.0
 
-[sub_resource type="Resource" id="Resource_4rx2h"]
+[sub_resource type="Resource" id="Resource_f1i0w"]
 script = ExtResource("11_hexod")
-position = Vector2(-311.728, 76.1338)
+position = Vector2(-4705.79, 3809.68)
 point_in = Vector2(0, 0)
 point_out = Vector2(0, 0)
-properties = SubResource("Resource_bagqv")
+properties = SubResource("Resource_8lv5l")
 
-[sub_resource type="Resource" id="Resource_pakfj"]
+[sub_resource type="Resource" id="Resource_807kf"]
 script = ExtResource("12_lq6dg")
 _points = {
-0: SubResource("Resource_62li8"),
-1: SubResource("Resource_sjbxx"),
-2: SubResource("Resource_igprt"),
-3: SubResource("Resource_vur2v"),
-4: SubResource("Resource_4rx2h")
+0: SubResource("Resource_82qy4"),
+1: SubResource("Resource_u2tln"),
+3: SubResource("Resource_x04bh"),
+4: SubResource("Resource_fdrs3"),
+5: SubResource("Resource_f1i0w")
 }
-_point_order = PackedInt32Array(0, 1, 2, 3, 4)
+_point_order = PackedInt32Array(0, 4, 1, 5, 3)
 _constraints = {}
 _next_key = 6
 _material_overrides = {}
@@ -2461,713 +2266,109 @@ tessellation_stages = 3
 tessellation_tolerance = 6.0
 curve_bake_interval = 20.0
 
-[sub_resource type="Resource" id="Resource_ili3e"]
+[sub_resource type="Resource" id="Resource_1nke7"]
 script = ExtResource("10_6xiyj")
 texture_idx = 0
 flip = false
 width = 1.0
 
-[sub_resource type="Resource" id="Resource_jp3uq"]
+[sub_resource type="Resource" id="Resource_j2dtq"]
 script = ExtResource("11_hexod")
-position = Vector2(425.846, 411.795)
+position = Vector2(-3596.06, 9607.03)
 point_in = Vector2(0, 0)
 point_out = Vector2(0, 0)
-properties = SubResource("Resource_ili3e")
+properties = SubResource("Resource_1nke7")
 
-[sub_resource type="Resource" id="Resource_581ut"]
-script = ExtResource("10_6xiyj")
-texture_idx = 7
-flip = false
-width = 1.0
-
-[sub_resource type="Resource" id="Resource_aiai8"]
-script = ExtResource("11_hexod")
-position = Vector2(339.293, 365.096)
-point_in = Vector2(0, 0)
-point_out = Vector2(0, 0)
-properties = SubResource("Resource_581ut")
-
-[sub_resource type="Resource" id="Resource_wxq3u"]
-script = ExtResource("10_6xiyj")
-texture_idx = 13
-flip = false
-width = 1.0
-
-[sub_resource type="Resource" id="Resource_scjx0"]
-script = ExtResource("11_hexod")
-position = Vector2(-66.6973, -34.8887)
-point_in = Vector2(122.846, 307.554)
-point_out = Vector2(-77.7598, -136.251)
-properties = SubResource("Resource_wxq3u")
-
-[sub_resource type="Resource" id="Resource_iryh7"]
+[sub_resource type="Resource" id="Resource_0r867"]
 script = ExtResource("10_6xiyj")
 texture_idx = 0
 flip = false
 width = 1.0
 
-[sub_resource type="Resource" id="Resource_fkcln"]
+[sub_resource type="Resource" id="Resource_aeh5m"]
 script = ExtResource("11_hexod")
-position = Vector2(-197.162, -432.107)
-point_in = Vector2(0, 0)
-point_out = Vector2(0, 0)
-properties = SubResource("Resource_iryh7")
+position = Vector2(-3063.36, 10355.6)
+point_in = Vector2(-116.375, -265.507)
+point_out = Vector2(197.558, 323.215)
+properties = SubResource("Resource_0r867")
 
-[sub_resource type="Resource" id="Resource_cwmfj"]
+[sub_resource type="Resource" id="Resource_f0s01"]
 script = ExtResource("10_6xiyj")
 texture_idx = 0
 flip = false
 width = 1.0
 
-[sub_resource type="Resource" id="Resource_ln6qe"]
+[sub_resource type="Resource" id="Resource_5dosa"]
 script = ExtResource("11_hexod")
-position = Vector2(-218.854, -535.376)
+position = Vector2(-3567.84, 12355.9)
+point_in = Vector2(897.034, -748.73)
+point_out = Vector2(-1309.5, 999.392)
+properties = SubResource("Resource_f0s01")
+
+[sub_resource type="Resource" id="Resource_akss0"]
+script = ExtResource("10_6xiyj")
+texture_idx = 14
+flip = false
+width = 1.0
+
+[sub_resource type="Resource" id="Resource_oesr3"]
+script = ExtResource("11_hexod")
+position = Vector2(-6386.97, 12428.5)
+point_in = Vector2(247.161, 219.979)
+point_out = Vector2(-65.083, -50.7969)
+properties = SubResource("Resource_akss0")
+
+[sub_resource type="Resource" id="Resource_yix6o"]
+script = ExtResource("10_6xiyj")
+texture_idx = 0
+flip = false
+width = 1.0
+
+[sub_resource type="Resource" id="Resource_ufttp"]
+script = ExtResource("11_hexod")
+position = Vector2(-6824.67, 11982.6)
 point_in = Vector2(0, 0)
 point_out = Vector2(0, 0)
-properties = SubResource("Resource_cwmfj")
+properties = SubResource("Resource_yix6o")
 
-[sub_resource type="Resource" id="Resource_ibs1j"]
+[sub_resource type="Resource" id="Resource_oevkq"]
+script = ExtResource("10_6xiyj")
+texture_idx = 0
+flip = false
+width = 1.0
+
+[sub_resource type="Resource" id="Resource_87mnm"]
+script = ExtResource("11_hexod")
+position = Vector2(-6761.08, 12047.6)
+point_in = Vector2(0, 0)
+point_out = Vector2(0, 0)
+properties = SubResource("Resource_oevkq")
+
+[sub_resource type="Resource" id="Resource_sdjfe"]
+script = ExtResource("10_6xiyj")
+texture_idx = 0
+flip = false
+width = 1.0
+
+[sub_resource type="Resource" id="Resource_kc648"]
+script = ExtResource("11_hexod")
+position = Vector2(-3527.03, 9690.6)
+point_in = Vector2(0, 0)
+point_out = Vector2(0, 0)
+properties = SubResource("Resource_sdjfe")
+
+[sub_resource type="Resource" id="Resource_qhsj7"]
 script = ExtResource("12_lq6dg")
 _points = {
-0: SubResource("Resource_jp3uq"),
-1: SubResource("Resource_aiai8"),
-2: SubResource("Resource_scjx0"),
-3: SubResource("Resource_fkcln"),
-4: SubResource("Resource_ln6qe")
+0: SubResource("Resource_j2dtq"),
+1: SubResource("Resource_aeh5m"),
+2: SubResource("Resource_5dosa"),
+3: SubResource("Resource_oesr3"),
+4: SubResource("Resource_ufttp"),
+5: SubResource("Resource_87mnm"),
+6: SubResource("Resource_kc648")
 }
-_point_order = PackedInt32Array(0, 1, 2, 3, 4)
-_constraints = {}
-_next_key = 5
-_material_overrides = {}
-tessellation_stages = 3
-tessellation_tolerance = 6.0
-curve_bake_interval = 20.0
-
-[sub_resource type="Resource" id="Resource_euddr"]
-script = ExtResource("10_6xiyj")
-texture_idx = -10
-flip = false
-width = 1.0
-
-[sub_resource type="Resource" id="Resource_vyqrd"]
-script = ExtResource("11_hexod")
-position = Vector2(-243.56, -1526.09)
-point_in = Vector2(0, 0)
-point_out = Vector2(0, 0)
-properties = SubResource("Resource_euddr")
-
-[sub_resource type="Resource" id="Resource_120e7"]
-script = ExtResource("10_6xiyj")
-texture_idx = 0
-flip = false
-width = 1.0
-
-[sub_resource type="Resource" id="Resource_ocjy1"]
-script = ExtResource("11_hexod")
-position = Vector2(-101.726, -1145.22)
-point_in = Vector2(-7.46924, -90.4961)
-point_out = Vector2(76.7139, 391.84)
-properties = SubResource("Resource_120e7")
-
-[sub_resource type="Resource" id="Resource_xyffs"]
-script = ExtResource("10_6xiyj")
-texture_idx = -5
-flip = false
-width = 1.0
-
-[sub_resource type="Resource" id="Resource_le4h5"]
-script = ExtResource("11_hexod")
-position = Vector2(0.61377, 48.0059)
-point_in = Vector2(-13.3867, -223.402)
-point_out = Vector2(10.8452, 211.457)
-properties = SubResource("Resource_xyffs")
-
-[sub_resource type="Resource" id="Resource_sg4ss"]
-script = ExtResource("10_6xiyj")
-texture_idx = 5
-flip = false
-width = 1.0
-
-[sub_resource type="Resource" id="Resource_v3qfb"]
-script = ExtResource("11_hexod")
-position = Vector2(-104.34, 1268.91)
-point_in = Vector2(14.0103, -195.496)
-point_out = Vector2(-14.0107, 22.7676)
-properties = SubResource("Resource_sg4ss")
-
-[sub_resource type="Resource" id="Resource_c8nk6"]
-script = ExtResource("10_6xiyj")
-texture_idx = -10
-flip = false
-width = 1.0
-
-[sub_resource type="Resource" id="Resource_p8wp8"]
-script = ExtResource("11_hexod")
-position = Vector2(-139.3, 1373.19)
-point_in = Vector2(0, 0)
-point_out = Vector2(0, 0)
-properties = SubResource("Resource_c8nk6")
-
-[sub_resource type="Resource" id="Resource_huca8"]
-script = ExtResource("10_6xiyj")
-texture_idx = -1
-flip = false
-width = 1.0
-
-[sub_resource type="Resource" id="Resource_if4cq"]
-script = ExtResource("11_hexod")
-position = Vector2(-196.919, -1431.77)
-point_in = Vector2(0, 0)
-point_out = Vector2(0, 0)
-properties = SubResource("Resource_huca8")
-
-[sub_resource type="Resource" id="Resource_852eu"]
-script = ExtResource("10_6xiyj")
-texture_idx = 0
-flip = false
-width = 1.0
-
-[sub_resource type="Resource" id="Resource_obuoi"]
-script = ExtResource("11_hexod")
-position = Vector2(-19.2046, -522.717)
-point_in = Vector2(0, 0)
-point_out = Vector2(0, 0)
-properties = SubResource("Resource_852eu")
-
-[sub_resource type="Resource" id="Resource_y7pkg"]
-script = ExtResource("10_6xiyj")
-texture_idx = 0
-flip = false
-width = 1.0
-
-[sub_resource type="Resource" id="Resource_j6o7r"]
-script = ExtResource("11_hexod")
-position = Vector2(-26.6006, 731.352)
-point_in = Vector2(30.6494, -164.436)
-point_out = Vector2(-38.1406, 290.293)
-properties = SubResource("Resource_y7pkg")
-
-[sub_resource type="Resource" id="Resource_6rkpk"]
-script = ExtResource("12_lq6dg")
-_points = {
-0: SubResource("Resource_vyqrd"),
-1: SubResource("Resource_ocjy1"),
-2: SubResource("Resource_le4h5"),
-3: SubResource("Resource_v3qfb"),
-4: SubResource("Resource_p8wp8"),
-5: SubResource("Resource_if4cq"),
-9: SubResource("Resource_obuoi"),
-10: SubResource("Resource_j6o7r")
-}
-_point_order = PackedInt32Array(0, 5, 1, 9, 2, 10, 3, 4)
-_constraints = {}
-_next_key = 11
-_material_overrides = {}
-tessellation_stages = 3
-tessellation_tolerance = 6.0
-curve_bake_interval = 20.0
-
-[sub_resource type="Resource" id="Resource_p181s"]
-script = ExtResource("10_6xiyj")
-texture_idx = -6
-flip = false
-width = 1.0
-
-[sub_resource type="Resource" id="Resource_vbg0o"]
-script = ExtResource("11_hexod")
-position = Vector2(-23.1172, -922.406)
-point_in = Vector2(5.61865, -14.2324)
-point_out = Vector2(-5.61865, 14.2324)
-properties = SubResource("Resource_p181s")
-
-[sub_resource type="Resource" id="Resource_22s06"]
-script = ExtResource("10_6xiyj")
-texture_idx = 1
-flip = false
-width = 1.0
-
-[sub_resource type="Resource" id="Resource_u2p48"]
-script = ExtResource("11_hexod")
-position = Vector2(-69.9614, -829.24)
-point_in = Vector2(9.73291, -31.8027)
-point_out = Vector2(-101.965, 307.529)
-properties = SubResource("Resource_22s06")
-
-[sub_resource type="Resource" id="Resource_s1gm8"]
-script = ExtResource("10_6xiyj")
-texture_idx = 3
-flip = false
-width = 1.0
-
-[sub_resource type="Resource" id="Resource_isn05"]
-script = ExtResource("11_hexod")
-position = Vector2(-20.9292, 34.9531)
-point_in = Vector2(-73.4819, -219.912)
-point_out = Vector2(39.4082, 188.531)
-properties = SubResource("Resource_s1gm8")
-
-[sub_resource type="Resource" id="Resource_8aerb"]
-script = ExtResource("10_6xiyj")
-texture_idx = 7
-flip = false
-width = 1.0
-
-[sub_resource type="Resource" id="Resource_4d7n6"]
-script = ExtResource("11_hexod")
-position = Vector2(210.608, 631.529)
-point_in = Vector2(-173.546, -172.297)
-point_out = Vector2(147.245, 163.289)
-properties = SubResource("Resource_8aerb")
-
-[sub_resource type="Resource" id="Resource_62gqx"]
-script = ExtResource("10_6xiyj")
-texture_idx = 0
-flip = false
-width = 1.0
-
-[sub_resource type="Resource" id="Resource_4wxhu"]
-script = ExtResource("11_hexod")
-position = Vector2(479.422, 847.238)
-point_in = Vector2(0, 0)
-point_out = Vector2(0, 0)
-properties = SubResource("Resource_62gqx")
-
-[sub_resource type="Resource" id="Resource_afljw"]
-script = ExtResource("10_6xiyj")
-texture_idx = -7
-flip = false
-width = 1.0
-
-[sub_resource type="Resource" id="Resource_cwd8t"]
-script = ExtResource("11_hexod")
-position = Vector2(571.625, 882.449)
-point_in = Vector2(0, 0)
-point_out = Vector2(0, 0)
-properties = SubResource("Resource_afljw")
-
-[sub_resource type="Resource" id="Resource_akoln"]
-script = ExtResource("12_lq6dg")
-_points = {
-0: SubResource("Resource_vbg0o"),
-2: SubResource("Resource_u2p48"),
-3: SubResource("Resource_isn05"),
-4: SubResource("Resource_4d7n6"),
-5: SubResource("Resource_4wxhu"),
-6: SubResource("Resource_cwd8t")
-}
-_point_order = PackedInt32Array(0, 2, 3, 4, 5, 6)
-_constraints = {}
-_next_key = 7
-_material_overrides = {}
-tessellation_stages = 3
-tessellation_tolerance = 6.0
-curve_bake_interval = 20.0
-
-[sub_resource type="Resource" id="Resource_iy4oa"]
-script = ExtResource("10_6xiyj")
-texture_idx = -7
-flip = false
-width = 1.0
-
-[sub_resource type="Resource" id="Resource_b2vmk"]
-script = ExtResource("11_hexod")
-position = Vector2(424.977, -208.727)
-point_in = Vector2(0, 0)
-point_out = Vector2(0, 0)
-properties = SubResource("Resource_iy4oa")
-
-[sub_resource type="Resource" id="Resource_5k7uq"]
-script = ExtResource("10_6xiyj")
-texture_idx = 2
-flip = false
-width = 1.0
-
-[sub_resource type="Resource" id="Resource_7b38w"]
-script = ExtResource("11_hexod")
-position = Vector2(349.881, -148.068)
-point_in = Vector2(25.4846, -21.2383)
-point_out = Vector2(-25.4846, 21.2383)
-properties = SubResource("Resource_5k7uq")
-
-[sub_resource type="Resource" id="Resource_0cs1k"]
-script = ExtResource("10_6xiyj")
-texture_idx = -4
-flip = false
-width = 1.0
-
-[sub_resource type="Resource" id="Resource_un7qf"]
-script = ExtResource("11_hexod")
-position = Vector2(25.9052, 43.3496)
-point_in = Vector2(161.081, -72.1914)
-point_out = Vector2(-202.999, 76.7129)
-properties = SubResource("Resource_0cs1k")
-
-[sub_resource type="Resource" id="Resource_yfggy"]
-script = ExtResource("10_6xiyj")
-texture_idx = 0
-flip = false
-width = 1.0
-
-[sub_resource type="Resource" id="Resource_kqygl"]
-script = ExtResource("11_hexod")
-position = Vector2(-463.584, 130.404)
-point_in = Vector2(0, 0)
-point_out = Vector2(0, 0)
-properties = SubResource("Resource_yfggy")
-
-[sub_resource type="Resource" id="Resource_wf03j"]
-script = ExtResource("10_6xiyj")
-texture_idx = -9
-flip = false
-width = 1.0
-
-[sub_resource type="Resource" id="Resource_v25kj"]
-script = ExtResource("11_hexod")
-position = Vector2(-605.801, 147.42)
-point_in = Vector2(0, 0)
-point_out = Vector2(0, 0)
-properties = SubResource("Resource_wf03j")
-
-[sub_resource type="Resource" id="Resource_24alw"]
-script = ExtResource("12_lq6dg")
-_points = {
-0: SubResource("Resource_b2vmk"),
-1: SubResource("Resource_7b38w"),
-2: SubResource("Resource_un7qf"),
-3: SubResource("Resource_kqygl"),
-4: SubResource("Resource_v25kj")
-}
-_point_order = PackedInt32Array(0, 1, 2, 3, 4)
-_constraints = {}
-_next_key = 6
-_material_overrides = {}
-tessellation_stages = 3
-tessellation_tolerance = 6.0
-curve_bake_interval = 20.0
-
-[sub_resource type="Resource" id="Resource_1un43"]
-script = ExtResource("10_6xiyj")
-texture_idx = 0
-flip = false
-width = 1.0
-
-[sub_resource type="Resource" id="Resource_cpok8"]
-script = ExtResource("11_hexod")
-position = Vector2(-390.248, 382.338)
-point_in = Vector2(0, 0)
-point_out = Vector2(0, 0)
-properties = SubResource("Resource_1un43")
-
-[sub_resource type="Resource" id="Resource_cmbly"]
-script = ExtResource("10_6xiyj")
-texture_idx = 0
-flip = false
-width = 1.0
-
-[sub_resource type="Resource" id="Resource_e0e3m"]
-script = ExtResource("11_hexod")
-position = Vector2(-326.569, 307.721)
-point_in = Vector2(-9.34387, 11.3457)
-point_out = Vector2(82.995, -116.211)
-properties = SubResource("Resource_cmbly")
-
-[sub_resource type="Resource" id="Resource_lb0oi"]
-script = ExtResource("10_6xiyj")
-texture_idx = 0
-flip = false
-width = 1.0
-
-[sub_resource type="Resource" id="Resource_vv50e"]
-script = ExtResource("11_hexod")
-position = Vector2(-123.285, 98.4238)
-point_in = Vector2(-78.0881, 70.7461)
-point_out = Vector2(119.468, -94.7715)
-properties = SubResource("Resource_lb0oi")
-
-[sub_resource type="Resource" id="Resource_tv6tb"]
-script = ExtResource("10_6xiyj")
-texture_idx = 0
-flip = false
-width = 1.0
-
-[sub_resource type="Resource" id="Resource_fdqxf"]
-script = ExtResource("11_hexod")
-position = Vector2(267.042, -152.469)
-point_in = Vector2(-215.221, 48.6914)
-point_out = Vector2(97.7057, -5.88281)
-properties = SubResource("Resource_tv6tb")
-
-[sub_resource type="Resource" id="Resource_lw42x"]
-script = ExtResource("10_6xiyj")
-texture_idx = 0
-flip = false
-width = 1.0
-
-[sub_resource type="Resource" id="Resource_37usp"]
-script = ExtResource("11_hexod")
-position = Vector2(570.67, -190.299)
-point_in = Vector2(0, 0)
-point_out = Vector2(0, 0)
-properties = SubResource("Resource_lw42x")
-
-[sub_resource type="Resource" id="Resource_ftopq"]
-script = ExtResource("10_6xiyj")
-texture_idx = 0
-flip = false
-width = 1.0
-
-[sub_resource type="Resource" id="Resource_003ug"]
-script = ExtResource("11_hexod")
-position = Vector2(478.305, -188.564)
-point_in = Vector2(0, 0)
-point_out = Vector2(0, 0)
-properties = SubResource("Resource_ftopq")
-
-[sub_resource type="Resource" id="Resource_e6ylv"]
-script = ExtResource("12_lq6dg")
-_points = {
-0: SubResource("Resource_cpok8"),
-1: SubResource("Resource_e0e3m"),
-2: SubResource("Resource_vv50e"),
-3: SubResource("Resource_fdqxf"),
-5: SubResource("Resource_37usp"),
-6: SubResource("Resource_003ug")
-}
-_point_order = PackedInt32Array(0, 1, 2, 3, 6, 5)
-_constraints = {}
-_next_key = 7
-_material_overrides = {}
-tessellation_stages = 3
-tessellation_tolerance = 6.0
-curve_bake_interval = 20.0
-
-[sub_resource type="Resource" id="Resource_ecnto"]
-script = ExtResource("10_6xiyj")
-texture_idx = -2
-flip = false
-width = 1.0
-
-[sub_resource type="Resource" id="Resource_3df7e"]
-script = ExtResource("11_hexod")
-position = Vector2(-889.659, -1546.96)
-point_in = Vector2(-278.371, -148.165)
-point_out = Vector2(21.6152, 5.65625)
-properties = SubResource("Resource_ecnto")
-
-[sub_resource type="Resource" id="Resource_l7lk4"]
-script = ExtResource("10_6xiyj")
-texture_idx = 28
-flip = false
-width = 1.0
-
-[sub_resource type="Resource" id="Resource_xsxru"]
-script = ExtResource("11_hexod")
-position = Vector2(44.5693, -38.3574)
-point_in = Vector2(3.26563, -277.521)
-point_out = Vector2(-55.5957, 322.545)
-properties = SubResource("Resource_l7lk4")
-
-[sub_resource type="Resource" id="Resource_u8aku"]
-script = ExtResource("10_6xiyj")
-texture_idx = -10
-flip = false
-width = 1.0
-
-[sub_resource type="Resource" id="Resource_e1ji8"]
-script = ExtResource("11_hexod")
-position = Vector2(-693.55, 1446.99)
-point_in = Vector2(45.1494, -39.6563)
-point_out = Vector2(-273.881, 125.716)
-properties = SubResource("Resource_u8aku")
-
-[sub_resource type="Resource" id="Resource_k45e4"]
-script = ExtResource("10_6xiyj")
-texture_idx = -27
-flip = false
-width = 1.0
-
-[sub_resource type="Resource" id="Resource_7281x"]
-script = ExtResource("11_hexod")
-position = Vector2(-609.97, 1383.34)
-point_in = Vector2(297.521, -248.708)
-point_out = Vector2(-10.8828, 11.2383)
-properties = SubResource("Resource_k45e4")
-
-[sub_resource type="Resource" id="Resource_mldxy"]
-script = ExtResource("10_6xiyj")
-texture_idx = -11
-flip = false
-width = 1.0
-
-[sub_resource type="Resource" id="Resource_invny"]
-script = ExtResource("11_hexod")
-position = Vector2(-760.135, -1501.78)
-point_in = Vector2(-38.0215, -13.8145)
-point_out = Vector2(533.448, 185.857)
-properties = SubResource("Resource_mldxy")
-
-[sub_resource type="Resource" id="Resource_8hqhl"]
-script = ExtResource("10_6xiyj")
-texture_idx = 4
-flip = false
-width = 1.0
-
-[sub_resource type="Resource" id="Resource_w1yqi"]
-script = ExtResource("11_hexod")
-position = Vector2(-132.702, -911.171)
-point_in = Vector2(0, 0)
-point_out = Vector2(0, 0)
-properties = SubResource("Resource_8hqhl")
-
-[sub_resource type="Resource" id="Resource_rtq2o"]
-script = ExtResource("10_6xiyj")
-texture_idx = 0
-flip = false
-width = 1.0
-
-[sub_resource type="Resource" id="Resource_xjgd5"]
-script = ExtResource("11_hexod")
-position = Vector2(-154.772, 751.916)
-point_in = Vector2(53.6816, -91.0566)
-point_out = Vector2(-33.4688, 93.7715)
-properties = SubResource("Resource_rtq2o")
-
-[sub_resource type="Resource" id="Resource_r0nw0"]
-script = ExtResource("10_6xiyj")
-texture_idx = 0
-flip = false
-width = 1.0
-
-[sub_resource type="Resource" id="Resource_krg18"]
-script = ExtResource("11_hexod")
-position = Vector2(-58.6982, -697.834)
-point_in = Vector2(0, 0)
-point_out = Vector2(0, 0)
-properties = SubResource("Resource_r0nw0")
-
-[sub_resource type="Resource" id="Resource_81848"]
-script = ExtResource("12_lq6dg")
-_points = {
-0: SubResource("Resource_3df7e"),
-1: SubResource("Resource_xsxru"),
-2: SubResource("Resource_e1ji8"),
-4: SubResource("Resource_7281x"),
-5: SubResource("Resource_invny"),
-6: SubResource("Resource_w1yqi"),
-7: SubResource("Resource_xjgd5"),
-10: SubResource("Resource_krg18")
-}
-_point_order = PackedInt32Array(0, 5, 6, 10, 1, 7, 4, 2)
-_constraints = {}
-_next_key = 11
-_material_overrides = {}
-tessellation_stages = 3
-tessellation_tolerance = 6.0
-curve_bake_interval = 20.0
-
-[sub_resource type="Resource" id="Resource_ybmxg"]
-script = ExtResource("10_6xiyj")
-texture_idx = 3
-flip = false
-width = 1.0
-
-[sub_resource type="Resource" id="Resource_a4rim"]
-script = ExtResource("11_hexod")
-position = Vector2(1656.59, 1088.07)
-point_in = Vector2(0, 0)
-point_out = Vector2(0, 0)
-properties = SubResource("Resource_ybmxg")
-
-[sub_resource type="Resource" id="Resource_dp23t"]
-script = ExtResource("10_6xiyj")
-texture_idx = 2
-flip = false
-width = 1.0
-
-[sub_resource type="Resource" id="Resource_m3x4i"]
-script = ExtResource("11_hexod")
-position = Vector2(1549.43, 1061.64)
-point_in = Vector2(0, 0)
-point_out = Vector2(-118.963, -43.8779)
-properties = SubResource("Resource_dp23t")
-
-[sub_resource type="Resource" id="Resource_kefi3"]
-script = ExtResource("10_6xiyj")
-texture_idx = -2
-flip = false
-width = 1.0
-
-[sub_resource type="Resource" id="Resource_xloa2"]
-script = ExtResource("11_hexod")
-position = Vector2(664.119, 658.591)
-point_in = Vector2(186.041, 149.972)
-point_out = Vector2(-324.902, -203.409)
-properties = SubResource("Resource_kefi3")
-
-[sub_resource type="Resource" id="Resource_walxf"]
-script = ExtResource("10_6xiyj")
-texture_idx = 0
-flip = false
-width = 1.0
-
-[sub_resource type="Resource" id="Resource_tbx24"]
-script = ExtResource("11_hexod")
-position = Vector2(-179.197, -277.565)
-point_in = Vector2(226, 492)
-point_out = Vector2(-134.18, -333.454)
-properties = SubResource("Resource_walxf")
-
-[sub_resource type="Resource" id="Resource_n4yfj"]
-script = ExtResource("10_6xiyj")
-texture_idx = 0
-flip = false
-width = 1.0
-
-[sub_resource type="Resource" id="Resource_c4rp3"]
-script = ExtResource("11_hexod")
-position = Vector2(-316.408, -1389.74)
-point_in = Vector2(-12.4746, 43.6533)
-point_out = Vector2(7.12891, -54.3447)
-properties = SubResource("Resource_n4yfj")
-
-[sub_resource type="Resource" id="Resource_dpk1i"]
-script = ExtResource("10_6xiyj")
-texture_idx = -19
-flip = false
-width = 1.0
-
-[sub_resource type="Resource" id="Resource_l3bnq"]
-script = ExtResource("11_hexod")
-position = Vector2(-294.094, -1487.95)
-point_in = Vector2(0, 0)
-point_out = Vector2(0, 0)
-properties = SubResource("Resource_dpk1i")
-
-[sub_resource type="Resource" id="Resource_bjchl"]
-script = ExtResource("10_6xiyj")
-texture_idx = 0
-flip = false
-width = 1.0
-
-[sub_resource type="Resource" id="Resource_vspaf"]
-script = ExtResource("11_hexod")
-position = Vector2(-316.096, -1006.28)
-point_in = Vector2(0, 0)
-point_out = Vector2(0, 0)
-properties = SubResource("Resource_bjchl")
-
-[sub_resource type="Resource" id="Resource_6jmmm"]
-script = ExtResource("12_lq6dg")
-_points = {
-0: SubResource("Resource_a4rim"),
-1: SubResource("Resource_m3x4i"),
-2: SubResource("Resource_xloa2"),
-3: SubResource("Resource_tbx24"),
-4: SubResource("Resource_c4rp3"),
-5: SubResource("Resource_l3bnq"),
-7: SubResource("Resource_vspaf")
-}
-_point_order = PackedInt32Array(0, 1, 2, 3, 7, 4, 5)
+_point_order = PackedInt32Array(0, 6, 1, 2, 3, 5, 4)
 _constraints = {}
 _next_key = 8
 _material_overrides = {}
@@ -3175,339 +2376,161 @@ tessellation_stages = 3
 tessellation_tolerance = 6.0
 curve_bake_interval = 20.0
 
-[sub_resource type="Resource" id="Resource_y8xlu"]
+[sub_resource type="Resource" id="Resource_kye4j"]
 script = ExtResource("10_6xiyj")
 texture_idx = 0
 flip = false
 width = 1.0
 
-[sub_resource type="Resource" id="Resource_eo2uh"]
+[sub_resource type="Resource" id="Resource_b0ehk"]
 script = ExtResource("11_hexod")
-position = Vector2(-209.855, 622.212)
+position = Vector2(-12270.5, 1582.7)
 point_in = Vector2(0, 0)
 point_out = Vector2(0, 0)
-properties = SubResource("Resource_y8xlu")
+properties = SubResource("Resource_kye4j")
 
-[sub_resource type="Resource" id="Resource_s0pbh"]
+[sub_resource type="Resource" id="Resource_sxfvy"]
 script = ExtResource("10_6xiyj")
-texture_idx = -16
+texture_idx = 3
 flip = false
 width = 1.0
 
-[sub_resource type="Resource" id="Resource_fuvil"]
+[sub_resource type="Resource" id="Resource_wuojx"]
 script = ExtResource("11_hexod")
-position = Vector2(-207.477, 535.871)
-point_in = Vector2(-0.0371094, 36.3674)
-point_out = Vector2(8.9043, -200.552)
-properties = SubResource("Resource_s0pbh")
+position = Vector2(-9380.19, 2792.18)
+point_in = Vector2(0, 0)
+point_out = Vector2(0, 0)
+properties = SubResource("Resource_sxfvy")
 
-[sub_resource type="Resource" id="Resource_hr3lf"]
-script = ExtResource("10_6xiyj")
-texture_idx = -1
-flip = false
-width = 1.0
-
-[sub_resource type="Resource" id="Resource_lipkf"]
-script = ExtResource("11_hexod")
-position = Vector2(77.3047, -53.3242)
-point_in = Vector2(-133.238, 137.459)
-point_out = Vector2(108.086, -126.239)
-properties = SubResource("Resource_hr3lf")
-
-[sub_resource type="Resource" id="Resource_6gwc1"]
+[sub_resource type="Resource" id="Resource_wl21t"]
 script = ExtResource("10_6xiyj")
 texture_idx = 0
 flip = false
 width = 1.0
 
-[sub_resource type="Resource" id="Resource_x2rex"]
+[sub_resource type="Resource" id="Resource_ttdpd"]
 script = ExtResource("11_hexod")
-position = Vector2(495.498, -328.516)
-point_in = Vector2(-142.416, 70.3577)
-point_out = Vector2(20.7656, -12.2703)
-properties = SubResource("Resource_6gwc1")
+position = Vector2(-10502.2, 1471.96)
+point_in = Vector2(-688.646, -310.958)
+point_out = Vector2(851.904, 372.308)
+properties = SubResource("Resource_wl21t")
 
-[sub_resource type="Resource" id="Resource_3nfwn"]
+[sub_resource type="Resource" id="Resource_g387j"]
 script = ExtResource("10_6xiyj")
-texture_idx = 2
+texture_idx = 0
 flip = false
 width = 1.0
 
-[sub_resource type="Resource" id="Resource_6k3p5"]
+[sub_resource type="Resource" id="Resource_0rglg"]
 script = ExtResource("11_hexod")
-position = Vector2(627.842, -372.638)
+position = Vector2(-12178.7, 1529.14)
+point_in = Vector2(-20.2051, 12.3472)
+point_out = Vector2(167.45, -75.4495)
+properties = SubResource("Resource_g387j")
+
+[sub_resource type="Resource" id="Resource_eypq4"]
+script = ExtResource("10_6xiyj")
+texture_idx = 0
+flip = false
+width = 1.0
+
+[sub_resource type="Resource" id="Resource_s6ls3"]
+script = ExtResource("11_hexod")
+position = Vector2(-9421.01, 2697.5)
 point_in = Vector2(0, 0)
 point_out = Vector2(0, 0)
-properties = SubResource("Resource_3nfwn")
+properties = SubResource("Resource_eypq4")
 
-[sub_resource type="Resource" id="Resource_po5j1"]
+[sub_resource type="Resource" id="Resource_0o1rc"]
 script = ExtResource("12_lq6dg")
 _points = {
-0: SubResource("Resource_eo2uh"),
-1: SubResource("Resource_fuvil"),
-2: SubResource("Resource_lipkf"),
-3: SubResource("Resource_x2rex"),
-4: SubResource("Resource_6k3p5")
+0: SubResource("Resource_b0ehk"),
+1: SubResource("Resource_wuojx"),
+3: SubResource("Resource_ttdpd"),
+5: SubResource("Resource_0rglg"),
+6: SubResource("Resource_s6ls3")
 }
-_point_order = PackedInt32Array(0, 1, 2, 3, 4)
+_point_order = PackedInt32Array(0, 5, 3, 6, 1)
 _constraints = {}
-_next_key = 6
+_next_key = 7
 _material_overrides = {}
 tessellation_stages = 3
 tessellation_tolerance = 6.0
 curve_bake_interval = 20.0
 
-[sub_resource type="Resource" id="Resource_p452g"]
+[sub_resource type="Resource" id="Resource_67h6p"]
 script = ExtResource("10_6xiyj")
 texture_idx = 0
 flip = false
 width = 1.0
 
-[sub_resource type="Resource" id="Resource_nt0dp"]
+[sub_resource type="Resource" id="Resource_gypfb"]
 script = ExtResource("11_hexod")
-position = Vector2(-548.355, 702.237)
+position = Vector2(-18382.5, 1417)
 point_in = Vector2(0, 0)
 point_out = Vector2(0, 0)
-properties = SubResource("Resource_p452g")
+properties = SubResource("Resource_67h6p")
 
-[sub_resource type="Resource" id="Resource_rv3yo"]
+[sub_resource type="Resource" id="Resource_1ayyx"]
 script = ExtResource("10_6xiyj")
-texture_idx = -9
+texture_idx = 1
 flip = false
 width = 1.0
 
-[sub_resource type="Resource" id="Resource_mqs1o"]
+[sub_resource type="Resource" id="Resource_vm7fb"]
 script = ExtResource("11_hexod")
-position = Vector2(-456.445, 655.698)
-point_in = Vector2(0, 0)
-point_out = Vector2(0, 0)
-properties = SubResource("Resource_rv3yo")
+position = Vector2(-18530.6, 1412.66)
+point_in = Vector2(67.1504, -0.179932)
+point_out = Vector2(-29.6992, -7.07129)
+properties = SubResource("Resource_1ayyx")
 
-[sub_resource type="Resource" id="Resource_tiwkx"]
-script = ExtResource("10_6xiyj")
-texture_idx = -2
-flip = false
-width = 1.0
-
-[sub_resource type="Resource" id="Resource_k0p7m"]
-script = ExtResource("11_hexod")
-position = Vector2(-34.9766, 288.181)
-point_in = Vector2(-156.021, 243.574)
-point_out = Vector2(147.203, -281.372)
-properties = SubResource("Resource_tiwkx")
-
-[sub_resource type="Resource" id="Resource_koekx"]
+[sub_resource type="Resource" id="Resource_of2fw"]
 script = ExtResource("10_6xiyj")
 texture_idx = 0
 flip = false
 width = 1.0
 
-[sub_resource type="Resource" id="Resource_e8u21"]
+[sub_resource type="Resource" id="Resource_mfwtb"]
 script = ExtResource("11_hexod")
-position = Vector2(-82.8789, -360.422)
-point_in = Vector2(123.221, 163.973)
-point_out = Vector2(-86.7031, -135.494)
-properties = SubResource("Resource_koekx")
+position = Vector2(-19695.3, -67.7664)
+point_in = Vector2(48.25, 1275.77)
+point_out = Vector2(34.0996, -1301.91)
+properties = SubResource("Resource_of2fw")
 
-[sub_resource type="Resource" id="Resource_t6gqj"]
+[sub_resource type="Resource" id="Resource_0kwdx"]
 script = ExtResource("10_6xiyj")
 texture_idx = 0
 flip = false
 width = 1.0
 
-[sub_resource type="Resource" id="Resource_505pl"]
+[sub_resource type="Resource" id="Resource_wys86"]
 script = ExtResource("11_hexod")
-position = Vector2(-384.51, -678.454)
-point_in = Vector2(0, 0)
-point_out = Vector2(0, 0)
-properties = SubResource("Resource_t6gqj")
+position = Vector2(-18522.5, -1581.95)
+point_in = Vector2(-35.8672, 9.43872)
+point_out = Vector2(41.8613, 0.300293)
+properties = SubResource("Resource_0kwdx")
 
-[sub_resource type="Resource" id="Resource_o6coy"]
+[sub_resource type="Resource" id="Resource_ou01i"]
 script = ExtResource("10_6xiyj")
-texture_idx = -1
+texture_idx = -7
 flip = false
 width = 1.0
 
-[sub_resource type="Resource" id="Resource_c5ij2"]
+[sub_resource type="Resource" id="Resource_7tbjt"]
 script = ExtResource("11_hexod")
-position = Vector2(-461.652, -752.888)
+position = Vector2(-18421.6, -1574.92)
 point_in = Vector2(0, 0)
 point_out = Vector2(0, 0)
-properties = SubResource("Resource_o6coy")
+properties = SubResource("Resource_ou01i")
 
-[sub_resource type="Resource" id="Resource_50i4p"]
+[sub_resource type="Resource" id="Resource_7v2x2"]
 script = ExtResource("12_lq6dg")
 _points = {
-0: SubResource("Resource_nt0dp"),
-1: SubResource("Resource_mqs1o"),
-2: SubResource("Resource_k0p7m"),
-3: SubResource("Resource_e8u21"),
-4: SubResource("Resource_505pl"),
-5: SubResource("Resource_c5ij2")
-}
-_point_order = PackedInt32Array(0, 1, 2, 3, 4, 5)
-_constraints = {}
-_next_key = 6
-_material_overrides = {}
-tessellation_stages = 3
-tessellation_tolerance = 6.0
-curve_bake_interval = 20.0
-
-[sub_resource type="Resource" id="Resource_c372p"]
-script = ExtResource("10_6xiyj")
-texture_idx = 0
-flip = false
-width = 1.0
-
-[sub_resource type="Resource" id="Resource_ord7n"]
-script = ExtResource("11_hexod")
-position = Vector2(381.623, 488.792)
-point_in = Vector2(0, 0)
-point_out = Vector2(0, 0)
-properties = SubResource("Resource_c372p")
-
-[sub_resource type="Resource" id="Resource_kenl7"]
-script = ExtResource("10_6xiyj")
-texture_idx = 0
-flip = false
-width = 1.0
-
-[sub_resource type="Resource" id="Resource_i07mr"]
-script = ExtResource("11_hexod")
-position = Vector2(308.9, 423.357)
-point_in = Vector2(6.17383, 6.73486)
-point_out = Vector2(-40.4102, -55.562)
-properties = SubResource("Resource_kenl7")
-
-[sub_resource type="Resource" id="Resource_1na0e"]
-script = ExtResource("10_6xiyj")
-texture_idx = 0
-flip = false
-width = 1.0
-
-[sub_resource type="Resource" id="Resource_8r3va"]
-script = ExtResource("11_hexod")
-position = Vector2(56.2676, -77.4246)
-point_in = Vector2(-31.3184, 272.462)
-point_out = Vector2(63.5762, -287.743)
-properties = SubResource("Resource_1na0e")
-
-[sub_resource type="Resource" id="Resource_qh0fh"]
-script = ExtResource("10_6xiyj")
-texture_idx = 0
-flip = false
-width = 1.0
-
-[sub_resource type="Resource" id="Resource_cbymj"]
-script = ExtResource("11_hexod")
-position = Vector2(449.607, -505.233)
-point_in = Vector2(0, 0)
-point_out = Vector2(0, 0)
-properties = SubResource("Resource_qh0fh")
-
-[sub_resource type="Resource" id="Resource_7yobx"]
-script = ExtResource("10_6xiyj")
-texture_idx = -5
-flip = false
-width = 1.0
-
-[sub_resource type="Resource" id="Resource_ql568"]
-script = ExtResource("11_hexod")
-position = Vector2(535.113, -545.602)
-point_in = Vector2(0, 0)
-point_out = Vector2(0, 0)
-properties = SubResource("Resource_7yobx")
-
-[sub_resource type="Resource" id="Resource_6kijf"]
-script = ExtResource("12_lq6dg")
-_points = {
-0: SubResource("Resource_ord7n"),
-1: SubResource("Resource_i07mr"),
-2: SubResource("Resource_8r3va"),
-3: SubResource("Resource_cbymj"),
-4: SubResource("Resource_ql568")
-}
-_point_order = PackedInt32Array(0, 1, 2, 3, 4)
-_constraints = {}
-_next_key = 6
-_material_overrides = {}
-tessellation_stages = 3
-tessellation_tolerance = 6.0
-curve_bake_interval = 20.0
-
-[sub_resource type="Resource" id="Resource_s8hho"]
-script = ExtResource("10_6xiyj")
-texture_idx = 0
-flip = false
-width = 1.0
-
-[sub_resource type="Resource" id="Resource_3oi8a"]
-script = ExtResource("11_hexod")
-position = Vector2(-574.745, -76.7904)
-point_in = Vector2(0, 0)
-point_out = Vector2(0, 0)
-properties = SubResource("Resource_s8hho")
-
-[sub_resource type="Resource" id="Resource_410s7"]
-script = ExtResource("10_6xiyj")
-texture_idx = 0
-flip = false
-width = 1.0
-
-[sub_resource type="Resource" id="Resource_vpfml"]
-script = ExtResource("11_hexod")
-position = Vector2(-461.147, -75.6934)
-point_in = Vector2(-22.7178, 1.33643)
-point_out = Vector2(351.516, 4.58545)
-properties = SubResource("Resource_410s7")
-
-[sub_resource type="Resource" id="Resource_2lwsn"]
-script = ExtResource("10_6xiyj")
-texture_idx = 0
-flip = false
-width = 1.0
-
-[sub_resource type="Resource" id="Resource_ni6bl"]
-script = ExtResource("11_hexod")
-position = Vector2(31.6787, -12.8149)
-point_in = Vector2(-179.476, -93.085)
-point_out = Vector2(150.189, 82.1912)
-properties = SubResource("Resource_2lwsn")
-
-[sub_resource type="Resource" id="Resource_31yod"]
-script = ExtResource("10_6xiyj")
-texture_idx = -1
-flip = false
-width = 1.0
-
-[sub_resource type="Resource" id="Resource_mss1j"]
-script = ExtResource("11_hexod")
-position = Vector2(373.912, 297.306)
-point_in = Vector2(-39.3047, -54.2395)
-point_out = Vector2(20.1816, 27.7495)
-properties = SubResource("Resource_31yod")
-
-[sub_resource type="Resource" id="Resource_u5y1r"]
-script = ExtResource("10_6xiyj")
-texture_idx = 0
-flip = false
-width = 1.0
-
-[sub_resource type="Resource" id="Resource_6y22c"]
-script = ExtResource("11_hexod")
-position = Vector2(451.24, 393.965)
-point_in = Vector2(0, 0)
-point_out = Vector2(0, 0)
-properties = SubResource("Resource_u5y1r")
-
-[sub_resource type="Resource" id="Resource_uax13"]
-script = ExtResource("12_lq6dg")
-_points = {
-0: SubResource("Resource_3oi8a"),
-1: SubResource("Resource_vpfml"),
-2: SubResource("Resource_ni6bl"),
-3: SubResource("Resource_mss1j"),
-4: SubResource("Resource_6y22c")
+0: SubResource("Resource_gypfb"),
+1: SubResource("Resource_vm7fb"),
+2: SubResource("Resource_mfwtb"),
+3: SubResource("Resource_wys86"),
+4: SubResource("Resource_7tbjt")
 }
 _point_order = PackedInt32Array(0, 1, 2, 3, 4)
 _constraints = {}
@@ -3563,11 +2586,13 @@ layer_1/tile_data = PackedInt32Array()
 light_mask = 4
 tile_set = ExtResource("5_c4i47")
 format = 2
+layer_0/tile_data = PackedInt32Array(4915158, 0, 0, 4653018, 0, 0, 4390870, 1310720, 0, 3997656, 1310720, 0, 3538905, 1310720, 21, 3211222, 1310720, 0, 2818007, 1310720, 0, 2490325, 1310720, 21, 2228183, 0, 21, 1966037, 0, 21, 1638358, 0, 21, 1376214, 1310720, 0, 4653014, 0, 0, 4915162, 0, 21, 4784094, 0, 21, 4521953, 1310720, 0, 4653023, 1310720, 0, 4456414, 1310720, 21, 4194267, 1310720, 0, 3801052, 1310720, 21, 3669973, 1310720, 21, 1834967, 1310720, 21, 4128735, 0, 21, 2686916, 0, 0, 2097090, 0, 21, 1966014, 1310720, 21, 2293694, 1310720, 21, 1966008, 1310720, 0, 2293685, 1310720, 21, 2162619, 0, 0, 3080123, 0, 21, 3407808, 0, 21, 2817971, 1310720, 0, 2293673, 1310720, 0, 2097072, 1310720, 21, 2359215, 1310720, 21, 2031524, 1310720, 0, 3801031, 1310720, 0, 4456382, 0, 21, 4063168, 1310720, 0, 3801018, 0, 0, 4128689, 1310720, 21, 4718515, 0, 0, 4194232, 1310720, 0, 3407792, 0, 21, 3604409, 0, 0, 3276726, 1310720, 21, 3145641, 0, 21, 3801003, 0, 0, 2883499, 0, 21, 2621346, 0, 21, 3342244, 0, 0, 4128678, 1310720, 21, 2817948, 1310720, 0, 2359199, 1310720, 21, 2097052, 0, 21, 2097048, 0, 21, 2097044, 1310720, 0, 2031501, 0, 0, 2359183, 1310720, 21, 2359191, 1310720, 0, 2817940, 1310720, 0, 2621351, 0, 0, 2359204, 0, 21, 2621357, 1310720, 0, 2555830, 1310720, 0, 2555787, 1310720, 0, 2228104, 0, 0, 2293631, 0, 0, 1441660, 1310720, 21, 1113980, 0, 0, 786301, 1310720, 0, 524158, 1310720, 21, 589691, 1310720, 0, 262014, 1310720, 21, 130946, 1310720, 0, -65658, 0, 21, -65653, 1310720, 0, -65649, 1310720, 21, -327794, 1310720, 0, -262250, 1310720, 0, -393339, 1310720, 0, -262262, 1310720, 21, -262271, 0, 0, -132, 0, 21, 130933, 0, 0, 393076, 1310720, 0, 589686, 1310720, 0, 917367, 1310720, 21, 1179508, 1310720, 21, 1179512, 0, 0, 851825, 1310720, 21, 1376113, 1310720, 0, 1441653, 0, 0, 1572730, 0, 0, 1834871, 0, 0, 1703794, 0, 21, 2162551, 0, 21, 2031487, 1310720, 0, 2031491, 1310720, 0, 2293636, 0, 0, 2490245, 1310720, 0, 2817920, 0, 0, 2555771, 0, 0, 2817927, 0, 21, 2817934, 0, 21, 2555795, 1310720, 0, 2293651, 0, 21, 2555801, 0, 0, 2424732, 0, 0, 2686906, 1310720, 21, -262244, 1310720, 21, -589927, 0, 21, -458862, 1310720, 0, -131157, 1310720, 0, -327771, 0, 0, -589918, 1310720, 0, -131144, 0, 21, -393283, 0, 0, -458824, 1310720, 21, -720963, 1310720, 21, -458806, 1310720, 21, -131122, 1310720, 21, -196671, 0, 21, -131130, 0, 0, -262198, 0, 0, -393277, 1310720, 0, -852038, 0, 0, -196676, 0, 0, 1834961, 0, 0, 1572815, 1310720, 0, 1310668, 0, 21, 1179593, 1310720, 21, 1179590, 1310720, 21, 1114051, 0, 21, 982974, 1310720, 0, 1114040, 1310720, 21, 1245106, 1310720, 0, 851885, 0, 21, 982960, 1310720, 21, 720819, 0, 21, 458674, 0, 0, 851894, 1310720, 0, 524214, 0, 0, 458685, 0, 21, 458702, 1310720, 21, 524242, 0, 21, 589782, 0, 0, 1179605, 0, 21, 1310674, 0, 21, 1048528, 1310720, 21, 720846, 0, 21, 982989, 0, 21, 1245135, 1310720, 21, 982986, 1310720, 21, 917444, 1310720, 0, 917434, 0, 0, 655292, 0, 0, 655297, 0, 0, 851904, 0, 21, 917447, 0, 0, 655307, 1310720, 21, 458691, 1310720, 0, 655302, 1310720, 0, 524233, 1310720, 21, 655288, 1310720, 21, 786344, 0, 0, 589732, 0, 0, 917410, 1310720, 0, 982928, 1310720, 0, 655251, 0, 21, 917401, 0, 0, 589725, 1310720, 0, 1376158, 0, 21, 524204, 0, 21, 1310637, 1310720, 0, 1114025, 0, 21, 1310683, 1310720, 21, 917469, 0, 21, 589787, 1310720, 0, 1048538, 1310720, 21, 917463, 0, 0, 917459, 0, 0, 720850, 1310720, 21, 524258, 1310720, 21, 851939, 1310720, 0, 1441761, 1310720, 0, 655339, 1310720, 21, 917485, 0, 21, 655346, 0, 0, 1572843, 0, 21, 917498, 1310720, 0, 1179641, 0, 0, 983030, 1310720, 21, 1834984, 0, 0, 1572847, 1310720, 0, 655351, 0, 0, 1310702, 1310720, 21, 1245162, 0, 0, 1572839, 0, 21, 1245157, 1310720, 0, 1638364, 0, 0, -65581, 0, 21, -327727, 1310720, 21, -131113, 0, 0, -262180, 0, 21, -65569, 0, 0, -458793, 0, 21, -131101, 1310720, 0, -65559, 1310720, 21, -327703, 1310720, 21, -131089, 1310720, 21, -458768, 1310720, 0, -65541, 1310720, 0, -65538, 0, 0, -131071, 0, 0, -262145, 1310720, 0, -458756, 1310720, 21, -196617, 0, 21, -262150, 0, 0, -327692, 1310720, 21, -65531, 0, 0, -327676, 0, 0, -131062, 1310720, 0, 131087, 0, 21, 655379, 0, 0, 393233, 1310720, 0, 917524, 1310720, 21, 1179667, 0, 0, 1441809, 1310720, 21, 1638416, 0, 21, 1769485, 0, 21, 1900555, 0, 0, 1966087, 0, 0, 2097154, 0, 0, 2359293, 1310720, 21, 2359289, 1310720, 21, 2490355, 1310720, 0, 2686959, 1310720, 21, 2883563, 1310720, 21, 3014631, 1310720, 0, 3342311, 0, 0, 3342319, 1310720, 0, 3145706, 0, 0, 3080174, 1310720, 21, 2883573, 0, 0, 3211253, 1310720, 0, 2949106, 0, 21, 2686963, 1310720, 0, 2949103, 0, 0, 2949114, 1310720, 21, 2621432, 1310720, 21, 2621439, 1310720, 0, 2752512, 1310720, 0, 2686971, 0, 21, 2228228, 0, 21, 2555911, 0, 0, 2359298, 1310720, 0, 2228232, 0, 21, 2293772, 0, 0, 1966095, 0, 0, 2359313, 1310720, 0, 1835027, 1310720, 21, 2097172, 0, 0, 1507349, 1310720, 21, 1835033, 0, 21, 1638422, 1310720, 0, 1179670, 1310720, 21, 1376282, 0, 0, 1507357, 1310720, 0, 1048605, 1310720, 21, 1114138, 0, 0, 851991, 1310720, 0, 786459, 0, 21, 524311, 0, 21, 589851, 0, 21, 393236, 1310720, 21, 196630, 1310720, 21, 262170, 0, 21, 131091, 0, 0, -65516, 0, 0, 13, 1310720, 0, -196591, 1310720, 0, -327666, 1310720, 21, -327671, 1310720, 0, -655349, 1310720, 21, -655354, 0, 0, -589822, 1310720, 0, -655366, 1310720, 0, -720878, 1310720, 0, -393190, 1310720, 0, 30, 1310720, 0, 524319, 1310720, 21, 786469, 0, 0, 1310754, 1310720, 21, 1572904, 1310720, 0, 1900576, 1310720, 21, 2490395, 1310720, 21, 2949147, 0, 21, 2883599, 0, 21, 3080196, 0, 0, 2818057, 0, 21, 3342329, 1310720, 21, 3211263, 0, 21, 4259827, 0, 0, 3997682, 0, 0, 3669997, 0, 21, 3997687, 0, 0, 3735543, 1310720, 0, 3538929, 1310720, 21, 3735539, 0, 21, 3538939, 0, 0, 4194301, 0, 0, 4456440, 1310720, 21, 4784129, 1310720, 0, 5373952, 0, 0, 5308427, 1310720, 21, 4653072, 1310720, 21, 4128772, 1310720, 0, 3604484, 0, 0, 3604492, 1310720, 0, 4259859, 1310720, 21, 3211283, 0, 21, 3932174, 1310720, 0, 3866621, 1310720, 21, 3604479, 1310720, 0, 3932160, 0, 0, 3735553, 1310720, 21, 3932166, 0, 0, 4194305, 1310720, 0, 4390916, 1310720, 0, 4784133, 0, 0, 4784137, 1310720, 0, 4456458, 1310720, 0, 4194316, 0, 0, 4063241, 0, 21, 3735560, 1310720, 0, 3276805, 0, 21, 3342338, 0, 0, 3473418, 1310720, 21, 3473419, 0, 0, 4325391, 0, 21, 4587533, 1310720, 21, 4784142, 1310720, 0, 5046284, 1310720, 0, 5242887, 0, 21, 5046280, 0, 21, 6815736, 0, 21, 7471082, 1310720, 0, 6881240, 0, 21, 7143395, 1310720, 21, 7274450, 1310720, 21, 6619087, 0, 0, 5963721, 1310720, 0, 6488005, 1310720, 21, 5177278, 0, 21, 5439427, 1310720, 21, 5767104, 0, 0, 5963708, 1310720, 0, 6291392, 1310720, 0, 5308346, 0, 0, 5832631, 1310720, 21, 5570491, 1310720, 0, 4784061, 1310720, 21, 6356917, 0, 21, 6291387, 0, 21, 6815676, 1310720, 21, 6619072, 1310720, 0, 6750151, 1310720, 0, 7077828, 1310720, 0, 6881227, 0, 21, 7143372, 0, 21, 6946769, 1310720, 0, 7208918, 0, 0, 7536599, 1310720, 0, 7208924, 0, 0, 7471072, 1310720, 21, 7733212, 1310720, 21, 7536605, 1310720, 21, 7340003, 1310720, 21, 7733219, 0, 0, 7536614, 1310720, 21, 7733225, 0, 21, 7340015, 1310720, 0, 7602158, 0, 0, 7667702, 1310720, 0, 7471091, 0, 0, 7143412, 0, 21, 7208955, 0, 21, 7471098, 1310720, 21, 7274487, 1310720, 0, 6881275, 1310720, 0, 7077889, 1310720, 21, 7077880, 1310720, 21, 6881279, 0, 0, 6684678, 1310720, 21, 6619134, 0, 0, 6488068, 1310720, 21, 6225922, 0, 0, 6225917, 1310720, 0, 5898243, 1310720, 21, 5636102, 0, 21, 5439493, 1310720, 21, 5439498, 1310720, 0, 5767179, 1310720, 0, 6029321, 0, 0, 6160390, 1310720, 0, 6488074, 1310720, 21, 6160396, 1310720, 21, 6422536, 0, 21, 6684675, 0, 0, 6684593, 0, 0, 7012281, 0, 0, 7339965, 1310720, 0, 7536579, 0, 0, 7798732, 1310720, 21, 7929812, 0, 21, 7995357, 0, 21, 8126440, 0, 21, 7798785, 0, 21, 7536646, 0, 21, 7143434, 1310720, 0, 6881295, 1310720, 0, 6619153, 0, 0, 6160401, 1310720, 0, 5832721, 0, 0, 5439507, 0, 21, 4980756, 0, 0, 4653080, 1310720, 0, 5111838, 0, 0, 6291481, 0, 0, 6684696, 1310720, 21, 7143444, 1310720, 21, 7602193, 0, 21, 7995402, 0, 0, 8192002, 0, 0, 8454139, 0, 0, 8519666, 1310720, 21, 8585184, 1310720, 21, 8454106, 1310720, 0, 8191944, 1310720, 0, 7929789, 0, 21, 7995331, 1310720, 21, 7536568, 0, 21, 7274419, 0, 0, 7077806, 1310720, 0, 6356910, 1310720, 21, 6094769, 1310720, 21, 5636018, 0, 0, 5308338, 1310720, 21, 5046199, 1310720, 21, 4784058, 0, 21, 4456377, 1310720, 21, 4456372, 0, 0, 7077822, 0, 0, 7339973, 0, 21, 7405515, 1310720, 21, 7471055, 0, 0, 7798726, 0, 0, 8257492, 1310720, 0, 8060889, 0, 0, 8191969, 0, 0, 7864293, 0, 0, 8257516, 0, 21, 8257522, 1310720, 21, 8191991, 0, 21, 7733242, 0, 0, 7536640, 1310720, 0, 7340034, 1310720, 21, 7733233, 0, 21, 7929838, 0, 0, 8060912, 0, 0, 7602131, 1310720, 21, 7602121, 0, 0, 4784067, 0, 21, 5242817, 1310720, 0, 5504959, 0, 0, 4128708, 0, 21, 4980674, 1310720, 21, 4587463, 1310720, 0, 3473348, 0, 21, 3276742, 1310720, 21, 3080130, 0, 0, 2883519, 0, 0, 2621385, 1310720, 21, 3014599, 0, 21, 2883524, 1310720, 0, 2621376, 0, 21, 3735491, 0, 21, 2424775, 1310720, 0, 2359234, 0, 21, 2424762, 0, 21, 1769346, 1310720, 0, 1638271, 0, 21, 1834877, 0, 0, 2097018, 1310720, 21, 1965959, 1310720, 21, -983047, 1310720, 0, -589845, 1310720, 0, -524317, 1310720, 0, -524323, 1310720, 0, -655398, 0, 0, -589868, 1310720, 21, -589873, 0, 21, -589872, 0, 21, -786485, 0, 21, -589885, 1310720, 21, -655418, 0, 21, -917566, 0, 0, -917561, 1310720, 21, -1048624, 0, 0, -852014, 0, 0, -852007, 1310720, 0, -1048616, 1310720, 0, -786464, 1310720, 21, -1048609, 0, 21, -786459, 1310720, 21, -524313, 0, 0, -851989, 1310720, 21, -720913, 0, 21, -655372, 0, 0, -524297, 0, 21, -983051, 1310720, 21, -917520, 1310720, 0, -786525, 0, 21, -1048670, 1310720, 0, -1114181, 0, 0, -458838, 0, 21, -720984, 0, 21, -983128, 0, 21, -458851, 0, 0, -852065, 1310720, 21, -983140, 0, 0, -852072, 1310720, 21, -721004, 1310720, 21, -721009, 1310720, 21, -589943, 0, 0, -852090, 0, 0, -917622, 0, 0, -983151, 1310720, 0, -1048682, 1310720, 0, -1179750, 0, 0, -655486, 0, 0, -393346, 1310720, 21, -196742, 1310720, 0, -655493, 1310720, 0, -393353, 1310720, 21, -65677, 0, 0, 261997, 0, 21, 655214, 1310720, 0, 1507178, 0, 21, 1965938, 0, 0, 2490227, 0, 21, 8060925, 1310720, 21, 5177348, 0, 0, 6946799, 1310720, 21, 3801110, 0, 0)
 
 [node name="Nature_props" type="TileMap" parent="Track/Terrain"]
 z_index = 1
 tile_set = SubResource("TileSet_a7x2s")
 format = 2
+layer_0/tile_data = PackedInt32Array(5832148, 131072, 2, 5569999, 0, 0, 5242329, 131072, 0, 4193756, 131072, 0, 3341784, 131072, 0, 2620905, 0, 0, 4128245, 0, 0, 3866121, 0, 0, 4849157, 131072, 2, 6356499, 0, 0, 6487586, 0, 0, 7011871, 0, 0, 5635633, 0, 2, 5766709, 0, 0, 5635644, 131072, 0, 6159951, 131072, 0, 5701205, 131072, 2, 6291032, 0, 2, 6815336, 0, 0, 6618747, 131072, 0, 5570179, 131072, 2, 5045895, 131072, 0, 5176974, 131072, 0, 4783758, 131072, 0, 4718231, 0, 0, 5439141, 0, 2, 5045928, 0, 0, 5242541, 131072, 2, 5308086, 131072, 0, 4783810, 0, 2, 5439177, 0, 2, 5045964, 131072, 0, 4325064, 131072, 0, 4193968, 0, 0, 2162309, 131072, 0, 2490010, 131072, 2, 2293421, 0, 2, 1900217, 0, 0, 2358967, 0, 0, 2031304, 0, 0, -786765, 0, 2, -983359, 0, 0, -786729, 131072, 2, -1704248, 0, 0, -1638729, 131072, 0, -590092, 0, 2, -917758, 131072, 0, -327955, 0, 0, 1965823, 0, 2, 2621198, 0, 2, -458924, 131072, 0, -524481, 131072, 0, -1048756, 0, 2, -1179783, 0, 0, -1507447, 0, 2, -1310829, 131072, 0, -458855, 131072, 0, -983130, 0, 2, -458832, 0, 2, -786479, 131072, 2, -852005, 131072, 0, -983056, 0, 0, 3407837, 0, 2, 4456430, 131072, 0, 5701610, 131072, 0, 7667640, 0, 2, 8257450, 131072, 2, 8060831, 0, 2, 7405476, 0, 2, 9109393, 131072, 2, 9699208, 0, 2, 9502586, 0, 2, 13172551, 131072, 0, 11468635, 0, 2, 10485587, 0, 0, 9174891, 131072, 0, 9699168, 0, 2, 9633614, 131072, 2, 10878787, 0, 2, 11665225, 0, 0, 11337547, 0, 2, 11272007, 131072, 2, 9895748, 131072, 2, 9633606, 131072, 2, 9371457, 131072, 0, 8978244, 0, 2, 7798592, 131072, 2, 7077706, 131072, 0, 7864150, 131072, 0, 7667561, 0, 2, 10157932, 0, 0, 12713912, 131072, 0, 13565863, 0, 2, 14614432, 0, 0, 14942102, 131072, 0, 15400832, 131072, 2, 16056193, 131072, 0, 16318334, 0, 0, 17170312, 0, 2, 16908196, 0, 2, 17760178, 0, 0, 19333044, 131072, 2, 20250541, 131072, 0, 20840375, 131072, 2, 18612138, 0, 2, 18022325, 131072, 0, 20053964, 131072, 2, 21954515, 0, 0, 24707036, 131072, 2, 25427957, 0, 0, 26345469, 0, 2, 25952241, 131072, 0, 27787246, 0, 0, 23724021, 131072, 0, 22937595, 0, 0, 22872046, 0, 0, 28704775, 131072, 2, 29294586, 131072, 0, 30408704, 131072, 0, 31326182, 0, 0, 31588337, 0, 2, 33488865, 131072, 0, 33423323, 0, 0, 34471892, 131072, 0, 34471862, 0, 2, 34209702, 0, 0, 35651450, 131072, 2, 35127158, 131072, 0, 35389288, 131072, 0, 34406211, 0, 0, 35323732, 131072, 2, 36306748, 0, 2, 36962125, 131072, 0, 36503392, 0, 2, 34144033, 0, 0, 32702230, 0, 2, 32440078, 0, 2, 30015220, 0, 0, 29294326, 0, 0, 29097702, 131072, 2, 27393748, 0, 0, 26607316, 131072, 2, 26410700, 0, 2, 25755342, 131072, 0, 25099983, 0, 2, 24444626, 0, 0, 24051413, 0, 0, 23264996, 131072, 0, 22478576, 0, 2, 21561074, 131072, 2, 21692128, 0, 2, 21757675, 131072, 2, 20381409, 131072, 0, 20053747, 0, 0, 20905709, 131072, 0, 20840216, 131072, 0, 21954340, 0, 0, 22740764, 0, 2, 23789346, 131072, 0, 19922722, 131072, 0, 19529500, 131072, 2, 18677537, 131072, 2, 18218782, 131072, 0, 16711458, 0, 2, 16121623, 0, 0, 15138595, 0, 2, 14286616, 131072, 0, 12451621, 131072, 0, 12123941, 0, 0, 11271971, 0, 0, 10551071, 131072, 2, 10223379, 131072, 0, 11665179, 131072, 2, 13369073, 131072, 2, 14614252, 131072, 0, 16776936, 131072, 2, 17432301, 131072, 2, 18218723, 131072, 0, 15990485, 0, 2, 16973520, 0, 0, 15007455, 131072, 2, 14155492, 131072, 0, 13303529, 131072, 2, 12386029, 131072, 0, 11402968, 0, 2, 10616533, 0, 0, 10944218, 131072, 0, 10026695, 0, 0, 10157758, 131072, 2, 10878655, 0, 0, 9502379, 0, 0, 10419869, 131072, 2, 9764495, 131072, 0, 9371271, 0, 2, 9567852, 131072, 2, 9829952, 0, 0, 9567792, 0, 0, 10026534, 0, 0, 9895442, 0, 0, 10026496, 131072, 0, 9764340, 0, 0, 10092036, 0, 0, 9698773, 131072, 0, 10223053, 131072, 2, 11075030, 0, 2, 12844530, 131072, 0, 7142895, 131072, 2, 6749690, 0, 0, 7142886, 131072, 0, 5766642, 0, 2, 6028781, 0, 2, 9305494, 0, 2, 7208314, 0, 2, 6421861, 0, 2, 7994735, 131072, 0, 6225271, 131072, 2, 4455794, 0, 2, 4783475, 0, 2, 3079544, 0, 2, 2882932, 131072, 0, 3145074, 131072, 0, 1965437, 131072, 0, 1244547, 0, 2, 1703281, 0, 0, 458110, 131072, 0, 327065, 131072, 0, -131674, 0, 0, -66132, 0, 0, -328252, 131072, 0, -590394, 0, 2, -524861, 0, 0, -131639, 131072, 0, -131631, 0, 2, -590372, 131072, 0, -459289, 131072, 2, -918029, 131072, 2, -1114633, 0, 0, -721413, 131072, 0, -1114616, 0, 2, -918000, 0, 2, -918034, 0, 2, -1311180, 131072, 2, -852416, 0, 0, -459225, 131072, 0, -1704362, 131072, 2, -1048983, 131072, 0, -459120, 0, 2, -983388, 0, 0, -590162, 0, 2, -721215, 131072, 2, 2031278, 131072, 2, 16514895, 0, 0, 14614340, 131072, 2, 14745398, 0, 2, 14876460, 0, 0, 15138615, 131072, 2, 16514874, 131072, 0, 16777010, 131072, 2, 17366828, 0, 2, 17956662, 0, 0, 18153287, 131072, 0, 18874182, 131072, 0, 19201866, 131072, 2, 20315952, 131072, 0, 20447033, 131072, 0, 21626715, 131072, 2, 21823329, 131072, 2, 21430116, 0, 0, 23461689, 131072, 0, 23920436, 0, 2, 24182588, 131072, 2, 23461714, 0, 2, 23134031, 131072, 0, 22806355, 0, 2, 21495609, 131072, 0, 18612015, 131072, 0, 20709342, 131072, 2, 19464170, 131072, 0, 17039310, 131072, 2, 16121788, 131072, 0, 15663033, 131072, 2, 15335360, 0, 0, 14811100, 0, 0, 15990760, 131072, 2, 13565913, 0, 0, 14024693, 0, 2, 12189674, 0, 2, 10551329, 131072, 0, 11730976, 131072, 2, 11796504, 131072, 0, 10158128, 0, 0, 9502767, 0, 2, 8454219, 0, 0, 7864402, 0, 2, 7929945, 131072, 0, 6684765, 0, 0, 6553709, 0, 0, 5242976, 131072, 0, 4194399, 131072, 2, 2752605, 131072, 0, 1376337, 0, 2, 786501, 131072, 0, -65485, 131072, 0, -131035, 0, 0, -917486, 131072, 0, -458736, 131072, 0, -262178, 0, 0, 3604436, 0, 0, 3866557, 131072, 0, 5832631, 131072, 0, 5570464, 131072, 0, 5570477, 0, 2, 6684536, 131072, 0, 7012211, 131072, 0, 6422373, 0, 2, 10026801, 131072, 0, 10354475, 0, 2, 12975926, 131072, 2, 13172525, 0, 2)
 
 [node name="Sand" type="Node2D" parent="Track/Terrain"]
 
@@ -3576,6 +2601,27 @@ z_index = 11
 texture_repeat = 2
 script = ExtResource("9_jl26e")
 _points = SubResource("Resource_27s2w")
+shape_material = SubResource("Resource_g15id")
+
+[node name="Sand_Carusell" type="Node2D" parent="Track/Terrain/Sand"]
+z_index = 11
+texture_repeat = 2
+script = ExtResource("9_jl26e")
+_points = SubResource("Resource_motlq")
+shape_material = SubResource("Resource_g15id")
+
+[node name="Post_Carusell_Bend" type="Node2D" parent="Track/Terrain/Sand"]
+z_index = 11
+texture_repeat = 2
+script = ExtResource("9_jl26e")
+_points = SubResource("Resource_5iweo")
+shape_material = SubResource("Resource_g15id")
+
+[node name="Sand_Apex_2" type="Node2D" parent="Track/Terrain/Sand"]
+z_index = 11
+texture_repeat = 2
+script = ExtResource("9_jl26e")
+_points = SubResource("Resource_f5eid")
 shape_material = SubResource("Resource_g15id")
 
 [node name="Track" type="Node2D" parent="Track/Terrain"]
@@ -3591,13 +2637,11 @@ collision_layer = 3
 collision_mask = 3
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Track/Terrain/Track/Road_Area"]
-visible = false
 modulate = Color(1, 1, 1, 0.3)
 z_index = 999
-polygon = PackedVector2Array(-6262.59, -2393.93, -6262.59, -1649.93, -2398.59, -1638.93, -2269.59, -1624.93, -2158.59, -1601.93, -2038.59, -1560.93, -1926.59, -1508.93, -1765.59, -1414.93, -1638.59, -1312.93, -1502.59, -1179.93, -1386.59, -1041.93, -1271.59, -874.93, -1161.59, -670.93, -1078.59, -452.93, -1029.59, -257.93, -1005.59, -98.9299, -999.59, 96.0701, -1015.59, 272.07, -1045.59, 439.07, -1086.59, 574.07, -1136.59, 703.07, -1195.59, 816.07, -1277.59, 942.07, -1395.59, 1087.07, -1565.59, 1246.07, -1704.59, 1350.07, -1902.59, 1480.07, -2420.59, 1744.07, -4931.59, 2562.07, -5444.59, 2808.07, -5843.59, 3038.07, -6208.59, 3301.07, -6500.59, 3575.07, -6724.59, 3865.07, -6884.59, 4179.07, -6977.59, 4520.07, -6999.59, 4884.07, -6956.59, 5265.07, -6848.59, 5670.07, -6664.59, 6127.07, -6421.59, 6600.07, -5758.59, 7627.07, -4739.59, 8923.07, -3898.59, 10047.1, -3724.59, 10339.1, -3612.59, 10644.1, -3572.59, 10920.1, -3580.59, 11170.1, -3636.59, 11410.1, -3757.59, 11712.1, -3895.59, 11937.1, -4050.59, 12133.1, -4288.59, 12350.1, -4493.59, 12500.1, -4753.59, 12631.1, -5039.59, 12738.1, -5243.59, 12793.1, -5493.59, 12830.1, -5750.59, 12840.1, -6056.59, 12819.1, -6310.59, 12770.1, -6588.59, 12678.1, -6844.59, 12558.1, -7094.59, 12392.1, -7638.59, 11849.1, -8300.59, 11078.1, -8607.59, 10663.1, -8863.59, 10260.1, -8974.59, 10035.1, -9042.59, 9863.07, -9084.59, 9700.07, -9103.59, 9536.07, -9108.59, 3820.07, -9173.59, 3011.07, -9243.59, 2612.07, -9335.59, 2276.07, -9449.59, 1962.07, -9585.59, 1684.07, -9738.59, 1443.07, -9906.59, 1228.07, -10138.6, 1001.07, -10359.6, 838.07, -10614.6, 695.07, -10841.6, 595.07, -11108.6, 509.07, -11375.6, 454.07, -11694.6, 410.07, -11972.6, 398.07, -12196.6, 411.07, -12379.6, 432.07, -12713.6, 508.07, -13041.6, 628.07, -13317.6, 765.07, -14120.6, 1255.07, -14224.6, 1288.07, -14342.6, 1310.07, -14695.6, 1348.07, -15569.6, 1385.07, -19095.6, 1391.07, -19215.6, 1380.07, -19349.6, 1352.07, -19458.6, 1317.07, -19572.6, 1266.07, -19678.6, 1208.07, -19786.6, 1135.07, -19880.6, 1059.07, -19963.6, 979.07, -19995.6, 947.07, -20080.6, 847.07, -20168.6, 721.07, -20237.6, 597.07, -20290.6, 479.07, -20337.6, 342.07, -20374.6, 188.07, -20396.6, 37.0701, -20405.6, -123.93, -20396.6, -283.93, -20374.6, -437.93, -20335.6, -592.93, -20289.6, -724.93, -20222.6, -868.93, -20149.6, -991.93, -20075.6, -1096.93, -19991.6, -1196.93, -19942.6, -1245.93, -19888.6, -1298.93, -19805.6, -1366.93, -19760.6, -1399.93, -19673.6, -1458.93, -19559.6, -1521.93, -19442.6, -1571.93, -19322.6, -1608.93, -19208.6, -1632.93, -19091.6, -1641.93, -6262.59, -1649.93, -6262.59, -2393.93, -19416.6, -2391.93, -19544.6, -2383.93, -19692.6, -2353.93, -19851.6, -2305.93, -19990.6, -2248.93, -20176.6, -2153.93, -20329.6, -2056.93, -20512.6, -1917.93, -20659.6, -1785.93, -20808.6, -1623.93, -20941.6, -1449.93, -21057.6, -1266.93, -21154.6, -1068.93, -21237.6, -853.93, -21294.6, -623.93, -21328.6, -382.93, -21336.6, -129.93, -21313.6, 124.07, -21272.6, 359.07, -21197.6, 611.07, -21114.6, 816.07, -21035.6, 969.07, -20914.6, 1171.07, -20777.6, 1353.07, -20640.6, 1511.07, -20467.6, 1671.07, -20313.6, 1795.07, -20154.6, 1901.07, -20012.6, 1985.07, -19865.6, 2052.07, -19689.6, 2114.07, -19539.6, 2147.07, -19389.6, 2161.07, -15477.6, 2162.07, -14409.6, 2120.07, -14065.6, 2088.07, -13875.6, 2057.07, -13770.6, 2019.07, -13080.6, 1570.07, -12843.6, 1460.07, -12584.6, 1371.07, -12273.6, 1304.07, -11919.6, 1270.07, -11697.6, 1282.07, -11501.6, 1315.07, -11285.6, 1376.07, -11126.6, 1442.07, -10951.6, 1540.07, -10824.6, 1627.07, -10644.6, 1777.07, -10482.6, 1955.07, -10358.6, 2117.07, -10227.6, 2342.07, -10134.6, 2544.07, -10052.6, 2754.07, -9985.59, 2997.07, -9929.59, 3259.07, -9878.59, 3802.07, -9884.59, 9646.07, -9872.59, 9830.07, -9834.59, 10003.1, -9753.59, 10260.1, -9656.59, 10477.1, -9339.59, 11035.1, -9017.59, 11498.1, -8284.59, 12372.1, -7656.59, 13000.1, -7358.59, 13212.1, -7038.59, 13382.1, -6666.59, 13518.1, -6295.59, 13607.1, -5922.59, 13655.1, -5542.59, 13657.1, -5157.59, 13620.1, -4762.59, 13531.1, -4442.59, 13422.1, -4081.59, 13253.1, -3760.59, 13039.1, -3470.59, 12785.1, -3215.59, 12478.1, -3012.59, 12133.1, -2857.59, 11737.1, -2768.59, 11310.1, -2764.59, 10910.1, -2818.59, 10570.1, -2910.59, 10276.1, -3059.59, 9955.07, -4082.59, 8498.07, -5030.59, 7257.07, -5620.59, 6266.07, -5810.59, 5857.07, -5941.59, 5469.07, -6012.59, 5121.07, -6030.59, 4814.07, -5998.59, 4542.07, -5924.59, 4316.07, -5819.59, 4116.07, -5651.59, 3916.07, -5465.59, 3757.07, -5249.59, 3619.07, -4942.59, 3475.07, -2043.59, 2475.07, -1351.59, 2178.07, -993.59, 1978.07, -648.59, 1730.07, -528.59, 1624.07, -347.59, 1436.07, -153.59, 1167.07, 8.41003, 862.07, 105.41, 572.07, 159.41, 320.07, 192.41, 12.0701, 183.41, -308.93, 147.41, -614.93, 79.41, -886.93, -15.59, -1137.93, -123.59, -1345.93, -235.59, -1518.93, -390.59, -1709.93, -595.59, -1897.93, -801.59, -2043.93, -984.59, -2149.93, -1223.59, -2260.93, -1514.59, -2347.93, -1850.59, -2391.93, -2412.59, -2391.93)
+polygon = PackedVector2Array(-6262.59, -2393.93, -6262.59, -1649.93, -2398.59, -1638.93, -2269.59, -1624.93, -2158.59, -1601.93, -2038.59, -1560.93, -1926.59, -1508.93, -1765.59, -1414.93, -1638.59, -1312.93, -1502.59, -1179.93, -1386.59, -1041.93, -1271.59, -874.93, -1161.59, -670.93, -1078.59, -452.93, -1029.59, -257.93, -1005.59, -98.9299, -999.59, 96.0701, -1015.59, 272.07, -1045.59, 439.07, -1086.59, 574.07, -1136.59, 703.07, -1195.59, 816.07, -1277.59, 942.07, -1395.59, 1087.07, -1565.59, 1246.07, -1704.59, 1350.07, -1902.59, 1480.07, -2420.59, 1744.07, -4955.59, 2625.07, -5448.59, 2854.07, -5867.59, 3095.07, -6232.59, 3351.07, -6514.59, 3613.07, -6741.59, 3902.07, -6884.59, 4179.07, -6977.59, 4520.07, -6999.59, 4884.07, -6956.59, 5265.07, -6848.59, 5670.07, -6664.59, 6127.07, -6421.59, 6600.07, -5758.59, 7627.07, -4739.59, 8923.07, -3898.59, 10047.1, -3724.59, 10339.1, -3612.59, 10644.1, -3572.59, 10920.1, -3580.59, 11170.1, -3636.59, 11410.1, -3757.59, 11712.1, -3895.59, 11937.1, -4050.59, 12133.1, -4288.59, 12350.1, -4493.59, 12500.1, -4753.59, 12631.1, -5039.59, 12738.1, -5243.59, 12793.1, -5493.59, 12830.1, -5750.59, 12840.1, -6056.59, 12819.1, -6310.59, 12770.1, -6588.59, 12678.1, -6844.59, 12558.1, -7094.59, 12392.1, -7638.59, 11849.1, -8300.59, 11078.1, -8607.59, 10663.1, -8863.59, 10260.1, -8974.59, 10035.1, -9042.59, 9863.07, -9084.59, 9700.07, -9103.59, 9536.07, -9108.59, 3820.07, -9173.59, 3011.07, -9243.59, 2612.07, -9335.59, 2276.07, -9449.59, 1962.07, -9585.59, 1684.07, -9738.59, 1443.07, -9906.59, 1228.07, -10138.6, 1001.07, -10359.6, 838.07, -10614.6, 695.07, -10841.6, 595.07, -11108.6, 509.07, -11375.6, 454.07, -11694.6, 410.07, -11972.6, 398.07, -12196.6, 411.07, -12379.6, 432.07, -12713.6, 508.07, -13041.6, 628.07, -13317.6, 765.07, -14120.6, 1255.07, -14224.6, 1288.07, -14342.6, 1310.07, -14695.6, 1348.07, -15569.6, 1385.07, -19095.6, 1391.07, -19215.6, 1380.07, -19349.6, 1352.07, -19458.6, 1317.07, -19572.6, 1266.07, -19678.6, 1208.07, -19786.6, 1135.07, -19880.6, 1059.07, -19963.6, 979.07, -19995.6, 947.07, -20080.6, 847.07, -20168.6, 721.07, -20237.6, 597.07, -20290.6, 479.07, -20337.6, 342.07, -20374.6, 188.07, -20396.6, 37.0701, -20405.6, -123.93, -20396.6, -283.93, -20374.6, -437.93, -20335.6, -592.93, -20289.6, -724.93, -20222.6, -868.93, -20149.6, -991.93, -20075.6, -1096.93, -19991.6, -1196.93, -19942.6, -1245.93, -19888.6, -1298.93, -19805.6, -1366.93, -19760.6, -1399.93, -19673.6, -1458.93, -19559.6, -1521.93, -19442.6, -1571.93, -19322.6, -1608.93, -19208.6, -1632.93, -19091.6, -1641.93, -6262.59, -1649.93, -6262.59, -2393.93, -19416.6, -2391.93, -19544.6, -2383.93, -19692.6, -2353.93, -19851.6, -2305.93, -19990.6, -2248.93, -20176.6, -2153.93, -20329.6, -2056.93, -20512.6, -1917.93, -20659.6, -1785.93, -20808.6, -1623.93, -20941.6, -1449.93, -21057.6, -1266.93, -21154.6, -1068.93, -21237.6, -853.93, -21294.6, -623.93, -21328.6, -382.93, -21336.6, -129.93, -21313.6, 124.07, -21272.6, 359.07, -21197.6, 611.07, -21114.6, 816.07, -21035.6, 969.07, -20914.6, 1171.07, -20777.6, 1353.07, -20640.6, 1511.07, -20467.6, 1671.07, -20313.6, 1795.07, -20154.6, 1901.07, -20012.6, 1985.07, -19865.6, 2052.07, -19689.6, 2114.07, -19539.6, 2147.07, -19389.6, 2161.07, -15477.6, 2162.07, -14409.6, 2120.07, -14065.6, 2088.07, -13875.6, 2057.07, -13770.6, 2019.07, -13080.6, 1570.07, -12843.6, 1460.07, -12584.6, 1371.07, -12273.6, 1304.07, -11919.6, 1270.07, -11697.6, 1282.07, -11501.6, 1315.07, -11285.6, 1376.07, -11126.6, 1442.07, -10951.6, 1540.07, -10824.6, 1627.07, -10644.6, 1777.07, -10482.6, 1955.07, -10358.6, 2117.07, -10227.6, 2342.07, -10134.6, 2544.07, -10052.6, 2754.07, -9985.59, 2997.07, -9929.59, 3259.07, -9878.59, 3802.07, -9884.59, 9646.07, -9872.59, 9830.07, -9834.59, 10003.1, -9753.59, 10260.1, -9656.59, 10477.1, -9339.59, 11035.1, -9017.59, 11498.1, -8284.59, 12372.1, -7656.59, 13000.1, -7358.59, 13212.1, -7038.59, 13382.1, -6666.59, 13518.1, -6295.59, 13607.1, -5922.59, 13655.1, -5542.59, 13657.1, -5157.59, 13620.1, -4762.59, 13531.1, -4442.59, 13422.1, -4081.59, 13253.1, -3760.59, 13039.1, -3470.59, 12785.1, -3215.59, 12478.1, -3012.59, 12133.1, -2857.59, 11737.1, -2768.59, 11310.1, -2764.59, 10910.1, -2818.59, 10570.1, -2910.59, 10276.1, -3059.59, 9955.07, -4082.59, 8498.07, -5030.59, 7257.07, -5623.59, 6282.07, -5815.59, 5869.07, -5948.59, 5489.07, -6020.59, 5144.07, -6036.59, 4842.07, -6003.59, 4566.07, -5920.59, 4336.07, -5800.59, 4127.07, -5629.59, 3932.07, -5435.59, 3772.07, -5232.59, 3640.07, -4955.59, 3498.07, -4644.59, 3371.07, -2043.59, 2475.07, -1351.59, 2178.07, -993.59, 1978.07, -648.59, 1730.07, -528.59, 1624.07, -347.59, 1436.07, -153.59, 1167.07, 8.41003, 862.07, 105.41, 572.07, 159.41, 320.07, 192.41, 12.0701, 183.41, -308.93, 147.41, -614.93, 79.41, -886.93, -15.59, -1137.93, -123.59, -1345.93, -235.59, -1518.93, -390.59, -1709.93, -595.59, -1897.93, -801.59, -2043.93, -984.59, -2149.93, -1223.59, -2260.93, -1514.59, -2347.93, -1850.59, -2391.93, -2412.59, -2391.93)
 
 [node name="Walls" type="Node2D" parent="Track"]
-visible = false
 
 [node name="Apex_Guardrail" type="StaticBody2D" parent="Track/Walls"]
 
@@ -3613,291 +2657,57 @@ collision_polygon_node_path = NodePath("../CollisionPolygon2D")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Track/Walls/Apex_Guardrail"]
 modulate = Color(1, 1, 1, 0.3)
-polygon = PackedVector2Array(-2081.81, 2000.43, -1033.51, 1990.98, -443.518, 1921.7, -247.954, 1857.56, -82.2886, 1770.59, 273.28, 1519.32, 554.9, 1249.32, 769.706, 949.919, 926.442, 641.647, 1034.37, 344.292, 1139.79, -135.963, 1158.97, -332.857, 1153.98, -517.457, 1125.31, -722.714, 1059.32, -980.701, 941.069, -1274.92, 755.634, -1588.64, 488.169, -1905.07, 124.162, -2207.24, -88.1698, -2337.95, -310.551, -2429.64, -546.616, -2489.18, -800.521, -2523.7, -2072.22, -2553.08, -2072.96, -2521.08, -803.049, -2491.8, -552.693, -2457.76, -320.587, -2399.25, -102.703, -2309.44, 105.508, -2181.24, 465.643, -1882.34, 729.548, -1570.1, 912.367, -1260.77, 1028.91, -970.749, 1093.91, -716.527, 1122.09, -514.807, 1126.99, -333.977, 1108.18, -140.954, 1003.63, 335.384, 897.085, 628.913, 742.363, 933.294, 530.725, 1228.35, 252.918, 1494.64, -98.9966, 1743.3, -260.424, 1828.09, -450.405, 1890.45, -1035.52, 1959.04, -2082.09, 1968.43)
+polygon = PackedVector2Array(-6131.03, 4502.99, -6032.97, 4330.5, -5902.67, 4171.75, -5743.82, 4024.74, -5561.23, 3889.11, -5141.94, 3648.85, -4683, 3446.82, -3191.82, 2915.09, -391.744, 1877.74, -110.374, 1704.46, 127.102, 1510.37, 324.574, 1299.69, 485.483, 1076.92, 613.31, 846.55, 711.676, 612.74, 833.457, 154.531, 879.429, -263.535, 877.557, -606.018, 842.381, -922.732, 802.609, -1084.69, 647.646, -1471.93, 509.343, -1706.61, 321.564, -1944.3, 77.2509, -2167.4, -230.207, -2357.85, -697.172, -2545.02, -1079.88, -2632.07, -1432.85, -2656.38, -1998.71, -2657.8, -2472.88, -2685.8, -2869.99, -2755.4, -2875.51, -2723.88, -2476.6, -2654.01, -1999.7, -2625.82, -1433.98, -2624.4, -1084.54, -2600.41, -706.702, -2514.47, -244.639, -2329.29, 57.9529, -2141.87, 298.142, -1922.49, 482.943, -1688.53, 618.924, -1457.82, 772.141, -1074.91, 810.873, -917.139, 845.61, -604.162, 847.472, -265.198, 802.001, 148.657, 681.392, 602.399, 584.529, 832.561, 458.475, 1059.76, 299.88, 1279.34, 105.255, 1486.98, -128.932, 1678.39, -405.762, 1848.98, -3202.75, 2885.01, -4694.83, 3417.09, -5156.36, 3620.28, -5578.76, 3862.33, -5764.26, 4000.11, -5925.96, 4149.8, -6059.34, 4312.37, -6158.85, 4487.17)
 
-[node name="Pre_Bridge_Guardrail_Short" type="StaticBody2D" parent="Track/Walls"]
-position = Vector2(-3653.41, -4018.82)
-rotation = -0.713132
+[node name="Divider" type="StaticBody2D" parent="Track/Walls"]
 
-[node name="SS2D_Shape_Open" type="Node2D" parent="Track/Walls/Pre_Bridge_Guardrail_Short"]
-z_index = 15
-texture_repeat = 2
-position = Vector2(-12271.3, 2368.72)
-script = ExtResource("33_uxr62")
-_points = SubResource("Resource_hihm6")
-shape_material = SubResource("Resource_s4jop")
-collision_offset = 1.0
-collision_polygon_node_path = NodePath("../CollisionPolygon2D")
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Track/Walls/Pre_Bridge_Guardrail_Short"]
-modulate = Color(1, 1, 1, 0.3)
-polygon = PackedVector2Array(-10701.5, 1624.75, -11215.8, 1735.69, -11990.9, 2026.02, -12306.6, 2153.72, -13188.7, 2570.84, -13396.1, 2709.14, -13455.9, 2759.38, -13502.4, 2809.75, -13790.2, 3206.75, -13816.2, 3187.97, -13527.1, 2789.47, -13478, 2736.24, -13415.3, 2683.54, -13204.5, 2542.99, -12319.5, 2124.41, -12002.5, 1996.2, -11224.8, 1704.99, -10708.3, 1593.47)
-
-[node name="Pre_Bridge_Guardrail_Long" type="StaticBody2D" parent="Track/Walls"]
-position = Vector2(-12977.9, 8127.9)
-rotation = 2.78503
-
-[node name="SS2D_Shape_Open" type="Node2D" parent="Track/Walls/Pre_Bridge_Guardrail_Long"]
+[node name="SS2D_Shape_Open" type="Node2D" parent="Track/Walls/Divider"]
 z_index = 15
 texture_repeat = 2
 script = ExtResource("33_uxr62")
-_points = SubResource("Resource_3sk0d")
-shape_material = SubResource("Resource_s4jop")
-collision_offset = 1.0
-collision_polygon_node_path = NodePath("../CollisionPolygon2D")
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Track/Walls/Pre_Bridge_Guardrail_Long"]
-modulate = Color(1, 1, 1, 0.3)
-polygon = PackedVector2Array(-617.194, -1685.12, -446.594, -1583.88, -393.401, -1541.97, -372.779, -1520.27, -356.912, -1498.72, -289.875, -1412.95, -216.613, -1287.07, -75.6826, -958.095, 23.6864, -587.457, 44.5066, -409.255, 38.6653, -249.715, -12.5003, 117.495, -119.185, 497.774, -325.867, 1086.65, -391.581, 1186.19, -423.373, 1218.87, -454.668, 1242.42, -485.932, 1259.21, -516.805, 1271.34, -653.105, 1324.06, -692.858, 1349.33, -737.279, 1384.54, -842.385, 1494.84, -972.722, 1674.41, -1690.55, 2378.51, -2006.04, 2651.26, -2657.72, 3259.57, -2686.65, 3287.61, -2703.41, 3312.56, -2735.17, 3371.2, -2765.5, 3410.2, -2815.09, 3458.03, -3000.26, 3590.31, -3018.86, 3564.27, -2835.55, 3433.42, -2789.29, 3388.8, -2761.96, 3353.7, -2730.78, 3295.98, -2711.2, 3267.08, -2679.8, 3236.41, -2027.42, 2627.46, -1712.23, 2354.97, -996.96, 1653.51, -866.973, 1474.36, -758.856, 1360.91, -711.395, 1323.25, -667.523, 1295.49, -528.423, 1241.52, -499.356, 1230.16, -471.898, 1215.45, -444.517, 1194.86, -416.503, 1166.12, -354.531, 1072.43, -149.704, 488.151, -43.8238, 110.95, 6.78793, -252.515, 12.532, -407.982, -7.74298, -581.441, -105.921, -947.624, -245.203, -1272.69, -316.369, -1395, -382.412, -1479.38, -397.325, -1499.74, -414.96, -1518.32, -464.697, -1557.49, -633.52, -1657.6)
-
-[node name="Post_Bridge_Guardrail" type="StaticBody2D" parent="Track/Walls"]
-position = Vector2(-3653.41, -4018.82)
-rotation = -0.713132
-
-[node name="SS2D_Shape_Open" type="Node2D" parent="Track/Walls/Post_Bridge_Guardrail"]
-z_index = 15
-texture_repeat = 2
-position = Vector2(-20675.6, 13857.7)
-script = ExtResource("33_uxr62")
-_points = SubResource("Resource_fkevr")
-shape_material = SubResource("Resource_s4jop")
-collision_offset = 1.0
-collision_polygon_node_path = NodePath("../CollisionPolygon2D")
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Track/Walls/Post_Bridge_Guardrail"]
-modulate = Color(1, 1, 1, 0.3)
-polygon = PackedVector2Array(-19599.6, 15131.9, -19909.3, 14871.2, -20388.6, 14371.8, -20478.6, 14238.6, -20580.7, 14046, -20624.9, 13929.7, -20657.8, 13802.4, -20674.7, 13665.1, -20670.8, 13520, -20663.1, 13440.6, -20643.9, 13356.2, -20574.7, 13178, -20333, 12797.6, -19989.8, 12416.1, -19590, 12073.7, -19457.6, 11972, -19435.3, 11949.6, -19417.7, 11924.1, -19401, 11890, -19358.3, 11774.1, -19328.3, 11785.2, -19371.6, 11902.6, -19390.1, 11940.3, -19410.7, 11970, -19436.4, 11996, -19569.8, 12098.6, -19967.5, 12439, -20307.5, 12817, -20546.1, 13192.4, -20613.3, 13365.6, -20631.5, 13445.7, -20638.9, 13522, -20642.7, 13663.6, -20626.3, 13796.4, -20594.4, 13920, -20551.5, 14032.8, -20451.2, 14222.2, -20363.7, 14351.7, -19887.4, 14847.9, -19578.9, 15107.4)
-
-[node name="Bottom_Bridge_Guardrail_Top" type="StaticBody2D" parent="Track/Walls"]
-position = Vector2(-5643.91, 19288.2)
-rotation = -1.61631
-
-[node name="SS2D_Shape_Open" type="Node2D" parent="Track/Walls/Bottom_Bridge_Guardrail_Top"]
-z_index = 15
-texture_repeat = 2
-position = Vector2(-12188.1, 2372.51)
-script = ExtResource("33_uxr62")
-_points = SubResource("Resource_gv48s")
-shape_material = SubResource("Resource_s4jop")
-collision_offset = 1.0
-collision_polygon_node_path = NodePath("../CollisionPolygon2D")
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Track/Walls/Bottom_Bridge_Guardrail_Top"]
-modulate = Color(1, 1, 1, 0.3)
-polygon = PackedVector2Array(-108.524, -1313.43, -173.155, -791.993, -232.507, 779.494, -232.502, 782.97, -200.334, 1301.16, -232.273, 1303.14, -264.486, 783.998, -264.501, 778.926, -205.052, -794.567, -140.282, -1317.37)
-
-[node name="Bottom_Bridge_Guardrail_Bottom" type="StaticBody2D" parent="Track/Walls"]
-position = Vector2(-5587.9, 20479.1)
-rotation = 3.1739
-
-[node name="SS2D_Shape_Open" type="Node2D" parent="Track/Walls/Bottom_Bridge_Guardrail_Bottom"]
-z_index = 15
-texture_repeat = 2
-script = ExtResource("33_uxr62")
-_points = SubResource("Resource_wk60p")
+_points = SubResource("Resource_xxoqh")
 flip_edges = true
 shape_material = SubResource("Resource_s4jop")
 collision_offset = 1.0
 collision_polygon_node_path = NodePath("../CollisionPolygon2D")
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Track/Walls/Bottom_Bridge_Guardrail_Bottom"]
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Track/Walls/Divider"]
 modulate = Color(1, 1, 1, 0.3)
-polygon = PackedVector2Array(2994.76, 134.894, 2294.77, 195.861, 1325.55, 220.097, 826.578, 280.268, -711.127, 309.684, -1345.26, 262.384, -1347.64, 294.296, -712.011, 341.672, 828.802, 312.19, 1327.87, 252.013, 2296.55, 227.811, 2997.54, 166.774)
+polygon = PackedVector2Array(-8737.15, 429.899, -8717.26, 432.252, -8684.49, 440.425, -8643.5, 457.304, -8599.31, 485.911, -8578.29, 504.964, -8558.15, 528.181, -8539.8, 555.73, -8523.87, 588.057, -8511, 625.628, -8501.92, 668.473, -8497.71, 775.738, -8397.57, 4777.42, -8259.67, 5316.82, -8029.62, 5882.26, -7406.57, 7002.63, -6294.22, 8585.21, -5804.16, 9126.07, -5219.29, 9927.26, -5011.43, 10374.8, -4949.59, 10600.9, -4923.37, 10825.7, -4938.65, 11046.5, -5001.22, 11261.1, -5117.08, 11467.4, -5292.39, 11663.3, -5510.41, 11818.4, -5725.73, 11925.4, -5937.08, 11988.6, -6143.8, 12012.5, -6345.25, 12001.7, -6540.71, 11960.6, -6729.36, 11893.6, -6910.04, 11805.3, -7245.48, 11581.6, -7538.45, 11326.3, -7969.82, 10864.5, -8325.93, 10453.1, -8641.66, 9986.13, -8769.53, 9723.71, -8870.1, 9436.64, -8937.43, 9121.6, -8965.73, 8774.57, -8965.75, 776.275, -8951.67, 669.927, -8925.45, 587.7, -8909.36, 555.297, -8891.62, 527.399, -8872.87, 503.959, -8853.83, 484.825, -8814.88, 456.311, -8779.39, 439.76, -8750.86, 432.072, -8731.92, 430.329, -8734.95, 398.472, -8756.56, 400.583, -8790.37, 409.701, -8831.17, 428.767, -8874.67, 460.542, -8896.72, 482.636, -8917.66, 508.789, -8937.24, 539.582, -8955.12, 575.701, -8982.9, 662.937, -8997.69, 774.165, -8997.71, 8775.87, -8969.09, 9126.25, -8900.9, 9445.29, -8799.06, 9736.03, -8669.36, 10002.1, -8351.32, 10472.6, -7993.62, 10885.9, -7560.68, 11349.4, -7264.91, 11607, -6925.98, 11833, -6741.76, 11923.1, -6549.37, 11991.4, -6349.41, 12033.4, -6142.82, 12044.5, -5930.64, 12019.9, -5713.99, 11955.2, -5493.96, 11845.9, -5271.05, 11687.1, -5091.05, 11486.1, -4971.71, 11273.5, -4907.15, 11052.1, -4891.38, 10825, -4918.17, 10594.8, -4981.38, 10363.8, -5191.73, 9911.01, -5779.34, 9105.87, -6269.22, 8565.23, -7379.45, 6985.63, -8000.76, 5868.43, -8229.27, 5306.81, -8365.87, 4773.02, -8465.73, 774.702, -8470.17, 664.518, -8480.15, 617.119, -8494.32, 575.771, -8512.08, 539.755, -8532.69, 508.791, -8555.42, 482.577, -8579.82, 460.532, -8628.64, 428.96, -8674.49, 410.028, -8711.47, 400.781, -8733.34, 398.126)
 
-[node name="Apex_Long_Guardrail" type="StaticBody2D" parent="Track/Walls"]
-position = Vector2(11538, 13926.4)
-rotation = 3.05057
+[node name="Post_Carusell_Guadrail" type="StaticBody2D" parent="Track/Walls"]
 
-[node name="SS2D_Shape_Open" type="Node2D" parent="Track/Walls/Apex_Long_Guardrail"]
+[node name="SS2D_Shape_Open" type="Node2D" parent="Track/Walls/Post_Carusell_Guadrail"]
 z_index = 15
 texture_repeat = 2
-position = Vector2(-12271.3, 2368.72)
 script = ExtResource("33_uxr62")
-_points = SubResource("Resource_qhhn5")
+_points = SubResource("Resource_5lad1")
 flip_edges = true
 shape_material = SubResource("Resource_s4jop")
 collision_offset = 1.0
 collision_polygon_node_path = NodePath("../CollisionPolygon2D")
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Track/Walls/Apex_Long_Guardrail"]
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Track/Walls/Post_Carusell_Guadrail"]
 modulate = Color(1, 1, 1, 0.3)
-polygon = PackedVector2Array(5090.2, -3295.77, 3960.79, -3172.6, 2739.45, -2889.17, 1596.36, -2459.55, 1106.16, -2193.58, 699.185, -1896.16, 268.592, -1481.36, 98.5957, -1258.66, -41.4385, -1028.45, -152.407, -791.896, -234.96, -550.504, -289.768, -305.782, -317.519, -58.823, -294.487, 433.271, -171.453, 915.096, 46.0547, 1374.33, 352.413, 1799.05, 729.723, 2176.97, 1188.21, 2525.41, 2262.71, 3122.68, 3409.34, 3571.36, 4459.19, 3850.2, 4467.41, 3819.28, 3419.29, 3540.95, 2276.35, 3093.73, 1205.71, 2498.62, 750.775, 2152.87, 376.79, 1778.32, 73.6055, 1358.05, -141.352, 904.238, -262.839, 428.541, -285.536, -57.7781, -258.209, -300.489, -204.161, -541.817, -122.737, -779.904, -13.2373, -1013.31, 125.041, -1240.6, 292.557, -1459.99, 720.019, -1871.32, 1123.81, -2165.61, 1610.32, -2428.88, 2749.36, -2856.31, 3966.61, -3138.21, 5094.01, -3260.77)
+polygon = PackedVector2Array(-8992.45, 2545.66, -9005.71, 2536.36, -9455.32, 2278.41, -9796.73, 2012.88, -9931.79, 1858.86, -9982.4, 1778.58, -10019.7, 1695.1, -10101, 1504.65, -10228.9, 1282.13, -10407.3, 1043.38, -10640.7, 803.24, -10933.5, 576.646, -11289.9, 378.56, -11714.3, 223.946, -12210.8, 127.708, -12745.3, 110.696, -13222.8, 186.054, -13643.5, 325.747, -14008.4, 501.716, -14573.8, 849.612, -14776, 965.684, -14855.6, 996.573, -14923.5, 1005.88, -14919.1, 1037.58, -14847.5, 1027.55, -14762.2, 994.564, -14557.4, 877.12, -13993, 529.792, -13631.4, 355.405, -13215.2, 217.147, -12743.3, 142.634, -12214.4, 159.509, -11722.8, 254.782, -11303.2, 407.669, -10951.1, 603.36, -10662.1, 827.103, -10431.7, 1064.15, -10255.6, 1299.71, -10129.7, 1518.93, -10049, 1707.91, -10010.6, 1793.68, -9957.43, 1878, -9818.68, 2036.16, -9473.15, 2304.98, -9022.89, 2563.35, -9010.85, 2571.84)
 
-[node name="Middle_Bridge_Guardrail_Top" type="StaticBody2D" parent="Track/Walls"]
-position = Vector2(-7256.19, 10184.2)
-rotation = -1.61631
-collision_layer = 9
-collision_mask = 9
+[node name="Apex_2_Guardrails" type="StaticBody2D" parent="Track/Walls"]
 
-[node name="SS2D_Shape_Open" type="Node2D" parent="Track/Walls/Middle_Bridge_Guardrail_Top"]
+[node name="SS2D_Shape_Open" type="Node2D" parent="Track/Walls/Apex_2_Guardrails"]
 z_index = 15
 texture_repeat = 2
-position = Vector2(-12271.3, 2368.72)
 script = ExtResource("33_uxr62")
-_points = SubResource("Resource_qus1s")
-shape_material = SubResource("Resource_s4jop")
-collision_offset = 1.0
-collision_polygon_node_path = NodePath("../CollisionPolygon2D")
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Track/Walls/Middle_Bridge_Guardrail_Top"]
-modulate = Color(1, 1, 1, 0.3)
-polygon = PackedVector2Array(-211.307, -1826.81, -230.212, -1194.17, -320.2, 679.627, -294.412, 1331.48, -326.387, 1332.74, -352.2, 679.492, -262.188, -1195.41, -243.293, -1827.77)
-
-[node name="Post_bridge_Top" type="StaticBody2D" parent="Track/Walls"]
-position = Vector2(-12855, 10256.6)
-rotation = 0.0646145
-collision_layer = 9
-collision_mask = 9
-
-[node name="SS2D_Shape_Open" type="Node2D" parent="Track/Walls/Post_bridge_Top"]
-z_index = 15
-texture_repeat = 2
-position = Vector2(-3.18767, -98.6331)
-script = ExtResource("33_uxr62")
-_points = SubResource("Resource_hoprp")
+_points = SubResource("Resource_r20sp")
 flip_edges = true
 shape_material = SubResource("Resource_s4jop")
 collision_offset = 1.0
 collision_polygon_node_path = NodePath("../CollisionPolygon2D")
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Track/Walls/Post_bridge_Top"]
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Track/Walls/Apex_2_Guardrails"]
 modulate = Color(1, 1, 1, 0.3)
-polygon = PackedVector2Array(1762.46, 107.915, 1556.15, 90.5843, 1100.41, 103.291, -873.818, 238.917, -871.625, 270.842, 1101.95, 135.254, 1555.26, 122.572, 1759.78, 139.802)
-
-[node name="Post_Pridge_Bottom" type="StaticBody2D" parent="Track/Walls"]
-position = Vector2(-12837.5, 11448.6)
-rotation = 1.55759
-collision_layer = 9
-collision_mask = 9
-
-[node name="SS2D_Shape_Open" type="Node2D" parent="Track/Walls/Post_Pridge_Bottom"]
-z_index = 15
-texture_repeat = 2
-position = Vector2(-12271.3, 2368.72)
-script = ExtResource("33_uxr62")
-_points = SubResource("Resource_hbkyk")
-shape_material = SubResource("Resource_s4jop")
-collision_offset = 1.0
-collision_polygon_node_path = NodePath("../CollisionPolygon2D")
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Track/Walls/Post_Pridge_Bottom"]
-modulate = Color(1, 1, 1, 0.3)
-polygon = PackedVector2Array(-264.31, -1755.39, -227.654, -1571.72, -204.603, -1097.2, -216.299, 883.374, -248.299, 883.185, -236.595, -1096.52, -259.412, -1567.8, -295.688, -1749.12)
-
-[node name="Middle_Bridge_Guardrail_Bottom" type="StaticBody2D" parent="Track/Walls"]
-position = Vector2(-7200.18, 11375)
-rotation = 3.1739
-collision_layer = 9
-collision_mask = 9
-
-[node name="SS2D_Shape_Open" type="Node2D" parent="Track/Walls/Middle_Bridge_Guardrail_Bottom"]
-z_index = 15
-texture_repeat = 2
-position = Vector2(-3.18767, -98.6331)
-script = ExtResource("33_uxr62")
-_points = SubResource("Resource_pmq8k")
-flip_edges = true
-shape_material = SubResource("Resource_s4jop")
-collision_offset = 1.0
-collision_polygon_node_path = NodePath("../CollisionPolygon2D")
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Track/Walls/Middle_Bridge_Guardrail_Bottom"]
-modulate = Color(1, 1, 1, 0.3)
-polygon = PackedVector2Array(1860.47, 155.648, 1084.24, 183.809, -883.909, 237.984, -1418.92, 192.597, -1421.62, 224.483, -884.823, 269.971, 1085.26, 215.793, 1861.63, 187.627)
-
-[node name="Straight_End_Guardrail" type="StaticBody2D" parent="Track/Walls"]
-position = Vector2(-24406.8, 10305.5)
-rotation = 3.1739
-
-[node name="SS2D_Shape_Open" type="Node2D" parent="Track/Walls/Straight_End_Guardrail"]
-z_index = 15
-texture_repeat = 2
-script = ExtResource("33_uxr62")
-_points = SubResource("Resource_ndpnd")
-flip_edges = true
-shape_material = SubResource("Resource_s4jop")
-collision_offset = 1.0
-collision_polygon_node_path = NodePath("../CollisionPolygon2D")
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Track/Walls/Straight_End_Guardrail"]
-modulate = Color(1, 1, 1, 0.3)
-polygon = PackedVector2Array(141.768, 2772.37, 319.096, 2403.17, 388.986, 2197.42, 439.885, 1940.99, 457.384, 1628.05, 427.15, 1252.84, 334.762, 808.973, 234.348, 560.871, 110.945, 339.76, -32.5741, 143.851, -193.476, -28.5051, -553.457, -306.489, -945.923, -506.601, -1346.65, -640.106, -1732.27, -718.613, -2360.26, -756.238, -2362.18, -724.296, -1736.42, -686.884, -1354.92, -609.191, -958.282, -477.084, -570.578, -279.454, -215.024, -4.84677, -57.2213, 164.26, 84.0155, 357.046, 205.49, 574.7, 304.144, 818.275, 395.475, 1257.39, 425.386, 1628.44, 408.138, 1936.97, 358.075, 2189.14, 289.471, 2391.07, 112.924, 2758.51)
-
-[node name="Twist_Guardrail" type="StaticBody2D" parent="Track/Walls"]
-position = Vector2(-22776.7, -1800.82)
-rotation = 3.1739
-
-[node name="SS2D_Shape_Open" type="Node2D" parent="Track/Walls/Twist_Guardrail"]
-z_index = 15
-texture_repeat = 2
-script = ExtResource("33_uxr62")
-_points = SubResource("Resource_xj2ry")
-flip_edges = true
-shape_material = SubResource("Resource_s4jop")
-collision_offset = 1.0
-collision_polygon_node_path = NodePath("../CollisionPolygon2D")
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Track/Walls/Twist_Guardrail"]
-modulate = Color(1, 1, 1, 0.3)
-polygon = PackedVector2Array(-2258.22, 3788.69, -1430.18, 3663.62, -903.696, 3504.62, -665.206, 3397.55, -464.309, 3271.09, -297.501, 3133.36, -160.607, 2993.06, -51.3339, 2849.8, 32.3625, 2703.44, 92.5414, 2553.88, 131.316, 2401.08, 150.865, 2244.97, 153.405, 2085.25, 138.612, 1940.66, 103.639, 1806.43, 51.7579, 1681.55, -14.0571, 1564.12, -347.235, 1146.07, -513.258, 944.53, -645.556, 732.554, -691.165, 619.789, -719.565, 499.705, -727.637, 370.932, -712.628, 233.047, -640.818, 83.2217, -540.629, -48.0923, -415.144, -163.391, -267.79, -265.548, 1341.68, -1004.99, 1744.53, -1287.31, 1928.66, -1461.67, 2095.79, -1661.34, 2071.25, -1681.88, 1905.35, -1483.59, 1724.29, -1312.1, 1325.75, -1032.74, -283.645, -293.344, -435.132, -188.38, -564.269, -69.6596, -668.118, 66.527, -743.4, 224.269, -759.628, 370.18, -751.218, 504.404, -721.657, 629.499, -674.069, 747.079, -539.238, 963.211, -372.098, 1166.22, -40.6148, 1581.97, 22.9748, 1695.54, 73.3083, 1816.63, 107.119, 1946.34, 121.435, 2086.63, 118.944, 2242.73, 99.8711, 2395.14, 62.121, 2543.95, 3.56218, 2689.49, -78.0028, 2832.12, -184.825, 2972.14, -319.171, 3109.81, -483.059, 3245.15, -680.32, 3369.35, -914.898, 3474.65, -1437.22, 3632.41, -2263, 3757.05)
-
-[node name="Sandpit_Tight" type="StaticBody2D" parent="Track/Walls"]
-position = Vector2(-21164.3, -3922.13)
-rotation = -3.10929
-
-[node name="SS2D_Shape_Open" type="Node2D" parent="Track/Walls/Sandpit_Tight"]
-z_index = 15
-texture_repeat = 2
-position = Vector2(-504.115, 729.383)
-script = ExtResource("33_uxr62")
-_points = SubResource("Resource_y5bh7")
-shape_material = SubResource("Resource_s4jop")
-collision_offset = 1.0
-collision_polygon_node_path = NodePath("../CollisionPolygon2D")
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Track/Walls/Sandpit_Tight"]
-modulate = Color(1, 1, 1, 0.3)
-polygon = PackedVector2Array(-2973.65, 583.641, -2714.1, 660.203, -2429.2, 711.244, -1810.83, 741.501, -1183.59, 682.036, -611.481, 540.574, -111.86, 348.251, 44.8181, 247.948, 101.044, 197.218, 143.707, 145.805, 173.141, 93.9927, 190.077, 41.6286, 195.167, -11.6853, 188.812, -66.436, 171.195, -122.958, 142.678, -180.996, 51.7327, -304.802, -898.922, -1674.79, -872.632, -1693.03, 77.7787, -323.392, 170.041, -197.586, 200.92, -134.808, 220.119, -73.0597, 227.165, -12.0039, 221.414, 48.1098, 202.432, 106.878, 170.039, 163.988, 124.136, 219.37, 64.2248, 273.392, -97.4124, 376.804, -601.873, 571.097, -1178.22, 713.583, -1810.1, 773.493, -2432.81, 743.04, -2721.46, 691.346, -2982.7, 614.334)
-
-[node name="Before_Start_Guardrail" type="StaticBody2D" parent="Track/Walls"]
-position = Vector2(-16989.4, -3767.92)
-rotation = 3.1739
-
-[node name="SS2D_Shape_Open" type="Node2D" parent="Track/Walls/Before_Start_Guardrail"]
-z_index = 15
-texture_repeat = 2
-position = Vector2(-504.115, 729.383)
-script = ExtResource("33_uxr62")
-_points = SubResource("Resource_c2j2e")
-shape_material = SubResource("Resource_s4jop")
-collision_offset = 1.0
-collision_polygon_node_path = NodePath("../CollisionPolygon2D")
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Track/Walls/Before_Start_Guardrail"]
-modulate = Color(1, 1, 1, 0.3)
-polygon = PackedVector2Array(262.895, 1503.4, 8.79504, 1436.23, -132.071, 1375.27, -195.724, 1331.5, -260.412, 1275.78, -390.83, 1136.2, -640.032, 793.841, -937.63, 266.098, -1003.8, -9.89856, -972.674, -17.3417, -907.844, 254.401, -613.116, 776.534, -366.158, 1115.82, -238.247, 1252.69, -176.177, 1306.16, -116.57, 1347.28, 19.2625, 1405.99, 271.068, 1472.46)
-
-[node name="Before_Start_Guardrail2" type="StaticBody2D" parent="Track/Walls"]
-position = Vector2(-16989.4, -3767.92)
-rotation = 3.1739
-
-[node name="SS2D_Shape_Open" type="Node2D" parent="Track/Walls/Before_Start_Guardrail2"]
-z_index = 15
-texture_repeat = 2
-position = Vector2(-539.629, -837.629)
-script = ExtResource("33_uxr62")
-_points = SubResource("Resource_07l7r")
-flip_edges = true
-shape_material = SubResource("Resource_s4jop")
-collision_offset = 1.0
-collision_polygon_node_path = NodePath("../CollisionPolygon2D")
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Track/Walls/Before_Start_Guardrail2"]
-modulate = Color(1, 1, 1, 0.3)
-polygon = PackedVector2Array(-9.6662, -255.384, -144.402, -427.799, -486.864, -762.469, -707.562, -907.574, -921.587, -1014.81, -1146.94, -1104, -1158.71, -1074.25, -934.654, -985.6, -723.544, -879.851, -506.928, -737.54, -168.248, -406.459, -34.8836, -235.684)
+polygon = PackedVector2Array(-20189.5, -2812.68, -20272.2, -2779.41, -20365.6, -2752.91, -20889.7, -2663.72, -21271.2, -2589.74, -21585.4, -2481.58, -21929.7, -2299.41, -22101.8, -2173.8, -22266.9, -2022.2, -22420.3, -1841.9, -22557.3, -1630.45, -22672.9, -1385.43, -22762.4, -1104.44, -22820.9, -785.085, -22843.8, -425.17, -22838.5, -65.7215, -22795.2, 257.09, -22718.5, 544.901, -22613.3, 799.573, -22484.5, 1022.97, -22336.8, 1216.99, -22175.1, 1383.56, -22004.1, 1524.83, -21655.2, 1738.22, -21327.7, 1873.86, -21060.2, 1947.42, -20891.8, 1974.64, -20425.3, 2049.11, -20212.7, 2112.81, -20203.5, 2082.16, -20418.2, 2017.92, -20886.7, 1943.04, -21053.4, 1916.15, -21317.3, 1843.59, -21640.7, 1709.7, -21985.5, 1498.79, -22153.4, 1360.04, -22312.5, 1196.12, -22457.8, 1005.25, -22584.6, 785.439, -22688.2, 534.652, -22763.8, 250.83, -22806.6, -68.0871, -22811.8, -424.39, -22789.2, -781.181, -22731.3, -1096.69, -22643.2, -1373.73, -22529.3, -1614.89, -22394.7, -1822.79, -22243.8, -2000, -22081.5, -2149.06, -21912.7, -2272.27, -21572.7, -2452.22, -21263, -2558.82, -20883.9, -2632.24, -20358.5, -2721.7, -20261.8, -2749.13, -20177.5, -2782.99)
 
 [node name="Curbs" type="Node2D" parent="Track"]
-visible = false
 
 [node name="Curb_1" type="Node2D" parent="Track/Curbs"]
 texture_repeat = 2
@@ -3909,94 +2719,33 @@ shape_material = SubResource("Resource_417nh")
 
 [node name="Curb_2" type="Node2D" parent="Track/Curbs"]
 texture_repeat = 2
-position = Vector2(-8659.29, 2400.76)
+position = Vector2(-1313.99, -271.836)
 script = ExtResource("33_uxr62")
-_points = SubResource("Resource_pakfj")
+_points = SubResource("Resource_807kf")
+flip_edges = true
 shape_material = SubResource("Resource_417nh")
 
 [node name="Curb_3" type="Node2D" parent="Track/Curbs"]
 texture_repeat = 2
-position = Vector2(-11809.1, 8320.93)
+position = Vector2(-1313.99, -271.836)
 script = ExtResource("33_uxr62")
-_points = SubResource("Resource_ibs1j")
+_points = SubResource("Resource_qhsj7")
 flip_edges = true
 shape_material = SubResource("Resource_417nh")
 
 [node name="Curb_4" type="Node2D" parent="Track/Curbs"]
 texture_repeat = 2
-position = Vector2(-9292.89, 14115.2)
+position = Vector2(-1313.99, -271.836)
 script = ExtResource("33_uxr62")
-_points = SubResource("Resource_6rkpk")
+_points = SubResource("Resource_0o1rc")
 flip_edges = true
 shape_material = SubResource("Resource_417nh")
 
 [node name="Curb_5" type="Node2D" parent="Track/Curbs"]
 texture_repeat = 2
-position = Vector2(-9455.05, 18280.8)
+position = Vector2(-1313.99, -271.836)
 script = ExtResource("33_uxr62")
-_points = SubResource("Resource_akoln")
-shape_material = SubResource("Resource_417nh")
-
-[node name="Curb_6" type="Node2D" parent="Track/Curbs"]
-texture_repeat = 2
-position = Vector2(-2875.59, 19273.4)
-script = ExtResource("33_uxr62")
-_points = SubResource("Resource_24alw")
-flip_edges = true
-shape_material = SubResource("Resource_417nh")
-
-[node name="Curb_7" type="Node2D" parent="Track/Curbs"]
-texture_repeat = 2
-position = Vector2(-170.475, 17844.4)
-script = ExtResource("33_uxr62")
-_points = SubResource("Resource_e6ylv")
-flip_edges = true
-shape_material = SubResource("Resource_417nh")
-
-[node name="Curb_8" type="Node2D" parent="Track/Curbs"]
-texture_repeat = 2
-position = Vector2(10073.7, 13896.3)
-script = ExtResource("33_uxr62")
-_points = SubResource("Resource_81848")
-flip_edges = true
-shape_material = SubResource("Resource_417nh")
-
-[node name="Curb_9" type="Node2D" parent="Track/Curbs"]
-texture_repeat = 2
-position = Vector2(-22972, 9135.07)
-script = ExtResource("33_uxr62")
-_points = SubResource("Resource_6jmmm")
-flip_edges = true
-shape_material = SubResource("Resource_417nh")
-
-[node name="Curb_10" type="Node2D" parent="Track/Curbs"]
-texture_repeat = 2
-position = Vector2(-24127.9, 195.466)
-script = ExtResource("33_uxr62")
-_points = SubResource("Resource_po5j1")
-flip_edges = true
-shape_material = SubResource("Resource_417nh")
-
-[node name="Curb_11" type="Node2D" parent="Track/Curbs"]
-texture_repeat = 2
-position = Vector2(-21744.2, -2100.89)
-script = ExtResource("33_uxr62")
-_points = SubResource("Resource_50i4p")
-shape_material = SubResource("Resource_417nh")
-
-[node name="Curb_12" type="Node2D" parent="Track/Curbs"]
-texture_repeat = 2
-position = Vector2(-21893.6, -3926.98)
-script = ExtResource("33_uxr62")
-_points = SubResource("Resource_6kijf")
-flip_edges = true
-shape_material = SubResource("Resource_417nh")
-
-[node name="Curb_13" type="Node2D" parent="Track/Curbs"]
-texture_repeat = 2
-position = Vector2(-17916.2, -4582.73)
-script = ExtResource("33_uxr62")
-_points = SubResource("Resource_uax13")
+_points = SubResource("Resource_7v2x2")
 flip_edges = true
 shape_material = SubResource("Resource_417nh")
 
