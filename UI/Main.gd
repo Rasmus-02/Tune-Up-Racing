@@ -2,6 +2,7 @@ extends Node2D
 var garage = preload("res://Levels/Garage.tscn")
 var parking_garage = preload("res://Levels/Parking Garage.tscn")
 var costal_circuit = preload("res://Levels/Costal_Circuit_Scene.tscn")
+var town_track #TODO
 var splash_screen = preload("res://UI/Loading/splash_screen.tscn")
 @export var pause_menu : CanvasLayer
 @export var load_screen : Node2D
@@ -56,6 +57,11 @@ func load_new_scene(scene):
 		match scene:
 			"costal_circuit":
 				scene = costal_circuit
+				Engine.max_fps = 200
+				Sound.music.stop()
+				Sound.music.play()
+			"town_track":
+				scene = town_track
 				Engine.max_fps = 200
 				Sound.music.stop()
 				Sound.music.play()
