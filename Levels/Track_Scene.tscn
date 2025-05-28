@@ -1,43 +1,42 @@
-[gd_scene load_steps=23 format=3 uid="uid://vwfaixjbvl6j"]
+[gd_scene load_steps=22 format=3 uid="uid://vwfaixjbvl6j"]
 
-[ext_resource type="Script" path="res://Levels/Scene_changer.gd" id="1_vtmsh"]
-[ext_resource type="PackedScene" uid="uid://ccebqq52ue0h3" path="res://Levels/Costal_Circuit.tscn" id="2_1evb1"]
-[ext_resource type="PackedScene" uid="uid://dxscpexiaytjn" path="res://Game_Logic/post_race.tscn" id="3_6mm13"]
-[ext_resource type="Texture2D" uid="uid://bw5ms55wbs345" path="res://Textures/UI/In Race/In race hud gauge.png" id="4_6r1gu"]
-[ext_resource type="Texture2D" uid="uid://cn45aidbynjcq" path="res://Textures/UI/In Race/In race hud gauge rpm.png" id="5_e1bau"]
-[ext_resource type="Script" path="res://Levels/Race_Hud_Gauges.gd" id="5_kevj3"]
-[ext_resource type="Texture2D" uid="uid://dvhtnwuxpq62o" path="res://Textures/UI/In Race/In race hud gauge boost.png" id="6_k5ywl"]
-[ext_resource type="Texture2D" uid="uid://dc1abys8qkai2" path="res://Textures/UI/In Race/In race hud gauge hybrid.png" id="7_tyx8g"]
-[ext_resource type="Texture2D" uid="uid://cqi2q66pj8sfu" path="res://Textures/UI/In Race/In race hud gauge temperature.png" id="8_qjjss"]
-[ext_resource type="Texture2D" uid="uid://dkb5c24vbdukd" path="res://Textures/UI/Minimaps/Costal Circuit Minimap.png" id="9_4rfxy"]
-[ext_resource type="Script" path="res://Levels/Minimap.gd" id="9_10ajj"]
-[ext_resource type="Texture2D" uid="uid://sls8i3whvytm" path="res://Textures/UI/In Race/Start Lights.png" id="9_vuq2v"]
-[ext_resource type="Texture2D" uid="uid://ctgrd0bewx4qk" path="res://Textures/UI/In Race/Start Lights_Light.png" id="10_dhpsx"]
-[ext_resource type="Script" path="res://UI/Race UI/Start Lights.gd" id="10_yw4g0"]
-[ext_resource type="AudioStream" uid="uid://dvlc8bt8bi17a" path="res://Sound/StartLights.mp3" id="12_qq8mv"]
+[ext_resource type="Script" path="res://Levels/Scene_changer.gd" id="1_t6044"]
+[ext_resource type="Texture2D" uid="uid://bw5ms55wbs345" path="res://Textures/UI/In Race/In race hud gauge.png" id="3_xfv50"]
+[ext_resource type="Script" path="res://Levels/Race_Hud_Gauges.gd" id="4_vtgkr"]
+[ext_resource type="Texture2D" uid="uid://cn45aidbynjcq" path="res://Textures/UI/In Race/In race hud gauge rpm.png" id="5_2nwov"]
+[ext_resource type="Texture2D" uid="uid://dvhtnwuxpq62o" path="res://Textures/UI/In Race/In race hud gauge boost.png" id="6_5b4p7"]
+[ext_resource type="Texture2D" uid="uid://dc1abys8qkai2" path="res://Textures/UI/In Race/In race hud gauge hybrid.png" id="7_am5vm"]
+[ext_resource type="Texture2D" uid="uid://cqi2q66pj8sfu" path="res://Textures/UI/In Race/In race hud gauge temperature.png" id="8_vmudc"]
+[ext_resource type="Texture2D" uid="uid://sls8i3whvytm" path="res://Textures/UI/In Race/Start Lights.png" id="9_hg1wg"]
+[ext_resource type="Script" path="res://UI/Race UI/Start Lights.gd" id="10_5ep03"]
+[ext_resource type="Texture2D" uid="uid://ctgrd0bewx4qk" path="res://Textures/UI/In Race/Start Lights_Light.png" id="11_ofdeh"]
+[ext_resource type="AudioStream" uid="uid://dvlc8bt8bi17a" path="res://Sound/StartLights.mp3" id="12_eomrl"]
+[ext_resource type="PackedScene" uid="uid://dxscpexiaytjn" path="res://Game_Logic/post_race.tscn" id="13_41xn7"]
+[ext_resource type="Texture2D" uid="uid://dkb5c24vbdukd" path="res://Textures/UI/Minimaps/Costal Circuit Minimap.png" id="14_epntl"]
+[ext_resource type="Script" path="res://Levels/Minimap.gd" id="15_mi03w"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_3tn2f"]
-atlas = ExtResource("10_dhpsx")
+atlas = ExtResource("11_ofdeh")
 region = Rect2(0, 0, 329, 135)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_xkeoo"]
-atlas = ExtResource("10_dhpsx")
+atlas = ExtResource("11_ofdeh")
 region = Rect2(0, 135, 329, 135)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_0ocrf"]
-atlas = ExtResource("10_dhpsx")
+atlas = ExtResource("11_ofdeh")
 region = Rect2(0, 270, 329, 135)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_mujea"]
-atlas = ExtResource("10_dhpsx")
+atlas = ExtResource("11_ofdeh")
 region = Rect2(0, 405, 329, 135)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ns6pn"]
-atlas = ExtResource("10_dhpsx")
+atlas = ExtResource("11_ofdeh")
 region = Rect2(0, 540, 329, 135)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_1xryj"]
-atlas = ExtResource("10_dhpsx")
+atlas = ExtResource("11_ofdeh")
 region = Rect2(0, 675, 329, 135)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_5r1yl"]
@@ -68,7 +67,7 @@ animations = [{
 
 [node name="Track" type="Node2D"]
 process_mode = 1
-script = ExtResource("1_vtmsh")
+script = ExtResource("1_t6044")
 metadata/_edit_horizontal_guides_ = []
 
 [node name="Track" type="SubViewportContainer" parent="."]
@@ -84,8 +83,6 @@ canvas_item_default_texture_filter = 0
 audio_listener_enable_2d = true
 size = Vector2i(2560, 1440)
 render_target_update_mode = 4
-
-[node name="Costal_circuit" parent="Track/Track_View" instance=ExtResource("2_1evb1")]
 
 [node name="UI" type="Control" parent="."]
 layout_mode = 3
@@ -105,25 +102,25 @@ offset_bottom = 201.0
 [node name="Gauge" type="Sprite2D" parent="UI/AspectRatioContainer"]
 position = Vector2(2299.65, 1227.58)
 scale = Vector2(4, 4)
-texture = ExtResource("4_6r1gu")
-script = ExtResource("5_kevj3")
+texture = ExtResource("3_xfv50")
+script = ExtResource("4_vtgkr")
 
 [node name="RPM" type="Sprite2D" parent="UI/AspectRatioContainer/Gauge"]
 rotation = -2.79253
-texture = ExtResource("5_e1bau")
+texture = ExtResource("5_2nwov")
 
 [node name="Boost" type="Sprite2D" parent="UI/AspectRatioContainer/Gauge"]
 position = Vector2(-63.6677, 25.6482)
 rotation = -1.29937
-texture = ExtResource("6_k5ywl")
+texture = ExtResource("6_5b4p7")
 offset = Vector2(63.6677, -25.6482)
 
 [node name="Hybrid Power" type="Sprite2D" parent="UI/AspectRatioContainer/Gauge"]
-texture = ExtResource("7_tyx8g")
+texture = ExtResource("7_am5vm")
 
 [node name="Temperature" type="Sprite2D" parent="UI/AspectRatioContainer/Gauge"]
 position = Vector2(-0.0855103, -21.0161)
-texture = ExtResource("8_qjjss")
+texture = ExtResource("8_vmudc")
 offset = Vector2(0.0855103, 21.0161)
 
 [node name="Speed" type="Label" parent="UI/AspectRatioContainer/Gauge"]
@@ -159,9 +156,9 @@ horizontal_alignment = 1
 [node name="Start Lights" type="Sprite2D" parent="UI/AspectRatioContainer"]
 position = Vector2(1280, 720)
 scale = Vector2(3, 3)
-texture = ExtResource("9_vuq2v")
+texture = ExtResource("9_hg1wg")
 offset = Vector2(0.57251, -0.019989)
-script = ExtResource("10_yw4g0")
+script = ExtResource("10_5ep03")
 
 [node name="Timer" type="Timer" parent="UI/AspectRatioContainer/Start Lights"]
 wait_time = 5.5
@@ -183,10 +180,10 @@ text = "[Press Any Key To Continue]"
 horizontal_alignment = 1
 
 [node name="Start_Sound" type="AudioStreamPlayer" parent="UI/AspectRatioContainer/Start Lights"]
-stream = ExtResource("12_qq8mv")
+stream = ExtResource("12_eomrl")
 volume_db = -5.0
 
-[node name="Post Race" parent="UI" node_paths=PackedStringArray("map_viewport") instance=ExtResource("3_6mm13")]
+[node name="Post Race" parent="UI" node_paths=PackedStringArray("map_viewport") instance=ExtResource("13_41xn7")]
 layout_mode = 2
 offset_left = -997.29
 offset_top = -515.92
@@ -243,8 +240,8 @@ text = "LAP: 1/3"
 
 [node name="Minimap" type="Sprite2D" parent="UI"]
 position = Vector2(-1963.26, 0)
-texture = ExtResource("9_4rfxy")
-script = ExtResource("9_10ajj")
+texture = ExtResource("14_epntl")
+script = ExtResource("15_mi03w")
 
 [connection signal="timeout" from="UI/AspectRatioContainer/Start Lights/Timer" to="UI/AspectRatioContainer/Start Lights" method="_on_timer_timeout"]
 [connection signal="finished" from="UI/AspectRatioContainer/Start Lights/Start_Sound" to="UI/AspectRatioContainer/Start Lights" method="_on_start_sound_finished"]

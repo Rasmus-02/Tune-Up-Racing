@@ -1,8 +1,7 @@
 extends Node2D
 var garage = preload("res://Levels/Garage.tscn")
 var parking_garage = preload("res://Levels/Parking Garage.tscn")
-var costal_circuit = preload("res://Levels/Costal_Circuit_Scene.tscn")
-var town_track #TODO
+var track = preload("res://Levels/Track_Scene.tscn")
 var splash_screen = preload("res://UI/Loading/splash_screen.tscn")
 @export var pause_menu : CanvasLayer
 @export var load_screen : Node2D
@@ -10,6 +9,7 @@ var splash_screen = preload("res://UI/Loading/splash_screen.tscn")
 @export var worldmap : CanvasLayer
 var current_scene_instance = null
 var current_scene
+var current_scene_name : String
 var pause_blocked = false
 
 
@@ -54,14 +54,18 @@ func change_scene(scene):
 #This gets called after change scene animation is done
 func load_new_scene(scene):
 	if scene is String:
+		# Save scene string name
+		current_scene_name = scene
+		# Find correct scene node
 		match scene:
+			# For tracks, scene switchcase found in Scene_changer
 			"costal_circuit":
-				scene = costal_circuit
+				scene = track
 				Engine.max_fps = 200
 				Sound.music.stop()
 				Sound.music.play()
 			"town_track":
-				scene = town_track
+				scene = track
 				Engine.max_fps = 200
 				Sound.music.stop()
 				Sound.music.play()

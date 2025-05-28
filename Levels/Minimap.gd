@@ -16,6 +16,7 @@ var AI6_color = Color(0.75443208217621, 0.42937695980072, 0.00000038504601)
 var AI7_color = Color(0.70588237047195, 0.70588237047195, 0.70588237047195)
 
 func _ready():
+	await get_tree().create_timer(1).timeout
 	car = get_parent().get_parent().get_child(0).get_child(0).get_child(0).get_node("Player").get_node("Car")
 	ai_group = get_parent().get_parent().get_child(0).get_child(0).get_child(0).get_node("AI")
 	var color_array = [player_color, AI1_color, AI2_color, AI3_color, AI4_color, AI5_color, AI6_color, AI7_color]

@@ -151,10 +151,10 @@ text = "No"
 horizontal_alignment = 1
 
 [node name="Map" type="CanvasLayer" parent="."]
+visible = false
 script = ExtResource("8_a7208")
 
 [node name="Map" type="TextureRect" parent="Map"]
-visible = false
 offset_left = 561.0
 offset_right = 2001.0
 offset_bottom = 1440.0
@@ -218,6 +218,66 @@ offset_right = 6.25
 offset_bottom = 1.0
 
 [node name="New Event" type="Sprite2D" parent="Map/Map/Costal Circuit"]
+position = Vector2(13.5, 1.5)
+texture = ExtResource("13_aeibt")
+
+[node name="Town Track" type="Control" parent="Map/Map" node_paths=PackedStringArray("new_event_icon", "map_info")]
+anchors_preset = 0
+offset_left = 612.0
+offset_top = 812.0
+offset_right = 623.0
+offset_bottom = 833.0
+scale = Vector2(4, 4)
+script = ExtResource("10_dmp80")
+new_event_icon = NodePath("New Event")
+map_info = NodePath("../../Map Info")
+map_name = "town_track"
+
+[node name="TextureButton" type="TextureButton" parent="Map/Map/Town Track"]
+layout_mode = 2
+offset_left = 1.0
+offset_right = 14.0
+offset_bottom = 16.0
+texture_normal = ExtResource("10_3tdk1")
+texture_pressed = ExtResource("10_3tdk1")
+texture_hover = ExtResource("10_3tdk1")
+texture_disabled = ExtResource("10_3tdk1")
+texture_focused = ExtResource("10_3tdk1")
+
+[node name="Progress" type="Sprite2D" parent="Map/Map/Town Track"]
+z_index = 1
+position = Vector2(7.5, 18)
+texture = ExtResource("11_dni2e")
+
+[node name="1" type="ColorRect" parent="Map/Map/Town Track/Progress"]
+z_index = -1
+offset_left = -5.5
+offset_top = -1.0
+offset_right = -2.5
+offset_bottom = 1.0
+
+[node name="2" type="ColorRect" parent="Map/Map/Town Track/Progress"]
+z_index = -1
+offset_left = -2.75
+offset_top = -1.0
+offset_right = 0.25
+offset_bottom = 1.0
+
+[node name="3" type="ColorRect" parent="Map/Map/Town Track/Progress"]
+z_index = -1
+offset_left = 0.25
+offset_top = -1.0
+offset_right = 3.25
+offset_bottom = 1.0
+
+[node name="4" type="ColorRect" parent="Map/Map/Town Track/Progress"]
+z_index = -1
+offset_left = 3.25
+offset_top = -1.0
+offset_right = 6.25
+offset_bottom = 1.0
+
+[node name="New Event" type="Sprite2D" parent="Map/Map/Town Track"]
 position = Vector2(13.5, 1.5)
 texture = ExtResource("13_aeibt")
 
@@ -337,4 +397,5 @@ texture = ExtResource("10_1mvb7")
 [connection signal="pressed" from="Sell_Menu/Sell Car/HBoxContainer/Yes" to="Sell_Menu" method="_on_yes_pressed"]
 [connection signal="pressed" from="Sell_Menu/Sell Car/HBoxContainer/No" to="Sell_Menu" method="_on_no_pressed"]
 [connection signal="pressed" from="Map/Map/Costal Circuit/TextureButton" to="Map/Map/Costal Circuit" method="_on_pressed"]
+[connection signal="pressed" from="Map/Map/Town Track/TextureButton" to="Map/Map/Town Track" method="_on_pressed"]
 [connection signal="pressed" from="Map/Map Info/Labels/Play_Button" to="Map/Map Info" method="_on_play_button_pressed"]

@@ -41,3 +41,4 @@ func _on_play_button_pressed():
 	close()
 	worldmap.exit_blocked = false
 	worldmap.close()
+	worldmap.main.pause_blocked = false

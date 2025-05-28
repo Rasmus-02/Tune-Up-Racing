@@ -20,6 +20,7 @@ var gear : int
 @onready var lap_indicator = $"../../Lap Count"
 
 func _ready():
+	await get_tree().create_timer(1).timeout
 	car = get_parent().get_parent().get_parent().get_child(0).get_child(0).get_child(0).get_node("Player").get_node("Car")
 
 func _physics_process(_delta):
