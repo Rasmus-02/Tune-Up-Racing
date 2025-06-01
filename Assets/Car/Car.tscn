@@ -27,7 +27,7 @@ radius = 44.0
 height = 216.0
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_30j61"]
-radius = 224.0
+radius = 184.0
 height = 776.0
 
 [sub_resource type="Animation" id="Animation_pd7xm"]
