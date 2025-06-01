@@ -70,7 +70,7 @@ func _on_quit_pressed():
 func _on_restart_pressed():
 	close()
 	Placing.car_list.clear()
-	main.change_scene("costal_circuit")
+	main.change_scene(main.current_scene_name)
 
 var settings_open = false
 func _on_settings_pressed():

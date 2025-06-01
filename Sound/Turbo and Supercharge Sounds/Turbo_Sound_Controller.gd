@@ -51,6 +51,12 @@ func sound_controller():
 	else:
 		turbo_charge.stop()
 		supercharger.stop()
+	
+	if engine.get_parent().player == false:
+		var volume_reduction = 5
+		turbo_flutter.volume_db -= volume_reduction
+		turbo_charge.volume_db -= volume_reduction
+		supercharger.volume_db -= volume_reduction
 
 
 

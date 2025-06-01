@@ -347,7 +347,7 @@ func  _physics_process(_delta):
 		hp_tq_calculator()
 		engine_temp()
 		boost_calculator()
-		if dyno != 1 and player == true:
+		if dyno != 1:
 			damage_calculator()
 	else:
 		is_running = false
@@ -500,32 +500,30 @@ func part_placeable(type, node):
 
 #region Engine Physics
 func damage_calculator():
-	var damage_speed_mod = 0.0002
-	##Block
-	if torque > block.max_tq:
-		block_durability -= (torque - block.max_tq) * damage_speed_mod
-	##Internals
-	if torque > internals.max_tq:
-		internals_durability -= (torque - internals.max_tq) * damage_speed_mod
-	if rpm > internals.max_rpm:
-		internals_durability -= (rpm - internals.max_rpm) * damage_speed_mod
-	##Knock
-	var knock_damage = knock() * 0.01
-	internals_durability -= knock_damage
-	top_durability -= knock_damage * 0.5
-	##Great Overpressure
-	if knock() > 1:
-		knock_damage * 1.5
-	##Overheating (Temperature)
-	if get_parent().player == true:
-		pass
-		#print(temperature)
-	if temperature >= 110:
-		block_durability -= (temperature - 110) * damage_speed_mod * 10
-		internals_durability -= (temperature - 110) * damage_speed_mod * 10
-		top_durability -= (temperature - 110) * damage_speed_mod * 10
-		if turbo == true:
-			exhaust_manifold_durability -= (temperature - 110) * damage_speed_mod * 10
+	if get_parent().player == true: # Ignore engine damage for AI
+		var damage_speed_mod = 0.0002
+		##Block
+		if torque > block.max_tq:
+			block_durability -= (torque - block.max_tq) * damage_speed_mod
+		##Internals
+		if torque > internals.max_tq:
+			internals_durability -= (torque - internals.max_tq) * damage_speed_mod
+		if rpm > internals.max_rpm:
+			internals_durability -= (rpm - internals.max_rpm) * damage_speed_mod
+		##Knock
+		var knock_damage = knock() * 0.01
+		internals_durability -= knock_damage
+		top_durability -= knock_damage * 0.5
+		##Great Overpressure
+		if knock() > 1:
+			knock_damage * 1.5
+		##Overheating (Temperature)
+		if temperature >= 110:
+			block_durability -= (temperature - 110) * damage_speed_mod * 10
+			internals_durability -= (temperature - 110) * damage_speed_mod * 10
+			top_durability -= (temperature - 110) * damage_speed_mod * 10
+			if turbo == true:
+				exhaust_manifold_durability -= (temperature - 110) * damage_speed_mod * 10
 	
 	#Clamps
 	block_durability = clamp(block_durability, 0, 100)

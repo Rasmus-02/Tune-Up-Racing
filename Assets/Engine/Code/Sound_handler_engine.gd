@@ -79,6 +79,14 @@ func sound_controller():
 		throttle_4000.stop()
 		no_throttle_4000.stop()
 		airflow.stop()
+	
+	if engine.get_parent().player == false:
+		var volume_reduction = 5
+		throttle_1000.volume_db -= volume_reduction
+		throttle_4000.volume_db -= volume_reduction
+		no_throttle_1000.volume_db -= volume_reduction
+		no_throttle_4000.volume_db -= volume_reduction
+		airflow.volume_db -= volume_reduction * 0.5
 
 
 func linear_to_db(value: float) -> float:

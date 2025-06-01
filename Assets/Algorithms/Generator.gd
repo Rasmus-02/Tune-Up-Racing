@@ -8,14 +8,17 @@ var race_status : bool
 func generate_car(rarity, weight, torque_estimate, grip, downforce, brake_force, precision, race : bool):
 	#If generating AI and not purchaseable cars
 	race_status = race
+	max_rarity = rarity
+	
 	if race == true:
 		rarity = rarity_to_int(rarity)
 		torque_estimate = torque_estimate * difficulty
 		grip *= difficulty
 		downforce *= difficulty
 		brake_force *= difficulty
-	else:
-		max_rarity = rarity
+		# If medium or harder difficulty, encounter more challanging cars
+		if Settings.difficulty >= 2:
+			max_rarity += 1
 	
 	#Find Suitable Chassi
 	var car_array = []
@@ -26,10 +29,12 @@ func generate_car(rarity, weight, torque_estimate, grip, downforce, brake_force,
 		var instance = car.chassi[0].instantiate()
 		# If in race +-1 rarity, if in shop, max unlocked rarity
 		var instance_rarity = rarity_to_int(instance.rarity)
-		if (race_status == true and instance_rarity <= max_rarity + 1 and instance_rarity >= max_rarity - 1) or (instance_rarity <= max_rarity and race_status == false):
+		print(max_rarity)
+		if (race_status == true and instance_rarity <= max_rarity and instance_rarity >= max_rarity - 2) or (instance_rarity <= max_rarity and race_status == false):
 			if instance.weight > (weight * precision) * 0.70 and instance.weight < (weight / precision) * 0.75:
 				car_array.append(car)
 		instance.queue_free()
+	print(car_array)
 	if car_array.size() != 0:
 		randomize()
 		var rng = randi_range(0, car_array.size() - 1) #Pick A Random Chassi from the array
@@ -146,7 +151,7 @@ func generate_engine(rarity, weight, car_weight, torque, engine_bay_size, engine
 			var instance = engine.block[1].instantiate()
 			# If in race +-1 rarity, if in shop, max unlocked rarity
 			var instance_rarity = rarity_to_int(instance.rarity)
-			if (race_status == true and instance_rarity <= max_rarity + 1 and instance_rarity >= max_rarity - 1) or (instance_rarity <= max_rarity and race_status == false):
+			if (race_status == true and instance_rarity <= max_rarity and instance_rarity >= max_rarity - 2) or (instance_rarity <= max_rarity and race_status == false):
 				if instance.lenght < max_lenght and instance.width * 0.5 < max_width_l and instance.width * 0.5 < max_width_r:
 					engine_array.append(engine)
 			instance.queue_free()
