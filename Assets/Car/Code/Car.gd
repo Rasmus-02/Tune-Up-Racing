@@ -804,16 +804,19 @@ func damage_calculator_tick():
 		if engine.torque > driveshaft.max_torque:
 			var damage = (engine.torque - driveshaft.max_torque) * 0.005
 			driveshaft_durability -= damage
+			driveshaft_durability = clamp(driveshaft_durability, 0, 100)
 		
 		# Gearbox damage if above torque
 		if engine.torque > gearbox.max_tq:
 			var damage = (engine.torque - gearbox.max_tq) * 0.005
 			gearbox_durability -= damage
+			gearbox_durability = clamp(gearbox_durability, 0, 100)
 		
 		# Tire damage when driving (extra damage if drifting)
 		var slide_damage = (1 - (tire_limit / max_tire_limit)) * (treadwear * 0.01)
 		var tire_wear = (treadwear / 60.0) * (float(speed_kmh) / 100.0) # treadwear is dps || More speed == more wear
 		tires_durability -= (slide_damage + tire_wear) * 0.5
+		tires_durability = clamp(tires_durability, 0, 100)
 
 # Called during collision
 func damage_calculator_collision(part : String, speed):

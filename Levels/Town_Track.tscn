@@ -1,4 +1,4 @@
-[gd_scene load_steps=364 format=3 uid="uid://c5kimmpxxa56r"]
+[gd_scene load_steps=368 format=3 uid="uid://c5kimmpxxa56r"]
 
 [ext_resource type="Script" path="res://Levels/level_status.gd" id="1_grd14"]
 [ext_resource type="Script" path="res://Levels/Lighting.gd" id="2_5ods4"]
@@ -341,7 +341,7 @@ point_in = Vector2(868.769, -512.645)
 point_out = Vector2(-687.203, 153.466)
 properties = SubResource("Resource_18y7n")
 
-[sub_resource type="Resource" id="Resource_fucol"]
+[sub_resource type="Resource" id="Resource_m3r75"]
 script = ExtResource("10_6xiyj")
 texture_idx = 0
 flip = false
@@ -352,7 +352,7 @@ script = ExtResource("11_hexod")
 position = Vector2(-613.644, 4892.24)
 point_in = Vector2(0, 0)
 point_out = Vector2(0, 0)
-properties = SubResource("Resource_fucol")
+properties = SubResource("Resource_m3r75")
 
 [sub_resource type="Resource" id="Resource_t77tx"]
 script = ExtResource("10_6xiyj")
@@ -400,7 +400,7 @@ point_in = Vector2(0, 0)
 point_out = Vector2(0, 0)
 properties = SubResource("Resource_77c2v")
 
-[sub_resource type="Resource" id="Resource_h4764"]
+[sub_resource type="Resource" id="Resource_ubs5k"]
 script = ExtResource("10_6xiyj")
 texture_idx = 0
 flip = false
@@ -411,9 +411,9 @@ script = ExtResource("11_hexod")
 position = Vector2(309.586, 4498.33)
 point_in = Vector2(-300, 200)
 point_out = Vector2(200, -100)
-properties = SubResource("Resource_h4764")
+properties = SubResource("Resource_ubs5k")
 
-[sub_resource type="Resource" id="Resource_015vc"]
+[sub_resource type="Resource" id="Resource_hp3e5"]
 script = ExtResource("10_6xiyj")
 texture_idx = 0
 flip = false
@@ -424,7 +424,7 @@ script = ExtResource("11_hexod")
 position = Vector2(805.368, 26.3682)
 point_in = Vector2(0, 0)
 point_out = Vector2(0, 0)
-properties = SubResource("Resource_015vc")
+properties = SubResource("Resource_hp3e5")
 
 [sub_resource type="Resource" id="Resource_hdo70"]
 script = ExtResource("10_6xiyj")
@@ -675,7 +675,7 @@ z_index = 0
 z_as_relative = true
 offset = 0.0
 
-[sub_resource type="Resource" id="Resource_wr2gu"]
+[sub_resource type="Resource" id="Resource_0pr3b"]
 script = ExtResource("10_6xiyj")
 texture_idx = 0
 flip = false
@@ -686,7 +686,7 @@ script = ExtResource("11_hexod")
 position = Vector2(-7612.35, 11942.3)
 point_in = Vector2(0, 0)
 point_out = Vector2(0, 0)
-properties = SubResource("Resource_wr2gu")
+properties = SubResource("Resource_0pr3b")
 
 [sub_resource type="Resource" id="Resource_lpsgk"]
 script = ExtResource("10_6xiyj")
@@ -727,7 +727,7 @@ point_in = Vector2(973.141, -890.821)
 point_out = Vector2(-870, 676)
 properties = SubResource("Resource_064ss")
 
-[sub_resource type="Resource" id="Resource_rmmtl"]
+[sub_resource type="Resource" id="Resource_75t00"]
 script = ExtResource("10_6xiyj")
 texture_idx = 0
 flip = false
@@ -738,9 +738,9 @@ script = ExtResource("11_hexod")
 position = Vector2(-5605.12, 14791.2)
 point_in = Vector2(923.345, 610.218)
 point_out = Vector2(-428.898, -461.879)
-properties = SubResource("Resource_rmmtl")
+properties = SubResource("Resource_75t00")
 
-[sub_resource type="Resource" id="Resource_i8onl"]
+[sub_resource type="Resource" id="Resource_n2c42"]
 script = ExtResource("10_6xiyj")
 texture_idx = 0
 flip = false
@@ -751,9 +751,9 @@ script = ExtResource("11_hexod")
 position = Vector2(-7612.35, 11942.3)
 point_in = Vector2(0, 0)
 point_out = Vector2(0, 0)
-properties = SubResource("Resource_i8onl")
+properties = SubResource("Resource_n2c42")
 
-[sub_resource type="Resource" id="Resource_8a0y2"]
+[sub_resource type="Resource" id="Resource_jcuhp"]
 script = ExtResource("10_6xiyj")
 texture_idx = 0
 flip = false
@@ -764,9 +764,9 @@ script = ExtResource("11_hexod")
 position = Vector2(-6910.68, 13347.9)
 point_in = Vector2(516.67, 761.688)
 point_out = Vector2(-741.804, -887.854)
-properties = SubResource("Resource_8a0y2")
+properties = SubResource("Resource_jcuhp")
 
-[sub_resource type="Resource" id="Resource_ymqnv"]
+[sub_resource type="Resource" id="Resource_jhtsm"]
 script = ExtResource("10_6xiyj")
 texture_idx = 0
 flip = false
@@ -777,9 +777,9 @@ script = ExtResource("11_hexod")
 position = Vector2(-3413.58, 11192.6)
 point_in = Vector2(-679.576, -706.385)
 point_out = Vector2(788.6, 995.271)
-properties = SubResource("Resource_ymqnv")
+properties = SubResource("Resource_jhtsm")
 
-[sub_resource type="Resource" id="Resource_fesuv"]
+[sub_resource type="Resource" id="Resource_q7mbl"]
 script = ExtResource("10_6xiyj")
 texture_idx = 0
 flip = false
@@ -790,7 +790,7 @@ script = ExtResource("11_hexod")
 position = Vector2(-5255.12, 11748.1)
 point_in = Vector2(-687.14, 604.08)
 point_out = Vector2(687.14, -604.08)
-properties = SubResource("Resource_fesuv")
+properties = SubResource("Resource_q7mbl")
 
 [sub_resource type="Resource" id="Resource_motlq"]
 script = ExtResource("12_lq6dg")
@@ -898,7 +898,7 @@ point_in = Vector2(77.3477, 13.2505)
 point_out = Vector2(379.131, -138.33)
 properties = SubResource("Resource_6fddj")
 
-[sub_resource type="Resource" id="Resource_nphkb"]
+[sub_resource type="Resource" id="Resource_am24j"]
 script = ExtResource("10_6xiyj")
 texture_idx = 0
 flip = false
@@ -909,7 +909,7 @@ script = ExtResource("11_hexod")
 position = Vector2(-8443.57, 6200.74)
 point_in = Vector2(4, -632)
 point_out = Vector2(-120, -24)
-properties = SubResource("Resource_nphkb")
+properties = SubResource("Resource_am24j")
 
 [sub_resource type="Resource" id="Resource_jidve"]
 script = ExtResource("10_6xiyj")
@@ -944,7 +944,7 @@ point_in = Vector2(767.628, 285.735)
 point_out = Vector2(-767.628, -285.735)
 properties = SubResource("Resource_fmsyy")
 
-[sub_resource type="Resource" id="Resource_quir6"]
+[sub_resource type="Resource" id="Resource_xi6m1"]
 script = ExtResource("10_6xiyj")
 texture_idx = 0
 flip = false
@@ -955,7 +955,7 @@ script = ExtResource("11_hexod")
 position = Vector2(-11329.3, 3854.33)
 point_in = Vector2(-333.522, 92.4951)
 point_out = Vector2(158.343, -44.9949)
-properties = SubResource("Resource_quir6")
+properties = SubResource("Resource_xi6m1")
 
 [sub_resource type="Resource" id="Resource_5iweo"]
 script = ExtResource("12_lq6dg")
@@ -1027,7 +1027,7 @@ point_in = Vector2(179.869, -6.47647)
 point_out = Vector2(-191.324, 9.61035)
 properties = SubResource("Resource_pjx4l")
 
-[sub_resource type="Resource" id="Resource_xgvu7"]
+[sub_resource type="Resource" id="Resource_pknuw"]
 script = ExtResource("10_6xiyj")
 texture_idx = 0
 flip = false
@@ -1038,7 +1038,7 @@ script = ExtResource("11_hexod")
 position = Vector2(-20715, 2232.25)
 point_in = Vector2(-56.7461, 2696.89)
 point_out = Vector2(56.7461, -2696.89)
-properties = SubResource("Resource_xgvu7")
+properties = SubResource("Resource_pknuw")
 
 [sub_resource type="Resource" id="Resource_qj2iq"]
 script = ExtResource("10_6xiyj")
@@ -1053,7 +1053,7 @@ point_in = Vector2(-202.508, 44.7188)
 point_out = Vector2(117.988, 26.7563)
 properties = SubResource("Resource_qj2iq")
 
-[sub_resource type="Resource" id="Resource_t1w6f"]
+[sub_resource type="Resource" id="Resource_lib4r"]
 script = ExtResource("10_6xiyj")
 texture_idx = 0
 flip = false
@@ -1064,7 +1064,7 @@ script = ExtResource("11_hexod")
 position = Vector2(-19885.4, 2238.49)
 point_in = Vector2(105.549, -1952.94)
 point_out = Vector2(76.1387, 1912.7)
-properties = SubResource("Resource_t1w6f")
+properties = SubResource("Resource_lib4r")
 
 [sub_resource type="Resource" id="Resource_lysax"]
 script = ExtResource("11_hexod")
@@ -1094,6 +1094,38 @@ Vector2i(4, 3): SubResource("Resource_pmhjs")
 tessellation_stages = 3
 tessellation_tolerance = 6.0
 curve_bake_interval = 20.0
+
+[sub_resource type="Resource" id="Resource_minob"]
+script = ExtResource("16_sgrsv")
+begin = 0.0
+distance = 360.0
+edgeRendering = Vector2(0, 0)
+
+[sub_resource type="Resource" id="Resource_qg8qp"]
+script = ExtResource("17_pstga")
+normal_range = SubResource("Resource_minob")
+weld = true
+taper_sharp_corners = false
+render = true
+z_index = 0
+z_as_relative = true
+offset = 0.0
+
+[sub_resource type="Resource" id="Resource_thsse"]
+script = ExtResource("16_sgrsv")
+begin = 0.0
+distance = 360.0
+edgeRendering = Vector2(0, 0)
+
+[sub_resource type="Resource" id="Resource_hxh3b"]
+script = ExtResource("17_pstga")
+normal_range = SubResource("Resource_thsse")
+weld = true
+taper_sharp_corners = false
+render = true
+z_index = 0
+z_as_relative = true
+offset = 0.0
 
 [sub_resource type="Resource" id="Resource_pwcpv"]
 script = ExtResource("10_6xiyj")
@@ -1277,7 +1309,7 @@ point_in = Vector2(-533.53, -486.524)
 point_out = Vector2(1264.39, 956.98)
 properties = SubResource("Resource_wyk7a")
 
-[sub_resource type="Resource" id="Resource_sc66j"]
+[sub_resource type="Resource" id="Resource_8157x"]
 script = ExtResource("10_6xiyj")
 texture_idx = 0
 flip = false
@@ -1288,7 +1320,7 @@ script = ExtResource("11_hexod")
 position = Vector2(-7649.75, 13009.1)
 point_in = Vector2(1499.83, 1246.76)
 point_out = Vector2(-639.569, -551.389)
-properties = SubResource("Resource_sc66j")
+properties = SubResource("Resource_8157x")
 
 [sub_resource type="Resource" id="Resource_n8cmu"]
 script = ExtResource("10_6xiyj")
@@ -1349,7 +1381,7 @@ point_in = Vector2(1163.44, 0)
 point_out = Vector2(-1055.5, 44.447)
 properties = SubResource("Resource_aevn1")
 
-[sub_resource type="Resource" id="Resource_48lud"]
+[sub_resource type="Resource" id="Resource_c5o7l"]
 script = ExtResource("10_6xiyj")
 texture_idx = 0
 flip = false
@@ -1360,7 +1392,7 @@ script = ExtResource("11_hexod")
 position = Vector2(-11957.6, 393.279)
 point_in = Vector2(-1128, 8)
 point_out = Vector2(1718.51, 42.7966)
-properties = SubResource("Resource_48lud")
+properties = SubResource("Resource_c5o7l")
 
 [sub_resource type="Resource" id="Resource_5urfs"]
 script = ExtResource("10_6xiyj")
@@ -1388,7 +1420,7 @@ point_in = Vector2(-377.55, 173.673)
 point_out = Vector2(377.55, -173.673)
 properties = SubResource("Resource_42red")
 
-[sub_resource type="Resource" id="Resource_k17mj"]
+[sub_resource type="Resource" id="Resource_6adt6"]
 script = ExtResource("10_6xiyj")
 texture_idx = 0
 flip = false
@@ -1399,7 +1431,7 @@ script = ExtResource("11_hexod")
 position = Vector2(-19387.8, 2165.76)
 point_in = Vector2(603.348, 16.0181)
 point_out = Vector2(-720.813, -10.6787)
-properties = SubResource("Resource_k17mj")
+properties = SubResource("Resource_6adt6")
 
 [sub_resource type="Resource" id="Resource_8aypu"]
 script = ExtResource("10_6xiyj")
@@ -1505,7 +1537,7 @@ point_in = Vector2(16, 792)
 point_out = Vector2(-44.541, -1519.79)
 properties = SubResource("Resource_mcmkm")
 
-[sub_resource type="Resource" id="Resource_c0nje"]
+[sub_resource type="Resource" id="Resource_q660p"]
 script = ExtResource("10_6xiyj")
 texture_idx = 0
 flip = false
@@ -1516,7 +1548,7 @@ script = ExtResource("11_hexod")
 position = Vector2(-9105.15, 3807.09)
 point_in = Vector2(-52.5405, -2380.59)
 point_out = Vector2(24, 840)
-properties = SubResource("Resource_c0nje")
+properties = SubResource("Resource_q660p")
 
 [sub_resource type="Resource" id="Resource_06n5j"]
 script = ExtResource("10_6xiyj")
@@ -1588,7 +1620,10 @@ _constraints = {
 Vector2i(243, 0): 15
 }
 _next_key = 274
-_material_overrides = {}
+_material_overrides = {
+Vector2i(242, 0): SubResource("Resource_hxh3b"),
+Vector2i(260, 258): SubResource("Resource_qg8qp")
+}
 tessellation_stages = 3
 tessellation_tolerance = 4.0
 curve_bake_interval = 20.0
@@ -1658,7 +1693,7 @@ point_in = Vector2(410.341, 128.545)
 point_out = Vector2(-333.754, -172.534)
 properties = SubResource("Resource_f2dut")
 
-[sub_resource type="Resource" id="Resource_qvids"]
+[sub_resource type="Resource" id="Resource_yiddc"]
 script = ExtResource("10_6xiyj")
 texture_idx = 0
 flip = false
@@ -1669,9 +1704,9 @@ script = ExtResource("11_hexod")
 position = Vector2(-1433.41, -2640.39)
 point_in = Vector2(0, 0)
 point_out = Vector2(0, 0)
-properties = SubResource("Resource_qvids")
+properties = SubResource("Resource_yiddc")
 
-[sub_resource type="Resource" id="Resource_tja67"]
+[sub_resource type="Resource" id="Resource_tryme"]
 script = ExtResource("10_6xiyj")
 texture_idx = 0
 flip = false
@@ -1682,7 +1717,7 @@ script = ExtResource("11_hexod")
 position = Vector2(-3197.28, 2900.05)
 point_in = Vector2(-477.873, 253.62)
 point_out = Vector2(475.203, -189.547)
-properties = SubResource("Resource_tja67")
+properties = SubResource("Resource_tryme")
 
 [sub_resource type="Resource" id="Resource_oe8m4"]
 script = ExtResource("12_lq6dg")
@@ -1780,7 +1815,7 @@ point_in = Vector2(-81.72, -1024.78)
 point_out = Vector2(218.28, 1375.22)
 properties = SubResource("Resource_i5bha")
 
-[sub_resource type="Resource" id="Resource_3nqin"]
+[sub_resource type="Resource" id="Resource_j8e6x"]
 script = ExtResource("10_6xiyj")
 texture_idx = 0
 flip = false
@@ -1791,9 +1826,9 @@ script = ExtResource("11_hexod")
 position = Vector2(-6281.72, 8575.22)
 point_in = Vector2(-381.72, -524.78)
 point_out = Vector2(418.28, 475.22)
-properties = SubResource("Resource_3nqin")
+properties = SubResource("Resource_j8e6x")
 
-[sub_resource type="Resource" id="Resource_0m2b6"]
+[sub_resource type="Resource" id="Resource_bhukm"]
 script = ExtResource("10_6xiyj")
 texture_idx = 0
 flip = false
@@ -1804,9 +1839,9 @@ script = ExtResource("11_hexod")
 position = Vector2(-5281.72, 11675.2)
 point_in = Vector2(1118.28, -1024.78)
 point_out = Vector2(-1181.72, 975.22)
-properties = SubResource("Resource_0m2b6")
+properties = SubResource("Resource_bhukm")
 
-[sub_resource type="Resource" id="Resource_0wlwr"]
+[sub_resource type="Resource" id="Resource_o3ijn"]
 script = ExtResource("10_6xiyj")
 texture_idx = 0
 flip = false
@@ -1817,7 +1852,7 @@ script = ExtResource("11_hexod")
 position = Vector2(-7981.72, 10875.2)
 point_in = Vector2(418.28, 475.22)
 point_out = Vector2(-481.72, -524.78)
-properties = SubResource("Resource_0wlwr")
+properties = SubResource("Resource_o3ijn")
 
 [sub_resource type="Resource" id="Resource_rge2n"]
 script = ExtResource("10_6xiyj")
@@ -1832,7 +1867,7 @@ point_in = Vector2(18.28, 975.22)
 point_out = Vector2(18.28, -424.78)
 properties = SubResource("Resource_rge2n")
 
-[sub_resource type="Resource" id="Resource_0538i"]
+[sub_resource type="Resource" id="Resource_fl4oq"]
 script = ExtResource("10_6xiyj")
 texture_idx = 0
 flip = false
@@ -1843,7 +1878,7 @@ script = ExtResource("11_hexod")
 position = Vector2(-8981.72, 775.22)
 point_in = Vector2(18.28, 275.22)
 point_out = Vector2(18.28, -324.78)
-properties = SubResource("Resource_0538i")
+properties = SubResource("Resource_fl4oq")
 
 [sub_resource type="Resource" id="Resource_psu8i"]
 script = ExtResource("10_6xiyj")
@@ -1931,7 +1966,7 @@ point_in = Vector2(338.291, 13.9885)
 point_out = Vector2(-335.621, -11.9863)
 properties = SubResource("Resource_s2hjt")
 
-[sub_resource type="Resource" id="Resource_em43f"]
+[sub_resource type="Resource" id="Resource_qvm56"]
 script = ExtResource("10_6xiyj")
 texture_idx = 0
 flip = false
@@ -1942,7 +1977,7 @@ script = ExtResource("11_hexod")
 position = Vector2(-10034.4, 1701.5)
 point_in = Vector2(160.459, 456.835)
 point_out = Vector2(-158.571, -451.172)
-properties = SubResource("Resource_em43f")
+properties = SubResource("Resource_qvm56")
 
 [sub_resource type="Resource" id="Resource_5lad1"]
 script = ExtResource("12_lq6dg")
@@ -1986,7 +2021,7 @@ point_in = Vector2(119.614, -34.1238)
 point_out = Vector2(-188.72, 26.22)
 properties = SubResource("Resource_r6ddg")
 
-[sub_resource type="Resource" id="Resource_nb1oj"]
+[sub_resource type="Resource" id="Resource_c37f5"]
 script = ExtResource("10_6xiyj")
 texture_idx = 0
 flip = false
@@ -1997,9 +2032,9 @@ script = ExtResource("11_hexod")
 position = Vector2(-22827.8, -424.78)
 point_in = Vector2(18.28, -2024.78)
 point_out = Vector2(-81.72, 2010.86)
-properties = SubResource("Resource_nb1oj")
+properties = SubResource("Resource_c37f5")
 
-[sub_resource type="Resource" id="Resource_me6he"]
+[sub_resource type="Resource" id="Resource_fqojt"]
 script = ExtResource("10_6xiyj")
 texture_idx = 0
 flip = false
@@ -2010,7 +2045,7 @@ script = ExtResource("11_hexod")
 position = Vector2(-20889.3, 1958.84)
 point_in = Vector2(-281.72, -24.78)
 point_out = Vector2(338.438, 14.2776)
-properties = SubResource("Resource_me6he")
+properties = SubResource("Resource_fqojt")
 
 [sub_resource type="Resource" id="Resource_230fu"]
 script = ExtResource("10_6xiyj")
@@ -2081,7 +2116,7 @@ point_in = Vector2(-20.0002, -13.0259)
 point_out = Vector2(448.134, 5.06006)
 properties = SubResource("Resource_og2j1")
 
-[sub_resource type="Resource" id="Resource_sx0ro"]
+[sub_resource type="Resource" id="Resource_suexr"]
 script = ExtResource("10_6xiyj")
 texture_idx = 0
 flip = false
@@ -2092,7 +2127,7 @@ script = ExtResource("11_hexod")
 position = Vector2(-864.153, 1259.93)
 point_in = Vector2(258.652, -193.325)
 point_out = Vector2(-22.6963, 32.1877)
-properties = SubResource("Resource_sx0ro")
+properties = SubResource("Resource_suexr")
 
 [sub_resource type="Resource" id="Resource_eqfrd"]
 script = ExtResource("10_6xiyj")
@@ -2184,7 +2219,7 @@ fill_texture_angle_offset = 0.0
 fill_mesh_offset = 0.0
 render_offset = 0.0
 
-[sub_resource type="Resource" id="Resource_wti3e"]
+[sub_resource type="Resource" id="Resource_sfqu1"]
 script = ExtResource("10_6xiyj")
 texture_idx = 0
 flip = false
@@ -2195,9 +2230,9 @@ script = ExtResource("11_hexod")
 position = Vector2(-5298.53, 4708.18)
 point_in = Vector2(0, 0)
 point_out = Vector2(0, 0)
-properties = SubResource("Resource_wti3e")
+properties = SubResource("Resource_sfqu1")
 
-[sub_resource type="Resource" id="Resource_prrfu"]
+[sub_resource type="Resource" id="Resource_bppcy"]
 script = ExtResource("10_6xiyj")
 texture_idx = 0
 flip = false
@@ -2208,7 +2243,7 @@ script = ExtResource("11_hexod")
 position = Vector2(-5092.34, 4176.67)
 point_in = Vector2(-148.16, 213.227)
 point_out = Vector2(135.47, -187.626)
-properties = SubResource("Resource_prrfu")
+properties = SubResource("Resource_bppcy")
 
 [sub_resource type="Resource" id="Resource_7fl3p"]
 script = ExtResource("10_6xiyj")
@@ -2223,7 +2258,7 @@ point_in = Vector2(0, 0)
 point_out = Vector2(0, 0)
 properties = SubResource("Resource_7fl3p")
 
-[sub_resource type="Resource" id="Resource_jojtr"]
+[sub_resource type="Resource" id="Resource_fcav0"]
 script = ExtResource("10_6xiyj")
 texture_idx = 0
 flip = false
@@ -2234,9 +2269,9 @@ script = ExtResource("11_hexod")
 position = Vector2(-5293.73, 4623.61)
 point_in = Vector2(0, 0)
 point_out = Vector2(0, 0)
-properties = SubResource("Resource_jojtr")
+properties = SubResource("Resource_fcav0")
 
-[sub_resource type="Resource" id="Resource_aiqke"]
+[sub_resource type="Resource" id="Resource_a7bqk"]
 script = ExtResource("10_6xiyj")
 texture_idx = 0
 flip = false
@@ -2247,7 +2282,7 @@ script = ExtResource("11_hexod")
 position = Vector2(-4705.79, 3809.68)
 point_in = Vector2(0, 0)
 point_out = Vector2(0, 0)
-properties = SubResource("Resource_aiqke")
+properties = SubResource("Resource_a7bqk")
 
 [sub_resource type="Resource" id="Resource_807kf"]
 script = ExtResource("12_lq6dg")
@@ -2266,7 +2301,7 @@ tessellation_stages = 3
 tessellation_tolerance = 6.0
 curve_bake_interval = 20.0
 
-[sub_resource type="Resource" id="Resource_gi341"]
+[sub_resource type="Resource" id="Resource_08b1k"]
 script = ExtResource("10_6xiyj")
 texture_idx = 0
 flip = false
@@ -2277,9 +2312,9 @@ script = ExtResource("11_hexod")
 position = Vector2(-3596.06, 9607.03)
 point_in = Vector2(0, 0)
 point_out = Vector2(0, 0)
-properties = SubResource("Resource_gi341")
+properties = SubResource("Resource_08b1k")
 
-[sub_resource type="Resource" id="Resource_04aso"]
+[sub_resource type="Resource" id="Resource_gk17g"]
 script = ExtResource("10_6xiyj")
 texture_idx = 0
 flip = false
@@ -2290,9 +2325,9 @@ script = ExtResource("11_hexod")
 position = Vector2(-3063.36, 10355.6)
 point_in = Vector2(-116.375, -265.507)
 point_out = Vector2(197.558, 323.215)
-properties = SubResource("Resource_04aso")
+properties = SubResource("Resource_gk17g")
 
-[sub_resource type="Resource" id="Resource_xu4bt"]
+[sub_resource type="Resource" id="Resource_5h5yj"]
 script = ExtResource("10_6xiyj")
 texture_idx = 0
 flip = false
@@ -2303,7 +2338,7 @@ script = ExtResource("11_hexod")
 position = Vector2(-3567.84, 12355.9)
 point_in = Vector2(897.034, -748.73)
 point_out = Vector2(-1309.5, 999.392)
-properties = SubResource("Resource_xu4bt")
+properties = SubResource("Resource_5h5yj")
 
 [sub_resource type="Resource" id="Resource_akss0"]
 script = ExtResource("10_6xiyj")
@@ -2318,7 +2353,7 @@ point_in = Vector2(247.161, 219.979)
 point_out = Vector2(-65.083, -50.7969)
 properties = SubResource("Resource_akss0")
 
-[sub_resource type="Resource" id="Resource_5kg8d"]
+[sub_resource type="Resource" id="Resource_h327g"]
 script = ExtResource("10_6xiyj")
 texture_idx = 0
 flip = false
@@ -2329,9 +2364,9 @@ script = ExtResource("11_hexod")
 position = Vector2(-6824.67, 11982.6)
 point_in = Vector2(0, 0)
 point_out = Vector2(0, 0)
-properties = SubResource("Resource_5kg8d")
+properties = SubResource("Resource_h327g")
 
-[sub_resource type="Resource" id="Resource_erirf"]
+[sub_resource type="Resource" id="Resource_bt5kb"]
 script = ExtResource("10_6xiyj")
 texture_idx = 0
 flip = false
@@ -2342,9 +2377,9 @@ script = ExtResource("11_hexod")
 position = Vector2(-6761.08, 12047.6)
 point_in = Vector2(0, 0)
 point_out = Vector2(0, 0)
-properties = SubResource("Resource_erirf")
+properties = SubResource("Resource_bt5kb")
 
-[sub_resource type="Resource" id="Resource_nthg5"]
+[sub_resource type="Resource" id="Resource_gm4ld"]
 script = ExtResource("10_6xiyj")
 texture_idx = 0
 flip = false
@@ -2355,7 +2390,7 @@ script = ExtResource("11_hexod")
 position = Vector2(-3527.03, 9690.6)
 point_in = Vector2(0, 0)
 point_out = Vector2(0, 0)
-properties = SubResource("Resource_nthg5")
+properties = SubResource("Resource_gm4ld")
 
 [sub_resource type="Resource" id="Resource_qhsj7"]
 script = ExtResource("12_lq6dg")
@@ -2376,7 +2411,7 @@ tessellation_stages = 3
 tessellation_tolerance = 6.0
 curve_bake_interval = 20.0
 
-[sub_resource type="Resource" id="Resource_m8qtm"]
+[sub_resource type="Resource" id="Resource_raltl"]
 script = ExtResource("10_6xiyj")
 texture_idx = 0
 flip = false
@@ -2387,7 +2422,7 @@ script = ExtResource("11_hexod")
 position = Vector2(-12270.5, 1582.7)
 point_in = Vector2(0, 0)
 point_out = Vector2(0, 0)
-properties = SubResource("Resource_m8qtm")
+properties = SubResource("Resource_raltl")
 
 [sub_resource type="Resource" id="Resource_sxfvy"]
 script = ExtResource("10_6xiyj")
@@ -2402,7 +2437,7 @@ point_in = Vector2(0, 0)
 point_out = Vector2(0, 0)
 properties = SubResource("Resource_sxfvy")
 
-[sub_resource type="Resource" id="Resource_1ba0q"]
+[sub_resource type="Resource" id="Resource_qpj5u"]
 script = ExtResource("10_6xiyj")
 texture_idx = 0
 flip = false
@@ -2413,9 +2448,9 @@ script = ExtResource("11_hexod")
 position = Vector2(-10502.2, 1471.96)
 point_in = Vector2(-688.646, -310.958)
 point_out = Vector2(851.904, 372.308)
-properties = SubResource("Resource_1ba0q")
+properties = SubResource("Resource_qpj5u")
 
-[sub_resource type="Resource" id="Resource_1q3ce"]
+[sub_resource type="Resource" id="Resource_n4jq5"]
 script = ExtResource("10_6xiyj")
 texture_idx = 0
 flip = false
@@ -2426,9 +2461,9 @@ script = ExtResource("11_hexod")
 position = Vector2(-12178.7, 1529.14)
 point_in = Vector2(-20.2051, 12.3472)
 point_out = Vector2(167.45, -75.4495)
-properties = SubResource("Resource_1q3ce")
+properties = SubResource("Resource_n4jq5")
 
-[sub_resource type="Resource" id="Resource_hpkjh"]
+[sub_resource type="Resource" id="Resource_bvy6s"]
 script = ExtResource("10_6xiyj")
 texture_idx = 0
 flip = false
@@ -2439,7 +2474,7 @@ script = ExtResource("11_hexod")
 position = Vector2(-9421.01, 2697.5)
 point_in = Vector2(0, 0)
 point_out = Vector2(0, 0)
-properties = SubResource("Resource_hpkjh")
+properties = SubResource("Resource_bvy6s")
 
 [sub_resource type="Resource" id="Resource_0o1rc"]
 script = ExtResource("12_lq6dg")
@@ -2458,7 +2493,7 @@ tessellation_stages = 3
 tessellation_tolerance = 6.0
 curve_bake_interval = 20.0
 
-[sub_resource type="Resource" id="Resource_82mlm"]
+[sub_resource type="Resource" id="Resource_qnspy"]
 script = ExtResource("10_6xiyj")
 texture_idx = 0
 flip = false
@@ -2469,7 +2504,7 @@ script = ExtResource("11_hexod")
 position = Vector2(-18382.5, 1417)
 point_in = Vector2(0, 0)
 point_out = Vector2(0, 0)
-properties = SubResource("Resource_82mlm")
+properties = SubResource("Resource_qnspy")
 
 [sub_resource type="Resource" id="Resource_1ayyx"]
 script = ExtResource("10_6xiyj")
@@ -2484,7 +2519,7 @@ point_in = Vector2(67.1504, -0.179932)
 point_out = Vector2(-29.6992, -7.07129)
 properties = SubResource("Resource_1ayyx")
 
-[sub_resource type="Resource" id="Resource_qbpi1"]
+[sub_resource type="Resource" id="Resource_c4aby"]
 script = ExtResource("10_6xiyj")
 texture_idx = 0
 flip = false
@@ -2495,9 +2530,9 @@ script = ExtResource("11_hexod")
 position = Vector2(-19695.3, -67.7664)
 point_in = Vector2(48.25, 1275.77)
 point_out = Vector2(34.0996, -1301.91)
-properties = SubResource("Resource_qbpi1")
+properties = SubResource("Resource_c4aby")
 
-[sub_resource type="Resource" id="Resource_qr8m4"]
+[sub_resource type="Resource" id="Resource_qyyvl"]
 script = ExtResource("10_6xiyj")
 texture_idx = 0
 flip = false
@@ -2508,7 +2543,7 @@ script = ExtResource("11_hexod")
 position = Vector2(-18522.5, -1581.95)
 point_in = Vector2(-35.8672, 9.43872)
 point_out = Vector2(41.8613, 0.300293)
-properties = SubResource("Resource_qr8m4")
+properties = SubResource("Resource_qyyvl")
 
 [sub_resource type="Resource" id="Resource_ou01i"]
 script = ExtResource("10_6xiyj")
@@ -2541,7 +2576,7 @@ tessellation_tolerance = 6.0
 curve_bake_interval = 20.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vix10"]
-size = Vector2(52.6013, 892.119)
+size = Vector2(52.6013, 740)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vuc24"]
 size = Vector2(7710.21, 2260.33)
@@ -2750,18 +2785,18 @@ flip_edges = true
 shape_material = SubResource("Resource_417nh")
 
 [node name="Finnish_Line" type="Area2D" parent="Track"]
-position = Vector2(-600.72, 1467.22)
+position = Vector2(-2859.72, -109.78)
 script = ExtResource("43_eofyg")
 
 [node name="Hitbox" type="CollisionShape2D" parent="Track/Finnish_Line"]
-position = Vector2(-7663.82, -2153.84)
+position = Vector2(-7663.82, -2140)
 shape = SubResource("RectangleShape2D_vix10")
 
 [node name="ColorRect" type="ColorRect" parent="Track/Finnish_Line"]
 offset_left = -7689.86
-offset_top = -2599.64
+offset_top = -2490.0
 offset_right = -7637.36
-offset_bottom = -1704.23
+offset_bottom = -1789.78
 color = Color(0.792157, 0.792157, 0.792157, 1)
 metadata/_edit_use_anchors_ = true
 
@@ -2769,95 +2804,38 @@ metadata/_edit_use_anchors_ = true
 visible = false
 script = ExtResource("44_k67gq")
 
+[node name="1" type="CollisionPolygon2D" parent="Track/Out_Off_Bounds"]
+polygon = PackedVector2Array(-21508.7, -3673.78, -427.72, -3653.78, -605.72, -7889.78, -22321.7, -7864.78, -27125.7, -2702.78, -26837.7, 2840.22, -24582.7, 5315.22, -15254.7, 15384.2, -8214.72, 17934.2, -1497.72, 17898.2, 4178.28, 11040.2, 1415.28, 4972.22, 4326.28, 2575.22, 4182.28, -7809.78, -954.72, -7898.78, -426.72, -3649.78, 2116.28, -3588.78, 2633.28, 805.22, -3703.72, 5617.22, 307.28, 10798.2, -3433.72, 15589.2, -9166.72, 15213.2, -12666.7, 9264.22, -12513.7, 3755.22, -21413.7, 4128.22, -23904.7, 1958.22, -23837.7, -1702.78)
+
+[node name="2" type="CollisionPolygon2D" parent="Track/Out_Off_Bounds"]
+polygon = PackedVector2Array(-9738.72, 1893.22, -8438.72, 2563.22, -3141.72, -251.78, -8475.72, -1165.78, -19247.7, -1116.78, -20103.7, -450.78, -19275.7, 272.22, -12436.7, 89.22, -10310.7, 473.22)
+
 [node name="Signs" type="Node2D" parent="Track"]
-visible = false
 
 [node name="Turn 1" parent="Track/Signs" instance=ExtResource("45_togox")]
-position = Vector2(-5069.38, -1748.13)
-rotation = 1.47766
+position = Vector2(-6637.72, -1678.78)
+rotation = 1.18899
 frame = 2
 
 [node name="Turn 2" parent="Track/Signs" instance=ExtResource("45_togox")]
-position = Vector2(-4615.43, 2139.67)
-rotation = -1.40733
+position = Vector2(-5893.72, 2051.22)
+rotation = -2.73168
 frame = 1
 
 [node name="Turn 3" parent="Track/Signs" instance=ExtResource("45_togox")]
-position = Vector2(-10861.8, 4635.03)
-rotation = -3.33216
-frame = 1
+position = Vector2(-5959.72, 5733.22)
+rotation = -3.86333
+frame = 2
 
 [node name="Turn 4" parent="Track/Signs" instance=ExtResource("45_togox")]
-position = Vector2(-9109.58, 11568.4)
-rotation = -3.65391
+position = Vector2(-10966.7, 4771.22)
+rotation = -6.81937
+frame = 3
 
 [node name="Turn 5" parent="Track/Signs" instance=ExtResource("45_togox")]
-position = Vector2(-9616.43, 15551.7)
-rotation = -2.50525
-frame = 3
-
-[node name="Turn 6" parent="Track/Signs" instance=ExtResource("45_togox")]
-position = Vector2(-7766.14, 20276.6)
-rotation = -4.7502
-frame = 1
-
-[node name="Turn 7" parent="Track/Signs" instance=ExtResource("45_togox")]
-position = Vector2(-1548.67, 19530.6)
-rotation = -5.91035
-
-[node name="Turn 8" parent="Track/Signs" instance=ExtResource("45_togox")]
-position = Vector2(2829.22, 17790.3)
-rotation = -4.87524
-frame = 1
-
-[node name="Turn 9" parent="Track/Signs" instance=ExtResource("45_togox")]
-position = Vector2(6524.39, 16708.2)
-rotation = -5.83713
-frame = 3
-
-[node name="Turn 10" parent="Track/Signs" instance=ExtResource("45_togox")]
-position = Vector2(-16064.4, 11399.1)
-rotation = -1.83837
+position = Vector2(-17968.7, 857.22)
+rotation = -7.26699
 frame = 2
-
-[node name="Turn 11" parent="Track/Signs" instance=ExtResource("45_togox")]
-position = Vector2(-23062.7, 8297.05)
-rotation = 0.0345147
-frame = 1
-
-[node name="Turn 12" parent="Track/Signs" instance=ExtResource("45_togox")]
-position = Vector2(-24571.2, 5926.6)
-rotation = -0.456691
-
-[node name="Turn 13" parent="Track/Signs" instance=ExtResource("45_togox")]
-position = Vector2(-23971.4, 4265.33)
-rotation = 0.22681
-frame = 1
-
-[node name="Turn 14" parent="Track/Signs" instance=ExtResource("45_togox")]
-position = Vector2(-24930.7, 2618.5)
-rotation = -0.619435
-frame = 2
-
-[node name="Turn 15" parent="Track/Signs" instance=ExtResource("45_togox")]
-position = Vector2(-22359, -295.226)
-rotation = 0.674494
-frame = 3
-
-[node name="Turn 16" parent="Track/Signs" instance=ExtResource("45_togox")]
-position = Vector2(-20609.6, -2315.95)
-rotation = -0.716154
-frame = 2
-
-[node name="Turn 17" parent="Track/Signs" instance=ExtResource("45_togox")]
-position = Vector2(-19814.1, -5576.56)
-rotation = 1.05722
-frame = 2
-
-[node name="Turn 18" parent="Track/Signs" instance=ExtResource("45_togox")]
-position = Vector2(-17471.2, -4008.91)
-rotation = 2.15846
-frame = 1
 
 [node name="Player" type="Node" parent="."]
 
@@ -2917,513 +2895,320 @@ script = ExtResource("51_gb20n")
 Racing_Line = NodePath("Racing Line")
 
 [node name="Racing Line" type="Line2D" parent="AI_NAVIGATION"]
-points = PackedVector2Array(-3944.74, 345.197, -3438.71, 163.454, -1529.51, 259.453, -139.556, 505.274, 716.49, 1221.47, 978.007, 2213.22, 727.708, 3156.99, 140.995, 3816.2, -1060.78, 4253.5, -2700.05, 4460.6, -4756.85, 4429.65, -6174.04, 4589.75, -7059.96, 4965.95, -9158.55, 6916.78, -9730.22, 7702.24, -10151.1, 8751.13, -10189.5, 9494.3, -9976.84, 10896.1, -9537.71, 11400, -7730.97, 14014.4, -7167.39, 15498.3, -7082.98, 16293.2, -7091.97, 17954.9, -7755.78, 19774.2, -7682.2, 21106.3, -7135.21, 21818.6, -5643.84, 22373.3, -3708.78, 22537.9, -2447.63, 22426.6, -650.684, 22059.7, 1991.58, 20244.9, 2683.31, 20073.8, 3711.88, 19954.7, 7774.11, 20061.3, 10110.4, 19376.5, 12150.5, 18103.2, 12699.8, 17020.6, 12663, 16187.1, 11979.7, 15189.2, 10376.7, 14138.1, 8260.14, 13446.8, 5131.13, 13339.3, 3283.58, 13340.1, 1667.47, 13407, -12361.4, 13444.7, -17362.6, 13665.9, -18144.8, 13553.8, -19031.1, 13286.8, -20610.5, 12365.2, -21260.1, 11590.9, -21473.7, 10106.6, -22261.4, 6964.78, -22540.4, 4656.23, -22283.5, 2943.14, -21602.1, 2269.72, -19702.4, 1290.42, -19449.9, 428.887, -19760.3, -191.513, -19953.5, -788.982, -19968.7, -1381.36, -19640.9, -1825.86, -18655.5, -2366.28, -16430.7, -2368.52, -15508.2, -2019.91, -13257.1, -323.588, -12473.8, -42.0212, -11459, 175.879, -9111.14, 388.843, -4398.81, 399.904)
+points = PackedVector2Array(-6554, 389, -1364, 330, -130, 832, 475, 1677, 596, 2452, 399, 3360, -284, 4273, -1227, 4888, -2250, 5206, -3281, 5409, -3959, 5800, -4515, 6541, -4711, 7761, -4541, 8764, -3883, 9950, -2111, 12164, -1767, 13298, -2015, 14466, -2966, 15225, -4472, 15350, -5398, 15158, -6290, 14650, -7159, 13704, -7936, 12177, -8040, 11358, -7985, 6238, -8384, 4774, -8807, 4151, -9386, 3775, -10560, 3553, -12439, 3757, -14251, 4171, -16089, 4240, -17536, 4336, -18308, 4207, -19003, 3618, -19398, 2640, -19142, 1603, -18357, 759, -17185, 392, -15949.1, 417.256, -7574, 397)
 
 [node name="Speeds" type="Node2D" parent="AI_NAVIGATION/Racing Line"]
 
 [node name="1" type="Label" parent="AI_NAVIGATION/Racing Line/Speeds"]
-offset_left = -3960.3
-offset_top = 373.596
-offset_right = -3912.3
-offset_bottom = 424.596
+offset_left = -6555.0
+offset_top = 420.0
+offset_right = -6507.0
+offset_bottom = 471.0
 text = "180"
 
 [node name="2" type="Label" parent="AI_NAVIGATION/Racing Line/Speeds"]
-offset_left = -3449.3
-offset_top = 181.089
-offset_right = -3401.3
-offset_bottom = 232.089
-text = "180"
+offset_left = -1544.0
+offset_top = 223.0
+offset_right = -1496.0
+offset_bottom = 274.0
+text = "150"
 
 [node name="3" type="Label" parent="AI_NAVIGATION/Racing Line/Speeds"]
-offset_left = -1574.01
-offset_top = 173.696
-offset_right = -1526.01
-offset_bottom = 224.696
-text = "150"
-
-[node name="4" type="Label" parent="AI_NAVIGATION/Racing Line/Speeds"]
-offset_left = -137.231
-offset_top = 376.324
-offset_right = -89.2306
-offset_bottom = 427.324
-text = "135"
-
-[node name="5" type="Label" parent="AI_NAVIGATION/Racing Line/Speeds"]
-offset_left = 643.427
-offset_top = 1225.41
-offset_right = 691.427
-offset_bottom = 1276.41
+offset_left = -101.0
+offset_top = 823.0
+offset_right = -53.0
+offset_bottom = 874.0
 text = "140"
 
-[node name="6" type="Label" parent="AI_NAVIGATION/Racing Line/Speeds"]
-offset_left = 980.174
-offset_top = 2094.77
-offset_right = 1028.17
-offset_bottom = 2145.77
+[node name="4" type="Label" parent="AI_NAVIGATION/Racing Line/Speeds"]
+offset_left = 416.0
+offset_top = 1685.0
+offset_right = 464.0
+offset_bottom = 1736.0
+text = "145"
+
+[node name="5" type="Label" parent="AI_NAVIGATION/Racing Line/Speeds"]
+offset_left = 527.0
+offset_top = 2434.0
+offset_right = 575.0
+offset_bottom = 2485.0
 text = "150"
+
+[node name="6" type="Label" parent="AI_NAVIGATION/Racing Line/Speeds"]
+offset_left = 338.0
+offset_top = 3317.0
+offset_right = 386.0
+offset_bottom = 3368.0
+text = "160"
 
 [node name="7" type="Label" parent="AI_NAVIGATION/Racing Line/Speeds"]
-offset_left = 725.814
-offset_top = 3149.65
-offset_right = 773.814
-offset_bottom = 3200.65
-text = "150"
-
-[node name="8" type="Label" parent="AI_NAVIGATION/Racing Line/Speeds"]
-offset_left = 115.954
-offset_top = 3732.67
-offset_right = 163.954
-offset_bottom = 3783.67
-text = "165"
-
-[node name="9" type="Label" parent="AI_NAVIGATION/Racing Line/Speeds"]
-offset_left = -1084.98
-offset_top = 4188.51
-offset_right = -1036.98
-offset_bottom = 4239.51
-text = "999"
-
-[node name="10" type="Label" parent="AI_NAVIGATION/Racing Line/Speeds"]
-offset_left = -2733.04
-offset_top = 4389.74
-offset_right = -2685.04
-offset_bottom = 4440.74
-text = "999"
-
-[node name="11" type="Label" parent="AI_NAVIGATION/Racing Line/Speeds"]
-offset_left = -4779.94
-offset_top = 4350.3
-offset_right = -4731.94
-offset_bottom = 4401.3
-text = "200"
-
-[node name="12" type="Label" parent="AI_NAVIGATION/Racing Line/Speeds"]
-offset_left = -6186.47
-offset_top = 4623.85
-offset_right = -6138.47
-offset_bottom = 4674.85
-text = "185"
-
-[node name="13" type="Label" parent="AI_NAVIGATION/Racing Line/Speeds"]
-offset_left = -7024.65
-offset_top = 4945.59
-offset_right = -6976.65
-offset_bottom = 4996.59
-text = "200"
-
-[node name="14" type="Label" parent="AI_NAVIGATION/Racing Line/Speeds"]
-offset_left = -9234.11
-offset_top = 6923.79
-offset_right = -9186.11
-offset_bottom = 6974.79
-text = "200"
-
-[node name="15" type="Label" parent="AI_NAVIGATION/Racing Line/Speeds"]
-offset_left = -9730.72
-offset_top = 7714.95
-offset_right = -9682.72
-offset_bottom = 7765.95
-text = "200"
-
-[node name="16" type="Label" parent="AI_NAVIGATION/Racing Line/Speeds"]
-offset_left = -10101.3
-offset_top = 8724.35
-offset_right = -10053.3
-offset_bottom = 8775.35
-text = "180"
-
-[node name="17" type="Label" parent="AI_NAVIGATION/Racing Line/Speeds"]
-offset_left = -10153.1
-offset_top = 9499.43
-offset_right = -10105.1
-offset_bottom = 9550.43
-text = "180"
-
-[node name="18" type="Label" parent="AI_NAVIGATION/Racing Line/Speeds"]
-offset_left = -10023.9
-offset_top = 10864.3
-offset_right = -9975.93
-offset_bottom = 10915.3
-text = "210"
-
-[node name="65" type="Label" parent="AI_NAVIGATION/Racing Line/Speeds"]
-offset_left = -9602.02
-offset_top = 11358.0
-offset_right = -9554.02
-offset_bottom = 11409.0
-text = "999"
-
-[node name="19" type="Label" parent="AI_NAVIGATION/Racing Line/Speeds"]
-offset_left = -7703.73
-offset_top = 14002.1
-offset_right = -7655.73
-offset_bottom = 14053.1
-text = "999"
-
-[node name="20" type="Label" parent="AI_NAVIGATION/Racing Line/Speeds"]
-offset_left = -7221.26
-offset_top = 15470.7
-offset_right = -7173.26
-offset_bottom = 15521.7
-text = "999"
-
-[node name="66" type="Label" parent="AI_NAVIGATION/Racing Line/Speeds"]
-offset_left = -7172.05
-offset_top = 16147.0
-offset_right = -7124.05
-offset_bottom = 16198.0
-text = "999"
-
-[node name="21" type="Label" parent="AI_NAVIGATION/Racing Line/Speeds"]
-offset_left = -7173.85
-offset_top = 17828.1
-offset_right = -7125.85
-offset_bottom = 17879.1
-text = "145
-"
-
-[node name="22" type="Label" parent="AI_NAVIGATION/Racing Line/Speeds"]
-offset_left = -7724.54
-offset_top = 19772.3
-offset_right = -7676.54
-offset_bottom = 19823.3
-text = "95"
-
-[node name="23" type="Label" parent="AI_NAVIGATION/Racing Line/Speeds"]
-offset_left = -7629.63
-offset_top = 21064.4
-offset_right = -7581.63
-offset_bottom = 21115.4
-text = "115"
-
-[node name="24" type="Label" parent="AI_NAVIGATION/Racing Line/Speeds"]
-offset_left = -7073.79
-offset_top = 21752.2
-offset_right = -7025.79
-offset_bottom = 21803.2
-text = "130"
-
-[node name="25" type="Label" parent="AI_NAVIGATION/Racing Line/Speeds"]
-offset_left = -5667.53
-offset_top = 22368.6
-offset_right = -5619.53
-offset_bottom = 22419.6
-text = "155"
-
-[node name="26" type="Label" parent="AI_NAVIGATION/Racing Line/Speeds"]
-offset_left = -3724.7
-offset_top = 22489.5
-offset_right = -3676.7
-offset_bottom = 22540.5
-text = "200"
-
-[node name="27" type="Label" parent="AI_NAVIGATION/Racing Line/Speeds"]
-offset_left = -2442.86
-offset_top = 22465.9
-offset_right = -2394.86
-offset_bottom = 22516.9
-text = "200"
-
-[node name="28" type="Label" parent="AI_NAVIGATION/Racing Line/Speeds"]
-offset_left = -677.674
-offset_top = 22002.4
-offset_right = -629.674
-offset_bottom = 22053.4
-text = "220"
-
-[node name="29" type="Label" parent="AI_NAVIGATION/Racing Line/Speeds"]
-offset_left = 2009.33
-offset_top = 20243.1
-offset_right = 2057.33
-offset_bottom = 20294.1
-text = "200"
-
-[node name="30" type="Label" parent="AI_NAVIGATION/Racing Line/Speeds"]
-offset_left = 2683.86
-offset_top = 20028.7
-offset_right = 2731.86
-offset_bottom = 20079.7
-text = "200"
-
-[node name="31" type="Label" parent="AI_NAVIGATION/Racing Line/Speeds"]
-offset_left = 3681.25
-offset_top = 19952.6
-offset_right = 3729.25
-offset_bottom = 20003.6
-text = "250"
-
-[node name="32" type="Label" parent="AI_NAVIGATION/Racing Line/Speeds"]
-offset_left = 7808.38
-offset_top = 20048.9
-offset_right = 7856.38
-offset_bottom = 20099.9
-text = "175"
-
-[node name="33" type="Label" parent="AI_NAVIGATION/Racing Line/Speeds"]
-offset_left = 10082.3
-offset_top = 19354.3
-offset_right = 10130.3
-offset_bottom = 19405.3
-text = "180"
-
-[node name="34" type="Label" parent="AI_NAVIGATION/Racing Line/Speeds"]
-offset_left = 12107.0
-offset_top = 18056.7
-offset_right = 12155.0
-offset_bottom = 18107.7
-text = "160"
-
-[node name="35" type="Label" parent="AI_NAVIGATION/Racing Line/Speeds"]
-offset_left = 12640.7
-offset_top = 16978.9
-offset_right = 12688.7
-offset_bottom = 17029.9
-text = "160"
-
-[node name="36" type="Label" parent="AI_NAVIGATION/Racing Line/Speeds"]
-offset_left = 12705.0
-offset_top = 16221.7
-offset_right = 12753.0
-offset_bottom = 16272.7
-text = "160"
-
-[node name="37" type="Label" parent="AI_NAVIGATION/Racing Line/Speeds"]
-offset_left = 11961.9
-offset_top = 15220.8
-offset_right = 12009.9
-offset_bottom = 15271.8
+offset_left = -319.0
+offset_top = 4216.0
+offset_right = -271.0
+offset_bottom = 4267.0
 text = "170"
 
-[node name="38" type="Label" parent="AI_NAVIGATION/Racing Line/Speeds"]
-offset_left = 10407.9
-offset_top = 14063.7
-offset_right = 10455.9
-offset_bottom = 14114.7
-text = "180"
+[node name="8" type="Label" parent="AI_NAVIGATION/Racing Line/Speeds"]
+offset_left = -1239.0
+offset_top = 4874.0
+offset_right = -1191.0
+offset_bottom = 4925.0
+text = "200"
 
 [node name="39" type="Label" parent="AI_NAVIGATION/Racing Line/Speeds"]
-offset_left = 8275.36
-offset_top = 13374.2
-offset_right = 8323.36
-offset_bottom = 13425.2
+offset_left = -2282.0
+offset_top = 5136.0
+offset_right = -2234.0
+offset_bottom = 5187.0
 text = "200"
 
 [node name="40" type="Label" parent="AI_NAVIGATION/Racing Line/Speeds"]
-offset_left = 5074.94
-offset_top = 13261.4
-offset_right = 5122.94
-offset_bottom = 13312.4
-text = "999"
-
-[node name="41" type="Label" parent="AI_NAVIGATION/Racing Line/Speeds"]
-offset_left = 3283.02
-offset_top = 13351.2
-offset_right = 3331.02
-offset_bottom = 13402.2
-text = "999"
-
-[node name="42" type="Label" parent="AI_NAVIGATION/Racing Line/Speeds"]
-offset_left = 1679.4
-offset_top = 13426.0
-offset_right = 1727.4
-offset_bottom = 13477.0
-text = "999"
-
-[node name="43" type="Label" parent="AI_NAVIGATION/Racing Line/Speeds"]
-offset_left = -12357.2
-offset_top = 13478.4
-offset_right = -12309.2
-offset_bottom = 13529.4
-text = "999"
-
-[node name="44" type="Label" parent="AI_NAVIGATION/Racing Line/Speeds"]
-offset_left = -17390.3
-offset_top = 13609.0
-offset_right = -17342.3
-offset_bottom = 13660.0
-text = "180"
-
-[node name="45" type="Label" parent="AI_NAVIGATION/Racing Line/Speeds"]
-offset_left = -18100.3
-offset_top = 13678.9
-offset_right = -18052.3
-offset_bottom = 13729.9
-text = "170"
-
-[node name="46" type="Label" parent="AI_NAVIGATION/Racing Line/Speeds"]
-offset_left = -18823.4
-offset_top = 13443.5
-offset_right = -18775.4
-offset_bottom = 13494.5
+offset_left = -3215.0
+offset_top = 5394.0
+offset_right = -3167.0
+offset_bottom = 5445.0
 text = "160"
 
-[node name="47" type="Label" parent="AI_NAVIGATION/Racing Line/Speeds"]
-offset_left = -20556.1
-offset_top = 12322.2
-offset_right = -20508.1
-offset_bottom = 12373.2
-text = "180"
+[node name="9" type="Label" parent="AI_NAVIGATION/Racing Line/Speeds"]
+offset_left = -3895.0
+offset_top = 5738.0
+offset_right = -3847.0
+offset_bottom = 5789.0
+text = "155"
 
-[node name="48" type="Label" parent="AI_NAVIGATION/Racing Line/Speeds"]
-offset_left = -21215.4
-offset_top = 11577.3
-offset_right = -21167.4
-offset_bottom = 11628.3
-text = "180"
+[node name="10" type="Label" parent="AI_NAVIGATION/Racing Line/Speeds"]
+offset_left = -4487.0
+offset_top = 6549.0
+offset_right = -4439.0
+offset_bottom = 6600.0
+text = "165"
 
-[node name="49" type="Label" parent="AI_NAVIGATION/Racing Line/Speeds"]
-offset_left = -21552.6
-offset_top = 10155.5
-offset_right = -21504.6
-offset_bottom = 10206.5
-text = "300"
+[node name="11" type="Label" parent="AI_NAVIGATION/Racing Line/Speeds"]
+offset_left = -4771.0
+offset_top = 7785.0
+offset_right = -4723.0
+offset_bottom = 7836.0
+text = "170"
 
-[node name="68" type="Label" parent="AI_NAVIGATION/Racing Line/Speeds"]
-offset_left = -22219.0
-offset_top = 6948.27
-offset_right = -22171.0
-offset_bottom = 6999.27
-text = "200"
+[node name="12" type="Label" parent="AI_NAVIGATION/Racing Line/Speeds"]
+offset_left = -4506.0
+offset_top = 8747.0
+offset_right = -4458.0
+offset_bottom = 8798.0
+text = "999"
 
-[node name="50" type="Label" parent="AI_NAVIGATION/Racing Line/Speeds"]
-offset_left = -22554.0
-offset_top = 4542.39
-offset_right = -22506.0
-offset_bottom = 4593.39
-text = "100"
+[node name="13" type="Label" parent="AI_NAVIGATION/Racing Line/Speeds"]
+offset_left = -3863.0
+offset_top = 9882.0
+offset_right = -3815.0
+offset_bottom = 9933.0
+text = "999"
 
-[node name="51" type="Label" parent="AI_NAVIGATION/Racing Line/Speeds"]
-offset_left = -22329.7
-offset_top = 2847.53
-offset_right = -22281.7
-offset_bottom = 2898.53
-text = "85"
+[node name="14" type="Label" parent="AI_NAVIGATION/Racing Line/Speeds"]
+offset_left = -2195.0
+offset_top = 12185.0
+offset_right = -2147.0
+offset_bottom = 12236.0
+text = "155"
 
-[node name="52" type="Label" parent="AI_NAVIGATION/Racing Line/Speeds"]
-offset_left = -21619.8
-offset_top = 2274.67
-offset_right = -21571.8
-offset_bottom = 2325.67
-text = "95"
+[node name="15" type="Label" parent="AI_NAVIGATION/Racing Line/Speeds"]
+offset_left = -1784.0
+offset_top = 13291.0
+offset_right = -1736.0
+offset_bottom = 13342.0
+text = "145"
 
-[node name="53" type="Label" parent="AI_NAVIGATION/Racing Line/Speeds"]
-offset_left = -19686.0
-offset_top = 1397.17
-offset_right = -19638.0
-offset_bottom = 1448.17
-text = "90"
-
-[node name="54" type="Label" parent="AI_NAVIGATION/Racing Line/Speeds"]
-offset_left = -19427.8
-offset_top = 381.32
-offset_right = -19379.8
-offset_bottom = 432.32
-text = "90"
-
-[node name="69" type="Label" parent="AI_NAVIGATION/Racing Line/Speeds"]
-offset_left = -19743.4
-offset_top = -209.488
-offset_right = -19695.4
-offset_bottom = -158.488
-text = "90"
-
-[node name="55" type="Label" parent="AI_NAVIGATION/Racing Line/Speeds"]
-offset_left = -19913.2
-offset_top = -803.303
-offset_right = -19865.2
-offset_bottom = -752.303
-text = "85"
-
-[node name="56" type="Label" parent="AI_NAVIGATION/Racing Line/Speeds"]
-offset_left = -19949.3
-offset_top = -1383.41
-offset_right = -19901.3
-offset_bottom = -1332.41
-text = "90"
-
-[node name="57" type="Label" parent="AI_NAVIGATION/Racing Line/Speeds"]
-offset_left = -19646.1
-offset_top = -1815.96
-offset_right = -19598.1
-offset_bottom = -1764.96
-text = "95"
-
-[node name="58" type="Label" parent="AI_NAVIGATION/Racing Line/Speeds"]
-offset_left = -18680.8
-offset_top = -2352.5
-offset_right = -18632.8
-offset_bottom = -2301.5
-text = "120"
-
-[node name="59" type="Label" parent="AI_NAVIGATION/Racing Line/Speeds"]
-offset_left = -16480.8
-offset_top = -2352.49
-offset_right = -16432.8
-offset_bottom = -2301.49
+[node name="16" type="Label" parent="AI_NAVIGATION/Racing Line/Speeds"]
+offset_left = -2043.0
+offset_top = 14435.0
+offset_right = -1995.0
+offset_bottom = 14486.0
 text = "150"
 
-[node name="60" type="Label" parent="AI_NAVIGATION/Racing Line/Speeds"]
-offset_left = -15556.8
-offset_top = -2017.96
-offset_right = -15508.8
-offset_bottom = -1966.96
+[node name="17" type="Label" parent="AI_NAVIGATION/Racing Line/Speeds"]
+offset_left = -2979.0
+offset_top = 15227.0
+offset_right = -2931.0
+offset_bottom = 15278.0
+text = "155"
+
+[node name="18" type="Label" parent="AI_NAVIGATION/Racing Line/Speeds"]
+offset_left = -4435.0
+offset_top = 15339.0
+offset_right = -4387.0
+offset_bottom = 15390.0
+text = "165"
+
+[node name="37" type="Label" parent="AI_NAVIGATION/Racing Line/Speeds"]
+offset_left = -5369.0
+offset_top = 15079.0
+offset_right = -5321.0
+offset_bottom = 15130.0
+text = "175"
+
+[node name="19" type="Label" parent="AI_NAVIGATION/Racing Line/Speeds"]
+offset_left = -6351.0
+offset_top = 14692.0
+offset_right = -6303.0
+offset_bottom = 14743.0
+text = "180"
+
+[node name="20" type="Label" parent="AI_NAVIGATION/Racing Line/Speeds"]
+offset_left = -7134.0
+offset_top = 13672.0
+offset_right = -7086.0
+offset_bottom = 13723.0
 text = "200"
 
-[node name="61" type="Label" parent="AI_NAVIGATION/Racing Line/Speeds"]
-offset_left = -13246.6
-offset_top = -379.453
-offset_right = -13198.6
-offset_bottom = -328.453
+[node name="21" type="Label" parent="AI_NAVIGATION/Racing Line/Speeds"]
+offset_left = -7961.0
+offset_top = 12031.0
+offset_right = -7913.0
+offset_bottom = 12082.0
+text = "220"
+
+[node name="38" type="Label" parent="AI_NAVIGATION/Racing Line/Speeds"]
+offset_left = -8088.0
+offset_top = 11409.0
+offset_right = -8040.0
+offset_bottom = 11460.0
 text = "999"
 
-[node name="62" type="Label" parent="AI_NAVIGATION/Racing Line/Speeds"]
-offset_left = -12460.9
-offset_top = -112.307
-offset_right = -12412.9
-offset_bottom = -61.3073
+[node name="22" type="Label" parent="AI_NAVIGATION/Racing Line/Speeds"]
+offset_left = -7987.0
+offset_top = 6213.0
+offset_right = -7939.0
+offset_bottom = 6264.0
+text = "160"
+
+[node name="23" type="Label" parent="AI_NAVIGATION/Racing Line/Speeds"]
+offset_left = -8389.0
+offset_top = 4823.0
+offset_right = -8341.0
+offset_bottom = 4874.0
+text = "150"
+
+[node name="41" type="Label" parent="AI_NAVIGATION/Racing Line/Speeds"]
+offset_left = -8751.0
+offset_top = 4218.0
+offset_right = -8703.0
+offset_bottom = 4269.0
+text = "150"
+
+[node name="24" type="Label" parent="AI_NAVIGATION/Racing Line/Speeds"]
+offset_left = -9412.0
+offset_top = 3807.0
+offset_right = -9364.0
+offset_bottom = 3858.0
+text = "155"
+
+[node name="25" type="Label" parent="AI_NAVIGATION/Racing Line/Speeds"]
+offset_left = -10589.0
+offset_top = 3560.0
+offset_right = -10541.0
+offset_bottom = 3611.0
+text = "160"
+
+[node name="42" type="Label" parent="AI_NAVIGATION/Racing Line/Speeds"]
+offset_left = -12466.0
+offset_top = 3786.0
+offset_right = -12418.0
+offset_bottom = 3837.0
 text = "999"
 
-[node name="63" type="Label" parent="AI_NAVIGATION/Racing Line/Speeds"]
-offset_left = -11450.7
-offset_top = 100.96
-offset_right = -11402.7
-offset_bottom = 151.96
+[node name="26" type="Label" parent="AI_NAVIGATION/Racing Line/Speeds"]
+offset_left = -14288.0
+offset_top = 4114.0
+offset_right = -14240.0
+offset_bottom = 4165.0
 text = "999"
 
-[node name="64" type="Label" parent="AI_NAVIGATION/Racing Line/Speeds"]
-offset_left = -9147.52
-offset_top = 307.588
-offset_right = -9099.52
-offset_bottom = 358.588
+[node name="27" type="Label" parent="AI_NAVIGATION/Racing Line/Speeds"]
+offset_left = -16019.0
+offset_top = 4198.0
+offset_right = -15971.0
+offset_bottom = 4249.0
+text = "200"
+
+[node name="28" type="Label" parent="AI_NAVIGATION/Racing Line/Speeds"]
+offset_left = -17547.0
+offset_top = 4328.0
+offset_right = -17499.0
+offset_bottom = 4379.0
+text = "155"
+
+[node name="36" type="Label" parent="AI_NAVIGATION/Racing Line/Speeds"]
+offset_left = -18292.0
+offset_top = 4243.0
+offset_right = -18244.0
+offset_bottom = 4294.0
+text = "150"
+
+[node name="29" type="Label" parent="AI_NAVIGATION/Racing Line/Speeds"]
+offset_left = -19004.0
+offset_top = 3658.0
+offset_right = -18956.0
+offset_bottom = 3709.0
+text = "150"
+
+[node name="30" type="Label" parent="AI_NAVIGATION/Racing Line/Speeds"]
+offset_left = -19362.0
+offset_top = 2625.0
+offset_right = -19314.0
+offset_bottom = 2676.0
+text = "145"
+
+[node name="31" type="Label" parent="AI_NAVIGATION/Racing Line/Speeds"]
+offset_left = -19114.0
+offset_top = 1633.0
+offset_right = -19066.0
+offset_bottom = 1684.0
+text = "150"
+
+[node name="32" type="Label" parent="AI_NAVIGATION/Racing Line/Speeds"]
+offset_left = -18333.0
+offset_top = 764.0
+offset_right = -18285.0
+offset_bottom = 815.0
+text = "165"
+
+[node name="33" type="Label" parent="AI_NAVIGATION/Racing Line/Speeds"]
+offset_left = -17199.0
+offset_top = 343.0
+offset_right = -17151.0
+offset_bottom = 394.0
+text = "170"
+
+[node name="34" type="Label" parent="AI_NAVIGATION/Racing Line/Speeds"]
+offset_left = -15946.0
+offset_top = 354.0
+offset_right = -15898.0
+offset_bottom = 405.0
 text = "999"
 
-[node name="67" type="Label" parent="AI_NAVIGATION/Racing Line/Speeds"]
-offset_left = -4417.36
-offset_top = 414.51
-offset_right = -4369.36
-offset_bottom = 465.51
-text = "300"
+[node name="35" type="Label" parent="AI_NAVIGATION/Racing Line/Speeds"]
+offset_left = -7618.0
+offset_top = 417.0
+offset_right = -7570.0
+offset_bottom = 468.0
+text = "999"
 
 [node name="Borders" type="Area2D" parent="AI_NAVIGATION"]
 collision_layer = 512
 collision_mask = 512
 
 [node name="BORDER_INISDE" type="CollisionPolygon2D" parent="AI_NAVIGATION/Borders"]
-visible = false
 build_mode = 1
-polygon = PackedVector2Array(-8280.44, 19948.9, -8308.41, 20561.4, -8116.41, 21705.4, -7796.41, 22217.4, -7124.41, 22601.4, -6340.41, 22729.4, -1148.41, 22793.4, -324.407, 22649.4, 283.593, 22241.4, 1491.59, 20849.4, 2041, 20373.1, 2575.29, 20225, 7877.72, 20348.1, 8664.02, 20251.9, 9716.2, 19884.2, 11096.5, 19228, 12363.6, 18458.7, 12674.7, 18141.9, 12957.6, 17627.1, 13144.2, 16812.5, 13178.2, 16235.5, 13048.1, 15579.3, 12725.6, 15008, 12188.2, 14527.2, 11401.9, 14114.2, 9591.74, 13429.7, 8573.51, 13152.5, 8103.99, 13101.6, -16335.6, 13165.1, -18059.8, 13076, -18783.8, 12968, -19243.8, 12860, -20087.8, 12488, -20587.8, 12132, -20919.8, 11732, -21115.8, 11332, -21191.8, 10708, -21179.8, 10080, -21067.8, 9104, -21179.8, 8420, -21435.8, 7832, -21855.8, 7428, -22079.8, 7060, -22091.8, 6644, -21835.8, 6124, -21755.8, 5536, -21887.8, 4808, -22247.8, 3816, -22279.8, 3436, -22119.8, 2960, -21791.8, 2628, -21371.8, 2404, -20187.8, 2136, -19431.8, 1796, -18971.8, 1380, -18703.8, 860.003, -18643.8, 352.003, -18771.8, -87.9971, -19139.8, -535.997, -19439.8, -795.997, -19695.8, -1152, -19751.8, -1376, -19623.8, -1604, -19239.8, -1892, -18711.8, -2040, -17995.8, -2104, -16415.8, -2064, -15975.8, -2020, -15733.4, -1909.56, -15383.1, -1589.54, -14797.1, -816.739, -14386, -378.911, -14001.6, -154.658, -13208.7, 195.07, -12329, 511.118, -11556.9, 703.451, -9195.13, 904.269, -8793.67, 934.82, -4811.04, 944.553, -3869.01, 791.412, -2695.13, 753.272, -1182.22, 774.461, -444.83, 821.077, -131.229, 927.024, 301.032, 1253.34, 568.017, 1549.99, 767.194, 2016.15, 729.053, 2719.64, 538.35, 3164.61, 169.657, 3520.59, -234.501, 3755.89, -536.175, 3835.98, -5841.38, 3959.61, -6538.96, 4005.25, -7194.96, 4253.25, -7754.96, 4645.25, -8322.96, 5149.25, -8830.96, 5725.25, -9462.1, 6695.56, -10539, 8881.25, -10684.1, 9380.78, -10731.1, 10107.3, -10670.6, 10823.8, -10468.8, 11409, -10166.1, 11792.5, -9822.97, 11997.6, -9520.25, 12118.7, -8726.52, 12878.3, -8097.55, 13937.5, -7470.3, 15102.5, -7336.44, 15593, -7243.39, 16291.7, -7233.88, 16974.3, -7259.84, 17444.3, -7369.85, 18270.5, -7686.39, 18933.6)
+polygon = PackedVector2Array(-17633, 756, -935, 760, -730, 788, -404, 918, -154, 1102, 76, 1342, 265, 1652, 390, 1952, 467, 2330, 442, 2719, 277, 3117, 103, 3402, -197, 3667, -351, 3768, -438, 3877, -1043, 4179, -3504, 5029, -4173, 5344, -4810, 5780, -5156, 6138, -5379, 6484, -5523, 6885, -5561, 7288, -5491, 7755, -5310, 8315, -5038, 8881, -4250, 10083, -2818, 11939, -2780, 12058, -2477, 12435, -2265, 12818, -2178, 13084, -2154, 13362, -2162, 13572, -2221, 13841, -2332, 14108, -2536, 14414, -2817, 14697, -3223, 14955, -3559, 15092, -3772, 15152, -4215, 15209, -4621, 15180, -5003, 15085, -5370, 14923, -5600, 14768, -5984, 14381, -6079, 14344, -6887, 13426, -7403, 12667, -7605, 12192, -7643, 11912, -7648, 6204, -7709, 5377, -7794, 4970, -7901, 4596, -8007, 4340, -8201, 3949, -8502, 3577, -8820, 3300, -9157, 3097, -9619, 2926, -10226, 2809, -10694, 2807, -10980, 2843, -11394, 2962, -11831, 3155, -12651, 3658, -12885, 3712, -13307, 3758, -14197, 3788, -17616, 3789, -17719, 3748, -17816, 3728, -17950, 3687, -18130, 3608, -18333, 3477, -18532, 3294, -18642, 3153, -18737, 2988, -18796, 2856, -18854, 2667, -18884, 2498, -18905, 2284, -18886, 2048, -18845, 1842, -18773, 1631, -18673, 1437, -18552, 1276, -18340, 1070, -18106, 923, -17945, 851)
 
 [node name="BORDER_OUTSIDE" type="CollisionPolygon2D" parent="AI_NAVIGATION/Borders"]
-visible = false
 build_mode = 1
-polygon = PackedVector2Array(-9258.04, 7.10724, -4539.47, 5.3208, -166.932, 118.728, 313.38, 210.694, 786.981, 393.228, 1182.96, 677.485, 1479.77, 1016.73, 1667.09, 1392.94, 1786.14, 1953.29, 1782.37, 2464.91, 1695.53, 3027.46, 1514.31, 3491.84, 1299.11, 3808.99, 1044.26, 4067.61, 774.312, 4250.72, 319.365, 4475.36, -224.307, 4590.51, -5673.08, 4673.62, -5764.65, 4714.34, -5927.61, 4723.52, -6107.21, 4757.46, -6398.54, 4847.97, -6803.01, 5060.1, -6911.9, 5086.97, -7326.44, 5396.3, -7777.76, 5810.9, -8656.58, 6820.8, -8953.32, 7223.47, -9474.78, 8197.47, -9915.28, 9185.25, -9989.5, 9493.17, -9968.99, 10407.7, -9897.72, 10520, -9828.23, 10785.5, -9696.38, 11049.2, -9552.05, 11193.5, -9388.12, 11284.4, -9306.16, 11377, -9062.05, 11539.2, -8718.17, 11852.8, -8327.95, 12282.2, -8014.36, 12674.2, -7136.55, 14223.2, -6717.67, 15097.3, -6540.86, 15660.7, -6468.94, 16215, -6432.98, 16706.5, -6453.96, 17494.6, -6525.88, 18105.9, -6684.71, 18606.3, -7209.12, 19613.2, -7388.15, 19942.3, -7454, 20204.3, -7467.47, 20424.3, -7453.81, 20590.9, -7310.34, 21225.2, -7234.83, 21408.3, -7114.02, 21557.4, -6806.31, 21810.4, -6515.42, 21901.8, -5701.42, 22055.8, -4338.7, 22165.3, -2685.41, 22152.6, -1410.37, 22071.9, -1274.3, 22008.9, -941.682, 21966.1, -745.134, 21910.7, -455.352, 21729.2, -352.039, 21701.5, -96.094, 21458.8, 288.572, 20904.4, 797.688, 20270.9, 1193.67, 19914.5, 1623.59, 19659.9, 2045.02, 19546.8, 2588.08, 19484.6, 3119.83, 19478.9, 7348.53, 19642.1, 8453.13, 19575.6, 8874.55, 19468.2, 9588.81, 19163.7, 10809.8, 18494.3, 11458.4, 17999.9, 11537.6, 17872.6, 11741.3, 17674.7, 11905.3, 17417.3, 12041.1, 17117.5, 12174, 16489.5, 12119.9, 16019.7, 12051.9, 15750, 11958.7, 15500.6, 11804.9, 15288.9, 11661.8, 15176.1, 11515, 15090.6, 11349.4, 15019.9, 11268, 14953.2, 10663.2, 14680.8, 10033.4, 14393.7, 9463.43, 14175.7, 8731.43, 13963.7, 8199.43, 13881.7, 7067.43, 13861.7, -2449.32, 13794.8, -4216.46, 13749.2, -9023.43, 13747.6, -9171.35, 13784, -17996.6, 13854.9, -19031.5, 13740.7, -19615.7, 13635.9, -20161.8, 13461.3, -20653.9, 13229.5, -21094.3, 12947.5, -21446.8, 12636.8, -21706.8, 12332.8, -21974.5, 11891.9, -22122.8, 11456.8, -22186.8, 10974.8, -22162.8, 10596.8, -22048.8, 9994.79, -21922.8, 9316.79, -21934.8, 8982.79, -22028.8, 8622.79, -22196.8, 8268.79, -22665.9, 7631.07, -22854.3, 7244.26, -22919.8, 6935.59, -22892.9, 6732.09, -22598.3, 6148.42, -22544.3, 5854.75, -22565, 5510.29, -22672.9, 5062.64, -23021.7, 4073.8, -23097.7, 3675.8, -23095.7, 3271.8, -23001.7, 2843.8, -22825.7, 2499.8, -22527.7, 2163.8, -22169.7, 1917.8, -21607.7, 1677.8, -20827.7, 1483.8, -20207.7, 1249.8, -20101.8, 1139.99, -19907.1, 1019.61, -19710.3, 793.445, -19650, 637.88, -19634.1, 495.014, -19665.9, 347.386, -19765.9, 166.422, -19956.4, -46.5634, -20053.9, -127.989, -20114, -253.464, -20320.1, -464.312, -20493.1, -659.563, -20658.2, -948.47, -20707.4, -1132.61, -20723.3, -1381.83, -20686.8, -1616.77, -20534.4, -1951.71, -20339.2, -2183.47, -20094.7, -2380.31, -19728, -2564.45, -19386.7, -2675.56, -18896.2, -2764.46, -18288.2, -2832.72, -15560.6, -2683.72, -15275.5, -2589.43, -15017.4, -2418.82, -14757, -2091.06, -14166.5, -1229.01, -13897.2, -966.352, -13488.6, -701.451, -12588.4, -306.345, -12002.4, -102.057, -11452.4, 32.6389, -10962.7, 48.7618)
+polygon = PackedVector2Array(-17948, 4, -383, 5, -85, 42, 123, 98, 395, 205, 735, 400, 952, 575, 1260, 921, 1466, 1295, 1558, 1572, 1610, 1790, 1652, 2089, 1655, 2444, 1617, 2740, 1564, 2997, 1426, 3369, 1254, 3641, 1060, 3896, 790, 4147, 463, 4381, 106, 4579, -558, 4864, -3280, 5804, -3594, 5948, -3845, 6083, -3935, 6189, -4145, 6362, -4300, 6530, -4400, 6702, -4458, 6833, -4506, 6980, -4551, 7060, -4575, 7253, -4557, 7547, -4483, 7884, -4356, 8256, -4160, 8689, -3568, 9657, -2618, 10902, -1606, 12344, -1445, 12684, -1357, 12972, -1302, 13324, -1303, 13706, -1406, 14157, -1552, 14538, -1766, 14893, -2012, 15190, -2304, 15448, -2629, 15652, -2991, 15827, -3301, 15930, -3698, 16019, -4099, 16061, -4486, 16045, -4836, 16006, -5216, 15919, -5573, 15782, -5899, 15610, -6192, 15399, -6823, 14774, -7552, 13902, -7871, 13440, -8191, 12891, -8362, 12453, -8408, 12242, -8421, 12038, -8417, 6197, -8468, 5654, -8521, 5396, -8596, 5137, -8671, 5062, -8722, 4925, -8896, 4585, -9033, 4392, -9222, 4192, -9461, 3999, -9744, 3844, -10018, 3752, -10266, 3714, -10526, 3711, -10785, 3730, -11174, 3819, -11419, 3908, -11515, 3918, -11675, 3999, -12208, 4352, -12405, 4454, -12606, 4487, -12954, 4519, -14023, 4560, -17933, 4559, -18148, 4532, -18383, 4460, -18569, 4373, -18789, 4236, -18987, 4086, -19173, 3913, -19321, 3744, -19441, 3582, -19569, 3373, -19651, 3215, -19736, 3007, -19804, 2776, -19852, 2519, -19871, 2269, -19861, 2010, -19849, 1885, -19823, 1774, -19776, 1558, -19695, 1337, -19594, 1129, -19481, 949, -19344, 772, -19201, 617, -18946, 397, -18709, 243, -18464, 121, -18318, 69, -18162, 28, -17948, 4, -17941, -14, -18160, 10, -18569, 135, -19059, 431, -19567, 989, -19820, 1609, -19897, 2097, -19882, 2570, -19727, 3151, -19336, 3776, -18749, 4377, -17934, 4604, -14022, 4579, -12953, 4542, -12440, 4493, -11489, 3966, -10965, 3795, -10404, 3726, -9933, 3809, -9492, 4030, -8940, 4558, -8702, 5044, -8498, 5658, -8446, 6194, -8487, 12248, -8106, 13251, -6363, 15456, -5172, 16112, -3956, 16213, -2413, 15700, -1674, 15093, -1274, 14168, -1240, 13038, -1523, 12282, -3532, 9634, -4112, 8670, -4362, 8072, -4509, 7515, -4475, 6981, -4242, 6524, -3690, 6064, -114, 4756, 805, 4254, 1578, 3373, 1775, 2120, 1518, 1247, 908, 417, 412, 114, -382, -38, -17948, -15)
 
 [node name="Start" type="Area2D" parent="AI_NAVIGATION"]
-visible = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AI_NAVIGATION/Start"]
-position = Vector2(-7184.79, 491.144)
+position = Vector2(-9801, 491.144)
 shape = SubResource("RectangleShape2D_vuc24")
 
 [connection signal="body_entered" from="Track/Finnish_Line" to="Track/Finnish_Line" method="_on_body_entered"]

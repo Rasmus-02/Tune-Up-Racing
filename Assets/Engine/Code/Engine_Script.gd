@@ -347,7 +347,7 @@ func  _physics_process(_delta):
 		hp_tq_calculator()
 		engine_temp()
 		boost_calculator()
-		if dyno != 1:
+		if dyno != 1 and player == true:
 			damage_calculator()
 	else:
 		is_running = false
