@@ -112,7 +112,7 @@ func get_next_point():
 			temp_point_pos = racing_line.get_point_position(line_index) + Vector2(inaccuracy_rng,inaccuracy_rng)
 		
 		#Change which side it will overtake on
-		var overtake_distance = 150
+		var overtake_distance = 175
 		if oponent_sensors.left_90 > overtake_distance and sensor.left_90 < oponent_sensors.left_90 or oponent_sensors.right_90 <= overtake_distance: #Turn Left
 			offset_angle = deg_to_rad(-25) * overtake_rng
 		elif oponent_sensors.right_90 > overtake_distance and sensor.right_90 < oponent_sensors.right_90 or oponent_sensors.left_90 <= overtake_distance: #Turn Right

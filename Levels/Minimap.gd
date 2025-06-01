@@ -28,6 +28,10 @@ func _ready():
 			new_icon.z_index += 1
 		icon_array.append(new_icon) #Add to array of all nodes
 
+func set_map_layout(map):
+	#var instance = map.instantiate()
+	texture = map
+
 
 func _process(_delta):
 	if car != null and Placing.car_list != []:
