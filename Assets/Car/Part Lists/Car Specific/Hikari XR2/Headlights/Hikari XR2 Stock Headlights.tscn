@@ -1,0 +1,50 @@
+[gd_scene load_steps=11 format=3 uid="uid://bmcs2cda1cy8m"]
+
+[ext_resource type="Script" path="res://Assets/Car/Code/Part_scripts/Headlights.gd" id="1_mrseq"]
+[ext_resource type="Shader" path="res://Shaders/ColorSelector.gdshader" id="2_di2hg"]
+[ext_resource type="Texture2D" uid="uid://cm4ll7o47q4ol" path="res://Textures/Cars/Hikari XR2/Headlights/Hikari XR2 Headlights.png" id="3_sx7wk"]
+[ext_resource type="Texture2D" uid="uid://d00yf4gbn4oiv" path="res://Textures/Cars/Hikari XR2/Headlights/Hikari XR2 Headlights NM.png" id="4_yctmk"]
+[ext_resource type="Texture2D" uid="uid://bo328nn5hot2p" path="res://Textures/Cars/Hikari XR2/Headlights/Hikari XR2 Headlights Spec.png" id="5_f5ipi"]
+[ext_resource type="Texture2D" uid="uid://b2c7f23q65fd8" path="res://Textures/Cars/Hikari XR2/Headlights/Hikari XR2 Headlights Lightmask.png" id="6_56ysf"]
+[ext_resource type="PackedScene" uid="uid://brbx33n7duy1v" path="res://Shaders/headlights.tscn" id="7_yb4y0"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_hdm5u"]
+shader = ExtResource("2_di2hg")
+shader_parameter/import_new_color = null
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_ma2ib"]
+diffuse_texture = ExtResource("3_sx7wk")
+normal_texture = ExtResource("4_yctmk")
+specular_texture = ExtResource("5_f5ipi")
+specular_shininess = 0.5
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_ke2me"]
+blend_mode = 1
+light_mode = 1
+
+[node name="Hikari XR2 Stock Headlights" type="Node2D"]
+script = ExtResource("1_mrseq")
+rarity = "uncommon"
+part_material = 1
+Car_ID = 5
+Part_Number = 1
+description = "The factory headlights for the Hikari XR2"
+price = 300
+weight = 10
+downforce = -7
+drag = 0.03
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_hdm5u")
+texture = SubResource("CanvasTexture_ma2ib")
+vframes = 2
+
+[node name="Lightmask" type="Sprite2D" parent="Sprite2D"]
+visible = false
+material = SubResource("CanvasItemMaterial_ke2me")
+texture = ExtResource("6_56ysf")
+
+[node name="Lights" parent="." instance=ExtResource("7_yb4y0")]
+light_mask = 1
+position = Vector2(-4, 0)
+scale = Vector2(1, 1.1)

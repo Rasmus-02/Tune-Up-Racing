@@ -1,0 +1,81 @@
+[gd_scene load_steps=13 format=3 uid="uid://b6g66x7m81ia2"]
+
+[ext_resource type="Script" path="res://Assets/Car/Code/Part_scripts/Chassi.gd" id="1_8y5jg"]
+[ext_resource type="Shader" path="res://Shaders/ColorSelector.gdshader" id="2_403nv"]
+[ext_resource type="Texture2D" uid="uid://bocxuxwnntk0i" path="res://Textures/Cars/Hikari XR2/Chassi/Hikari XR2 Chassi.png" id="3_coro6"]
+[ext_resource type="Texture2D" uid="uid://d27gm3nomgl74" path="res://Textures/Cars/Hikari XR2/Chassi/Hikari XR2 Chassi NM.png" id="4_lohxa"]
+[ext_resource type="Texture2D" uid="uid://dklmlj46kaig7" path="res://Textures/Cars/Hikari XR2/Chassi/Hikari XR2 Chassi Spec.png" id="5_jx2sq"]
+[ext_resource type="Texture2D" uid="uid://dpvgwilnwrpnf" path="res://Textures/Cars/Hikari XR2/Chassi/Hikari XR2 Chassi non paintable.png" id="6_xbcso"]
+[ext_resource type="PackedScene" uid="uid://dmnuqjtp5u0ed" path="res://Assets/Car/Part Lists/Car Specific/Hikari XR2/Windows/Hikari XR2 Windows.tscn" id="7_ieufa"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_nscdw"]
+shader = ExtResource("2_403nv")
+shader_parameter/import_new_color = null
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_uy0d4"]
+diffuse_texture = ExtResource("3_coro6")
+normal_texture = ExtResource("4_lohxa")
+specular_texture = ExtResource("5_jx2sq")
+specular_shininess = 0.5
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_taee6"]
+blend_mode = 1
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_k5ub1"]
+polygon = PackedVector2Array(125.912, -31.6985, 127.912, -22.6985, 127.912, 26.3015, 125.912, 35.3015, 121.912, 36.3015, 119.912, 39.3015, 55.9116, 39.3015, 54.9116, 43.3015, -48.0884, 43.3015, -55.0884, 40.3015, -60.0884, 34.3015, -64.0884, 34.3015, -65.0884, 32.3015, -65.0884, -28.6985, -64.0884, -30.6985, -60.0884, -30.6985, -55.0884, -36.6985, -48.0884, -39.6985, 54.9116, -39.6985, 55.9116, -35.6985, 119.912, -35.6985, 121.912, -32.6985)
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_tjea5"]
+diffuse_texture = ExtResource("6_xbcso")
+normal_texture = ExtResource("4_lohxa")
+specular_texture = ExtResource("5_jx2sq")
+specular_shininess = 0.5
+
+[node name="Hikari XR2 Chassi" type="Node2D" node_paths=PackedStringArray("hitbox")]
+script = ExtResource("1_8y5jg")
+rarity = "uncommon"
+engine_bay_lenght = 49
+engine_bay_width = 47
+engine_bay_start_lenght = 36
+Car_ID = 5
+Part_Number = 1
+description = "A lightweight and agile Japanese sports car, renowned for its small but powerfull rotary engine"
+price = 10000
+weight = 680
+reliability = 0.8
+downforce = 30
+drag = 0.26
+wheelbase = 112
+hitbox = NodePath("Chassi Hitbox")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_nscdw")
+texture = SubResource("CanvasTexture_uy0d4")
+
+[node name="LightOccluder2D2" type="LightOccluder2D" parent="Sprite2D"]
+material = SubResource("CanvasItemMaterial_taee6")
+position = Vector2(-29.9116, -2.30154)
+occluder = SubResource("OccluderPolygon2D_k5ub1")
+
+[node name="Non paintable" type="Sprite2D" parent="Sprite2D"]
+material = SubResource("ShaderMaterial_nscdw")
+texture = SubResource("CanvasTexture_tjea5")
+
+[node name="Hikari XR2 Windows" parent="Sprite2D" instance=ExtResource("7_ieufa")]
+
+[node name="FL" type="Marker2D" parent="."]
+position = Vector2(57, -30)
+
+[node name="RL" type="Marker2D" parent="."]
+position = Vector2(-55, -30)
+
+[node name="RR" type="Marker2D" parent="."]
+position = Vector2(-55, 29)
+
+[node name="FR" type="Marker2D" parent="."]
+position = Vector2(57, 29)
+
+[node name="Radiator_Location" type="Marker2D" parent="."]
+position = Vector2(80, 0)
+
+[node name="Chassi Hitbox" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(92, -36, 96, -34, 98, -25, 98, 24, 96, 33, 92, 35, 90, 37, 27, 37, 25, 41, -78, 41, -85, 38, -90, 32, -94, 32, -95, 30, -95, -31, -94, -33, -90, -33, -85, -39, -78, -42, 25, -42, 27, -38, 90, -38)

@@ -5,7 +5,8 @@ var Talon_Motors_Barracuda = [preload("res://Assets/Car/Cars/Talon_Motors_Barrac
 var Hikari_Tasai = [preload("res://Assets/Car/Cars/Hikari Tasai.tscn"), "Hikari Tasai", "uncommon"] #2
 var PWR_Wyvern = [preload("res://Assets/Car/Cars/PWR Wyvern.tscn"), "PWR Wyvern", "rare"] #3
 var Holler_Q4 = [preload("res://Assets/Car/Cars/Holler Q4.tscn"), "Holler Q4", "common"] #4
-var car_list = [Nagata_Koi, Talon_Motors_Barracuda, Hikari_Tasai, PWR_Wyvern, Holler_Q4]
+var Hikari_XR2 = [preload("res://Assets/Car/Cars/Hikari XR2.tscn"), "Hikari XR2", "uncommon"] #5
+var car_list = [Nagata_Koi, Talon_Motors_Barracuda, Hikari_Tasai, PWR_Wyvern, Holler_Q4, Hikari_XR2]
 var current_car = car_list[0] # [preload, name, rarity]
 
 var weight = 0.0

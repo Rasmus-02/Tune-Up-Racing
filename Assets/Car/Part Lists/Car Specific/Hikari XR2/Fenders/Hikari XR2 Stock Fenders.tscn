@@ -1,0 +1,48 @@
+[gd_scene load_steps=10 format=3 uid="uid://byt6m6y3hyefi"]
+
+[ext_resource type="Script" path="res://Assets/Car/Code/Part_scripts/Fenders.gd" id="1_11nly"]
+[ext_resource type="Shader" path="res://Shaders/ColorSelector.gdshader" id="2_3vmti"]
+[ext_resource type="Texture2D" uid="uid://brjgy3ot2o1p" path="res://Textures/Cars/Hikari XR2/Fenders/Hikari XR2 Fenderrs.png" id="3_q8q1y"]
+[ext_resource type="Texture2D" uid="uid://c1bq7uc54adtv" path="res://Textures/Cars/Hikari XR2/Fenders/Hikari XR2 Fenderrs NM.png" id="4_wtj74"]
+[ext_resource type="Texture2D" uid="uid://dlky2x11ynbnx" path="res://Textures/Cars/Hikari XR2/Fenders/Hikari XR2 Fenderrs Spec.png" id="5_vddyl"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_kyisn"]
+shader = ExtResource("2_3vmti")
+shader_parameter/import_new_color = null
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_vufhm"]
+diffuse_texture = ExtResource("3_q8q1y")
+normal_texture = ExtResource("4_wtj74")
+specular_texture = ExtResource("5_vddyl")
+specular_shininess = 0.5
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_ak8kv"]
+blend_mode = 1
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_51fsx"]
+polygon = PackedVector2Array(121.912, -33.6985, 119.912, -35.6985, 107.912, -39.6985, 53.9116, -39.6985, 53.9116, 43.3015, 107.912, 43.3015, 119.912, 39.3015, 121.912, 37.3015)
+
+[node name="Hikari XR2 Stock Fenders" type="Node2D" node_paths=PackedStringArray("hitbox")]
+script = ExtResource("1_11nly")
+rarity = "uncommon"
+part_material = 4
+Car_ID = 5
+Part_Number = 1
+description = "The factory fenders for the Hikari XR2"
+price = 400
+weight = 12
+downforce = 10
+drag = 0.02
+hitbox = NodePath("Fenders Hitbox")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_kyisn")
+texture = SubResource("CanvasTexture_vufhm")
+
+[node name="LightOccluder2D2" type="LightOccluder2D" parent="Sprite2D"]
+material = SubResource("CanvasItemMaterial_ak8kv")
+position = Vector2(-29.9116, -2.30154)
+occluder = SubResource("OccluderPolygon2D_51fsx")
+
+[node name="Fenders Hitbox" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(24, -42, 78, -42, 90, -38, 92, -36, 92, 35, 90, 37, 78, 41, 24, 41)

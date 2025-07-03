@@ -1,0 +1,59 @@
+[gd_scene load_steps=13 format=3 uid="uid://dip8vy7j0n33d"]
+
+[ext_resource type="Script" path="res://Assets/Car/Code/Part_scripts/Hood.gd" id="1_56vfn"]
+[ext_resource type="Shader" path="res://Shaders/ColorSelector.gdshader" id="2_dtfik"]
+[ext_resource type="Texture2D" uid="uid://rywvqjkicv3m" path="res://Textures/Cars/Hikari XR2/Hood/Hikari XR2 Hood.png" id="3_ulbq7"]
+[ext_resource type="Texture2D" uid="uid://dnd0qhagdxdk8" path="res://Textures/Cars/Hikari XR2/Hood/Hikari XR2 Hood NM.png" id="4_nmwkg"]
+[ext_resource type="Texture2D" uid="uid://meomxp53hfxo" path="res://Textures/Cars/Hikari XR2/Hood/Hikari XR2 Hood Spec.png" id="5_vce24"]
+[ext_resource type="Script" path="res://Textures/Cars/Color_selector.gd" id="6_q7g2n"]
+[ext_resource type="Texture2D" uid="uid://bif2myghv8fun" path="res://Textures/Cars/Hikari XR2/Hood/Hikari XR2 Hood non paintable.png" id="7_p1lnq"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_n52vx"]
+shader = ExtResource("2_dtfik")
+shader_parameter/import_new_color = null
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_hjvi5"]
+diffuse_texture = ExtResource("3_ulbq7")
+normal_texture = ExtResource("4_nmwkg")
+specular_texture = ExtResource("5_vce24")
+specular_shininess = 0.5
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_0caqf"]
+diffuse_texture = ExtResource("7_p1lnq")
+normal_texture = ExtResource("4_nmwkg")
+specular_texture = ExtResource("5_vce24")
+specular_shininess = 0.5
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_yy507"]
+blend_mode = 1
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_s1ygw"]
+polygon = PackedVector2Array(54.9116, -31.6985, 54.9116, 35.3015, 108.912, 35.3015, 121.912, 19.3015, 121.912, -15.6985, 108.912, -31.6985)
+
+[node name="Hikari XR2 Stock Hood" type="Node2D"]
+script = ExtResource("1_56vfn")
+rarity = "uncommon"
+part_material = 1
+Car_ID = 5
+Part_Number = 1
+description = "The factory hood for the Hikari XR2"
+price = 450
+weight = 12
+downforce = 25
+drag = 0.03
+engine_cool_mod = 0.1
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_n52vx")
+texture = SubResource("CanvasTexture_hjvi5")
+script = ExtResource("6_q7g2n")
+
+[node name="Non paintable" type="Sprite2D" parent="Sprite2D"]
+material = SubResource("ShaderMaterial_n52vx")
+texture = SubResource("CanvasTexture_0caqf")
+script = ExtResource("6_q7g2n")
+
+[node name="LightOccluder2D2" type="LightOccluder2D" parent="Sprite2D"]
+material = SubResource("CanvasItemMaterial_yy507")
+position = Vector2(-29.9116, -2.30154)
+occluder = SubResource("OccluderPolygon2D_s1ygw")

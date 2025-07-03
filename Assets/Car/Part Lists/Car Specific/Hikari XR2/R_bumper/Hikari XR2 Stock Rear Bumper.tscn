@@ -1,0 +1,59 @@
+[gd_scene load_steps=12 format=3 uid="uid://cv0xn1pls0bve"]
+
+[ext_resource type="Script" path="res://Assets/Car/Code/Part_scripts/R_bumper.gd" id="1_k16db"]
+[ext_resource type="Shader" path="res://Shaders/ColorSelector.gdshader" id="2_m7iyy"]
+[ext_resource type="Texture2D" uid="uid://bt5peab0kv8u7" path="res://Textures/Cars/Hikari XR2/Rear Bumper/Hikari XR2 Rear Bumper.png" id="3_bdfyq"]
+[ext_resource type="Texture2D" uid="uid://b34w2y17i6wss" path="res://Textures/Cars/Hikari XR2/Rear Bumper/Hikari XR2 Rear Bumper NM.png" id="4_bysum"]
+[ext_resource type="Texture2D" uid="uid://ct13vtjf0fuh1" path="res://Textures/Cars/Hikari XR2/Rear Bumper/Hikari XR2 Rear Bumper Spec.png" id="5_vhv3y"]
+[ext_resource type="Texture2D" uid="uid://dfc8h7hqcryb4" path="res://Textures/Cars/Hikari XR2/Rear Bumper/Hikari XR2 Rear Bumper non paintable.png" id="6_b6omd"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_3gfj6"]
+shader = ExtResource("2_m7iyy")
+shader_parameter/import_new_color = null
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_r5f60"]
+diffuse_texture = ExtResource("3_bdfyq")
+normal_texture = ExtResource("4_bysum")
+specular_texture = ExtResource("5_vhv3y")
+specular_shininess = 0.5
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_d2t0s"]
+diffuse_texture = ExtResource("6_b6omd")
+normal_texture = ExtResource("4_bysum")
+specular_texture = ExtResource("5_vhv3y")
+specular_shininess = 0.5
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_pappr"]
+blend_mode = 1
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_o4igs"]
+polygon = PackedVector2Array(-48.0884, -39.6985, -54.0884, -39.6985, -62.0884, -36.6985, -65.0884, -33.6985, -68.0884, -25.6985, -68.0884, 29.3015, -65.0884, 37.3015, -62.0884, 40.3015, -54.0884, 43.3015, -48.0884, 43.3015)
+
+[node name="Hikari XR2 Stock Rear Bumper" type="Node2D" node_paths=PackedStringArray("hitbox")]
+script = ExtResource("1_k16db")
+rarity = "uncommon"
+part_material = 4
+Car_ID = 5
+Part_Number = 1
+description = "The factory rear bumper for the Hikari XR2"
+price = 350
+weight = 7
+downforce = 7
+drag = 0.03
+hitbox = NodePath("Rear Bumper Hitbox")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_3gfj6")
+texture = SubResource("CanvasTexture_r5f60")
+
+[node name="Non paintable" type="Sprite2D" parent="Sprite2D"]
+material = SubResource("ShaderMaterial_3gfj6")
+texture = SubResource("CanvasTexture_d2t0s")
+
+[node name="LightOccluder2D2" type="LightOccluder2D" parent="Sprite2D"]
+material = SubResource("CanvasItemMaterial_pappr")
+position = Vector2(-29.9116, -2.30154)
+occluder = SubResource("OccluderPolygon2D_o4igs")
+
+[node name="Rear Bumper Hitbox" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(-78, -42, -84, -42, -92, -39, -95, -36, -98, -28, -98, 27, -95, 35, -92, 38, -84, 41, -78, 41)

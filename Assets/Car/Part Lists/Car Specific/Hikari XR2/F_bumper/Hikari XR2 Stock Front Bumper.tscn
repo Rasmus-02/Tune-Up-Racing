@@ -1,0 +1,49 @@
+[gd_scene load_steps=10 format=3 uid="uid://lbqs15hdkygi"]
+
+[ext_resource type="Script" path="res://Assets/Car/Code/Part_scripts/F_Bumper.gd" id="1_wh7af"]
+[ext_resource type="Shader" path="res://Shaders/ColorSelector.gdshader" id="2_enj6u"]
+[ext_resource type="Texture2D" uid="uid://o1u1163cbqxx" path="res://Textures/Cars/Hikari XR2/Front Bumper/Hikari XR2 Front Bumper.png" id="3_w322m"]
+[ext_resource type="Texture2D" uid="uid://bui5am6dac6yo" path="res://Textures/Cars/Hikari XR2/Front Bumper/Hikari XR2 Front Bumper NM.png" id="4_vypec"]
+[ext_resource type="Texture2D" uid="uid://ukm3w8ik8186" path="res://Textures/Cars/Hikari XR2/Front Bumper/Hikari XR2 Front Bumper Spec.png" id="5_qe6lk"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_7yiga"]
+shader = ExtResource("2_enj6u")
+shader_parameter/import_new_color = null
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_0hbqo"]
+diffuse_texture = ExtResource("3_w322m")
+normal_texture = ExtResource("4_vypec")
+specular_texture = ExtResource("5_qe6lk")
+specular_shininess = 0.5
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_nxqv5"]
+blend_mode = 1
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_uji51"]
+polygon = PackedVector2Array(114.912, -37.6985, 117.912, -37.6985, 126.912, -34.6985, 130.912, -29.6985, 133.912, -17.6985, 133.912, 21.3015, 130.912, 33.3015, 126.912, 38.3015, 117.912, 41.3015, 114.912, 41.3015)
+
+[node name="Hikari XR2 Stock Front Bumper" type="Node2D" node_paths=PackedStringArray("hitbox")]
+script = ExtResource("1_wh7af")
+rarity = "uncommon"
+part_material = 4
+Car_ID = 5
+Part_Number = 1
+description = "The factory front bumper for the Hikari XR2"
+price = 450
+weight = 10
+downforce = 30
+drag = 0.05
+engine_cool_mod = 0.05
+hitbox = NodePath("Front Bumper Hitbox")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_7yiga")
+texture = SubResource("CanvasTexture_0hbqo")
+
+[node name="LightOccluder2D2" type="LightOccluder2D" parent="Sprite2D"]
+material = SubResource("CanvasItemMaterial_nxqv5")
+position = Vector2(-29.9116, -2.30154)
+occluder = SubResource("OccluderPolygon2D_uji51")
+
+[node name="Front Bumper Hitbox" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(95, -38, 100, -34, 104, -20, 104, 19, 100, 33, 95, 37, 85, 39, 85, -40)

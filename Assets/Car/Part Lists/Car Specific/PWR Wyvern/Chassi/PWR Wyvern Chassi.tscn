@@ -42,7 +42,7 @@ weight = 650
 reliability = 0.7
 downforce = 40
 drag = 0.24
-wheelbase = 118
+wheelbase = 116
 hitbox = NodePath("Chassi Hitbox")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]

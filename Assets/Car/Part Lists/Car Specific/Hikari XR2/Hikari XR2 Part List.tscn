@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://cf7joagf05oq6"]
+
+[ext_resource type="Script" path="res://Assets/Car/Part Lists/Car Specific/Hikari XR2/Hikari XR2 Part List.gd" id="1_bv67j"]
+
+[node name="Hikari XR2 Part List" type="Node2D"]
+script = ExtResource("1_bv67j")

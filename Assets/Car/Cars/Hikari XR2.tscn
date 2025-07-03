@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://cab3dbqem6jfv"]
+
+[ext_resource type="PackedScene" uid="uid://fawbg2w0nh2c" path="res://Assets/Car/Part Lists/Part Selector/Part Selector car.tscn" id="1_tv47u"]
+[ext_resource type="PackedScene" uid="uid://cf7joagf05oq6" path="res://Assets/Car/Part Lists/Car Specific/Hikari XR2/Hikari XR2 Part List.tscn" id="2_x2ui0"]
+[ext_resource type="PackedScene" uid="uid://dmcwtlpp6q5tf" path="res://Assets/Car/Part Lists/Universal/Universal Part List.tscn" id="3_8eb58"]
+
+[node name="Hikari XR2" type="Node2D"]
+
+[node name="Part Selector" parent="." instance=ExtResource("1_tv47u")]
+
+[node name="Hikari XR2 Part List" parent="Part Selector" instance=ExtResource("2_x2ui0")]
+
+[node name="Universal Part List" parent="Part Selector" instance=ExtResource("3_8eb58")]
+
+[node name="Gear_Change_Timer" type="Timer" parent="."]
+wait_time = 0.35
+one_shot = true

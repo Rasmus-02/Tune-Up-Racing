@@ -1,0 +1,15 @@
+[gd_scene load_steps=5 format=3 uid="uid://dmnuqjtp5u0ed"]
+
+[ext_resource type="Texture2D" uid="uid://crgu1kfvs5yfq" path="res://Textures/Cars/Hikari XR2/Windows/Hikari XR2 Windows.png" id="1_ef5uq"]
+[ext_resource type="Texture2D" uid="uid://ri6lcqu6f84v" path="res://Textures/Cars/Hikari XR2/Windows/Hikari XR2 Windows NM.png" id="2_x36cd"]
+[ext_resource type="Texture2D" uid="uid://b6orxhuf1dj4k" path="res://Textures/Cars/Hikari XR2/Windows/Hikari XR2 Windows Spec.png" id="3_lbbpn"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_duf3e"]
+diffuse_texture = ExtResource("1_ef5uq")
+normal_texture = ExtResource("2_x36cd")
+specular_texture = ExtResource("3_lbbpn")
+
+[node name="Hikari XR2 Windows" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = SubResource("CanvasTexture_duf3e")

@@ -1,0 +1,40 @@
+[gd_scene load_steps=9 format=3 uid="uid://ddfgpr7rmsftd"]
+
+[ext_resource type="Script" path="res://Assets/Car/Code/Part_scripts/Exhaust.gd" id="1_qp8th"]
+[ext_resource type="Texture2D" uid="uid://c7je6k1sjxelj" path="res://Textures/Cars/Hikari XR2/Exhaust/Hikari XR2 Exhaust.png" id="2_qhq84"]
+[ext_resource type="Texture2D" uid="uid://dp3g53qf8gpym" path="res://Textures/Cars/Hikari XR2/Exhaust/Hikari XR2 Exhaust NM.png" id="3_visjx"]
+[ext_resource type="Script" path="res://Assets/Effects/Backfire.gd" id="4_fjsrg"]
+[ext_resource type="Texture2D" uid="uid://3cemaughi31f" path="res://Textures/Cars/Hikari XR2/Exhaust/Hikari XR2 Exhaust Spec.png" id="4_j0rki"]
+[ext_resource type="AudioStream" uid="uid://cfvwt4fi2efkr" path="res://Sound/Engine Sounds/Backfire.mp3" id="5_uiryq"]
+[ext_resource type="PackedScene" uid="uid://b1agqhrv0psca" path="res://Assets/Effects/Backfire.tscn" id="6_0c7iy"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_lr5dr"]
+diffuse_texture = ExtResource("2_qhq84")
+normal_texture = ExtResource("3_visjx")
+specular_texture = ExtResource("4_j0rki")
+specular_shininess = 0.65
+
+[node name="Hikari XR2 Stock Exhaust" type="Node2D"]
+script = ExtResource("1_qp8th")
+rarity = "uncommon"
+Car_ID = 5
+Part_Number = 1
+description = "The Stock Exhaust that comes with the Hikari XR2"
+price = 400
+weight = 25
+sound_dampening = 9
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = SubResource("CanvasTexture_lr5dr")
+
+[node name="Backfire" type="Node2D" parent="."]
+script = ExtResource("4_fjsrg")
+
+[node name="Backfire_Sound" type="AudioStreamPlayer2D" parent="Backfire"]
+stream = ExtResource("5_uiryq")
+bus = &"Car Volume"
+
+[node name="Exhaust_1" type="Marker2D" parent="Backfire"]
+position = Vector2(-99, 29)
+
+[node name="Backfire" parent="Backfire/Exhaust_1" instance=ExtResource("6_0c7iy")]
