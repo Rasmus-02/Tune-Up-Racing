@@ -29,7 +29,6 @@ func _ready():
 		icon_array.append(new_icon) #Add to array of all nodes
 
 func set_map_layout(map):
-	#var instance = map.instantiate()
 	texture = map
 
 

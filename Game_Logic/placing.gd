@@ -6,6 +6,8 @@ var placing_list = []
 var player_placing : int
 var start = false
 var max_lap = 3 #Can set max lap count here
+var max_score = 200000 # Set the score needed in drift event for #1 rank
+var max_time = 200000 # Set the time needed in timeattack for #1 rank
 var map_bonus = 1.0
 var player_lap = 0
 

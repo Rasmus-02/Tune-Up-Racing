@@ -11,6 +11,10 @@ var current_scene_instance = null
 var current_scene
 var current_scene_name : String
 var pause_blocked = false
+# For gamemode selection
+enum {OPPONENT, TIMEATTACK, DRIFT, BUILDCHALLENGE}
+var gamemode = OPPONENT
+
 
 
 func _ready():
