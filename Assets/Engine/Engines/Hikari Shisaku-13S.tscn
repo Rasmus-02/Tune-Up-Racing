@@ -4,23 +4,23 @@
 [ext_resource type="PackedScene" uid="uid://cctyed3jxvgm6" path="res://Assets/Engine/Part Lists/Part Selector/Part Selector engine.tscn" id="2_ybvca"]
 [ext_resource type="PackedScene" uid="uid://b53hpymj6lje" path="res://Assets/Engine/Part Lists/Engine Specific/Hikari Shisaku-13S/Hikari Shisaku-13S part list.tscn" id="3_42b7b"]
 [ext_resource type="PackedScene" uid="uid://0lggp6gpn8xa" path="res://Assets/Engine/Part Lists/Universal/Universal part list.tscn" id="4_ouxfr"]
-[ext_resource type="Texture2D" uid="uid://b3aodvr655mjq" path="res://Textures/Engines/Nagata 2S-16I/Radiator_Piping/2S-16i Transverse Radiator Piping.png" id="5_m2mrp"]
-[ext_resource type="Texture2D" uid="uid://sfrabtq385ic" path="res://Textures/Engines/Nagata 2S-16I/Radiator_Piping/2S-16i Transverse Radiator Piping NM.png" id="6_pbwhn"]
-[ext_resource type="Texture2D" uid="uid://d0nc0jo7s4i1k" path="res://Textures/Engines/Nagata 2S-16I/Radiator_Piping/2S-16i Longitudinal Radiator Piping.png" id="7_jwb08"]
-[ext_resource type="Texture2D" uid="uid://c8uhxix85h1gm" path="res://Textures/Engines/Nagata 2S-16I/Radiator_Piping/2S-16i Longitudinal Radiator Piping NM.png" id="8_jbrlv"]
+[ext_resource type="Texture2D" uid="uid://ccax8nypur771" path="res://Textures/Engines/Hikari Shisaku-13S/Radiator/Hikari Shisaku-13S Transverse Radiator.png" id="5_cwtuc"]
+[ext_resource type="Texture2D" uid="uid://d0arg1rdomip5" path="res://Textures/Engines/Hikari Shisaku-13S/Radiator/Hikari Shisaku-13S Transverse Radiator_n.png" id="6_1kwu4"]
+[ext_resource type="Texture2D" uid="uid://0qbmjbfrawjr" path="res://Textures/Engines/Hikari Shisaku-13S/Radiator/Hikari Shisaku-13S Longitudinal Radiator.png" id="7_ppkgv"]
+[ext_resource type="Texture2D" uid="uid://pqyvfqmy4k7a" path="res://Textures/Engines/Hikari Shisaku-13S/Radiator/Hikari Shisaku-13S Longitudinal Radiator_n.png" id="8_asvne"]
 [ext_resource type="PackedScene" uid="uid://c8il6nkvjwonk" path="res://Sound/Turbo and Supercharge Sounds/Boost_Sound_Handler.tscn" id="9_voamk"]
 [ext_resource type="PackedScene" uid="uid://ca3px5nsyfcww" path="res://Assets/Effects/EngineSmoke.tscn" id="10_63gc1"]
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_8lf8t"]
-diffuse_texture = ExtResource("5_m2mrp")
-normal_texture = ExtResource("6_pbwhn")
-specular_texture = ExtResource("5_m2mrp")
+diffuse_texture = ExtResource("5_cwtuc")
+normal_texture = ExtResource("6_1kwu4")
+specular_texture = ExtResource("5_cwtuc")
 specular_shininess = 0.5
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_71le6"]
-diffuse_texture = ExtResource("7_jwb08")
-normal_texture = ExtResource("8_jbrlv")
-specular_texture = ExtResource("7_jwb08")
+diffuse_texture = ExtResource("7_ppkgv")
+normal_texture = ExtResource("8_asvne")
+specular_texture = ExtResource("7_ppkgv")
 specular_shininess = 0.5
 
 [node name="Hikari Shisaku-13S" type="Node2D"]

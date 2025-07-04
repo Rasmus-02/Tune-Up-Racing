@@ -4,7 +4,7 @@ var empty = preload("res://Assets/Empty Part/Empty_Part.tscn")
 
 #Car ID
 var id = 5
-var stock_engine = 5
+var stock_engine = 6
 
 #Chassi
 var xr2_chassi = preload("res://Assets/Car/Part Lists/Car Specific/Hikari XR2/Chassi/Hikari XR2 Chassi.tscn") #1
