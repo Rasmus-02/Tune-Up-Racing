@@ -6,9 +6,10 @@ var Nagata_2S16i = [preload("res://Assets/Engine/Engines/Nagata 2S-16i.tscn").in
 var Hikari_Suhei_25A = [preload("res://Assets/Engine/Engines/Hikari Suhei-25A.tscn").instantiate(), "Hikari Suhei-25A", "uncommon"] #3
 var PWR_SIX_4 = [preload("res://Assets/Engine/Engines/PWR SIX-4.tscn").instantiate(), "PWR SIX-4", "rare"] #4
 var Holler_DI2500 = [preload("res://Assets/Engine/Engines/Holler DI-2500.tscn").instantiate(), "Holler DI-2500", "common"] #5
+var Hikari_Shisaku_13S = [preload("res://Assets/Engine/Engines/Hikari Shisaku-13S.tscn").instantiate(), "Hikari Shisaku-13S", "uncommon"] #6
 #[preload, name, rarity]
 
-var engine_list = [No_Engine, Talon_Motors_Typhoon, Nagata_2S16i, Hikari_Suhei_25A, PWR_SIX_4, Holler_DI2500]
+var engine_list = [No_Engine, Talon_Motors_Typhoon, Nagata_2S16i, Hikari_Suhei_25A, PWR_SIX_4, Holler_DI2500, Hikari_Shisaku_13S]
 var current_engine = null
 
 var max_torque = 1 # * 1.3 to combat power losses

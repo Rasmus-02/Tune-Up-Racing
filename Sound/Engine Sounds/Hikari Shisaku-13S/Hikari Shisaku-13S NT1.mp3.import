@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://dfdov0hofpt4s"
+path="res://.godot/imported/Hikari Shisaku-13S NT1.mp3-7d0d09e6ebbbb116725371c6cc8f923e.mp3str"
+
+[deps]
+
+source_file="res://Sound/Engine Sounds/Hikari Shisaku-13S/Hikari Shisaku-13S NT1.mp3"
+dest_files=["res://.godot/imported/Hikari Shisaku-13S NT1.mp3-7d0d09e6ebbbb116725371c6cc8f923e.mp3str"]
+
+[params]
+
+loop=true
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

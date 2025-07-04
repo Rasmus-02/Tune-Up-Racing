@@ -1,0 +1,60 @@
+[gd_scene load_steps=12 format=3 uid="uid://d0cdisowixo6"]
+
+[ext_resource type="Script" path="res://Assets/Engine/Part_scripts/Top.gd" id="1_oqyu2"]
+[ext_resource type="Texture2D" uid="uid://45uqxiv81q1l" path="res://Textures/Engines/Hikari Shisaku-13S/Top/Hikari Shisaku-13S Top.png" id="2_pay6y"]
+[ext_resource type="Texture2D" uid="uid://bte5hd0mfxtkb" path="res://Textures/Engines/Hikari Shisaku-13S/Top/Hikari Shisaku-13S Top NM.png" id="3_45or1"]
+[ext_resource type="Texture2D" uid="uid://dlmm6wcucwj2u" path="res://Textures/Engines/Hikari Shisaku-13S/Top/Hikari Shisaku-13S Top Spec.png" id="4_euvua"]
+[ext_resource type="Script" path="res://Assets/Engine/Code/Sound_handler_engine.gd" id="5_0pbrx"]
+[ext_resource type="AudioStream" uid="uid://bye6526tmmlkh" path="res://Sound/Engine Sounds/Hikari Shisaku-13S/Hikari Shisaku-13S T1.mp3" id="6_h3pq3"]
+[ext_resource type="AudioStream" uid="uid://dfdov0hofpt4s" path="res://Sound/Engine Sounds/Hikari Shisaku-13S/Hikari Shisaku-13S NT1.mp3" id="7_fhtko"]
+[ext_resource type="AudioStream" uid="uid://djr6vvemf2nhb" path="res://Sound/Engine Sounds/Hikari Shisaku-13S/Hikari Shisaku-13S NT4.mp3" id="8_3dyjs"]
+[ext_resource type="AudioStream" uid="uid://df2smsqbhpujt" path="res://Sound/Engine Sounds/Hikari Shisaku-13S/Hikari Shisaku-13S T4.mp3" id="9_xxmqu"]
+[ext_resource type="AudioStream" uid="uid://bumo62fftckdb" path="res://Sound/AirFlow Sound.mp3" id="10_17e1e"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_kt11d"]
+diffuse_texture = ExtResource("2_pay6y")
+normal_texture = ExtResource("3_45or1")
+specular_texture = ExtResource("4_euvua")
+specular_shininess = 0.3
+
+[node name="Shisaku-13S Top" type="Node2D"]
+script = ExtResource("1_oqyu2")
+rarity = "uncommon"
+part_material = 4
+lenght = 17
+width = 14
+Engine_ID = 6
+Part_Number = 1
+description = "The factory ignition system for the Shisaku-13S rotary engine"
+price = 250
+weight = 4.0
+tq_mod = 1.0
+max_hp_rpm = 9000
+max_compression = 10.0
+smoothness = 0.4
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = SubResource("CanvasTexture_kt11d")
+
+[node name="Sound_handler" type="Node2D" parent="."]
+script = ExtResource("5_0pbrx")
+
+[node name="engine_sound_throttle_1000rpm" type="AudioStreamPlayer2D" parent="Sound_handler"]
+stream = ExtResource("6_h3pq3")
+bus = &"Car Volume"
+
+[node name="engine_sound_no_throttle_1000rpm" type="AudioStreamPlayer2D" parent="Sound_handler"]
+stream = ExtResource("7_fhtko")
+bus = &"Car Volume"
+
+[node name="engine_sound_no_throttle_4000rpm" type="AudioStreamPlayer2D" parent="Sound_handler"]
+stream = ExtResource("8_3dyjs")
+bus = &"Car Volume"
+
+[node name="engine_sound_throttle_4000rpm" type="AudioStreamPlayer2D" parent="Sound_handler"]
+stream = ExtResource("9_xxmqu")
+bus = &"Car Volume"
+
+[node name="Airflow" type="AudioStreamPlayer2D" parent="Sound_handler"]
+stream = ExtResource("10_17e1e")
+bus = &"Car Volume"

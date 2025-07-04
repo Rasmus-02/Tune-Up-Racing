@@ -1,0 +1,30 @@
+[gd_scene load_steps=6 format=3 uid="uid://c0y0lkoe1eqk7"]
+
+[ext_resource type="Script" path="res://Assets/Engine/Part_scripts/Intake_Manifold.gd" id="1_cuqk7"]
+[ext_resource type="Texture2D" uid="uid://c331d37pwcqh5" path="res://Textures/Engines/Hikari Shisaku-13S/Intake/Hikari Shisaku-13S Stock Intake Manifold.png" id="2_ooqef"]
+[ext_resource type="Texture2D" uid="uid://diov0aaoxg7g" path="res://Textures/Engines/Hikari Shisaku-13S/Intake/Hikari Shisaku-13S Stock Intake Manifold NM.png" id="3_nwxxa"]
+[ext_resource type="Texture2D" uid="uid://cy7jwpb5sx3ne" path="res://Textures/Engines/Hikari Shisaku-13S/Intake/Hikari Shisaku-13S Stock Intake Manifold Spec.png" id="4_pk811"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_oa52d"]
+diffuse_texture = ExtResource("2_ooqef")
+normal_texture = ExtResource("3_nwxxa")
+specular_texture = ExtResource("4_pk811")
+specular_shininess = 0.5
+
+[node name="Shisaku-13S Intake Manifold" type="Node2D"]
+script = ExtResource("1_cuqk7")
+rarity = "uncommon"
+layout = "front"
+lenght = 4
+width = 5
+Engine_ID = 6
+Part_Number = 1
+description = "The factory intake manifold for the Shisaku-13S rotary engine"
+price = 400
+weight = 14
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = SubResource("CanvasTexture_oa52d")
+
+[node name="Air filter location" type="Marker2D" parent="."]
+position = Vector2(15, -2)

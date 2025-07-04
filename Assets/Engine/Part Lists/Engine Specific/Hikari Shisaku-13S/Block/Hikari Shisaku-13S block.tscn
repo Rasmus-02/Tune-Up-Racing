@@ -1,0 +1,30 @@
+[gd_scene load_steps=6 format=3 uid="uid://jbar0siiyfm7"]
+
+[ext_resource type="Script" path="res://Assets/Engine/Part_scripts/Block.gd" id="1_re46l"]
+[ext_resource type="Texture2D" uid="uid://drl3jnbovph0v" path="res://Textures/Engines/Hikari Shisaku-13S/Block/Hikari Shisaku-13S Block.png" id="2_0fclq"]
+[ext_resource type="Texture2D" uid="uid://dk65l8reu0ll0" path="res://Textures/Engines/Hikari Shisaku-13S/Block/Hikari Shisaku-13S Block NM.png" id="3_ybnd5"]
+[ext_resource type="Texture2D" uid="uid://cjoowu5qyf7gr" path="res://Textures/Engines/Hikari Shisaku-13S/Block/Hikari Shisaku-13S Block Spec.png" id="4_6swnv"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_8byoe"]
+diffuse_texture = ExtResource("2_0fclq")
+normal_texture = ExtResource("3_ybnd5")
+specular_texture = ExtResource("4_6swnv")
+specular_shininess = 0.5
+
+[node name="Shisaku-13S Cast Iron Block" type="Node2D"]
+script = ExtResource("1_re46l")
+rarity = "uncommon"
+layout = "Rotary"
+lenght = 24
+width = 13
+Engine_ID = 6
+Part_Number = 1
+description = "The factory cast iron block for the Shisaku-13S"
+price = 2500
+weight = 100
+reliability = 0.4
+tq = 250
+max_tq = 500
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = SubResource("CanvasTexture_8byoe")

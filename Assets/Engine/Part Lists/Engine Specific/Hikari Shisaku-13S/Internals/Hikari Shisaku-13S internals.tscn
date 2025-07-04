@@ -1,0 +1,30 @@
+[gd_scene load_steps=6 format=3 uid="uid://bc0vl3fmxp1y5"]
+
+[ext_resource type="Script" path="res://Assets/Engine/Part_scripts/Internals.gd" id="1_6b5bl"]
+[ext_resource type="Texture2D" uid="uid://4m8ire0lgwv7" path="res://Textures/Engines/Hikari Shisaku-13S/Internals/Hikari Shisaku-13S Internals.png" id="2_i7gon"]
+[ext_resource type="Texture2D" uid="uid://djq5fkvkxkasp" path="res://Textures/Engines/Hikari Shisaku-13S/Internals/Hikari Shisaku-13S Internals NM.png" id="3_rgrds"]
+[ext_resource type="Texture2D" uid="uid://c71pled8wamkb" path="res://Textures/Engines/Hikari Shisaku-13S/Internals/Hikari Shisaku-13S Internals Spec.png" id="4_jhbtb"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_8qrlk"]
+diffuse_texture = ExtResource("2_i7gon")
+normal_texture = ExtResource("3_rgrds")
+specular_texture = ExtResource("4_jhbtb")
+specular_shininess = 0.5
+
+[node name="Shisaku-13S Internals" type="Node2D"]
+script = ExtResource("1_6b5bl")
+rarity = "uncommon"
+lenght = 23
+width = 5
+Engine_ID = 6
+Part_Number = 1
+description = "The factory internals for the Shisaku-13S rotary engine"
+price = 2500
+weight = 25
+compression = 10.0
+max_rpm = 9500
+max_tq = 300
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+z_index = -1
+texture = SubResource("CanvasTexture_8qrlk")

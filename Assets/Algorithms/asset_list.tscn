@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://bru6ephru272n"]
+[gd_scene load_steps=16 format=3 uid="uid://bru6ephru272n"]
 
 [ext_resource type="Script" path="res://Assets/Algorithms/Asset_List.gd" id="1_7h7kb"]
 [ext_resource type="Script" path="res://Assets/Car/Part Lists/Universal/Universal Part List.gd" id="2_0l3nf"]
@@ -14,6 +14,7 @@
 [ext_resource type="PackedScene" uid="uid://cf7joagf05oq6" path="res://Assets/Car/Part Lists/Car Specific/Hikari XR2/Hikari XR2 Part List.tscn" id="8_rbx75"]
 [ext_resource type="PackedScene" uid="uid://dgycrig5er4w1" path="res://Assets/Engine/Part Lists/Engine Specific/PWR SIX-4/PWR SIX-4 part list.tscn" id="10_054cr"]
 [ext_resource type="PackedScene" uid="uid://dakjrep5k5m7g" path="res://Assets/Engine/Part Lists/Engine Specific/Holler DI-2500/Holler DI-2500 part list.tscn" id="12_pseyg"]
+[ext_resource type="PackedScene" uid="uid://b53hpymj6lje" path="res://Assets/Engine/Part Lists/Engine Specific/Hikari Shisaku-13S/Hikari Shisaku-13S part list.tscn" id="15_hpkpb"]
 
 [node name="Asset_List" type="Node" node_paths=PackedStringArray("car_list", "engine_list")]
 script = ExtResource("1_7h7kb")
@@ -61,3 +62,5 @@ rarity = "uncommon"
 [node name="PWR SIX-4 Part List" parent="Engine" instance=ExtResource("10_054cr")]
 
 [node name="Holler DI-2500 Part List" parent="Engine" instance=ExtResource("12_pseyg")]
+
+[node name="Hikari Shisaku-13S Part List" parent="Engine" instance=ExtResource("15_hpkpb")]
